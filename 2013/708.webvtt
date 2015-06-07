@@ -1,0 +1,3360 @@
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:00:10.386 --> 00:00:12.456 A:middle
+&gt;&gt; Good morning and
+welcome [applause].
+
+00:00:15.106 --> 00:00:18.286 A:middle
+Thanks a lot for coming.
+
+00:00:18.406 --> 00:00:21.286 A:middle
+So my name is Demijan Klinc
+and in this session we'll talk
+
+00:00:21.286 --> 00:00:25.356 A:middle
+about nearby networking
+with Multipeer Connectivity.
+
+00:00:28.756 --> 00:00:31.996 A:middle
+So what is Multipeer
+Connectivity?
+
+00:00:33.376 --> 00:00:37.286 A:middle
+Well, Multipeer Connectivity
+is a brand new framework we're
+
+00:00:37.286 --> 00:00:42.576 A:middle
+shipping in iOS 7 that
+facilitates discovery of
+
+00:00:42.576 --> 00:00:45.236 A:middle
+and communication
+with nearby devices.
+
+00:00:46.486 --> 00:00:49.406 A:middle
+It abstracts complex
+programming --
+
+00:00:49.476 --> 00:00:53.486 A:middle
+network programming aspects from
+you and enables you to build --
+
+00:00:53.736 --> 00:00:57.706 A:middle
+to easily build communication
+sessions with nearby peers,
+
+00:00:57.706 --> 00:00:59.916 A:middle
+where they can exchange
+data with each other.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:01:02.856 --> 00:01:06.136 A:middle
+So essentially, we're looking
+at a situation like this one,
+
+00:01:06.636 --> 00:01:10.326 A:middle
+where we have multiple iOS
+devices in close proximity
+
+00:01:10.326 --> 00:01:13.456 A:middle
+of each other and what they
+want to do is they want
+
+00:01:13.456 --> 00:01:16.156 A:middle
+to establish a communication
+link and they want
+
+00:01:16.156 --> 00:01:17.736 A:middle
+to exchange data
+with each other.
+
+00:01:18.296 --> 00:01:21.606 A:middle
+Now this here is
+a very simple --
+
+00:01:21.796 --> 00:01:26.236 A:middle
+simplistic case and the
+framework also supports much
+
+00:01:26.236 --> 00:01:27.596 A:middle
+more complex setups.
+
+00:01:28.216 --> 00:01:32.076 A:middle
+Like this one, for instance,
+where we have many iOS devices
+
+00:01:32.566 --> 00:01:39.436 A:middle
+that participate in multiple
+sessions at the same time.
+
+00:01:39.986 --> 00:01:42.376 A:middle
+So what are the use cases
+for this technology?
+
+00:01:42.606 --> 00:01:44.776 A:middle
+Well, let me -- let
+me name a few.
+
+00:01:46.206 --> 00:01:51.166 A:middle
+Interactive tutoring,
+collaborative document
+
+00:01:51.256 --> 00:01:57.576 A:middle
+and photo editing, file
+sharing, coordination
+
+00:01:57.576 --> 00:02:02.716 A:middle
+across multiple devices,
+and sensor data aggregation.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:01:57.576 --> 00:02:02.716 A:middle
+across multiple devices,
+and sensor data aggregation.
+
+00:02:03.526 --> 00:02:05.906 A:middle
+Of course, these are
+just a few examples
+
+00:02:05.906 --> 00:02:09.515 A:middle
+and the playing field is wide
+open for you guys to explore.
+
+00:02:09.955 --> 00:02:12.406 A:middle
+We can't wait to see
+what you come up with
+
+00:02:12.406 --> 00:02:13.986 A:middle
+as you start playing
+with the framework.
+
+00:02:14.396 --> 00:02:21.486 A:middle
+Under the hood, Multipeer
+Connectivity supports
+
+00:02:21.486 --> 00:02:24.256 A:middle
+connectivity using
+classical Bluetooth
+
+00:02:24.946 --> 00:02:26.646 A:middle
+and infrastructure Wi-Fi.
+
+00:02:28.096 --> 00:02:30.866 A:middle
+And, in addition, and we're
+very excited about this,
+
+00:02:31.286 --> 00:02:33.916 A:middle
+in iOS 7 we're adding support
+
+00:02:34.366 --> 00:02:41.886 A:middle
+for peer-to-peer
+Wi-Fi Networking.
+
+00:02:41.886 --> 00:02:43.136 A:middle
+[ Applause ]
+
+00:02:43.136 --> 00:02:47.636 A:middle
+So peer-to-peer Wi-Fi Networking
+will enable your iOS devices
+
+00:02:47.956 --> 00:02:51.436 A:middle
+to communicate with each
+other using Wi-Fi technology,
+
+00:02:51.866 --> 00:02:54.056 A:middle
+even if they're not
+connected to an access point
+
+00:02:54.786 --> 00:02:57.476 A:middle
+or if they're connected to
+different access points.
+
+00:02:58.126 --> 00:03:01.476 A:middle
+So we think this will
+bring nearby networking
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:02:58.126 --> 00:03:01.476 A:middle
+So we think this will
+bring nearby networking
+
+00:03:01.586 --> 00:03:03.596 A:middle
+on iOS to a whole new level.
+
+00:03:03.906 --> 00:03:08.716 A:middle
+We're very excited about this.
+
+00:03:08.926 --> 00:03:10.496 A:middle
+So what are the features
+of the framework?
+
+00:03:11.066 --> 00:03:12.166 A:middle
+So as I just mentioned,
+
+00:03:12.206 --> 00:03:14.456 A:middle
+we support multiple
+wireless technologies.
+
+00:03:15.786 --> 00:03:17.516 A:middle
+We have interface selection.
+
+00:03:18.046 --> 00:03:22.406 A:middle
+So by that I mean that the
+framework will choose the best
+
+00:03:22.456 --> 00:03:25.946 A:middle
+wireless technology for you
+under the hood, so that you --
+
+00:03:25.946 --> 00:03:29.266 A:middle
+so your users get the best
+networking experience.
+
+00:03:30.556 --> 00:03:32.676 A:middle
+We will give you
+convenience and --
+
+00:03:32.916 --> 00:03:35.416 A:middle
+convenience, discovery,
+and invitation UI.
+
+00:03:36.696 --> 00:03:38.906 A:middle
+So we'll give you tools
+that will make it very,
+
+00:03:38.906 --> 00:03:42.656 A:middle
+very easy for you to discover
+who is nearby and mechanisms
+
+00:03:42.696 --> 00:03:45.956 A:middle
+to invite nearby peers and have
+them connect into a session.
+
+00:03:47.356 --> 00:03:52.016 A:middle
+Then, once you're in a session,
+we will give you the APIs
+
+00:03:52.056 --> 00:03:55.406 A:middle
+to send data and will
+support message-based data
+
+00:03:55.546 --> 00:03:58.876 A:middle
+and stream-based data.
+
+00:03:59.046 --> 00:04:02.396 A:middle
+Also, we have built-in
+support for security as well,
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:03:59.046 --> 00:04:02.396 A:middle
+Also, we have built-in
+support for security as well,
+
+00:04:03.376 --> 00:04:05.486 A:middle
+and specifically,
+we'll give you support
+
+00:04:05.486 --> 00:04:07.806 A:middle
+for authentication
+and encryption.
+
+00:04:08.426 --> 00:04:13.686 A:middle
+Now this brings me to
+the agenda for today
+
+00:04:13.736 --> 00:04:15.776 A:middle
+and we'll have two bigger parts.
+
+00:04:16.396 --> 00:04:18.916 A:middle
+In the first part, we'll
+cover the essentials,
+
+00:04:19.036 --> 00:04:22.376 A:middle
+and in the second part, we'll
+cover some advanced topics.
+
+00:04:23.156 --> 00:04:25.786 A:middle
+In the essentials, we'll
+look at two phases.
+
+00:04:26.536 --> 00:04:28.566 A:middle
+First, we'll look at
+the discovery phase
+
+00:04:29.096 --> 00:04:31.016 A:middle
+and the discovery
+phase will be the phase
+
+00:04:31.016 --> 00:04:32.716 A:middle
+where you're discovering
+who's nearby
+
+00:04:33.056 --> 00:04:36.626 A:middle
+and you're inviting nearby peers
+to a session, so basically,
+
+00:04:36.626 --> 00:04:40.106 A:middle
+everything that happens before
+the peers are successfully
+
+00:04:40.106 --> 00:04:41.996 A:middle
+connected with each
+other in a session
+
+00:04:41.996 --> 00:04:43.206 A:middle
+where they can exchange data.
+
+00:04:44.506 --> 00:04:48.356 A:middle
+Then we will cover the session
+phase and there we'll assume
+
+00:04:48.356 --> 00:04:49.736 A:middle
+that everybody's
+already connected
+
+00:04:50.066 --> 00:04:53.136 A:middle
+and we'll see how you can
+have them exchange data
+
+00:04:53.136 --> 00:04:53.666 A:middle
+with each other.
+
+00:04:53.836 --> 00:04:56.816 A:middle
+Once we're done with
+the essentials,
+
+00:04:57.086 --> 00:04:58.646 A:middle
+we'll look at some
+advanced topics.
+
+00:04:59.036 --> 00:05:01.876 A:middle
+Specifically, we'll look
+at programatic discovery
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:04:59.036 --> 00:05:01.876 A:middle
+Specifically, we'll look
+at programatic discovery
+
+00:05:02.376 --> 00:05:03.596 A:middle
+and we'll look at security.
+
+00:05:06.656 --> 00:05:09.646 A:middle
+All right, so let's
+dive in, the essentials.
+
+00:05:11.536 --> 00:05:15.036 A:middle
+First I want to define some
+terminology that we will use
+
+00:05:15.036 --> 00:05:17.996 A:middle
+in today's talk and I
+want to start with nearby.
+
+00:05:18.946 --> 00:05:20.166 A:middle
+So what is nearby?
+
+00:05:21.196 --> 00:05:26.626 A:middle
+For a particular device, another
+device will be called nearby
+
+00:05:26.626 --> 00:05:29.156 A:middle
+if the two devices can
+communicate directly
+
+00:05:29.156 --> 00:05:32.726 A:middle
+with each other using one of the
+supported wireless technologies.
+
+00:05:33.116 --> 00:05:38.406 A:middle
+Peer. A peer will
+be a nearby device.
+
+00:05:40.856 --> 00:05:42.176 A:middle
+Advertiser.
+
+00:05:43.056 --> 00:05:45.276 A:middle
+An advertiser will be a device
+
+00:05:45.406 --> 00:05:48.706 A:middle
+that makes itself
+discoverable to other devices.
+
+00:05:49.996 --> 00:05:54.086 A:middle
+Similarly, the act of
+advertising will be the act
+
+00:05:54.086 --> 00:05:57.446 A:middle
+of making oneself
+discoverable to other peers.
+
+00:05:58.906 --> 00:06:01.016 A:middle
+And lastly, browser.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:05:58.906 --> 00:06:01.016 A:middle
+And lastly, browser.
+
+00:06:02.486 --> 00:06:05.586 A:middle
+A browser will be a
+device that is searching
+
+00:06:05.586 --> 00:06:07.346 A:middle
+for other nearby devices.
+
+00:06:08.386 --> 00:06:12.006 A:middle
+And similarly, the act of
+browsing will be the act
+
+00:06:12.006 --> 00:06:13.756 A:middle
+of searching for nearby devices.
+
+00:06:14.416 --> 00:06:17.396 A:middle
+Okay. So with that established,
+
+00:06:17.876 --> 00:06:19.576 A:middle
+let's jump into the
+discovery phase.
+
+00:06:20.606 --> 00:06:24.136 A:middle
+And to start, I want to go
+with you through the flow
+
+00:06:24.136 --> 00:06:25.256 A:middle
+of the discovery phase.
+
+00:06:26.416 --> 00:06:29.186 A:middle
+So let's assume I'm
+running an app
+
+00:06:29.776 --> 00:06:33.556 A:middle
+that uses Multipeer
+Connectivity and I want to see
+
+00:06:33.556 --> 00:06:35.306 A:middle
+if there are any peers nearby.
+
+00:06:36.316 --> 00:06:40.916 A:middle
+So I bring up my browser, my
+browser UI that is supplied
+
+00:06:40.916 --> 00:06:44.256 A:middle
+by the framework, and on
+my browser UI I can see
+
+00:06:44.256 --> 00:06:45.986 A:middle
+that I'm searching
+for nearby peers.
+
+00:06:46.276 --> 00:06:48.406 A:middle
+There is currently
+no one around.
+
+00:06:50.396 --> 00:06:55.206 A:middle
+A few moments later, Jeff
+comes by and I will see
+
+00:06:55.476 --> 00:06:58.816 A:middle
+that Jeff is nearby on my UI.
+
+00:06:58.956 --> 00:07:02.396 A:middle
+Then I will also
+have Gabe join us
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:06:58.956 --> 00:07:02.396 A:middle
+Then I will also
+have Gabe join us
+
+00:07:02.976 --> 00:07:05.396 A:middle
+and moments later I also
+see that Gabe is nearby.
+
+00:07:06.786 --> 00:07:11.316 A:middle
+So what I want to do now is I
+want to invite Jeff and Gabe
+
+00:07:11.316 --> 00:07:14.746 A:middle
+into a session so we can start
+exchanging data with each other.
+
+00:07:15.346 --> 00:07:16.716 A:middle
+How I can do that?
+
+00:07:17.136 --> 00:07:22.546 A:middle
+Well I can invite them simply by
+tapping on their names on my UI.
+
+00:07:22.546 --> 00:07:23.606 A:middle
+So let's start with Jeff.
+
+00:07:24.536 --> 00:07:26.946 A:middle
+I tap on Jeff and as I do
+
+00:07:26.946 --> 00:07:30.386 A:middle
+so an invitation will
+be sent out to Jeff.
+
+00:07:33.076 --> 00:07:34.606 A:middle
+Then I will tap on Gabe
+
+00:07:34.606 --> 00:07:41.216 A:middle
+and an invitation will be
+sent out to Gabe as well.
+
+00:07:41.286 --> 00:07:43.456 A:middle
+When Jeff receives
+the invitation,
+
+00:07:43.956 --> 00:07:48.376 A:middle
+we will display an alert
+for you that notifies Jeff
+
+00:07:48.376 --> 00:07:50.116 A:middle
+that I want to connect to him.
+
+00:07:50.116 --> 00:07:53.446 A:middle
+At this point, Jeff has
+to decide whether he wants
+
+00:07:53.446 --> 00:07:55.376 A:middle
+to accept or decline
+my invitation.
+
+00:07:57.136 --> 00:07:59.066 A:middle
+Similar will happen to Gabe.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:08:00.136 --> 00:08:01.966 A:middle
+And let's now assume
+that both Jeff
+
+00:08:02.026 --> 00:08:03.846 A:middle
+and Gabe are willing
+to connect to me.
+
+00:08:04.206 --> 00:08:08.926 A:middle
+So they will tap on
+accept and as they tap
+
+00:08:08.926 --> 00:08:13.696 A:middle
+on accept an invitation
+response is sent back to me
+
+00:08:14.926 --> 00:08:16.196 A:middle
+and we start connecting.
+
+00:08:17.196 --> 00:08:20.176 A:middle
+On my UI, when we successfully
+connect to each other,
+
+00:08:20.176 --> 00:08:22.646 A:middle
+I will see that I have
+connected to Jeff and Gabe
+
+00:08:22.906 --> 00:08:24.506 A:middle
+and the Done button on the --
+
+00:08:24.506 --> 00:08:27.256 A:middle
+in the upper right
+corner becomes tappable.
+
+00:08:27.846 --> 00:08:30.556 A:middle
+So I can press the Done
+button to dismiss the UI
+
+00:08:31.646 --> 00:08:34.116 A:middle
+and start exchanging
+data with Jeff and Gabe.
+
+00:08:34.635 --> 00:08:41.116 A:middle
+So that was the flow
+of the discovery phase.
+
+00:08:41.316 --> 00:08:44.826 A:middle
+Let's now see how you guys can
+make this possible in your apps.
+
+00:08:45.956 --> 00:08:49.256 A:middle
+This slide here shows
+you the type of objects
+
+00:08:49.256 --> 00:08:51.276 A:middle
+that you will have to use to set
+
+00:08:51.276 --> 00:08:53.536 A:middle
+up the advertiser
+and the browser.
+
+00:08:54.496 --> 00:08:56.936 A:middle
+So let's start with
+the advertiser.
+
+00:08:56.936 --> 00:09:02.696 A:middle
+What are the tasks
+of the advertiser?
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:08:56.936 --> 00:09:02.696 A:middle
+What are the tasks
+of the advertiser?
+
+00:09:03.356 --> 00:09:07.696 A:middle
+Well, as we said, the advertiser
+has to make itself discoverable
+
+00:09:07.696 --> 00:09:09.026 A:middle
+to other nearby peers.
+
+00:09:10.256 --> 00:09:13.126 A:middle
+If an incoming -- if
+an invitation comes in,
+
+00:09:13.426 --> 00:09:16.686 A:middle
+the advertiser has to display
+that invitation to the user.
+
+00:09:16.876 --> 00:09:20.596 A:middle
+And when the user decides
+whether he wants to accept
+
+00:09:20.596 --> 00:09:23.506 A:middle
+or decline an invitation,
+the advertiser has
+
+00:09:23.536 --> 00:09:25.036 A:middle
+to handle that response.
+
+00:09:26.376 --> 00:09:30.856 A:middle
+Also, if the response was
+positive, it has to hook
+
+00:09:30.856 --> 00:09:33.006 A:middle
+up the nearby peer
+into a session.
+
+00:09:34.036 --> 00:09:36.026 A:middle
+So these are the tasks
+of the advertiser.
+
+00:09:37.916 --> 00:09:41.106 A:middle
+In code, what you
+have to do is you have
+
+00:09:41.106 --> 00:09:44.646 A:middle
+to identify yourself first or
+identify your device first.
+
+00:09:45.266 --> 00:09:48.786 A:middle
+And for that, we give you
+a class called MCPeerID.
+
+00:09:49.826 --> 00:09:52.016 A:middle
+To instantiate that
+class, you will have
+
+00:09:52.016 --> 00:09:54.996 A:middle
+to pass it one parameter,
+an NSString object,
+
+00:09:55.476 --> 00:09:58.726 A:middle
+which will specify the name that
+you want to use for your device.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:10:00.106 --> 00:10:03.166 A:middle
+I want to tell -- I want
+to note here that the name
+
+00:10:03.166 --> 00:10:05.856 A:middle
+that you specify here
+will also be the name
+
+00:10:05.856 --> 00:10:07.536 A:middle
+that the browser
+will see on their UI.
+
+00:10:07.536 --> 00:10:10.826 A:middle
+So I want to encourage you
+to keep this name short
+
+00:10:10.826 --> 00:10:12.596 A:middle
+so we won't have to
+truncate it in the UI.
+
+00:10:13.106 --> 00:10:18.436 A:middle
+Next, you will have to
+instantiate a session object.
+
+00:10:19.536 --> 00:10:22.186 A:middle
+The session object
+is of class MCSession
+
+00:10:22.556 --> 00:10:26.926 A:middle
+and it accepts one parameter,
+which is the MCPeerID Object
+
+00:10:26.926 --> 00:10:28.606 A:middle
+that we just instantiated
+earlier.
+
+00:10:29.996 --> 00:10:34.926 A:middle
+And also, the MCSession object
+has a delegate and you'll want
+
+00:10:34.926 --> 00:10:37.306 A:middle
+to set that delegate
+to get notified
+
+00:10:37.306 --> 00:10:41.286 A:middle
+of MCSession-related events.
+
+00:10:41.716 --> 00:10:46.636 A:middle
+Lastly, you'll want to use the
+MCAdvertiserAssistant object
+
+00:10:47.456 --> 00:10:50.906 A:middle
+and the MCAdvertiserAssistant
+object is instantiated
+
+00:10:50.906 --> 00:10:52.016 A:middle
+with three parameters.
+
+00:10:52.936 --> 00:10:55.386 A:middle
+The first one is a service type
+
+00:10:55.946 --> 00:10:57.896 A:middle
+and that's an NSString
+parameter.
+
+00:10:58.586 --> 00:11:03.326 A:middle
+A service type identifies
+the type of session
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:10:58.586 --> 00:11:03.326 A:middle
+A service type identifies
+the type of session
+
+00:11:03.566 --> 00:11:05.906 A:middle
+that the advertiser
+wants to participate in.
+
+00:11:07.376 --> 00:11:11.566 A:middle
+So I want to say that the
+service type is a Bonjour
+
+00:11:11.566 --> 00:11:15.656 A:middle
+service type and I
+encourage you to register it
+
+00:11:15.656 --> 00:11:17.076 A:middle
+as such once you've decided
+
+00:11:17.146 --> 00:11:19.696 A:middle
+which service type
+you want to use.
+
+00:11:20.036 --> 00:11:22.896 A:middle
+The second parameter is the
+discovery info and we'll talk
+
+00:11:22.896 --> 00:11:25.036 A:middle
+about discovery info
+in more detail later,
+
+00:11:25.356 --> 00:11:26.866 A:middle
+so let's just set
+that to nil for now.
+
+00:11:28.276 --> 00:11:31.346 A:middle
+The third parameter and the last
+parameter is the session object
+
+00:11:31.596 --> 00:11:32.976 A:middle
+that we instantiated earlier.
+
+00:11:34.416 --> 00:11:37.676 A:middle
+Once we've instantiated
+the advertiser assistant,
+
+00:11:38.016 --> 00:11:41.336 A:middle
+all we have to do is start it
+by calling the Start method.
+
+00:11:42.096 --> 00:11:43.136 A:middle
+And that's it.
+
+00:11:43.136 --> 00:11:44.656 A:middle
+We're done setting
+up the advertiser.
+
+00:11:48.356 --> 00:11:51.006 A:middle
+So let's take a look
+at the browser now.
+
+00:11:53.476 --> 00:11:55.936 A:middle
+So what are the tasks
+of the browser?
+
+00:11:56.736 --> 00:11:59.496 A:middle
+Well, the browser is
+searching for nearby peers
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:12:00.076 --> 00:12:02.156 A:middle
+and as it finds nearby peers,
+
+00:12:02.466 --> 00:12:04.616 A:middle
+it needs to present them
+to the user for you.
+
+00:12:05.846 --> 00:12:09.956 A:middle
+Once a user decides which
+peer they want to invite,
+
+00:12:10.556 --> 00:12:13.126 A:middle
+the browser has to send an
+invitation to that peer.
+
+00:12:13.156 --> 00:12:16.996 A:middle
+And when a response comes
+back, the browser has to handle
+
+00:12:16.996 --> 00:12:20.716 A:middle
+that invitation and in case
+the response was positive,
+
+00:12:21.006 --> 00:12:23.546 A:middle
+it needs to hook up that
+peer into a session.
+
+00:12:24.226 --> 00:12:28.256 A:middle
+So these are the
+tasks of a browser.
+
+00:12:28.386 --> 00:12:31.526 A:middle
+In code, the browser's
+setup is very similar
+
+00:12:31.526 --> 00:12:32.736 A:middle
+to the advertiser's setup.
+
+00:12:33.106 --> 00:12:35.826 A:middle
+The first two steps
+are exactly the same.
+
+00:12:36.296 --> 00:12:39.716 A:middle
+You need to instantiate an
+MCPeerID object and you need
+
+00:12:39.716 --> 00:12:41.776 A:middle
+to instantiate an
+MCSession object.
+
+00:12:43.136 --> 00:12:45.206 A:middle
+Then the last step is
+
+00:12:45.206 --> 00:12:49.826 A:middle
+to instantiate the
+MCBrowserViewController object
+
+00:12:50.396 --> 00:12:51.996 A:middle
+and you have to pass
+it two parameters.
+
+00:12:52.746 --> 00:12:56.276 A:middle
+The first one is a service
+type and that service type has
+
+00:12:56.336 --> 00:12:59.516 A:middle
+to be exactly the same as the
+service type that you specified
+
+00:12:59.516 --> 00:13:01.936 A:middle
+for the advertiser; namely,
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:12:59.516 --> 00:13:01.936 A:middle
+for the advertiser; namely,
+
+00:13:01.936 --> 00:13:04.806 A:middle
+a browser will only
+see those advertisers
+
+00:13:05.086 --> 00:13:07.666 A:middle
+that have the same service type.
+
+00:13:08.356 --> 00:13:10.656 A:middle
+The second parameter
+is the session object
+
+00:13:10.656 --> 00:13:11.926 A:middle
+that we just instantiated
+
+00:13:12.126 --> 00:13:14.546 A:middle
+and which you want the
+browser view controller to use.
+
+00:13:15.076 --> 00:13:20.016 A:middle
+Next, you will have to set
+the delegate on the browser
+
+00:13:20.016 --> 00:13:22.456 A:middle
+to get notified of
+browser-related events.
+
+00:13:23.666 --> 00:13:25.806 A:middle
+And when you set the
+delegate, you're ready
+
+00:13:25.806 --> 00:13:28.296 A:middle
+to present the browser
+view controller to the user
+
+00:13:29.126 --> 00:13:32.306 A:middle
+and as you do so, we will
+start browsing for you
+
+00:13:32.596 --> 00:13:34.206 A:middle
+and the rest will
+be user driven.
+
+00:13:34.206 --> 00:13:34.386 A:middle
+[ Silence ]
+
+00:13:34.386 --> 00:13:42.716 A:middle
+So at this point,
+we are presenting --
+
+00:13:42.716 --> 00:13:45.076 A:middle
+the framework is
+presenting the UI for you
+
+00:13:45.076 --> 00:13:48.146 A:middle
+and the user is choosing the
+users to invite and it's waiting
+
+00:13:48.146 --> 00:13:49.876 A:middle
+for invitation responses
+to come back.
+
+00:13:50.666 --> 00:13:54.316 A:middle
+Once the nearby peers have
+successfully connected
+
+00:13:54.316 --> 00:13:58.036 A:middle
+into a session you
+will see that the --
+
+00:13:58.036 --> 00:14:00.936 A:middle
+or the user will see that the
+Done button becomes enabled.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:13:58.036 --> 00:14:00.936 A:middle
+or the user will see that the
+Done button becomes enabled.
+
+00:14:01.416 --> 00:14:03.416 A:middle
+And when the user
+presses the Done button,
+
+00:14:03.506 --> 00:14:06.196 A:middle
+you will be notified
+via a delegate method
+
+00:14:06.306 --> 00:14:08.446 A:middle
+browserViewControllerDidFinish:.
+
+00:14:09.386 --> 00:14:12.216 A:middle
+Now inside that method, you will
+have the opportunity to prepare
+
+00:14:12.216 --> 00:14:13.896 A:middle
+for the session and you have
+
+00:14:13.896 --> 00:14:15.866 A:middle
+to dismiss the browser
+view controller UI.
+
+00:14:16.576 --> 00:14:23.596 A:middle
+So that's, again, the overview
+of classes that you have to use
+
+00:14:23.646 --> 00:14:25.256 A:middle
+to set up the discovery phase.
+
+00:14:27.496 --> 00:14:32.156 A:middle
+And now I want to tell you a
+bit more about how do you know
+
+00:14:32.156 --> 00:14:34.536 A:middle
+that the session objects
+connected with each other
+
+00:14:34.536 --> 00:14:37.426 A:middle
+and how do they even know
+who they want to connect to.
+
+00:14:39.116 --> 00:14:41.816 A:middle
+Well, let's assume we have
+a browser view controller
+
+00:14:41.816 --> 00:14:45.276 A:middle
+on one side and the advertiser
+assistant on the other side set
+
+00:14:45.276 --> 00:14:49.916 A:middle
+up and as peers get
+found and lost,
+
+00:14:50.246 --> 00:14:51.696 A:middle
+the browser view controller
+
+00:14:52.096 --> 00:14:55.326 A:middle
+and the advertiser assistant are
+communicating with each other.
+
+00:14:56.446 --> 00:15:00.606 A:middle
+Now the browser's session object
+will know who the browser wants
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:14:56.446 --> 00:15:00.606 A:middle
+Now the browser's session object
+will know who the browser wants
+
+00:15:00.606 --> 00:15:04.666 A:middle
+to connect to when the user
+taps on someone to invite.
+
+00:15:04.666 --> 00:15:07.326 A:middle
+So when an invitation
+is sent out.
+
+00:15:08.076 --> 00:15:11.326 A:middle
+The advertiser's
+session object will know
+
+00:15:11.326 --> 00:15:13.106 A:middle
+who the advertiser
+wants to connect
+
+00:15:13.176 --> 00:15:16.596 A:middle
+to when the user
+accepts an invitation.
+
+00:15:18.056 --> 00:15:21.786 A:middle
+When that happens, the two
+session objects will attempt
+
+00:15:21.786 --> 00:15:24.146 A:middle
+to establish a communication
+link with each other
+
+00:15:24.896 --> 00:15:29.206 A:middle
+and once they succeed, you
+will be notified via a session
+
+00:15:29.206 --> 00:15:32.986 A:middle
+delegate method
+peer:didChangeState:.
+
+00:15:34.356 --> 00:15:36.956 A:middle
+So let's take a look
+at this delegate method
+
+00:15:36.956 --> 00:15:38.136 A:middle
+in a bit more detail.
+
+00:15:38.636 --> 00:15:41.356 A:middle
+You can see it here
+on this slide,
+
+00:15:41.356 --> 00:15:43.466 A:middle
+session:peer:didChangeState:.
+
+00:15:44.156 --> 00:15:47.186 A:middle
+The second parameter will
+give you the peer ID object
+
+00:15:47.186 --> 00:15:49.026 A:middle
+of the peer who just
+changed state
+
+00:15:50.206 --> 00:15:52.786 A:middle
+and the state will tell
+you what the new state is.
+
+00:15:52.846 --> 00:15:57.396 A:middle
+If the connection was
+successfully established
+
+00:15:57.396 --> 00:16:00.216 A:middle
+between the two sessions,
+the state will
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:15:57.396 --> 00:16:00.216 A:middle
+between the two sessions,
+the state will
+
+00:16:00.216 --> 00:16:02.076 A:middle
+by MCSessionStateConnected.
+
+00:16:03.466 --> 00:16:06.256 A:middle
+And if something went wrong
+during the connection process
+
+00:16:06.716 --> 00:16:09.876 A:middle
+or if the advertiser
+declined an invitation,
+
+00:16:10.566 --> 00:16:17.136 A:middle
+the state will be
+MCSession Not Connected.
+
+00:16:17.176 --> 00:16:20.376 A:middle
+So to summarize, the
+discovery phase is really,
+
+00:16:20.456 --> 00:16:22.556 A:middle
+really easy to set up.
+
+00:16:22.826 --> 00:16:26.076 A:middle
+All you have to do is
+instantiate an advertiser
+
+00:16:26.076 --> 00:16:27.936 A:middle
+assistant and start it.
+
+00:16:29.286 --> 00:16:32.286 A:middle
+Then you have to instantiate
+the browser view controller
+
+00:16:32.826 --> 00:16:34.086 A:middle
+and present it to the user.
+
+00:16:35.116 --> 00:16:38.376 A:middle
+And the rest of the process
+will be entirely user driven.
+
+00:16:39.306 --> 00:16:42.236 A:middle
+All you have to do is wait
+for the session callbacks
+
+00:16:42.576 --> 00:16:45.546 A:middle
+to tell you when the session
+has successfully connected
+
+00:16:45.626 --> 00:16:46.736 A:middle
+to your nearby peers.
+
+00:16:51.096 --> 00:16:59.056 A:middle
+Okay, so let's move on
+to the session phase now.
+
+00:16:59.286 --> 00:17:02.866 A:middle
+Now we assume that we have
+multiple nearby peers connected
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:16:59.286 --> 00:17:02.866 A:middle
+Now we assume that we have
+multiple nearby peers connected
+
+00:17:02.866 --> 00:17:05.846 A:middle
+with each other and they
+want to exchange data.
+
+00:17:06.596 --> 00:17:12.376 A:middle
+So let's take a look at
+how you guys can do this.
+
+00:17:12.566 --> 00:17:18.576 A:middle
+We provide three sets of send
+data APIs for you: messages,
+
+00:17:20.306 --> 00:17:23.856 A:middle
+streaming, and resources.
+
+00:17:24.486 --> 00:17:30.816 A:middle
+So let's start with messages.
+
+00:17:30.896 --> 00:17:35.126 A:middle
+By message I mean a chunk
+of data, any chunk of data,
+
+00:17:35.676 --> 00:17:37.566 A:middle
+with well-defined boundaries.
+
+00:17:38.376 --> 00:17:41.226 A:middle
+So it's very clear
+where the message ends,
+
+00:17:41.796 --> 00:17:46.076 A:middle
+where the message starts,
+and where the message ends.
+
+00:17:46.076 --> 00:17:48.846 A:middle
+So if you send a
+message in one call,
+
+00:17:50.156 --> 00:17:52.856 A:middle
+you will also receive
+a message in one call.
+
+00:17:54.596 --> 00:17:58.396 A:middle
+We provide two different modes
+to send messages for you.
+
+00:17:59.506 --> 00:18:03.336 A:middle
+The first one is the reliable
+mode and you will want
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:17:59.506 --> 00:18:03.336 A:middle
+The first one is the reliable
+mode and you will want
+
+00:18:03.336 --> 00:18:07.036 A:middle
+to use the reliable mode for
+application-critical data.
+
+00:18:08.576 --> 00:18:10.756 A:middle
+If you send a message
+in the reliable mode
+
+00:18:11.056 --> 00:18:13.466 A:middle
+and something happens to
+the message along the way,
+
+00:18:13.806 --> 00:18:15.776 A:middle
+for instance, if
+it gets dropped,
+
+00:18:16.096 --> 00:18:19.136 A:middle
+the framework will
+retransmit the message for you.
+
+00:18:20.816 --> 00:18:24.856 A:middle
+Also, if you send
+multiple messages in a row,
+
+00:18:24.856 --> 00:18:27.656 A:middle
+the framework will make
+sure that the recipient
+
+00:18:27.656 --> 00:18:29.756 A:middle
+of the message will
+get them in order.
+
+00:18:32.746 --> 00:18:36.466 A:middle
+Alternatively, you can
+use the unreliable mode
+
+00:18:37.536 --> 00:18:40.836 A:middle
+and we encourage you to
+use the unreliable mode
+
+00:18:40.836 --> 00:18:42.476 A:middle
+for time-sensitive data.
+
+00:18:44.086 --> 00:18:46.596 A:middle
+So if you use the
+unreliable mode,
+
+00:18:46.996 --> 00:18:51.196 A:middle
+the framework will make best
+effort to deliver your messages
+
+00:18:51.276 --> 00:18:53.316 A:middle
+as soon as possible
+to the recipient.
+
+00:18:53.826 --> 00:18:56.636 A:middle
+So the -- so with the
+smallest possible latency.
+
+00:18:57.726 --> 00:19:01.206 A:middle
+However, you should know that
+if something happens to messages
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:18:57.726 --> 00:19:01.206 A:middle
+However, you should know that
+if something happens to messages
+
+00:19:01.206 --> 00:19:05.196 A:middle
+that were sent in the unreliable
+Mode, we will make no attempts
+
+00:19:05.196 --> 00:19:06.796 A:middle
+to retransmit that
+message for you.
+
+00:19:08.126 --> 00:19:11.196 A:middle
+Also, if you send
+multiple messages in a row,
+
+00:19:11.376 --> 00:19:14.866 A:middle
+we give you no guarantees that
+they will be delivered in order.
+
+00:19:16.136 --> 00:19:19.826 A:middle
+So these are the two modes,
+reliable and unreliable.
+
+00:19:21.216 --> 00:19:23.756 A:middle
+Let's take a look at the APIs
+that you will have to use.
+
+00:19:24.376 --> 00:19:25.536 A:middle
+It's really, really simple.
+
+00:19:26.546 --> 00:19:29.476 A:middle
+To send a message, you
+will invoke a method called
+
+00:19:29.596 --> 00:19:33.896 A:middle
+sendData:toPeers:withMode:
+and error:.
+
+00:19:34.986 --> 00:19:38.166 A:middle
+The first parameter will be
+where you place you message
+
+00:19:38.506 --> 00:19:40.846 A:middle
+and that's an NSData
+object, so you will have
+
+00:19:40.886 --> 00:19:44.216 A:middle
+to encapsulate your
+messages into NSData objects.
+
+00:19:46.136 --> 00:19:50.566 A:middle
+The second parameter is an
+NSArray and you will have
+
+00:19:50.596 --> 00:19:56.086 A:middle
+to pass it an array of peer
+IDs that designate peers
+
+00:19:56.086 --> 00:19:58.046 A:middle
+that you want to
+send a message to.
+
+00:19:58.896 --> 00:20:02.056 A:middle
+If you want to -- if you want
+to get a handle of all peers
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:19:58.896 --> 00:20:02.056 A:middle
+If you want to -- if you want
+to get a handle of all peers
+
+00:20:02.056 --> 00:20:03.846 A:middle
+that are currently
+connected in your session,
+
+00:20:04.196 --> 00:20:07.516 A:middle
+you can do so by invoking
+connectedPeers method
+
+00:20:07.556 --> 00:20:08.686 A:middle
+on your session object.
+
+00:20:09.156 --> 00:20:11.816 A:middle
+The third parameter
+will be the mode,
+
+00:20:12.356 --> 00:20:16.026 A:middle
+which we discussed earlier,
+either reliable or unreliable.
+
+00:20:17.306 --> 00:20:20.016 A:middle
+And the fourth parameter
+will be an error parameter.
+
+00:20:20.016 --> 00:20:23.576 A:middle
+It's an output parameter that
+the framework will set for you
+
+00:20:23.906 --> 00:20:26.886 A:middle
+in case something goes wrong
+when you make the call.
+
+00:20:26.886 --> 00:20:32.116 A:middle
+I want to stress here that
+send data returns immediately.
+
+00:20:32.116 --> 00:20:35.026 A:middle
+It's a nonblocking call, so
+it will return immediately.
+
+00:20:35.026 --> 00:20:37.086 A:middle
+It won't wait until
+the data is delivered
+
+00:20:37.086 --> 00:20:40.786 A:middle
+or something like that.
+
+00:20:40.996 --> 00:20:43.296 A:middle
+On the receiver's side,
+when the message comes in,
+
+00:20:43.626 --> 00:20:46.886 A:middle
+the receiver will be notified
+via a session delegate method,
+
+00:20:47.356 --> 00:20:49.806 A:middle
+session:did
+ReceiveData:fromPeer:,
+
+00:20:50.836 --> 00:20:53.896 A:middle
+and the second parameter
+will be an NSData object,
+
+00:20:53.976 --> 00:20:56.276 A:middle
+which will be exactly
+the same as the one
+
+00:20:56.276 --> 00:20:58.006 A:middle
+that was specified
+by the sender.
+
+00:20:58.516 --> 00:21:02.426 A:middle
+And the third parameter
+will be the peer ID
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:20:58.516 --> 00:21:02.426 A:middle
+And the third parameter
+will be the peer ID
+
+00:21:02.696 --> 00:21:03.856 A:middle
+of the sender of the message.
+
+00:21:04.586 --> 00:21:06.866 A:middle
+So it's that simple
+to send messages.
+
+00:21:07.376 --> 00:21:12.706 A:middle
+Next, let's take a
+look at streaming APIs.
+
+00:21:16.696 --> 00:21:19.516 A:middle
+To start a stream
+with another peer,
+
+00:21:19.936 --> 00:21:24.816 A:middle
+you'll have to call the method
+startStreamWithName:toPeer:
+
+00:21:25.236 --> 00:21:25.826 A:middle
+and error:.
+
+00:21:27.026 --> 00:21:30.196 A:middle
+So in the first parameter you
+will have to specify a name
+
+00:21:30.196 --> 00:21:31.816 A:middle
+for the stream that
+you are trying to open.
+
+00:21:32.636 --> 00:21:35.436 A:middle
+And this name is going
+to be an NSString object.
+
+00:21:36.796 --> 00:21:40.106 A:middle
+Second parameter will be the
+peer ID of the peer you want
+
+00:21:40.106 --> 00:21:41.926 A:middle
+to send -- you want
+to stream data to.
+
+00:21:42.876 --> 00:21:44.606 A:middle
+And the third one
+will be like before,
+
+00:21:44.606 --> 00:21:46.996 A:middle
+an output error parameter
+that we will set --
+
+00:21:46.996 --> 00:21:49.316 A:middle
+the framework will set, in
+case something goes wrong.
+
+00:21:50.576 --> 00:21:53.886 A:middle
+Just like the sendData:
+method, startStreamWithName:
+
+00:21:54.146 --> 00:21:56.666 A:middle
+is nonblocking and it
+will return immediately.
+
+00:21:57.396 --> 00:22:01.186 A:middle
+As it returns, it will give
+you an NSOutputStream object
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:21:57.396 --> 00:22:01.186 A:middle
+As it returns, it will give
+you an NSOutputStream object
+
+00:22:01.186 --> 00:22:05.286 A:middle
+that you will be able to use to
+stream data to the recipient.
+
+00:22:05.796 --> 00:22:10.846 A:middle
+On the other side, when
+the streaming request comes
+
+00:22:10.846 --> 00:22:15.006 A:middle
+in at the receiver, the receiver
+is notified via this delegate
+
+00:22:15.006 --> 00:22:18.746 A:middle
+method, session:did
+ReceiveStream:WithName:
+
+00:22:19.086 --> 00:22:19.856 A:middle
+and fromPeer:.
+
+00:22:21.076 --> 00:22:23.876 A:middle
+The second parameter will
+be an NSInputStream object
+
+00:22:23.976 --> 00:22:26.356 A:middle
+that the recipient can
+use to receive data.
+
+00:22:27.906 --> 00:22:30.666 A:middle
+The third parameter will
+be the name for the stream
+
+00:22:30.666 --> 00:22:31.946 A:middle
+that the sender specified.
+
+00:22:31.946 --> 00:22:38.596 A:middle
+And the fourth parameter will
+be the peer ID of the sender.
+
+00:22:38.986 --> 00:22:41.626 A:middle
+Once both sender and the
+recipient have a handle
+
+00:22:41.926 --> 00:22:45.606 A:middle
+on the stream objects, they'll
+have to set the delegate
+
+00:22:45.606 --> 00:22:49.196 A:middle
+on them, they'll have to
+schedule them in a run loop,
+
+00:22:49.956 --> 00:22:51.526 A:middle
+and they will have
+to call open on them.
+
+00:22:52.946 --> 00:22:54.136 A:middle
+Of course, they will also have
+
+00:22:54.136 --> 00:22:56.326 A:middle
+to implement NSStringDelegate
+methods
+
+00:22:56.386 --> 00:22:57.426 A:middle
+to send and receive data.
+
+00:22:59.656 --> 00:23:01.686 A:middle
+So that was streaming.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:22:59.656 --> 00:23:01.686 A:middle
+So that was streaming.
+
+00:23:02.736 --> 00:23:05.566 A:middle
+And lastly, let's take
+a look at resource APIs.
+
+00:23:07.056 --> 00:23:10.336 A:middle
+So we provide support for
+sending resources for you
+
+00:23:11.476 --> 00:23:14.666 A:middle
+and we provide support
+for sending files
+
+00:23:15.426 --> 00:23:17.186 A:middle
+and for sending web URLs.
+
+00:23:18.316 --> 00:23:21.016 A:middle
+So let's see how you guys
+can implement that in code.
+
+00:23:22.856 --> 00:23:24.746 A:middle
+To send a resource to someone,
+
+00:23:24.746 --> 00:23:27.846 A:middle
+you will call a method
+sendResourceAt
+
+00:23:27.846 --> 00:23:32.146 A:middle
+URL:withName:toPeer:
+and you will have
+
+00:23:32.146 --> 00:23:33.396 A:middle
+to pass a completion handler.
+
+00:23:34.636 --> 00:23:37.666 A:middle
+The URL will be the URL of the
+resource that you want to send.
+
+00:23:38.196 --> 00:23:41.056 A:middle
+This will be either
+a file or a web URL.
+
+00:23:42.316 --> 00:23:46.446 A:middle
+If you specify a web URL here,
+the framework will go ahead
+
+00:23:46.446 --> 00:23:48.516 A:middle
+and fetch the contents
+of that URL
+
+00:23:48.886 --> 00:23:50.186 A:middle
+and send it to the recipient.
+
+00:23:51.636 --> 00:23:55.046 A:middle
+The second parameter will be an
+NSString, which will be the name
+
+00:23:55.046 --> 00:23:56.356 A:middle
+for this resource transfer.
+
+00:23:56.916 --> 00:24:00.466 A:middle
+The third parameter will be
+the peer ID of the recipient.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:23:56.916 --> 00:24:00.466 A:middle
+The third parameter will be
+the peer ID of the recipient.
+
+00:24:01.506 --> 00:24:03.976 A:middle
+And the fourth one will be
+the -- a completion handler,
+
+00:24:04.386 --> 00:24:05.706 A:middle
+which the framework will call
+
+00:24:05.706 --> 00:24:10.286 A:middle
+for you once the resource has
+been successfully transmitted
+
+00:24:10.346 --> 00:24:12.336 A:middle
+to the recipient.
+
+00:24:12.336 --> 00:24:14.726 A:middle
+Also, the framework will
+call the completion handler
+
+00:24:14.726 --> 00:24:15.796 A:middle
+in case something goes wrong.
+
+00:24:16.256 --> 00:24:17.336 A:middle
+So in both of these cases,
+
+00:24:17.336 --> 00:24:18.586 A:middle
+the completion handler
+will be called.
+
+00:24:19.086 --> 00:24:23.666 A:middle
+Like the previous two
+methods, sendResourceAtURL:
+
+00:24:23.666 --> 00:24:26.496 A:middle
+is nonblocking and it
+will return immediately.
+
+00:24:27.306 --> 00:24:31.486 A:middle
+As it returns, it will pass
+to you an NSProgress object.
+
+00:24:32.876 --> 00:24:37.766 A:middle
+NSProgress is a new class
+in Foundation in iOS 7
+
+00:24:37.766 --> 00:24:41.706 A:middle
+and it will enable you
+to query current progress
+
+00:24:42.046 --> 00:24:43.006 A:middle
+of the transmission.
+
+00:24:44.646 --> 00:24:46.866 A:middle
+Also, it will give
+you the ability
+
+00:24:46.866 --> 00:24:52.116 A:middle
+to cancel the transmission
+if you desire to do so.
+
+00:24:52.296 --> 00:24:54.896 A:middle
+So let's take a look at what
+happens on the recipient's side.
+
+00:24:55.956 --> 00:24:57.166 A:middle
+When the resource gets --
+
+00:24:57.166 --> 00:24:59.216 A:middle
+when it starts receiving
+the resource,
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:25:00.016 --> 00:25:04.076 A:middle
+the receiver's delegate
+method will be notified via
+
+00:25:04.186 --> 00:25:09.356 A:middle
+didStartReceivingResource
+WithName:fromPeer:withProgress:.
+
+00:25:10.586 --> 00:25:13.336 A:middle
+The second parameter will be a
+name that the sender specified.
+
+00:25:14.056 --> 00:25:16.086 A:middle
+FromPeer: will be
+the ID of the sender.
+
+00:25:17.036 --> 00:25:19.376 A:middle
+And withProgress: will
+be an NSProgress object
+
+00:25:19.376 --> 00:25:22.976 A:middle
+that the recipient can use
+to monitor current progress
+
+00:25:23.066 --> 00:25:24.886 A:middle
+or to cancel transmission.
+
+00:25:26.456 --> 00:25:30.506 A:middle
+And when the framework finishes
+transmitting the resource,
+
+00:25:30.836 --> 00:25:34.056 A:middle
+the receiver's delegate
+will be notified via
+
+00:25:34.056 --> 00:25:37.456 A:middle
+didFinishReceivingResource
+WithName:fromPeer
+
+00:25:37.546 --> 00:25:39.726 A:middle
+:atURL:withError: method.
+
+00:25:40.696 --> 00:25:42.596 A:middle
+Again, the second
+parameter will be a name.
+
+00:25:43.516 --> 00:25:46.676 A:middle
+The third parameter will
+be the ID of the sender.
+
+00:25:47.896 --> 00:25:51.036 A:middle
+The fourth parameter
+will be the URL
+
+00:25:51.526 --> 00:25:56.116 A:middle
+where the framework saved the
+resource locally on the device.
+
+00:25:57.706 --> 00:26:00.496 A:middle
+And the last parameter
+will be an error
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:25:57.706 --> 00:26:00.496 A:middle
+And the last parameter
+will be an error
+
+00:26:00.496 --> 00:26:03.326 A:middle
+that the framework will set
+in case something goes wrong.
+
+00:26:04.736 --> 00:26:07.316 A:middle
+So again, this callback
+will be called in two cases,
+
+00:26:07.806 --> 00:26:11.726 A:middle
+if the resource has been
+successfully transmitted
+
+00:26:12.876 --> 00:26:15.286 A:middle
+or if something went wrong.
+
+00:26:15.506 --> 00:26:18.116 A:middle
+In that case, an error
+parameter will be set for you
+
+00:26:18.116 --> 00:26:20.016 A:middle
+so that you will know
+that something went wrong.
+
+00:26:20.576 --> 00:26:27.516 A:middle
+So these are the APIs to send
+data that we provide for you.
+
+00:26:28.366 --> 00:26:35.326 A:middle
+We have messages,
+streaming, and resources.
+
+00:26:35.766 --> 00:26:41.996 A:middle
+And with that out of the way, I
+want to tell you something cool
+
+00:26:42.186 --> 00:26:45.786 A:middle
+that Multipeer Connectivity
+provides for you at no cost.
+
+00:26:46.086 --> 00:26:47.496 A:middle
+You don't have to do anything
+
+00:26:47.796 --> 00:26:51.346 A:middle
+to make this functionality
+possible in your apps.
+
+00:26:51.916 --> 00:26:54.346 A:middle
+So let's assume we
+have three devices,
+
+00:26:54.346 --> 00:26:57.466 A:middle
+just like on this slide, that
+want to connect to each other
+
+00:26:57.466 --> 00:26:59.116 A:middle
+and exchange data with
+each other [coughing].
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:27:01.076 --> 00:27:05.176 A:middle
+Okay, so let's also
+assume that the device
+
+00:27:05.176 --> 00:27:10.776 A:middle
+on the left has Bluetooth
+on and also has Wi-Fi on.
+
+00:27:11.356 --> 00:27:15.546 A:middle
+The device on top will have only
+Bluetooth on, so Wi-Fi's off.
+
+00:27:15.546 --> 00:27:20.736 A:middle
+And the device on the right will
+have Wi-Fi on and no Bluetooth.
+
+00:27:22.076 --> 00:27:26.296 A:middle
+So you would think that the
+device on top and the device
+
+00:27:26.296 --> 00:27:28.786 A:middle
+on the right cannot
+communicate with each other
+
+00:27:28.786 --> 00:27:30.696 A:middle
+because they don't share
+a common interface.
+
+00:27:31.796 --> 00:27:34.016 A:middle
+Bluetooth and Wi-Fi
+cannot communicate directly
+
+00:27:34.016 --> 00:27:38.706 A:middle
+with each other, but Multipeer
+Connectivity has infrastructure
+
+00:27:39.126 --> 00:27:43.236 A:middle
+built-in that will -- that will
+enable these devices to be aware
+
+00:27:43.236 --> 00:27:46.146 A:middle
+of each other, even if they
+don't share a common interface
+
+00:27:46.556 --> 00:27:48.396 A:middle
+and this will be done
+through the device
+
+00:27:48.796 --> 00:27:50.756 A:middle
+that has both interfaces
+available.
+
+00:27:50.756 --> 00:27:51.296 A:middle
+[ Applause ]
+
+00:27:51.296 --> 00:28:01.176 A:middle
+So we will make sure
+they're aware of each other
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:27:51.296 --> 00:28:01.176 A:middle
+So we will make sure
+they're aware of each other
+
+00:28:01.176 --> 00:28:03.946 A:middle
+and if the device on the
+right wants to send messages
+
+00:28:03.946 --> 00:28:06.786 A:middle
+to the device on
+top we will do --
+
+00:28:06.866 --> 00:28:09.476 A:middle
+do so for you through
+the device on the left.
+
+00:28:09.536 --> 00:28:10.996 A:middle
+So they will be able
+
+00:28:10.996 --> 00:28:12.786 A:middle
+to seamlessly communicate
+with each other.
+
+00:28:13.676 --> 00:28:15.426 A:middle
+So we think this is really cool.
+
+00:28:17.696 --> 00:28:20.606 A:middle
+To disconnect from a
+session, all you have to do --
+
+00:28:20.606 --> 00:28:23.226 A:middle
+to disconnect yourself
+from a session all you have
+
+00:28:23.226 --> 00:28:25.056 A:middle
+to do is call the
+disconnect method.
+
+00:28:25.826 --> 00:28:29.326 A:middle
+And in case someone else
+disconnects from a session,
+
+00:28:29.736 --> 00:28:33.676 A:middle
+you will be notified via
+a session delegate method
+
+00:28:33.766 --> 00:28:38.006 A:middle
+session:peer:didChangeState:,
+which we're now familiar with.
+
+00:28:39.266 --> 00:28:42.196 A:middle
+The state will be
+MCSessionStateNotConnected
+
+00:28:42.326 --> 00:28:45.446 A:middle
+if someone disconnects.
+
+00:28:45.446 --> 00:28:50.116 A:middle
+So the session phase summary,
+we've described three sets
+
+00:28:50.116 --> 00:28:52.906 A:middle
+of data -- of send
+data APIs for you.
+
+00:28:53.406 --> 00:28:54.966 A:middle
+We have support for messages
+
+00:28:55.766 --> 00:28:58.916 A:middle
+and we support reliable
+and unreliable mode.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:29:00.136 --> 00:29:01.606 A:middle
+We have support for streaming.
+
+00:29:02.976 --> 00:29:05.256 A:middle
+And we have support
+for sending resources.
+
+00:29:09.196 --> 00:29:10.656 A:middle
+And that's really it [applause].
+
+00:29:15.816 --> 00:29:19.346 A:middle
+So that's all you need to
+do to make this possible
+
+00:29:19.346 --> 00:29:22.906 A:middle
+and have multiple nearby
+peers connect with each other
+
+00:29:22.906 --> 00:29:24.656 A:middle
+and exchange data
+with each other.
+
+00:29:24.986 --> 00:29:26.196 A:middle
+It's really that easy.
+
+00:29:27.026 --> 00:29:29.396 A:middle
+In the discovery
+phase, all you have
+
+00:29:29.466 --> 00:29:32.576 A:middle
+to do is instantiate
+an advertiser assistant
+
+00:29:33.066 --> 00:29:33.686 A:middle
+and start it.
+
+00:29:34.966 --> 00:29:36.596 A:middle
+The -- on the browser side,
+
+00:29:36.596 --> 00:29:39.166 A:middle
+you have to instantiate
+the browser view controller
+
+00:29:39.166 --> 00:29:41.766 A:middle
+and present it to
+the user and the rest
+
+00:29:41.766 --> 00:29:44.426 A:middle
+of the process will
+be entirely driven
+
+00:29:44.426 --> 00:29:46.256 A:middle
+by the user and the framework.
+
+00:29:47.346 --> 00:29:51.356 A:middle
+Once your peers connect into
+a session, you can use one
+
+00:29:51.356 --> 00:29:54.356 A:middle
+of the send data APIs
+to send messages,
+
+00:29:54.786 --> 00:29:57.676 A:middle
+stream data, or send resources.
+
+00:29:58.166 --> 00:30:02.846 A:middle
+And that wraps up
+the essentials.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:29:58.166 --> 00:30:02.846 A:middle
+And that wraps up
+the essentials.
+
+00:30:02.846 --> 00:30:02.913 A:middle
+[ Applause ]
+
+00:30:02.913 --> 00:30:14.596 A:middle
+So let's move on and let's take
+a look at some advanced topics.
+
+00:30:14.756 --> 00:30:20.626 A:middle
+I want to start with
+programatic discovery.
+
+00:30:20.986 --> 00:30:24.236 A:middle
+So what programatic discovery
+will enable you to do,
+
+00:30:24.536 --> 00:30:27.966 A:middle
+it will enable you to handle
+events like found peer,
+
+00:30:28.346 --> 00:30:32.606 A:middle
+lost peer, and actions
+like sending invitations,
+
+00:30:32.866 --> 00:30:34.176 A:middle
+responding invitations.
+
+00:30:34.446 --> 00:30:35.856 A:middle
+It will make it possible for you
+
+00:30:35.856 --> 00:30:37.816 A:middle
+to handle these things
+programatically.
+
+00:30:38.436 --> 00:30:42.066 A:middle
+So this will give you a lot of
+flexibility and will enable you
+
+00:30:42.066 --> 00:30:45.246 A:middle
+to build custom UIs for
+the discovery phase,
+
+00:30:45.616 --> 00:30:46.806 A:middle
+if you choose to do so.
+
+00:30:48.006 --> 00:30:50.546 A:middle
+So let's take a look
+at how you can do this.
+
+00:30:51.216 --> 00:30:54.996 A:middle
+To set up an advertiser,
+
+00:30:55.316 --> 00:30:59.736 A:middle
+you will use an
+MCNearbyServiceAdvertiser object
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:31:00.436 --> 00:31:02.776 A:middle
+and you will have to
+pass it three parameters.
+
+00:31:03.556 --> 00:31:07.206 A:middle
+The first one will be a peer ID
+that we're now familiar with.
+
+00:31:07.736 --> 00:31:12.266 A:middle
+And the second one will be
+discovery info that I want
+
+00:31:12.266 --> 00:31:13.796 A:middle
+to cover in a bit
+more detail now.
+
+00:31:14.966 --> 00:31:18.086 A:middle
+So discovery info is
+an NSDictionary object
+
+00:31:18.086 --> 00:31:21.516 A:middle
+that you can set and it's going
+to be a set of key-value pairs.
+
+00:31:22.446 --> 00:31:25.066 A:middle
+This set of key-value
+pairs will be added
+
+00:31:25.196 --> 00:31:28.616 A:middle
+to the advertiser's
+Bonjour TXT record.
+
+00:31:29.356 --> 00:31:32.506 A:middle
+That means that when the
+browser sees this advertiser,
+
+00:31:32.506 --> 00:31:34.966 A:middle
+it will see this
+information along with the --
+
+00:31:35.326 --> 00:31:37.226 A:middle
+with the fact that
+it discovered it.
+
+00:31:38.036 --> 00:31:40.566 A:middle
+The third parameter
+is a service type
+
+00:31:40.566 --> 00:31:42.516 A:middle
+and we all know what
+service type now is.
+
+00:31:42.516 --> 00:31:47.886 A:middle
+You'll have to set a delegate on
+the advertiser to get notified
+
+00:31:47.886 --> 00:31:49.426 A:middle
+of advertiser-related events
+
+00:31:50.706 --> 00:31:53.366 A:middle
+and to start advertising
+you will call
+
+00:31:53.366 --> 00:31:55.096 A:middle
+startAdvertisingPeer method.
+
+00:31:55.656 --> 00:32:02.566 A:middle
+On the browser side, you will
+need an MCNearbyServiceBrowser
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:31:55.656 --> 00:32:02.566 A:middle
+On the browser side, you will
+need an MCNearbyServiceBrowser
+
+00:32:02.566 --> 00:32:05.076 A:middle
+object and to instantiate
+it you will need
+
+00:32:05.076 --> 00:32:06.266 A:middle
+to pass it two parameters.
+
+00:32:06.606 --> 00:32:08.176 A:middle
+First one will be the peer ID
+
+00:32:09.376 --> 00:32:12.996 A:middle
+and the second one will be
+a service type, which again,
+
+00:32:13.116 --> 00:32:15.356 A:middle
+I would like to emphasize
+that the two service types,
+
+00:32:15.426 --> 00:32:18.286 A:middle
+the one that the advertiser
+specifies and the one
+
+00:32:18.286 --> 00:32:20.966 A:middle
+that the browser specifies
+they need to be the same,
+
+00:32:20.966 --> 00:32:23.636 A:middle
+otherwise they won't
+see each other.
+
+00:32:23.886 --> 00:32:25.986 A:middle
+Also, you will need to set
+the delegate on the browser
+
+00:32:26.536 --> 00:32:28.476 A:middle
+and to start browsing,
+you will have
+
+00:32:28.516 --> 00:32:31.686 A:middle
+to call startBrowsingForPeers
+method.
+
+00:32:32.956 --> 00:32:36.206 A:middle
+So let's now go through
+the flow if you choose
+
+00:32:36.206 --> 00:32:37.586 A:middle
+to do programatic discovery.
+
+00:32:38.196 --> 00:32:42.636 A:middle
+We have three devices here.
+
+00:32:42.866 --> 00:32:44.696 A:middle
+The device on the left
+will be the browser.
+
+00:32:46.576 --> 00:32:48.266 A:middle
+The device in the
+middle and the device
+
+00:32:48.266 --> 00:32:49.946 A:middle
+on the right will
+be advertisers.
+
+00:32:50.426 --> 00:32:54.736 A:middle
+When the browser
+discovers an advertiser,
+
+00:32:55.266 --> 00:33:00.166 A:middle
+the browser's delegate
+method will be notified via a
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:32:55.266 --> 00:33:00.166 A:middle
+the browser's delegate
+method will be notified via a
+
+00:33:00.166 --> 00:33:04.606 A:middle
+foundPeer:withDiscoveryInfo:
+callback.
+
+00:33:07.196 --> 00:33:11.396 A:middle
+This same callback will be
+called every time an advertiser
+
+00:33:11.396 --> 00:33:12.106 A:middle
+is discovered.
+
+00:33:14.176 --> 00:33:15.816 A:middle
+So let's take a look
+at how it looks.
+
+00:33:15.996 --> 00:33:18.766 A:middle
+This is the callback
+browser:found
+
+00:33:18.906 --> 00:33:21.096 A:middle
+Peer:withDiscoveryInfo:.
+
+00:33:21.546 --> 00:33:23.956 A:middle
+The second parameter will
+give you the peer ID object
+
+00:33:23.996 --> 00:33:25.616 A:middle
+of the peer that
+just got discovered.
+
+00:33:26.646 --> 00:33:29.126 A:middle
+And the third parameter
+will be the discovery info
+
+00:33:29.126 --> 00:33:30.276 A:middle
+that we talked about before.
+
+00:33:30.556 --> 00:33:32.796 A:middle
+So if advertiser
+set discovery info,
+
+00:33:33.056 --> 00:33:37.466 A:middle
+the browser will get copied
+version of that dictionary once
+
+00:33:37.466 --> 00:33:39.266 A:middle
+that callback is called.
+
+00:33:41.336 --> 00:33:44.696 A:middle
+In case a peer will
+get lost, for instance,
+
+00:33:44.696 --> 00:33:46.806 A:middle
+if it goes out of
+range of the browser,
+
+00:33:47.386 --> 00:33:49.796 A:middle
+then you will get
+notified via a delegate
+
+00:33:49.796 --> 00:33:51.756 A:middle
+method browser:lostPeer:.
+
+00:33:55.316 --> 00:34:00.196 A:middle
+So now let's assume that the
+browser knows which peers are
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:33:55.316 --> 00:34:00.196 A:middle
+So now let's assume that the
+browser knows which peers are
+
+00:34:00.196 --> 00:34:03.156 A:middle
+around and you want -- what
+you want to do now is you want
+
+00:34:03.156 --> 00:34:05.146 A:middle
+to send invitations
+to these peers
+
+00:34:05.146 --> 00:34:07.536 A:middle
+to start communicating
+with them.
+
+00:34:07.856 --> 00:34:10.636 A:middle
+Well, to send an invitation,
+a browser will have
+
+00:34:10.706 --> 00:34:14.196 A:middle
+to call invitePeer:toSession:
+method.
+
+00:34:15.065 --> 00:34:20.806 A:middle
+And as it does so, an invitation
+will be sent out to that peer.
+
+00:34:21.025 --> 00:34:24.045 A:middle
+When the advertisers -- when
+the advertiser receives the
+
+00:34:24.045 --> 00:34:28.505 A:middle
+invitation, the advertiser's
+delegate will be notified via a
+
+00:34:28.505 --> 00:34:31.636 A:middle
+delegate method
+didReceiveInvitationFromPeer:
+
+00:34:32.686 --> 00:34:35.266 A:middle
+and the advertiser will be
+passed an invitation handler.
+
+00:34:35.766 --> 00:34:41.556 A:middle
+Same thing happens when we
+want to invite the advertiser
+
+00:34:41.556 --> 00:34:45.706 A:middle
+on the right and when it gets
+the invitation, it gets notified
+
+00:34:45.775 --> 00:34:47.146 A:middle
+with the same callback method.
+
+00:34:47.716 --> 00:34:52.356 A:middle
+And at this point, the
+advertiser will probably want
+
+00:34:52.356 --> 00:34:55.926 A:middle
+to consult the user whether
+the user wants to accept
+
+00:34:55.926 --> 00:34:57.116 A:middle
+or decline an invitation.
+
+00:34:58.236 --> 00:35:01.896 A:middle
+And once it does so, once we
+know whether an invitation is
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:34:58.236 --> 00:35:01.896 A:middle
+And once it does so, once we
+know whether an invitation is
+
+00:35:01.896 --> 00:35:05.386 A:middle
+to be accepted or declined,
+the advertisers have
+
+00:35:05.446 --> 00:35:09.056 A:middle
+to call the invitation handler
+that was just passed to them.
+
+00:35:10.396 --> 00:35:13.626 A:middle
+So assuming that the answer was
+yes, you will have to specify
+
+00:35:13.626 --> 00:35:15.656 A:middle
+that answer in the
+first parameter of --
+
+00:35:15.996 --> 00:35:17.646 A:middle
+of the invitation handler.
+
+00:35:17.986 --> 00:35:20.916 A:middle
+And the second parameter will be
+the session object that you want
+
+00:35:20.916 --> 00:35:22.856 A:middle
+to use for that invitation.
+
+00:35:25.116 --> 00:35:29.066 A:middle
+So in code, the invite
+function looks like this,
+
+00:35:29.816 --> 00:35:33.236 A:middle
+invitePeer:to
+Session:withContext:
+
+00:35:33.606 --> 00:35:34.826 A:middle
+and timeout:.
+
+00:35:35.796 --> 00:35:38.866 A:middle
+The first parameter will
+be the peer ID of the peer
+
+00:35:38.866 --> 00:35:39.796 A:middle
+that you want to invite.
+
+00:35:41.256 --> 00:35:44.076 A:middle
+The session -- the second
+parameter will be the session
+
+00:35:44.076 --> 00:35:45.996 A:middle
+that you want to use
+for that invitation.
+
+00:35:46.776 --> 00:35:49.006 A:middle
+And the third parameter
+will be context.
+
+00:35:49.376 --> 00:35:52.416 A:middle
+This is an NSData
+parameter that allows you
+
+00:35:52.416 --> 00:35:55.676 A:middle
+to pass some context
+along with the invitation.
+
+00:35:57.116 --> 00:35:59.886 A:middle
+Timeout here is a
+value in seconds,
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:36:00.376 --> 00:36:03.456 A:middle
+which tells the framework how
+long the browser is willing
+
+00:36:03.456 --> 00:36:09.376 A:middle
+to wait for the invitation
+response to come back.
+
+00:36:09.606 --> 00:36:10.866 A:middle
+When the advertiser's --
+
+00:36:11.126 --> 00:36:13.546 A:middle
+when the advertiser
+receives an invitation,
+
+00:36:13.826 --> 00:36:16.126 A:middle
+you will be notified via
+this delegate method,
+
+00:36:16.556 --> 00:36:20.276 A:middle
+advertiser:did
+ReceiveInvitationFromPeer:with
+
+00:36:20.276 --> 00:36:22.226 A:middle
+Context: and invitationHandler:.
+
+00:36:23.376 --> 00:36:26.116 A:middle
+So the second one will
+be the peer ID of the --
+
+00:36:26.116 --> 00:36:28.416 A:middle
+of the sender of the invitation.
+
+00:36:29.566 --> 00:36:31.256 A:middle
+The third one will
+be the context
+
+00:36:31.316 --> 00:36:33.226 A:middle
+if the sender specified
+some context.
+
+00:36:33.636 --> 00:36:37.976 A:middle
+And the fourth one will be a
+block, an invitation handler
+
+00:36:38.316 --> 00:36:39.466 A:middle
+that the advertiser will have
+
+00:36:39.506 --> 00:36:42.276 A:middle
+to call once it knows
+whether the invitation is
+
+00:36:42.276 --> 00:36:43.876 A:middle
+to be accepted or declined.
+
+00:36:45.456 --> 00:36:49.356 A:middle
+So let's take a look
+at one possible example
+
+00:36:49.566 --> 00:36:52.486 A:middle
+of how you can implement
+this delegate method
+
+00:36:52.486 --> 00:36:53.546 A:middle
+on the advertiser.
+
+00:36:54.286 --> 00:36:57.816 A:middle
+And let's assume that once
+an invitation comes in,
+
+00:36:58.106 --> 00:37:00.376 A:middle
+you want to present
+an alert to the user
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:36:58.106 --> 00:37:00.376 A:middle
+you want to present
+an alert to the user
+
+00:37:01.016 --> 00:37:03.376 A:middle
+and you want the alert
+-- the user to press --
+
+00:37:03.376 --> 00:37:06.826 A:middle
+to tap Accept or
+Decline to decide
+
+00:37:07.346 --> 00:37:09.486 A:middle
+or to notify the
+framework of the decision
+
+00:37:09.676 --> 00:37:10.846 A:middle
+or you of the decision.
+
+00:37:11.786 --> 00:37:14.366 A:middle
+So first thing you want
+to do is you want to copy
+
+00:37:14.366 --> 00:37:17.406 A:middle
+and store the invitation handler
+because you'll need it later
+
+00:37:17.646 --> 00:37:21.236 A:middle
+when you find out from the
+user what it wants to do.
+
+00:37:21.486 --> 00:37:25.966 A:middle
+Then you have to instantiate
+a UIAlertView and you have
+
+00:37:26.016 --> 00:37:28.086 A:middle
+to specify the title and message
+
+00:37:28.086 --> 00:37:29.636 A:middle
+for the view -- for
+the alert view.
+
+00:37:30.246 --> 00:37:31.986 A:middle
+And you want to specify
+what kind
+
+00:37:31.986 --> 00:37:33.186 A:middle
+of buttons you want on there.
+
+00:37:33.486 --> 00:37:35.806 A:middle
+So let's assume they're
+Decline and Accept.
+
+00:37:36.666 --> 00:37:41.136 A:middle
+Then you're ready to
+show the alert view.
+
+00:37:41.316 --> 00:37:44.186 A:middle
+Once the user taps on
+either Accept or Decline,
+
+00:37:44.616 --> 00:37:47.316 A:middle
+you will be notified
+via a delegate method
+
+00:37:47.666 --> 00:37:51.206 A:middle
+alertView:clickedButtonAtIndex:
+and what you want
+
+00:37:51.206 --> 00:37:54.576 A:middle
+to do first is retrieve
+the invitation handler.
+
+00:37:55.796 --> 00:37:59.926 A:middle
+Then you'll want to extract
+what the user's decision was,
+
+00:37:59.926 --> 00:38:01.306 A:middle
+whether to accept or decline.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:37:59.926 --> 00:38:01.306 A:middle
+whether to accept or decline.
+
+00:38:01.996 --> 00:38:03.026 A:middle
+And once you know that,
+
+00:38:03.356 --> 00:38:05.196 A:middle
+you'll want to call
+the invitation handler
+
+00:38:05.416 --> 00:38:07.336 A:middle
+and passing it --
+the response first
+
+00:38:08.136 --> 00:38:09.966 A:middle
+and then the session
+object that you want
+
+00:38:09.966 --> 00:38:11.396 A:middle
+to use for that invitation.
+
+00:38:15.276 --> 00:38:20.276 A:middle
+So again, let's take a look
+at how you arrive to the point
+
+00:38:20.596 --> 00:38:23.626 A:middle
+where two session objects
+are connected with each other
+
+00:38:23.896 --> 00:38:26.386 A:middle
+if you choose to do
+programatic discovery.
+
+00:38:27.716 --> 00:38:31.166 A:middle
+So as peers get found
+and lost, browser
+
+00:38:31.166 --> 00:38:33.656 A:middle
+and advertiser communicate
+with each other.
+
+00:38:34.806 --> 00:38:39.196 A:middle
+The browser's session object is
+notified of which peer you want
+
+00:38:39.196 --> 00:38:42.636 A:middle
+to connect to when you called
+invitePeer:toSession: method.
+
+00:38:42.636 --> 00:38:47.956 A:middle
+And the advertiser's
+session object is notified
+
+00:38:48.066 --> 00:38:49.506 A:middle
+which peer you want to connect
+
+00:38:49.506 --> 00:38:51.896 A:middle
+to when you call the
+invitation handler.
+
+00:38:53.256 --> 00:38:55.516 A:middle
+When that happens,
+much like before,
+
+00:38:55.966 --> 00:38:57.846 A:middle
+the two session objects
+will attempt
+
+00:38:57.846 --> 00:39:00.146 A:middle
+to establish a communication
+link with each other
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:38:57.846 --> 00:39:00.146 A:middle
+to establish a communication
+link with each other
+
+00:39:00.896 --> 00:39:06.346 A:middle
+and when they are done, you
+will be notified via a delegate
+
+00:39:06.346 --> 00:39:08.486 A:middle
+method, peer:didChangeState:.
+
+00:39:08.956 --> 00:39:14.456 A:middle
+So that was programatic
+discovery.
+
+00:39:15.716 --> 00:39:18.586 A:middle
+Let's now take a look at
+how you can set up security.
+
+00:39:19.936 --> 00:39:21.886 A:middle
+So we provide two
+things for you.
+
+00:39:22.956 --> 00:39:27.096 A:middle
+We provide support for
+authentication and encryption.
+
+00:39:28.116 --> 00:39:32.306 A:middle
+So let's take a look at how
+you can set up authentication.
+
+00:39:32.896 --> 00:39:36.206 A:middle
+To set up authentication,
+
+00:39:36.206 --> 00:39:38.426 A:middle
+you'll want to instantiate
+your session object,
+
+00:39:38.426 --> 00:39:42.196 A:middle
+using a different init method
+and that method will require you
+
+00:39:42.226 --> 00:39:43.756 A:middle
+to pass three parameters.
+
+00:39:44.186 --> 00:39:47.766 A:middle
+The first one will be the same
+as before, a peer ID object.
+
+00:39:48.576 --> 00:39:52.926 A:middle
+And the second one will
+be your security identity.
+
+00:39:54.316 --> 00:39:57.406 A:middle
+The third one will be encryption
+preference, which we will handle
+
+00:39:57.406 --> 00:39:59.116 A:middle
+in more detail when
+we cover encryption.
+
+00:39:59.896 --> 00:40:04.036 A:middle
+So for now, let's take a look at
+the security identity parameter.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:39:59.896 --> 00:40:04.036 A:middle
+So for now, let's take a look at
+the security identity parameter.
+
+00:40:05.066 --> 00:40:10.336 A:middle
+Well, identity is an NSArray
+object that should adhere
+
+00:40:10.336 --> 00:40:14.406 A:middle
+to a specific structure, which
+is depicted on this slide here.
+
+00:40:15.616 --> 00:40:18.176 A:middle
+The first object needs
+to be your identity
+
+00:40:18.806 --> 00:40:21.976 A:middle
+and that identity needs to
+be of type SecIdentityRef
+
+00:40:21.976 --> 00:40:25.666 A:middle
+and that first object
+is followed by a chain
+
+00:40:25.666 --> 00:40:29.126 A:middle
+of certificates of
+type SecCertificateRef
+
+00:40:29.126 --> 00:40:31.056 A:middle
+that validate your identity.
+
+00:40:32.276 --> 00:40:33.636 A:middle
+This is the same format
+
+00:40:34.026 --> 00:40:36.766 A:middle
+that Secure Transport
+uses in their APIs.
+
+00:40:36.766 --> 00:40:41.886 A:middle
+Now at this point,
+assuming that you've set
+
+00:40:41.886 --> 00:40:44.616 A:middle
+up your identity properly
+and the peer that you want
+
+00:40:44.616 --> 00:40:47.326 A:middle
+to connect to also set up
+their identity properly,
+
+00:40:47.956 --> 00:40:51.046 A:middle
+once the two session
+objects establish a link
+
+00:40:51.046 --> 00:40:54.216 A:middle
+with each other, we will
+exchange the two certificates
+
+00:40:54.216 --> 00:40:54.636 A:middle
+for you.
+
+00:40:56.026 --> 00:40:59.966 A:middle
+And once you receive the
+certificate from the other peer,
+
+00:40:59.966 --> 00:41:02.236 A:middle
+your session delegate
+will be called
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:40:59.966 --> 00:41:02.236 A:middle
+your session delegate
+will be called
+
+00:41:02.236 --> 00:41:05.896 A:middle
+with session:didReceive
+Certificate:fromPeer:
+
+00:41:05.996 --> 00:41:08.316 A:middle
+and you will be passed
+a certificate handler.
+
+00:41:09.526 --> 00:41:12.536 A:middle
+The second parameter will be
+the certificate of the peer
+
+00:41:12.536 --> 00:41:13.916 A:middle
+that you're attempting
+to connect to
+
+00:41:14.596 --> 00:41:16.916 A:middle
+and this certificate will
+have the similar structure
+
+00:41:16.916 --> 00:41:18.276 A:middle
+as the one we've seen before,
+
+00:41:18.636 --> 00:41:21.466 A:middle
+just the first object will
+not be a SecIdentityRef,
+
+00:41:21.466 --> 00:41:23.606 A:middle
+but it will just be
+a peer certificate
+
+00:41:24.036 --> 00:41:25.956 A:middle
+of type SecCertificateRef.
+
+00:41:26.456 --> 00:41:30.636 A:middle
+The third parameter will tell
+you the peer ID of -- of --
+
+00:41:30.786 --> 00:41:33.706 A:middle
+of the nearby peer that
+the certificate belongs to.
+
+00:41:34.376 --> 00:41:37.216 A:middle
+And the fourth parameter
+will be a certificate handler
+
+00:41:37.216 --> 00:41:41.046 A:middle
+that you will have to execute
+once you've decided whether you
+
+00:41:41.046 --> 00:41:43.246 A:middle
+trust that certificate or not.
+
+00:41:43.976 --> 00:41:47.606 A:middle
+So again, it will be on you
+to make that determination.
+
+00:41:47.606 --> 00:41:50.176 A:middle
+Once you get the certificate,
+you will need to examine it
+
+00:41:50.756 --> 00:41:53.096 A:middle
+and make the decision
+whether you trust it or not.
+
+00:41:54.166 --> 00:41:57.236 A:middle
+Once you make the decision,
+you will notify the framework
+
+00:41:57.506 --> 00:41:59.196 A:middle
+by calling the certificate
+handler
+
+00:41:59.246 --> 00:42:02.446 A:middle
+and passing it your response,
+either a Yes or a No.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:41:59.246 --> 00:42:02.446 A:middle
+and passing it your response,
+either a Yes or a No.
+
+00:42:03.016 --> 00:42:07.196 A:middle
+So that's how you set
+up authentication.
+
+00:42:08.526 --> 00:42:11.116 A:middle
+Now, let's take a
+look at encryption.
+
+00:42:11.696 --> 00:42:15.706 A:middle
+To set up encryption, you
+will use the same initializer
+
+00:42:15.706 --> 00:42:19.046 A:middle
+that we mentioned when we
+talked about authentication
+
+00:42:19.566 --> 00:42:21.676 A:middle
+and you will have to
+use the third parameter,
+
+00:42:22.086 --> 00:42:23.266 A:middle
+encryption preference.
+
+00:42:25.216 --> 00:42:27.436 A:middle
+Now for encryption preference,
+
+00:42:27.706 --> 00:42:29.586 A:middle
+we provide you with
+three options.
+
+00:42:30.706 --> 00:42:32.936 A:middle
+One is encryption
+preference None.
+
+00:42:34.016 --> 00:42:36.836 A:middle
+If you decide to specify
+encryption preference None,
+
+00:42:37.286 --> 00:42:40.326 A:middle
+that will mean that you do
+not want to encrypt data.
+
+00:42:41.216 --> 00:42:43.646 A:middle
+If somebody wants to encrypt
+data on the other side,
+
+00:42:43.646 --> 00:42:45.676 A:middle
+you will not be able to
+connect to that peer.
+
+00:42:46.836 --> 00:42:50.416 A:middle
+The second parameter
+will be Optional
+
+00:42:51.006 --> 00:42:53.896 A:middle
+and if you specify
+Optional, that will mean
+
+00:42:54.176 --> 00:42:56.946 A:middle
+that you are willing to either
+encrypt or not encrypt data.
+
+00:42:57.536 --> 00:42:58.676 A:middle
+You're fine with both options.
+
+00:42:59.956 --> 00:43:03.176 A:middle
+The last option is
+encryption preference Required.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:42:59.956 --> 00:43:03.176 A:middle
+The last option is
+encryption preference Required.
+
+00:43:03.986 --> 00:43:06.606 A:middle
+So if you specified
+encryption preference Required,
+
+00:43:06.606 --> 00:43:10.466 A:middle
+that will mean that you will
+be able to communicate only
+
+00:43:10.466 --> 00:43:13.996 A:middle
+with those peers who have
+set that option to Required
+
+00:43:13.996 --> 00:43:15.796 A:middle
+as well, or to Optional.
+
+00:43:16.776 --> 00:43:19.566 A:middle
+If a nearby peer set
+that preference to None,
+
+00:43:19.936 --> 00:43:21.686 A:middle
+you will not be able to
+connect to that peer.
+
+00:43:22.216 --> 00:43:26.316 A:middle
+And that's really all you need
+to do to set up encryption
+
+00:43:26.316 --> 00:43:28.546 A:middle
+and make sure that
+nobody can eavesdrop
+
+00:43:28.546 --> 00:43:33.536 A:middle
+on your data in the session.
+
+00:43:33.656 --> 00:43:36.626 A:middle
+So to summarize the
+advanced part,
+
+00:43:37.156 --> 00:43:40.296 A:middle
+we've covered programatic
+discovery, we've mentioned
+
+00:43:40.296 --> 00:43:42.636 A:middle
+that you can use
+MCNearby advertiser
+
+00:43:42.636 --> 00:43:44.576 A:middle
+and MCNearby browser classes
+
+00:43:45.176 --> 00:43:47.916 A:middle
+and using these classes will
+enable you to handle events,
+
+00:43:47.916 --> 00:43:50.876 A:middle
+like found peer, lost
+peer, and do stuff
+
+00:43:50.876 --> 00:43:53.206 A:middle
+like sending invitations
+and responding
+
+00:43:53.206 --> 00:43:55.046 A:middle
+to invitations programatically.
+
+00:43:55.626 --> 00:43:57.676 A:middle
+That will enable you
+to build custom UI
+
+00:43:57.836 --> 00:43:59.596 A:middle
+if you have the desire to do so.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:44:00.766 --> 00:44:03.496 A:middle
+And also, we've told you
+how to set up security
+
+00:44:03.496 --> 00:44:06.646 A:middle
+in your sessions, specifically,
+we told you how to set
+
+00:44:06.646 --> 00:44:11.826 A:middle
+up authentication
+and encryption.
+
+00:44:12.166 --> 00:44:14.906 A:middle
+Now I would like to cover
+some best practices for you.
+
+00:44:16.266 --> 00:44:18.236 A:middle
+So I would like to
+encourage everyone
+
+00:44:18.746 --> 00:44:21.546 A:middle
+to start advertising
+on app launch.
+
+00:44:21.646 --> 00:44:23.346 A:middle
+So once your app launches,
+
+00:44:23.466 --> 00:44:25.486 A:middle
+you should start
+advertising your peers.
+
+00:44:26.106 --> 00:44:27.546 A:middle
+Why do you want to do that?
+
+00:44:27.546 --> 00:44:29.946 A:middle
+Well if you want the
+user to press something
+
+00:44:29.946 --> 00:44:33.486 A:middle
+to make it self-discoverable,
+then it will inevitably happen
+
+00:44:33.696 --> 00:44:35.076 A:middle
+that user just won't do that
+
+00:44:35.116 --> 00:44:37.566 A:middle
+and when somebody will
+start browsing they won't --
+
+00:44:37.566 --> 00:44:41.226 A:middle
+won't see if somebody's nearby
+because the other user forgot
+
+00:44:41.256 --> 00:44:44.426 A:middle
+to tap -- tap the Make
+Me Discoverable button
+
+00:44:44.426 --> 00:44:44.876 A:middle
+or something.
+
+00:44:45.726 --> 00:44:49.656 A:middle
+So we encourage you to start
+advertising on app launch.
+
+00:44:51.436 --> 00:44:54.216 A:middle
+Stop advertising
+when not needed.
+
+00:44:54.816 --> 00:44:57.076 A:middle
+So once you've connected
+into a session,
+
+00:44:57.356 --> 00:45:00.756 A:middle
+you might not be interested in
+receiving invitations anymore.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:44:57.356 --> 00:45:00.756 A:middle
+you might not be interested in
+receiving invitations anymore.
+
+00:45:01.466 --> 00:45:04.056 A:middle
+If that is the case, then
+just stop advertising.
+
+00:45:06.016 --> 00:45:07.766 A:middle
+Stop browsing when done.
+
+00:45:08.386 --> 00:45:10.706 A:middle
+If you use the
+framework-supplied UI
+
+00:45:10.706 --> 00:45:13.306 A:middle
+for browsing that we've
+covered in the first stage,
+
+00:45:14.006 --> 00:45:16.186 A:middle
+you don't have to worry
+about that, because as soon
+
+00:45:16.186 --> 00:45:18.006 A:middle
+as you dismiss the
+browser view controller UI,
+
+00:45:18.006 --> 00:45:20.266 A:middle
+we will stop browsing for you.
+
+00:45:20.866 --> 00:45:24.776 A:middle
+On the other hand, if you choose
+to do programatic browsing,
+
+00:45:25.086 --> 00:45:27.826 A:middle
+then you will actually have
+to call stop browsing method
+
+00:45:28.186 --> 00:45:29.526 A:middle
+to do -- to stop browsing.
+
+00:45:29.776 --> 00:45:32.036 A:middle
+And you might want to do that
+once you're in the session
+
+00:45:32.036 --> 00:45:37.116 A:middle
+and you're not interested in
+any -- anymore who is around.
+
+00:45:37.366 --> 00:45:40.826 A:middle
+Also, we'd like to encourage
+you to keep discovery info
+
+00:45:41.066 --> 00:45:42.896 A:middle
+and display names short.
+
+00:45:43.456 --> 00:45:45.776 A:middle
+That will optimize
+networking performance.
+
+00:45:47.696 --> 00:45:51.196 A:middle
+And lastly, if you
+are sending messages
+
+00:45:51.776 --> 00:45:54.626 A:middle
+and you want these messages
+to arrive as soon as possible
+
+00:45:54.626 --> 00:45:59.416 A:middle
+to the recipient, so with
+minimum possible latency,
+
+00:45:59.926 --> 00:46:02.766 A:middle
+we encourage you to
+use unreliable mode
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:45:59.926 --> 00:46:02.766 A:middle
+we encourage you to
+use unreliable mode
+
+00:46:03.196 --> 00:46:05.746 A:middle
+and we encourage you to
+keep these messages short.
+
+00:46:06.926 --> 00:46:14.416 A:middle
+Short here means on the
+order of few 100 bytes.
+
+00:46:14.566 --> 00:46:17.626 A:middle
+So for more information, you
+can talk to Paul Danbold,
+
+00:46:17.626 --> 00:46:20.996 A:middle
+our evangelist, and you
+will find more documentation
+
+00:46:20.996 --> 00:46:22.546 A:middle
+about Multipeer Connectivity
+
+00:46:22.886 --> 00:46:25.246 A:middle
+in the Multipeer Connectivity
+Framework Reference.
+
+00:46:25.936 --> 00:46:30.146 A:middle
+And, as always, you can meet us
+at the Apple Developer Forums
+
+00:46:30.146 --> 00:46:32.126 A:middle
+and you can talk to
+each other and us
+
+00:46:32.246 --> 00:46:33.586 A:middle
+if you have further questions.
+
+00:46:34.496 --> 00:46:35.486 A:middle
+And that's it.
+
+00:46:35.486 --> 00:46:41.706 A:middle
+Thank you very much for coming.
+
+00:46:42.053 --> 00:46:44.053 A:middle
+[ Applause ]
+

@@ -1,0 +1,2333 @@
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:00:11.066 --> 00:00:13.486 A:middle
+&gt;&gt; Good morning, hello.
+
+00:00:18.056 --> 00:00:22.696 A:middle
+Welcome to session 705,
+Distributing Enterprise Apps.
+
+00:00:23.746 --> 00:00:27.276 A:middle
+My name is Dave Rahardja,
+I'm an iOS software engineer.
+
+00:00:28.896 --> 00:00:32.256 A:middle
+So tell me if this
+sounds familiar to you,
+
+00:00:34.236 --> 00:00:39.286 A:middle
+you're in charge of a team
+that's developing an iOS app
+
+00:00:39.986 --> 00:00:43.486 A:middle
+for your business or
+for your school, okay.
+
+00:00:44.416 --> 00:00:50.166 A:middle
+You're in charge of everything
+including managing developers,
+
+00:00:50.656 --> 00:00:57.446 A:middle
+contractors, distributing apps
+over MDM, making sure they run
+
+00:00:58.046 --> 00:01:01.916 A:middle
+on a whole bunch of different
+regions and make sure
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:00:58.046 --> 00:01:01.916 A:middle
+on a whole bunch of different
+regions and make sure
+
+00:01:01.916 --> 00:01:05.105 A:middle
+that it keeps running for
+years and years to come.
+
+00:01:05.876 --> 00:01:10.166 A:middle
+So if this sounds familiar to
+you this session is for you.
+
+00:01:11.076 --> 00:01:17.516 A:middle
+I want to give you a kind
+of a comprehensive overview
+
+00:01:17.576 --> 00:01:22.526 A:middle
+of everything that you need to
+know to successfully develop
+
+00:01:22.526 --> 00:01:27.776 A:middle
+and distribute and deploy an iOS
+app in an enterprise setting.
+
+00:01:29.216 --> 00:01:36.256 A:middle
+So we're going to do that by
+focusing on four major areas
+
+00:01:37.286 --> 00:01:40.766 A:middle
+that will sound familiar to
+you if you've ever done this.
+
+00:01:41.776 --> 00:01:48.846 A:middle
+First managing your team,
+next using Xcode server
+
+00:01:49.206 --> 00:01:50.946 A:middle
+to provide help for development,
+
+00:01:53.116 --> 00:01:58.876 A:middle
+then some app distribution
+strategies that will keep you
+
+00:01:58.876 --> 00:02:06.006 A:middle
+in the clear for years and
+finally custom B2B and how
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:01:58.876 --> 00:02:06.006 A:middle
+in the clear for years and
+finally custom B2B and how
+
+00:02:06.006 --> 00:02:09.056 A:middle
+that fits within your
+organizations deployment plan.
+
+00:02:10.515 --> 00:02:12.886 A:middle
+All right so four major topics,
+
+00:02:14.066 --> 00:02:18.966 A:middle
+let's start with the first
+one, managing your team.
+
+00:02:19.156 --> 00:02:21.986 A:middle
+So let's start at
+the very beginning,
+
+00:02:22.886 --> 00:02:25.396 A:middle
+how do you get started
+developing enterprise apps
+
+00:02:25.396 --> 00:02:25.676 A:middle
+at all?
+
+00:02:26.376 --> 00:02:28.066 A:middle
+Well, it's really simple,
+
+00:02:28.706 --> 00:02:34.356 A:middle
+you need an enterprise
+developer account, it use to be
+
+00:02:34.356 --> 00:02:38.066 A:middle
+that we had a 500
+member...500 employee limit
+
+00:02:38.436 --> 00:02:42.676 A:middle
+for enterprise app
+accounts, that's gone,
+
+00:02:42.976 --> 00:02:48.146 A:middle
+no minimum company size as long
+as you have a D-U-N-S number
+
+00:02:48.496 --> 00:02:50.696 A:middle
+for your enterprise
+you are eligible.
+
+00:02:51.166 --> 00:02:55.106 A:middle
+This program is 299 a year.
+
+00:02:59.896 --> 00:03:04.096 A:middle
+To get started you need
+to create an agent account
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:02:59.896 --> 00:03:04.096 A:middle
+To get started you need
+to create an agent account
+
+00:03:05.236 --> 00:03:10.656 A:middle
+and then add admins and team
+members to the developer portal.
+
+00:03:13.416 --> 00:03:19.046 A:middle
+So let's talk about these
+roles, an agent is a person
+
+00:03:19.296 --> 00:03:24.296 A:middle
+who is authorized to accept
+legal terms with respect
+
+00:03:24.336 --> 00:03:26.746 A:middle
+to the developer program.
+
+00:03:28.676 --> 00:03:34.776 A:middle
+Admins manage team members
+and they prepare apps
+
+00:03:35.116 --> 00:03:38.076 A:middle
+for distribution, there
+can only be one agent
+
+00:03:38.716 --> 00:03:43.616 A:middle
+but multiple admins, team
+members are those people
+
+00:03:43.616 --> 00:03:47.056 A:middle
+who actually develop and
+test code under the program.
+
+00:03:48.736 --> 00:03:55.376 A:middle
+Because agents and admins
+are able to produce things
+
+00:03:55.376 --> 00:03:58.936 A:middle
+that represent your company
+so agents sign contracts,
+
+00:03:59.336 --> 00:04:03.126 A:middle
+admins publish apps with your
+code signing certificate.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:03:59.336 --> 00:04:03.126 A:middle
+admins publish apps with your
+code signing certificate.
+
+00:04:04.136 --> 00:04:08.926 A:middle
+They should be employees
+of your enterprise,
+
+00:04:12.756 --> 00:04:17.486 A:middle
+team members however can
+be employees or contractors
+
+00:04:17.916 --> 00:04:21.836 A:middle
+and we'll talk about the kind of
+a work flow here for contractors
+
+00:04:21.836 --> 00:04:27.136 A:middle
+in a minute but first
+let's talk about admins.
+
+00:04:27.896 --> 00:04:33.156 A:middle
+So admins can add and remove
+team members from your roster,
+
+00:04:33.686 --> 00:04:38.106 A:middle
+they can create app ID's
+in the developer portal,
+
+00:04:39.826 --> 00:04:43.566 A:middle
+they can request push
+certificates for those app ID's,
+
+00:04:44.116 --> 00:04:48.216 A:middle
+they can add devices to the team
+development provisioning profile
+
+00:04:48.216 --> 00:04:52.746 A:middle
+which everybody else in the team
+including the team members use
+
+00:04:52.746 --> 00:04:56.356 A:middle
+to actually do debugging
+on iOS hardware,
+
+00:04:58.096 --> 00:05:02.216 A:middle
+they get to manage the
+distribution code signing
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:04:58.096 --> 00:05:02.216 A:middle
+they get to manage the
+distribution code signing
+
+00:05:02.216 --> 00:05:04.846 A:middle
+certificate which is
+a special certificate,
+
+00:05:05.186 --> 00:05:06.886 A:middle
+a code signing certificate
+that you need
+
+00:05:07.156 --> 00:05:09.946 A:middle
+in order to publish the app.
+
+00:05:11.556 --> 00:05:14.086 A:middle
+They also create
+the distribution
+
+00:05:14.366 --> 00:05:15.916 A:middle
+provisioning profiles.
+
+00:05:16.416 --> 00:05:18.916 A:middle
+This is in contrast to the
+development provisional profile
+
+00:05:18.916 --> 00:05:20.566 A:middle
+which is automatically
+managed by Xcode.
+
+00:05:21.086 --> 00:05:27.136 A:middle
+And finally they are the ones
+who package the actual apps
+
+00:05:27.186 --> 00:05:28.776 A:middle
+for final distribution.
+
+00:05:29.886 --> 00:05:33.936 A:middle
+So as you can tell admins have
+a lot of power in this program,
+
+00:05:34.726 --> 00:05:39.186 A:middle
+most of the administrative
+tasks with respect to developing
+
+00:05:39.186 --> 00:05:42.216 A:middle
+and distributing apps
+fall under admin accounts.
+
+00:05:44.476 --> 00:05:47.306 A:middle
+Team members are coders
+
+00:05:47.346 --> 00:05:51.986 A:middle
+and testers they should have
+their own personal code signing
+
+00:05:51.986 --> 00:05:55.046 A:middle
+certificate, each one should
+have their own code signing
+
+00:05:55.046 --> 00:05:58.786 A:middle
+certificate, don't share your
+private keys between developers.
+
+00:05:59.506 --> 00:06:02.606 A:middle
+During the development cycle
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:05:59.506 --> 00:06:02.606 A:middle
+During the development cycle
+
+00:06:02.606 --> 00:06:05.176 A:middle
+if a developer loses their
+private key you could just
+
+00:06:05.176 --> 00:06:08.456 A:middle
+create another one as long as
+nobody is using an older version
+
+00:06:08.616 --> 00:06:13.526 A:middle
+of an app that they
+produced it's fine,
+
+00:06:13.746 --> 00:06:14.636 A:middle
+just create a new one,
+
+00:06:15.556 --> 00:06:17.326 A:middle
+don't share the code
+signing certificates.
+
+00:06:18.626 --> 00:06:23.796 A:middle
+Use the team development
+provisioning profile to debug
+
+00:06:23.796 --> 00:06:26.796 A:middle
+on iOS hardware and this is
+done automatically by Xcode
+
+00:06:27.146 --> 00:06:28.816 A:middle
+if you set up Xcode
+correctly you never have
+
+00:06:28.846 --> 00:06:30.226 A:middle
+to worry about this.
+
+00:06:31.196 --> 00:06:34.516 A:middle
+Team members can distribute
+apps to a limited extent,
+
+00:06:35.106 --> 00:06:37.346 A:middle
+they can create ad-hoc
+distributions
+
+00:06:37.946 --> 00:06:42.596 A:middle
+which are app bundles...app
+packages
+
+00:06:42.596 --> 00:06:45.026 A:middle
+that can be run only
+on test devices.
+
+00:06:45.716 --> 00:06:48.776 A:middle
+This is great for QA for
+example or alpha testing
+
+00:06:49.326 --> 00:06:52.536 A:middle
+but they cannot be run outside
+
+00:06:52.536 --> 00:06:54.256 A:middle
+of their own little
+group of devices.
+
+00:06:54.936 --> 00:07:02.906 A:middle
+Now contractors, many of us have
+contractors that come in and out
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:06:54.936 --> 00:07:02.906 A:middle
+Now contractors, many of us have
+contractors that come in and out
+
+00:07:02.906 --> 00:07:04.186 A:middle
+of our development circle,
+
+00:07:05.156 --> 00:07:10.686 A:middle
+so the way that you should treat
+contractors is they should be
+
+00:07:11.156 --> 00:07:13.746 A:middle
+enrolled as team
+members in your program,
+
+00:07:15.036 --> 00:07:18.056 A:middle
+you should invite them
+using their e-mail address
+
+00:07:18.986 --> 00:07:21.216 A:middle
+and then they should get their
+own code signing certificate,
+
+00:07:21.736 --> 00:07:23.086 A:middle
+just like any other team member.
+
+00:07:23.676 --> 00:07:27.296 A:middle
+At the end of their
+contract simply remove them
+
+00:07:27.296 --> 00:07:32.486 A:middle
+from the member portal
+and that's it,
+
+00:07:33.176 --> 00:07:34.876 A:middle
+you'll invalidate the
+code signing certificate,
+
+00:07:34.876 --> 00:07:38.746 A:middle
+they can get another one for
+another project next time.
+
+00:07:38.946 --> 00:07:42.086 A:middle
+All right so let's walk
+through a little flow
+
+00:07:42.086 --> 00:07:46.226 A:middle
+of inviting a team member
+including contractors
+
+00:07:46.646 --> 00:07:48.736 A:middle
+to join your development team,
+
+00:07:48.996 --> 00:07:53.446 A:middle
+so here we have the developer
+website here member center
+
+00:07:54.436 --> 00:07:56.596 A:middle
+and we have a list of people
+
+00:07:57.086 --> 00:08:00.846 A:middle
+in your development team
+including some admins
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:07:57.086 --> 00:08:00.846 A:middle
+in your development team
+including some admins
+
+00:08:00.846 --> 00:08:08.156 A:middle
+and some members, what you do
+is click on the invitations icon
+
+00:08:08.156 --> 00:08:11.336 A:middle
+in the site bar and
+you'll see this.
+
+00:08:12.296 --> 00:08:14.246 A:middle
+You can invite one
+or a bunch of people
+
+00:08:14.246 --> 00:08:19.046 A:middle
+into your development team
+at once, click invite person,
+
+00:08:20.346 --> 00:08:23.966 A:middle
+enter the name and
+e-mail address,
+
+00:08:24.966 --> 00:08:26.286 A:middle
+this is just an e-mail
+address it doesn't have
+
+00:08:26.316 --> 00:08:28.106 A:middle
+to be their Apple ID
+because any e-mail address
+
+00:08:28.106 --> 00:08:29.486 A:middle
+that they can be reached at.
+
+00:08:29.986 --> 00:08:35.385 A:middle
+And they will get something
+like this so you've been invited
+
+00:08:35.385 --> 00:08:37.196 A:middle
+to join the Apple
+developer program,
+
+00:08:37.956 --> 00:08:42.106 A:middle
+so the reason they don't
+have to receive this e-mail
+
+00:08:42.106 --> 00:08:44.826 A:middle
+over Apple ID is
+because when they click
+
+00:08:44.826 --> 00:08:49.626 A:middle
+on that blue underlined link
+there they will be taken
+
+00:08:49.966 --> 00:08:52.496 A:middle
+to this portal where
+they can then sign
+
+00:08:52.496 --> 00:08:55.176 A:middle
+in with their actual
+developer ID.
+
+00:08:56.076 --> 00:08:58.296 A:middle
+If they're already a developer
+
+00:08:58.296 --> 00:09:02.456 A:middle
+like the 99 dollar app developer
+they can click the top button
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:08:58.296 --> 00:09:02.456 A:middle
+like the 99 dollar app developer
+they can click the top button
+
+00:09:03.116 --> 00:09:06.096 A:middle
+and log in with that,
+if they're not part
+
+00:09:06.096 --> 00:09:10.086 A:middle
+of any development program they
+can click on the register button
+
+00:09:10.346 --> 00:09:14.056 A:middle
+on the bottom and they will get
+access to the developer tools
+
+00:09:14.546 --> 00:09:17.216 A:middle
+and the rights as a
+developer by virtue
+
+00:09:17.216 --> 00:09:22.536 A:middle
+of joining your team, okay.
+
+00:09:22.726 --> 00:09:27.116 A:middle
+Once you do that the
+next thing you should do
+
+00:09:27.116 --> 00:09:30.726 A:middle
+as a team member
+is to go to Xcode
+
+00:09:30.726 --> 00:09:35.336 A:middle
+and type your registered Apple
+ID in, so you click register,
+
+00:09:35.336 --> 00:09:39.256 A:middle
+you register as a new developer
+for example, go to Xcode,
+
+00:09:40.036 --> 00:09:43.426 A:middle
+hit your preferences, go
+to accounts and add this.
+
+00:09:43.816 --> 00:09:49.436 A:middle
+This is the key to having a
+really nice flow of artifacts
+
+00:09:49.586 --> 00:09:53.946 A:middle
+between your team members,
+you admins using Xcode.
+
+00:09:54.956 --> 00:10:01.566 A:middle
+When you log in Xcode will show
+you what development teams you
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:09:54.956 --> 00:10:01.566 A:middle
+When you log in Xcode will show
+you what development teams you
+
+00:10:01.566 --> 00:10:03.736 A:middle
+belong to down there
+on the bottom right,
+
+00:10:04.396 --> 00:10:06.866 A:middle
+in this case Ann is a member
+
+00:10:06.866 --> 00:10:11.646 A:middle
+of the business markets
+enterprise program team.
+
+00:10:12.166 --> 00:10:20.996 A:middle
+When you click on view details
+you will see this so you start
+
+00:10:20.996 --> 00:10:23.136 A:middle
+out with no code signing
+identities of course
+
+00:10:23.616 --> 00:10:26.906 A:middle
+and no provisioning
+profiles, the first thing
+
+00:10:26.906 --> 00:10:30.706 A:middle
+that the new team member should
+do is to click the plus button
+
+00:10:31.416 --> 00:10:35.596 A:middle
+and request a new
+iOS development code
+
+00:10:35.596 --> 00:10:37.566 A:middle
+signing certificate.
+
+00:10:40.556 --> 00:10:43.166 A:middle
+When they do that
+all of the admins
+
+00:10:43.166 --> 00:10:47.496 A:middle
+of the team will see
+this, they will see
+
+00:10:47.496 --> 00:10:49.936 A:middle
+that Ann has a requested a
+code signing certificate,
+
+00:10:50.526 --> 00:10:54.576 A:middle
+all you got to do is hit approve
+
+00:10:54.756 --> 00:11:00.126 A:middle
+and Xcode will get the
+signing certificate installed
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:10:54.756 --> 00:11:00.126 A:middle
+and Xcode will get the
+signing certificate installed
+
+00:11:00.126 --> 00:11:02.366 A:middle
+on your team member
+team member's computer.
+
+00:11:03.876 --> 00:11:07.006 A:middle
+The same goes for
+provisioning profiles,
+
+00:11:07.666 --> 00:11:09.846 A:middle
+when they refresh their
+provisioning profiles
+
+00:11:09.846 --> 00:11:13.006 A:middle
+after they've done this they
+will get the latest iOS team
+
+00:11:13.006 --> 00:11:16.696 A:middle
+provisioning profile, so most
+of this, once you've set this
+
+00:11:16.696 --> 00:11:20.266 A:middle
+up much of the details
+is taken care
+
+00:11:20.266 --> 00:11:23.026 A:middle
+of for the developer by Xcode.
+
+00:11:24.396 --> 00:11:32.006 A:middle
+All right so let's switch gears
+a little bit so once you set
+
+00:11:32.006 --> 00:11:33.996 A:middle
+that up you can actually
+start developing.
+
+00:11:34.706 --> 00:11:39.956 A:middle
+But what I want to recommend
+for your admins to do is
+
+00:11:39.956 --> 00:11:42.686 A:middle
+to create app ID's
+right at the beginning
+
+00:11:42.686 --> 00:11:44.016 A:middle
+of your app development cycle.
+
+00:11:45.006 --> 00:11:49.756 A:middle
+So if you want to develop
+you know some an app
+
+00:11:49.756 --> 00:11:52.686 A:middle
+and you have some app
+in mind go ahead and go
+
+00:11:52.686 --> 00:11:56.226 A:middle
+to the developer portal here
+and click on certificates,
+
+00:11:56.226 --> 00:11:57.786 A:middle
+identifiers and profiles.
+
+00:11:59.716 --> 00:12:07.066 A:middle
+Click on app ID's and plus
+and create your new app ID.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:11:59.716 --> 00:12:07.066 A:middle
+Click on app ID's and plus
+and create your new app ID.
+
+00:12:07.646 --> 00:12:11.886 A:middle
+Create this at the beginning
+of your development cycle
+
+00:12:12.696 --> 00:12:16.586 A:middle
+and I'll tell you
+why in a second.
+
+00:12:16.696 --> 00:12:19.366 A:middle
+Use the team ID prefix
+for your app,
+
+00:12:20.206 --> 00:12:23.756 A:middle
+there may be some legacy entries
+if you were a developer before,
+
+00:12:24.156 --> 00:12:26.406 A:middle
+don't use those use
+the team prefix
+
+00:12:26.406 --> 00:12:32.596 A:middle
+that will get you the happiest
+path and use an explicit app ID,
+
+00:12:32.596 --> 00:12:36.506 A:middle
+you should no longer
+use wild card app ID's
+
+00:12:36.916 --> 00:12:39.256 A:middle
+because this will get
+you a lot more features
+
+00:12:40.016 --> 00:12:41.916 A:middle
+if you use an explicit app ID.
+
+00:12:42.666 --> 00:12:46.426 A:middle
+So the reason that I asked
+admins to create app ID's
+
+00:12:46.766 --> 00:12:49.436 A:middle
+at the beginning of the
+development cycle is
+
+00:12:49.436 --> 00:12:52.996 A:middle
+because many of the apps
+developed today require
+
+00:12:52.996 --> 00:12:56.346 A:middle
+entitlements in their
+provisioning profile,
+
+00:12:56.846 --> 00:12:59.806 A:middle
+so you have iCloud entitlements,
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:13:00.206 --> 00:13:03.946 A:middle
+for extensions you would need
+special entitlements sometimes
+
+00:13:04.036 --> 00:13:08.576 A:middle
+and if your app needs push
+notifications you would need
+
+00:13:08.576 --> 00:13:11.706 A:middle
+to have an app ID registered
+first before you can get a push
+
+00:13:11.706 --> 00:13:13.456 A:middle
+certificate, etcetera, etcetera.
+
+00:13:13.756 --> 00:13:18.366 A:middle
+So because many of the apps
+that we develop today use a lot
+
+00:13:18.366 --> 00:13:25.196 A:middle
+of modern additions that need
+provisioning it's usually easier
+
+00:13:25.196 --> 00:13:27.416 A:middle
+to just enter the app ID first
+
+00:13:27.416 --> 00:13:29.556 A:middle
+and then just keep
+checking boxes as you need
+
+00:13:29.976 --> 00:13:33.156 A:middle
+on the developer
+portal, that's why.
+
+00:13:33.706 --> 00:13:42.226 A:middle
+So in summary enroll in iOS
+developer enterprise program
+
+00:13:42.286 --> 00:13:46.006 A:middle
+to begin development,
+you're agents
+
+00:13:46.166 --> 00:13:48.146 A:middle
+and your admins should
+be employees.
+
+00:13:48.746 --> 00:13:53.116 A:middle
+Your contractors can be
+treated as team members,
+
+00:13:54.596 --> 00:13:56.616 A:middle
+you should invite
+your team members
+
+00:13:56.756 --> 00:13:59.766 A:middle
+as you create your program
+
+00:13:59.856 --> 00:14:02.246 A:middle
+and you should approve
+their code signing
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:13:59.856 --> 00:14:02.246 A:middle
+and you should approve
+their code signing
+
+00:14:02.246 --> 00:14:03.736 A:middle
+certificate requests.
+
+00:14:04.396 --> 00:14:07.846 A:middle
+Remember each team member should
+have their own code signing
+
+00:14:07.846 --> 00:14:12.626 A:middle
+certificate and best
+practice create your app ID's
+
+00:14:12.626 --> 00:14:14.526 A:middle
+at the beginning of
+the development cycle
+
+00:14:15.446 --> 00:14:19.226 A:middle
+that gives you the most leverage
+as you continue to use features
+
+00:14:19.226 --> 00:14:20.616 A:middle
+that require entitlements.
+
+00:14:22.216 --> 00:14:26.356 A:middle
+So that's managing your
+team, I hope that's helpful,
+
+00:14:27.126 --> 00:14:29.926 A:middle
+next I'd like to talk
+about Xcode server,
+
+00:14:30.496 --> 00:14:34.056 A:middle
+Xcode server is a great
+hub for development.
+
+00:14:35.186 --> 00:14:38.416 A:middle
+To install Xcode
+server all you have
+
+00:14:38.416 --> 00:14:43.776 A:middle
+to do is install the OS X
+server from the Mac App Store
+
+00:14:43.776 --> 00:14:46.796 A:middle
+and then install Xcode
+on the same machine.
+
+00:14:47.326 --> 00:14:51.326 A:middle
+When this happens a
+new entry will show
+
+00:14:51.326 --> 00:14:56.886 A:middle
+up in your server dot app side
+bar to enable Xcode service.
+
+00:14:57.726 --> 00:15:00.936 A:middle
+So here's how you set it up
+for enterprise development,
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:14:57.726 --> 00:15:00.936 A:middle
+So here's how you set it up
+for enterprise development,
+
+00:15:01.576 --> 00:15:07.666 A:middle
+the first thing you want
+to do if you want to log
+
+00:15:07.666 --> 00:15:14.326 A:middle
+in with your enterprise account
+on Xcode server, so edit that,
+
+00:15:15.166 --> 00:15:20.416 A:middle
+log in, you can log in with any
+admin account on Xcode server.
+
+00:15:21.306 --> 00:15:28.056 A:middle
+When you do this, the Xcode
+server will get its own code
+
+00:15:28.056 --> 00:15:31.726 A:middle
+signing certificate,
+all right so if you look
+
+00:15:31.726 --> 00:15:33.616 A:middle
+at the key chain there
+it is that's a servers,
+
+00:15:33.616 --> 00:15:34.246 A:middle
+it doesn't belong
+
+00:15:34.246 --> 00:15:37.576 A:middle
+to any developer it's a servers
+own code signing certificate
+
+00:15:38.476 --> 00:15:43.516 A:middle
+and this means that the server
+can produce app packages for you
+
+00:15:43.906 --> 00:15:46.806 A:middle
+and we'll see how that can
+be useful in a few minutes.
+
+00:15:47.686 --> 00:15:51.936 A:middle
+Once you're logged in you
+should create a user for each
+
+00:15:51.976 --> 00:15:57.216 A:middle
+of you admin and team
+members on OS X server.
+
+00:15:57.726 --> 00:16:02.206 A:middle
+You don't have to give
+them home directories,
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:15:57.726 --> 00:16:02.206 A:middle
+You don't have to give
+them home directories,
+
+00:16:02.526 --> 00:16:05.876 A:middle
+you can select services only
+
+00:16:06.306 --> 00:16:08.496 A:middle
+so this basically
+creates directory entries
+
+00:16:08.556 --> 00:16:09.666 A:middle
+for your team members.
+
+00:16:10.356 --> 00:16:13.166 A:middle
+This greatly facilitates
+the rest of the past
+
+00:16:13.906 --> 00:16:17.986 A:middle
+because you can create
+groups out of these entries
+
+00:16:18.606 --> 00:16:24.196 A:middle
+and then create access
+controls based on that group.
+
+00:16:24.196 --> 00:16:30.396 A:middle
+All right so that's really
+it for OS X for Xcode server
+
+00:16:30.396 --> 00:16:34.186 A:middle
+on OS X until later
+we'll talk about bots.
+
+00:16:35.656 --> 00:16:37.156 A:middle
+Let's talk about
+code repositories,
+
+00:16:38.426 --> 00:16:45.266 A:middle
+so you can create
+code repositories
+
+00:16:45.266 --> 00:16:51.176 A:middle
+on Xcode server also, we
+support git or subversion,
+
+00:16:52.556 --> 00:16:56.676 A:middle
+I can recommend git these days,
+
+00:16:57.046 --> 00:17:00.816 A:middle
+you should create one
+repository per app and because
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:16:57.046 --> 00:17:00.816 A:middle
+you should create one
+repository per app and because
+
+00:17:00.816 --> 00:17:01.866 A:middle
+that makes it easier
+
+00:17:01.866 --> 00:17:03.896 A:middle
+to integrate your code
+repository trigger
+
+00:17:03.946 --> 00:17:09.336 A:middle
+with bots later on and create
+access controls on the server,
+
+00:17:09.336 --> 00:17:10.746 A:middle
+it really is very
+simple, all you have
+
+00:17:10.746 --> 00:17:11.996 A:middle
+to do is hit the plus button,
+
+00:17:12.316 --> 00:17:15.536 A:middle
+create a repository,
+it's that simple.
+
+00:17:15.536 --> 00:17:20.685 A:middle
+Now on your developers machine
+you can actually add a server
+
+00:17:20.685 --> 00:17:24.646 A:middle
+as its own entry under your
+preferences, under your accounts
+
+00:17:25.076 --> 00:17:28.156 A:middle
+so here's a server, if
+the server is visible
+
+00:17:28.156 --> 00:17:31.856 A:middle
+on Bonjour it will show
+up here, add that server
+
+00:17:32.246 --> 00:17:36.786 A:middle
+to your Xcode environment
+and you will get this,
+
+00:17:38.196 --> 00:17:43.536 A:middle
+check out an existing project
+on your Xcode welcome screen.
+
+00:17:45.266 --> 00:17:49.256 A:middle
+When you click that Xcode will
+automatically reach the server
+
+00:17:49.576 --> 00:17:53.766 A:middle
+and figure out what repositories
+you have access to and this is
+
+00:17:53.766 --> 00:17:58.696 A:middle
+where all the accounts
+come into play click that
+
+00:17:58.696 --> 00:18:02.686 A:middle
+and you're good to go.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:17:58.696 --> 00:18:02.686 A:middle
+and you're good to go.
+
+00:18:02.806 --> 00:18:06.886 A:middle
+So bots, so a great feature
+
+00:18:07.106 --> 00:18:13.626 A:middle
+of Xcode server is
+bots, so what are bots?
+
+00:18:14.716 --> 00:18:20.996 A:middle
+Give you continuous integration
+they will run units tests
+
+00:18:21.036 --> 00:18:23.476 A:middle
+on devices connected
+to the Xcode server,
+
+00:18:24.056 --> 00:18:29.346 A:middle
+it will generate reports
+and create archives for QA.
+
+00:18:29.986 --> 00:18:34.096 A:middle
+So I'm going to walk you
+through how you create a bot
+
+00:18:34.756 --> 00:18:35.866 A:middle
+using Xcode.
+
+00:18:36.986 --> 00:18:41.146 A:middle
+So anyone can create a bot, it
+doesn't have to be an admin.
+
+00:18:41.316 --> 00:18:43.276 A:middle
+as long as you have
+rights on Xcode server,
+
+00:18:44.266 --> 00:18:45.726 A:middle
+the first thing you
+want to do when you want
+
+00:18:45.726 --> 00:18:48.826 A:middle
+to create a bot is open the
+project that you are interested
+
+00:18:48.826 --> 00:18:54.996 A:middle
+in and create a share scheme,
+go here, click manage schemes.
+
+00:18:56.326 --> 00:19:00.306 A:middle
+Most of the time you already
+have a scheme that you want
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:18:56.326 --> 00:19:00.306 A:middle
+Most of the time you already
+have a scheme that you want
+
+00:19:00.306 --> 00:19:04.196 A:middle
+to use as a template for
+the bots scheme so go ahead
+
+00:19:04.196 --> 00:19:08.786 A:middle
+and duplicate that scheme right
+there and call it integration
+
+00:19:08.786 --> 00:19:13.666 A:middle
+for instance and make sure that
+the shared check box is checked,
+
+00:19:14.156 --> 00:19:19.866 A:middle
+it has to be shared and
+remember to commit the scheme
+
+00:19:19.866 --> 00:19:22.426 A:middle
+to your server with the
+source control and check it
+
+00:19:22.426 --> 00:19:24.916 A:middle
+in otherwise of course the
+server can't see the scheme
+
+00:19:24.916 --> 00:19:25.546 A:middle
+that you've just made.
+
+00:19:26.036 --> 00:19:30.256 A:middle
+Next on the server
+connect your test devices
+
+00:19:30.996 --> 00:19:35.126 A:middle
+so if you plug an iOS device
+into an OS server it will show
+
+00:19:35.126 --> 00:19:37.326 A:middle
+up here, it will show
+up at the bottom.
+
+00:19:38.266 --> 00:19:43.046 A:middle
+If you click on add the team
+Xcode server will take your
+
+00:19:43.046 --> 00:19:44.686 A:middle
+device and automatically add
+
+00:19:44.756 --> 00:19:46.406 A:middle
+that to your provisioning
+profiles.
+
+00:19:46.736 --> 00:19:50.406 A:middle
+The rapid device you did
+go to the developer portal
+
+00:19:51.026 --> 00:19:54.606 A:middle
+and create a new development
+provision and profile
+
+00:19:54.606 --> 00:19:56.586 A:middle
+which can then be downloaded
+by your team members
+
+00:19:57.186 --> 00:20:00.376 A:middle
+so why do you want to connect
+test devices to the server?
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:19:57.186 --> 00:20:00.376 A:middle
+so why do you want to connect
+test devices to the server?
+
+00:20:01.146 --> 00:20:04.816 A:middle
+This device is actually
+used for the unit test,
+
+00:20:04.986 --> 00:20:07.356 A:middle
+they'll actually run the
+unit test on the device.
+
+00:20:08.306 --> 00:20:12.946 A:middle
+So connect a variety of test
+devices if you can, an iPad,
+
+00:20:12.946 --> 00:20:16.556 A:middle
+iPod touch, iPhone to get the
+best coverage for your tests
+
+00:20:18.006 --> 00:20:21.156 A:middle
+and like I said the development
+provisioning profile is
+
+00:20:21.156 --> 00:20:24.476 A:middle
+automatically updated
+actually connect new devices
+
+00:20:24.866 --> 00:20:27.206 A:middle
+and add them the portal.
+
+00:20:28.656 --> 00:20:32.946 A:middle
+Once you've done that back
+to Xcode, create your bot,
+
+00:20:34.276 --> 00:20:38.836 A:middle
+under product remember this is
+you still have the project open
+
+00:20:38.896 --> 00:20:40.646 A:middle
+that you're interested
+in creating the bot for,
+
+00:20:41.346 --> 00:20:47.436 A:middle
+under product go to create bots,
+under the create bots dialogue,
+
+00:20:47.496 --> 00:20:49.346 A:middle
+choose the scheme
+that you've just made,
+
+00:20:49.836 --> 00:20:51.306 A:middle
+the dash it all integration
+scheme
+
+00:20:51.876 --> 00:20:54.216 A:middle
+and call the bot give
+a name to the bot,
+
+00:20:54.466 --> 00:20:56.856 A:middle
+so we have here dash it
+all commitment integration
+
+00:20:57.066 --> 00:21:00.166 A:middle
+so for this example
+we want the bot to run
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:20:57.066 --> 00:21:00.166 A:middle
+so for this example
+we want the bot to run
+
+00:21:00.596 --> 00:21:06.806 A:middle
+when a new commit is made to
+the repository and that's it.
+
+00:21:08.226 --> 00:21:13.296 A:middle
+You can choose when you want
+to perform the operation,
+
+00:21:13.856 --> 00:21:17.386 A:middle
+you can choose what actions
+you want to do, analyze, test,
+
+00:21:17.386 --> 00:21:22.546 A:middle
+archive and which devices
+you want to run this bot on.
+
+00:21:27.076 --> 00:21:29.736 A:middle
+Bot creation succeeded
+and the bot is ready
+
+00:21:29.736 --> 00:21:30.886 A:middle
+to use, it's that simple.
+
+00:21:30.886 --> 00:21:33.196 A:middle
+So what do you get?
+
+00:21:33.796 --> 00:21:39.186 A:middle
+When the bot runs it keeps a
+data base of its run status
+
+00:21:39.186 --> 00:21:44.016 A:middle
+and results so you can see
+the history off the builds,
+
+00:21:44.186 --> 00:21:47.166 A:middle
+which builds failed and
+passed, you can see how many
+
+00:21:47.166 --> 00:21:51.056 A:middle
+of your units have passed and
+failed, you can even see this
+
+00:21:51.156 --> 00:21:55.786 A:middle
+on a web browser by going to
+the servername/Xcode/bots.
+
+00:21:56.526 --> 00:22:00.676 A:middle
+Your bot will produce
+these results,
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:21:56.526 --> 00:22:00.676 A:middle
+Your bot will produce
+these results,
+
+00:22:01.376 --> 00:22:03.896 A:middle
+it will produce test results,
+unit test pass and fails,
+
+00:22:04.886 --> 00:22:06.476 A:middle
+static analysis results.
+
+00:22:07.466 --> 00:22:11.616 A:middle
+It will produce logs from
+your build and test sessions,
+
+00:22:12.006 --> 00:22:15.416 A:middle
+it will produce extra
+project archives
+
+00:22:15.416 --> 00:22:18.696 A:middle
+so you know exactly what code
+got compiled for that run.
+
+00:22:19.186 --> 00:22:23.546 A:middle
+And here's where the servers
+code signing comes into play.
+
+00:22:24.166 --> 00:22:27.946 A:middle
+The bots will actually use Xcode
+servers code signing certificate
+
+00:22:28.236 --> 00:22:32.376 A:middle
+to create ad-hoc
+signed app packages
+
+00:22:32.776 --> 00:22:36.376 A:middle
+which QA can then download
+straight from the web server
+
+00:22:36.686 --> 00:22:39.196 A:middle
+or Xcode and install
+on their own devices
+
+00:22:39.196 --> 00:22:43.186 A:middle
+to do regression testing,
+it's great for QA.
+
+00:22:44.236 --> 00:22:47.406 A:middle
+That's Xcode server, it's
+a hub for development,
+
+00:22:48.656 --> 00:22:52.086 A:middle
+install OS X server and
+Xcode on the same machine,
+
+00:22:53.436 --> 00:22:55.006 A:middle
+sign in with your
+enterprise account,
+
+00:22:55.306 --> 00:22:59.186 A:middle
+any admin account will do, host
+your code repository there,
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:23:00.606 --> 00:23:03.226 A:middle
+connect your test
+devices and use bots
+
+00:23:03.486 --> 00:23:04.726 A:middle
+for continuous integration.
+
+00:23:06.046 --> 00:23:08.666 A:middle
+It's a great hub for
+your development needs,
+
+00:23:08.796 --> 00:23:11.476 A:middle
+that's Xcode server, all right.
+
+00:23:12.646 --> 00:23:13.836 A:middle
+App distribution strategy,
+
+00:23:14.416 --> 00:23:18.316 A:middle
+distribution provisioning
+profiles, when you're ready
+
+00:23:18.386 --> 00:23:20.466 A:middle
+to publish your app
+and distribute them
+
+00:23:20.606 --> 00:23:23.156 A:middle
+to your enterprise
+members you need
+
+00:23:23.156 --> 00:23:26.156 A:middle
+to create a distribution
+provisioning profile.
+
+00:23:26.486 --> 00:23:30.306 A:middle
+The way you do that is go
+to the developer portal,
+
+00:23:30.306 --> 00:23:33.946 A:middle
+certificate identifiers and
+profiles again and click
+
+00:23:33.946 --> 00:23:36.556 A:middle
+on the distribution
+item on the side bar.
+
+00:23:38.876 --> 00:23:42.106 A:middle
+Then next step click in
+house so this is available
+
+00:23:42.106 --> 00:23:43.406 A:middle
+for enterprise accounts,
+
+00:23:44.076 --> 00:23:47.156 A:middle
+in house distribution will
+allow you to run your app
+
+00:23:47.736 --> 00:23:51.086 A:middle
+that you signed on any
+devices without limit of UDID.
+
+00:23:53.796 --> 00:23:58.526 A:middle
+Select your app ID that you've
+provisioned before right there
+
+00:23:59.086 --> 00:24:03.306 A:middle
+and that's it.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:23:59.086 --> 00:24:03.306 A:middle
+and that's it.
+
+00:24:04.576 --> 00:24:08.756 A:middle
+You can download the
+provisioning profile and then go
+
+00:24:08.756 --> 00:24:14.426 A:middle
+to Xcode and open the
+project and see archive,
+
+00:24:15.056 --> 00:24:19.066 A:middle
+product archive right there.
+
+00:24:19.276 --> 00:24:22.896 A:middle
+When you click archive the
+project will be archived
+
+00:24:23.196 --> 00:24:26.236 A:middle
+and will be ready to
+distribute, it is not ready
+
+00:24:26.236 --> 00:24:28.936 A:middle
+to distribute yet, you
+need to do one more step,
+
+00:24:29.116 --> 00:24:34.456 A:middle
+you need to click distribute
+and save for enterprise
+
+00:24:34.696 --> 00:24:38.536 A:middle
+or ad-hoc deployment
+right there.
+
+00:24:41.576 --> 00:24:45.346 A:middle
+Then choose the provisioning
+profile the provisioning profile
+
+00:24:45.346 --> 00:24:48.866 A:middle
+that you've just created, not
+the team provisioning profile
+
+00:24:48.866 --> 00:24:52.046 A:middle
+but this one the in house
+provisioning profile,
+
+00:24:52.246 --> 00:24:53.646 A:middle
+distribution provisioning
+profile.
+
+00:24:54.126 --> 00:24:59.276 A:middle
+And then save the file.
+
+00:24:59.836 --> 00:25:03.196 A:middle
+If you're using MDM to
+distribute your apps
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:24:59.836 --> 00:25:03.196 A:middle
+If you're using MDM to
+distribute your apps
+
+00:25:03.376 --> 00:25:07.046 A:middle
+and you should you
+get the opportunity
+
+00:25:07.186 --> 00:25:10.256 A:middle
+to create the manifest file
+that can then be provided
+
+00:25:10.256 --> 00:25:11.766 A:middle
+to your MDM server over here.
+
+00:25:12.356 --> 00:25:18.646 A:middle
+Consult your MDM server and you
+can enter the URL and app icons
+
+00:25:18.736 --> 00:25:24.256 A:middle
+that will be used to download
+the enterprise app that's how
+
+00:25:24.256 --> 00:25:26.416 A:middle
+you package your apps
+for distribution.
+
+00:25:26.836 --> 00:25:32.256 A:middle
+All right so next topic is
+something that's near and dear
+
+00:25:32.256 --> 00:25:34.876 A:middle
+to all our hearts, code signing
+
+00:25:34.876 --> 00:25:37.936 A:middle
+and provisioning
+rules, all right.
+
+00:25:38.926 --> 00:25:44.976 A:middle
+Code signing certificates
+are valid for three years.
+
+00:25:45.516 --> 00:25:47.966 A:middle
+[ Applause ]
+
+00:25:48.466 --> 00:25:48.976 A:middle
+Thank you.
+
+00:25:51.836 --> 00:25:57.996 A:middle
+You can have up to two valid
+certificates at a time all right
+
+00:25:58.256 --> 00:26:02.606 A:middle
+so they can overlap but at any
+particular time you can only
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:25:58.256 --> 00:26:02.606 A:middle
+so they can overlap but at any
+particular time you can only
+
+00:26:02.606 --> 00:26:03.806 A:middle
+have two valid ones.
+
+00:26:04.656 --> 00:26:06.986 A:middle
+You have to update
+your app binary
+
+00:26:06.986 --> 00:26:10.856 A:middle
+to update your code
+signing certificate
+
+00:26:10.896 --> 00:26:14.036 A:middle
+because you know it's
+part of the code bundle.
+
+00:26:15.896 --> 00:26:20.116 A:middle
+Provisioning profiles,
+provisioning profiles are valid
+
+00:26:20.116 --> 00:26:25.686 A:middle
+for one year but you can
+renew it at any time.
+
+00:26:25.886 --> 00:26:28.706 A:middle
+There is no need to
+update your app binary,
+
+00:26:29.866 --> 00:26:32.526 A:middle
+in fact it is the best practice
+
+00:26:32.726 --> 00:26:36.076 A:middle
+to update your provisioning
+profile silently over MDM
+
+00:26:36.446 --> 00:26:37.896 A:middle
+so that the apps will
+continue running.
+
+00:26:39.436 --> 00:26:42.196 A:middle
+Enterprise apps need
+both of these to run,
+
+00:26:42.646 --> 00:26:44.786 A:middle
+they need to have a valid
+code signing certificate
+
+00:26:45.726 --> 00:26:50.676 A:middle
+and a valid provisioning
+profile at the same time to run
+
+00:26:50.676 --> 00:26:57.206 A:middle
+on a user's device so to
+illustrate the kind of strategy
+
+00:26:57.206 --> 00:26:59.356 A:middle
+that you might have to
+build around these rules,
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:27:00.066 --> 00:27:05.806 A:middle
+I've got a little chart here
+for you, so the vertical bars
+
+00:27:05.806 --> 00:27:09.416 A:middle
+in this chart are years, so
+this is year 0, year 1, year 2,
+
+00:27:09.416 --> 00:27:13.476 A:middle
+year 3, etcetera and the arrow
+up there is where you are
+
+00:27:13.476 --> 00:27:16.726 A:middle
+in time, I'm going to describe
+to you the kinds of things
+
+00:27:16.726 --> 00:27:18.006 A:middle
+that you might have to consider
+
+00:27:18.536 --> 00:27:20.536 A:middle
+as your app is deployed
+over the years.
+
+00:27:21.066 --> 00:27:23.586 A:middle
+So let's start by assuming
+you're going to publish an app
+
+00:27:23.876 --> 00:27:26.256 A:middle
+and year 0, you've never
+done it before, here we go,
+
+00:27:26.256 --> 00:27:29.946 A:middle
+app A 1.0 at year 0 we're
+going to distribute it.
+
+00:27:31.106 --> 00:27:33.066 A:middle
+Well the first thing
+you got to do is you got
+
+00:27:33.066 --> 00:27:36.656 A:middle
+to get yourself a code signing
+certificate, so you do that
+
+00:27:37.266 --> 00:27:40.346 A:middle
+and you sign your
+app with it, great.
+
+00:27:40.726 --> 00:27:44.466 A:middle
+Well, that's not enough right,
+you need a provisioning profile,
+
+00:27:44.466 --> 00:27:46.236 A:middle
+you need a distribution
+provisioning profile,
+
+00:27:46.236 --> 00:27:49.836 A:middle
+that's so these three steps are
+what we have just seen a few
+
+00:27:49.836 --> 00:27:52.906 A:middle
+slides ago when you go
+through and go to your archives
+
+00:27:53.166 --> 00:27:54.716 A:middle
+and distribute for
+enterprise, this is it.
+
+00:27:54.966 --> 00:27:57.616 A:middle
+You go to cosigning certificate,
+you use it to sign an app
+
+00:27:58.396 --> 00:28:00.036 A:middle
+and then you have a
+provisioning profile.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:27:58.396 --> 00:28:00.036 A:middle
+and then you have a
+provisioning profile.
+
+00:28:00.766 --> 00:28:03.566 A:middle
+So the provisioning profiles
+are embedded in the app
+
+00:28:03.566 --> 00:28:06.656 A:middle
+so when the user downloads
+the app they automatically get
+
+00:28:06.736 --> 00:28:08.346 A:middle
+whatever provisioning
+profile you chose
+
+00:28:08.346 --> 00:28:11.596 A:middle
+when you distributed that app.
+
+00:28:11.736 --> 00:28:14.476 A:middle
+So everything is great,
+apps running, fantastic,
+
+00:28:14.936 --> 00:28:20.016 A:middle
+six months go by you go hey
+there's only six months left
+
+00:28:20.016 --> 00:28:24.126 A:middle
+in my provisioning profile, I'd
+better refresh this before some
+
+00:28:24.296 --> 00:28:27.476 A:middle
+of my users run out of
+provisioning profile validity,
+
+00:28:28.536 --> 00:28:30.856 A:middle
+so you create a new
+provisioning profile,
+
+00:28:31.556 --> 00:28:34.556 A:middle
+remember provisioning profiles
+can be renewed at any time
+
+00:28:34.556 --> 00:28:37.586 A:middle
+so you just do it and
+push it out using MDM
+
+00:28:37.586 --> 00:28:39.916 A:middle
+and the users are good
+to go for another year
+
+00:28:39.916 --> 00:28:44.006 A:middle
+from that point, all right.
+
+00:28:45.276 --> 00:28:49.116 A:middle
+So everything is going
+fine and now you want
+
+00:28:49.116 --> 00:28:53.166 A:middle
+to create another app A
+version, let's do an app A 2.0,
+
+00:28:53.166 --> 00:28:55.986 A:middle
+you do the same thing again
+just assign it a code signing
+
+00:28:55.986 --> 00:28:58.246 A:middle
+certificate, you don't have
+
+00:28:58.246 --> 00:29:01.246 A:middle
+to include another provisioning
+profile in app A 2.0
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:28:58.246 --> 00:29:01.246 A:middle
+to include another provisioning
+profile in app A 2.0
+
+00:29:01.526 --> 00:29:04.516 A:middle
+because the apps
+bundle ID didn't change
+
+00:29:05.256 --> 00:29:08.326 A:middle
+but it's a good idea because
+provisioning profiles are free
+
+00:29:08.326 --> 00:29:12.766 A:middle
+to renew just make another one,
+bundle it in with app A 2.0
+
+00:29:13.036 --> 00:29:14.306 A:middle
+so when the user downloads it
+
+00:29:14.306 --> 00:29:16.826 A:middle
+at that time they get a
+full year's worth of use
+
+00:29:17.206 --> 00:29:18.296 A:middle
+of the provisioning profile.
+
+00:29:19.786 --> 00:29:24.956 A:middle
+And time goes on and you keep
+doing this over the years
+
+00:29:24.956 --> 00:29:27.526 A:middle
+and everything is great, all
+the users are getting their
+
+00:29:27.526 --> 00:29:30.646 A:middle
+provisional profiles pushed
+by MDM, you don't have
+
+00:29:30.646 --> 00:29:32.316 A:middle
+to do a thing, the
+app continues to run.
+
+00:29:33.136 --> 00:29:35.416 A:middle
+All right so now
+you're 2 1/2 years
+
+00:29:35.416 --> 00:29:37.826 A:middle
+into your first code signing
+certificates validity date.
+
+00:29:39.136 --> 00:29:43.836 A:middle
+You decide to create
+another app, app B 1.0.
+
+00:29:44.556 --> 00:29:47.576 A:middle
+You could sign app B with your
+current cosigning certificate
+
+00:29:48.266 --> 00:29:50.366 A:middle
+but you're going to get six
+months of use out of it.
+
+00:29:51.426 --> 00:29:55.336 A:middle
+So many of our enterprise
+developers will have some kind
+
+00:29:55.336 --> 00:29:59.256 A:middle
+of threshold date where
+they say if there is less
+
+00:29:59.256 --> 00:30:00.576 A:middle
+than this number of days left
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:29:59.256 --> 00:30:00.576 A:middle
+than this number of days left
+
+00:30:00.576 --> 00:30:02.756 A:middle
+in my original code signing
+certificate I'm going
+
+00:30:02.756 --> 00:30:03.676 A:middle
+to create a new one.
+
+00:30:04.286 --> 00:30:06.796 A:middle
+So we're going to assume
+six months is too little,
+
+00:30:06.796 --> 00:30:09.126 A:middle
+they're going to create a
+new code signing certificate
+
+00:30:09.126 --> 00:30:15.356 A:middle
+and sign app B with a new
+code signing certificate.
+
+00:30:15.806 --> 00:30:17.296 A:middle
+Because you're signing at B
+
+00:30:17.296 --> 00:30:19.546 A:middle
+with a new code signing
+certificate you're going
+
+00:30:19.546 --> 00:30:22.926 A:middle
+to have a new distribution
+provisioning profile for app B
+
+00:30:23.306 --> 00:30:25.936 A:middle
+which you include and everything
+is great, everything works,
+
+00:30:26.386 --> 00:30:29.916 A:middle
+app A continues to work with
+the old cosigning certificate
+
+00:30:29.916 --> 00:30:33.386 A:middle
+and app B continues to work with
+the new cosigning certificate,
+
+00:30:33.906 --> 00:30:40.156 A:middle
+everything is fine until
+you reach close the end
+
+00:30:40.616 --> 00:30:44.136 A:middle
+of app A's code signing
+certificate validity date.
+
+00:30:44.796 --> 00:30:45.506 A:middle
+What do we do now?
+
+00:30:46.576 --> 00:30:50.516 A:middle
+Well, you can't reuse the
+old code singing certificate
+
+00:30:50.946 --> 00:30:53.316 A:middle
+but you have a new code
+signing certificate that's good
+
+00:30:53.316 --> 00:30:57.166 A:middle
+for another few years
+however in order
+
+00:30:57.166 --> 00:30:58.906 A:middle
+to update the code
+signing certificate
+
+00:30:58.906 --> 00:31:03.356 A:middle
+in your app you must distribute
+a new version of your app
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:30:58.906 --> 00:31:03.356 A:middle
+in your app you must distribute
+a new version of your app
+
+00:31:04.086 --> 00:31:09.496 A:middle
+that is signed with a new code
+signing certificate, okay.
+
+00:31:09.496 --> 00:31:14.256 A:middle
+And because the code signing
+certificate has changed you also
+
+00:31:14.256 --> 00:31:17.766 A:middle
+need a new distribution
+provisioning profile for app A,
+
+00:31:18.906 --> 00:31:21.366 A:middle
+which you bundle with
+app A and you distribute.
+
+00:31:22.006 --> 00:31:24.766 A:middle
+Now everything is good for
+another 2 1/2 years or so.
+
+00:31:25.076 --> 00:31:26.906 A:middle
+Notice your code
+signing expiration dates
+
+00:31:28.006 --> 00:31:30.826 A:middle
+and use the newest code signing
+certificate that you have
+
+00:31:30.826 --> 00:31:35.986 A:middle
+on hand, embed a new
+provisioning profile every time
+
+00:31:36.096 --> 00:31:40.036 A:middle
+you distribute a new app.
+
+00:31:40.036 --> 00:31:41.726 A:middle
+Host your in house
+app using HTTPS,
+
+00:31:41.726 --> 00:31:44.146 A:middle
+this is just a little note
+
+00:31:44.296 --> 00:31:46.676 A:middle
+because we've made a
+recent change in iOS
+
+00:31:46.676 --> 00:31:51.316 A:middle
+that requires HTTPS in order
+to download your in house apps.
+
+00:31:52.386 --> 00:31:55.196 A:middle
+Then use MDM to distribute
+your apps
+
+00:31:55.616 --> 00:31:58.466 A:middle
+and to refresh you
+provisioning profiles silently.
+
+00:31:59.056 --> 00:32:03.646 A:middle
+Remember that an app must
+be updated in order in order
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:31:59.056 --> 00:32:03.646 A:middle
+Remember that an app must
+be updated in order in order
+
+00:32:03.646 --> 00:32:05.946 A:middle
+to change its code
+signing certificates.
+
+00:32:08.076 --> 00:32:11.966 A:middle
+All right so that's a little bit
+about app distribution strategy.
+
+00:32:12.516 --> 00:32:19.376 A:middle
+All right now let's
+talk about custom B2B,
+
+00:32:21.296 --> 00:32:26.866 A:middle
+so what's custom B2B custom
+B2B are apps that are hosted
+
+00:32:27.096 --> 00:32:31.666 A:middle
+in the Apple App Store
+but are only visible
+
+00:32:31.846 --> 00:32:33.346 A:middle
+to a limited audience.
+
+00:32:33.856 --> 00:32:39.196 A:middle
+Because they are hosted in the
+App Store they are reviewed
+
+00:32:39.196 --> 00:32:44.116 A:middle
+by Apple but when you install
+a custom B2B app there's no
+
+00:32:44.116 --> 00:32:45.526 A:middle
+provisioning profile required
+
+00:32:45.826 --> 00:32:48.396 A:middle
+because they are
+considered App Store apps.
+
+00:32:52.696 --> 00:32:55.476 A:middle
+To publish a custom
+B2B app you have
+
+00:32:55.506 --> 00:32:56.976 A:middle
+to be an App Store developer,
+
+00:32:57.486 --> 00:32:59.176 A:middle
+not necessarily an
+enterprise developer,
+
+00:32:59.716 --> 00:33:02.616 A:middle
+you follow the same
+steps that you do
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:32:59.716 --> 00:33:02.616 A:middle
+you follow the same
+steps that you do
+
+00:33:03.076 --> 00:33:08.246 A:middle
+for publishing irregular App
+Store app, however all you got
+
+00:33:08.246 --> 00:33:11.426 A:middle
+to do is check that little box
+that says custom B2B and when
+
+00:33:11.426 --> 00:33:14.096 A:middle
+that happens you get a
+field that allows you
+
+00:33:14.336 --> 00:33:20.376 A:middle
+to specify what Apple
+ID's can see your app.
+
+00:33:20.706 --> 00:33:27.186 A:middle
+These Apple ID's are Apple
+ID's for the VPP portal,
+
+00:33:27.186 --> 00:33:31.556 A:middle
+the volume purchase
+program portal, right here.
+
+00:33:32.496 --> 00:33:38.666 A:middle
+When a custom B2B app is
+published and an Apple ID is put
+
+00:33:38.666 --> 00:33:42.746 A:middle
+in there the purchaser of
+that app can see these apps,
+
+00:33:43.116 --> 00:33:46.276 A:middle
+list it at the bottom
+of their VPP portal
+
+00:33:47.316 --> 00:33:50.646 A:middle
+where they can then purchase
+licenses and push these apps
+
+00:33:50.646 --> 00:33:55.256 A:middle
+out using MDM as though
+they were App Store apps.
+
+00:33:56.936 --> 00:33:59.676 A:middle
+So why would you use custom B2B?
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:34:00.356 --> 00:34:03.346 A:middle
+If you're an enterprise
+custom B2B is great
+
+00:34:03.776 --> 00:34:07.976 A:middle
+if a custom app that's
+made for you contains code
+
+00:34:07.976 --> 00:34:12.536 A:middle
+that you don't own, when you
+buy an app tailor made for you
+
+00:34:12.536 --> 00:34:14.416 A:middle
+from some, from a
+separate company
+
+00:34:14.516 --> 00:34:17.835 A:middle
+for example you can ask
+them to publish the app
+
+00:34:17.926 --> 00:34:20.876 A:middle
+as a custom B2B app
+which you can then view
+
+00:34:20.876 --> 00:34:23.906 A:middle
+and purchase using your own
+portal and you will know
+
+00:34:23.906 --> 00:34:26.196 A:middle
+for sure that nobody else
+gets access to that app.
+
+00:34:27.126 --> 00:34:32.176 A:middle
+Okay, they're also great for
+subsidiaries so if your company
+
+00:34:32.176 --> 00:34:35.886 A:middle
+if your enterprise happens
+to be a conglomeration
+
+00:34:35.886 --> 00:34:39.436 A:middle
+of subsidiaries many of them
+have different VPP programs
+
+00:34:39.436 --> 00:34:42.996 A:middle
+with different requirements
+creating a custom B2B
+
+00:34:43.335 --> 00:34:45.426 A:middle
+distribution maybe easier
+
+00:34:45.426 --> 00:34:48.746 A:middle
+than developing an enterprise
+app for them, all right.
+
+00:34:49.045 --> 00:34:52.446 A:middle
+So a custom B2B app does
+not require any code signing
+
+00:34:52.446 --> 00:34:54.386 A:middle
+or provisioning profile watching
+
+00:34:54.386 --> 00:34:57.206 A:middle
+for code signing
+provisioning profile expiration
+
+00:34:57.696 --> 00:35:00.636 A:middle
+because they are App Store apps.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:34:57.696 --> 00:35:00.636 A:middle
+because they are App Store apps.
+
+00:35:00.706 --> 00:35:04.016 A:middle
+You can create promo codes
+for beta testing your apps.
+
+00:35:05.356 --> 00:35:08.716 A:middle
+So that's custom B2B.
+
+00:35:08.946 --> 00:35:12.856 A:middle
+So today we've covered
+several high level topics here,
+
+00:35:13.536 --> 00:35:16.776 A:middle
+managing your team and
+the roles in the program.
+
+00:35:17.356 --> 00:35:22.156 A:middle
+We talked about Xcode server and
+how it can become a great hub
+
+00:35:22.606 --> 00:35:24.286 A:middle
+for your development team.
+
+00:35:25.016 --> 00:35:30.346 A:middle
+We talked about app distribution
+strategies and we've talked
+
+00:35:30.346 --> 00:35:34.006 A:middle
+about custom B2B and how that
+can be used in your enterprise.
+
+00:35:34.596 --> 00:35:40.556 A:middle
+Some Key take-a-ways, agents
+and admins should be employees,
+
+00:35:41.546 --> 00:35:45.126 A:middle
+contractors should
+be team members.
+
+00:35:45.576 --> 00:35:48.636 A:middle
+Use Xcode server for
+continuous integration and QA
+
+00:35:49.156 --> 00:35:52.536 A:middle
+and keep an eye out
+for the code signing
+
+00:35:52.536 --> 00:35:56.326 A:middle
+and certificate expiration
+dates and use custom B2B
+
+00:35:56.326 --> 00:35:59.466 A:middle
+if you don't own the code.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:36:00.196 --> 00:36:03.866 A:middle
+All right I want to call your
+attention to a great portal site
+
+00:36:03.866 --> 00:36:06.096 A:middle
+that was just launched,
+developer.apple.
+
+00:36:06.096 --> 00:36:09.616 A:middle
+com/enterprise made especially
+for enterprise developers.
+
+00:36:10.136 --> 00:36:14.516 A:middle
+Our evangelist is Paul Danbold
+
+00:36:16.036 --> 00:36:18.916 A:middle
+and development forums are
+always a great resource for you.
+
+00:36:19.926 --> 00:36:21.026 A:middle
+Some related sessions,
+
+00:36:22.046 --> 00:36:25.246 A:middle
+this morning we had Managing
+Apple Devices please check the
+
+00:36:25.246 --> 00:36:25.776 A:middle
+video out.
+
+00:36:26.556 --> 00:36:28.416 A:middle
+We had Building Apps
+for Enterprise
+
+00:36:28.416 --> 00:36:31.906 A:middle
+and Education earlier today,
+with that thank you very much.
+
+00:36:32.516 --> 00:36:36.500 A:middle
+[ Applause ]
+

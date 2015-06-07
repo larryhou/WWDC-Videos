@@ -1,0 +1,5084 @@
+
+1
+00:00:00.506 --> 00:00:10.516
+[ Silence ]
+
+2
+00:00:11.016 --> 00:00:17.000
+[ Applause ]
+
+3
+00:00:17.686 --> 00:00:18.396
+>> Good afternoon.
+
+4
+00:00:18.396 --> 00:00:18.896
+Thank you.
+
+5
+00:00:18.946 --> 00:00:22.696
+Welcome to what they
+tell me is Session 416,
+
+6
+00:00:22.696 --> 00:00:23.836
+"Modern Frameworks".
+
+7
+00:00:23.836 --> 00:00:28.246
+Today I'm going to be talking a
+lot about mostly the mechanics
+
+8
+00:00:28.246 --> 00:00:31.016
+of setting up modern
+frameworks on iOS,
+
+9
+00:00:31.016 --> 00:00:34.466
+some of the API design
+principles that we use at Apple
+
+10
+00:00:34.466 --> 00:00:36.086
+and that we recommend
+that you guys use.
+
+11
+00:00:36.086 --> 00:00:39.866
+If you were here for Andy and
+Collin's talk just before this,
+
+12
+00:00:40.546 --> 00:00:42.236
+they really delved into a lot
+
+13
+00:00:42.236 --> 00:00:46.606
+of the deep architectural
+components of how
+
+14
+00:00:46.606 --> 00:00:47.726
+to build your application.
+
+15
+00:00:48.756 --> 00:00:50.376
+I'm going to cover some
+of the higher level stuff
+
+16
+00:00:50.376 --> 00:00:53.076
+and then we'll go through a
+quick tour of Xcode and talk
+
+17
+00:00:53.076 --> 00:00:55.826
+about how some of these things
+get build directly into your app
+
+18
+00:00:55.996 --> 00:00:59.476
+and just some of the mechanics
+of getting all of that set up.
+
+19
+00:00:59.746 --> 00:01:05.556
+So, how many of you have
+actually used static libraries
+
+20
+00:00:59.746 --> 00:01:05.556
+So, how many of you have
+actually used static libraries
+
+21
+00:01:05.556 --> 00:01:08.986
+in your application that
+you get from a third party?
+
+22
+00:01:09.136 --> 00:01:09.826
+That's everyone.
+
+23
+00:01:09.826 --> 00:01:11.786
+Okay. If you're doing
+it without one
+
+24
+00:01:11.786 --> 00:01:14.166
+of those things you're probably
+using the target management
+
+25
+00:01:14.166 --> 00:01:15.206
+mechanisms in Xcode.
+
+26
+00:01:15.936 --> 00:01:17.846
+Right? You download a
+bunch of source code files,
+
+27
+00:01:17.846 --> 00:01:21.206
+you put them someplace on your
+drive, you hope you remember
+
+28
+00:01:21.206 --> 00:01:25.306
+where you left them, and you're
+messing around with this,
+
+29
+00:01:25.306 --> 00:01:27.006
+and you're shifting things
+in and out of targets,
+
+30
+00:01:27.376 --> 00:01:28.936
+you may be even taking
+them wholesale
+
+31
+00:01:28.936 --> 00:01:30.886
+and dumping them directly
+into your application
+
+32
+00:01:30.886 --> 00:01:33.376
+so now you've got six or
+seven copies across all
+
+33
+00:01:33.376 --> 00:01:34.876
+of the applications
+you're working on.
+
+34
+00:01:35.596 --> 00:01:36.366
+Things like that.
+
+35
+00:01:37.086 --> 00:01:41.246
+The next step up from this
+is the Static Library, right?
+
+36
+00:01:41.246 --> 00:01:42.586
+The Cocoa Touch Static Library.
+
+37
+00:01:43.876 --> 00:01:46.526
+It's a .a, you still
+have to put it someplace.
+
+38
+00:01:46.526 --> 00:01:48.386
+You're probably checking
+it into your sources.
+
+39
+00:01:48.426 --> 00:01:50.866
+The .a is separate
+from the header,
+
+40
+00:01:50.866 --> 00:01:52.586
+so you need to put
+the header someplace.
+
+41
+00:01:53.316 --> 00:01:56.286
+You can't carry assets along
+with it so you don't get
+
+42
+00:01:56.286 --> 00:01:59.366
+to do things like have
+a bunch of nice pictures
+
+43
+00:01:59.366 --> 00:02:01.976
+or customized controls
+and things
+
+44
+00:01:59.366 --> 00:02:01.976
+or customized controls
+and things
+
+45
+00:02:01.976 --> 00:02:03.256
+like that in your application.
+
+46
+00:02:03.646 --> 00:02:07.116
+So, this is good but not great.
+
+47
+00:02:07.116 --> 00:02:11.276
+In iOS 8-so actually let
+me back up for a second,
+
+48
+00:02:11.926 --> 00:02:13.586
+OS X developers,
+you guys are here?
+
+49
+00:02:13.946 --> 00:02:14.586
+All six of you?
+
+50
+00:02:16.086 --> 00:02:23.386
+No? Okay. How many of you have
+actually shipped a framework?
+
+51
+00:02:23.386 --> 00:02:24.956
+Wow, okay, a good number.
+
+52
+00:02:24.986 --> 00:02:27.486
+Great. iOS users you
+can do it now, too.
+
+53
+00:02:28.096 --> 00:02:28.976
+There are some restrictions,
+though.
+
+54
+00:02:29.516 --> 00:02:32.676
+[ Applause ]
+
+55
+00:02:33.176 --> 00:02:34.316
+So we'll talk about that.
+
+56
+00:02:34.856 --> 00:02:37.916
+One of the reasons that you're
+going to use frameworks is
+
+57
+00:02:37.916 --> 00:02:40.036
+to be able to package
+absolutely everything
+
+58
+00:02:40.036 --> 00:02:41.416
+up that you need
+as a single unit.
+
+59
+00:02:42.346 --> 00:02:43.666
+Right? So this is going
+to include headers,
+
+60
+00:02:43.666 --> 00:02:46.126
+it's going to include
+images, asset catalogs.
+
+61
+00:02:46.126 --> 00:02:46.596
+You name it.
+
+62
+00:02:46.596 --> 00:02:49.026
+Throw it in the framework it
+goes along as a single unit.
+
+63
+00:02:49.106 --> 00:02:50.626
+You'll be able to put
+those frameworks someplace
+
+64
+00:02:50.626 --> 00:02:52.726
+on your drive, keep
+track of them.
+
+65
+00:02:52.726 --> 00:02:54.276
+Xcode will take care
+of moving those things
+
+66
+00:02:54.276 --> 00:02:56.036
+into the right place on
+your application builds.
+
+67
+00:02:56.696 --> 00:02:58.116
+Right? There are a lot
+of really neat features
+
+68
+00:02:58.116 --> 00:03:00.676
+that have been built in for
+iOS 8, especially in the face
+
+69
+00:02:58.116 --> 00:03:00.676
+that have been built in for
+iOS 8, especially in the face
+
+70
+00:03:00.676 --> 00:03:04.196
+of the some of the new features,
+to be able to make the workflow
+
+71
+00:03:04.196 --> 00:03:06.956
+for frameworks really
+effective for your iOS 8 apps.
+
+72
+00:03:07.566 --> 00:03:09.736
+Why do you want to
+use frameworks?
+
+73
+00:03:10.836 --> 00:03:14.226
+Well, all of the packaging
+stuff is really nice,
+
+74
+00:03:15.576 --> 00:03:16.656
+but all of the features that are
+
+75
+00:03:16.656 --> 00:03:19.496
+in iOS 8 take advantage
+of frameworks.
+
+76
+00:03:19.496 --> 00:03:22.346
+So the first thing you probably
+want to try using is live views,
+
+77
+00:03:22.346 --> 00:03:24.166
+they're the live rendering of
+views in Interface Builder.
+
+78
+00:03:24.536 --> 00:03:28.246
+So if you're putting your
+things into a framework all
+
+79
+00:03:28.246 --> 00:03:29.226
+of that custom-rendering,
+
+80
+00:03:29.226 --> 00:03:30.816
+all of that custom-drawing
+becomes available
+
+81
+00:03:30.816 --> 00:03:33.436
+to Interface Builder for
+use directly in Xcode
+
+82
+00:03:33.436 --> 00:03:36.606
+as you're editing your
+NIBs and your storyboards.
+
+83
+00:03:36.826 --> 00:03:39.216
+I guess that shows my age,
+
+84
+00:03:39.216 --> 00:03:40.356
+they're all storyboards
+now, right?
+
+85
+00:03:40.356 --> 00:03:42.926
+It's not NIBs anymore.
+
+86
+00:03:43.956 --> 00:03:47.076
+If you're using extensions,
+right, you're going to want
+
+87
+00:03:47.076 --> 00:03:49.496
+to use frameworks because you're
+going to be able to share a code
+
+88
+00:03:49.496 --> 00:03:52.276
+between the extension and the
+application without having
+
+89
+00:03:52.276 --> 00:03:53.756
+to duplicate stuff
+in each place.
+
+90
+00:03:54.566 --> 00:03:56.396
+Right? So you won't be
+putting things in the target
+
+91
+00:03:56.396 --> 00:03:59.006
+for the extension and the target
+for the app, you'll put it
+
+92
+00:03:59.006 --> 00:04:00.366
+in the framework
+and link the two
+
+93
+00:03:59.006 --> 00:04:00.366
+in the framework
+and link the two
+
+94
+00:04:00.696 --> 00:04:03.816
+against the framework itself.
+
+95
+00:04:05.126 --> 00:04:07.216
+If you write multiple
+applications
+
+96
+00:04:07.656 --> 00:04:09.806
+and you're using either a third
+party framework you're getting
+
+97
+00:04:09.806 --> 00:04:12.226
+from someplace else or you
+have a bunch of your own tried
+
+98
+00:04:12.226 --> 00:04:15.376
+and true tested code that you
+like, all of your categories
+
+99
+00:04:15.376 --> 00:04:17.466
+on NSString-because,
+you know, who does that.
+
+100
+00:04:17.555 --> 00:04:20.176
+But, okay, categories on a
+NSString, and things like that.
+
+101
+00:04:20.176 --> 00:04:22.866
+If you're sharing code between
+multiple applications you're
+
+102
+00:04:22.866 --> 00:04:23.896
+going to want to use frameworks.
+
+103
+00:04:24.326 --> 00:04:25.456
+And obviously also,
+if you're going
+
+104
+00:04:25.456 --> 00:04:27.366
+to be publishing a framework, so
+if you're going to be making all
+
+105
+00:04:27.366 --> 00:04:31.286
+of your code available as a
+framework, you're going to want
+
+106
+00:04:31.416 --> 00:04:33.776
+to be able to package that up
+in a single distributable thing
+
+107
+00:04:34.116 --> 00:04:36.366
+that everybody can download and
+use and you can version those.
+
+108
+00:04:37.026 --> 00:04:39.426
+So, let's talk a little
+bit about getting set up.
+
+109
+00:04:40.836 --> 00:04:43.686
+Xcode makes it really easy
+to create a new framework.
+
+110
+00:04:43.686 --> 00:04:48.156
+There's a new template right
+inside of the new file dialogue
+
+111
+00:04:48.156 --> 00:04:51.306
+or the new project dialogue
+that says Cocoa Touch Framework.
+
+112
+00:04:52.016 --> 00:04:53.116
+Right? So you can
+just go click on that,
+
+113
+00:04:53.776 --> 00:04:54.846
+click on the Cocoa
+Touch Framework,
+
+114
+00:04:54.846 --> 00:04:56.396
+it's going to walk you
+through the same form,
+
+115
+00:04:56.816 --> 00:04:58.446
+give it a bundle ID,
+things like that.
+
+116
+00:04:58.446 --> 00:05:00.726
+Save it someplace,
+you're off to the races.
+
+117
+00:04:58.446 --> 00:05:00.726
+Save it someplace,
+you're off to the races.
+
+118
+00:05:00.976 --> 00:05:02.926
+This also works if you
+have an existing project
+
+119
+00:05:02.926 --> 00:05:04.186
+and you create a
+new target and one
+
+120
+00:05:04.186 --> 00:05:08.446
+of the new target templates is
+a Cocoa Touch Framework, right.
+
+121
+00:05:09.416 --> 00:05:12.266
+So what goes in it?
+
+122
+00:05:12.526 --> 00:05:14.136
+Once you decide you're
+going to use Frameworks,
+
+123
+00:05:14.956 --> 00:05:18.026
+what are you going
+to put in there?
+
+124
+00:05:18.026 --> 00:05:21.346
+If you're using live views, if
+you're interested in frameworks
+
+125
+00:05:21.416 --> 00:05:24.676
+for live views, you're going to
+want to put the views in there,
+
+126
+00:05:25.456 --> 00:05:27.466
+and the controls, and
+anything else that goes along
+
+127
+00:05:27.466 --> 00:05:29.036
+with giving your app
+that custom appearance.
+
+128
+00:05:29.036 --> 00:05:31.696
+Right, so these are going
+to be all the assets,
+
+129
+00:05:32.076 --> 00:05:34.596
+in the views it'll be all the
+drawing code, the controls,
+
+130
+00:05:34.596 --> 00:05:36.186
+again, it'll be assets,
+things like that.
+
+131
+00:05:36.946 --> 00:05:38.086
+They all go in the framework.
+
+132
+00:05:38.926 --> 00:05:42.116
+That way, now, when you link it
+for using with your application
+
+133
+00:05:42.146 --> 00:05:46.016
+or giving it out to all of your
+friends and neighbors and trying
+
+134
+00:05:46.016 --> 00:05:47.996
+to use it within Xcode for IB,
+
+135
+00:05:48.316 --> 00:05:52.736
+all that stuff just
+starts to work.
+
+136
+00:05:52.936 --> 00:05:54.446
+What goes in if you're
+using extensions?
+
+137
+00:05:55.026 --> 00:05:56.386
+Well you're going to put
+all of the same stuff
+
+138
+00:05:56.386 --> 00:05:58.406
+that you would've put in
+for live views, the views
+
+139
+00:05:58.406 --> 00:05:59.636
+and controls and the
+custom appearance
+
+140
+00:05:59.636 --> 00:06:01.836
+because your extension
+probably has all of that.
+
+141
+00:05:59.636 --> 00:06:01.836
+because your extension
+probably has all of that.
+
+142
+00:06:02.976 --> 00:06:04.506
+You're also going
+to put in things
+
+143
+00:06:04.506 --> 00:06:07.416
+like view controller
+classes, right?
+
+144
+00:06:07.416 --> 00:06:09.266
+The custom view controllers
+that you're writing and you want
+
+145
+00:06:09.266 --> 00:06:11.226
+to make available as
+API to everyone else
+
+146
+00:06:11.226 --> 00:06:14.836
+or to your extension and to your
+application, those are going
+
+147
+00:06:14.836 --> 00:06:15.546
+to go in there, as well.
+
+148
+00:06:16.536 --> 00:06:18.186
+You're probably also going
+to put the service API
+
+149
+00:06:18.186 --> 00:06:19.256
+that you're using down there.
+
+150
+00:06:19.406 --> 00:06:21.386
+So if you're doing networking
+code, things like that,
+
+151
+00:06:21.676 --> 00:06:22.806
+all of that stuff's
+going to go down there.
+
+152
+00:06:23.766 --> 00:06:28.976
+Resources, again, assets,
+configuration files
+
+153
+00:06:28.976 --> 00:06:31.906
+that might be particular to
+your service go down there.
+
+154
+00:06:33.146 --> 00:06:34.456
+Anything that goes in common
+
+155
+00:06:34.496 --> 00:06:36.256
+to your extension
+in your application.
+
+156
+00:06:36.996 --> 00:06:39.096
+So, that's also true
+if you're going
+
+157
+00:06:39.096 --> 00:06:42.026
+to be using framework contents
+between multiple applications.
+
+158
+00:06:43.236 --> 00:06:45.116
+Right? So you've two or three
+applications in the store,
+
+159
+00:06:45.116 --> 00:06:46.086
+your users are going to go ahead
+
+160
+00:06:46.086 --> 00:06:47.936
+and download those
+applications from the store.
+
+161
+00:06:48.556 --> 00:06:51.536
+You're going to want to put
+all of the stuff in common.
+
+162
+00:06:52.106 --> 00:06:53.326
+Right? The idea here
+is you want to be able
+
+163
+00:06:53.326 --> 00:06:55.316
+to change the source code
+once, build a new version
+
+164
+00:06:55.316 --> 00:06:56.916
+of your framework,
+make it available
+
+165
+00:06:56.916 --> 00:06:59.156
+to all your applications
+on your machines so that
+
+166
+00:06:59.156 --> 00:07:00.336
+when you ship them
+off to the store,
+
+167
+00:06:59.156 --> 00:07:00.336
+when you ship them
+off to the store,
+
+168
+00:07:00.406 --> 00:07:01.716
+all those changes get picked up.
+
+169
+00:07:02.776 --> 00:07:04.566
+And when you're publishing
+frameworks,
+
+170
+00:07:04.566 --> 00:07:05.926
+again, it's the same thing.
+
+171
+00:07:07.106 --> 00:07:10.476
+So, really what you're
+going to wind
+
+172
+00:07:10.476 --> 00:07:13.586
+up doing is refactoring
+your application using a lot
+
+173
+00:07:13.586 --> 00:07:15.756
+of the architectural things that
+Andy and Collin were talking
+
+174
+00:07:15.756 --> 00:07:18.796
+about in the previous
+hour, pulling those
+
+175
+00:07:18.796 --> 00:07:21.926
+into an organizational
+unit, like the framework,
+
+176
+00:07:21.926 --> 00:07:26.246
+in order make your
+development a lot easier.
+
+177
+00:07:28.236 --> 00:07:31.796
+The app right now, if you're
+using extensions, for instance,
+
+178
+00:07:31.966 --> 00:07:34.976
+you've got an application,
+it's going to have two parts.
+
+179
+00:07:34.976 --> 00:07:37.316
+It's going to have the
+app and the extension.
+
+180
+00:07:37.916 --> 00:07:41.016
+That nifty little building
+brick there is the extension.
+
+181
+00:07:41.606 --> 00:07:44.286
+Right, so they sit next to each
+other inside the application
+
+182
+00:07:44.286 --> 00:07:46.016
+bundle, you can think
+of the extension
+
+183
+00:07:46.016 --> 00:07:47.696
+as basically a little
+tiny application.
+
+184
+00:07:47.996 --> 00:07:48.586
+All right?
+
+185
+00:07:49.636 --> 00:07:50.866
+You've got a bunch of
+source code in there
+
+186
+00:07:52.116 --> 00:07:56.026
+and it probably shares some
+source code and Swift files,
+
+187
+00:07:56.026 --> 00:07:57.536
+maybe some Objective-C files.
+
+188
+00:07:58.136 --> 00:08:01.626
+Those things are all going to
+be part of the target, right?
+
+189
+00:07:58.136 --> 00:08:01.626
+Those things are all going to
+be part of the target, right?
+
+190
+00:08:02.316 --> 00:08:04.316
+Rather than have the
+object code generated
+
+191
+00:08:04.316 --> 00:08:07.856
+by those things getting
+duplicated into each
+
+192
+00:08:07.856 --> 00:08:10.836
+of those targets, what you'll
+do is just pull the common stuff
+
+193
+00:08:10.886 --> 00:08:14.026
+down into the framework
+and link the application
+
+194
+00:08:14.026 --> 00:08:15.996
+and the extension
+against the framework.
+
+195
+00:08:16.456 --> 00:08:22.206
+How do you decide what goes
+down there as far as code goes?
+
+196
+00:08:22.676 --> 00:08:25.026
+If it looks like it's showing
+up more than once in a target
+
+197
+00:08:25.026 --> 00:08:27.776
+or more than once in your
+application, it probably goes
+
+198
+00:08:27.776 --> 00:08:29.726
+in a framework, right.
+
+199
+00:08:30.576 --> 00:08:31.416
+We do this at Apple.
+
+200
+00:08:31.916 --> 00:08:33.385
+We look across all
+the applications
+
+201
+00:08:33.385 --> 00:08:34.206
+that we're developing.
+
+202
+00:08:34.566 --> 00:08:35.716
+We start seeing patterns.
+
+203
+00:08:36.376 --> 00:08:38.035
+We start seeing things that
+are repeating themselves.
+
+204
+00:08:38.035 --> 00:08:40.176
+So we take those patterns, we
+pull them down in the framework.
+
+205
+00:08:40.176 --> 00:08:43.246
+They either go from the apps in
+the UIKit or they go in the apps
+
+206
+00:08:43.246 --> 00:08:46.256
+in the AppKit on OS X, or they
+go down in the Foundation,
+
+207
+00:08:46.256 --> 00:08:48.286
+or they wind up going
+down into Core OS.
+
+208
+00:08:48.286 --> 00:08:49.756
+There are lots of
+different places
+
+209
+00:08:50.106 --> 00:08:52.226
+where we start pulling
+common code up out of apps
+
+210
+00:08:52.756 --> 00:08:55.306
+and make sure that they
+wind up at the right level
+
+211
+00:08:55.496 --> 00:08:57.426
+of abstraction for
+use everywhere else.
+
+212
+00:08:57.826 --> 00:09:02.226
+Right? So, a really good
+technique in terms of separating
+
+213
+00:08:57.826 --> 00:09:02.226
+Right? So, a really good
+technique in terms of separating
+
+214
+00:09:02.226 --> 00:09:03.096
+out everything that you're doing
+
+215
+00:09:03.096 --> 00:09:05.776
+in your applications is
+doing the same thing.
+
+216
+00:09:06.236 --> 00:09:08.776
+Figure out what's in common,
+put it in the framework,
+
+217
+00:09:08.856 --> 00:09:11.056
+use the framework as
+the unit of distribution
+
+218
+00:09:11.566 --> 00:09:12.896
+for pulling all that
+stuff together.
+
+219
+00:09:14.376 --> 00:09:15.266
+Frameworks are API.
+
+220
+00:09:16.466 --> 00:09:18.616
+You heard Andy and
+Collin talk a little bit
+
+221
+00:09:18.616 --> 00:09:21.486
+about it yes-yesterday-earlier
+today.
+
+222
+00:09:21.486 --> 00:09:25.906
+Identifying the
+responsibilities,
+
+223
+00:09:25.906 --> 00:09:28.356
+figuring out who should be
+doing what within your classes.
+
+224
+00:09:28.736 --> 00:09:30.916
+Right? Some guy on the
+internet wrote a thing
+
+225
+00:09:30.916 --> 00:09:33.096
+about being ruthless with
+your objects and making sure
+
+226
+00:09:33.096 --> 00:09:34.426
+that there are these
+clean, bright lines
+
+227
+00:09:34.466 --> 00:09:37.786
+between where those
+responsibilities go.
+
+228
+00:09:37.786 --> 00:09:40.956
+It is a great technique
+and it will make a lot
+
+229
+00:09:40.956 --> 00:09:43.406
+of your development easier
+to take the same kinds
+
+230
+00:09:43.406 --> 00:09:47.276
+of framework approach to
+developing your application
+
+231
+00:09:47.566 --> 00:09:49.056
+because now you get
+really separable code.
+
+232
+00:09:49.056 --> 00:09:51.196
+You get easily testable
+code; you get very,
+
+233
+00:09:51.196 --> 00:09:52.986
+very good abstraction layers.
+
+234
+00:09:53.876 --> 00:09:56.016
+Once you've decided you're
+going to be offering frameworks
+
+235
+00:09:56.626 --> 00:09:58.356
+to your application or to
+anyone else, you're going
+
+236
+00:09:58.356 --> 00:10:01.326
+to publish a framework as API
+for your service, you know,
+
+237
+00:09:58.356 --> 00:10:01.326
+to publish a framework as API
+for your service, you know,
+
+238
+00:10:01.326 --> 00:10:03.086
+providing all those
+UI view controllers
+
+239
+00:10:03.086 --> 00:10:04.106
+that go along with it.
+
+240
+00:10:04.876 --> 00:10:06.736
+The keyword there is it's API.
+
+241
+00:10:07.756 --> 00:10:11.476
+The key thing is to make sure
+that you get the API right.
+
+242
+00:10:12.496 --> 00:10:17.726
+We spend weeks arguing about
+things on mailing lists at Apple
+
+243
+00:10:17.726 --> 00:10:19.066
+about how to develop the API,
+
+244
+00:10:19.066 --> 00:10:20.616
+what the architecture
+should look like,
+
+245
+00:10:20.616 --> 00:10:23.716
+what things should be
+named, all of that stuff.
+
+246
+00:10:24.076 --> 00:10:27.316
+There is some Cocoa guidelines
+that we use, I'm going to run
+
+247
+00:10:27.316 --> 00:10:28.356
+through some of them here.
+
+248
+00:10:28.606 --> 00:10:31.426
+One of them is that it's
+much better to be clear
+
+249
+00:10:31.426 --> 00:10:32.476
+than it is to be brief.
+
+250
+00:10:33.896 --> 00:10:36.976
+Right? So, a method like this
+in Objective-C, insert:at:
+
+251
+00:10:37.096 --> 00:10:40.126
+is very brief, it's very terse.
+
+252
+00:10:40.586 --> 00:10:43.146
+What are you inserting?
+
+253
+00:10:43.146 --> 00:10:48.536
+What is the "at" that
+you're inserting it to?
+
+254
+00:10:48.776 --> 00:10:49.466
+Don't do this.
+
+255
+00:10:49.736 --> 00:10:52.376
+It's not clear enough,
+it's not specific enough,
+
+256
+00:10:52.936 --> 00:10:54.956
+it doesn't help you,
+because, you know,
+
+257
+00:10:54.956 --> 00:10:57.006
+we all write this code,
+what, once, twice.
+
+258
+00:10:57.606 --> 00:10:59.346
+We're going to read
+it thousands of times.
+
+259
+00:10:59.876 --> 00:11:01.326
+I'm going to hand a
+whole bunch of code off
+
+260
+00:10:59.876 --> 00:11:01.326
+I'm going to hand a
+whole bunch of code off
+
+261
+00:11:01.326 --> 00:11:03.296
+to some kid who's younger and
+smarter than I am and he's going
+
+262
+00:11:03.296 --> 00:11:04.576
+to have to figure
+out what I was doing.
+
+263
+00:11:05.676 --> 00:11:08.686
+Right? So, be clear,
+express your intent.
+
+264
+00:11:09.206 --> 00:11:11.786
+insertObject:atIndex:, right?
+
+265
+00:11:12.336 --> 00:11:14.056
+What are you inserting?
+
+266
+00:11:14.056 --> 00:11:14.756
+Some object.
+
+267
+00:11:14.956 --> 00:11:15.596
+Where is it going?
+
+268
+00:11:15.596 --> 00:11:16.496
+At an index.
+
+269
+00:11:17.126 --> 00:11:19.496
+Right? Now you've got a
+very specific guarantee.
+
+270
+00:11:19.496 --> 00:11:22.116
+You've got a readable
+chunk of code.
+
+271
+00:11:22.766 --> 00:11:26.746
+This is the kind of thing that
+we will literally spend a week
+
+272
+00:11:26.746 --> 00:11:29.646
+in email arguing
+about to get right.
+
+273
+00:11:30.746 --> 00:11:33.636
+API design is like a
+contact sport at our company.
+
+274
+00:11:34.376 --> 00:11:36.896
+So, if you're not really
+throwing some elbows
+
+275
+00:11:36.896 --> 00:11:38.956
+in the mailing list with
+your friends and neighbors
+
+276
+00:11:39.046 --> 00:11:42.156
+in doing API you're probably
+just not having enough fun
+
+277
+00:11:42.156 --> 00:11:42.886
+with it.
+
+278
+00:11:44.266 --> 00:11:45.876
+So, do this.
+
+279
+00:11:46.486 --> 00:11:47.446
+Be really specific.
+
+280
+00:11:48.706 --> 00:11:50.556
+Don't abbreviate, right?
+
+281
+00:11:50.606 --> 00:11:52.546
+Don't make your selectors
+look like line noise.
+
+282
+00:11:52.956 --> 00:11:58.116
+All right-setBkgndColor:
+We have code completion,
+
+283
+00:11:58.116 --> 00:12:00.316
+it fills it out for you, you
+can get a couple of keystrokes
+
+284
+00:11:58.116 --> 00:12:00.316
+it fills it out for you, you
+can get a couple of keystrokes
+
+285
+00:12:00.316 --> 00:12:03.176
+into it and it'll tell
+you, oh, look, you know,
+
+286
+00:12:04.246 --> 00:12:05.086
+"setBackgroundColor:".
+
+287
+00:12:05.586 --> 00:12:12.066
+Right? It's long, it tells
+you exactly what's going on.
+
+288
+00:12:12.786 --> 00:12:15.896
+Do that. Don't be ambiguous.
+
+289
+00:12:16.406 --> 00:12:17.256
+Right? There are a lot of words
+
+290
+00:12:17.256 --> 00:12:20.106
+that can be used as
+a verb or a noun.
+
+291
+00:12:21.096 --> 00:12:23.316
+Here's one of the ones that I
+actually proposes and managed
+
+292
+00:12:23.316 --> 00:12:27.356
+to get by and now
+regret, "displayName:".
+
+293
+00:12:28.296 --> 00:12:29.916
+Right? You see this in a
+couple of places, I think it's
+
+294
+00:12:29.916 --> 00:12:30.976
+on NSFileManager these days.
+
+295
+00:12:31.046 --> 00:12:32.786
+We try not to do this anymore.
+
+296
+00:12:33.016 --> 00:12:34.246
+Is display a noun or a verb?
+
+297
+00:12:35.156 --> 00:12:38.526
+Am I telling this thing to
+show the name to somebody
+
+298
+00:12:38.596 --> 00:12:41.656
+or is it a name intended
+for display?
+
+299
+00:12:42.106 --> 00:12:44.676
+Right? What we do these days
+
+300
+00:12:44.676 --> 00:12:49.416
+in the Kit mostly is anything
+that's intended for the display
+
+301
+00:12:49.416 --> 00:12:51.966
+to the user is a localized name.
+
+302
+00:12:52.326 --> 00:12:54.016
+Even if you're getting
+as input from the user.
+
+303
+00:12:54.016 --> 00:12:56.346
+Because if you're getting
+it as input from the user,
+
+304
+00:12:56.346 --> 00:12:58.616
+it's pretty much as localized
+as it's going to get.
+
+305
+00:12:59.366 --> 00:13:00.626
+Right? It's coming from that.
+
+306
+00:12:59.366 --> 00:13:00.626
+Right? It's coming from that.
+
+307
+00:13:01.566 --> 00:13:04.186
+If you're showing it to the user
+and it's in your strings files
+
+308
+00:13:04.186 --> 00:13:05.816
+and things like that,
+it's the localized name,
+
+309
+00:13:05.816 --> 00:13:09.146
+it's coming out of the bundle
+system to have the localization.
+
+310
+00:13:09.856 --> 00:13:11.716
+Right, so our intent
+was to be able to say,
+
+311
+00:13:12.046 --> 00:13:13.936
+we want to show the users
+something in their language.
+
+312
+00:13:15.086 --> 00:13:16.436
+It's for display.
+
+313
+00:13:17.056 --> 00:13:20.016
+And then everybody went, well,
+why-I'm calling displayName,
+
+314
+00:13:20.016 --> 00:13:20.926
+why isn't this drawing?
+
+315
+00:13:21.066 --> 00:13:23.696
+Oops, yeah, let's not do that.
+
+316
+00:13:24.326 --> 00:13:26.256
+So, be clear.
+
+317
+00:13:28.296 --> 00:13:32.326
+Also, don't take advantage
+of some of the things
+
+318
+00:13:32.326 --> 00:13:34.376
+that Objective-C in
+this case lets you do.
+
+319
+00:13:34.376 --> 00:13:37.436
+For instance, you could
+declare sendAction like this.
+
+320
+00:13:38.546 --> 00:13:41.616
+And you don't necessarily have
+to give names to the parameters.
+
+321
+00:13:42.466 --> 00:13:46.766
+So this produces a call site
+that looks like sendAction::,
+
+322
+00:13:46.766 --> 00:13:51.896
+you know, sendAction:-
+Selector:, object:, flag.
+
+323
+00:13:51.896 --> 00:13:55.186
+It's not specific enough, what's
+the object intended to be?
+
+324
+00:13:55.426 --> 00:13:57.016
+What does that flag
+actually mean?
+
+325
+00:13:58.226 --> 00:14:01.066
+Right? Fill the whole
+selector out.
+
+326
+00:13:58.226 --> 00:14:01.066
+Right? Fill the whole
+selector out.
+
+327
+00:14:01.616 --> 00:14:05.036
+sendAction, toObject,
+forAllCells, YES or NO.
+
+328
+00:14:06.136 --> 00:14:07.176
+Right, that flag could
+have been anything.
+
+329
+00:14:07.176 --> 00:14:09.736
+It could have been animated,
+it could have been, you know,
+
+330
+00:14:10.556 --> 00:14:12.276
+stop transmitting the message
+
+331
+00:14:12.276 --> 00:14:14.056
+after you find a
+hit or keep going.
+
+332
+00:14:14.846 --> 00:14:16.956
+Those kinds of things
+have to be spelled out.
+
+333
+00:14:17.486 --> 00:14:20.306
+Again, you're going to write it
+once, somebody's going to come
+
+334
+00:14:20.306 --> 00:14:22.416
+by later and curse your
+name because they have
+
+335
+00:14:22.416 --> 00:14:24.636
+to read it a thousand
+times after that.
+
+336
+00:14:25.306 --> 00:14:29.566
+Don't be that guy.
+
+337
+00:14:29.566 --> 00:14:30.736
+Do this. Swift, though,
+
+338
+00:14:30.736 --> 00:14:32.866
+brings us some really
+interesting opportunities
+
+339
+00:14:32.866 --> 00:14:37.796
+to be clear, to be expressive
+and still try maintain some
+
+340
+00:14:37.796 --> 00:14:39.736
+of the terseness and the
+less typing and things
+
+341
+00:14:39.736 --> 00:14:40.846
+like that that we'd like to do.
+
+342
+00:14:40.846 --> 00:14:42.906
+And some of the things that
+I'm doing to talk about as far
+
+343
+00:14:42.906 --> 00:14:47.906
+as Swift goes are a little
+bit different because, for us,
+
+344
+00:14:47.976 --> 00:14:49.766
+we're still trying to
+figure out what some
+
+345
+00:14:49.766 --> 00:14:51.926
+of the really good
+API idioms mean
+
+346
+00:14:51.926 --> 00:14:53.526
+and we're really not
+sure what it means
+
+347
+00:14:53.526 --> 00:14:56.776
+to have a language idiom
+for a language that has had
+
+348
+00:14:56.776 --> 00:15:00.406
+about 200 native speakers
+for less than a year.
+
+349
+00:14:56.776 --> 00:15:00.406
+about 200 native speakers
+for less than a year.
+
+350
+00:15:00.516 --> 00:15:03.726
+So, trying to figure out sort of
+what some of this stuff is going
+
+351
+00:15:03.726 --> 00:15:06.016
+to wind up looking like is
+a little bit of a challenge.
+
+352
+00:15:06.016 --> 00:15:07.756
+This is actually a great
+opportunity for all of you
+
+353
+00:15:07.756 --> 00:15:10.676
+to be able to provide us
+feedback with Swift in terms
+
+354
+00:15:10.676 --> 00:15:13.786
+of what the API looks like
+and how your experiences
+
+355
+00:15:13.786 --> 00:15:17.456
+in using it both as a native
+language and through the mix
+
+356
+00:15:17.456 --> 00:15:20.236
+and match bits with
+Cocoa and Cocoa Touch,
+
+357
+00:15:20.796 --> 00:15:22.976
+and let us know exactly
+what you'd like to see
+
+358
+00:15:23.036 --> 00:15:25.806
+and what makes it easy to use
+Swift with all of these things,
+
+359
+00:15:25.806 --> 00:15:26.666
+versus what makes it feel
+
+360
+00:15:26.666 --> 00:15:28.066
+like there's a little
+bit of friction there.
+
+361
+00:15:29.006 --> 00:15:31.346
+All right, so please make sure
+that you're filing those radars
+
+362
+00:15:31.346 --> 00:15:32.406
+on how you'd like it to work.
+
+363
+00:15:33.226 --> 00:15:37.346
+Let's take a quick look at a
+Swift function, or I pulled this
+
+364
+00:15:37.346 --> 00:15:40.666
+out of the examples in the book
+but I'm going to sort of work
+
+365
+00:15:40.666 --> 00:15:43.666
+through those and then we'll
+extend it to something else.
+
+366
+00:15:43.666 --> 00:15:46.376
+So containsCharacter string:
+String character: Character.
+
+367
+00:15:46.376 --> 00:15:50.636
+So a Swift function
+has named parameters,
+
+368
+00:15:50.866 --> 00:15:52.876
+in this case these names
+are the variable names
+
+369
+00:15:52.876 --> 00:15:54.776
+that you'll use inside
+a function
+
+370
+00:15:55.886 --> 00:15:59.226
+to describe the variables.
+
+371
+00:15:59.296 --> 00:16:01.126
+Right, so this produces a call
+site that looks like this,
+
+372
+00:15:59.296 --> 00:16:01.126
+Right, so this produces a call
+site that looks like this,
+
+373
+00:16:01.126 --> 00:16:02.806
+containsCharacter, "Buddy", "u".
+
+374
+00:16:02.866 --> 00:16:05.286
+Right, there's a string,
+there's a character.
+
+375
+00:16:05.326 --> 00:16:08.426
+If you tack a little
+hash mark in front of it,
+
+376
+00:16:09.206 --> 00:16:11.466
+this is not a social media
+construct, you don't get to find
+
+377
+00:16:11.466 --> 00:16:12.926
+out what's trending in
+your code [laughter],
+
+378
+00:16:15.206 --> 00:16:16.446
+although that might be
+an interesting question.
+
+379
+00:16:16.526 --> 00:16:21.396
+Right? How often do you use the
+hashtag character in your code?
+
+380
+00:16:21.576 --> 00:16:25.396
+This allows you to be able
+to use a named parameter
+
+381
+00:16:25.396 --> 00:16:27.776
+at the call site and be
+specific about what it is.
+
+382
+00:16:27.776 --> 00:16:29.326
+This produces a call site
+that looks like this.
+
+383
+00:16:29.326 --> 00:16:31.686
+containsCharacterstring:
+character:.
+
+384
+00:16:32.876 --> 00:16:37.816
+Java code- you've got method
+overloading, you can wind
+
+385
+00:16:37.816 --> 00:16:40.846
+up with a method that's one word
+
+386
+00:16:41.766 --> 00:16:43.796
+and it has 19 different
+sets of parameters.
+
+387
+00:16:43.796 --> 00:16:46.366
+Some of them have, you know,
+four arguments, six arguments,
+
+388
+00:16:46.366 --> 00:16:47.926
+12 arguments, nine arguments.
+
+389
+00:16:47.926 --> 00:16:49.656
+Some of them are the same,
+some of them are different.
+
+390
+00:16:50.866 --> 00:16:51.676
+What arguments are they?
+
+391
+00:16:51.986 --> 00:16:54.186
+These named parameters are a
+great way to be able to actually
+
+392
+00:16:54.186 --> 00:16:57.496
+to tell at the call sites which
+ones you're using along the way.
+
+393
+00:16:57.856 --> 00:16:58.906
+It's a way to be expressive.
+
+394
+00:16:58.906 --> 00:16:59.986
+It's a way to be specific.
+
+395
+00:17:01.016 --> 00:17:06.366
+Right? One of the really nifty
+things about Swift is the mix
+
+396
+00:17:06.366 --> 00:17:10.086
+and match feature, being able to
+take code that already exists,
+
+397
+00:17:10.226 --> 00:17:13.195
+you've already got a
+ton of Objective-C code.
+
+398
+00:17:13.396 --> 00:17:15.856
+In terms of practical terms and
+shipping applications and things
+
+399
+00:17:15.856 --> 00:17:17.576
+like that, you'd be nuts
+to throw that away and try
+
+400
+00:17:17.576 --> 00:17:19.016
+to do it all over
+again in Swift.
+
+401
+00:17:19.016 --> 00:17:22.566
+It'd be fun if you had the
+time but you probably don't,
+
+402
+00:17:22.566 --> 00:17:24.346
+you're trying to ship, right?
+
+403
+00:17:24.756 --> 00:17:26.726
+Mix and match lets you
+do things like this.
+
+404
+00:17:27.136 --> 00:17:31.526
+This is the popover
+presentation API from UIKit.
+
+405
+00:17:31.896 --> 00:17:37.676
+It gets converted into something
+that looks vaguely like this
+
+406
+00:17:37.676 --> 00:17:40.556
+by the mix and match
+system for Swift.
+
+407
+00:17:41.936 --> 00:17:45.846
+Right? So, got a function,
+presentPopoverFromtRect rect:
+
+408
+00:17:45.846 --> 00:17:47.576
+view: arrowDirections: animated:
+
+409
+00:17:48.186 --> 00:17:53.366
+That produces a call site
+that looks like this.
+
+410
+00:17:53.586 --> 00:17:55.376
+Okay, again, not
+specific enough,
+
+411
+00:17:56.356 --> 00:17:59.986
+not a really good description
+of what's happening, right?
+
+412
+00:17:59.986 --> 00:18:01.126
+What's .Any there?
+
+413
+00:17:59.986 --> 00:18:01.126
+What's .Any there?
+
+414
+00:18:01.126 --> 00:18:01.656
+I have no idea.
+
+415
+00:18:01.656 --> 00:18:02.586
+What does true mean?
+
+416
+00:18:03.516 --> 00:18:05.696
+I mean someRect and someView
+are at least descriptive enough,
+
+417
+00:18:05.696 --> 00:18:06.836
+but that doesn't really help me
+
+418
+00:18:06.836 --> 00:18:08.456
+out if those aren't
+my variable names.
+
+419
+00:18:08.866 --> 00:18:11.566
+Right? If we re-declare-oh,
+
+420
+00:18:11.566 --> 00:18:13.576
+and then we've got
+presentPopoverFromBarButtonItem
+
+421
+00:18:13.576 --> 00:18:15.406
+and that just throws the
+other wrench into it.
+
+422
+00:18:15.806 --> 00:18:16.426
+Right? Which is okay.
+
+423
+00:18:16.426 --> 00:18:18.616
+Well, now I got barButtonItem,
+but arrowDirections
+
+424
+00:18:18.616 --> 00:18:19.676
+and animated are still there.
+
+425
+00:18:20.316 --> 00:18:22.716
+We can be more specific
+about these things.
+
+426
+00:18:23.286 --> 00:18:24.986
+We can take advantage
+of function overloading,
+
+427
+00:18:25.086 --> 00:18:26.176
+method overloading, and say,
+
+428
+00:18:26.176 --> 00:18:28.186
+let's call them both
+presentPopover, what the heck?
+
+429
+00:18:29.036 --> 00:18:30.896
+All right, but now we've got
+this really neat way to be able
+
+430
+00:18:30.896 --> 00:18:35.266
+to separate out the
+other API from, you know,
+
+431
+00:18:36.096 --> 00:18:40.986
+Cocoa and Cocoa Touch, and
+make these two different.
+
+432
+00:18:40.986 --> 00:18:42.516
+So what do we have here?
+
+433
+00:18:42.516 --> 00:18:44.286
+I've got fromRect rect.
+
+434
+00:18:44.826 --> 00:18:47.936
+Right? So fromRect is going to
+wind up being the external name
+
+435
+00:18:47.936 --> 00:18:50.226
+that you use at the
+call site, rect is going
+
+436
+00:18:50.226 --> 00:18:51.666
+to be the variable
+inside the method,
+
+437
+00:18:52.826 --> 00:18:54.536
+the implementation
+variable that you're using.
+
+438
+00:18:54.536 --> 00:18:56.256
+It's the parameter that-it's
+the name that you use
+
+439
+00:18:56.256 --> 00:18:58.366
+for the parameter
+that gets passed in.
+
+440
+00:18:58.366 --> 00:19:00.676
+inView view and then the
+hash marks there again,
+
+441
+00:18:58.366 --> 00:19:00.676
+inView view and then the
+hash marks there again,
+
+442
+00:19:01.296 --> 00:19:05.536
+that makes it possible
+to use the same name
+
+443
+00:19:05.536 --> 00:19:07.136
+as the external name,
+as the internal name.
+
+444
+00:19:07.136 --> 00:19:09.106
+Those produce call sites
+that look like this.
+
+445
+00:19:09.956 --> 00:19:12.106
+Right? So now I've got
+presentPopover fromRect, inView,
+
+446
+00:19:12.106 --> 00:19:13.246
+ArrowDirections, Animated,
+
+447
+00:19:13.246 --> 00:19:15.006
+and presentPopover
+fromBarButtonItem,
+
+448
+00:19:15.686 --> 00:19:16.696
+arrowDirections, animated.
+
+449
+00:19:16.746 --> 00:19:19.336
+Great, I can tell the different
+between them, that's awesome.
+
+450
+00:19:19.746 --> 00:19:23.016
+That's a lot of typing.
+
+451
+00:19:23.546 --> 00:19:27.496
+Code completion's nice but
+that's still a bunch of typing.
+
+452
+00:19:28.296 --> 00:19:30.356
+Swift has some really
+nice features
+
+453
+00:19:30.446 --> 00:19:33.616
+for default arguments
+in your API.
+
+454
+00:19:34.866 --> 00:19:36.146
+So let's go back and take a look
+
+455
+00:19:36.146 --> 00:19:37.736
+at just the presentPopover
+method.
+
+456
+00:19:38.656 --> 00:19:41.926
+Okay? If we re-declare
+it like this,
+
+457
+00:19:43.056 --> 00:19:46.956
+what we've got is
+UIPopoverArrowDirection is the
+
+458
+00:19:46.956 --> 00:19:49.066
+type, and .Any there
+is the default value.
+
+459
+00:19:50.236 --> 00:19:51.616
+Right? Swift, when it
+goes through the mix
+
+460
+00:19:51.616 --> 00:19:55.396
+and match bits takes the
+common pre-fix off of the enums
+
+461
+00:19:55.396 --> 00:19:59.196
+for the options and makes
+them the shortened version
+
+462
+00:19:59.196 --> 00:20:00.626
+at the end, which is
+one really nice thing
+
+463
+00:19:59.196 --> 00:20:00.626
+at the end, which is
+one really nice thing
+
+464
+00:20:00.626 --> 00:20:01.886
+about when we went back through
+
+465
+00:20:01.936 --> 00:20:03.836
+and started normalizing
+all the enums again
+
+466
+00:20:03.836 --> 00:20:06.016
+and the common prefixes
+allowed us to do this.
+
+467
+00:20:06.166 --> 00:20:11.016
+So, .Any, as passed into a
+popoverArrowDirection type,
+
+468
+00:20:11.016 --> 00:20:15.876
+is that particular entry
+out of the NS-ENUM argument.
+
+469
+00:20:15.876 --> 00:20:16.986
+And Bool gets true.
+
+470
+00:20:16.986 --> 00:20:18.896
+There is a way to say that YES.
+
+471
+00:20:19.036 --> 00:20:21.436
+if there's no argument
+presented we want to be able
+
+472
+00:20:21.436 --> 00:20:23.596
+to have this thing
+be true all the time.
+
+473
+00:20:24.366 --> 00:20:27.586
+So that turns these call
+sites, which are nice,
+
+474
+00:20:27.696 --> 00:20:32.756
+they're descriptive,
+into these call sites.
+
+475
+00:20:33.066 --> 00:20:37.226
+Right? One of the
+patterns that you see
+
+476
+00:20:37.226 --> 00:20:39.926
+in foundation is you'll
+see a really long method,
+
+477
+00:20:39.926 --> 00:20:42.356
+it'll have probably, I don't
+know, anywhere between six
+
+478
+00:20:42.356 --> 00:20:44.136
+and eight to 12 arguments.
+
+479
+00:20:44.646 --> 00:20:47.156
+And then you'll see versions
+of that that are shorter.
+
+480
+00:20:47.156 --> 00:20:49.216
+Generally you'll see
+that the end arguments
+
+481
+00:20:49.216 --> 00:20:51.276
+of an Objective-C sort of
+start to get peeled off.
+
+482
+00:20:51.486 --> 00:20:53.006
+Those shorter versions
+are calling
+
+483
+00:20:53.006 --> 00:20:55.176
+into the longer version
+with default values.
+
+484
+00:20:55.836 --> 00:20:57.976
+Right? Those are all generally
+one-line implementations
+
+485
+00:20:57.976 --> 00:21:01.056
+that call back out to the big
+guy with all the switches on it.
+
+486
+00:20:57.976 --> 00:21:01.056
+that call back out to the big
+guy with all the switches on it.
+
+487
+00:21:02.096 --> 00:21:04.066
+Right? This is a way
+that you can provide all
+
+488
+00:21:04.066 --> 00:21:05.356
+of those switches without having
+
+489
+00:21:05.356 --> 00:21:06.766
+to provide all those
+methods all the time.
+
+490
+00:21:07.426 --> 00:21:08.766
+Put in the same default values.
+
+491
+00:21:09.656 --> 00:21:12.606
+Right? This provides you with
+some really good opportunities
+
+492
+00:21:12.606 --> 00:21:15.836
+to be able to clean up your
+code, be really clear in Swift,
+
+493
+00:21:15.836 --> 00:21:21.026
+and doing this in Swift,
+talking to Objective-C APIs,
+
+494
+00:21:21.426 --> 00:21:25.106
+you can start really
+thinning down the API surface
+
+495
+00:21:25.506 --> 00:21:26.766
+so you don't have
+tons and tons and tons
+
+496
+00:21:26.766 --> 00:21:28.016
+of methods to keep track of.
+
+497
+00:21:28.626 --> 00:21:30.586
+You've got one place to
+do these implementations
+
+498
+00:21:30.976 --> 00:21:34.536
+and the default values
+just go in the right place.
+
+499
+00:21:34.716 --> 00:21:36.646
+There's really good
+documentation online,
+
+500
+00:21:36.646 --> 00:21:39.826
+the "Coding Guidelines for
+Cocoa" at developer.apple.com.
+
+501
+00:21:39.926 --> 00:21:44.236
+If you just go to
+developer.apple.com, log in,
+
+502
+00:21:44.396 --> 00:21:48.186
+search for this document, it's
+the same coding guidelines
+
+503
+00:21:48.186 --> 00:21:50.896
+that we have up on our
+internal wiki for how
+
+504
+00:21:50.896 --> 00:21:52.356
+to get started with
+developing API.
+
+505
+00:21:52.356 --> 00:21:56.106
+All right, so the rules that
+we're trying to put down there,
+
+506
+00:21:56.596 --> 00:21:58.236
+they're the same things
+that we use at Apple.
+
+507
+00:21:58.706 --> 00:22:03.346
+So another good reason to
+go and look at these is all
+
+508
+00:21:58.706 --> 00:22:03.346
+So another good reason to
+go and look at these is all
+
+509
+00:22:03.346 --> 00:22:05.266
+of the Objective-C API
+that you're going to write,
+
+510
+00:22:06.046 --> 00:22:07.966
+if you're not just going
+to chuck it over and go
+
+511
+00:22:07.966 --> 00:22:13.306
+for Swift entirely, all of
+that API will work well and fit
+
+512
+00:22:13.306 --> 00:22:15.496
+in with the idioms
+that we already have
+
+513
+00:22:15.636 --> 00:22:17.846
+for our existing
+Cocoa frameworks.
+
+514
+00:22:18.376 --> 00:22:20.106
+The other document you
+probably want to read
+
+515
+00:22:20.106 --> 00:22:21.896
+that I'm sure you've
+all downloaded already,
+
+516
+00:22:22.836 --> 00:22:24.146
+"The Swift Programming
+Language."
+
+517
+00:22:24.176 --> 00:22:25.196
+I wouldn't be surprised if all
+
+518
+00:22:25.196 --> 00:22:26.936
+of you suddenly have
+more experience with it
+
+519
+00:22:26.936 --> 00:22:28.996
+than I do by this point.
+
+520
+00:22:30.146 --> 00:22:32.096
+It's available on iBooks,
+it's also available online
+
+521
+00:22:32.096 --> 00:22:33.316
+at developer.apple.com.
+
+522
+00:22:33.316 --> 00:22:36.626
+It's got all of the
+information about Swift in it
+
+523
+00:22:36.626 --> 00:22:38.836
+and they do make some
+API recommendations
+
+524
+00:22:38.836 --> 00:22:39.596
+in there as well.
+
+525
+00:22:40.036 --> 00:22:43.326
+Again, we're all sort of
+just figuring this out.
+
+526
+00:22:44.316 --> 00:22:47.616
+So, if there's something
+that you see that makes a lot
+
+527
+00:22:47.616 --> 00:22:50.266
+of sense, great, call that out,
+tell us because we'll make sure
+
+528
+00:22:50.266 --> 00:22:51.246
+that we try to keep it.
+
+529
+00:22:51.646 --> 00:22:53.386
+If there's something you
+see that you don't like
+
+530
+00:22:53.386 --> 00:22:56.956
+or that you'd like to make
+suggestions of, send them in.
+
+531
+00:22:57.606 --> 00:22:59.616
+Take advantage of
+bugreport.apple.com,
+
+532
+00:22:59.616 --> 00:23:00.766
+get the radars in on Swift
+
+533
+00:22:59.616 --> 00:23:00.766
+get the radars in on Swift
+
+534
+00:23:00.816 --> 00:23:02.926
+because this is really your
+opportunity to have a lot
+
+535
+00:23:02.926 --> 00:23:05.526
+of influence on how all
+of this stuff develops.
+
+536
+00:23:06.036 --> 00:23:09.606
+If you're publishing a
+framework, whether it's
+
+537
+00:23:09.646 --> 00:23:13.726
+for your own applications, or
+whether it's for other people
+
+538
+00:23:13.726 --> 00:23:16.466
+to use in their own
+applications, you're going
+
+539
+00:23:16.466 --> 00:23:17.376
+to run into a problem.
+
+540
+00:23:17.946 --> 00:23:18.996
+This is a problem that we run
+
+541
+00:23:18.996 --> 00:23:21.866
+into every time we release a new
+version of the operating system
+
+542
+00:23:21.866 --> 00:23:23.276
+and that's framework version.
+
+543
+00:23:24.196 --> 00:23:27.956
+Right? So your user has gone
+
+544
+00:23:27.956 --> 00:23:29.376
+and downloaded a
+whole bunch of apps.
+
+545
+00:23:29.656 --> 00:23:31.576
+Darn them.
+
+546
+00:23:31.786 --> 00:23:32.686
+Well, I mean, good for you guys.
+
+547
+00:23:33.226 --> 00:23:35.136
+They should download
+all of your apps.
+
+548
+00:23:35.736 --> 00:23:39.106
+All of those applications, let's
+say, used the latest version
+
+549
+00:23:39.106 --> 00:23:42.776
+of this new framework that just
+came out and it's version one.
+
+550
+00:23:43.386 --> 00:23:47.116
+So for a while at least
+you're in good shape.
+
+551
+00:23:47.116 --> 00:23:49.006
+Everybody's got the
+same code running,
+
+552
+00:23:49.326 --> 00:23:51.166
+if an application
+sends information
+
+553
+00:23:51.166 --> 00:23:54.066
+to another one via an extension
+or via the open URL call,
+
+554
+00:23:54.066 --> 00:23:58.426
+things like that, hey, all
+of the objects work together.
+
+555
+00:23:59.616 --> 00:24:00.376
+No problem, right?
+
+556
+00:23:59.616 --> 00:24:00.376
+No problem, right?
+
+557
+00:24:01.006 --> 00:24:01.316
+Awesome.
+
+558
+00:24:03.306 --> 00:24:07.006
+And then, you come out with a
+new version of the framework
+
+559
+00:24:07.486 --> 00:24:13.216
+and some applications update to
+it and some applications don't.
+
+560
+00:24:13.386 --> 00:24:16.706
+Or some of the applications just
+got developed and then abandoned
+
+561
+00:24:16.706 --> 00:24:17.666
+and they'll never update.
+
+562
+00:24:18.106 --> 00:24:21.246
+Right? So some applications
+on the user's device are going
+
+563
+00:24:21.246 --> 00:24:24.446
+to be Version 2, the blue ones.
+
+564
+00:24:24.446 --> 00:24:26.066
+Some versions are
+going to be Version 1.
+
+565
+00:24:26.566 --> 00:24:29.356
+And now suddenly I'm
+trying to send an object
+
+566
+00:24:29.436 --> 00:24:31.616
+to that other application
+from a Version 2 framework
+
+567
+00:24:31.616 --> 00:24:33.866
+to a Version 1 framework or
+from a Version 1 framework
+
+568
+00:24:33.866 --> 00:24:34.796
+to a Version 2 framework.
+
+569
+00:24:36.076 --> 00:24:37.186
+Not everything's the same.
+
+570
+00:24:38.206 --> 00:24:39.896
+Those objects have
+grown new capabilities,
+
+571
+00:24:39.896 --> 00:24:40.986
+the data that you're
+passing back
+
+572
+00:24:40.986 --> 00:24:42.546
+and forth may have
+new keys in it.
+
+573
+00:24:43.796 --> 00:24:45.796
+Right? One of the things that
+you're going to have to do
+
+574
+00:24:45.796 --> 00:24:46.506
+if you are going
+
+575
+00:24:46.506 --> 00:24:49.346
+to be publishing a
+framework is be very careful
+
+576
+00:24:49.586 --> 00:24:50.556
+about the versioning.
+
+577
+00:24:51.616 --> 00:24:55.466
+So, a number of things that
+you can do about dealing
+
+578
+00:24:55.466 --> 00:24:56.546
+with framework versions.
+
+579
+00:24:57.156 --> 00:24:58.916
+First, you're going to have
+
+580
+00:24:58.916 --> 00:25:00.466
+to put a framework
+version in there anyway.
+
+581
+00:24:58.916 --> 00:25:00.466
+to put a framework
+version in there anyway.
+
+582
+00:25:01.456 --> 00:25:04.656
+The framework mechanism
+when you create a new target
+
+583
+00:25:04.656 --> 00:25:06.916
+or when you create a new
+project for a framework,
+
+584
+00:25:07.716 --> 00:25:08.756
+that goes in the info .plist.
+
+585
+00:25:08.756 --> 00:25:11.166
+There's a short version string,
+keep track of that, use that.
+
+586
+00:25:11.436 --> 00:25:13.206
+That's information that you
+can use in order to figure
+
+587
+00:25:13.206 --> 00:25:14.806
+out what's happening,
+what version
+
+588
+00:25:14.806 --> 00:25:15.936
+of the framework were
+you linked against,
+
+589
+00:25:15.936 --> 00:25:18.076
+what version is the
+data coming from?
+
+590
+00:25:18.076 --> 00:25:20.006
+You can send that data to
+something else to say, hey,
+
+591
+00:25:20.006 --> 00:25:23.076
+I'm a Version 1 thing,
+I'm a Version 2 thing.
+
+592
+00:25:23.296 --> 00:25:25.816
+The other thing you should
+do probably is take advantage
+
+593
+00:25:25.816 --> 00:25:28.996
+of keyed archiving or keyed
+archiving-like behavior.
+
+594
+00:25:29.726 --> 00:25:31.866
+Right? So if you are doing
+key-value stuff as part
+
+595
+00:25:31.866 --> 00:25:36.086
+of your archiving or part of
+your document format make sure
+
+596
+00:25:36.086 --> 00:25:38.216
+that your key-value pair
+meanings are consistent.
+
+597
+00:25:39.326 --> 00:25:41.856
+Right? Don't suddenly
+for a Version 1 key
+
+598
+00:25:41.856 --> 00:25:43.156
+that might be background color,
+
+599
+00:25:44.096 --> 00:25:46.166
+don't suddenly make
+zero mean white instead
+
+600
+00:25:46.166 --> 00:25:47.406
+of black in Version 2.
+
+601
+00:25:48.756 --> 00:25:51.166
+Because then suddenly the
+user's going to come along
+
+602
+00:25:51.166 --> 00:25:52.786
+and you're going to get sent
+some data and they're going
+
+603
+00:25:52.786 --> 00:25:54.416
+to say, "Wow, this is
+completely rendered wrong.
+
+604
+00:25:54.506 --> 00:25:54.956
+What happened?"
+
+605
+00:25:56.096 --> 00:25:59.346
+Right? So once you've committed
+to what a key-value pair means
+
+606
+00:25:59.706 --> 00:26:03.056
+or what a relationship between
+two key-value pairs mean inside
+
+607
+00:25:59.706 --> 00:26:03.056
+or what a relationship between
+two key-value pairs mean inside
+
+608
+00:26:03.056 --> 00:26:04.696
+those archives that you're
+sending back and forth
+
+609
+00:26:04.696 --> 00:26:07.226
+of different versions of
+yourself, you really kind
+
+610
+00:26:07.226 --> 00:26:07.976
+of have to stick with it.
+
+611
+00:26:09.126 --> 00:26:10.676
+Right? We do this at Apple also.
+
+612
+00:26:10.676 --> 00:26:13.716
+There's this whole set of keys
+that have sort of come along
+
+613
+00:26:13.716 --> 00:26:17.626
+to make sure that when we open
+up archives from older versions
+
+614
+00:26:17.626 --> 00:26:19.566
+of the system that we can
+continue to read that data.
+
+615
+00:26:19.566 --> 00:26:23.946
+You do get lots of interesting
+opportunities at read
+
+616
+00:26:23.946 --> 00:26:25.586
+and write time to be
+able to deal with that.
+
+617
+00:26:25.586 --> 00:26:28.636
+So, one is missing keys should
+return 'nil' or the equivalent.
+
+618
+00:26:28.636 --> 00:26:30.116
+In the face of getting
+back 'nil',
+
+619
+00:26:30.486 --> 00:26:31.996
+you probably want to
+do something sane.
+
+620
+00:26:33.406 --> 00:26:35.606
+Right? If you're looking for
+a key and it's not there,
+
+621
+00:26:36.106 --> 00:26:38.276
+maybe that's a great opportunity
+for some default value
+
+622
+00:26:38.276 --> 00:26:40.776
+to get injected in at the
+time that you're on archive.
+
+623
+00:26:41.356 --> 00:26:43.326
+Right? And that's
+really the opportunity
+
+624
+00:26:43.326 --> 00:26:44.106
+to be able to do that.
+
+625
+00:26:44.106 --> 00:26:47.386
+Because the encoding and the
+decoding are your chances
+
+626
+00:26:47.856 --> 00:26:49.086
+to get at that interface.
+
+627
+00:26:49.146 --> 00:26:51.346
+When you're writing that data
+out, you're going to be writing
+
+628
+00:26:51.346 --> 00:26:53.336
+that data out for
+consumption by somebody else.
+
+629
+00:26:53.336 --> 00:26:55.666
+When you're consuming that data
+you kind of have to look at it
+
+630
+00:26:55.666 --> 00:26:58.366
+and go, well, I'm not
+really sure where this comes
+
+631
+00:26:58.366 --> 00:27:00.116
+from so I should at
+least be wary of it.
+
+632
+00:26:58.366 --> 00:27:00.116
+from so I should at
+least be wary of it.
+
+633
+00:27:00.856 --> 00:27:04.256
+Right? If you're encoding
+things and you know
+
+634
+00:27:04.256 --> 00:27:06.596
+that there's a bug back there
+that you need to fix back
+
+635
+00:27:06.596 --> 00:27:07.796
+in Version 1 and you can do it
+
+636
+00:27:07.796 --> 00:27:10.686
+by encoding something
+different, you might do that.
+
+637
+00:27:10.686 --> 00:27:11.866
+If you're looking at situations
+
+638
+00:27:11.866 --> 00:27:15.666
+where you're pulling new keys
+in, the old code isn't going
+
+639
+00:27:15.666 --> 00:27:17.326
+to go looking for those
+new keys, so it's going
+
+640
+00:27:17.326 --> 00:27:19.096
+to ignore those things,
+you're probably pretty safe.
+
+641
+00:27:20.136 --> 00:27:23.216
+The new stuff you want to
+make sure you're not stomping
+
+642
+00:27:23.216 --> 00:27:25.096
+on old keys, you're
+not interfering
+
+643
+00:27:25.096 --> 00:27:26.656
+with the relationships
+between keys.
+
+644
+00:27:27.296 --> 00:27:29.546
+When you encode and decode
+that's your interface.
+
+645
+00:27:29.786 --> 00:27:32.336
+I know I'm writing out
+four something that's going
+
+646
+00:27:32.336 --> 00:27:34.826
+to pick us up and I don't know
+what version it's going to be.
+
+647
+00:27:34.826 --> 00:27:37.476
+Or, I'm getting data
+back in I have no idea
+
+648
+00:27:37.476 --> 00:27:38.106
+where it's coming from.
+
+649
+00:27:38.696 --> 00:27:41.936
+Right? Make sure your
+keys are unique, right?
+
+650
+00:27:41.936 --> 00:27:43.706
+If somebody's sub-classing
+your stuff
+
+651
+00:27:43.706 --> 00:27:45.586
+and they're sending stuff back
+and forth but they're depending
+
+652
+00:27:45.586 --> 00:27:47.056
+on your framework,
+you don't want
+
+653
+00:27:47.056 --> 00:27:49.646
+to actually stomp
+on their name space.
+
+654
+00:27:49.896 --> 00:27:54.746
+Right? So the keys, even though
+we're getting some name spacing
+
+655
+00:27:54.746 --> 00:27:56.616
+behavior in Swift, the
+keys in these kinds
+
+656
+00:27:56.616 --> 00:27:58.686
+of things aren't
+name spaced at all.
+
+657
+00:27:58.686 --> 00:28:00.106
+So make sure they're unique.
+
+658
+00:27:58.686 --> 00:28:00.106
+So make sure they're unique.
+
+659
+00:28:00.106 --> 00:28:01.116
+Use the prefixes.
+
+660
+00:28:01.616 --> 00:28:02.666
+If you want to be
+really defensive,
+
+661
+00:28:02.666 --> 00:28:05.046
+use your bundle ID,
+prefix it there.
+
+662
+00:28:05.996 --> 00:28:10.476
+One of the ways you can also
+mention this, I didn't put it
+
+663
+00:28:10.476 --> 00:28:12.676
+on the slide, one of the ways
+you can also work with this is
+
+664
+00:28:12.676 --> 00:28:14.236
+by conforming to
+NS secure coding.
+
+665
+00:28:14.966 --> 00:28:16.576
+Right? Secure coding
+will make sure
+
+666
+00:28:16.576 --> 00:28:19.996
+that you're only getting the
+objects out of the archive
+
+667
+00:28:19.996 --> 00:28:21.316
+that you're expecting
+to be there.
+
+668
+00:28:22.756 --> 00:28:24.626
+Also, start looking for
+feature availability.
+
+669
+00:28:25.566 --> 00:28:29.276
+Right? Classes respond to
+selectors for a reason.
+
+670
+00:28:29.276 --> 00:28:30.266
+If you're in some code
+
+671
+00:28:30.266 --> 00:28:32.336
+and you're using somebody else's
+framework you want to make sure
+
+672
+00:28:32.336 --> 00:28:34.456
+that your code is going
+to keep functioning
+
+673
+00:28:34.456 --> 00:28:35.456
+if something gets updated.
+
+674
+00:28:36.286 --> 00:28:37.726
+Check to see if it
+respondsToSelector.
+
+675
+00:28:38.096 --> 00:28:39.506
+Check NSClassFromString.
+
+676
+00:28:39.506 --> 00:28:43.696
+Do those things in order to make
+sure that when you're working
+
+677
+00:28:43.696 --> 00:28:46.366
+with all of this
+stuff you don't wind
+
+678
+00:28:46.366 --> 00:28:48.826
+up accidently pantsing the
+user and killing their app
+
+679
+00:28:48.856 --> 00:28:53.316
+because of sending a message
+to a string or a variable
+
+680
+00:28:53.316 --> 00:28:56.276
+that doesn't respond to that
+message except in Version 2.
+
+681
+00:28:57.666 --> 00:28:59.946
+Okay, this is all
+awesome, great.
+
+682
+00:29:01.386 --> 00:29:04.856
+How does all this work?
+
+683
+00:29:06.356 --> 00:29:07.256
+Pretty well, actually.
+
+684
+00:29:08.536 --> 00:29:12.456
+If you follow me on
+the social networks
+
+685
+00:29:12.496 --> 00:29:15.506
+of the day you probably
+know that I had a dog.
+
+686
+00:29:16.876 --> 00:29:17.886
+This is my dog.
+
+687
+00:29:19.436 --> 00:29:20.206
+This is Buddy.
+
+688
+00:29:20.906 --> 00:29:24.646
+He's got a 60-pound bark
+and a 30-pound body.
+
+689
+00:29:24.646 --> 00:29:27.326
+He's about this tall.
+
+690
+00:29:27.826 --> 00:29:30.666
+And he's cute, and I post
+a lot of pictures of my dog
+
+691
+00:29:30.666 --> 00:29:33.396
+because I can't really post
+anything about work [laughter].
+
+692
+00:29:33.836 --> 00:29:40.936
+So, a lot of people
+like to say, "Hey,
+
+693
+00:29:40.936 --> 00:29:42.556
+Chris, your dog is awesome."
+
+694
+00:29:44.026 --> 00:29:45.546
+You know, "Can I
+borrow your dog?"
+
+695
+00:29:45.546 --> 00:29:46.836
+"I'd love to meet your dog."
+
+696
+00:29:47.786 --> 00:29:49.166
+"Your dog would be a
+great part of my life."
+
+697
+00:29:49.166 --> 00:29:50.726
+I'm not giving away
+my dog, sorry.
+
+698
+00:29:51.366 --> 00:29:52.146
+You can't have him.
+
+699
+00:29:52.996 --> 00:29:56.296
+But I am pleased to talk a
+little bit about a prototype
+
+700
+00:29:56.296 --> 00:29:57.796
+that I've been working on.
+
+701
+00:29:58.376 --> 00:30:04.186
+It's called Budstagram
+and it's a way
+
+702
+00:29:58.376 --> 00:30:04.186
+It's called Budstagram
+and it's a way
+
+703
+00:30:04.186 --> 00:30:05.366
+that you can take your pictures
+
+704
+00:30:05.366 --> 00:30:06.786
+and put my dog into
+them [laughter].
+
+705
+00:30:07.306 --> 00:30:07.373
+So --
+
+706
+00:30:08.516 --> 00:30:13.816
+[ Applause ]
+
+707
+00:30:14.316 --> 00:30:16.536
+What we'll do is, I'm
+going to take a quick tour
+
+708
+00:30:16.536 --> 00:30:21.546
+through Xcode both on-for what
+I've done so far with this
+
+709
+00:30:21.546 --> 00:30:25.456
+and just to walk through the
+initial setup of an extension
+
+710
+00:30:25.456 --> 00:30:26.986
+and an application
+and a framework.
+
+711
+00:30:27.646 --> 00:30:29.816
+But you're going to be able
+to do this kind of thing.
+
+712
+00:30:29.816 --> 00:30:33.096
+The idea is-but this is a
+terrible picture isn't it?
+
+713
+00:30:33.096 --> 00:30:34.366
+This is a beach in Corsica.
+
+714
+00:30:34.366 --> 00:30:35.856
+I went on a biking
+trip a while back.
+
+715
+00:30:36.806 --> 00:30:38.016
+Our ride wound up here.
+
+716
+00:30:38.016 --> 00:30:39.706
+It was absolutely gorgeous.
+
+717
+00:30:40.006 --> 00:30:41.406
+We were going to try and
+stay a couple of days
+
+718
+00:30:41.406 --> 00:30:42.566
+but they weren't
+going to let us do it.
+
+719
+00:30:42.566 --> 00:30:44.566
+But this is a great picture
+but I really missed Buddy.
+
+720
+00:30:45.426 --> 00:30:47.106
+I'd been gone about
+10 days by this point
+
+721
+00:30:47.916 --> 00:30:49.836
+and it's a great
+picture but now,
+
+722
+00:30:50.506 --> 00:30:52.966
+now it's an even better
+picture having been photo bombed
+
+723
+00:30:53.466 --> 00:30:54.026
+by my dog.
+
+724
+00:30:54.746 --> 00:30:54.846
+So,
+
+725
+00:30:55.516 --> 00:30:57.776
+[ Applause ]
+
+726
+00:30:58.276 --> 00:31:00.486
+We're going to take a
+look at three things.
+
+727
+00:30:58.276 --> 00:31:00.486
+We're going to take a
+look at three things.
+
+728
+00:31:01.196 --> 00:31:04.556
+Budstagram, the application,
+is sort of the icon
+
+729
+00:31:04.556 --> 00:31:06.516
+that the user sees,
+it's the place
+
+730
+00:31:06.516 --> 00:31:07.236
+that they're going to start.
+
+731
+00:31:07.236 --> 00:31:11.106
+Right? It's going to allow
+posting and editing of photos,
+
+732
+00:31:11.516 --> 00:31:16.066
+and as long as there's a picture
+of Buddy in there it'll post.
+
+733
+00:31:16.066 --> 00:31:18.416
+We'd like to allow some
+comments on existing photos,
+
+734
+00:31:18.516 --> 00:31:20.146
+sort of a feed kind
+of mechanism.
+
+735
+00:31:20.576 --> 00:31:24.266
+You may have seen apps like this
+before somewhere, I'm not sure.
+
+736
+00:31:24.516 --> 00:31:27.106
+And we're going to have it
+share a posting view controller
+
+737
+00:31:27.106 --> 00:31:27.946
+with the extension.
+
+738
+00:31:28.266 --> 00:31:29.426
+Right? We want to
+share that code
+
+739
+00:31:29.426 --> 00:31:31.496
+so it winds up in both places.
+
+740
+00:31:31.926 --> 00:31:34.876
+The extension is going to allow
+posting and editing of photos
+
+741
+00:31:34.876 --> 00:31:36.766
+within other apps,
+but it's not going
+
+742
+00:31:36.766 --> 00:31:38.356
+to allow comments
+on existing photos.
+
+743
+00:31:38.356 --> 00:31:39.796
+We're not going to put
+the feed in the extension.
+
+744
+00:31:39.796 --> 00:31:41.146
+That's the business
+of the application.
+
+745
+00:31:41.396 --> 00:31:43.266
+And that's actually one
+thing about this architecture
+
+746
+00:31:43.266 --> 00:31:44.686
+in the frameworks and stuff
+like that that you want
+
+747
+00:31:44.686 --> 00:31:45.626
+to be really careful about.
+
+748
+00:31:46.276 --> 00:31:47.486
+Right? You don't want to wind
+
+749
+00:31:47.486 --> 00:31:50.356
+up with your entire application
+suddenly living in the framework
+
+750
+00:31:50.416 --> 00:31:52.806
+because not all of your
+applications can be appropriate
+
+751
+00:31:52.806 --> 00:31:53.996
+for the extension or not all
+
+752
+00:31:53.996 --> 00:31:56.356
+of your applications can be
+appropriate for publishing
+
+753
+00:31:56.356 --> 00:31:57.416
+as a third party framework.
+
+754
+00:31:57.526 --> 00:31:59.566
+There's the things that
+are common to your service
+
+755
+00:31:59.766 --> 00:32:01.346
+and there are things that
+make your app unique.
+
+756
+00:31:59.766 --> 00:32:01.346
+and there are things that
+make your app unique.
+
+757
+00:32:02.736 --> 00:32:05.296
+Right? So you want to try and
+keep those two things separate.
+
+758
+00:32:06.276 --> 00:32:08.746
+And it's going to share
+the posting view controller
+
+759
+00:32:08.746 --> 00:32:09.876
+with the application obviously.
+
+760
+00:32:10.136 --> 00:32:12.116
+The framework is going
+
+761
+00:32:12.116 --> 00:32:14.106
+to contain the shared
+posting view controller
+
+762
+00:32:14.386 --> 00:32:16.386
+and the shared networking code
+
+763
+00:32:16.506 --> 00:32:17.756
+for posting and things
+like that.
+
+764
+00:32:17.756 --> 00:32:18.546
+And the model code.
+
+765
+00:32:18.786 --> 00:32:21.436
+Right? All the stuff that
+makes up the common things
+
+766
+00:32:21.436 --> 00:32:23.376
+that the extension needs
+to know to be able to deal
+
+767
+00:32:23.376 --> 00:32:26.116
+with the objects that the
+applications also deal with.
+
+768
+00:32:26.606 --> 00:32:29.626
+So we have the Budstagram
+application here.
+
+769
+00:32:30.506 --> 00:32:33.386
+And if I tap on it,
+there's Bud in Corsica.
+
+770
+00:32:33.386 --> 00:32:35.266
+This is the feed here.
+
+771
+00:32:35.796 --> 00:32:37.866
+And if we were going
+to post something here,
+
+772
+00:32:37.866 --> 00:32:39.946
+this is a picture of
+my parents' backyard
+
+773
+00:32:39.946 --> 00:32:44.276
+in Connecticut looking very
+New England in the fall
+
+774
+00:32:44.276 --> 00:32:45.946
+and it's very pretty and
+I can't bring Bud there
+
+775
+00:32:45.946 --> 00:32:46.906
+because he doesn't like to fly.
+
+776
+00:32:48.176 --> 00:32:49.536
+We've got this app,
+we've got the extension,
+
+777
+00:32:49.536 --> 00:32:50.236
+they work together.
+
+778
+00:32:50.236 --> 00:32:52.466
+You're going to be able to
+take data from the extension,
+
+779
+00:32:52.466 --> 00:32:55.136
+throw it into the application
+and the code that you're going
+
+780
+00:32:55.136 --> 00:32:57.146
+to share between the
+two, you're only going
+
+781
+00:32:57.146 --> 00:32:59.306
+to use in the framework.
+
+782
+00:32:59.356 --> 00:33:02.396
+So you don't have to be
+jocking targets, you don't have
+
+783
+00:32:59.356 --> 00:33:02.396
+So you don't have to be
+jocking targets, you don't have
+
+784
+00:33:02.396 --> 00:33:04.126
+to be shuffling stuff
+around, things like that.
+
+785
+00:33:04.126 --> 00:33:05.666
+So, let's take a look at Xcode.
+
+786
+00:33:06.576 --> 00:33:08.636
+So let's take a look
+at a new Xcode project.
+
+787
+00:33:08.636 --> 00:33:12.406
+I'm going to start from scratch
+here mostly to give you sort
+
+788
+00:33:12.406 --> 00:33:15.206
+of an orientation before I start
+jumping around in Budstagram
+
+789
+00:33:15.206 --> 00:33:16.066
+to show you what I did.
+
+790
+00:33:16.066 --> 00:33:20.416
+So, what we've got here
+is the start of, say,
+
+791
+00:33:20.416 --> 00:33:22.676
+a tabbed application or
+a page-based application.
+
+792
+00:33:22.676 --> 00:33:25.196
+Let's go with the single
+view application here just
+
+793
+00:33:25.196 --> 00:33:26.196
+for the basics.
+
+794
+00:33:26.336 --> 00:33:30.066
+We'll call this "framework
+example"
+
+795
+00:33:30.066 --> 00:33:31.836
+because I'm not particularly
+creative.
+
+796
+00:33:33.196 --> 00:33:36.106
+And we've got a language
+choice here, I'm going to stick
+
+797
+00:33:36.106 --> 00:33:39.786
+with Objective-C for a
+minute and we'll just-oh,
+
+798
+00:33:40.726 --> 00:33:44.896
+I am not an organization
+unto myself, so we'll call
+
+799
+00:33:45.746 --> 00:33:47.316
+that Apple, Incorporated.
+
+800
+00:33:47.316 --> 00:33:49.286
+Desktop will create this.
+
+801
+00:33:49.996 --> 00:33:52.416
+So we've got here now
+is just an application.
+
+802
+00:33:53.396 --> 00:33:57.506
+Right? And there's some
+different things here,
+
+803
+00:33:57.506 --> 00:34:00.396
+there's some build settings, and
+build phases, and all this stuff
+
+804
+00:33:57.506 --> 00:34:00.396
+there's some build settings, and
+build phases, and all this stuff
+
+805
+00:34:00.396 --> 00:34:01.176
+that you're familiar with.
+
+806
+00:34:01.206 --> 00:34:04.396
+You'll see the link binary
+with libraries bit here.
+
+807
+00:34:05.046 --> 00:34:07.346
+And if you were just going
+
+808
+00:34:07.346 --> 00:34:08.775
+to have an application
+this would be fine,
+
+809
+00:34:08.775 --> 00:34:11.596
+you'd work with this and
+you'd put all of your code in
+
+810
+00:34:11.596 --> 00:34:13.956
+and your tabs and you'd work
+with your targets and things
+
+811
+00:34:13.956 --> 00:34:15.866
+like that, but we're
+actually going to go ahead
+
+812
+00:34:15.866 --> 00:34:17.036
+and create a new target here.
+
+813
+00:34:17.036 --> 00:34:19.976
+And we'll create a new
+framework and library target,
+
+814
+00:34:19.976 --> 00:34:20.996
+a Cocoa Touch Framework.
+
+815
+00:34:22.795 --> 00:34:28.886
+We'll call this-let's
+call it Budstakit.
+
+816
+00:34:28.886 --> 00:34:30.406
+And you'll see two
+new things here.
+
+817
+00:34:30.406 --> 00:34:33.426
+It says here the project is
+the framework example here,
+
+818
+00:34:33.985 --> 00:34:36.186
+and "embed in application":
+framework example.
+
+819
+00:34:36.186 --> 00:34:41.616
+So, we're creating this new
+framework and Xcode's also going
+
+820
+00:34:41.616 --> 00:34:44.036
+to set it up so that when
+a framework builds and then
+
+821
+00:34:44.036 --> 00:34:46.146
+when you go and archive
+it all that stuff winds
+
+822
+00:34:46.146 --> 00:34:47.016
+up in the right place.
+
+823
+00:34:48.005 --> 00:34:49.056
+So we can do Finish here.
+
+824
+00:34:49.716 --> 00:34:53.146
+And now we've got the link
+binary with libraries there.
+
+825
+00:34:53.146 --> 00:34:54.856
+Budstakit framework is required.
+
+826
+00:34:56.376 --> 00:34:58.886
+And let's go ahead and actually
+create the extension here too
+
+827
+00:34:58.886 --> 00:34:59.546
+while we're at it.
+
+828
+00:34:59.576 --> 00:35:00.986
+So here's an application
+extension.
+
+829
+00:34:59.576 --> 00:35:00.986
+So here's an application
+extension.
+
+830
+00:35:01.636 --> 00:35:04.086
+We'll use a share extension.
+
+831
+00:35:04.086 --> 00:35:12.596
+Okay, and this'll be the
+BudstaPosting extension.
+
+832
+00:35:13.176 --> 00:35:20.836
+Okay. So now we've got
+BudstaKit, BudstaPosting.
+
+833
+00:35:21.436 --> 00:35:27.096
+The BudstaPosting bits have the
+share view controller in here,
+
+834
+00:35:27.316 --> 00:35:29.526
+and a storyboard for that.
+
+835
+00:35:29.976 --> 00:35:31.486
+Let's see.
+
+836
+00:35:32.036 --> 00:35:36.786
+We pause for station
+identification.
+
+837
+00:35:37.616 --> 00:35:40.986
+So there's nothing in
+BudstaKit right now.
+
+838
+00:35:41.506 --> 00:35:43.166
+There's nothing in
+the-there's this sort
+
+839
+00:35:43.166 --> 00:35:45.086
+of empty share view
+controller in here.
+
+840
+00:35:45.086 --> 00:35:47.266
+And we've got this
+ViewController
+
+841
+00:35:47.266 --> 00:35:50.276
+for the framework example
+for the application.
+
+842
+00:35:50.816 --> 00:35:53.776
+One of the things that
+I mentioned before was,
+
+843
+00:35:53.776 --> 00:35:56.746
+I wanted to be able to have the
+share view controller be part
+
+844
+00:35:56.746 --> 00:35:57.606
+of the framework.
+
+845
+00:35:57.606 --> 00:35:59.216
+Right? Because I
+want to use that both
+
+846
+00:35:59.216 --> 00:36:03.816
+in Budstagram itself
+and in the extension.
+
+847
+00:35:59.216 --> 00:36:03.816
+in Budstagram itself
+and in the extension.
+
+848
+00:36:04.556 --> 00:36:06.046
+BudstaPosting is the extension.
+
+849
+00:36:06.816 --> 00:36:09.926
+All of this stuff,
+if we go look,
+
+850
+00:36:09.926 --> 00:36:11.726
+let's take a quick look
+at the Finder here.
+
+851
+00:36:12.306 --> 00:36:18.016
+Actually, if we go look in the
+framework example folder, right,
+
+852
+00:36:18.766 --> 00:36:22.606
+Xcodes are organizing all
+the code in directories here,
+
+853
+00:36:22.826 --> 00:36:26.866
+but the directory-obviously
+directory hierarchy is not
+
+854
+00:36:26.866 --> 00:36:30.016
+necessarily reflected in how
+Xcode shows that in its files
+
+855
+00:36:31.276 --> 00:36:31.746
+and groups thing here.
+
+856
+00:36:31.746 --> 00:36:40.606
+But we're going to just move
+these guys up into here.
+
+857
+00:36:42.106 --> 00:36:44.666
+So I'm just making the
+share view controller part
+
+858
+00:36:44.666 --> 00:36:46.666
+of the BudstaKit group,
+it's not actually moved
+
+859
+00:36:46.666 --> 00:36:50.316
+out of the directory that
+it's in behind the scenes.
+
+860
+00:36:50.356 --> 00:36:53.176
+But, you know, if you feel like
+you want to do that go ahead
+
+861
+00:36:53.176 --> 00:36:54.756
+and move it with your
+version controller system
+
+862
+00:36:54.756 --> 00:36:56.226
+over into the right spot.
+
+863
+00:36:56.596 --> 00:36:58.926
+Here in the BudstaKit header
+I'm going to go ahead and,
+
+864
+00:36:59.126 --> 00:37:00.116
+it says here, in this header,
+
+865
+00:36:59.126 --> 00:37:00.116
+it says here, in this header,
+
+866
+00:37:00.116 --> 00:37:01.736
+you should import all
+the public headers
+
+867
+00:37:01.736 --> 00:37:03.456
+of your framework
+using statements
+
+868
+00:37:03.456 --> 00:37:05.256
+like import BudstaKit
+PublicHeader.
+
+869
+00:37:05.256 --> 00:37:14.906
+So let's do import
+BudstaKit/ShareViewController.
+
+870
+00:37:15.436 --> 00:37:17.996
+Hello code completion.
+
+871
+00:37:18.446 --> 00:37:22.956
+And then we need to make
+sure that we change these
+
+872
+00:37:22.956 --> 00:37:24.176
+to be part of the right targets.
+
+873
+00:37:24.176 --> 00:37:25.696
+Over here on the
+right-hand side,
+
+874
+00:37:26.116 --> 00:37:28.716
+ShareViewController.m is part
+of the BudstaPosting target,
+
+875
+00:37:28.716 --> 00:37:30.816
+we actually want to make it
+part of the BudstaKit target.
+
+876
+00:37:30.816 --> 00:37:32.776
+And the thing that
+you're going to do
+
+877
+00:37:32.776 --> 00:37:33.946
+with the frameworks is different
+
+878
+00:37:33.946 --> 00:37:35.846
+than what you've probably
+been doing before,
+
+879
+00:37:35.846 --> 00:37:38.476
+is within a framework
+there are some designations
+
+880
+00:37:38.476 --> 00:37:39.916
+for what a header means.
+
+881
+00:37:39.916 --> 00:37:42.306
+So, you're actually going
+to wind up adding the header
+
+882
+00:37:42.606 --> 00:37:44.266
+to be part of the
+target of the framework,
+
+883
+00:37:44.906 --> 00:37:46.586
+which isn't necessarily
+something you've really
+
+884
+00:37:46.586 --> 00:37:47.136
+done before.
+
+885
+00:37:47.136 --> 00:37:49.186
+Right? Usually you use
+the headers, the .m's,
+
+886
+00:37:49.186 --> 00:37:51.676
+or the .s's are part of the
+framework-or the target,
+
+887
+00:37:51.906 --> 00:37:53.746
+the headers are just
+loose, they never wind
+
+888
+00:37:53.746 --> 00:37:54.476
+up getting distributed.
+
+889
+00:37:54.676 --> 00:37:56.506
+So since this is a framework
+and you're going to hand it
+
+890
+00:37:56.506 --> 00:37:57.656
+out to people, you're
+going to be handing it
+
+891
+00:37:57.656 --> 00:37:59.276
+out to other developers on
+your team, you're going to want
+
+892
+00:37:59.276 --> 00:38:01.796
+to tell us whether this
+thing is a project header,
+
+893
+00:37:59.276 --> 00:38:01.796
+to tell us whether this
+thing is a project header,
+
+894
+00:38:02.076 --> 00:38:03.706
+a private header,
+or a public header.
+
+895
+00:38:04.806 --> 00:38:07.966
+Right? So the project header
+means that only things
+
+896
+00:38:07.966 --> 00:38:09.036
+within the project can see it.
+
+897
+00:38:09.976 --> 00:38:11.796
+The private header
+goes-anything that's marked
+
+898
+00:38:11.796 --> 00:38:12.676
+as a private header goes
+
+899
+00:38:12.676 --> 00:38:15.416
+into a private header's
+directory inside the framework
+
+900
+00:38:15.866 --> 00:38:17.176
+when that framework gets built.
+
+901
+00:38:18.396 --> 00:38:22.686
+Right? The public portion of it
+is obviously the public headers,
+
+902
+00:38:22.776 --> 00:38:25.196
+it's the headers that are just
+in the headers directory there.
+
+903
+00:38:25.196 --> 00:38:27.996
+I'm going to make
+this a public header.
+
+904
+00:38:27.996 --> 00:38:30.656
+You might use private
+headers because just
+
+905
+00:38:30.656 --> 00:38:33.346
+like us you've got SPI that
+you don't want people to use
+
+906
+00:38:33.346 --> 00:38:36.096
+but it's really handy to be
+able to use it internally
+
+907
+00:38:36.276 --> 00:38:37.686
+or across two projects,
+
+908
+00:38:38.046 --> 00:38:40.256
+and maybe that SPI is something
+you want to publish later
+
+909
+00:38:40.256 --> 00:38:43.416
+but it's not quite bulletproof
+enough to be able to be API now.
+
+910
+00:38:43.796 --> 00:38:45.026
+You'll put that in
+a private header.
+
+911
+00:38:45.456 --> 00:38:47.976
+If you publish your
+framework, don't forget
+
+912
+00:38:47.976 --> 00:38:50.666
+to remove the private headers
+directory from the framework,
+
+913
+00:38:51.266 --> 00:38:55.386
+because then everybody
+can grope all over it.
+
+914
+00:38:56.326 --> 00:39:00.546
+So, and then down here in the
+BudstaPosting thing, well,
+
+915
+00:38:56.326 --> 00:39:00.546
+So, and then down here in the
+BudstaPosting thing, well,
+
+916
+00:39:00.546 --> 00:39:01.946
+we're going to have
+to edit the target.
+
+917
+00:39:02.086 --> 00:39:06.056
+So, let's go back up to
+this framework example here,
+
+918
+00:39:06.266 --> 00:39:08.876
+and if I look at BudstaKit,
+
+919
+00:39:08.876 --> 00:39:11.296
+BudstaKit is linking
+with no libraries.
+
+920
+00:39:11.296 --> 00:39:13.426
+The framework example is
+linking with BudstaKit.
+
+921
+00:39:13.606 --> 00:39:16.946
+I need to make BudstaPosting
+link with BudstaKit,
+
+922
+00:39:16.946 --> 00:39:20.496
+so what I can do is just
+drag this guy here-no, okay.
+
+923
+00:39:20.926 --> 00:39:24.066
+We'll pick a plus, we'll choose
+BudstaKit from the project,
+
+924
+00:39:24.926 --> 00:39:27.456
+and now all of those
+things will link together.
+
+925
+00:39:27.456 --> 00:39:30.276
+So now ShareViewController
+is now part of the framework.
+
+926
+00:39:31.536 --> 00:39:35.746
+Since BudstaPosting, the
+extension links the framework,
+
+927
+00:39:35.746 --> 00:39:36.756
+and the app links the framework,
+
+928
+00:39:36.756 --> 00:39:38.866
+they can both use
+ShareViewController.
+
+929
+00:39:38.866 --> 00:39:41.556
+Let's go ahead and build
+that for the simulator.
+
+930
+00:39:42.126 --> 00:39:45.086
+And then let's take
+a quick look here
+
+931
+00:39:45.086 --> 00:39:46.636
+at what actually got produced.
+
+932
+00:39:46.636 --> 00:39:49.186
+So, if we go look at-I moved
+my build directory up here
+
+933
+00:39:49.186 --> 00:39:51.026
+on the desktop so it
+would be easier to find.
+
+934
+00:39:51.626 --> 00:39:54.756
+And if we go look in products
+here, we've got a couple
+
+935
+00:39:54.756 --> 00:39:55.756
+of different products based
+
+936
+00:39:55.756 --> 00:39:59.296
+on our target configuration
+and our target.
+
+937
+00:39:59.516 --> 00:40:02.776
+Here's sort of everything
+spread out.
+
+938
+00:39:59.516 --> 00:40:02.776
+Here's sort of everything
+spread out.
+
+939
+00:40:02.776 --> 00:40:04.656
+Right? So here's
+BudstaKit.framework.
+
+940
+00:40:04.656 --> 00:40:05.696
+Here's the app.
+
+941
+00:40:06.126 --> 00:40:08.866
+Here's my Budstagram application
+that I was building earlier.
+
+942
+00:40:08.866 --> 00:40:12.336
+Let's look at framework example.
+
+943
+00:40:12.526 --> 00:40:15.546
+Inside that is now a couple
+of different directories.
+
+944
+00:40:15.546 --> 00:40:18.356
+This frameworks directory has
+the BudstaKit framework inside
+
+945
+00:40:18.356 --> 00:40:21.776
+of it and let's get
+all old school
+
+946
+00:40:21.776 --> 00:40:22.976
+and go look in the
+Terminal here.
+
+947
+00:40:32.256 --> 00:40:33.556
+The old tricks are the best.
+
+948
+00:40:33.936 --> 00:40:37.346
+And the BudstaKit framework has
+inside it this headers directory
+
+949
+00:40:38.826 --> 00:40:39.766
+and a module.
+
+950
+00:40:40.666 --> 00:40:44.516
+Modules are generated for use
+with Swift and for the module
+
+951
+00:40:44.516 --> 00:40:46.166
+at import directive
+for Objective-C.
+
+952
+00:40:46.166 --> 00:40:47.966
+There's some nifty things
+that go along with that.
+
+953
+00:40:47.966 --> 00:40:49.296
+But those are things
+that you should read
+
+954
+00:40:49.296 --> 00:40:50.626
+about in the Xcode
+documentation.
+
+955
+00:40:50.756 --> 00:40:54.496
+So, the framework is built
+into the application,
+
+956
+00:40:54.496 --> 00:40:58.146
+that's actually one thing to
+be aware of is you're going
+
+957
+00:40:58.146 --> 00:41:00.686
+to have multiple copies of the
+frameworks on disk at a time.
+
+958
+00:40:58.146 --> 00:41:00.686
+to have multiple copies of the
+frameworks on disk at a time.
+
+959
+00:41:00.686 --> 00:41:03.816
+We're not sharing frameworks
+across sandbox boundaries.
+
+960
+00:41:03.816 --> 00:41:06.656
+Right? Things inside the same
+sandbox could access the same
+
+961
+00:41:06.656 --> 00:41:09.526
+framework, but we're not
+letting you use the framework
+
+962
+00:41:09.526 --> 00:41:11.376
+out of some other
+application installed even
+
+963
+00:41:11.376 --> 00:41:12.046
+if it's one of your own.
+
+964
+00:41:12.046 --> 00:41:14.886
+All right, so all of these
+things get embedded directly
+
+965
+00:41:14.886 --> 00:41:15.576
+in the application.
+
+966
+00:41:15.576 --> 00:41:18.296
+So your apps are still
+completely standalone items.
+
+967
+00:41:19.126 --> 00:41:25.496
+So, let's go back to this
+and take a quick look here.
+
+968
+00:41:25.956 --> 00:41:32.076
+Because the extension is its own
+little application some things
+
+969
+00:41:32.076 --> 00:41:33.226
+you need to be aware
+of are things
+
+970
+00:41:33.226 --> 00:41:35.326
+like NSBundleMainBundle
+isn't going
+
+971
+00:41:35.326 --> 00:41:36.556
+to work exactly the
+way you think.
+
+972
+00:41:36.636 --> 00:41:38.196
+So you're going to have
+to go look for assets
+
+973
+00:41:38.586 --> 00:41:43.496
+by bundle identifier
+using the bundle API.
+
+974
+00:41:43.806 --> 00:41:45.576
+No, that isn't a bug
+I ran into myself
+
+975
+00:41:45.576 --> 00:41:48.706
+that I introduced,
+why do you ask?
+
+976
+00:41:49.256 --> 00:41:54.826
+So, and the ShareViewController
+has the standard extension stuff
+
+977
+00:41:54.826 --> 00:41:56.986
+here for things like
+isContentValid, didSelect.
+
+978
+00:41:56.986 --> 00:42:00.916
+These are peculiar to
+the ShareViewController
+
+979
+00:41:56.986 --> 00:42:00.916
+These are peculiar to
+the ShareViewController
+
+980
+00:42:00.916 --> 00:42:03.506
+but there are other API on
+all the other extensions
+
+981
+00:42:03.506 --> 00:42:04.856
+that are specific
+to those as well.
+
+982
+00:42:05.546 --> 00:42:07.896
+So let's actually take a look
+and see how I sort of divided
+
+983
+00:42:07.896 --> 00:42:10.196
+up BudstaKit and Budstagram.
+
+984
+00:42:11.286 --> 00:42:18.626
+So, there are a lot of
+really similar things here
+
+985
+00:42:18.626 --> 00:42:21.116
+to the way everything
+got broken down.
+
+986
+00:42:22.216 --> 00:42:26.736
+Not really tall enough to
+point up there but you'll see
+
+987
+00:42:26.736 --> 00:42:30.066
+that we've got the
+feed view controller
+
+988
+00:42:30.066 --> 00:42:32.516
+and a posting view controller,
+which are the two things
+
+989
+00:42:32.516 --> 00:42:35.396
+that you saw in the tab
+view in the demo earlier,
+
+990
+00:42:35.816 --> 00:42:38.816
+and then the main storyboard
+contains those two things.
+
+991
+00:42:38.816 --> 00:42:40.726
+And then there's a bunch
+of model code that's
+
+992
+00:42:40.726 --> 00:42:43.446
+down in BudstaKit, and
+BudstaKit has all of the stuff
+
+993
+00:42:43.806 --> 00:42:46.646
+like the public umbrella header.
+
+994
+00:42:47.516 --> 00:42:50.446
+Right? So just like, you
+just type importUIKit.h,
+
+995
+00:42:50.446 --> 00:42:51.856
+you should set your
+umbrella header
+
+996
+00:42:51.856 --> 00:42:53.166
+in your framework to
+do the same thing.
+
+997
+00:42:53.166 --> 00:42:57.846
+Put all your public API in there
+so you'll import BudstaKit.h.
+
+998
+00:42:58.086 --> 00:43:00.266
+Or at least I hope
+you will someday.
+
+999
+00:42:58.086 --> 00:43:00.266
+Or at least I hope
+you will someday.
+
+1000
+00:43:00.306 --> 00:43:03.036
+And then also, all of the model
+codes down there, so the thing
+
+1001
+00:43:03.036 --> 00:43:04.416
+that manages a post is there.
+
+1002
+00:43:04.756 --> 00:43:06.786
+And the post view
+that displays a post
+
+1003
+00:43:06.786 --> 00:43:10.876
+with the dog resizable there
+
+1004
+00:43:10.876 --> 00:43:12.346
+and the ShareViewController
+and things like that.
+
+1005
+00:43:12.346 --> 00:43:14.096
+And then down here in
+the Budstagram poster,
+
+1006
+00:43:14.096 --> 00:43:15.016
+again, it's the same thing.
+
+1007
+00:43:15.016 --> 00:43:17.046
+It's just the main
+interface storyboard,
+
+1008
+00:43:17.046 --> 00:43:19.066
+the empty storyboard, which
+says when you call up one
+
+1009
+00:43:19.066 --> 00:43:21.666
+of these things this is the
+storyboard to launch into.
+
+1010
+00:43:21.766 --> 00:43:25.516
+Right now in the
+extension that's it, right?
+
+1011
+00:43:25.516 --> 00:43:27.876
+There's other logic that
+lives in the framework
+
+1012
+00:43:27.876 --> 00:43:30.366
+that does all the other
+work, the sending of the data
+
+1013
+00:43:30.366 --> 00:43:33.506
+and the manipulation of the
+photo and things like that.
+
+1014
+00:43:34.546 --> 00:43:36.856
+So making sure that you're
+pulling all of these things
+
+1015
+00:43:36.856 --> 00:43:40.936
+down into the right place
+is very, very, important.
+
+1016
+00:43:41.836 --> 00:43:44.066
+Most of those 13 years I've
+spent doing frameworks,
+
+1017
+00:43:44.156 --> 00:43:46.406
+I've worked for a lot of really
+talented frameworks developers,
+
+1018
+00:43:46.406 --> 00:43:51.276
+a lot of this stuff is
+tremendously hard-won lessons
+
+1019
+00:43:51.276 --> 00:43:52.466
+from shipping software.
+
+1020
+00:43:53.136 --> 00:43:57.046
+Right? Being clear,
+being explicit,
+
+1021
+00:43:57.806 --> 00:44:01.136
+having the right amount of
+API, having expressive API,
+
+1022
+00:43:57.806 --> 00:44:01.136
+having the right amount of
+API, having expressive API,
+
+1023
+00:44:01.716 --> 00:44:04.086
+distributing things in the
+right way, being careful
+
+1024
+00:44:04.086 --> 00:44:06.406
+of your versions, making
+sure that you're working
+
+1025
+00:44:06.406 --> 00:44:09.986
+with data safely, getting
+the right abstractions.
+
+1026
+00:44:10.106 --> 00:44:13.786
+Right? All of those things make
+our lives much, much easier.
+
+1027
+00:44:13.786 --> 00:44:16.136
+Taking that frameworks approach
+even to the applications.
+
+1028
+00:44:16.136 --> 00:44:19.726
+If you look at most of our
+applications, on the books,
+
+1029
+00:44:20.536 --> 00:44:21.926
+you know, Maps has MapKit.
+
+1030
+00:44:23.216 --> 00:44:26.036
+Right? On iOS 8,
+Health has HealthKit.
+
+1031
+00:44:27.326 --> 00:44:31.446
+Right? All of the things that
+make the app function and useful
+
+1032
+00:44:31.446 --> 00:44:32.796
+to the user live in the app.
+
+1033
+00:44:32.876 --> 00:44:35.896
+All of the heavy lifting,
+all of the shared code,
+
+1034
+00:44:35.896 --> 00:44:38.006
+all of the interfaces that
+allow the things to work
+
+1035
+00:44:38.006 --> 00:44:40.206
+with your app go in
+those frameworks.
+
+1036
+00:44:40.616 --> 00:44:42.856
+Right? It's a great
+separation for us,
+
+1037
+00:44:42.856 --> 00:44:44.666
+it's what helps us
+ship software,
+
+1038
+00:44:45.076 --> 00:44:47.216
+it can be a great
+separation for you as well.
+
+1039
+00:44:47.586 --> 00:44:50.206
+There are some related
+sessions that happened earlier
+
+1040
+00:44:50.206 --> 00:44:51.706
+in the week and there's
+one tomorrow.
+
+1041
+00:44:51.706 --> 00:44:54.306
+"Creating Extensions
+for iOS and OS X",
+
+1042
+00:44:54.756 --> 00:44:57.206
+Parts 1 and 2 were earlier.
+
+1043
+00:44:57.516 --> 00:45:00.696
+Go watch those for breaking
+up things into the extensions
+
+1044
+00:44:57.516 --> 00:45:00.696
+Go watch those for breaking
+up things into the extensions
+
+1045
+00:45:00.696 --> 00:45:02.586
+and into the mechanics
+of setting extensions up.
+
+1046
+00:45:03.296 --> 00:45:05.646
+Right? And then apply some of
+the stuff that you got here
+
+1047
+00:45:05.646 --> 00:45:07.706
+or some of the stuff
+that you got from Andy
+
+1048
+00:45:07.706 --> 00:45:09.356
+and Collin's talk previously,
+
+1049
+00:45:09.356 --> 00:45:12.216
+in the previous hour,
+to all of that.
+
+1050
+00:45:12.476 --> 00:45:14.776
+And then sharing code
+between iOS and OS X.
+
+1051
+00:45:14.996 --> 00:45:19.366
+A lot of you work on
+both platforms and a lot
+
+1052
+00:45:19.366 --> 00:45:22.336
+of the model code and things
+like that is actually shareable.
+
+1053
+00:45:22.336 --> 00:45:25.856
+And much of the extensions
+API was developed specifically
+
+1054
+00:45:25.856 --> 00:45:27.376
+with an eye to being
+able to write
+
+1055
+00:45:27.686 --> 00:45:31.916
+as much cross-platform code
+as possible with as little
+
+1056
+00:45:31.916 --> 00:45:34.026
+of the #ifs for target
+OS as we could manage.
+
+1057
+00:45:34.646 --> 00:45:37.116
+Right? So you will be
+able to do a fair amount
+
+1058
+00:45:37.116 --> 00:45:39.996
+of code sharing even for
+extensions in iOS and OS X.
+
+1059
+00:45:40.126 --> 00:45:42.836
+That's right here tomorrow
+morning at 9:00 am.
+
+1060
+00:45:43.366 --> 00:45:43.996
+Bright and early.
+
+1061
+00:45:44.416 --> 00:45:47.746
+Okay? So, please have an
+absolutely fantastic remainder
+
+1062
+00:45:47.746 --> 00:45:47.956
+of the week.
+
+1063
+00:45:47.956 --> 00:45:48.246
+Enjoy the bash.
+
+1064
+00:45:48.246 --> 00:45:48.976
+Thank you, very much.
+
+1065
+00:45:49.516 --> 00:45:54.730
+[ Applause ]

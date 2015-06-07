@@ -1,0 +1,3018 @@
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:00:00.506 --> 00:00:09.536 A:middle
+[ Silence ]
+
+00:00:10.036 --> 00:00:11.046 A:middle
+&gt;&gt; Mark Hahnenberg:
+Good morning everyone.
+
+00:00:12.286 --> 00:00:15.096 A:middle
+My name is Mark Hahnenberg
+and I'm an engineer
+
+00:00:15.096 --> 00:00:16.486 A:middle
+on the JavaScriptCore team.
+
+00:00:16.676 --> 00:00:19.336 A:middle
+And today, I'm going to be
+talking to you about how
+
+00:00:19.406 --> 00:00:20.366 A:middle
+to integrate JavaScript
+
+00:00:20.366 --> 00:00:24.606 A:middle
+into your Native Apps
+on both iOS and Mac.
+
+00:00:25.456 --> 00:00:30.016 A:middle
+So, prior to today,
+there has been a C API
+
+00:00:30.336 --> 00:00:34.436 A:middle
+to the JavaScriptCore
+framework available on Mac.
+
+00:00:34.436 --> 00:00:36.956 A:middle
+And if you're interested
+in that, there is a session
+
+00:00:36.956 --> 00:00:40.566 A:middle
+that was done on WWDC a number
+of years ago about the C API.
+
+00:00:41.586 --> 00:00:43.836 A:middle
+But today, I'm going
+to be talking to you
+
+00:00:43.836 --> 00:00:47.856 A:middle
+about the new Objective-C
+API that we're releasing
+
+00:00:47.856 --> 00:00:50.226 A:middle
+to JavaScriptCore, and
+it will be available
+
+00:00:50.226 --> 00:00:51.636 A:middle
+on both Mac and iOS.
+
+00:00:51.826 --> 00:00:55.226 A:middle
+So what were some of our goals
+when developing this new API?
+
+00:00:55.226 --> 00:00:59.016 A:middle
+Well for one, we want
+it to be automatic.
+
+00:00:59.016 --> 00:01:02.906 A:middle
+And what this means is that
+there are certain things
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:00:59.016 --> 00:01:02.906 A:middle
+And what this means is that
+there are certain things
+
+00:01:02.906 --> 00:01:08.166 A:middle
+that you want to do with a
+framework like JavaScriptCore
+
+00:01:08.166 --> 00:01:11.836 A:middle
+and we tried to make that as
+automatic and easy as possible.
+
+00:01:12.826 --> 00:01:17.146 A:middle
+The second thing is we
+want the API to be safe.
+
+00:01:17.636 --> 00:01:21.026 A:middle
+So, we want you to be able
+to recover from errors
+
+00:01:21.026 --> 00:01:22.926 A:middle
+if you happen to pass
+something of the wrong type
+
+00:01:22.926 --> 00:01:27.026 A:middle
+across this border because
+JavaScript is a dynamic language
+
+00:01:27.026 --> 00:01:28.096 A:middle
+as you know.
+
+00:01:29.296 --> 00:01:33.716 A:middle
+So you can pass various
+objects around and we want it--
+
+00:01:33.716 --> 00:01:35.376 A:middle
+we want you to be able to not--
+
+00:01:35.436 --> 00:01:38.136 A:middle
+we want you to not crash
+your application if you end
+
+00:01:38.136 --> 00:01:39.836 A:middle
+up doing something
+a little squirrely,
+
+00:01:39.836 --> 00:01:42.926 A:middle
+so we want you to--
+it to be recoverable.
+
+00:01:43.816 --> 00:01:48.676 A:middle
+And the final goal that we had
+was this notion of fidelity
+
+00:01:49.096 --> 00:01:52.106 A:middle
+and what I mean by that is
+whenever you're programming
+
+00:01:52.106 --> 00:01:55.546 A:middle
+in Objective-C and you're
+interacting with JavaScriptCore,
+
+00:01:56.356 --> 00:01:59.236 A:middle
+we want you to feel like you're
+programming in Objective-C
+
+00:01:59.236 --> 00:02:01.876 A:middle
+when you're writing Objective-C,
+and we want you to feel
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:01:59.236 --> 00:02:01.876 A:middle
+when you're writing Objective-C,
+and we want you to feel
+
+00:02:01.876 --> 00:02:04.426 A:middle
+like you're writing JavaScript
+when you're writing JavaScript.
+
+00:02:05.776 --> 00:02:10.406 A:middle
+So we don't want there to be,
+you know, these crazy names
+
+00:02:10.406 --> 00:02:12.046 A:middle
+that lead with underscores
+
+00:02:12.046 --> 00:02:13.956 A:middle
+or maybe dollar signs
+in there somewhere.
+
+00:02:14.566 --> 00:02:16.926 A:middle
+We want it to look like
+JavaScript and look
+
+00:02:16.926 --> 00:02:19.066 A:middle
+like Objective-C in
+their respective worlds.
+
+00:02:19.066 --> 00:02:23.356 A:middle
+So what are-- what exactly
+will you learn today?
+
+00:02:24.336 --> 00:02:27.416 A:middle
+First, we'll talk about how to
+get your Objective-C application
+
+00:02:27.876 --> 00:02:30.216 A:middle
+to talk to JavaScript,
+so to call--
+
+00:02:30.216 --> 00:02:34.156 A:middle
+to evaluate JavaScript scripts,
+to call JavaScript functions,
+
+00:02:34.156 --> 00:02:36.666 A:middle
+and to create JavaScript values.
+
+00:02:37.136 --> 00:02:40.436 A:middle
+Then we're going to talk about
+how to get your JavaScript code
+
+00:02:40.436 --> 00:02:43.446 A:middle
+to be able to interact with
+your Objective-C objects
+
+00:02:43.446 --> 00:02:44.526 A:middle
+and call Objective-C methods.
+
+00:02:44.526 --> 00:02:49.076 A:middle
+Then we'll talk a little
+bit about memory management.
+
+00:02:49.076 --> 00:02:50.316 A:middle
+Objective-C uses ARC
+
+00:02:50.886 --> 00:02:52.766 A:middle
+and JavaScript is a
+garbage collected language.
+
+00:02:52.896 --> 00:02:55.596 A:middle
+So, getting these to play
+nicely together requires some
+
+00:02:55.596 --> 00:02:56.416 A:middle
+extra attention.
+
+00:02:57.976 --> 00:02:59.596 A:middle
+Then we'll talk about
+threading and how
+
+00:02:59.596 --> 00:03:02.496 A:middle
+that interacts with the API.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:02:59.596 --> 00:03:02.496 A:middle
+that interacts with the API.
+
+00:03:02.666 --> 00:03:05.306 A:middle
+And then we'll speak to-- a
+little bit about interfacing
+
+00:03:05.306 --> 00:03:07.556 A:middle
+with the C API that
+already exists today.
+
+00:03:08.776 --> 00:03:12.396 A:middle
+And finally, we'll talk a little
+bit about using JavaScriptCore
+
+00:03:12.396 --> 00:03:17.206 A:middle
+in the context of a
+WebKit WebView on Mac.
+
+00:03:17.296 --> 00:03:20.446 A:middle
+So, to start off, I'd like
+to show you just a simple
+
+00:03:20.446 --> 00:03:23.836 A:middle
+application, a simple
+demo using JavaScriptCore.
+
+00:03:24.306 --> 00:03:27.016 A:middle
+So I have a simple
+Cocoa app here.
+
+00:03:27.516 --> 00:03:30.406 A:middle
+It has an NSTextView.
+
+00:03:30.726 --> 00:03:32.716 A:middle
+You can see there are
+some words in there.
+
+00:03:33.576 --> 00:03:39.146 A:middle
+And what you're seeing is
+that the words that correspond
+
+00:03:39.146 --> 00:03:41.666 A:middle
+to colors are being highlighted
+with their corresponding color.
+
+00:03:41.666 --> 00:03:43.616 A:middle
+So for example, brown
+is highlighted brown,
+
+00:03:43.976 --> 00:03:44.876 A:middle
+red is highlighted red.
+
+00:03:44.876 --> 00:03:48.426 A:middle
+And the logic that
+implements this highlighting
+
+00:03:48.426 --> 00:03:50.666 A:middle
+that determines whether a
+particular word corresponds
+
+00:03:50.666 --> 00:03:52.296 A:middle
+to a color is implemented
+in JavaScript.
+
+00:03:52.296 --> 00:03:54.236 A:middle
+So I have a couple other things
+
+00:03:54.236 --> 00:03:55.606 A:middle
+that are implemented
+in JavaScript here.
+
+00:03:55.606 --> 00:03:58.116 A:middle
+I have a button that's connected
+to a JavaScript function
+
+00:03:58.116 --> 00:03:59.886 A:middle
+that shuffles the
+colors and reassigns them
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:04:00.356 --> 00:04:03.306 A:middle
+to drive yourself
+a little crazy.
+
+00:04:03.436 --> 00:04:06.336 A:middle
+And if I don't want to wait
+around for the random shuffle
+
+00:04:06.336 --> 00:04:09.406 A:middle
+to get back to the original
+assignment, I can reset back
+
+00:04:09.436 --> 00:04:10.236 A:middle
+to the original assignment.
+
+00:04:11.526 --> 00:04:15.176 A:middle
+So I can-- as I type, it will
+continue to highlight words
+
+00:04:15.236 --> 00:04:19.685 A:middle
+so you can type red,
+orange, yellow,
+
+00:04:21.106 --> 00:04:22.226 A:middle
+but there's a couple bugs.
+
+00:04:22.346 --> 00:04:26.196 A:middle
+So for example, we have grey
+but we don't have G-R-A-Y,
+
+00:04:26.196 --> 00:04:27.596 A:middle
+that doesn't work correctly.
+
+00:04:28.706 --> 00:04:32.056 A:middle
+And also typing capital
+colors doesn't highlight
+
+00:04:32.056 --> 00:04:32.826 A:middle
+as we would expect.
+
+00:04:32.826 --> 00:04:38.086 A:middle
+And my favorite color cyan is
+also not highlighted correctly.
+
+00:04:38.856 --> 00:04:40.706 A:middle
+So we can fix that
+pretty easily actually.
+
+00:04:40.706 --> 00:04:44.836 A:middle
+I have the script that
+implements this color mapping.
+
+00:04:44.836 --> 00:04:49.316 A:middle
+And what I'm going to do is
+I'm going to edit the script
+
+00:04:49.506 --> 00:04:52.486 A:middle
+to give us a new
+gray and cyan here.
+
+00:04:52.486 --> 00:04:56.776 A:middle
+You can see that this is a map
+of normal JavaScript objects
+
+00:04:57.136 --> 00:05:00.356 A:middle
+that maps color names to their
+corresponding red, green,
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:04:57.136 --> 00:05:00.356 A:middle
+that maps color names to their
+corresponding red, green,
+
+00:05:00.356 --> 00:05:02.746 A:middle
+and blue value stored inside
+the JavaScript objects.
+
+00:05:03.676 --> 00:05:06.176 A:middle
+And down here, here's
+our callback
+
+00:05:06.176 --> 00:05:10.856 A:middle
+for determining what color
+a word should be if any.
+
+00:05:12.026 --> 00:05:16.376 A:middle
+So, you can see that
+if I uncomment this,
+
+00:05:16.376 --> 00:05:22.166 A:middle
+then we will take into account
+words that have uppercase
+
+00:05:22.166 --> 00:05:23.606 A:middle
+in them that are still colors.
+
+00:05:23.606 --> 00:05:27.726 A:middle
+So I'm going to save this
+file, go back to my application
+
+00:05:27.726 --> 00:05:29.866 A:middle
+and I have this Reload button
+down in the bottom right
+
+00:05:29.866 --> 00:05:32.226 A:middle
+and it will reload the script
+
+00:05:33.196 --> 00:05:37.086 A:middle
+and now we correctly highlight
+the colors, and I didn't have
+
+00:05:37.086 --> 00:05:40.546 A:middle
+to recompile which
+is kind of neat.
+
+00:05:40.846 --> 00:05:46.146 A:middle
+So, that is a simple way to use
+JavaScript in an application.
+
+00:05:46.556 --> 00:05:50.446 A:middle
+You just saw a simple
+use of JavaScript
+
+00:05:52.226 --> 00:05:54.186 A:middle
+in an application,
+a Cocoa application.
+
+00:05:54.766 --> 00:05:59.636 A:middle
+So let's look at how we might
+implement something like this.
+
+00:05:59.896 --> 00:06:02.826 A:middle
+So, first we're going to talk
+about how to get Objective-C
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:05:59.896 --> 00:06:02.826 A:middle
+So, first we're going to talk
+about how to get Objective-C
+
+00:06:02.826 --> 00:06:04.106 A:middle
+to talk to JavaScript.
+
+00:06:04.406 --> 00:06:09.836 A:middle
+So, here is a simple Hello
+World program, Hello World.
+
+00:06:10.376 --> 00:06:13.756 A:middle
+We implement-- or we
+import the framework header,
+
+00:06:14.236 --> 00:06:18.596 A:middle
+so JavaScriptCore.h. We create
+something called a JSContext,
+
+00:06:18.596 --> 00:06:20.916 A:middle
+and we'll talk about
+what that is in a second.
+
+00:06:22.456 --> 00:06:27.786 A:middle
+We use that context and call
+evaluateScript, evaluating 2 + 2
+
+00:06:28.176 --> 00:06:31.286 A:middle
+and that will return
+a result in a--
+
+00:06:32.146 --> 00:06:37.566 A:middle
+with a type of JSValue and
+finally, we convert that JSValue
+
+00:06:37.646 --> 00:06:39.626 A:middle
+to an integer that we can
+print out to the screen.
+
+00:06:40.156 --> 00:06:43.006 A:middle
+So let's talk about these
+two core data types,
+
+00:06:43.006 --> 00:06:44.866 A:middle
+JSContext and JSValue.
+
+00:06:46.336 --> 00:06:47.736 A:middle
+First JSContext.
+
+00:06:49.056 --> 00:06:52.436 A:middle
+JSContext is a context for
+evaluating JavaScript code.
+
+00:06:52.806 --> 00:06:55.176 A:middle
+It corresponds to a
+single global object,
+
+00:06:55.426 --> 00:06:58.176 A:middle
+so in web parlance for you
+guys coming from the web world,
+
+00:06:58.566 --> 00:07:01.986 A:middle
+it corresponds to
+a window object.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:06:58.566 --> 00:07:01.986 A:middle
+it corresponds to
+a window object.
+
+00:07:01.986 --> 00:07:04.816 A:middle
+But there is no thing
+called a window
+
+00:07:04.866 --> 00:07:08.506 A:middle
+but there is a single global
+object for global variables.
+
+00:07:10.436 --> 00:07:12.746 A:middle
+And the other type is JSValue.
+
+00:07:12.826 --> 00:07:15.336 A:middle
+JSValues live inside
+of a JSContext.
+
+00:07:15.396 --> 00:07:16.346 A:middle
+They can be things like--
+
+00:07:16.346 --> 00:07:18.906 A:middle
+it's just a reference
+to a JavaScript value
+
+00:07:18.946 --> 00:07:23.186 A:middle
+so they can be objects,
+JavaScript arrays,
+
+00:07:23.186 --> 00:07:25.706 A:middle
+JavaScript functions,
+Booleans, et cetera.
+
+00:07:26.746 --> 00:07:30.106 A:middle
+And they have a strong
+reference to that value.
+
+00:07:30.106 --> 00:07:33.506 A:middle
+So it's kind of a strong handle
+to that JavaScript value.
+
+00:07:33.916 --> 00:07:35.296 A:middle
+So keep it alive as long
+
+00:07:35.296 --> 00:07:37.016 A:middle
+as you're interacting
+with that JSValue.
+
+00:07:37.016 --> 00:07:41.416 A:middle
+And they're tied to a particular
+JSContext, each JSValue is tied
+
+00:07:41.476 --> 00:07:42.846 A:middle
+to a particular JSContext.
+
+00:07:43.746 --> 00:07:44.456 A:middle
+And why is that?
+
+00:07:44.586 --> 00:07:49.906 A:middle
+Well, any JSValue might
+want to evaluate code
+
+00:07:50.566 --> 00:07:52.336 A:middle
+which we need a JSContext to do.
+
+00:07:52.446 --> 00:07:53.846 A:middle
+For example a function,
+
+00:07:53.846 --> 00:07:56.356 A:middle
+a JavaScript function
+needs a JSContext
+
+00:07:56.356 --> 00:07:57.486 A:middle
+in order to evaluate code.
+
+00:07:58.306 --> 00:07:59.696 A:middle
+And that is also a
+strong reference,
+
+00:07:59.696 --> 00:08:03.186 A:middle
+so JSValue keeps alive
+all of those things
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:07:59.696 --> 00:08:03.186 A:middle
+so JSValue keeps alive
+all of those things
+
+00:08:03.186 --> 00:08:04.506 A:middle
+that it needs to do its job.
+
+00:08:05.166 --> 00:08:09.726 A:middle
+So there's a variety of
+ways to create JSValues.
+
+00:08:10.256 --> 00:08:14.926 A:middle
+This is the-- you can create
+things using the corresponding
+
+00:08:14.966 --> 00:08:19.096 A:middle
+Objective-C primitives like
+Boolean's, doubles, et cetera.
+
+00:08:19.346 --> 00:08:22.376 A:middle
+You can create the JavaScript
+values null or undefined.
+
+00:08:22.626 --> 00:08:25.656 A:middle
+You can create new JavaScript
+objects, new JavaScript arrays,
+
+00:08:25.656 --> 00:08:31.586 A:middle
+regular expression and errors,
+hopefully not too many of those.
+
+00:08:31.776 --> 00:08:34.905 A:middle
+And you can also
+create new JSValues
+
+00:08:35.166 --> 00:08:38.096 A:middle
+and pass an arbitrary
+Objective-C object.
+
+00:08:38.096 --> 00:08:41.155 A:middle
+So, this particular method,
+
+00:08:41.155 --> 00:08:43.606 A:middle
+this class method deserves
+its own slide because a lot
+
+00:08:43.606 --> 00:08:44.766 A:middle
+of magic happens here.
+
+00:08:45.546 --> 00:08:50.516 A:middle
+So we will automatically
+bridge your Objective-C object
+
+00:08:51.376 --> 00:08:54.066 A:middle
+to JavaScript so that
+JavaScript can interact with it.
+
+00:08:54.866 --> 00:08:56.396 A:middle
+And we'll talk more
+about exactly how
+
+00:08:56.396 --> 00:08:59.196 A:middle
+that works in a second.
+
+00:08:59.346 --> 00:09:01.846 A:middle
+Once you have a JSValue, if
+you get it back from a call
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:08:59.346 --> 00:09:01.846 A:middle
+Once you have a JSValue, if
+you get it back from a call
+
+00:09:01.846 --> 00:09:03.326 A:middle
+or something, you
+want to be able
+
+00:09:03.326 --> 00:09:06.966 A:middle
+to access the data that's inside
+of it so we have various things
+
+00:09:07.086 --> 00:09:10.166 A:middle
+like converting to a
+Boolean, to numbers,
+
+00:09:10.546 --> 00:09:12.336 A:middle
+to dates, strings, et cetera.
+
+00:09:13.196 --> 00:09:15.746 A:middle
+And when you call one
+of these on a JSValue,
+
+00:09:16.326 --> 00:09:19.976 A:middle
+JavaScriptCore will do its best
+effort to convert it to the type
+
+00:09:20.036 --> 00:09:22.396 A:middle
+that you asked for
+using the semantics
+
+00:09:22.396 --> 00:09:23.416 A:middle
+of the JavaScript language.
+
+00:09:24.896 --> 00:09:28.846 A:middle
+You'll also notice at the
+bottom, the two object method.
+
+00:09:29.506 --> 00:09:33.376 A:middle
+And this allows you to get-- if
+you bridge an Objective-C object
+
+00:09:33.586 --> 00:09:35.476 A:middle
+to a JSValue, this
+allows you to get
+
+00:09:35.476 --> 00:09:38.066 A:middle
+that Objective-C object
+back out of the JSValue.
+
+00:09:38.776 --> 00:09:42.356 A:middle
+So now that we know
+how to create values,
+
+00:09:42.356 --> 00:09:45.666 A:middle
+let's talk a little bit about
+calling JavaScript functions.
+
+00:09:45.716 --> 00:09:49.386 A:middle
+So here's a simple factorial
+function written in JavaScript,
+
+00:09:49.696 --> 00:09:54.136 A:middle
+and here's what it
+looks like to call it.
+
+00:09:54.496 --> 00:09:56.216 A:middle
+So first, we load the script
+
+00:09:56.216 --> 00:09:58.906 A:middle
+from wherever it
+resides on disk perhaps.
+
+00:09:59.916 --> 00:10:03.316 A:middle
+We evaluate the script using
+the context like we saw earlier.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:09:59.916 --> 00:10:03.316 A:middle
+We evaluate the script using
+the context like we saw earlier.
+
+00:10:03.316 --> 00:10:07.476 A:middle
+And since the script defines
+a single global function,
+
+00:10:09.196 --> 00:10:14.186 A:middle
+we can use this new subscript
+notation and pass the name
+
+00:10:14.186 --> 00:10:17.776 A:middle
+of the function from the
+context to load that JSValue
+
+00:10:17.956 --> 00:10:21.636 A:middle
+from the global object,
+from the global scope.
+
+00:10:22.236 --> 00:10:24.096 A:middle
+Once we have that
+function, we can--
+
+00:10:24.096 --> 00:10:27.676 A:middle
+we simply use callWithArguments
+and pass this--
+
+00:10:27.996 --> 00:10:30.896 A:middle
+and pass an NSArray
+of arguments.
+
+00:10:31.006 --> 00:10:35.256 A:middle
+So this is this new
+Objective-C notation
+
+00:10:35.256 --> 00:10:36.896 A:middle
+for creating array literals.
+
+00:10:37.766 --> 00:10:40.586 A:middle
+And you'll notice that
+we passed an NSNumber 5
+
+00:10:41.116 --> 00:10:44.206 A:middle
+and this is significant because
+JavaScript doesn't know how
+
+00:10:44.206 --> 00:10:45.586 A:middle
+to interact with NSNumber.
+
+00:10:45.796 --> 00:10:49.706 A:middle
+However, JavaScriptCore will
+automatically bridge this
+
+00:10:49.706 --> 00:10:52.686 A:middle
+for you so that when
+you call that function,
+
+00:10:52.686 --> 00:10:56.066 A:middle
+it gets the correct value, it
+will get 5 as its argument.
+
+00:10:56.546 --> 00:11:01.336 A:middle
+And finally, we get the
+result back and we print it.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:10:56.546 --> 00:11:01.336 A:middle
+And finally, we get the
+result back and we print it.
+
+00:11:01.776 --> 00:11:03.266 A:middle
+It should be 120, right?
+
+00:11:03.266 --> 00:11:07.386 A:middle
+If the factorial
+function is correct.
+
+00:11:07.496 --> 00:11:09.956 A:middle
+So, now that we know how
+to interact with JavaScript
+
+00:11:10.156 --> 00:11:13.806 A:middle
+from Objective-C,
+let's recap the demo
+
+00:11:13.806 --> 00:11:15.666 A:middle
+that I showed you
+previously to show
+
+00:11:15.666 --> 00:11:17.306 A:middle
+where it uses some
+of these things.
+
+00:11:17.736 --> 00:11:21.946 A:middle
+Here are the callbacks for
+the Shuffle and Reset button.
+
+00:11:22.636 --> 00:11:29.266 A:middle
+And what we do is we look
+at the plug-in object
+
+00:11:29.266 --> 00:11:32.126 A:middle
+that we create inside
+of our JavaScript file,
+
+00:11:32.126 --> 00:11:34.386 A:middle
+and we use the subscript
+notation
+
+00:11:34.386 --> 00:11:35.496 A:middle
+that I showed you earlier.
+
+00:11:35.496 --> 00:11:37.316 A:middle
+You can use this, not
+only on the context,
+
+00:11:37.316 --> 00:11:39.816 A:middle
+but any JavaScript
+value also works
+
+00:11:39.816 --> 00:11:42.766 A:middle
+with this subscript notation
+to access fields of the object.
+
+00:11:43.926 --> 00:11:47.696 A:middle
+So we load the shuffleFunction
+from the plug in,
+
+00:11:48.406 --> 00:11:51.676 A:middle
+and then we call the function
+with an empty set of arguments.
+
+00:11:51.936 --> 00:11:54.286 A:middle
+So, if we look at the
+corresponding JavaScript code,
+
+00:11:55.346 --> 00:11:57.606 A:middle
+here's the shuffleFunction,
+it's a property
+
+00:11:57.606 --> 00:11:59.626 A:middle
+on the plug-in object
+named Colors
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:12:00.246 --> 00:12:02.886 A:middle
+and it does some
+shuffling for us.
+
+00:12:05.076 --> 00:12:07.796 A:middle
+If you look up here, when
+we're loading the plug-in,
+
+00:12:07.796 --> 00:12:13.706 A:middle
+we get the path from the bundle,
+we load the script from the file
+
+00:12:14.896 --> 00:12:18.936 A:middle
+and then we use evaluateScript
+to get the result of loading
+
+00:12:18.936 --> 00:12:20.286 A:middle
+that plug-in and we store it.
+
+00:12:20.286 --> 00:12:25.826 A:middle
+Now that you've seen how we
+use interacting with JavaScript
+
+00:12:25.826 --> 00:12:28.736 A:middle
+from Objective-C in
+that simple application,
+
+00:12:29.216 --> 00:12:31.706 A:middle
+let's move on to
+getting JavaScript
+
+00:12:31.836 --> 00:12:33.716 A:middle
+to talk back to Objective-C.
+
+00:12:33.856 --> 00:12:35.576 A:middle
+There are two primary
+ways to interact
+
+00:12:35.666 --> 00:12:37.096 A:middle
+with Objective-C
+from JavaScript.
+
+00:12:37.946 --> 00:12:40.856 A:middle
+The first is to use
+blocks, Objective-C blocks.
+
+00:12:41.866 --> 00:12:45.416 A:middle
+And these will be wrapped
+inside of a JS function
+
+00:12:45.416 --> 00:12:47.476 A:middle
+that is callable
+from JavaScript.
+
+00:12:48.296 --> 00:12:52.016 A:middle
+So-- And that's a
+really easy way
+
+00:12:52.256 --> 00:12:57.276 A:middle
+to expose just a single function
+to JavaScript that you want
+
+00:12:57.276 --> 00:12:59.066 A:middle
+to be able to call
+back into Objective-C.
+
+00:12:59.776 --> 00:13:00.316 A:middle
+The other way is
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:12:59.776 --> 00:13:00.316 A:middle
+The other way is
+
+00:13:00.316 --> 00:13:03.086 A:middle
+to use something called
+the JSExport protocol
+
+00:13:04.776 --> 00:13:11.636 A:middle
+and this protocol, by using this
+technique, you allow JavaScript
+
+00:13:12.156 --> 00:13:14.126 A:middle
+to interact with your
+Objective-C objects
+
+00:13:14.256 --> 00:13:16.226 A:middle
+as if they were JavaScript
+objects.
+
+00:13:16.286 --> 00:13:21.966 A:middle
+It's a very powerful technique
+for maintaining that fidelity
+
+00:13:21.966 --> 00:13:23.066 A:middle
+that I spoke about earlier.
+
+00:13:24.246 --> 00:13:26.876 A:middle
+So let's look how
+these work exactly.
+
+00:13:27.426 --> 00:13:28.356 A:middle
+First is blocks.
+
+00:13:29.996 --> 00:13:34.026 A:middle
+So, like I said before,
+it's an easy way
+
+00:13:34.026 --> 00:13:38.076 A:middle
+to expose Objective-C code
+to JavaScript, very easy.
+
+00:13:38.626 --> 00:13:42.296 A:middle
+And we automatically wrap
+the Objective-C block inside
+
+00:13:42.296 --> 00:13:44.226 A:middle
+of a callable JavaScript
+function.
+
+00:13:45.306 --> 00:13:46.216 A:middle
+So what does that look like?
+
+00:13:46.706 --> 00:13:50.596 A:middle
+We can insert a block into the
+context using this subscript
+
+00:13:50.596 --> 00:13:52.916 A:middle
+notation that I talked
+about earlier.
+
+00:13:53.406 --> 00:13:55.466 A:middle
+And we pass a block as the value
+
+00:13:55.466 --> 00:13:57.376 A:middle
+that we're bridging
+to JavaScript.
+
+00:13:58.186 --> 00:14:02.606 A:middle
+And you'll notice that the
+block takes an NSDictionary
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:13:58.186 --> 00:14:02.606 A:middle
+And you'll notice that the
+block takes an NSDictionary
+
+00:14:02.606 --> 00:14:05.596 A:middle
+of RGB values as its argument.
+
+00:14:05.596 --> 00:14:09.836 A:middle
+And it returns a new
+NSColor using those red,
+
+00:14:09.836 --> 00:14:12.946 A:middle
+green and blue values.
+
+00:14:12.946 --> 00:14:16.016 A:middle
+So, what this does is when
+we pass this block in--
+
+00:14:16.016 --> 00:14:18.046 A:middle
+across this JavaScriptCore
+barrier,
+
+00:14:18.336 --> 00:14:21.806 A:middle
+we create a makeNSColor
+function,
+
+00:14:22.506 --> 00:14:24.376 A:middle
+JavaScript function
+around the block.
+
+00:14:24.836 --> 00:14:32.546 A:middle
+Then, in our code,
+we call makeNSColor
+
+00:14:32.906 --> 00:14:35.976 A:middle
+and we use these
+JavaScript objects
+
+00:14:35.976 --> 00:14:37.726 A:middle
+that I showed you
+earlier in the color map
+
+00:14:37.726 --> 00:14:39.596 A:middle
+and they're just normal
+JavaScript objects.
+
+00:14:40.146 --> 00:14:42.896 A:middle
+And the cool thing about this
+is that, you notice before
+
+00:14:42.896 --> 00:14:47.846 A:middle
+that the block accepts an
+NSDictionary as its argument.
+
+00:14:47.846 --> 00:14:51.116 A:middle
+JavaScriptCore will
+automatically bridge JavaScript
+
+00:14:51.116 --> 00:14:55.616 A:middle
+objects to NSDictionaries when
+calling out to Objective-C code.
+
+00:14:55.976 --> 00:14:58.876 A:middle
+We call this makeNSColor,
+and what happens?
+
+00:14:58.976 --> 00:15:02.556 A:middle
+colorForWord calls the function
+and it forwards that call
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:14:58.976 --> 00:15:02.556 A:middle
+colorForWord calls the function
+and it forwards that call
+
+00:15:02.556 --> 00:15:03.736 A:middle
+to the Objective-C block.
+
+00:15:04.516 --> 00:15:07.976 A:middle
+It gets the resulting NSColor
+and wraps it in turn inside
+
+00:15:07.976 --> 00:15:12.596 A:middle
+of a JavaScript object, and
+then this colorForWord function
+
+00:15:12.596 --> 00:15:14.426 A:middle
+returns that NSColor.
+
+00:15:14.806 --> 00:15:18.036 A:middle
+So although blocks are very
+easy to use, there are a couple
+
+00:15:18.036 --> 00:15:22.516 A:middle
+of caveats you have to be
+careful about when using them.
+
+00:15:22.746 --> 00:15:27.926 A:middle
+So, the first is you should
+avoid capturing JSValues inside
+
+00:15:27.926 --> 00:15:28.496 A:middle
+of your blocks.
+
+00:15:28.856 --> 00:15:29.956 A:middle
+And the reason for this is
+
+00:15:29.956 --> 00:15:33.466 A:middle
+that JSValues maintain a strong
+reference to both their context
+
+00:15:33.466 --> 00:15:35.036 A:middle
+and their corresponding
+JavaScript value.
+
+00:15:35.586 --> 00:15:37.236 A:middle
+And so if they're
+captured by the block,
+
+00:15:37.526 --> 00:15:39.736 A:middle
+you'll leak that memory
+because you won't be able
+
+00:15:39.736 --> 00:15:41.916 A:middle
+to release that JSValue.
+
+00:15:42.536 --> 00:15:46.706 A:middle
+You should-- instead you
+should prefer to pass JSValues
+
+00:15:47.086 --> 00:15:49.336 A:middle
+as arguments to your blocks.
+
+00:15:50.336 --> 00:15:53.406 A:middle
+The second caveat is
+along similar lines.
+
+00:15:53.406 --> 00:15:57.026 A:middle
+You should avoid capturing
+JSContext inside of your blocks.
+
+00:15:57.566 --> 00:16:00.496 A:middle
+And it's for the same reason,
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:15:57.566 --> 00:16:00.496 A:middle
+And it's for the same reason,
+
+00:16:00.496 --> 00:16:04.806 A:middle
+the JSContext maintains a strong
+reference to the global object
+
+00:16:05.456 --> 00:16:08.716 A:middle
+and it will leak all of your
+memory when it's captured.
+
+00:16:09.406 --> 00:16:12.666 A:middle
+Instead, you should
+use the class method
+
+00:16:12.896 --> 00:16:16.096 A:middle
+on JSContext called
+currentContext inside
+
+00:16:16.096 --> 00:16:19.416 A:middle
+of the block, and that will
+return to you the context
+
+00:16:19.476 --> 00:16:22.416 A:middle
+of the caller, whoever
+invoked that block.
+
+00:16:22.576 --> 00:16:24.456 A:middle
+This is an example
+of what not to do.
+
+00:16:24.456 --> 00:16:29.956 A:middle
+You create a context, you
+pass a block, and you use,
+
+00:16:29.956 --> 00:16:33.326 A:middle
+you capture that context inside
+of the block, this is bad.
+
+00:16:34.356 --> 00:16:36.776 A:middle
+The right way to do it
+is to create the context,
+
+00:16:36.776 --> 00:16:40.796 A:middle
+insert the block and then
+use JSContext currentContext
+
+00:16:40.796 --> 00:16:42.386 A:middle
+where you were capturing
+it before.
+
+00:16:42.966 --> 00:16:46.776 A:middle
+So now that we've
+talked about blocks,
+
+00:16:46.776 --> 00:16:49.836 A:middle
+let's talk about JSExport
+and how that works.
+
+00:16:51.476 --> 00:16:54.886 A:middle
+JSExport is, like I said
+before, it's a really easy way
+
+00:16:54.886 --> 00:16:57.176 A:middle
+for JavaScript to interact
+with Objective-C objects.
+
+00:16:58.086 --> 00:17:00.186 A:middle
+So, let's take a look at
+what it would look like.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:16:58.086 --> 00:17:00.186 A:middle
+So, let's take a look at
+what it would look like.
+
+00:17:00.516 --> 00:17:03.086 A:middle
+So imagine that I have a
+MyPoint class represents a two
+
+00:17:03.086 --> 00:17:07.776 A:middle
+dimensional point, it has an X
+and a Y property, description,
+
+00:17:08.536 --> 00:17:12.256 A:middle
+instance method,
+and a factory method
+
+00:17:12.256 --> 00:17:15.586 A:middle
+to create new MyPoints,
+so a class method.
+
+00:17:16.736 --> 00:17:19.846 A:middle
+And what would we like this
+to look like when interacting
+
+00:17:19.846 --> 00:17:23.086 A:middle
+with this-- an object of
+this class in JavaScript?
+
+00:17:24.276 --> 00:17:26.215 A:middle
+Well, we'd want the
+properties to look
+
+00:17:26.215 --> 00:17:27.556 A:middle
+like JavaScript properties.
+
+00:17:27.906 --> 00:17:31.166 A:middle
+So, you could get their value,
+you could set their value.
+
+00:17:31.466 --> 00:17:34.796 A:middle
+We want the instance methods
+to look like functions
+
+00:17:34.796 --> 00:17:39.816 A:middle
+on those objects, so dot
+description in this case.
+
+00:17:39.946 --> 00:17:45.346 A:middle
+And we want class methods
+to look like functions
+
+00:17:45.346 --> 00:17:48.896 A:middle
+on these global class objects,
+in this case, capital MyPoint.
+
+00:17:48.946 --> 00:17:54.236 A:middle
+So, the way to get this to
+work with JSExport is simply
+
+00:17:54.236 --> 00:17:56.536 A:middle
+to change its interface
+into a protocol
+
+00:17:57.376 --> 00:17:59.876 A:middle
+that inherits from JSExport.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:18:01.756 --> 00:18:05.556 A:middle
+So now, we have a
+MyPointExports.
+
+00:18:06.536 --> 00:18:09.816 A:middle
+And this, by inheriting
+from JSExport,
+
+00:18:09.856 --> 00:18:14.416 A:middle
+you signal to JavaScriptCore
+that this is the list of methods
+
+00:18:14.716 --> 00:18:18.036 A:middle
+and properties that I want
+JavaScript to be able to access
+
+00:18:18.356 --> 00:18:20.056 A:middle
+when I pass an object
+
+00:18:20.056 --> 00:18:23.866 A:middle
+that implements this
+MyPointExports protocol.
+
+00:18:24.366 --> 00:18:30.626 A:middle
+So, you'll also notice that
+when you had your interface
+
+00:18:30.626 --> 00:18:34.266 A:middle
+for MyPoint now, you don't have
+to re-list all of those methods
+
+00:18:34.306 --> 00:18:37.466 A:middle
+because it's a protocol so
+that's how protocols work.
+
+00:18:38.006 --> 00:18:40.056 A:middle
+And that's nice because
+you don't get a lot
+
+00:18:40.056 --> 00:18:42.406 A:middle
+of duplication of information.
+
+00:18:43.856 --> 00:18:48.306 A:middle
+But you can also, if you
+don't list a particular method
+
+00:18:48.306 --> 00:18:51.726 A:middle
+in your JSExport protocol,
+
+00:18:52.666 --> 00:18:54.566 A:middle
+it will not be exported
+to JavaScript.
+
+00:18:54.566 --> 00:18:59.596 A:middle
+So if you only want to-- it's
+a purely opt-in protocol.
+
+00:18:59.596 --> 00:19:03.526 A:middle
+And then your implementation of
+MyPoint will look just exactly
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:18:59.596 --> 00:19:03.526 A:middle
+And then your implementation of
+MyPoint will look just exactly
+
+00:19:03.526 --> 00:19:04.666 A:middle
+like Objective-C code.
+
+00:19:05.386 --> 00:19:07.746 A:middle
+This speaks to that
+kind of fidelity
+
+00:19:07.746 --> 00:19:08.816 A:middle
+that we were talking
+about earlier.
+
+00:19:08.816 --> 00:19:11.646 A:middle
+You don't have to register
+all sorts of functions,
+
+00:19:11.646 --> 00:19:14.516 A:middle
+you don't have to do
+a lot of extra stuff
+
+00:19:14.666 --> 00:19:17.806 A:middle
+like you just write your-- you
+write your Objective-C class,
+
+00:19:17.876 --> 00:19:20.336 A:middle
+you write your JavaScript
+code and you're done.
+
+00:19:20.696 --> 00:19:24.246 A:middle
+So like I said before, when
+you inherit from JSExport,
+
+00:19:24.246 --> 00:19:26.446 A:middle
+you enumerate the methods
+and properties that you want
+
+00:19:26.446 --> 00:19:27.576 A:middle
+to export to JavaScript.
+
+00:19:28.996 --> 00:19:31.746 A:middle
+Properties become
+JavaScript getters and setters
+
+00:19:32.096 --> 00:19:36.236 A:middle
+on the objects as you're
+interacting with them
+
+00:19:36.236 --> 00:19:39.746 A:middle
+in JavaScript so it will-- the
+getter and setter will call
+
+00:19:39.786 --> 00:19:41.666 A:middle
+into Objective-C code.
+
+00:19:42.516 --> 00:19:45.436 A:middle
+Instance methods become
+JavaScript functions
+
+00:19:45.436 --> 00:19:46.256 A:middle
+on those objects.
+
+00:19:46.816 --> 00:19:50.086 A:middle
+And class methods become
+JavaScript functions
+
+00:19:50.086 --> 00:19:51.776 A:middle
+on the global class object,
+
+00:19:51.776 --> 00:19:53.926 A:middle
+the capital MyPoint
+that we saw earlier.
+
+00:19:55.536 --> 00:19:58.496 A:middle
+So let's look at how
+we would use this.
+
+00:19:59.046 --> 00:20:01.026 A:middle
+So we allocate our
+context like before.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:19:59.046 --> 00:20:01.026 A:middle
+So we allocate our
+context like before.
+
+00:20:01.646 --> 00:20:07.196 A:middle
+We evaluate some geometry script
+which I'll show you in a second.
+
+00:20:07.376 --> 00:20:09.986 A:middle
+Then we create two of our points
+just like we normally would,
+
+00:20:10.086 --> 00:20:16.056 A:middle
+alloc init with XY, and we load
+the function from the context
+
+00:20:16.056 --> 00:20:17.306 A:middle
+like we saw earlier,
+in this case,
+
+00:20:17.306 --> 00:20:21.026 A:middle
+it's euclideanDistance
+between two points.
+
+00:20:21.026 --> 00:20:26.056 A:middle
+And then, we callWithArguments
+and pass the two points
+
+00:20:26.056 --> 00:20:29.756 A:middle
+and they're automatically
+bridged to JavaScript.
+
+00:20:29.756 --> 00:20:33.946 A:middle
+Similarly, if we want to
+expose the global class object,
+
+00:20:33.946 --> 00:20:39.676 A:middle
+capital MyPoint, we can pass
+the class to the context as well
+
+00:20:39.676 --> 00:20:41.396 A:middle
+and it will automatically
+be bridged
+
+00:20:41.926 --> 00:20:44.026 A:middle
+so that JavaScript
+can interact with it.
+
+00:20:46.916 --> 00:20:51.166 A:middle
+Then we can load, for example,
+a function named midpoint
+
+00:20:51.166 --> 00:20:53.916 A:middle
+which might want to create a
+new point given two other points
+
+00:20:54.676 --> 00:20:57.176 A:middle
+and we can call it the same
+way that we did before.
+
+00:20:57.296 --> 00:21:02.766 A:middle
+We get a result back in the form
+of a JSValue and we use toObject
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:20:57.296 --> 00:21:02.766 A:middle
+We get a result back in the form
+of a JSValue and we use toObject
+
+00:21:02.876 --> 00:21:04.516 A:middle
+to get the new point back out.
+
+00:21:05.166 --> 00:21:10.506 A:middle
+So this is the geometry script
+that I referenced earlier.
+
+00:21:10.506 --> 00:21:13.316 A:middle
+It has two functions,
+euclideanDistance and midpoint.
+
+00:21:13.526 --> 00:21:17.336 A:middle
+They accept two arguments
+each, point1 and point2.
+
+00:21:18.216 --> 00:21:19.926 A:middle
+And I'd like to call
+your attention
+
+00:21:20.156 --> 00:21:25.346 A:middle
+to how this script
+uses those properties
+
+00:21:25.386 --> 00:21:26.486 A:middle
+that were defined on point.
+
+00:21:27.496 --> 00:21:30.686 A:middle
+It looks exactly like a
+normal JavaScript property.
+
+00:21:30.816 --> 00:21:32.916 A:middle
+It looks like you're
+programing in JavaScript here.
+
+00:21:32.916 --> 00:21:34.476 A:middle
+It's completely transparent
+
+00:21:34.976 --> 00:21:37.406 A:middle
+that these are actually
+Objective-C objects
+
+00:21:37.406 --> 00:21:38.566 A:middle
+under the hood.
+
+00:21:39.066 --> 00:21:42.256 A:middle
+[ Pause ]
+
+00:21:42.756 --> 00:21:46.616 A:middle
+So, now that we've talked
+about bridging the gap
+
+00:21:46.756 --> 00:21:51.026 A:middle
+between JavaScript and
+Objective-C and vice versa,
+
+00:21:51.916 --> 00:21:54.626 A:middle
+let's talk about some
+more advanced API topics.
+
+00:21:55.076 --> 00:21:56.536 A:middle
+First of all, memory management.
+
+00:21:58.066 --> 00:22:00.686 A:middle
+So as you all are
+probably aware,
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:21:58.066 --> 00:22:00.686 A:middle
+So as you all are
+probably aware,
+
+00:22:01.166 --> 00:22:03.286 A:middle
+Objective-C uses ARC, yes.
+
+00:22:03.756 --> 00:22:06.846 A:middle
+And JavaScriptCore uses
+garbage collection.
+
+00:22:07.106 --> 00:22:09.196 A:middle
+So what does this mean?
+
+00:22:09.386 --> 00:22:11.576 A:middle
+Well, first of all, it means
+that all the references
+
+00:22:11.576 --> 00:22:12.856 A:middle
+in JavaScript are strong.
+
+00:22:13.596 --> 00:22:15.596 A:middle
+It doesn't matter if you
+create reference cycles
+
+00:22:15.596 --> 00:22:17.946 A:middle
+because the garbage collector
+can handle reference cycles.
+
+00:22:18.506 --> 00:22:25.476 A:middle
+So for this particular
+JavaScript, the Objective-C API,
+
+00:22:25.726 --> 00:22:27.516 A:middle
+the memory management
+is mostly automatic,
+
+00:22:27.766 --> 00:22:30.896 A:middle
+JSValue keeps things
+alive for you as long
+
+00:22:30.896 --> 00:22:32.186 A:middle
+as you're using the JSValue
+
+00:22:32.186 --> 00:22:34.776 A:middle
+so you don't really have
+to worry about that.
+
+00:22:35.046 --> 00:22:36.436 A:middle
+However, there are
+two situations
+
+00:22:36.436 --> 00:22:38.146 A:middle
+that require a little
+bit of extra attention:
+
+00:22:39.166 --> 00:22:42.776 A:middle
+First is storing JavaScript
+values in Objective-C objects
+
+00:22:42.776 --> 00:22:44.006 A:middle
+as instance variables.
+
+00:22:44.706 --> 00:22:48.716 A:middle
+You can't just store a
+JSValue inside of your object,
+
+00:22:48.826 --> 00:22:51.876 A:middle
+you will very easily create a
+reference cycle and we'll talk
+
+00:22:51.876 --> 00:22:53.026 A:middle
+about how to deal
+with that in a second.
+
+00:22:54.086 --> 00:22:59.516 A:middle
+The second is adding JavaScript
+fields to Objective-C objects,
+
+00:22:59.596 --> 00:23:02.806 A:middle
+and what I mean by that is if
+you have an Objective-C object
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:22:59.596 --> 00:23:02.806 A:middle
+and what I mean by that is if
+you have an Objective-C object
+
+00:23:03.466 --> 00:23:07.916 A:middle
+that you bridge to JavaScript,
+if you add a field to it
+
+00:23:07.916 --> 00:23:10.396 A:middle
+that is not one of the
+properties that you listed
+
+00:23:10.396 --> 00:23:12.766 A:middle
+in your JSExport
+protocol, we will--
+
+00:23:12.766 --> 00:23:16.736 A:middle
+we allow that but we'll create
+a new extra JavaScript-only side
+
+00:23:16.736 --> 00:23:21.496 A:middle
+field, so you have to be careful
+in that case too and what--
+
+00:23:21.496 --> 00:23:25.426 A:middle
+the mechanism to
+manage this correctly--
+
+00:23:25.426 --> 00:23:27.286 A:middle
+manage these two
+situations correctly,
+
+00:23:27.846 --> 00:23:30.366 A:middle
+I'll talk about it in a second.
+
+00:23:31.066 --> 00:23:34.536 A:middle
+So, here's an example of how you
+can create a retain cycle doing
+
+00:23:34.536 --> 00:23:36.676 A:middle
+the wrong thing.
+
+00:23:36.676 --> 00:23:39.986 A:middle
+So we have a JavaScript
+constructor, ClickHandler,
+
+00:23:39.986 --> 00:23:41.646 A:middle
+looks like a function
+but it's a constructor,
+
+00:23:43.346 --> 00:23:45.886 A:middle
+and it accepts a
+button and a callback,
+
+00:23:45.886 --> 00:23:48.416 A:middle
+so the button is an
+Objective-C object
+
+00:23:48.416 --> 00:23:50.576 A:middle
+and the callback is the
+JavaScript function you want
+
+00:23:50.576 --> 00:23:52.166 A:middle
+to call whenever this
+button is clicked.
+
+00:23:52.916 --> 00:23:56.066 A:middle
+So the ClickHandler makes
+a reference to the button
+
+00:23:56.866 --> 00:24:00.106 A:middle
+and it also sets the buttons
+onClickHandler to itself
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:23:56.866 --> 00:24:00.106 A:middle
+and it also sets the buttons
+onClickHandler to itself
+
+00:24:00.106 --> 00:24:03.706 A:middle
+and then it stores the
+callback for use later,
+
+00:24:04.916 --> 00:24:06.556 A:middle
+pretty, pretty pedestrian.
+
+00:24:07.796 --> 00:24:13.536 A:middle
+However, you get into a little
+bit of trouble if you try
+
+00:24:13.536 --> 00:24:16.336 A:middle
+to implement the
+setOnClickHandler setter
+
+00:24:16.606 --> 00:24:17.196 A:middle
+like this.
+
+00:24:17.816 --> 00:24:21.856 A:middle
+The onClickHandler, if you just
+assign the JSValue directly
+
+00:24:21.856 --> 00:24:24.116 A:middle
+into the instance
+variable of MyButton,
+
+00:24:24.676 --> 00:24:28.826 A:middle
+then you'll create a retain
+cycle as you can see here.
+
+00:24:29.596 --> 00:24:33.736 A:middle
+So MyButton has a strong
+reference to its onClickHandler
+
+00:24:33.916 --> 00:24:36.116 A:middle
+through its JSValue to
+the ClickHandler object.
+
+00:24:36.116 --> 00:24:38.786 A:middle
+And the ClickHandler has
+a strong reference back
+
+00:24:39.076 --> 00:24:40.536 A:middle
+to the button through
+this.button.
+
+00:24:41.986 --> 00:24:43.396 A:middle
+And it wouldn't really work
+
+00:24:43.396 --> 00:24:44.806 A:middle
+to make this a weak
+reference either
+
+00:24:44.806 --> 00:24:47.076 A:middle
+because then ClickHandler
+would disappear
+
+00:24:47.076 --> 00:24:49.046 A:middle
+and we wouldn't get our
+callbacks as we expected.
+
+00:24:49.496 --> 00:24:51.086 A:middle
+So we need a different
+type of edge,
+
+00:24:51.986 --> 00:24:53.336 A:middle
+a different type of reference.
+
+00:24:53.856 --> 00:24:58.646 A:middle
+And the name of that
+reference is JSManagedValue.
+
+00:24:59.546 --> 00:25:03.576 A:middle
+So, this is the correct
+setOnClickHandler.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:24:59.546 --> 00:25:03.576 A:middle
+So, this is the correct
+setOnClickHandler.
+
+00:25:04.686 --> 00:25:09.296 A:middle
+We take the JSValue
+that's passed to us
+
+00:25:10.026 --> 00:25:13.286 A:middle
+and we create what's called
+a JSManagedValue using
+
+00:25:13.286 --> 00:25:17.266 A:middle
+managedValueWithValue passing
+the handler there, and we assign
+
+00:25:17.266 --> 00:25:18.966 A:middle
+that to our onClickHandler
+field.
+
+00:25:19.996 --> 00:25:25.836 A:middle
+Then we ask the JavaScript
+virtual machine,
+
+00:25:25.836 --> 00:25:27.466 A:middle
+which has access
+through the context,
+
+00:25:27.796 --> 00:25:31.516 A:middle
+to add a managed reference
+between ourselves, the button,
+
+00:25:31.956 --> 00:25:34.216 A:middle
+and the onClickHandler
+that we're now referencing.
+
+00:25:35.006 --> 00:25:38.186 A:middle
+Now, what exactly is this
+addManagedReference deal?
+
+00:25:38.296 --> 00:25:41.626 A:middle
+So you can think of
+addManagedReference
+
+00:25:41.626 --> 00:25:44.046 A:middle
+as creating a garbage
+collected reference,
+
+00:25:44.156 --> 00:25:46.526 A:middle
+it's not a strong reference,
+it's not a weak reference,
+
+00:25:46.526 --> 00:25:47.606 A:middle
+it's a new type of reference,
+
+00:25:47.606 --> 00:25:49.046 A:middle
+it's a garbage collected
+reference
+
+00:25:49.396 --> 00:25:51.416 A:middle
+as represented here
+by the dashed line.
+
+00:25:52.506 --> 00:25:54.986 A:middle
+So now we have this
+garbage collected reference
+
+00:25:55.436 --> 00:25:59.706 A:middle
+that tells JavaScript-- it tells
+the JavaScript garbage collector
+
+00:25:59.946 --> 00:26:03.176 A:middle
+about this edge, it lets it
+know that this edge exist
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:25:59.946 --> 00:26:03.176 A:middle
+about this edge, it lets it
+know that this edge exist
+
+00:26:03.436 --> 00:26:06.186 A:middle
+and that it may need to
+do some special things
+
+00:26:06.276 --> 00:26:07.856 A:middle
+to keep that memory alive.
+
+00:26:08.506 --> 00:26:13.196 A:middle
+So we resolved our
+reference cycle here.
+
+00:26:13.776 --> 00:26:18.416 A:middle
+So, JSManagedValue by
+itself is a weak reference
+
+00:26:18.416 --> 00:26:19.536 A:middle
+to a JavaScript value.
+
+00:26:19.986 --> 00:26:22.606 A:middle
+So this is how you
+create weak references.
+
+00:26:22.836 --> 00:26:25.276 A:middle
+JSValue is a strong
+reference, JSManagedValue
+
+00:26:25.276 --> 00:26:29.276 A:middle
+by itself is a weak reference
+to a JavaScript value.
+
+00:26:29.886 --> 00:26:32.586 A:middle
+addManagedReference:withOwner
+which is the--
+
+00:26:32.586 --> 00:26:34.876 A:middle
+notifying the virtual
+machine of the presence
+
+00:26:34.876 --> 00:26:38.916 A:middle
+of this JSManagedValue,
+turns the JSManagedValue
+
+00:26:38.916 --> 00:26:40.646 A:middle
+into a garbage collected
+reference.
+
+00:26:41.186 --> 00:26:45.686 A:middle
+And what this means is that, if
+JavaScript can find the owner
+
+00:26:45.796 --> 00:26:48.246 A:middle
+where you saw the owner
+parameter at the end, withOwner,
+
+00:26:48.636 --> 00:26:49.736 A:middle
+if JavaScript can find
+
+00:26:49.736 --> 00:26:51.506 A:middle
+that during its garbage
+collection cycle,
+
+00:26:51.506 --> 00:26:53.936 A:middle
+it keeps the reference alive.
+
+00:26:55.216 --> 00:26:57.206 A:middle
+Otherwise, the reference
+is released.
+
+00:26:57.826 --> 00:27:02.476 A:middle
+So now that we talked
+about memory management,
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:26:57.826 --> 00:27:02.476 A:middle
+So now that we talked
+about memory management,
+
+00:27:03.046 --> 00:27:05.486 A:middle
+let's talk a little
+bit about threading.
+
+00:27:06.036 --> 00:27:07.866 A:middle
+But first to talk about
+threading, we have to talk
+
+00:27:07.866 --> 00:27:09.116 A:middle
+about virtual machines.
+
+00:27:09.746 --> 00:27:12.596 A:middle
+In this case, JSVirtualMachine
+which we used
+
+00:27:12.596 --> 00:27:14.316 A:middle
+in the previous slide
+when we were
+
+00:27:14.496 --> 00:27:18.336 A:middle
+calling addManagedReference.
+
+00:27:18.586 --> 00:27:22.056 A:middle
+So, a JSVirtualMachine
+is a container
+
+00:27:22.056 --> 00:27:25.346 A:middle
+that can contain
+multiple JSContexts
+
+00:27:25.836 --> 00:27:27.826 A:middle
+and you can have
+multiple JSVirtualMachines
+
+00:27:27.826 --> 00:27:31.206 A:middle
+in a single process that
+have different contexts
+
+00:27:32.226 --> 00:27:35.626 A:middle
+and some JSValues live
+inside of these contexts,
+
+00:27:36.706 --> 00:27:41.196 A:middle
+and you can pass JSValues
+between JSContexts
+
+00:27:41.196 --> 00:27:42.636 A:middle
+in the same virtual machine.
+
+00:27:44.856 --> 00:27:45.956 A:middle
+That's good.
+
+00:27:46.776 --> 00:27:50.386 A:middle
+But, you can't pass them
+between JSVirtualMachines.
+
+00:27:51.346 --> 00:27:54.356 A:middle
+And the reasons for this
+are a little bit technical,
+
+00:27:54.396 --> 00:27:57.716 A:middle
+but shortly,
+
+00:27:58.346 --> 00:28:00.426 A:middle
+each JSVirtualMachine
+has its own heap
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:27:58.346 --> 00:28:00.426 A:middle
+each JSVirtualMachine
+has its own heap
+
+00:28:00.426 --> 00:28:01.886 A:middle
+and its own garbage collector.
+
+00:28:02.516 --> 00:28:05.466 A:middle
+So if you pass-- if you
+were to pass a JSValue
+
+00:28:05.466 --> 00:28:07.616 A:middle
+from one JSVirtualMachine
+to another,
+
+00:28:08.356 --> 00:28:11.106 A:middle
+that particular garbage
+collector doesn't know how
+
+00:28:11.106 --> 00:28:12.866 A:middle
+to deal with things
+from a different heap.
+
+00:28:13.556 --> 00:28:18.006 A:middle
+So that's the reason that
+you're not allowed to do that.
+
+00:28:18.916 --> 00:28:21.086 A:middle
+So how does JSVirtualMachine
+affect threading?
+
+00:28:21.086 --> 00:28:23.766 A:middle
+Well, so the API itself,
+
+00:28:23.766 --> 00:28:25.886 A:middle
+JavaScriptCore, is
+a thread safe API.
+
+00:28:26.276 --> 00:28:33.226 A:middle
+You can call into various
+JSContexts and evaluate code
+
+00:28:33.626 --> 00:28:36.356 A:middle
+and create values and that sort
+of thing on different threads
+
+00:28:36.806 --> 00:28:39.466 A:middle
+and everything will work fine.
+
+00:28:39.656 --> 00:28:42.686 A:middle
+However, the locking
+granularity is at the level
+
+00:28:42.686 --> 00:28:44.116 A:middle
+of a JSVirtualMachine.
+
+00:28:45.406 --> 00:28:50.456 A:middle
+So, this means that you
+can call into JavaScript
+
+00:28:50.456 --> 00:28:54.816 A:middle
+on different threads in the
+same virtual machine, however,
+
+00:28:54.816 --> 00:28:58.266 A:middle
+whenever one thread is
+executing JavaScript,
+
+00:28:58.556 --> 00:29:00.696 A:middle
+no other thread can be
+executing JavaScript
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:28:58.556 --> 00:29:00.696 A:middle
+no other thread can be
+executing JavaScript
+
+00:29:00.756 --> 00:29:02.066 A:middle
+in that virtual machine.
+
+00:29:02.546 --> 00:29:08.726 A:middle
+So, if you want to add
+concurrency or parallelism
+
+00:29:08.726 --> 00:29:11.666 A:middle
+to your JavaScript program
+in your native application,
+
+00:29:12.216 --> 00:29:15.636 A:middle
+you should use separate
+JSVirtualMachines
+
+00:29:15.636 --> 00:29:17.606 A:middle
+which can execute concurrently
+on separate threads,
+
+00:29:17.606 --> 00:29:19.366 A:middle
+in that way you can
+take advantage
+
+00:29:19.366 --> 00:29:20.326 A:middle
+of the parallelism there.
+
+00:29:20.886 --> 00:29:22.616 A:middle
+We're going to talk
+about interfacing
+
+00:29:22.616 --> 00:29:24.166 A:middle
+with the JavaScriptCore C API.
+
+00:29:24.976 --> 00:29:31.166 A:middle
+The C API has its inherent
+warts, but it's very easy
+
+00:29:31.166 --> 00:29:36.276 A:middle
+to start to convert over
+to the new Objective-C API.
+
+00:29:36.346 --> 00:29:39.086 A:middle
+There's a one to one
+correspondence between JSValues
+
+00:29:39.086 --> 00:29:44.086 A:middle
+and JSValueRefs and JSContexts
+and JSGlobalContextRefs.
+
+00:29:44.556 --> 00:29:48.256 A:middle
+And we make it very easy to get
+one where you wanted the other
+
+00:29:48.256 --> 00:29:50.316 A:middle
+or get the other
+where you have one.
+
+00:29:50.376 --> 00:29:53.736 A:middle
+So, for example, if you
+have a JSGlobalContextRef,
+
+00:29:54.386 --> 00:29:56.906 A:middle
+you can call
+contextWithJSGlobalContextRef
+
+00:29:56.906 --> 00:29:59.026 A:middle
+and pass that JSGlobalContextRef
+
+00:29:59.026 --> 00:30:00.556 A:middle
+and we'll give you
+the appropriate--
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:29:59.026 --> 00:30:00.556 A:middle
+and we'll give you
+the appropriate--
+
+00:30:00.556 --> 00:30:02.206 A:middle
+the corresponding JSContext.
+
+00:30:03.006 --> 00:30:04.576 A:middle
+The same goes for the other way.
+
+00:30:05.336 --> 00:30:08.196 A:middle
+You can call JSGlobalContextRef
+on the context that you have
+
+00:30:08.196 --> 00:30:10.716 A:middle
+and we'll give you
+the C API equivalent.
+
+00:30:11.136 --> 00:30:12.686 A:middle
+Same for JSValue.
+
+00:30:12.766 --> 00:30:15.466 A:middle
+Now that we looked at all
+of these advanced features
+
+00:30:15.466 --> 00:30:20.126 A:middle
+of the API such as memory
+management, let's take a look
+
+00:30:20.126 --> 00:30:22.736 A:middle
+at sort of the tip
+of the iceberg
+
+00:30:22.926 --> 00:30:29.726 A:middle
+of what is possible using
+the new Objective-C API
+
+00:30:29.726 --> 00:30:30.746 A:middle
+in an application.
+
+00:30:31.266 --> 00:30:35.816 A:middle
+So I'm going to show you an
+application called ColorMyCode.
+
+00:30:35.816 --> 00:30:39.816 A:middle
+And to give you an idea of what
+this application is before I
+
+00:30:39.816 --> 00:30:44.896 A:middle
+start opening things, it's a
+simple text editor similar--
+
+00:30:44.896 --> 00:30:46.786 A:middle
+along the same lines
+as ColorMyWords,
+
+00:30:46.786 --> 00:30:49.956 A:middle
+but it's kind of
+turned up to 11.
+
+00:30:49.956 --> 00:30:59.336 A:middle
+So it's a text editor that
+can highlight code as many
+
+00:30:59.336 --> 00:31:01.616 A:middle
+of you probably use
+something like that.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:30:59.336 --> 00:31:01.616 A:middle
+of you probably use
+something like that.
+
+00:31:03.116 --> 00:31:06.556 A:middle
+And it uses JavaScript
+to implement a sort
+
+00:31:06.556 --> 00:31:11.746 A:middle
+of plug-in system, so that it's
+very easy to add new languages
+
+00:31:11.826 --> 00:31:13.186 A:middle
+that it can syntax highlight.
+
+00:31:14.226 --> 00:31:18.326 A:middle
+It also uses JavaScript
+to allow the definition
+
+00:31:18.326 --> 00:31:22.096 A:middle
+of new color schemes
+and uses JavaScript
+
+00:31:22.096 --> 00:31:25.156 A:middle
+to load a configuration
+file that, you know,
+
+00:31:25.296 --> 00:31:27.146 A:middle
+sets all of these
+different things up.
+
+00:31:27.476 --> 00:31:28.016 A:middle
+All right.
+
+00:31:28.056 --> 00:31:29.656 A:middle
+So, I'm going to open
+the project here.
+
+00:31:29.656 --> 00:31:37.186 A:middle
+Build it. We open a new window.
+
+00:31:38.356 --> 00:31:47.366 A:middle
+Now, I'm going to type
+some JavaScript code.
+
+00:31:47.366 --> 00:31:47.536 A:middle
+[ Pause ]
+
+00:31:47.536 --> 00:31:50.886 A:middle
+OK and let's save it.
+
+00:31:53.136 --> 00:32:01.846 A:middle
+And now that we have a file
+extension, the editor detects
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:31:53.136 --> 00:32:01.846 A:middle
+And now that we have a file
+extension, the editor detects
+
+00:32:01.886 --> 00:32:05.796 A:middle
+that this is JavaScript so
+it highlights it accordingly.
+
+00:32:07.176 --> 00:32:14.016 A:middle
+So, we can also--
+this particular--
+
+00:32:14.416 --> 00:32:17.376 A:middle
+I implemented two languages.
+
+00:32:18.416 --> 00:32:23.716 A:middle
+One is JavaScript of course
+and the other is Scheme.
+
+00:32:24.296 --> 00:32:30.006 A:middle
+OK, I want to do some Scheme.
+
+00:32:30.006 --> 00:32:31.166 A:middle
+Let's just save that for now.
+
+00:32:31.496 --> 00:32:34.746 A:middle
+Probably you don't want
+to watch me code Scheme.
+
+00:32:35.336 --> 00:32:37.736 A:middle
+So, I'm going to save
+it as a Scheme file.
+
+00:32:38.506 --> 00:32:40.906 A:middle
+And now, the editor
+is configured
+
+00:32:40.906 --> 00:32:43.506 A:middle
+to use a different
+color scheme for Scheme.
+
+00:32:43.906 --> 00:32:47.306 A:middle
+And you can see that it
+highlights different keywords.
+
+00:32:47.956 --> 00:32:50.996 A:middle
+So, if I were to type function
+in here, it doesn't really work
+
+00:32:50.996 --> 00:32:51.976 A:middle
+because that's not a keyword.
+
+00:32:51.976 --> 00:32:55.106 A:middle
+It does things like comments
+so I can type a comment,
+
+00:32:55.226 --> 00:32:57.316 A:middle
+"Hello, this is my comment."
+
+00:32:57.796 --> 00:33:01.436 A:middle
+It does strings, so string.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:32:57.796 --> 00:33:01.436 A:middle
+It does strings, so string.
+
+00:33:01.956 --> 00:33:05.166 A:middle
+Sure, strong, why not.
+
+00:33:05.236 --> 00:33:09.266 A:middle
+[laughter] You can do
+numbers, et cetera,
+
+00:33:09.396 --> 00:33:10.476 A:middle
+same goes for JavaScript.
+
+00:33:11.116 --> 00:33:14.596 A:middle
+We have comments, we
+have block comments,
+
+00:33:15.396 --> 00:33:21.086 A:middle
+we have strings again,
+and numbers as well.
+
+00:33:21.086 --> 00:33:26.986 A:middle
+So that is that, and if
+you look at the code here,
+
+00:33:28.166 --> 00:33:30.596 A:middle
+I'll just show you very
+briefly, don't be afraid.
+
+00:33:30.596 --> 00:33:36.116 A:middle
+It's split up into separate
+plug-ins on this for--
+
+00:33:36.116 --> 00:33:37.856 A:middle
+different ones for highlighting.
+
+00:33:38.436 --> 00:33:43.396 A:middle
+In this particular case, we pass
+a token and based on the type,
+
+00:33:43.586 --> 00:33:45.636 A:middle
+if it's a keyword,
+we do one color;
+
+00:33:45.636 --> 00:33:47.646 A:middle
+if it's an identifier
+we do another color.
+
+00:33:48.576 --> 00:33:50.506 A:middle
+Here's the configuration
+file that says,
+
+00:33:50.506 --> 00:33:54.186 A:middle
+"For a particular file, type
+JavaScript, use this plug-in,
+
+00:33:54.536 --> 00:33:57.106 A:middle
+this highlighting, this
+color scheme, et cetera."
+
+00:33:57.646 --> 00:34:00.226 A:middle
+So that's just a brief example
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:33:57.646 --> 00:34:00.226 A:middle
+So that's just a brief example
+
+00:34:00.226 --> 00:34:04.516 A:middle
+of what's possible using
+the new Objective-C API
+
+00:34:05.556 --> 00:34:07.466 A:middle
+to JavaScriptCore.
+
+00:34:07.696 --> 00:34:10.505 A:middle
+And I don't want to
+scare you away with kind
+
+00:34:10.666 --> 00:34:13.616 A:middle
+of the relative complexity
+of that demo.
+
+00:34:13.866 --> 00:34:17.186 A:middle
+It only took about a weekend
+to throw that together
+
+00:34:17.186 --> 00:34:19.326 A:middle
+and it's actually not
+very much coded at all.
+
+00:34:19.326 --> 00:34:23.216 A:middle
+So, it's definitely possible
+and it's very, very easy.
+
+00:34:24.275 --> 00:34:27.616 A:middle
+So, now that you've
+seen that, now we talked
+
+00:34:27.616 --> 00:34:31.005 A:middle
+about native applications
+outside of web content.
+
+00:34:31.366 --> 00:34:34.146 A:middle
+Let's talk a little bit about
+how to use JavaScriptCore
+
+00:34:34.396 --> 00:34:37.585 A:middle
+in the context of a
+WebKit WebView on Mac.
+
+00:34:38.815 --> 00:34:40.786 A:middle
+So first of all, why would
+you want to use this?
+
+00:34:40.786 --> 00:34:44.466 A:middle
+Well, for example, you could
+implement your own custom
+
+00:34:44.466 --> 00:34:47.126 A:middle
+console for your application
+that displays web pages.
+
+00:34:47.786 --> 00:34:50.676 A:middle
+And you could log in
+a very specific way
+
+00:34:50.676 --> 00:34:53.446 A:middle
+like you could log back
+to the web server or,
+
+00:34:53.656 --> 00:34:55.266 A:middle
+you know, a variety of things.
+
+00:34:55.376 --> 00:34:59.156 A:middle
+You can pass your own
+objects that you defined,
+
+00:34:59.206 --> 00:35:02.546 A:middle
+your own native objects and use
+them inside of your web content.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:34:59.206 --> 00:35:02.546 A:middle
+your own native objects and use
+them inside of your web content.
+
+00:35:03.036 --> 00:35:08.536 A:middle
+So, the way to do this is to
+use the WebFrameLoadDelegate,
+
+00:35:09.046 --> 00:35:15.746 A:middle
+and this is a delegate that
+you set on the WebKit WebView.
+
+00:35:16.896 --> 00:35:20.526 A:middle
+And you want to-- it's
+an informal protocol,
+
+00:35:20.976 --> 00:35:23.266 A:middle
+so you'll want to
+override the -webView:
+
+00:35:23.266 --> 00:35:27.126 A:middle
+didCreateJavaScriptContext:
+forFrame delegate callback.
+
+00:35:27.126 --> 00:35:31.596 A:middle
+And so you can install your
+custom objects using the context
+
+00:35:31.596 --> 00:35:33.886 A:middle
+argument passed as
+the second argument,
+
+00:35:33.886 --> 00:35:35.596 A:middle
+so it
+didCreateJavaScriptContext.
+
+00:35:36.536 --> 00:35:44.566 A:middle
+And you can build your whole
+native API using that context
+
+00:35:44.566 --> 00:35:46.606 A:middle
+like I showed you earlier
+with the subscript notation,
+
+00:35:46.606 --> 00:35:48.476 A:middle
+you can insert things
+into the global object
+
+00:35:48.476 --> 00:35:50.076 A:middle
+and all of that good stuff.
+
+00:35:50.076 --> 00:35:53.126 A:middle
+You can evaluate new
+scripts, et cetera.
+
+00:35:53.126 --> 00:35:56.386 A:middle
+And if you used some of
+the old callbacks before
+
+00:35:57.176 --> 00:35:59.576 A:middle
+like the WebScriptObject
+interface
+
+00:35:59.576 --> 00:36:01.486 A:middle
+in the WebFrameLoadDelegate,
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:35:59.576 --> 00:36:01.486 A:middle
+in the WebFrameLoadDelegate,
+
+00:36:01.486 --> 00:36:03.536 A:middle
+it replaces those old
+callbacks gracefully,
+
+00:36:03.916 --> 00:36:06.956 A:middle
+meaning that if it's
+running on--
+
+00:36:06.956 --> 00:36:08.456 A:middle
+if your application
+is running on a client
+
+00:36:08.606 --> 00:36:11.696 A:middle
+that doesn't have the
+new API available to it,
+
+00:36:11.866 --> 00:36:13.356 A:middle
+it will fallback gracefully
+
+00:36:13.356 --> 00:36:16.486 A:middle
+to use your old implementation
+of your callbacks.
+
+00:36:17.076 --> 00:36:21.236 A:middle
+And a good example of
+this is the iTunes store
+
+00:36:21.446 --> 00:36:25.806 A:middle
+on Mac uses a WebView
+for its content.
+
+00:36:25.896 --> 00:36:29.736 A:middle
+The iTune store uses HTML, CSS,
+JavaScript web technologies
+
+00:36:30.516 --> 00:36:36.526 A:middle
+but it uses its own custom
+native objects to do things
+
+00:36:36.526 --> 00:36:39.136 A:middle
+like when you click
+the Buy button, it--
+
+00:36:39.136 --> 00:36:42.396 A:middle
+the rest of iTunes already
+has a lot of code set up to
+
+00:36:42.396 --> 00:36:44.846 A:middle
+like process your credit card
+and all of that good stuff.
+
+00:36:45.196 --> 00:36:47.526 A:middle
+So, they just call
+into that code
+
+00:36:47.526 --> 00:36:50.516 A:middle
+that they've already written
+and they can take advantage
+
+00:36:50.516 --> 00:36:52.016 A:middle
+of that directly in
+their web content.
+
+00:36:52.566 --> 00:36:57.976 A:middle
+So here's a simple example
+using the console example
+
+00:36:57.976 --> 00:36:59.496 A:middle
+that I described earlier.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:37:00.026 --> 00:37:03.486 A:middle
+So I define my
+MyFrameLoadDelegete
+
+00:37:03.646 --> 00:37:05.376 A:middle
+and I override the callback.
+
+00:37:05.596 --> 00:37:07.756 A:middle
+You can see the second argument
+is the context, that's the one
+
+00:37:07.756 --> 00:37:08.976 A:middle
+that I really care about.
+
+00:37:09.506 --> 00:37:13.206 A:middle
+And I create a new
+console using alloc init.
+
+00:37:13.616 --> 00:37:16.246 A:middle
+Imagine it's like a kind of
+a normal console that has
+
+00:37:16.246 --> 00:37:17.796 A:middle
+like a log that you can call.
+
+00:37:18.276 --> 00:37:19.656 A:middle
+And I insert it directly
+
+00:37:19.656 --> 00:37:21.576 A:middle
+into the global object
+using the context.
+
+00:37:22.076 --> 00:37:27.336 A:middle
+And so here's the HTML that
+could take advantage of this.
+
+00:37:27.676 --> 00:37:30.066 A:middle
+So you'll see I have a
+normal HTML web page.
+
+00:37:30.326 --> 00:37:33.276 A:middle
+In the body there's a button
+and when you click the button,
+
+00:37:33.276 --> 00:37:34.796 A:middle
+it calls this handler guy
+
+00:37:34.866 --> 00:37:40.846 A:middle
+which will then call the
+myConsole.log function instance
+
+00:37:40.846 --> 00:37:44.126 A:middle
+method on that Objective-C
+object that you inserted.
+
+00:37:44.756 --> 00:37:49.586 A:middle
+So in summary, we've covered
+getting Objective-C to talk
+
+00:37:49.586 --> 00:37:52.836 A:middle
+to JavaScript and in
+turn, getting JavaScript
+
+00:37:53.066 --> 00:37:54.886 A:middle
+to talk back to Objective-C.
+
+00:37:55.586 --> 00:38:00.196 A:middle
+We talked about interfacing
+with the JavaScriptCore C API.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:37:55.586 --> 00:38:00.196 A:middle
+We talked about interfacing
+with the JavaScriptCore C API.
+
+00:38:00.286 --> 00:38:02.676 A:middle
+We talked about how to
+get reference counting
+
+00:38:02.676 --> 00:38:04.836 A:middle
+and garbage collection to
+play nicely together using
+
+00:38:06.006 --> 00:38:09.056 A:middle
+JSManagedValue and
+addManagedReference.
+
+00:38:10.166 --> 00:38:13.886 A:middle
+We talked about threading and
+how to use threads effectively
+
+00:38:13.886 --> 00:38:17.376 A:middle
+at the granularity
+of JSVirtualMachine.
+
+00:38:18.496 --> 00:38:22.306 A:middle
+And we talked about using custom
+objects in WebKit WebViews
+
+00:38:23.556 --> 00:38:27.436 A:middle
+and using that
+WebFrameLoadDelegate callback
+
+00:38:27.436 --> 00:38:31.446 A:middle
+to insert your own native
+objects into your web content.
+
+00:38:32.796 --> 00:38:35.156 A:middle
+So I have a Call to Action.
+
+00:38:35.156 --> 00:38:38.166 A:middle
+For all of you who views the
+C API, I would challenge you
+
+00:38:38.206 --> 00:38:42.276 A:middle
+to convert one bit of your-- one
+small segment of your old code
+
+00:38:42.276 --> 00:38:43.596 A:middle
+to use the new Objective-C API.
+
+00:38:44.086 --> 00:38:45.806 A:middle
+You'll see that it's
+much more concise
+
+00:38:46.116 --> 00:38:48.756 A:middle
+where something might have
+taken five lines before,
+
+00:38:48.756 --> 00:38:50.206 A:middle
+it might take only one now.
+
+00:38:51.166 --> 00:38:55.896 A:middle
+It's much less verbose
+and it eliminates a lot
+
+00:38:55.896 --> 00:38:57.886 A:middle
+of the retain release bugs
+
+00:38:57.886 --> 00:39:01.126 A:middle
+that you might have experienced
+using the old JavaScriptCore
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:38:57.886 --> 00:39:01.126 A:middle
+that you might have experienced
+using the old JavaScriptCore
+
+00:39:01.126 --> 00:39:02.556 A:middle
+C API.
+
+00:39:03.466 --> 00:39:08.366 A:middle
+And if you're new to this
+whole JavaScriptCore framework,
+
+00:39:08.856 --> 00:39:10.866 A:middle
+I would challenge you
+to add a small snippet
+
+00:39:10.866 --> 00:39:12.856 A:middle
+of JavaScript somewhere
+in your app,
+
+00:39:12.986 --> 00:39:15.256 A:middle
+maybe to load a configuration
+file
+
+00:39:15.256 --> 00:39:16.696 A:middle
+or something on those lines.
+
+00:39:17.206 --> 00:39:18.226 A:middle
+And you'll see that it's really,
+
+00:39:18.226 --> 00:39:21.166 A:middle
+really easy to do what
+you were trying to do
+
+00:39:21.166 --> 00:39:22.256 A:middle
+and it's very concise.
+
+00:39:22.616 --> 00:39:23.906 A:middle
+But you-- at the same time,
+
+00:39:23.906 --> 00:39:25.546 A:middle
+you feel like you're
+still programming
+
+00:39:25.546 --> 00:39:27.956 A:middle
+in either Objective-C
+or JavaScript depending
+
+00:39:27.956 --> 00:39:29.106 A:middle
+on what you're currently
+writing.
+
+00:39:29.986 --> 00:39:36.496 A:middle
+For more information, I--
+contact John Geleynse.
+
+00:39:36.846 --> 00:39:39.706 A:middle
+He's the technology evangelist.
+
+00:39:40.976 --> 00:39:46.086 A:middle
+The documentation is not
+current but it's coming.
+
+00:39:46.086 --> 00:39:49.906 A:middle
+This is the-- this
+documentation on the slide is
+
+00:39:50.436 --> 00:39:54.206 A:middle
+for the current JavaScriptCore
+C API
+
+00:39:54.456 --> 00:39:56.306 A:middle
+but it will be updated
+in the future.
+
+00:39:56.356 --> 00:40:00.946 A:middle
+And of course you can go
+the Apple Developer Forums.
+
+WEBVTT
+X-TIMESTAMP-MAP=MPEGTS:181083,LOCAL:00:00:00.000
+
+00:39:56.356 --> 00:40:00.946 A:middle
+And of course you can go
+the Apple Developer Forums.
+
+00:40:01.216 --> 00:40:03.766 A:middle
+So related sessions, this
+is for the people online.
+
+00:40:03.766 --> 00:40:05.676 A:middle
+These are all the kind
+of web content related
+
+00:40:05.676 --> 00:40:07.406 A:middle
+because JavaScript
+is a web technology.
+
+00:40:07.406 --> 00:40:10.826 A:middle
+So if you want to know more
+about web technologies,
+
+00:40:10.826 --> 00:40:13.276 A:middle
+I'd recommend you to
+check out these sessions.
+
+00:40:13.276 --> 00:40:14.476 A:middle
+Most of them have
+already passed.
+
+00:40:14.896 --> 00:40:17.806 A:middle
+But, yeah, thank you very much.
+
+00:40:18.306 --> 00:40:26.650 A:middle
+[ Applause ]
+
