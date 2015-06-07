@@ -309,3480 +309,3334 @@ So you can bid your CPC and
 we will not charge you more
 
 66
-00:03:59.296 --> 00:04:03.496
-So you can bid your CPC and
-we will not charge you more
-
-67
 00:04:03.496 --> 00:04:07.326
 than that, or if you know
 roughly what you would pay
 
-68
+67
 00:04:07.516 --> 00:04:10.236
 for acquiring a user,
 you can input that
 
-69
+68
 00:04:10.836 --> 00:04:13.006
 and we will optimize
 to achieve that goal.
 
-70
+69
 00:04:13.516 --> 00:04:17.726
 And with audience
 targeting, we have two options
 
-71
+70
 00:04:17.726 --> 00:04:19.466
 for you, Auto and Manual.
 
-72
+71
 00:04:20.086 --> 00:04:22.286
 So we've been operating
 for the last three years
 
-73
+72
 00:04:22.446 --> 00:04:25.286
 and we bring you the
 power of those learnings
 
-74
+73
 00:04:25.516 --> 00:04:29.976
 with auto targeting where we
 find, or iAd Workbench finds
 
-75
+74
 00:04:29.976 --> 00:04:31.776
 that right users for your apps.
 
-76
+75
 00:04:32.486 --> 00:04:35.826
 But we also provide many
 rich targeting options
 
-77
+76
 00:04:36.076 --> 00:04:38.416
 and you can use them,
 you can find them
 
-78
+77
 00:04:38.416 --> 00:04:40.346
 through the manual
 targeting that we have.
 
-79
+78
 00:04:41.216 --> 00:04:43.506
 Third thing I want
 touch on is ad banners.
 
-80
+79
 00:04:44.536 --> 00:04:46.416
 You need creatives for your ads.
 
-81
+80
 00:04:47.376 --> 00:04:50.346
 If you're working with
 the creative agency
 
-82
+81
 00:04:50.346 --> 00:04:51.886
 or you have in-house expertise
 
-83
+82
 00:04:51.886 --> 00:04:54.666
 to develop Ad Creative,
 you can upload them.
 
+83
+00:04:55.146 --> 00:05:00.586
+Or you can use many of the Apple
+designed beautiful templates
+
 84
-00:04:55.146 --> 00:05:00.586
-Or you can use many of the Apple
-designed beautiful templates
-
-85
-00:04:55.146 --> 00:05:00.586
-Or you can use many of the Apple
-designed beautiful templates
-
-86
 00:05:00.876 --> 00:05:02.396
 for your ads.
 
-87
+85
 00:05:03.356 --> 00:05:04.826
 So, all the key features
 
-88
+86
 00:05:05.106 --> 00:05:07.926
 for your app promotions
 are all here.
 
-89
+87
 00:05:09.326 --> 00:05:14.466
 We launched this app yesterday,
 this iAdWorkbench.apple.com
 
-90
+88
 00:05:14.846 --> 00:05:16.676
 and already thousands
 
-91
+89
 00:05:16.676 --> 00:05:18.956
 of iOS developers have
 already started using.
 
-92
+90
 00:05:19.696 --> 00:05:22.586
 Before we go into the
 details of iAd Workbench,
 
-93
+91
 00:05:23.006 --> 00:05:26.646
 I want Vineet Gossain to give
 you a quick demo of the app.
 
-94
+92
 00:05:27.886 --> 00:05:28.256
 Vineet?
 
-95
+93
 00:05:28.796 --> 00:05:29.536
 >> Great. Thanks Madhu.
 
-96
+94
 00:05:29.996 --> 00:05:32.546
 Now, as Madhu mentioned, I know
 a lot of you guys are brand new
 
-97
+95
 00:05:32.546 --> 00:05:35.156
 to advertising, so I want
 to show you guys how quickly
 
-98
+96
 00:05:35.156 --> 00:05:37.506
 and easily you can create
 a new ad campaign using the
 
-99
+97
 00:05:37.536 --> 00:05:38.196
 iAd Workbench.
 
-100
+98
 00:05:38.446 --> 00:05:39.576
 It only takes a few minutes.
 
-101
+99
 00:05:39.856 --> 00:05:42.066
 For those of you who are more
 experienced in advertising,
 
-102
+100
 00:05:42.196 --> 00:05:43.856
 I'll be back later to
 give the demo of some
 
-103
+101
 00:05:43.856 --> 00:05:45.046
 of the more powerful features
 
-104
+102
 00:05:45.046 --> 00:05:46.476
 that are offered
 by iAd Workbench.
 
-105
+103
 00:05:46.476 --> 00:05:49.746
 Let's start with a quick
 demo of creating a campaign.
 
-106
+104
 00:05:51.136 --> 00:05:52.156
 So this is your Dashboard
 
-107
+105
 00:05:52.206 --> 00:05:53.946
 when you first log
 in to iAd Workbench.
 
-108
+106
 00:05:54.636 --> 00:05:55.946
 We'll click on Create Campaign.
 
-109
+107
 00:05:56.586 --> 00:05:59.886
 And the very first thing you
 need to do is you need to choose
 
-110
+108
 00:05:59.886 --> 00:06:01.436
 which app you want to promote.
 
-111
-00:05:59.886 --> 00:06:01.436
-which app you want to promote.
-
-112
+109
 00:06:01.996 --> 00:06:02.986
 All of your Apps are here.
 
-113
+110
 00:06:03.626 --> 00:06:05.616
 Let's choose Klara
 our productivity app.
 
-114
+111
 00:06:06.226 --> 00:06:07.436
 You give it a campaign name,
 
-115
+112
 00:06:08.166 --> 00:06:11.676
 Klara Summer Promotion,
 and hit Next.
 
-116
+113
 00:06:13.136 --> 00:06:14.006
 Oops, already exists.
 
-117
+114
 00:06:14.526 --> 00:06:16.676
 OK, Campaign Summer Promotion 2.
 
-118
+115
 00:06:18.036 --> 00:06:20.846
 That one does also exist.
 
-119
+116
 00:06:21.866 --> 00:06:22.526
 OK, sorry.
 
-120
+117
 00:06:23.186 --> 00:06:24.046
 Couple of test runs [laughter].
 
-121
+118
 00:06:25.396 --> 00:06:27.196
 OK, so the next thing you
 need to do is you need
 
-122
+119
 00:06:27.196 --> 00:06:28.066
 to find your audience.
 
-123
+120
 00:06:28.326 --> 00:06:30.126
 As Madhu mentioned,
 we have two options,
 
-124
+121
 00:06:30.576 --> 00:06:32.346
 the Auto option, or
 the Manual option.
 
-125
+122
 00:06:33.096 --> 00:06:36.066
 If you choose Manual, you get
 several different targeting
 
-126
+123
 00:06:36.066 --> 00:06:40.826
 categories such as device,
 gender, age, if you know exactly
 
-127
+124
 00:06:40.826 --> 00:06:42.096
 which user you want to target.
 
-128
+125
 00:06:42.936 --> 00:06:45.196
 But for most of you,
 your best bet is Auto.
 
-129
+126
 00:06:45.586 --> 00:06:47.816
 For Auto, iAd will
 automatically figure
 
-130
+127
 00:06:47.816 --> 00:06:50.086
 out who are the best
 users to show your ad
 
-131
+128
 00:06:50.086 --> 00:06:52.676
 to at the right time
 to maximize downloads.
 
-132
+129
 00:06:53.656 --> 00:06:57.126
 For this campaign, we'll
 choose Auto as well.
 
-133
+130
 00:06:57.856 --> 00:06:59.436
 The next option is
 your Flight Dates.
 
-134
+131
 00:06:59.486 --> 00:07:01.186
 Basically, when your want
 your campaign to run,
 
-135
-00:06:59.486 --> 00:07:01.186
-Basically, when your want
-your campaign to run,
-
-136
+132
 00:07:01.656 --> 00:07:04.196
 you can time your campaign to
 run with the specific promotion
 
-137
+133
 00:07:04.196 --> 00:07:07.046
 or specific holiday, or you
 can just have it start today.
 
-138
+134
 00:07:07.116 --> 00:07:09.126
 For this demo, let's
 just have it start today.
 
-139
+135
 00:07:10.356 --> 00:07:12.336
 The final piece is entering
 your campaign budget.
 
-140
+136
 00:07:12.826 --> 00:07:15.146
 For the budget, that's basically
 how much you want to spend
 
-141
+137
 00:07:15.456 --> 00:07:17.886
 on this campaign over
 the life of the campaign.
 
-142
+138
 00:07:19.056 --> 00:07:20.996
 For this demo, we
 use 2,500 dollars.
 
-143
+139
 00:07:21.336 --> 00:07:24.236
 But you can go as low as 50.
 
-144
+140
 00:07:24.266 --> 00:07:25.736
 You can choose the
 Daily Spend Goal,
 
-145
+141
 00:07:25.816 --> 00:07:28.276
 if you want to limit how much
 you're spending on a daily basis
 
-146
+142
 00:07:28.526 --> 00:07:29.466
 but that field is optional.
 
-147
+143
 00:07:29.586 --> 00:07:30.966
 We'll stick with
 the pre-calculation
 
-148
+144
 00:07:31.166 --> 00:07:32.586
 which evenly spends the budget
 
-149
+145
 00:07:32.586 --> 00:07:34.626
 across the duration
 of the campaign.
 
-150
+146
 00:07:35.336 --> 00:07:38.476
 And then the final option is how
 you want to pay for your ads.
 
-151
+147
 00:07:38.976 --> 00:07:40.386
 You have two options
 as Madhu mentioned,
 
-152
+148
 00:07:40.816 --> 00:07:42.756
 CPA or cost-per-acquisition,
 
-153
+149
 00:07:43.056 --> 00:07:44.486
 basically how much
 you're willing to pay
 
-154
+150
 00:07:44.656 --> 00:07:47.046
 for each additional
 download of your app.
 
-155
+151
 00:07:47.046 --> 00:07:48.696
 Your other option, CPC,
 
-156
+152
 00:07:48.926 --> 00:07:52.456
 or cost-per-click is basically
 you're giving us the maximum
 
-157
+153
 00:07:52.456 --> 00:07:56.706
 you're willing to pay for
 each click on one of your ads.
 
-158
+154
 00:07:56.856 --> 00:07:59.216
 Let's stick with CPA and
 we'll put in 2 dollars
 
-159
+155
 00:07:59.216 --> 00:08:00.666
 and 50 cents as a CPA goal.
 
-160
-00:07:59.216 --> 00:08:00.666
-and 50 cents as a CPA goal.
-
-161
+156
 00:08:01.506 --> 00:08:02.676
 You can hit this
 Calculate button
 
-162
+157
 00:08:02.676 --> 00:08:05.906
 and what we'll do is we'll do
 an estimate and give an estimate
 
-163
+158
 00:08:05.906 --> 00:08:08.656
 of how many expected
 impressions or number
 
-164
+159
 00:08:08.656 --> 00:08:10.796
 of times your ad will
 appear in front of users.
 
-165
+160
 00:08:10.796 --> 00:08:14.466
 The expected number of taps, how
 many taps you can expect people
 
-166
+161
 00:08:14.466 --> 00:08:16.626
 to actually have clicked
 on your ad and roughly
 
-167
+162
 00:08:16.626 --> 00:08:18.196
 about how many downloads
 you can expect
 
-168
+163
 00:08:18.486 --> 00:08:20.056
 to result from this campaign.
 
-169
+164
 00:08:21.486 --> 00:08:23.106
 You can go in and tweak
 these numbers if you--
 
-170
+165
 00:08:23.316 --> 00:08:26.146
 you can go in and tweak the
 budget numbers or the CPA goal
 
-171
+166
 00:08:26.306 --> 00:08:28.236
 if you feel you want
 to get more downloads.
 
-172
+167
 00:08:28.296 --> 00:08:29.526
 But let's just stick
 for this for now.
 
-173
+168
 00:08:30.286 --> 00:08:33.436
 We hit Next, and then the
 next piece is you have
 
-174
+169
 00:08:33.436 --> 00:08:36.476
 to choose the artwork that you
 wish to show to the end users
 
-175
+170
 00:08:36.525 --> 00:08:37.535
 as part of your campaign.
 
-176
+171
 00:08:38.806 --> 00:08:39.666
 We have two options.
 
-177
+172
 00:08:39.956 --> 00:08:42.256
 You can upload your own where
 all you need to do is you need
 
-178
+173
 00:08:42.256 --> 00:08:45.926
 to provide the various artwork
 for the devices that you wish
 
-179
+174
 00:08:45.926 --> 00:08:48.606
 to target, or you have
 the option of using one
 
-180
+175
 00:08:48.606 --> 00:08:50.036
 of our Apple design templates.
 
-181
+176
 00:08:50.596 --> 00:08:51.646
 Now, each of our templates,
 
-182
+177
 00:08:52.116 --> 00:08:55.326
 we have five different templates
 each with multiple color schemes
 
-183
+178
 00:08:55.476 --> 00:08:56.646
 and each of them is animated.
 
-184
+179
 00:08:57.516 --> 00:08:59.346
 For this campaign,
 let's use a JetSet.
 
-185
+180
 00:08:59.966 --> 00:09:05.136
 For each template, you provide
 three things, the title, Klara;
 
-186
-00:08:59.966 --> 00:09:05.136
-For each template, you provide
-three things, the title, Klara;
-
-187
+181
 00:09:05.996 --> 00:09:09.646
 the message, "Getting
 things done,
 
-188
+182
 00:09:10.146 --> 00:09:12.686
 faster" and a call to action.
 
-189
+183
 00:09:13.586 --> 00:09:15.646
 We'll do download now.
 
-190
+184
 00:09:16.286 --> 00:09:19.026
 You can replay the animation,
 so you can see what it will look
 
-191
+185
 00:09:19.026 --> 00:09:22.616
 like to the end users and you
 enter in everything just once
 
-192
+186
 00:09:22.856 --> 00:09:25.226
 and we'll automatically
 create the templates for each
 
-193
+187
 00:09:25.226 --> 00:09:28.316
 of the devices that
 you wish to target.
 
-194
+188
 00:09:28.526 --> 00:09:33.396
 So, in this case we created
 both iPhone and iPad banners.
 
-195
+189
 00:09:33.506 --> 00:09:35.896
 If we're happy with that
 we give it a banner name,
 
-196
+190
 00:09:37.356 --> 00:09:40.676
 Klara JetSet, and hit Next.
 
-197
+191
 00:09:41.296 --> 00:09:46.506
 And now, the final piece
 is the Banner Summary.
 
-198
+192
 00:09:46.746 --> 00:09:48.356
 On the Banner Summary,
 you can choose
 
-199
+193
 00:09:48.356 --> 00:09:50.856
 to create additional banners if
 you so desire in case you want
 
-200
+194
 00:09:50.856 --> 00:09:52.946
 to compare how one banner
 does against another.
 
-201
+195
 00:09:53.256 --> 00:09:55.756
 But for this demo, we'll stick
 with just a single banner.
 
-202
+196
 00:09:56.396 --> 00:09:58.446
 Now, the final step is
 the Campaign Summary.
 
-203
+197
 00:09:58.836 --> 00:10:01.056
 Within the Campaign Summary,
 this is your final review,
 
-204
-00:09:58.836 --> 00:10:01.056
-Within the Campaign Summary,
-this is your final review,
-
-205
+198
 00:10:01.276 --> 00:10:02.476
 make sure everything is OK.
 
-206
+199
 00:10:03.476 --> 00:10:06.336
 Confirm your budget, 2,500
 dollars, our CPA goal
 
-207
+200
 00:10:06.336 --> 00:10:10.216
 of 2 dollars and 50
 cents, our Klara banner,
 
-208
+201
 00:10:10.396 --> 00:10:12.226
 we hit Submit and you're done.
 
-209
+202
 00:10:13.566 --> 00:10:14.926
 Since it's-- there you go.
 
-210
+203
 00:10:15.016 --> 00:10:17.976
 So, your campaign is
 created and quick and easy,
 
-211
+204
 00:10:18.066 --> 00:10:18.706
 and you're ready to go.
 
-212
+205
 00:10:19.376 --> 00:10:21.136
 Back to you Madhu.
 
-213
+206
 00:10:21.136 --> 00:10:22.416
 [ Applause ]
 
-214
+207
 00:10:22.416 --> 00:10:23.796
 >> That was awesome.
 
-215
+208
 00:10:26.526 --> 00:10:27.336
 Thank you Vineet.
 
-216
+209
 00:10:27.756 --> 00:10:30.806
 I was certainly timing him
 and it was about five minutes
 
-217
+210
 00:10:30.806 --> 00:10:32.356
 and that's the fastest
 he's done.
 
-218
+211
 00:10:32.356 --> 00:10:33.726
 So that's a new record Vineet.
 
-219
+212
 00:10:35.496 --> 00:10:38.206
 So, let's go into an
 overview of iAd Workbench.
 
-220
+213
 00:10:38.306 --> 00:10:41.226
 So, we want to cover
 three topics: one,
 
-221
+214
 00:10:41.276 --> 00:10:44.986
 how you can get started; two,
 how you can create campaigns;
 
-222
+215
 00:10:45.336 --> 00:10:48.456
 and three, how you can manage
 the performance of the campaigns
 
-223
+216
 00:10:48.456 --> 00:10:50.716
 that you have created.
 
-224
+217
 00:10:50.716 --> 00:10:51.446
 Getting started.
 
-225
+218
 00:10:51.956 --> 00:10:53.566
 Getting started is very easy.
 
-226
+219
 00:10:53.976 --> 00:10:56.506
 You log in, you sign up
 and setup your payment.
 
-227
+220
 00:10:57.356 --> 00:10:59.556
 Log-in with your
 developer credentials.
 
-228
+221
 00:11:00.286 --> 00:11:03.136
 Sign up to the terms and
 conditions of iAd Workbench
 
-229
+222
 00:11:03.136 --> 00:11:05.206
 with a new service from Apple
 
-230
+223
 00:11:05.206 --> 00:11:07.586
 and you just have a different
 terms and conditions,
 
-231
+224
 00:11:08.176 --> 00:11:09.576
 and you setup your payment.
 
-232
+225
 00:11:09.866 --> 00:11:11.336
 We accept major credit cards
 
-233
+226
 00:11:11.666 --> 00:11:14.736
 or you can also apply
 for a line of credit.
 
-234
+227
 00:11:15.226 --> 00:11:17.106
 You're done with your sign up.
 
-235
+228
 00:11:18.846 --> 00:11:20.716
 Next, you create Campaigns.
 
-236
+229
 00:11:22.216 --> 00:11:26.956
 Vineet went through a fairly
 quick campaign creation process.
 
-237
+230
 00:11:27.336 --> 00:11:29.436
 Let's go a little deeper
 in each of these steps.
 
-238
+231
 00:11:30.166 --> 00:11:31.136
 Selecting an app.
 
-239
+232
 00:11:31.846 --> 00:11:35.146
 So every campaign is
 anchored around an app
 
-240
+233
 00:11:35.146 --> 00:11:36.596
 because that's what's
 your promoting.
 
-241
+234
 00:11:37.266 --> 00:11:39.516
 So, when you sign
 up as a developer,
 
-242
+235
 00:11:39.816 --> 00:11:41.506
 all your apps are already here.
 
-243
+236
 00:11:41.726 --> 00:11:43.826
 So, you pick the app
 you want to promote,
 
-244
+237
 00:11:43.826 --> 00:11:47.146
 and you give your campaign
 a name and you hit Next.
 
-245
+238
 00:11:47.146 --> 00:11:49.366
 So, your campaign is
 essentially the first step
 
-246
+239
 00:11:49.366 --> 00:11:52.206
 of your campaign
 creation is done.
 
-247
+240
 00:11:52.416 --> 00:11:54.456
 Next step is selecting
 an audience.
 
-248
+241
 00:11:55.276 --> 00:11:59.806
 In the demo that we saw, we have
 two options, Auto and Manual.
 
-249
+242
 00:12:00.586 --> 00:12:03.896
 With Auto, you get the
 optimized audience selection
 
-250
+243
 00:12:03.896 --> 00:12:04.986
 from iAd Workbench.
 
-251
+244
 00:12:05.076 --> 00:12:06.166
 What do we mean by that?
 
-252
+245
 00:12:06.326 --> 00:12:09.336
 It means that iAd Workbench
 finds the right user
 
-253
+246
 00:12:09.826 --> 00:12:13.266
 at the right time, on the
 right device in the right app
 
-254
+247
 00:12:13.576 --> 00:12:15.346
 to maximize the downloads
 for you.
 
-255
+248
 00:12:15.946 --> 00:12:17.726
 Recall that I mentioned
 that we've been operating
 
-256
+249
 00:12:17.726 --> 00:12:20.196
 for over three years,
 you're really benefiting
 
-257
+250
 00:12:20.196 --> 00:12:22.846
 from those learnings when
 you choose this option.
 
-258
+251
 00:12:24.316 --> 00:12:27.636
 The other option is the
 manual targeting option.
 
-259
+252
 00:12:28.196 --> 00:12:31.226
 In this case iAd Workbench
 provides you the targeting
 
-260
+253
 00:12:31.226 --> 00:12:34.236
 options and you picked
 what's best for you.
 
-261
+254
 00:12:34.576 --> 00:12:38.026
 You still get the benefit
 of the optimization except
 
-262
+255
 00:12:38.026 --> 00:12:40.406
 that you've given us
 the starting point
 
-263
+256
 00:12:40.456 --> 00:12:41.366
 for the optimization.
 
-264
+257
 00:12:41.766 --> 00:12:45.786
 Let's drill into what
 are the various manual
 
-265
+258
 00:12:45.786 --> 00:12:46.756
 targeting options.
 
-266
+259
 00:12:47.316 --> 00:12:51.066
 On the left hand side are the
 various basic targeting options.
 
-267
+260
 00:12:51.396 --> 00:12:55.246
 So gender, age, various
 age buckets, geotargeting,
 
-268
+261
 00:12:55.246 --> 00:12:58.396
 State and DMA for now,
 and day of week targeting.
 
-269
+262
 00:12:58.716 --> 00:13:01.106
 These are basic options
 for advertising.
 
-270
-00:12:58.716 --> 00:13:01.106
-These are basic options
-for advertising.
-
-271
+263
 00:13:01.436 --> 00:13:03.666
 On the right hand
 side, you can--
 
-272
+264
 00:13:03.666 --> 00:13:05.166
 you start with device targeting,
 
-273
+265
 00:13:05.426 --> 00:13:08.436
 you can target all the iOS
 devices that Apple makes.
 
-274
+266
 00:13:08.706 --> 00:13:12.476
 So iPhone, iPod and
 iPad and iPod touch.
 
-275
+267
 00:13:12.476 --> 00:13:16.316
 Next I want to drill I little
 bit into user preferences.
 
-276
+268
 00:13:16.406 --> 00:13:20.006
 This is one of the most powerful
 features that we provide you.
 
-277
+269
 00:13:21.716 --> 00:13:25.276
 So with user preferences,
 you target users based
 
-278
+270
 00:13:25.276 --> 00:13:29.276
 on what they download in
 iTunes and the App Store.
 
-279
+271
 00:13:29.996 --> 00:13:34.066
 So at the top here, hope you
 can read that, you have apps,
 
-280
+272
 00:13:34.206 --> 00:13:37.226
 movies, music, books and so on.
 
-281
+273
 00:13:37.796 --> 00:13:41.076
 So what does this showing
 you is what-- if you tar--
 
-282
+274
 00:13:41.106 --> 00:13:44.406
 choose this option, you're
 targeting users based
 
-283
+275
 00:13:44.406 --> 00:13:46.376
 on what they download
 in the App Store.
 
-284
+276
 00:13:46.636 --> 00:13:50.296
 Actual downloads, not just
 likes, actual downloads.
 
-285
+277
 00:13:50.576 --> 00:13:51.256
 Think about that.
 
-286
+278
 00:13:51.876 --> 00:13:55.716
 If you're a game
 developer and you want
 
-287
+279
 00:13:55.716 --> 00:13:59.166
 to reach users who've
 already downloaded games
 
-288
+280
 00:13:59.166 --> 00:14:02.126
 and shown preference for
 games, you can do that here.
 
-289
-00:13:59.166 --> 00:14:02.126
-and shown preference for
-games, you can do that here.
-
-290
+281
 00:14:03.006 --> 00:14:07.286
 Or let's say your game
 appeals to action movie fans,
 
-291
+282
 00:14:08.116 --> 00:14:10.826
 you can combine that
 with a movie preference
 
-292
+283
 00:14:10.826 --> 00:14:11.856
 for action movies.
 
-293
+284
 00:14:12.576 --> 00:14:13.866
 That's the power you're getting.
 
-294
+285
 00:14:14.166 --> 00:14:18.256
 We're using the data from
 iTunes as well as the App Store
 
-295
+286
 00:14:18.436 --> 00:14:21.626
 to find the right
 user for your apps.
 
-296
+287
 00:14:22.316 --> 00:14:24.906
 For our example app Klara,
 which is a productivity app,
 
-297
+288
 00:14:25.406 --> 00:14:28.346
 we're just choosing
 business, finance,
 
-298
+289
 00:14:29.166 --> 00:14:30.416
 productivity and utilities.
 
-299
+290
 00:14:30.946 --> 00:14:33.196
 The next preference,
 
-300
+291
 00:14:33.196 --> 00:14:35.316
 next targeting option
 is app channels.
 
-301
+292
 00:14:35.516 --> 00:14:37.416
 Here you're asking the question,
 
-302
+293
 00:14:37.806 --> 00:14:39.636
 where do you want
 your ad to run?
 
-303
+294
 00:14:39.996 --> 00:14:43.396
 What you see here is the
 taxonomy in the App Store.
 
-304
+295
 00:14:44.396 --> 00:14:47.426
 You're determining, what's
 the context for your ad.
 
-305
+296
 00:14:47.956 --> 00:14:51.116
 You can browse the App Store
 and see what this context mean.
 
-306
+297
 00:14:51.346 --> 00:14:54.106
 So when you when you
 choose these options,
 
-307
+298
 00:14:54.356 --> 00:14:57.236
 you're determining, or you're
 deciding what's the most
 
-308
+299
 00:14:57.236 --> 00:14:59.426
 relevant context for your ads?
 
-309
+300
 00:14:59.616 --> 00:15:02.146
 For Klara, which is
 a productivity app
 
-310
-00:14:59.616 --> 00:15:02.146
-For Klara, which is
-a productivity app
-
-311
+301
 00:15:02.146 --> 00:15:04.786
 and fairly broad
 based, we've chosen most
 
-312
+302
 00:15:04.786 --> 00:15:06.866
 of the app channels
 that we have here.
 
-313
+303
 00:15:08.136 --> 00:15:11.016
 Your app may not me relevant
 in all of these channels,
 
-314
+304
 00:15:11.186 --> 00:15:12.956
 so that's a decision
 that you need to make.
 
-315
+305
 00:15:13.366 --> 00:15:15.046
 The more channels you pick,
 
-316
+306
 00:15:15.446 --> 00:15:17.756
 the greater the reach
 for your campaign.
 
-317
+307
 00:15:18.216 --> 00:15:22.016
 The last option we
 offer you is App Rating.
 
-318
+308
 00:15:22.846 --> 00:15:26.476
 Some of you might have apps that
 are not necessarily appropriate
 
-319
+309
 00:15:26.476 --> 00:15:28.696
 in contexts that are 17+.
 
-320
+310
 00:15:28.886 --> 00:15:30.266
 So, you can with the fair--
 
-321
+311
 00:15:30.266 --> 00:15:33.436
 with the simple filter
 you can exclude apps
 
-322
+312
 00:15:33.856 --> 00:15:36.966
 that are 17+ from
 your campaigns.
 
-323
+313
 00:15:37.806 --> 00:15:40.676
 So these are the targeting
 options that we have
 
-324
+314
 00:15:40.676 --> 00:15:44.346
 under manual targeting,
 and the burden is on you
 
-325
+315
 00:15:44.346 --> 00:15:45.906
 to pick what's best for you.
 
-326
+316
 00:15:46.716 --> 00:15:50.696
 You always, obviously, have the
 optimization that comes with it.
 
-327
+317
 00:15:50.996 --> 00:15:53.136
 But you can also
 pick the Auto Option
 
-328
+318
 00:15:53.366 --> 00:15:56.246
 where iAd Workbench does
 the heavy lifting for you
 
-329
+319
 00:15:56.486 --> 00:15:59.146
 to find the right
 users for your app.
 
-330
+320
 00:16:00.436 --> 00:16:06.846
 So two steps down, the third
 step is to set a budget.
 
-331
+321
 00:16:06.976 --> 00:16:09.616
 You're answering three
 questions, how long do you want
 
-332
+322
 00:16:09.616 --> 00:16:11.836
 to run your campaign,
 how much do you want
 
-333
+323
 00:16:11.836 --> 00:16:14.166
 to spend and at what price?
 
-334
+324
 00:16:16.296 --> 00:16:19.826
 How long? So you're essentially
 determining what the start date
 
-335
+325
 00:16:19.826 --> 00:16:20.906
 and end date of a campaign.
 
-336
+326
 00:16:21.046 --> 00:16:23.306
 You need to set the
 duration of your campaign.
 
-337
+327
 00:16:23.756 --> 00:16:26.316
 By default a campaign
 starts today.
 
-338
+328
 00:16:26.676 --> 00:16:29.866
 But you can pick any date
 range that is relevant to you.
 
-339
+329
 00:16:30.446 --> 00:16:33.696
 Maybe you're launching an update
 for your product or your app.
 
-340
+330
 00:16:33.836 --> 00:16:35.026
 You can pick a date for that.
 
-341
+331
 00:16:35.476 --> 00:16:38.426
 Or perhaps you want to
 coincide with back to school
 
-342
+332
 00:16:38.426 --> 00:16:40.036
 or Black Friday, whatever.
 
-343
+333
 00:16:40.376 --> 00:16:42.286
 You can choose these
 options from here.
 
-344
+334
 00:16:42.816 --> 00:16:46.226
 The next question you're
 answering is how much?
 
-345
+335
 00:16:46.786 --> 00:16:49.706
 You're setting a budget
 and a daily spend goal.
 
-346
+336
 00:16:50.016 --> 00:16:51.736
 A budget is what
 you're willing to spend
 
-347
+337
 00:16:51.736 --> 00:16:53.206
 for the entire campaign.
 
-348
+338
 00:16:53.616 --> 00:16:55.656
 And the daily spend
 goal is a way for you
 
-349
+339
 00:16:55.656 --> 00:16:59.836
 to control the pacing of your
 campaign during the entire
 
-350
+340
 00:16:59.836 --> 00:17:02.336
 campaign-- for the duration
 of the campaign, sorry.
 
-351
-00:16:59.836 --> 00:17:02.336
-campaign-- for the duration
-of the campaign, sorry.
-
-352
+341
 00:17:02.866 --> 00:17:07.086
 And now we're answering
 the question what price?
 
-353
+342
 00:17:07.726 --> 00:17:10.496
 Two options that we mentioned
 before, cost-per-click
 
-354
+343
 00:17:11.195 --> 00:17:14.366
 where you're inputting the
 maximum that you're willing
 
-355
+344
 00:17:14.366 --> 00:17:17.356
 to pay for a click, so
 when there's somebody taps
 
-356
+345
 00:17:17.356 --> 00:17:19.996
 on your ad, that's the
 maximum you're willing to pay.
 
-357
+346
 00:17:19.996 --> 00:17:23.445
 We will not charge you more
 than that, that's your bid.
 
-358
+347
 00:17:24.746 --> 00:17:27.415
 Or you can indicate a
 cost-per-acquisition goal,
 
-359
+348
 00:17:27.415 --> 00:17:28.306
 a CPA goal.
 
-360
+349
 00:17:28.836 --> 00:17:33.656
 Here you have a rough idea as to
 what you are be willing to pay
 
-361
+350
 00:17:33.936 --> 00:17:37.306
 to acquire a user, or for
 download from the App Store.
 
-362
+351
 00:17:37.756 --> 00:17:41.846
 You input that and iAd Workbench
 optimizes to that goal.
 
-363
+352
 00:17:42.146 --> 00:17:44.896
 So you have CPA and CPC
 that you can choose.
 
-364
+353
 00:17:45.636 --> 00:17:48.656
 Now you've answered
 all three questions
 
-365
+354
 00:17:49.106 --> 00:17:51.056
 and we've provide you
 three answers there.
 
-366
+355
 00:17:51.056 --> 00:17:55.096
 We provide you the impressions,
 the taps, and the downloads,
 
-367
+356
 00:17:55.376 --> 00:17:57.496
 as an estimate for
 all your settings.
 
-368
+357
 00:17:57.496 --> 00:18:01.386
 So the targeting that
 you've chosen, the duration
 
-369
-00:17:57.496 --> 00:18:01.386
-So the targeting that
-you've chosen, the duration
-
-370
+358
 00:18:01.386 --> 00:18:03.426
 that you've chosen, the
 budget that you've chosen,
 
-371
+359
 00:18:03.426 --> 00:18:05.896
 and your bid all determine
 these three numbers.
 
-372
+360
 00:18:06.506 --> 00:18:09.546
 We also have a nifty
 gauge next to the numbers.
 
-373
+361
 00:18:10.076 --> 00:18:12.976
 The numbers, the gauge
 essentially indicates the
 
-374
+362
 00:18:12.976 --> 00:18:16.006
 numbers or your settings
 in the context
 
-375
+363
 00:18:16.006 --> 00:18:17.666
 of what's available overall.
 
-376
+364
 00:18:17.966 --> 00:18:21.446
 In this case, the needle is all
 the way to the left telling me
 
-377
+365
 00:18:21.446 --> 00:18:24.166
 that if I had more budget,
 meaning if I had more
 
-378
+366
 00:18:24.166 --> 00:18:25.756
 than 10,000 dollars to spend,
 
-379
+367
 00:18:26.106 --> 00:18:29.456
 I could substantially increase
 the number of users for my app.
 
-380
+368
 00:18:30.186 --> 00:18:34.096
 But you-- for now, this
 is what you get, OK?
 
-381
+369
 00:18:35.056 --> 00:18:37.346
 So, three steps down, last step
 
-382
+370
 00:18:37.346 --> 00:18:39.196
 or the fourth step
 is adding banners.
 
-383
+371
 00:18:40.176 --> 00:18:43.046
 As Vineet pointed out,
 you can upload banners.
 
-384
+372
 00:18:43.706 --> 00:18:47.936
 So if you're-- if you
 work with creative agency
 
-385
+373
 00:18:47.936 --> 00:18:51.086
 or you have in-house
 expertise to create banners,
 
-386
+374
 00:18:51.576 --> 00:18:53.256
 you can upload them
 for all the devices
 
-387
+375
 00:18:53.256 --> 00:18:55.836
 that you're targeting,
 and you're all set.
 
-388
+376
 00:18:56.426 --> 00:19:01.376
 But many of you might not have
 access to creative agencies
 
-389
-00:18:56.426 --> 00:19:01.376
-But many of you might not have
-access to creative agencies
-
-390
+377
 00:19:01.656 --> 00:19:03.726
 and may not want to spend
 even for all of that.
 
-391
+378
 00:19:04.316 --> 00:19:07.016
 You get the benefit of
 Apple designed beautiful
 
-392
+379
 00:19:07.016 --> 00:19:07.896
 templates here.
 
-393
+380
 00:19:08.336 --> 00:19:10.826
 The templates have
 been designed to ensure
 
-394
+381
 00:19:10.826 --> 00:19:13.516
 that your app is
 highlighted in the banners.
 
-395
+382
 00:19:13.836 --> 00:19:17.776
 So we have five templates,
 each with five colors.
 
-396
+383
 00:19:18.196 --> 00:19:23.186
 So you pick a template,
 you give it a title,
 
-397
+384
 00:19:25.306 --> 00:19:29.096
 you give it a message, and
 you give it a call to action.
 
-398
+385
 00:19:29.536 --> 00:19:32.036
 So all-- basically three
 things that you need to do
 
-399
+386
 00:19:32.036 --> 00:19:34.456
 for your banner and we
 take care of the rest.
 
-400
+387
 00:19:35.246 --> 00:19:38.356
 As Vineet pointed out you
 can see a quick preview
 
-401
+388
 00:19:38.796 --> 00:19:41.866
 of the various sizes
 that you're getting
 
-402
+389
 00:19:42.066 --> 00:19:43.896
 from the one banner
 that you selected.
 
-403
+390
 00:19:44.576 --> 00:19:46.886
 These are the various sizes
 and the various devices
 
-404
+391
 00:19:47.176 --> 00:19:48.096
 that you're targeting.
 
-405
+392
 00:19:48.356 --> 00:19:51.486
 If you want to see
 how the ads look,
 
-406
+393
 00:19:51.486 --> 00:19:55.536
 appear on the actual devices,
 you can send an email directly
 
-407
+394
 00:19:55.536 --> 00:19:58.586
 from the application,
 and using iAd Tester,
 
-408
+395
 00:19:58.836 --> 00:20:01.686
 you can see how your ad
 appears on the devices.
 
-409
-00:19:58.836 --> 00:20:01.686
-you can see how your ad
-appears on the devices.
-
-410
+396
 00:20:02.096 --> 00:20:02.766
 Pretty powerful.
 
-411
+397
 00:20:03.246 --> 00:20:08.286
 Last step is submitting
 the campaign.
 
-412
+398
 00:20:08.816 --> 00:20:13.056
 You get on a single page all
 the options that you've chosen.
 
-413
+399
 00:20:13.246 --> 00:20:15.936
 You obviously see the app,
 the name of the campaign
 
-414
+400
 00:20:15.936 --> 00:20:18.146
 that you created, the
 various targeting option
 
-415
+401
 00:20:18.146 --> 00:20:20.456
 that you've chosen, as
 well as the banners.
 
-416
+402
 00:20:21.056 --> 00:20:24.156
 When you hit Submit,
 your campaign goes
 
-417
+403
 00:20:24.156 --> 00:20:26.246
 into the creative
 approval process at Apple.
 
-418
+404
 00:20:26.556 --> 00:20:29.876
 So that's campaign creation.
 
-419
+405
 00:20:30.586 --> 00:20:34.276
 Now when you create campaigns,
 obviously you're interested
 
-420
+406
 00:20:34.276 --> 00:20:37.026
 in understanding how
 they're performing
 
-421
+407
 00:20:37.086 --> 00:20:39.296
 in the App Store,
 in our marketplace.
 
-422
+408
 00:20:40.046 --> 00:20:43.406
 You want to understand how
 many downloads you're getting.
 
-423
+409
 00:20:43.756 --> 00:20:46.296
 You're spending good money
 to acquire those downloads,
 
-424
+410
 00:20:46.606 --> 00:20:49.676
 and you perhaps have chosen
 various targeting options
 
-425
+411
 00:20:50.046 --> 00:20:53.836
 or various banners for your
 app, for your campaigns,
 
-426
+412
 00:20:54.176 --> 00:20:54.816
 and you really want
 
-427
+413
 00:20:54.816 --> 00:20:56.616
 to understand the
 performance of them.
 
-428
+414
 00:20:56.886 --> 00:21:00.586
 So we provide you a
 Dashboard and drill downs.
 
-429
-00:20:56.886 --> 00:21:00.586
-So we provide you a
-Dashboard and drill downs.
-
-430
+415
 00:21:01.086 --> 00:21:05.436
 Dashboard gives you, on the
 left hand side, a quick view
 
-431
+416
 00:21:05.686 --> 00:21:09.466
 of what's going on in your
 application for all your apps.
 
-432
+417
 00:21:09.716 --> 00:21:12.946
 So you can see all the
 apps and the campaigns
 
-433
+418
 00:21:12.986 --> 00:21:14.856
 that you've created
 for those apps.
 
-434
+419
 00:21:15.606 --> 00:21:17.546
 You have, at a quick glance,
 
-435
+420
 00:21:17.546 --> 00:21:20.476
 understand how those
 various campaigns are doing.
 
-436
+421
 00:21:20.876 --> 00:21:23.716
 You can initiate a new
 campaign as Vineet did from--
 
-437
+422
 00:21:23.716 --> 00:21:24.946
 directly from the Dashboard.
 
-438
+423
 00:21:25.776 --> 00:21:27.756
 On the right hand side,
 you have drill downs.
 
-439
+424
 00:21:28.206 --> 00:21:30.526
 Again, you get granular
 reporting
 
-440
+425
 00:21:30.526 --> 00:21:32.456
 for all the options
 that you've chosen.
 
-441
+426
 00:21:33.176 --> 00:21:35.886
 You have the various targeting
 options that you've chosen.
 
-442
+427
 00:21:35.886 --> 00:21:37.346
 You have also the
 various banners
 
-443
+428
 00:21:37.346 --> 00:21:39.276
 that you've created
 for your campaign.
 
-444
+429
 00:21:39.616 --> 00:21:43.856
 You can do understand how these
 two perhaps targeting options
 
-445
+430
 00:21:44.086 --> 00:21:44.836
 are performing.
 
-446
+431
 00:21:45.366 --> 00:21:47.256
 Or you could also
 trend them overtime.
 
-447
+432
 00:21:48.946 --> 00:21:52.046
 Lots of rich data
 comparison tools as well
 
-448
+433
 00:21:52.046 --> 00:21:55.616
 as insightful visuals for
 you on the drill downs.
 
-449
+434
 00:21:56.716 --> 00:21:59.566
 Rather than me talk about it,
 let's have Vineet come back
 
-450
+435
 00:21:59.566 --> 00:22:01.996
 and give us a demo of
 managing performance.
 
-451
-00:21:59.566 --> 00:22:01.996
-and give us a demo of
-managing performance.
-
-452
+436
 00:22:02.376 --> 00:22:02.836
 Vineet?
 
-453
+437
 00:22:03.886 --> 00:22:04.616
 >> Great. Thanks Madhu.
 
-454
+438
 00:22:05.256 --> 00:22:06.916
 So yeah, now we've
 created our campaign.
 
-455
+439
 00:22:07.336 --> 00:22:09.666
 But now the question
 is, how do you ensure
 
-456
+440
 00:22:09.666 --> 00:22:11.526
 that your campaign is
 doing as well as it could?
 
-457
+441
 00:22:11.746 --> 00:22:13.896
 How do you ensure you're
 maximizing your downloads?
 
-458
+442
 00:22:14.306 --> 00:22:16.456
 Let's go to the Dashboard.
 
-459
+443
 00:22:17.036 --> 00:22:19.326
 On the Dashboard, you see
 the list of the campaigns
 
-460
+444
 00:22:19.326 --> 00:22:20.126
 that are currently running.
 
-461
+445
 00:22:20.556 --> 00:22:22.246
 So we have three campaigns
 that are currently running.
 
-462
+446
 00:22:22.756 --> 00:22:24.726
 And within each of
 the campaigns,
 
-463
+447
 00:22:25.016 --> 00:22:26.536
 you see four key metrics.
 
-464
+448
 00:22:27.266 --> 00:22:29.676
 The total amount you spent
 so far on this campaign
 
-465
+449
 00:22:29.936 --> 00:22:31.206
 and you can see how
 that compares
 
-466
+450
 00:22:31.206 --> 00:22:32.266
 to the budget that you set.
 
-467
+451
 00:22:33.096 --> 00:22:35.806
 The average CPA, again, that
 was cost-per-acquisition,
 
-468
+452
 00:22:36.096 --> 00:22:37.416
 how much you're paying
 on average
 
-469
+453
 00:22:37.416 --> 00:22:38.636
 for each additional download?
 
-470
+454
 00:22:38.936 --> 00:22:41.306
 You can compare that to the
 goal that you set as well.
 
-471
+455
 00:22:42.416 --> 00:22:44.796
 Average CPC, the actual cost,
 
-472
+456
 00:22:44.796 --> 00:22:47.786
 you're paying per-click
 on your ad.
 
-473
+457
 00:22:47.786 --> 00:22:50.736
 And if you would set a CPC
 bid, you would see it here
 
-474
+458
 00:22:50.736 --> 00:22:51.976
 so you could do a
 comparison as well.
 
-475
+459
 00:22:52.326 --> 00:22:54.306
 And finally, probably the
 metric you guys care most
 
-476
+460
 00:22:54.306 --> 00:22:56.776
 about the total number of
 downloads that have resulted
 
-477
+461
 00:22:56.776 --> 00:22:57.776
 from your ad campaign.
 
-478
+462
 00:22:59.286 --> 00:23:01.686
 So from the Dashboard,
 you can quickly drill in.
 
-479
-00:22:59.286 --> 00:23:01.686
-So from the Dashboard,
-you can quickly drill in.
-
-480
+463
 00:23:02.296 --> 00:23:04.456
 Let's take a look at
 this campaign and see
 
-481
+464
 00:23:04.646 --> 00:23:06.936
 and get a refresher of what
 exactly this campaign is
 
-482
+465
 00:23:06.936 --> 00:23:07.346
 all about.
 
-483
+466
 00:23:07.796 --> 00:23:10.636
 So for this campaign,
 we have multiple lines.
 
-484
+467
 00:23:10.636 --> 00:23:12.376
 So we haven't talked
 about lines yet.
 
-485
+468
 00:23:12.566 --> 00:23:15.226
 Basically a line is a
 set of targeting options.
 
-486
+469
 00:23:15.496 --> 00:23:19.226
 Madhu went over that various
 targeting options, gender, age,
 
-487
+470
 00:23:19.516 --> 00:23:20.706
 user preference et cetera.
 
-488
+471
 00:23:21.226 --> 00:23:23.286
 What you can do is you can
 group those options together
 
-489
+472
 00:23:23.286 --> 00:23:24.396
 into a single line.
 
-490
+473
 00:23:24.836 --> 00:23:28.946
 You could call it, "Men 18 -
 24" or some other combination.
 
-491
+474
 00:23:29.326 --> 00:23:32.546
 And for each line, you can
 set an independent budget,
 
-492
+475
 00:23:33.496 --> 00:23:36.696
 independent daily spend goal,
 and an independent CPA goal
 
-493
+476
 00:23:36.696 --> 00:23:40.766
 so you can track how one line
 is doing against another to see,
 
-494
+477
 00:23:40.766 --> 00:23:42.216
 what is your target market?
 
-495
+478
 00:23:42.776 --> 00:23:47.276
 And you can quickly flip
 through multiple lines
 
-496
+479
 00:23:47.356 --> 00:23:49.176
 to see all the different
 settings that you have.
 
-497
+480
 00:23:49.416 --> 00:23:52.506
 So we have "Men 35
 - 49", "Men 50+".
 
-498
+481
 00:23:52.596 --> 00:23:54.416
 So right now, we're
 breaking it down based
 
-499
+482
 00:23:54.416 --> 00:23:56.096
 on gender and age range.
 
-500
+483
 00:23:57.196 --> 00:23:59.826
 In addition, you can
 see all of the banners
 
-501
+484
 00:23:59.826 --> 00:24:01.436
 that you have associated
 with your campaign.
 
-502
-00:23:59.826 --> 00:24:01.436
-that you have associated
-with your campaign.
-
-503
+485
 00:24:02.106 --> 00:24:03.396
 We have multiple banners
 
-504
+486
 00:24:03.586 --> 00:24:05.406
 and using multiple
 different templates to see
 
-505
+487
 00:24:05.406 --> 00:24:06.586
 which one performs the best.
 
-506
+488
 00:24:07.266 --> 00:24:09.676
 And you can see there's a number
 up at the top, eight lines.
 
-507
+489
 00:24:10.126 --> 00:24:12.596
 Basically for each of the
 banners you can choose
 
-508
+490
 00:24:12.596 --> 00:24:14.466
 which lines you want
 to associate them with.
 
-509
+491
 00:24:14.816 --> 00:24:15.916
 You may have certain banners
 
-510
+492
 00:24:15.916 --> 00:24:18.086
 that may appeal a certain
 demographics and certain banners
 
-511
+493
 00:24:18.086 --> 00:24:19.496
 that may appeal to
 different demographics,
 
-512
+494
 00:24:19.816 --> 00:24:22.166
 this way you have the
 ability to pick and choose
 
-513
+495
 00:24:22.256 --> 00:24:24.056
 which banners will
 show up to which lines.
 
-514
+496
 00:24:24.676 --> 00:24:29.146
 OK. So now we've gotten familiar
 with how this campaign is going.
 
-515
+497
 00:24:29.516 --> 00:24:31.606
 Let's go back to the
 Dashboard and take a look
 
-516
+498
 00:24:31.606 --> 00:24:32.376
 at how it's performing.
 
-517
+499
 00:24:33.066 --> 00:24:35.026
 We click on Home button and
 go back to the Dashboard.
 
-518
+500
 00:24:35.656 --> 00:24:38.096
 We are looking at
 this Klara campaign.
 
-519
+501
 00:24:38.626 --> 00:24:42.836
 Let's drill into spend and
 see how we're doing on spend.
 
-520
+502
 00:24:42.996 --> 00:24:44.596
 So when you come to
 the analytics page,
 
-521
+503
 00:24:45.206 --> 00:24:47.646
 one of the first things you
 should do is choose what time
 
-522
+504
 00:24:47.646 --> 00:24:48.676
 range you wish to look at.
 
-523
+505
 00:24:49.076 --> 00:24:51.316
 By default we start with
 today but there's option
 
-524
+506
 00:24:51.316 --> 00:24:54.916
 for yesterday, the last 7 days,
 the last 30 days, et cetera.
 
-525
+507
 00:24:54.916 --> 00:24:56.006
 Let's go with last 30 days.
 
-526
+508
 00:24:57.496 --> 00:25:00.256
 Up at the top, you actually see
 the numbers for your campaign,
 
-527
-00:24:57.496 --> 00:25:00.256
-Up at the top, you actually see
-the numbers for your campaign,
-
-528
+509
 00:25:00.376 --> 00:25:01.776
 the full lifetime
 of your campaign.
 
-529
+510
 00:25:01.836 --> 00:25:03.996
 So you always have
 that at your fingertips
 
-530
+511
 00:25:03.996 --> 00:25:06.246
 so you can compare not
 only how you're doing based
 
-531
+512
 00:25:06.246 --> 00:25:07.526
 on the time range
 that you've chosen
 
-532
+513
 00:25:07.906 --> 00:25:09.716
 but the overall life
 of the campaign.
 
-533
+514
 00:25:10.706 --> 00:25:13.516
 So now that we've chosen last
 30 days, we can see in the graph
 
-534
+515
 00:25:13.516 --> 00:25:15.076
 and you can see how
 much is being spent
 
-535
+516
 00:25:15.136 --> 00:25:16.456
 across those 30 days.
 
-536
+517
 00:25:17.126 --> 00:25:18.676
 You can choose to graph
 a different metric,
 
-537
+518
 00:25:18.946 --> 00:25:20.016
 impressions, taps.
 
-538
+519
 00:25:20.346 --> 00:25:21.676
 Let's stick with
 the average CPA.
 
-539
+520
 00:25:22.676 --> 00:25:25.616
 So you can see overall average
 CPA is performing pretty well
 
-540
+521
 00:25:25.766 --> 00:25:28.036
 and then you can overlay a
 second metric on top of it
 
-541
+522
 00:25:28.036 --> 00:25:30.336
 so you can vary to see
 how the spend is doing
 
-542
+523
 00:25:30.336 --> 00:25:32.376
 as compared to your average CPA.
 
-543
+524
 00:25:32.836 --> 00:25:36.016
 In addition to the overlays,
 you can actually click up here,
 
-544
+525
 00:25:36.156 --> 00:25:38.716
 compare with the previous
 period to see how your spend--
 
-545
+526
 00:25:38.716 --> 00:25:41.856
 or your average CPA is doing
 over the previous 30 days
 
-546
+527
 00:25:41.906 --> 00:25:43.546
 or the-- versus the
 current 30 days.
 
-547
+528
 00:25:44.056 --> 00:25:49.926
 And finally, you can also click
 on a tabular view and see all
 
-548
+529
 00:25:49.926 --> 00:25:51.796
 of the detailed information
 about each
 
-549
+530
 00:25:51.796 --> 00:25:52.966
 of the metrics all at once.
 
-550
+531
 00:25:53.426 --> 00:25:56.046
 And if you would like you
 can download a CSV file
 
-551
+532
 00:25:56.146 --> 00:25:58.796
 so you can import it into
 numbers or into Excel and slice
 
-552
+533
 00:25:58.796 --> 00:26:00.446
 and dice it as you wish.
 
-553
-00:25:58.796 --> 00:26:00.446
-and dice it as you wish.
-
-554
+534
 00:26:03.486 --> 00:26:08.096
 OK, so now from here this
 was all about the campaign
 
-555
+535
 00:26:08.336 --> 00:26:11.116
 but we can also drill in
 to see the individual lines
 
-556
+536
 00:26:11.116 --> 00:26:11.736
 as I discussed.
 
-557
+537
 00:26:12.306 --> 00:26:15.056
 When you click on Lines Tab, you
 see all of the different lines
 
-558
+538
 00:26:15.136 --> 00:26:16.696
 and how they're comparing
 against each other.
 
-559
+539
 00:26:17.046 --> 00:26:20.026
 You can choose a metric, we can
 do it base on average CPA again
 
-560
+540
 00:26:20.566 --> 00:26:25.276
 and see that "Men 18 - 24" has
 higher CPA than "Men 25 - 34".
 
-561
+541
 00:26:26.756 --> 00:26:28.726
 Right now we graph three lines.
 
-562
+542
 00:26:28.776 --> 00:26:30.096
 You can choose which
 lines you want.
 
-563
+543
 00:26:30.266 --> 00:26:33.786
 You can unselect 25 - 34
 and select "Women 25 -
 
-564
+544
 00:26:33.786 --> 00:26:35.226
 34" and see how that's doing.
 
-565
+545
 00:26:35.416 --> 00:26:36.256
 And then quickly the graph--
 
-566
+546
 00:26:36.256 --> 00:26:39.956
 ,oh, it looks like
 that one has no spend.
 
-567
+547
 00:26:40.156 --> 00:26:43.356
 OK, "Women 35 - 49", so you can
 see how those three lines are
 
-568
+548
 00:26:43.356 --> 00:26:44.086
 comparing to each other.
 
-569
+549
 00:26:44.606 --> 00:26:48.546
 And then we have a similar
 view on the banner side
 
-570
+550
 00:26:48.546 --> 00:26:50.676
 so you can compare how banners
 are doing against each other.
 
-571
+551
 00:26:51.586 --> 00:26:54.576
 For this campaign, we actually
 only have one banner that's
 
-572
+552
 00:26:54.576 --> 00:26:56.726
 currently active so you
 actually only see one banner.
 
-573
+553
 00:26:57.666 --> 00:27:00.136
 You could-- If you don't
 remember what Marigold Promo
 
-574
-00:26:57.666 --> 00:27:00.136
-You could-- If you don't
-remember what Marigold Promo
-
-575
+554
 00:27:00.136 --> 00:27:02.536
 actually relates to,
 you can click on I icon
 
-576
+555
 00:27:02.856 --> 00:27:06.416
 and get a refresher of
 exactly what this banner is.
 
-577
+556
 00:27:06.636 --> 00:27:10.406
 OK, let's go back to lines and
 see what optimizations we can do
 
-578
+557
 00:27:10.406 --> 00:27:12.516
 against lines to improve
 our campaign's performance.
 
-579
+558
 00:27:13.036 --> 00:27:17.246
 OK, let's look at the overall
 lifetime of the campaign.
 
-580
+559
 00:27:17.826 --> 00:27:22.456
 So at the bottom of the--
 at the bottom of the screen,
 
-581
+560
 00:27:22.616 --> 00:27:24.716
 you see a table which basically
 has all the different--
 
-582
+561
 00:27:24.966 --> 00:27:26.936
 all the different
 metrics that we have.
 
-583
+562
 00:27:27.076 --> 00:27:28.926
 We want to optimize
 based on the average CPA.
 
-584
+563
 00:27:29.176 --> 00:27:32.436
 We can sort by average CPA which
 again is how much you're paying
 
-585
+564
 00:27:32.436 --> 00:27:33.916
 on average for additional
 download.
 
-586
+565
 00:27:34.346 --> 00:27:36.726
 And we see that these two
 lines, the average CPA,
 
-587
+566
 00:27:36.726 --> 00:27:39.396
 a dollar sixty-eight and a
 dollar eighty-four is much less
 
-588
+567
 00:27:39.396 --> 00:27:40.636
 than the 3 dollars
 that we inputted.
 
-589
+568
 00:27:41.076 --> 00:27:42.986
 So those two lines seem to
 be performing pretty well.
 
-590
+569
 00:27:43.326 --> 00:27:44.896
 And as you can see,
 the downloads
 
-591
+570
 00:27:44.896 --> 00:27:47.326
 for those two lines seem to
 be the best out of those two--
 
-592
+571
 00:27:47.326 --> 00:27:48.816
 out of all the lines
 that we have.
 
-593
+572
 00:27:49.086 --> 00:27:51.656
 So not only are you getting more
 downloads you're actually paying
 
-594
+573
 00:27:51.656 --> 00:27:54.226
 less for each download, this
 seems like a good combination.
 
-595
+574
 00:27:54.936 --> 00:27:58.736
 So it would make sense for us
 to actually add additional spend
 
-596
+575
 00:27:58.796 --> 00:28:01.536
 to these two lines perhaps
 taking it away from the spend
 
-597
-00:27:58.796 --> 00:28:01.536
-to these two lines perhaps
-taking it away from the spend
-
-598
+576
 00:28:01.536 --> 00:28:03.616
 from some of the lines that
 are not performing as well.
 
-599
+577
 00:28:04.156 --> 00:28:07.486
 And so this is the
 power that you have
 
-600
+578
 00:28:07.626 --> 00:28:08.816
 when you're doing
 manual targeting.
 
-601
+579
 00:28:09.186 --> 00:28:11.026
 But the beauty of
 Auto is that this--
 
-602
+580
 00:28:11.026 --> 00:28:13.706
 these optimizations are
 automatically done by iAd.
 
-603
+581
 00:28:13.956 --> 00:28:17.946
 We automatically figure out
 which demographics are the ones
 
-604
+582
 00:28:17.946 --> 00:28:20.576
 that are performing best for
 you giving you maximum downloads
 
-605
+583
 00:28:20.696 --> 00:28:21.476
 and lowest CPA.
 
-606
+584
 00:28:21.476 --> 00:28:23.266
 Back to you Madhu.
 
-607
+585
 00:28:23.266 --> 00:28:25.056
 >> All right.
 
-608
+586
 00:28:25.386 --> 00:28:25.966
 Thank you Vineet.
 
-609
+587
 00:28:27.136 --> 00:28:30.126
 So we saw how you can
 manage your performance.
 
-610
+588
 00:28:30.126 --> 00:28:31.536
 Once you have setup
 your campaigns,
 
-611
+589
 00:28:32.486 --> 00:28:33.756
 you can go into the tool
 
-612
+590
 00:28:33.756 --> 00:28:36.206
 and manage the performance
 of those campaigns.
 
-613
+591
 00:28:38.076 --> 00:28:40.876
 So iAd Workbench as I
 mentioned is available now.
 
-614
+592
 00:28:41.406 --> 00:28:43.806
 We launched it yesterday
 and many
 
-615
+593
 00:28:43.806 --> 00:28:45.486
 of you already started using it.
 
-616
+594
 00:28:46.096 --> 00:28:47.226
 But what else could we do?
 
-617
+595
 00:28:47.916 --> 00:28:53.006
 So coming in the Fall, we
 have iAd Workbench for iOS.
 
-618
+596
 00:28:53.486 --> 00:28:56.526
 So we have it on
 the iPhone and iPad.
 
-619
+597
 00:28:57.146 --> 00:29:00.936
 Many of you perhaps use
 iTunes Connect Mobile
 
-620
-00:28:57.146 --> 00:29:00.936
-Many of you perhaps use
-iTunes Connect Mobile
-
-621
+598
 00:29:00.936 --> 00:29:03.896
 for managing your apps on
 the go in the App Store.
 
-622
+599
 00:29:04.536 --> 00:29:08.946
 Now the same app with the
 additional iAd tab can be used
 
-623
+600
 00:29:08.946 --> 00:29:11.906
 to manage your campaigns
 on the go.
 
-624
+601
 00:29:12.776 --> 00:29:14.456
 So what are the key
 features here?
 
-625
+602
 00:29:15.126 --> 00:29:17.276
 You have access to
 actionable information.
 
-626
+603
 00:29:17.796 --> 00:29:20.636
 So the same dashboard and
 drill downs that we saw
 
-627
+604
 00:29:20.886 --> 00:29:24.926
 on the web application are also
 available on the iOS devices.
 
-628
+605
 00:29:25.486 --> 00:29:27.306
 But they are customized
 obviously for touch.
 
-629
+606
 00:29:27.596 --> 00:29:30.386
 And you will see Mike
 giving us a demo of that.
 
-630
+607
 00:29:30.906 --> 00:29:32.966
 We also have alerts
 and notifications
 
-631
+608
 00:29:33.486 --> 00:29:34.466
 which is really important--
 
-632
+609
 00:29:34.466 --> 00:29:36.686
 which are really important
 in the mobile context.
 
-633
+610
 00:29:37.256 --> 00:29:40.706
 We will tell you what's
 going on with your account
 
-634
+611
 00:29:41.196 --> 00:29:43.836
 or with your campaign on the
 go so you can take action.
 
-635
+612
 00:29:44.826 --> 00:29:47.436
 The action can be updating
 dates, so if you want
 
-636
+613
 00:29:47.436 --> 00:29:50.016
 to extend your campaign
 or extend your budgets,
 
-637
+614
 00:29:50.446 --> 00:29:52.916
 change your bid based on the
 alerts that you might get
 
-638
+615
 00:29:53.446 --> 00:29:56.656
 or based on the performance
 you might want to pause
 
-639
+616
 00:29:56.656 --> 00:29:59.666
 or unpause any of the
 campaigns, lines or banners
 
-640
+617
 00:29:59.916 --> 00:30:00.666
 that you have running.
 
-641
-00:29:59.916 --> 00:30:00.666
-that you have running.
-
-642
+618
 00:30:00.966 --> 00:30:04.846
 So all of the functionality that
 you see on the web for managing
 
-643
+619
 00:30:04.846 --> 00:30:09.686
 and optimizing your campaigns is
 also available for you on iOS.
 
-644
+620
 00:30:11.916 --> 00:30:15.836
 So its coming this Fall but
 Mike can do a demo for us now.
 
-645
+621
 00:30:16.526 --> 00:30:16.736
 Mike?
 
-646
+622
 00:30:17.126 --> 00:30:17.576
 >> Thank you.
 
-647
+623
 00:30:17.576 --> 00:30:20.016
 So this is the iTunes
 Connect Mobile application
 
-648
+624
 00:30:20.016 --> 00:30:22.296
 and I'm sure a lot of
 you are familiar with.
 
-649
+625
 00:30:22.296 --> 00:30:25.426
 Let's fire it up.
 
-650
+626
 00:30:25.676 --> 00:30:27.946
 And we'll sign in
 with our Apple ID.
 
-651
+627
 00:30:28.466 --> 00:30:32.406
 And the first thing you'll
 notice that on the bottom,
 
-652
+628
 00:30:32.406 --> 00:30:35.116
 there's now iAd tab that
 wasn't there before.
 
-653
+629
 00:30:36.166 --> 00:30:38.686
 And this is the campaign
 Dashboard page.
 
-654
+630
 00:30:38.686 --> 00:30:40.546
 It shows all the
 campaigns that we have.
 
-655
+631
 00:30:40.596 --> 00:30:43.866
 You can see some brief info
 about them, their name,
 
-656
+632
 00:30:43.866 --> 00:30:46.056
 their status, their
 flight dates.
 
-657
+633
 00:30:46.856 --> 00:30:50.336
 You can sort them by running,
 not running, or completed.
 
-658
+634
 00:30:51.236 --> 00:30:53.636
 Let's have a look at the
 first campaign here BB iPad1.
 
-659
+635
 00:30:53.856 --> 00:30:55.366
 We'll tap that.
 
-660
+636
 00:30:56.006 --> 00:30:59.326
 These are the campaign
 detail page.
 
-661
+637
 00:30:59.466 --> 00:31:01.976
 At the top you will see-- again,
 see some basic information
 
-662
-00:30:59.466 --> 00:31:01.976
-At the top you will see-- again,
-see some basic information
-
-663
+638
 00:31:02.406 --> 00:31:05.946
 about this campaign, the name,
 the flight dates, the status.
 
-664
+639
 00:31:06.836 --> 00:31:09.686
 Down the bottom you'll see all
 your campaign results to date.
 
-665
+640
 00:31:10.036 --> 00:31:12.526
 So you will your spend in
 relation to your budget,
 
-666
+641
 00:31:12.986 --> 00:31:15.926
 your average CPC,
 your average CPA
 
-667
+642
 00:31:15.926 --> 00:31:18.356
 and your CPA goal and downloads.
 
-668
+643
 00:31:18.356 --> 00:31:22.186
 And if you wanted to see how
 these metrics accrued over time,
 
-669
+644
 00:31:22.796 --> 00:31:24.786
 you can swipe the
 table to the left
 
-670
+645
 00:31:24.956 --> 00:31:26.886
 and you see a beautiful
 graph of the data.
 
-671
+646
 00:31:27.186 --> 00:31:36.106
 So this is for spend, average
 CPC, average CPA and downloads.
 
-672
+647
 00:31:36.906 --> 00:31:39.276
 By default, it's showing
 the last 24 hour period.
 
-673
+648
 00:31:39.326 --> 00:31:45.756
 You can also change the time
 period for seven days, 30 days
 
-674
+649
 00:31:47.986 --> 00:31:50.076
 or for the lifetime
 of your campaign.
 
-675
+650
 00:31:50.526 --> 00:31:51.736
 If you want to see the graph
 
-676
+651
 00:31:51.736 --> 00:31:56.596
 in more detail you can rotate
 your device to landscape
 
-677
+652
 00:31:57.116 --> 00:31:59.126
 and see the graph
 in full screen.
 
-678
+653
 00:32:00.276 --> 00:32:02.536
 All the same graphs
 that were available
 
-679
+654
 00:32:02.536 --> 00:32:04.506
 in portrait are available
 in landscape.
 
-680
+655
 00:32:06.166 --> 00:32:08.316
 If you just want to jump to
 a specific graph and not want
 
-681
+656
 00:32:08.316 --> 00:32:10.716
 to have to swipe through to
 find it, you can just tap
 
-682
+657
 00:32:10.716 --> 00:32:12.306
 that metric in the table view.
 
-683
+658
 00:32:12.766 --> 00:32:16.406
 So if we want to jump quickly to
 spend, we can just tap on that
 
-684
+659
 00:32:16.406 --> 00:32:18.106
 and look at the spend graph.
 
-685
+660
 00:32:19.896 --> 00:32:20.966
 Let's switch back to portrait.
 
-686
+661
 00:32:21.366 --> 00:32:25.816
 In the middle of the screen
 you'll notice two buttons,
 
-687
+662
 00:32:26.206 --> 00:32:28.226
 one for line items
 and one for banners.
 
-688
+663
 00:32:28.486 --> 00:32:30.996
 Use for the line items
 associated worth this campaign
 
-689
+664
 00:32:30.996 --> 00:32:31.846
 and for the banners.
 
-690
+665
 00:32:32.466 --> 00:32:33.596
 Let's look at the line items.
 
-691
+666
 00:32:35.126 --> 00:32:36.296
 This shows the three line items
 
-692
+667
 00:32:36.296 --> 00:32:37.856
 that I have associated
 with this campaign.
 
-693
+668
 00:32:38.396 --> 00:32:42.246
 You'll see the name, the flight
 dates, the status and the spent
 
-694
+669
 00:32:42.246 --> 00:32:43.216
 in relation to the budget.
 
-695
+670
 00:32:43.756 --> 00:32:44.976
 Let's tap into the first one.
 
-696
+671
 00:32:48.446 --> 00:32:50.616
 This shows the line
 detail screen, very similar
 
-697
+672
 00:32:50.616 --> 00:32:52.016
 to the campaign detail screen.
 
-698
+673
 00:32:52.016 --> 00:32:54.116
 We will see some basic
 information at the top
 
-699
+674
 00:32:54.276 --> 00:32:56.976
 about the status, the flight
 dates and you will the results
 
-700
+675
 00:32:57.046 --> 00:32:58.006
 to date down the bottom.
 
-701
+676
 00:32:58.006 --> 00:33:00.616
 You will be able to see the
 spend in relation to the budget,
 
-702
-00:32:58.006 --> 00:33:00.616
-You will be able to see the
-spend in relation to the budget,
-
-703
+677
 00:33:00.616 --> 00:33:03.996
 the average CPC,
 CPA and downloads.
 
-704
+678
 00:33:04.186 --> 00:33:07.726
 And of course you can swipe
 them to get the graphs.
 
-705
+679
 00:33:08.736 --> 00:33:13.966
 In the middle section
 there's a button for banners.
 
-706
+680
 00:33:14.326 --> 00:33:16.406
 This will show us all the
 banners we have associated
 
-707
+681
 00:33:16.406 --> 00:33:17.686
 with this particular campaign.
 
-708
+682
 00:33:18.036 --> 00:33:19.416
 So let's tap that
 and have a look.
 
-709
+683
 00:33:20.956 --> 00:33:23.296
 There're two banners
 associated with this campaign
 
-710
+684
 00:33:23.716 --> 00:33:26.666
 and its showing us the
 spend on both of those.
 
-711
+685
 00:33:27.296 --> 00:33:28.646
 Let's tap and look
 at the first one.
 
-712
+686
 00:33:29.986 --> 00:33:31.926
 This is the banner
 detail very similar
 
-713
+687
 00:33:31.926 --> 00:33:33.986
 to the campaign detail
 and line detail.
 
-714
+688
 00:33:33.986 --> 00:33:36.186
 We're going to have some basic
 information about the banner
 
-715
+689
 00:33:36.186 --> 00:33:39.236
 at the top, its status, and
 down the bottom you'll have the
 
-716
+690
 00:33:39.236 --> 00:33:40.626
 banner results to date.
 
-717
+691
 00:33:41.666 --> 00:33:44.576
 And again, you can
 swipe over and look
 
-718
+692
 00:33:44.576 --> 00:33:47.646
 at the graphs for
 the various data.
 
-719
+693
 00:33:49.326 --> 00:33:51.776
 Now you notice in the top
 right corner there there's a
 
-720
+694
 00:33:51.776 --> 00:33:52.396
 Pause button.
 
-721
+695
 00:33:52.606 --> 00:33:53.696
 You'll be able to pause
 
-722
+696
 00:33:53.696 --> 00:33:56.116
 and restart your banner
 directly from your device.
 
-723
+697
 00:33:56.656 --> 00:33:57.696
 So let's pause this banner.
 
-724
+698
 00:33:58.816 --> 00:34:00.406
 It'll ask us if we
 want to continue.
 
-725
-00:33:58.816 --> 00:34:00.406
-It'll ask us if we
-want to continue.
-
-726
+699
 00:34:00.596 --> 00:34:02.996
 Yes. And now the
 banner is paused.
 
-727
+700
 00:34:03.446 --> 00:34:06.076
 If we want to restart the
 banner, we can just tap Restart
 
-728
+701
 00:34:07.266 --> 00:34:09.315
 and continue and the
 banner is now restarted.
 
-729
+702
 00:34:10.585 --> 00:34:12.525
 Let's go back to the
 campaign Dashboard page
 
-730
+703
 00:34:12.525 --> 00:34:14.466
 by tapping the tab
 at the bottom.
 
-731
+704
 00:34:15.286 --> 00:34:18.886
 And you may have noticed at the
 top it's telling us that one
 
-732
+705
 00:34:18.886 --> 00:34:20.646
 of our campaigns
 may need attention.
 
-733
+706
 00:34:21.286 --> 00:34:22.596
 And the second campaign,
 
-734
+707
 00:34:22.596 --> 00:34:25.646
 Prod Pack Promo has an
 Alert icon next to it,
 
-735
+708
 00:34:25.775 --> 00:34:28.216
 signifying that that is the
 campaign that has a problem.
 
-736
+709
 00:34:28.746 --> 00:34:33.116
 So let's tap that
 and have a look.
 
-737
+710
 00:34:33.496 --> 00:34:34.866
 You'll notice on
 the lines button,
 
-738
+711
 00:34:34.985 --> 00:34:37.466
 there's another alert
 button, another alert icon.
 
-739
+712
 00:34:37.876 --> 00:34:40.315
 So it's telling us that one of
 our line items has a problem.
 
-740
+713
 00:34:40.485 --> 00:34:42.795
 So, let's tap it
 and check it out.
 
-741
+714
 00:34:43.886 --> 00:34:46.856
 We have eight line items
 associated with this campaign
 
-742
+715
 00:34:47.886 --> 00:34:50.496
 and you'll notice that two
 of them have the alert icon,
 
-743
+716
 00:34:50.666 --> 00:34:52.466
 so two of the lines
 have a problem.
 
-744
+717
 00:34:53.156 --> 00:34:54.216
 Let's look at the second one.
 
-745
+718
 00:34:55.795 --> 00:34:57.666
 And there we go.
 
-746
+719
 00:34:57.666 --> 00:34:59.906
 At the top, it's telling us
 exactly what the problem is.
 
-747
+720
 00:34:59.906 --> 00:35:02.066
 It's saying a bid amount
 may not be sufficient
 
-748
-00:34:59.906 --> 00:35:02.066
-It's saying a bid amount
-may not be sufficient
-
-749
+721
 00:35:02.126 --> 00:35:03.556
 to reach our campaign goal.
 
-750
+722
 00:35:03.716 --> 00:35:06.296
 So that definitely seems
 like something we should fix.
 
-751
+723
 00:35:06.296 --> 00:35:08.646
 So on the top right corner
 
-752
+724
 00:35:08.646 --> 00:35:10.586
 of the screen you'll
 notice an Edit button.
 
-753
+725
 00:35:11.146 --> 00:35:13.036
 Let's tap that and
 edit this line item.
 
-754
+726
 00:35:13.616 --> 00:35:17.276
 So this is the line item editor.
 
-755
+727
 00:35:17.966 --> 00:35:22.006
 In here, you can change
 the end date, the budget,
 
-756
+728
 00:35:22.236 --> 00:35:24.966
 your max daily spend
 and you CPA goal.
 
-757
+729
 00:35:24.966 --> 00:35:27.486
 And you notice down the bottom,
 you can also pause the line
 
-758
+730
 00:35:27.486 --> 00:35:29.976
 or restart the line much
 like you can with banners.
 
-759
+731
 00:35:31.276 --> 00:35:32.966
 So, you can also see
 down at the bottom
 
-760
+732
 00:35:32.966 --> 00:35:35.916
 on the CPA goal line
 there's the alert icon.
 
-761
+733
 00:35:36.166 --> 00:35:38.446
 That letting us know that
 that is a particular line
 
-762
+734
 00:35:38.446 --> 00:35:39.666
 that we need to change.
 
-763
+735
 00:35:40.386 --> 00:35:42.506
 So, let's tap on
 that to edit it.
 
-764
+736
 00:35:43.346 --> 00:35:45.846
 This will bring up
 a standard keypad
 
-765
+737
 00:35:45.846 --> 00:35:48.246
 but we've added two custom
 buttons in there for you,
 
-766
+738
 00:35:48.636 --> 00:35:50.626
 a plus 5 percent and
 a minus 5 percent
 
-767
+739
 00:35:50.626 --> 00:35:54.126
 so you can quickly change your
 value by 5 percent increments.
 
-768
+740
 00:35:54.696 --> 00:35:55.816
 So let's add 5 percent.
 
-769
+741
 00:35:56.096 --> 00:35:58.696
 Nah, let's bump it
 up another 5 percent.
 
-770
+742
 00:35:59.306 --> 00:36:02.286
 When you're satisfied with
 all the values and you want
 
-771
-00:35:59.306 --> 00:36:02.286
-When you're satisfied with
-all the values and you want
-
-772
+743
 00:36:02.286 --> 00:36:05.316
 to save it, just
 touch the Done button
 
-773
+744
 00:36:05.616 --> 00:36:07.716
 and the values are now saved.
 
-774
+745
 00:36:08.716 --> 00:36:11.386
 So these are just some of the
 features that will be available
 
-775
+746
 00:36:11.386 --> 00:36:14.796
 in new iAd module within
 iTunes Connect Mobile coming
 
-776
+747
 00:36:14.796 --> 00:36:22.376
 in the Fall.
 
-777
+748
 00:36:22.376 --> 00:36:23.846
 [ Applause ]
 
-778
+749
 00:36:23.846 --> 00:36:24.926
 >> Thank you Mike.
 
-779
+750
 00:36:25.086 --> 00:36:27.116
 So it's coming in the fall.
 
-780
+751
 00:36:27.416 --> 00:36:30.806
 But iAd Workbench is already
 available and thousands
 
-781
+752
 00:36:30.806 --> 00:36:32.306
 of you are already using it.
 
-782
+753
 00:36:32.616 --> 00:36:34.906
 So get started with
 iAd Workbench.
 
-783
+754
 00:36:35.446 --> 00:36:37.046
 It's cool, huh?
 
-784
+755
 00:36:37.046 --> 00:36:40.736
 iadworkbench.apple.com,
 we are in the labs.
 
-785
+756
 00:36:40.736 --> 00:36:42.656
 We can help you get
 started or you can start
 
-786
+757
 00:36:42.656 --> 00:36:44.526
 with your developer accounts.
 
-787
+758
 00:36:45.656 --> 00:36:49.926
 So some quick housekeeping,
 there are related iAd sessions
 
-788
+759
 00:36:50.606 --> 00:36:53.046
 about iAd Producer tomorrow
 
-789
+760
 00:36:53.496 --> 00:36:56.666
 and on Thursday there's
 iAd Integration to those
 
-790
+761
 00:36:56.666 --> 00:36:57.826
 of you who are publishers.
 
-791
+762
 00:36:58.496 --> 00:37:02.416
 And for more information you
 have Mark Malone, the wonderful,
 
-792
-00:36:58.496 --> 00:37:02.416
-And for more information you
-have Mark Malone, the wonderful,
-
-793
+763
 00:37:02.886 --> 00:37:04.626
 for any questions
 you have on iAd.
 
-794
+764
 00:37:04.626 --> 00:37:07.436
 And you can always go to
 Apple Developer Forums.
 
-795
+765
 00:37:08.596 --> 00:37:10.996
 Thank you and have a great WWDC.
 
-796
+766
 00:37:11.496 --> 00:37:17.620
 [ Silence ]

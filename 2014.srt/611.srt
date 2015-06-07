@@ -91,4090 +91,3910 @@ talk on game controllers?
 Good. Large majority.
 
 22
-00:00:59.996 --> 00:01:01.216
-Good. Large majority.
-
-23
 00:01:01.246 --> 00:01:02.456
 Great. Wonderful.
 
-24
+23
 00:01:02.456 --> 00:01:04.245
 So, this is going to be fun.
 
-25
+24
 00:01:04.245 --> 00:01:04.965
 Let's get started.
 
-26
+25
 00:01:06.206 --> 00:01:07.766
 When I talk about
 game controllers,
 
-27
+26
 00:01:08.236 --> 00:01:11.496
 what Apple is delivering
 is in two parts.
 
-28
+27
 00:01:12.646 --> 00:01:15.836
 The first part is the
 MFi Specification.
 
-29
+28
 00:01:16.556 --> 00:01:19.086
 Now, this is for third-party
 controller developers.
 
-30
+29
 00:01:19.606 --> 00:01:22.866
 It defines all the hardware
 requirements of the controllers.
 
-31
+30
 00:01:23.336 --> 00:01:26.076
 Things like: the control
 layouts on the gamepad itself;
 
-32
+31
 00:01:26.666 --> 00:01:28.546
 how the buttons feel
 when you press them;
 
-33
+32
 00:01:29.836 --> 00:01:32.116
 and the communication
 protocols between the device.
 
-34
+33
 00:01:32.706 --> 00:01:36.926
 And the goal with this
 program is to give confidence
 
-35
+34
 00:01:36.926 --> 00:01:40.096
 to consumers that when they
 purchase a game controller
 
-36
+35
 00:01:40.316 --> 00:01:44.516
 that has one of these icons
 on the box, they're assured
 
-37
+36
 00:01:44.516 --> 00:01:47.576
 that their game controller
 is going to work
 
-38
+37
 00:01:47.576 --> 00:01:50.606
 with all your games that support
 the game controller framework.
 
-39
+38
 00:01:51.306 --> 00:01:54.166
 So that's the first part,
 the MFi Specification.
 
-40
+39
 00:01:55.616 --> 00:01:58.706
 The second part is the
 game controller framework.
 
+40
+00:01:59.386 --> 00:02:01.036
+This is the software
+side of things,
+
 41
-00:01:59.386 --> 00:02:01.036
-This is the software
-side of things,
-
-42
-00:01:59.386 --> 00:02:01.036
-This is the software
-side of things,
-
-43
 00:02:01.446 --> 00:02:03.706
 what you as game
 developers will be using
 
-44
+42
 00:02:03.906 --> 00:02:05.996
 to integrate game
 controllers into your games.
 
-45
+43
 00:02:07.246 --> 00:02:10.645
 This is an iOS and OS X
 cross-platform framework.
 
-46
+44
 00:02:11.196 --> 00:02:13.196
 So code that you write
 for game controllers
 
-47
+45
 00:02:13.196 --> 00:02:15.236
 in one is directly
 usable in the other.
 
-48
+46
 00:02:15.366 --> 00:02:19.256
 And it features a simple
 API, which allows you
 
-49
+47
 00:02:19.256 --> 00:02:22.896
 to find controllers and read the
 input off of those controllers.
 
-50
+48
 00:02:23.746 --> 00:02:29.126
 And the goal with this side of
 things with the framework is
 
-51
+49
 00:02:29.126 --> 00:02:32.506
 to give you one API
 so that you can focus
 
-52
+50
 00:02:32.506 --> 00:02:33.666
 on developing your game,
 
-53
+51
 00:02:34.196 --> 00:02:37.276
 integrating game controllers
 really smoothly and not have
 
-54
+52
 00:02:37.336 --> 00:02:39.986
 to worry about little
 variations in all sorts
 
-55
+53
 00:02:39.986 --> 00:02:41.186
 of different controllers.
 
-56
+54
 00:02:41.766 --> 00:02:45.616
 So that's the second part,
 the game controller framework.
 
-57
+55
 00:02:46.526 --> 00:02:48.696
 Now, what kind of
 controllers are available?
 
-58
+56
 00:02:50.026 --> 00:02:51.006
 There are three types.
 
-59
+57
 00:02:51.596 --> 00:02:54.526
 The first type is a form-fitting
 standard controller.
 
-60
+58
 00:02:55.406 --> 00:02:57.426
 And by form-fitting, we mean
 
-61
+59
 00:02:57.426 --> 00:02:59.766
 that the controller
 encases the device.
 
-62
+60
 00:03:01.436 --> 00:03:05.246
 Therefore, the touch screen is
 easily accessible while they're
 
-63
+61
 00:03:05.246 --> 00:03:06.226
 playing with the game pad,
 
-64
+62
 00:03:06.366 --> 00:03:08.846
 and so is motion
 control of the device.
 
-65
+63
 00:03:09.926 --> 00:03:13.256
 And by "standard," we're
 referring to the controls layout
 
-66
+64
 00:03:13.336 --> 00:03:17.066
 on the gamepad, specifically
 that there's a D-pad,
 
-67
+65
 00:03:17.146 --> 00:03:21.726
 that there are four face
 buttons (A, B, X and Y,
 
-68
+66
 00:03:21.726 --> 00:03:24.016
 always in these colors
 and in these locations)
 
-69
+67
 00:03:24.816 --> 00:03:27.916
 and two shoulder
 buttons (L and R).
 
-70
+68
 00:03:28.426 --> 00:03:29.816
 So that's the first
 controller type.
 
-71
+69
 00:03:30.576 --> 00:03:34.066
 The second controller
 is the form-fitting
 
-72
+70
 00:03:34.066 --> 00:03:35.136
 extended controller.
 
-73
+71
 00:03:35.596 --> 00:03:37.056
 So it too is form-fitting.
 
-74
+72
 00:03:38.086 --> 00:03:41.636
 And the extended control layout
 has all the same controls
 
-75
+73
 00:03:41.966 --> 00:03:43.136
 of the standard controller,
 
-76
+74
 00:03:43.906 --> 00:03:49.086
 but it adds to it two
 thumbsticks and two triggers.
 
-77
+75
 00:03:49.586 --> 00:03:52.636
 That's the second
 controller type.
 
-78
+76
 00:03:53.536 --> 00:03:57.816
 The third controller type is the
 standalone extended controller.
 
-79
+77
 00:03:58.466 --> 00:04:03.496
 And by standalone, we mean
 the controller does not encase
 
-80
-00:03:58.466 --> 00:04:03.496
-And by standalone, we mean
-the controller does not encase
-
-81
+78
 00:04:03.546 --> 00:04:04.166
 the device.
 
-82
+79
 00:04:05.176 --> 00:04:07.766
 So the touch screen is
 not easily accessible.
 
-83
+80
 00:04:08.156 --> 00:04:09.986
 Motion control is not an option.
 
-84
+81
 00:04:10.646 --> 00:04:13.276
 You're only getting input
 from the controller itself.
 
-85
+82
 00:04:14.386 --> 00:04:17.146
 And again, this has the exact
 same extended control layout
 
-86
+83
 00:04:17.146 --> 00:04:18.505
 as the previous extended
 controller.
 
-87
+84
 00:04:19.185 --> 00:04:22.506
 So that's an overview.
 
-88
+85
 00:04:23.366 --> 00:04:26.096
 Now, I'm going to focus
 the rest of my talk
 
-89
+86
 00:04:26.136 --> 00:04:28.896
 on the game controller
 framework itself
 
-90
+87
 00:04:28.946 --> 00:04:30.946
 and how you use the framework
 
-91
+88
 00:04:31.266 --> 00:04:32.956
 to integrate game
 controllers into your games.
 
-92
+89
 00:04:33.476 --> 00:04:36.796
 Specifically, we're going to
 find out inside your game,
 
-93
+90
 00:04:36.896 --> 00:04:37.586
 how do you know
 
-94
+91
 00:04:37.876 --> 00:04:40.216
 which controllers are
 available for your game to use?
 
-95
+92
 00:04:40.756 --> 00:04:42.156
 We're going to talk about
 finding controllers.
 
-96
+93
 00:04:43.036 --> 00:04:45.466
 I'm also going to talk about
 the various inputs found
 
-97
+94
 00:04:45.466 --> 00:04:49.246
 on controllers, like the buttons
 and the D-pads and how those map
 
-98
+95
 00:04:49.356 --> 00:04:51.846
 in software, and how
 you can read whether
 
-99
+96
 00:04:51.846 --> 00:04:54.056
 or not a player is pressing
 the A button or the D-pad.
 
-100
+97
 00:04:55.346 --> 00:04:57.606
 I'm also going to
 talk about what's new.
 
-101
+98
 00:04:58.166 --> 00:04:59.576
 What have we been
 working on this past year?
 
-102
+99
 00:04:59.576 --> 00:05:01.226
 What are we introducing at iOS 8
 
-103
-00:04:59.576 --> 00:05:01.226
-What are we introducing at iOS 8
-
-104
+100
 00:05:01.226 --> 00:05:02.686
 and with respect to
 game controllers?
 
-105
+101
 00:05:03.436 --> 00:05:05.376
 One really cool thing that
 I'm excited to tell you
 
-106
+102
 00:05:05.376 --> 00:05:08.246
 about is controller forwarding.
 
-107
+103
 00:05:09.166 --> 00:05:14.096
 In a nutshell, this is
 a way for a controller
 
-108
+104
 00:05:14.096 --> 00:05:17.696
 with a snapped-in iPhone to be
 used as a wireless controller
 
-109
+105
 00:05:17.696 --> 00:05:19.546
 to control the game
 play experience
 
-110
+106
 00:05:19.606 --> 00:05:23.746
 on another device, like an iPad.
 
-111
+107
 00:05:23.926 --> 00:05:25.356
 And throughout the talk,
 
-112
+108
 00:05:25.406 --> 00:05:30.796
 I'm going to be giving a heavy
 emphasis to design guidance.
 
-113
+109
 00:05:31.346 --> 00:05:33.106
 It's actually fairly
 straightforward
 
-114
+110
 00:05:33.106 --> 00:05:35.376
 to integrate game
 controllers into your game.
 
-115
+111
 00:05:36.256 --> 00:05:38.996
 And it's going to be
 really instructive to talk
 
-116
+112
 00:05:38.996 --> 00:05:41.186
 about design guidance
 based on things
 
-117
+113
 00:05:41.186 --> 00:05:43.436
 that we've seen this past year.
 
-118
+114
 00:05:44.046 --> 00:05:47.716
 And I'd really like
 to focus especially
 
-119
+115
 00:05:48.006 --> 00:05:51.466
 on an Apple Design Award winning
 game this year, Leo's Fortune,
 
-120
+116
 00:05:52.326 --> 00:05:55.566
 because it integrates game
 controllers really, really well.
 
-121
+117
 00:05:55.726 --> 00:05:56.946
 It's a fantastic integration.
 
-122
+118
 00:05:56.946 --> 00:05:57.686
 And I think it's going
 
-123
+119
 00:05:57.686 --> 00:06:02.226
 to be really instructive
 for all of us.
 
-124
-00:05:57.686 --> 00:06:02.226
-to be really instructive
-for all of us.
-
-125
+120
 00:06:02.486 --> 00:06:04.946
 So, let's talk about
 finding controllers.
 
-126
+121
 00:06:05.066 --> 00:06:08.116
 How do I know which controllers
 are available to my game?
 
-127
+122
 00:06:08.756 --> 00:06:13.106
 The first thing you're going
 to want know is the main class
 
-128
+123
 00:06:13.156 --> 00:06:14.276
 that you're going
 to be interacting
 
-129
+124
 00:06:14.276 --> 00:06:16.316
 with in the game
 controller framework is
 
-130
+125
 00:06:16.316 --> 00:06:17.486
 called GCController.
 
-131
+126
 00:06:17.486 --> 00:06:20.946
 Now, this is the same class
 for all controller types.
 
-132
+127
 00:06:21.826 --> 00:06:24.116
 And it allows you to do a
 few things, like finding
 
-133
+128
 00:06:24.116 --> 00:06:27.016
 which controllers are available,
 reading the inputs off
 
-134
+129
 00:06:27.016 --> 00:06:30.106
 of the controllers and
 additional information
 
-135
+130
 00:06:30.106 --> 00:06:32.416
 about the controller
 itself, such as whether
 
-136
+131
 00:06:32.416 --> 00:06:35.406
 or not it's form-fitting, if
 it's standard or extended.
 
-137
+132
 00:06:36.126 --> 00:06:40.706
 Now, to find which controllers
 are currently connected,
 
-138
+133
 00:06:41.616 --> 00:06:44.766
 call the controllers class
 method on GCController.
 
-139
+134
 00:06:45.296 --> 00:06:48.026
 It returns you an array of
 currently connected controllers.
 
-140
+135
 00:06:48.666 --> 00:06:51.926
 Or, an empty array if no
 controllers are connected.
 
-141
+136
 00:06:53.356 --> 00:06:55.066
 Now, this array starts
 off empty.
 
-142
+137
 00:06:55.646 --> 00:06:58.036
 And it's updated as
 controllers are added
 
-143
+138
 00:06:58.036 --> 00:06:59.256
 and removed from the system.
 
-144
+139
 00:06:59.796 --> 00:07:01.286
 So whenever you check
 this method,
 
-145
-00:06:59.796 --> 00:07:01.286
-So whenever you check
-this method,
-
-146
+140
 00:07:02.206 --> 00:07:03.856
 it'll return you the
 latest information
 
-147
+141
 00:07:03.856 --> 00:07:05.066
 on what's currently connected.
 
-148
+142
 00:07:05.286 --> 00:07:09.736
 Now let me explain
 visually how we're going
 
-149
+143
 00:07:09.736 --> 00:07:10.816
 to structure our code.
 
-150
+144
 00:07:11.856 --> 00:07:15.216
 There are two methods that we're
 particularly interested in.
 
-151
+145
 00:07:15.686 --> 00:07:18.236
 "One is application:
 didFinishLaunching WithOptions".
 
-152
+146
 00:07:18.876 --> 00:07:21.626
 And the second is a method
 you're expected to create.
 
-153
+147
 00:07:22.296 --> 00:07:24.406
 In this case we're calling
 it setupControllers.
 
-154
+148
 00:07:25.416 --> 00:07:28.696
 Now setupControllers
 is your central method
 
-155
+149
 00:07:28.736 --> 00:07:33.076
 where you track controller
 state and take action
 
-156
+150
 00:07:33.076 --> 00:07:34.706
 as appropriate to your game.
 
-157
+151
 00:07:35.376 --> 00:07:36.976
 In there we're going to
 check the controllers array.
 
-158
+152
 00:07:38.626 --> 00:07:42.946
 Next, we're going to connect
 and disconnect controllers.
 
-159
+153
 00:07:42.946 --> 00:07:44.846
 And we want to find
 out specifically
 
-160
+154
 00:07:44.846 --> 00:07:46.126
 when they connect
 and disconnect.
 
-161
+155
 00:07:46.156 --> 00:07:47.846
 So we're going to
 set up notifications
 
-162
+156
 00:07:48.146 --> 00:07:49.976
 to be notified when
 players do this.
 
-163
+157
 00:07:51.096 --> 00:07:53.706
 And importantly,
 we're going to --
 
-164
+158
 00:07:53.946 --> 00:07:56.176
 the action we're going to take
 whenever a controller connects
 
-165
+159
 00:07:56.176 --> 00:07:59.406
 or disconnects is to call
 our setupControllers method.
 
-166
+160
 00:08:00.346 --> 00:08:02.656
 Lastly, we're going to setup --
 
-167
+161
 00:08:02.656 --> 00:08:05.206
 we're going to kick off a
 wireless discovery process.
 
-168
+162
 00:08:05.696 --> 00:08:08.896
 And what this does is it
 allows those controllers
 
-169
+163
 00:08:09.016 --> 00:08:11.496
 which communicate
 wirelessly to pair
 
-170
+164
 00:08:11.496 --> 00:08:14.736
 with your phone right
 within your game.
 
-171
+165
 00:08:15.086 --> 00:08:16.866
 So you don't have to exit to --
 
-172
+166
 00:08:16.986 --> 00:08:18.666
 or your players don't
 have to exit
 
-173
+167
 00:08:18.666 --> 00:08:21.126
 to the settings screen
 in order to do that.
 
-174
+168
 00:08:21.886 --> 00:08:23.996
 And importantly, notice
 the cascade effect here.
 
-175
+169
 00:08:24.316 --> 00:08:26.116
 When we kickoff wireless
 discovery,
 
-176
+170
 00:08:26.596 --> 00:08:28.556
 whenever controllers
 happen to be discovered,
 
-177
+171
 00:08:29.616 --> 00:08:31.926
 connection notifications
 are posted,
 
-178
+172
 00:08:32.296 --> 00:08:33.686
 which in turn will cascade down
 
-179
+173
 00:08:33.686 --> 00:08:35.155
 and call our setupControllers
 method.
 
-180
+174
 00:08:35.655 --> 00:08:36.666
 So that's the game plan.
 
-181
+175
 00:08:36.666 --> 00:08:38.765
 Let's look at the code
 for how to do that.
 
-182
+176
 00:08:40.006 --> 00:08:42.596
 We're within application:
 didFinishLaunching WithOptions.
 
-183
+177
 00:08:43.006 --> 00:08:46.256
 And you'll notice the first
 thing we do is we call --
 
-184
+178
 00:08:46.396 --> 00:08:49.746
 or we check whether the
 GCController class exists.
 
-185
+179
 00:08:50.416 --> 00:08:52.686
 And by extension, what we're
 doing here is we're checking
 
-186
+180
 00:08:52.686 --> 00:08:55.906
 whether the game controller
 framework exists in the version
 
-187
+181
 00:08:55.906 --> 00:08:58.056
 of the operating system that
 your game is running on.
 
-188
+182
 00:08:58.936 --> 00:09:00.066
 This is important for those
 
-189
-00:08:58.936 --> 00:09:00.066
-This is important for those
-
-190
+183
 00:09:00.066 --> 00:09:04.926
 of you whose games support
 operating systems earlier
 
-191
+184
 00:09:04.926 --> 00:09:08.336
 than iOS 7 and earlier
 than OS X Mavericks.
 
-192
+185
 00:09:08.946 --> 00:09:11.466
 (The operating systems where
 the game controller framework
 
-193
+186
 00:09:11.466 --> 00:09:12.146
 was introduced.)
 
-194
+187
 00:09:13.846 --> 00:09:16.196
 Assuming the game
 controller framework exists,
 
-195
+188
 00:09:16.806 --> 00:09:18.616
 then we go ahead and register
 
-196
+189
 00:09:18.616 --> 00:09:21.276
 for notifications whenever
 controllers connect
 
-197
+190
 00:09:21.276 --> 00:09:21.896
 and disconnect.
 
-198
+191
 00:09:22.886 --> 00:09:24.646
 We do this using the
 notification names
 
-199
+192
 00:09:24.936 --> 00:09:27.446
 GCControllerDid
 ConnectNotification
 
-200
+193
 00:09:27.906 --> 00:09:30.376
 and GCControllerDid
 DisconnectNotification.
 
-201
+194
 00:09:30.926 --> 00:09:34.026
 And you'll notice that in
 both of these situations,
 
-202
+195
 00:09:34.236 --> 00:09:36.116
 whenever these notifications
 are posted,
 
-203
+196
 00:09:36.816 --> 00:09:38.376
 we're calling setupControllers.
 
-204
+197
 00:09:40.856 --> 00:09:44.656
 Lastly, we call
 startWirelessController
 
-205
+198
 00:09:44.656 --> 00:09:46.386
 Discovery WithCompletionHandler.
 
-206
+199
 00:09:47.026 --> 00:09:50.306
 Now, this kicks off
 asynchronous scanning
 
-207
+200
 00:09:50.686 --> 00:09:52.246
 of wireless controllers.
 
-208
+201
 00:09:52.826 --> 00:09:58.166
 When the completion handler
 is called, the scanning
 
-209
+202
 00:09:58.166 --> 00:10:00.066
 of wireless controllers
 has stopped.
 
-210
-00:09:58.166 --> 00:10:00.066
-of wireless controllers
-has stopped.
-
-211
+203
 00:10:00.746 --> 00:10:04.086
 And any controllers
 that are wireless
 
-212
+204
 00:10:04.086 --> 00:10:07.156
 that have already been
 discovered will have already
 
-213
+205
 00:10:07.156 --> 00:10:10.206
 called, or rather, posted
 notifications for connection.
 
-214
+206
 00:10:10.716 --> 00:10:11.946
 And by association,
 
-215
+207
 00:10:11.946 --> 00:10:14.186
 setupControllers will
 have already been called.
 
-216
+208
 00:10:15.386 --> 00:10:18.826
 So the important takeaway here
 is it's completely unnecessary
 
-217
+209
 00:10:18.826 --> 00:10:21.076
 to explicitly call
 setupControllers
 
-218
+210
 00:10:21.156 --> 00:10:21.936
 within the handler.
 
-219
+211
 00:10:21.936 --> 00:10:26.286
 Now let's look at our other
 method, setupControllers.
 
-220
+212
 00:10:27.616 --> 00:10:29.286
 Here we're checking
 the controllers array.
 
-221
+213
 00:10:30.386 --> 00:10:33.406
 And if it's non-empty, we take
 action appropriate to our game.
 
-222
+214
 00:10:34.046 --> 00:10:35.856
 So that's it.
 
-223
+215
 00:10:35.856 --> 00:10:36.656
 That's how you find
 
-224
+216
 00:10:36.656 --> 00:10:38.606
 which controllers are
 available on your system.
 
-225
+217
 00:10:39.596 --> 00:10:42.516
 Now, I'd like to offer
 some design guidance on how
 
-226
+218
 00:10:42.516 --> 00:10:45.096
 to gracefully handle
 connections and disconnections.
 
-227
+219
 00:10:45.936 --> 00:10:47.946
 When a player connects
 a controller,
 
-228
+220
 00:10:49.336 --> 00:10:52.476
 they're communicating intent
 to use that controller
 
-229
+221
 00:10:52.476 --> 00:10:54.406
 as their preferred control
 scheme for your game.
 
-230
+222
 00:10:55.696 --> 00:10:57.936
 And your game should
 react accordingly.
 
-231
+223
 00:10:58.436 --> 00:11:01.606
 So, specifically, move to
 controller-based input.
 
-232
-00:10:58.436 --> 00:11:01.606
-So, specifically, move to
-controller-based input.
-
-233
+224
 00:11:02.806 --> 00:11:06.156
 Remove any on-screen
 visuals that are virtual,
 
-234
+225
 00:11:06.156 --> 00:11:09.746
 like virtual D-pads and analog
 sticks, virtual buttons.
 
-235
+226
 00:11:10.296 --> 00:11:13.916
 Those are now redundant since
 the gamepad already has those.
 
-236
+227
 00:11:15.336 --> 00:11:17.296
 Each gamepad also
 has a pause button.
 
-237
+228
 00:11:17.296 --> 00:11:19.076
 So even the little
 pause button overlay
 
-238
+229
 00:11:19.076 --> 00:11:22.246
 on the screen can be
 offloaded from the screen
 
-239
+230
 00:11:22.686 --> 00:11:25.166
 because the game
 controller has that.
 
-240
+231
 00:11:25.356 --> 00:11:27.906
 And lastly, you're going to
 want to set the playerIndex,
 
-241
+232
 00:11:28.306 --> 00:11:29.766
 which is a property
 on the controller.
 
-242
+233
 00:11:30.176 --> 00:11:32.496
 And this will light up the
 LEDs on the controller.
 
-243
+234
 00:11:32.966 --> 00:11:34.686
 This gives important
 feedback to your player
 
-244
+235
 00:11:34.936 --> 00:11:37.196
 that this game controller
 is recognized
 
-245
+236
 00:11:37.196 --> 00:11:38.416
 and being used by your game.
 
-246
+237
 00:11:38.946 --> 00:11:42.466
 And disconnections can happen
 for a variety of reasons.
 
-247
+238
 00:11:42.466 --> 00:11:44.926
 Either the player explicitly
 disconnects the controller,
 
-248
+239
 00:11:45.166 --> 00:11:48.586
 or maybe for whatever reason,
 the connection becomes loose
 
-249
+240
 00:11:48.586 --> 00:11:50.546
 or the batteries run out.
 
-250
+241
 00:11:50.546 --> 00:11:53.796
 In this case, as a
 convenience to the players,
 
-251
+242
 00:11:53.836 --> 00:11:55.066
 consider pausing the game play
 
-252
+243
 00:11:55.066 --> 00:11:56.406
 if that's appropriate
 for your game.
 
-253
+244
 00:11:57.036 --> 00:11:59.506
 Give them an opportunity
 to reconnect or return
 
-254
+245
 00:11:59.506 --> 00:12:01.846
 to regular controls if
 that's an appropriate action.
 
-255
-00:11:59.506 --> 00:12:01.846
-to regular controls if
-that's an appropriate action.
-
-256
+246
 00:12:02.676 --> 00:12:06.686
 Now, I'd like to focus
 in on the player's intent
 
-257
+247
 00:12:06.686 --> 00:12:07.436
 when they connect.
 
-258
+248
 00:12:09.276 --> 00:12:11.946
 Some games that use
 tilt-and-touch control,
 
-259
+249
 00:12:13.336 --> 00:12:15.676
 upon entering gameplay,
 they present the player
 
-260
+250
 00:12:15.676 --> 00:12:17.886
 with this kind of an
 option: "Do you want
 
-261
+251
 00:12:17.886 --> 00:12:19.596
 to use tilt control
 or touch control?"
 
-262
+252
 00:12:20.226 --> 00:12:24.646
 And this is a great option for
 games to present to players.
 
-263
+253
 00:12:26.356 --> 00:12:28.766
 Until they snap in
 a game controller.
 
-264
+254
 00:12:30.006 --> 00:12:32.586
 Now, the player's intent is
 to use the game controller.
 
-265
+255
 00:12:33.056 --> 00:12:35.956
 And this kind of a choice
 is actually confusing
 
-266
+256
 00:12:35.956 --> 00:12:36.626
 to the players.
 
-267
+257
 00:12:37.086 --> 00:12:37.926
 Does this actually mean
 
-268
+258
 00:12:37.926 --> 00:12:39.876
 that this game doesn't
 support game controllers?
 
-269
+259
 00:12:40.956 --> 00:12:43.296
 Or does it mean that my
 controller isn't connected
 
-270
+260
 00:12:43.296 --> 00:12:44.476
 properly to my phone?
 
-271
+261
 00:12:45.556 --> 00:12:47.016
 Or if I select one
 of these options,
 
-272
+262
 00:12:47.016 --> 00:12:49.526
 will that disable
 game controller input?
 
-273
+263
 00:12:50.876 --> 00:12:53.326
 Instead, if you have a
 dialog that looks like this
 
-274
+264
 00:12:53.326 --> 00:12:55.906
 in your game, gate it on whether
 
-275
+265
 00:12:55.906 --> 00:12:57.686
 or not a controller is
 currently connected.
 
-276
+266
 00:12:58.136 --> 00:13:01.366
 If it is, that is sufficient
 intent that the player wishes
 
-277
-00:12:58.136 --> 00:13:01.366
-If it is, that is sufficient
-intent that the player wishes
-
-278
+267
 00:13:01.366 --> 00:13:02.476
 to use game controllers.
 
-279
+268
 00:13:02.476 --> 00:13:04.126
 And this kind of a
 dialog is unnecessary.
 
-280
+269
 00:13:05.946 --> 00:13:09.466
 Now, another kind of dialog
 you might be tempted to put
 
-281
+270
 00:13:09.466 --> 00:13:12.266
 up is one like this:
 "Game controller detected.
 
-282
+271
 00:13:12.546 --> 00:13:13.366
 Would you like to use it?
 
-283
+272
 00:13:13.366 --> 00:13:13.966
 Yes or No."
 
-284
+273
 00:13:13.966 --> 00:13:16.496
 And at least we're giving
 feedback to the player that,
 
-285
+274
 00:13:16.496 --> 00:13:18.926
 yes, this controller is
 connected and recognized.
 
-286
+275
 00:13:19.376 --> 00:13:22.906
 But again, the intent
 that the player has
 
-287
+276
 00:13:22.906 --> 00:13:24.326
 when they connect
 the controller is
 
-288
+277
 00:13:24.326 --> 00:13:25.536
 that they actually
 want to use it.
 
-289
+278
 00:13:25.746 --> 00:13:27.856
 And so such a dialog
 is redundant.
 
-290
+279
 00:13:28.256 --> 00:13:29.496
 If you have this
 kind of a dialog,
 
-291
+280
 00:13:29.706 --> 00:13:31.746
 you don't actually need it.
 
-292
+281
 00:13:31.836 --> 00:13:33.616
 Just use the controller
 if it's available.
 
-293
+282
 00:13:34.796 --> 00:13:37.166
 And as an example of a game
 that does this really well,
 
-294
+283
 00:13:37.166 --> 00:13:38.856
 I'd like to look
 at Leo's Fortune.
 
-295
+284
 00:13:39.436 --> 00:13:41.486
 Here it is in one of
 its touchscreen modes
 
-296
+285
 00:13:41.876 --> 00:13:44.536
 where you're controlling the
 main character using virtual
 
-297
+286
 00:13:44.536 --> 00:13:45.936
 buttons along the
 bottom of the screen.
 
-298
+287
 00:13:46.586 --> 00:13:47.226
 This is great.
 
-299
+288
 00:13:47.316 --> 00:13:48.916
 We don't have a game
 controller attached.
 
-300
+289
 00:13:49.636 --> 00:13:51.636
 And the game is very
 obviously presenting these
 
-301
+290
 00:13:51.636 --> 00:13:52.436
 control options.
 
-302
+291
 00:13:53.026 --> 00:13:55.086
 Now watch what happens when
 we connect a controller.
 
-303
+292
 00:13:57.436 --> 00:13:59.266
 The virtual buttons went away.
 
-304
+293
 00:13:59.346 --> 00:14:03.536
 And importantly, the player
 didn't have to take any action.
 
-305
-00:13:59.346 --> 00:14:03.536
-And importantly, the player
-didn't have to take any action.
-
-306
+294
 00:14:05.086 --> 00:14:06.366
 No dialogs were presented.
 
-307
+295
 00:14:06.516 --> 00:14:07.716
 No choice was given.
 
-308
+296
 00:14:08.176 --> 00:14:10.746
 The game just assumes
 that the existence
 
-309
+297
 00:14:10.956 --> 00:14:15.626
 of a connected controller is
 intent and permission to use it.
 
-310
+298
 00:14:19.666 --> 00:14:21.776
 So, we've talked about
 finding controllers.
 
-311
+299
 00:14:22.096 --> 00:14:24.926
 The next step is how do I
 actually read the inputs?
 
-312
+300
 00:14:25.716 --> 00:14:27.866
 How do I find out if the
 A button is being pressed?
 
-313
+301
 00:14:28.206 --> 00:14:31.216
 And before I get to that,
 let's go through and talk
 
-314
+302
 00:14:31.216 --> 00:14:33.716
 about what kind of inputs
 you're going to find
 
-315
+303
 00:14:33.716 --> 00:14:34.936
 on the controllers themselves.
 
-316
+304
 00:14:38.256 --> 00:14:40.946
 So, first and foremost,
 when you're designing
 
-317
+305
 00:14:40.946 --> 00:14:45.106
 for game controllers, keep in
 mind to first design for touch.
 
-318
+306
 00:14:45.596 --> 00:14:48.706
 You want the native controls
 of your operating system
 
-319
+307
 00:14:49.076 --> 00:14:50.446
 to be usable at all times.
 
-320
+308
 00:14:50.786 --> 00:14:51.806
 And this makes sense.
 
-321
+309
 00:14:52.426 --> 00:14:55.066
 If a game player downloads
 your game from the App Store,
 
-322
+310
 00:14:56.126 --> 00:14:58.686
 they're going to have the
 expectation -- correctly so --
 
-323
+311
 00:14:58.686 --> 00:15:00.916
 that they're able to play
 it regardless of whether
 
-324
-00:14:58.686 --> 00:15:00.916
-that they're able to play
-it regardless of whether
-
-325
+312
 00:15:00.916 --> 00:15:02.216
 or not they have
 a game controller.
 
-326
+313
 00:15:03.196 --> 00:15:04.496
 So, put another way,
 
-327
+314
 00:15:04.746 --> 00:15:08.166
 game controllers cannot be
 required to play your game.
 
-328
+315
 00:15:08.166 --> 00:15:11.886
 Now, let's talk about profiles.
 
-329
+316
 00:15:12.176 --> 00:15:16.166
 So profiles are the software
 mapping to the hardware.
 
-330
+317
 00:15:16.926 --> 00:15:18.826
 So we have three
 different controller types.
 
-331
+318
 00:15:19.516 --> 00:15:22.476
 And they are mapped in software
 to two different profiles.
 
-332
+319
 00:15:23.686 --> 00:15:26.126
 One is called gamepad,
 and the second is
 
-333
+320
 00:15:26.126 --> 00:15:28.026
 called extendedGamepad.
 
-334
+321
 00:15:28.366 --> 00:15:31.576
 And you'll notice all
 controllers support the
 
-335
+322
 00:15:31.576 --> 00:15:32.706
 gamepad profile.
 
-336
+323
 00:15:32.706 --> 00:15:37.206
 Now, the physical controllers,
 
-337
+324
 00:15:37.206 --> 00:15:39.706
 which are extended
 control layouts,
 
-338
+325
 00:15:40.056 --> 00:15:42.436
 also support the
 extendedGamepad.
 
-339
+326
 00:15:43.456 --> 00:15:47.996
 So if you support only
 the gamepad profile,
 
-340
+327
 00:15:47.996 --> 00:15:49.936
 you're guaranteed that
 your game will be playable
 
-341
+328
 00:15:49.936 --> 00:15:51.246
 on any controller available.
 
-342
+329
 00:15:51.536 --> 00:15:54.826
 And if you wish to support
 the analog thumbsticks
 
-343
+330
 00:15:54.826 --> 00:15:58.376
 and the triggers, then you'll
 target the extendedGamepad
 
-344
+331
 00:15:58.376 --> 00:15:59.186
 profile as well.
 
-345
+332
 00:16:00.106 --> 00:16:02.116
 So these are properties on
 the controller instance.
 
-346
+333
 00:16:02.376 --> 00:16:06.556
 Let's look at what properties
 are within the gamepad profile.
 
-347
+334
 00:16:06.686 --> 00:16:12.856
 We have buttonA, buttonB,
 buttonX, and buttonY.
 
-348
+335
 00:16:12.856 --> 00:16:14.946
 And these correspond to
 the four face buttons.
 
-349
+336
 00:16:16.006 --> 00:16:18.906
 Similarly, the two shoulder
 buttons are called leftShoulder
 
-350
+337
 00:16:18.906 --> 00:16:20.316
 and rightShoulder
 in the framework.
 
-351
+338
 00:16:20.316 --> 00:16:24.066
 And the D-pad is
 simply called dpad.
 
-352
+339
 00:16:24.226 --> 00:16:27.046
 Now, switching over to
 the extended profile,
 
-353
+340
 00:16:27.706 --> 00:16:32.576
 extendedGamepad, it has all the
 same properties from gamepad
 
-354
+341
 00:16:32.616 --> 00:16:36.336
 and in addition, we
 add leftThumbstick
 
-355
+342
 00:16:36.336 --> 00:16:41.826
 and rightThumbstick, and
 leftTrigger and rightTrigger,
 
-356
+343
 00:16:42.516 --> 00:16:44.126
 corresponding to the
 additional controls
 
-357
+344
 00:16:44.166 --> 00:16:45.626
 that extended gamepads give us.
 
-358
+345
 00:16:46.066 --> 00:16:48.856
 Now I'd like to call your
 attention to the fact
 
-359
+346
 00:16:48.856 --> 00:16:52.826
 that triggers and face buttons,
 while physically different
 
-360
+347
 00:16:53.456 --> 00:16:54.826
 to the Game Controller
 framework,
 
-361
+348
 00:16:54.826 --> 00:16:58.236
 we use the same data type:
 GCControllerButtonInput.
 
-362
+349
 00:16:59.626 --> 00:17:02.316
 Similarly, D-pads
 and thumbsticks,
 
-363
-00:16:59.626 --> 00:17:02.316
-Similarly, D-pads
-and thumbsticks,
-
-364
+350
 00:17:02.726 --> 00:17:05.606
 while being physically,
 different share the same class,
 
-365
+351
 00:17:05.876 --> 00:17:07.516
 called GCControllerDirectionPad.
 
-366
+352
 00:17:08.286 --> 00:17:13.826
 So let's talk about those
 classes, buttons and D-pads.
 
-367
+353
 00:17:14.016 --> 00:17:17.215
 GCControllerButtonInput
 represents all the buttons
 
-368
+354
 00:17:17.425 --> 00:17:18.586
 available on the controller.
 
-369
+355
 00:17:19.165 --> 00:17:20.915
 And these can be
 read in two ways.
 
-370
+356
 00:17:21.496 --> 00:17:23.776
 One is with the pressed
 property.
 
-371
+357
 00:17:23.866 --> 00:17:27.175
 And this returns the
 classic, digital version
 
-372
+358
 00:17:27.226 --> 00:17:29.996
 of a button whether or not
 it's being pressed: Yes or No.
 
-373
+359
 00:17:31.396 --> 00:17:34.506
 But, all buttons on game
 controllers are also
 
-374
+360
 00:17:34.506 --> 00:17:35.376
 pressure sensitive.
 
-375
+361
 00:17:35.956 --> 00:17:38.176
 And if this something
 that's useful for your game,
 
-376
+362
 00:17:38.696 --> 00:17:40.616
 you read that using
 the value property.
 
-377
+363
 00:17:41.416 --> 00:17:44.886
 This returns you a float
 normalized between 0
 
-378
+364
 00:17:44.886 --> 00:17:47.926
 and 1 indicating how hard
 the button is being pressed.
 
-379
+365
 00:17:48.406 --> 00:17:56.116
 Now, the A and B buttons have a
 special convention in iOS games
 
-380
+366
 00:17:56.116 --> 00:17:57.176
 and GameController games.
 
-381
+367
 00:17:58.206 --> 00:18:00.986
 The A button is intended
 to be your primary action.
 
-382
-00:17:58.206 --> 00:18:00.986
-The A button is intended
-to be your primary action.
-
-383
+368
 00:18:01.706 --> 00:18:05.166
 And the B button is to be
 used as the secondary action.
 
-384
+369
 00:18:05.976 --> 00:18:07.826
 And so you need to think
 about, with your game:
 
-385
+370
 00:18:07.986 --> 00:18:09.416
 "What is my primary action?
 
-386
+371
 00:18:09.876 --> 00:18:10.796
 Is it jumping?
 
-387
+372
 00:18:11.236 --> 00:18:12.306
 Is it shooting?
 
-388
+373
 00:18:12.866 --> 00:18:14.716
 Is it throwing a ball?"
 
-389
+374
 00:18:15.836 --> 00:18:17.936
 And also, think about
 it in the context of UI.
 
-390
+375
 00:18:18.656 --> 00:18:21.406
 If you're not in actual game
 play, what are the primary
 
-391
+376
 00:18:21.406 --> 00:18:22.516
 and secondary actions?
 
-392
+377
 00:18:23.766 --> 00:18:27.126
 For UI, it should be
 to confirm and accept
 
-393
+378
 00:18:27.476 --> 00:18:28.676
 for the primary action.
 
-394
+379
 00:18:29.836 --> 00:18:31.186
 And the B button should be used
 
-395
+380
 00:18:31.636 --> 00:18:33.836
 as cancelling, the
 secondary action.
 
-396
+381
 00:18:37.836 --> 00:18:41.146
 Let's talk about
 GCControllerDirectionPad now.
 
-397
+382
 00:18:41.786 --> 00:18:44.396
 Again, this is used for
 both D-pads and thumbsticks.
 
-398
+383
 00:18:45.026 --> 00:18:47.376
 And it's treated in
 two different ways.
 
-399
+384
 00:18:47.756 --> 00:18:51.776
 One is that it's treated
 as four buttons named Up,
 
-400
+385
 00:18:51.776 --> 00:18:53.026
 Down, Left and Right.
 
-401
+386
 00:18:53.026 --> 00:18:58.776
 And the second way we treat it
 is as two axes, xAxis and yAxis.
 
-402
+387
 00:18:59.946 --> 00:19:02.076
 And you'll recall that
 I said each button
 
-403
-00:18:59.946 --> 00:19:02.076
-And you'll recall that
-I said each button
-
-404
+388
 00:19:02.076 --> 00:19:04.606
 on the control pad is
 pressure sensitive?
 
-405
+389
 00:19:04.736 --> 00:19:06.996
 Well, that's also true of
 Up, Down, Left and Right,
 
-406
+390
 00:19:06.996 --> 00:19:08.106
 since they're the same class.
 
-407
+391
 00:19:09.206 --> 00:19:11.586
 So D-pads are effectively
 pressure sensitive
 
-408
+392
 00:19:11.686 --> 00:19:12.946
 and digital as well.
 
-409
+393
 00:19:14.126 --> 00:19:15.946
 Let's look at the axis.
 
-410
+394
 00:19:16.236 --> 00:19:19.656
 Now axes -- the value that's
 returned from an axis --
 
-411
+395
 00:19:19.946 --> 00:19:22.836
 is normalized between
 negative 1 and positive 1.
 
-412
+396
 00:19:22.996 --> 00:19:28.766
 And a value of 0 you can rely
 on being the axis at rest,
 
-413
+397
 00:19:29.446 --> 00:19:31.586
 meaning the player is
 not pressing that axis.
 
-414
+398
 00:19:32.846 --> 00:19:34.746
 Now, you have a guaranteed
 minimum range
 
-415
+399
 00:19:34.746 --> 00:19:35.656
 of the unit circle.
 
-416
+400
 00:19:36.276 --> 00:19:37.856
 Maximum range of
 the unit square.
 
-417
+401
 00:19:38.726 --> 00:19:41.066
 And for those of you who may
 have dealt with calibration
 
-418
+402
 00:19:41.066 --> 00:19:45.226
 of joysticks and deadzoning
 before, do not do that yourself.
 
-419
+403
 00:19:45.226 --> 00:19:48.876
 We already take care
 of that for you.
 
-420
+404
 00:19:49.426 --> 00:19:50.656
 So that's all the controls.
 
-421
+405
 00:19:50.656 --> 00:19:52.236
 And now you can get
 on with the business
 
-422
+406
 00:19:52.236 --> 00:19:55.646
 of assigning game actions
 to controller inputs.
 
-423
+407
 00:19:56.406 --> 00:20:00.646
 And one piece of advice I can
 offer is a principle which a lot
 
-424
-00:19:56.406 --> 00:20:00.646
-And one piece of advice I can
-offer is a principle which a lot
-
-425
+408
 00:20:00.646 --> 00:20:02.106
 of games use to great effect,
 
-426
+409
 00:20:02.236 --> 00:20:04.986
 which is to group
 logically similar actions.
 
-427
+410
 00:20:05.616 --> 00:20:07.386
 So in Leo's Fortune,
 for instance,
 
-428
+411
 00:20:07.746 --> 00:20:09.586
 our main character
 has four actions.
 
-429
+412
 00:20:09.846 --> 00:20:14.086
 He can walk left, right and
 he can jump and he can stomp.
 
-430
+413
 00:20:14.686 --> 00:20:20.416
 So the developers have
 mapped walking left
 
-431
+414
 00:20:20.416 --> 00:20:22.946
 and walking right to the D-pad.
 
-432
+415
 00:20:23.616 --> 00:20:26.266
 Walking left and walking right
 are logically similar actions.
 
-433
+416
 00:20:26.266 --> 00:20:27.016
 It's just walking.
 
-434
+417
 00:20:28.066 --> 00:20:30.076
 And so it makes sense to
 group those on the D-pad.
 
-435
+418
 00:20:31.066 --> 00:20:34.086
 Also, they're making good
 use of the D-pad's ability
 
-436
+419
 00:20:34.086 --> 00:20:35.676
 to readily switch directions.
 
-437
+420
 00:20:37.186 --> 00:20:41.106
 Now, jumping is assigned
 to the A button.
 
-438
+421
 00:20:42.436 --> 00:20:45.826
 This is because jumping
 is logically dissimilar
 
-439
+422
 00:20:45.826 --> 00:20:48.496
 from horizontal movement,
 and so it's separated.
 
-440
+423
 00:20:51.316 --> 00:20:53.776
 They could have assigned
 jumping to the Up button,
 
-441
+424
 00:20:54.826 --> 00:20:57.036
 but it's a logically
 dissimilar action,
 
-442
+425
 00:20:57.036 --> 00:20:59.076
 so it might have been a little
 bit more confusing for players.
 
-443
+426
 00:20:59.636 --> 00:21:01.656
 And, the D-pad's ability
 
-444
-00:20:59.636 --> 00:21:01.656
-And, the D-pad's ability
-
-445
+427
 00:21:01.656 --> 00:21:04.986
 to readily switch directions
 could actually fight the game
 
-446
+428
 00:21:04.986 --> 00:21:09.596
 player in this case
 and result in a lot
 
-447
+429
 00:21:09.596 --> 00:21:13.256
 of inadvertent jumps
 instead of lateral movement.
 
-448
+430
 00:21:13.826 --> 00:21:16.856
 Now the last ability
 is the stomp ability.
 
-449
+431
 00:21:17.066 --> 00:21:18.446
 That's been assigned
 to the B button.
 
-450
+432
 00:21:18.556 --> 00:21:20.886
 So again, logically
 dissimilar from walking,
 
-451
+433
 00:21:21.116 --> 00:21:22.036
 so we've separated it.
 
-452
+434
 00:21:22.036 --> 00:21:24.406
 But logically similar
 to jumping,
 
-453
+435
 00:21:24.686 --> 00:21:27.866
 so it's nearby to the A button.
 
-454
+436
 00:21:28.246 --> 00:21:31.876
 So now let's actually find
 out, now that you know
 
-455
+437
 00:21:31.876 --> 00:21:35.226
 which controls you want
 to assign to which actions
 
-456
+438
 00:21:35.226 --> 00:21:37.766
 in your game, let's actually
 go ahead and read some input.
 
-457
+439
 00:21:38.936 --> 00:21:40.576
 How do you find out if
 the A button is pressed?
 
-458
+440
 00:21:40.666 --> 00:21:42.676
 Well, it's really just as
 simple as reading a series
 
-459
+441
 00:21:42.676 --> 00:21:45.676
 of properties:
 myController.gamepad --
 
-460
+442
 00:21:45.676 --> 00:21:49.706
 gamepad being the profile
 -- .buttonA.pressed.
 
-461
+443
 00:21:50.206 --> 00:21:52.316
 Recall that pressed gives
 us the Boolean state
 
-462
+444
 00:21:52.316 --> 00:21:53.286
 for whether the button's
 pressed.
 
-463
+445
 00:21:53.786 --> 00:21:55.516
 In this case, we're
 going to fire our lasers.
 
-464
+446
 00:21:57.096 --> 00:21:58.866
 Now also in our weapons code,
 
-465
+447
 00:21:58.976 --> 00:22:02.656
 we're going to use
 the B button's analog
 
-466
-00:21:58.976 --> 00:22:02.656
-we're going to use
-the B button's analog
-
-467
+448
 00:22:02.656 --> 00:22:06.056
 and digital representations for
 this portion of the game play.
 
-468
+449
 00:22:06.876 --> 00:22:08.996
 If the B button is
 being pressed at (all
 
-469
+450
 00:22:08.996 --> 00:22:12.786
 in the digital sense) then we go
 ahead and start firing missiles
 
-470
+451
 00:22:12.866 --> 00:22:15.586
 at a rate that increases
 the harder
 
-471
+452
 00:22:15.586 --> 00:22:18.386
 that button is pressed;
 B-button .value.
 
-472
+453
 00:22:21.096 --> 00:22:23.906
 Then we apply thrust
 to our spaceship based
 
-473
+454
 00:22:23.906 --> 00:22:26.436
 on whether the player is
 pressing the D-pad up or down.
 
-474
+455
 00:22:27.426 --> 00:22:29.886
 This is perfect for the
 yAxis, so we're going
 
-475
+456
 00:22:29.886 --> 00:22:32.066
 to use the yAxis
 representation of the D-pad.
 
-476
+457
 00:22:32.646 --> 00:22:37.506
 And note that we're not guarding
 this line of code with a query
 
-477
+458
 00:22:37.576 --> 00:22:39.566
 for whether or not
 the axis is pressed.
 
-478
+459
 00:22:40.176 --> 00:22:42.236
 We're leveraging the
 fact that we can rely
 
-479
+460
 00:22:42.236 --> 00:22:45.386
 on the yAxis's value being 0
 
-480
+461
 00:22:45.386 --> 00:22:46.696
 when the player's
 not pressing it.
 
-481
+462
 00:22:47.186 --> 00:22:50.166
 And our applyThrust
 method is resilient to that
 
-482
+463
 00:22:50.166 --> 00:22:55.316
 and does nothing when a
 value of 0 is pressed.
 
-483
+464
 00:22:55.466 --> 00:22:58.516
 Lastly, we're taking
 special action
 
-484
+465
 00:22:58.706 --> 00:23:01.246
 if the controller that's
 controlling our game happens
 
-485
-00:22:58.706 --> 00:23:01.246
-if the controller that's
-controlling our game happens
-
-486
+466
 00:23:01.276 --> 00:23:02.656
 to be an extended controller.
 
-487
+467
 00:23:03.466 --> 00:23:05.626
 You can check if a
 controller is extended merely
 
-488
+468
 00:23:05.626 --> 00:23:08.896
 by checking whether or not the
 extendedGamepad profile is nil.
 
-489
+469
 00:23:10.456 --> 00:23:12.496
 Notice we weren't doing
 that above for gamepad,
 
-490
+470
 00:23:12.496 --> 00:23:15.346
 because gamepad is guaranteed to
 be non-nil since it's supported
 
-491
+471
 00:23:15.346 --> 00:23:16.556
 across all controller types.
 
-492
+472
 00:23:17.096 --> 00:23:21.626
 And in this case, we're using
 the right thumbstick's position
 
-493
+473
 00:23:22.176 --> 00:23:24.926
 to move a camera in our
 game back and forth.
 
-494
+474
 00:23:25.656 --> 00:23:27.936
 Now notice: the weapons
 and thrust code,
 
-495
+475
 00:23:29.226 --> 00:23:33.116
 we don't explicitly program for
 the extendedGamepad profile.
 
-496
+476
 00:23:33.786 --> 00:23:37.236
 But, the extended
 gamepad will fall back
 
-497
+477
 00:23:37.236 --> 00:23:39.506
 and use the same behavior
 that's specified here
 
-498
+478
 00:23:39.766 --> 00:23:43.896
 since it's not being
 overridden with competing code
 
-499
+479
 00:23:43.896 --> 00:23:45.646
 for the extendedGamepad profile.
 
-500
+480
 00:23:46.096 --> 00:23:48.916
 And what this means for
 you is that you don't have
 
-501
+481
 00:23:48.916 --> 00:23:52.796
 to duplicate the same code for
 both gamepad and extendedGamepad
 
-502
+482
 00:23:52.906 --> 00:23:54.786
 if you want it to do the
 same thing regardless
 
-503
+483
 00:23:54.786 --> 00:23:55.606
 of the type of controller.
 
-504
+484
 00:23:56.246 --> 00:24:01.946
 So that's one way to read
 controller inputs, is polling.
 
-505
-00:23:56.246 --> 00:24:01.946
-So that's one way to read
-controller inputs, is polling.
-
-506
+485
 00:24:02.166 --> 00:24:04.036
 Doing this once every
 game frame, typically.
 
-507
+486
 00:24:05.036 --> 00:24:06.536
 The other way is using events.
 
-508
+487
 00:24:06.746 --> 00:24:09.276
 Sometimes you just want to
 be notified when something
 
-509
+488
 00:24:09.276 --> 00:24:11.206
 on your control pad changes.
 
-510
+489
 00:24:11.746 --> 00:24:15.846
 Whether it's a button or
 an axis, even collections
 
-511
+490
 00:24:16.586 --> 00:24:21.506
 such as D-pads and thumbsticks,
 or profiles if you want to know
 
-512
+491
 00:24:21.506 --> 00:24:23.156
 if anything on the
 controller has changed.
 
-513
+492
 00:24:23.906 --> 00:24:26.866
 And you do this by registering
 a block as a change handler.
 
-514
+493
 00:24:27.516 --> 00:24:29.586
 Basically, "here's the
 code I want you to run
 
-515
+494
 00:24:29.886 --> 00:24:31.536
 when this input changes."
 
-516
+495
 00:24:32.796 --> 00:24:34.766
 So we have valueChangedHandlers.
 
-517
+496
 00:24:35.166 --> 00:24:36.856
 Note "value" corresponds
 
-518
+497
 00:24:36.856 --> 00:24:40.506
 to our querying the
 pressure-sensitive nature
 
-519
+498
 00:24:40.506 --> 00:24:42.416
 of the buttons, the
 float values.
 
-520
+499
 00:24:42.986 --> 00:24:47.796
 And new for iOS 8, we have
 a pressedChangedHandler.
 
-521
+500
 00:24:48.646 --> 00:24:50.916
 This is for querying
 digital changes.
 
-522
+501
 00:24:52.196 --> 00:24:54.206
 Let's look at an example of
 the pressedChangedHandler.
 
-523
+502
 00:24:55.826 --> 00:24:56.706
 In our game, we want
 
-524
+503
 00:24:56.706 --> 00:24:59.626
 to be notified whenever
 the Y button changes state
 
-525
+504
 00:25:00.076 --> 00:25:01.126
 in the digital sense.
 
-526
+505
 00:25:02.566 --> 00:25:05.066
 So we've set up the
 pressedChangedHandler.
 
-527
+506
 00:25:05.316 --> 00:25:08.996
 And it's called twice, once
 when the button is pressed
 
-528
+507
 00:25:08.996 --> 00:25:11.096
 and another time when
 the button is released.
 
-529
+508
 00:25:12.026 --> 00:25:15.226
 And you can filter that based
 on the pressed parameter here.
 
-530
+509
 00:25:16.076 --> 00:25:17.876
 In this case, we
 actually care about both.
 
-531
+510
 00:25:18.016 --> 00:25:21.936
 So when the button is pressed,
 we begin charging a speed boost.
 
-532
+511
 00:25:22.576 --> 00:25:26.406
 And when the button is released,
 we actually do the speed boost.
 
-533
+512
 00:25:29.306 --> 00:25:31.536
 Now, use pressure
 sensitivity with discernment.
 
-534
+513
 00:25:31.586 --> 00:25:34.086
 There are certain times where
 you might be tempted to see
 
-535
+514
 00:25:34.086 --> 00:25:36.936
 if a trigger, for
 instance, is being pulled.
 
-536
+515
 00:25:37.606 --> 00:25:41.856
 Don't use the analog "value"
 if what you really want to find
 
-537
+516
 00:25:41.856 --> 00:25:43.956
 out is whether or not that
 control is being pressed.
 
-538
+517
 00:25:44.576 --> 00:25:47.436
 If so, use "pressed" instead,
 the Boolean representation.
 
-539
+518
 00:25:48.336 --> 00:25:50.686
 Also, take advantage of
 the pressure-sensitivity
 
-540
+519
 00:25:50.686 --> 00:25:54.486
 of buttons and D-pads.
 
-541
+520
 00:25:54.546 --> 00:25:56.366
 D-pads, while thought
 of traditionally
 
-542
+521
 00:25:56.366 --> 00:26:00.286
 as a digital-only
 input, are a great way
 
-543
-00:25:56.366 --> 00:26:00.286
-as a digital-only
-input, are a great way
-
-544
+522
 00:26:00.606 --> 00:26:02.266
 to get 360 degree movement.
 
-545
+523
 00:26:02.746 --> 00:26:04.706
 So this is really
 important for players
 
-546
+524
 00:26:04.706 --> 00:26:09.476
 who have a standard gamepad
 without analog thumbsticks.
 
-547
+525
 00:26:09.636 --> 00:26:11.176
 The D-pad behaves really nicely.
 
-548
+526
 00:26:11.176 --> 00:26:13.716
 We spent a lot of work
 making it work really nicely
 
-549
+527
 00:26:13.716 --> 00:26:15.696
 as an analog supplement.
 
-550
+528
 00:26:17.026 --> 00:26:18.096
 And Face Buttons.
 
-551
+529
 00:26:18.876 --> 00:26:20.436
 You can add nuance to your game
 
-552
+530
 00:26:21.046 --> 00:26:22.786
 by using the pressure
 sensitive values.
 
-553
+531
 00:26:23.046 --> 00:26:26.176
 Maybe you have a soccer
 game and you gate how hard
 
-554
+532
 00:26:26.176 --> 00:26:30.096
 or soft your passes and your
 shots are based on how hard
 
-555
+533
 00:26:30.096 --> 00:26:31.826
 or soft the player
 taps the button.
 
-556
+534
 00:26:32.436 --> 00:26:35.976
 And please remember
 to tell the player
 
-557
+535
 00:26:35.976 --> 00:26:38.016
 when you're using
 pressure-sensitive nature
 
-558
+536
 00:26:38.196 --> 00:26:39.076
 of the controls.
 
-559
+537
 00:26:39.326 --> 00:26:41.696
 Nothing's worse than me
 playing a soccer game for a week
 
-560
+538
 00:26:42.156 --> 00:26:45.596
 and seeing all my shots fly
 over the net hard and fast only
 
-561
+539
 00:26:45.596 --> 00:26:48.196
 to realize sometime
 in the future, "Oh,
 
-562
+540
 00:26:48.446 --> 00:26:51.766
 they're actually wanting
 me to use a little nuance
 
-563
+541
 00:26:51.766 --> 00:26:54.616
 when I'm playing the game, and
 I need to use a softer touch."
 
-564
+542
 00:26:55.176 --> 00:27:00.646
 And that relates to how are
 you going to be a good teacher
 
-565
-00:26:55.176 --> 00:27:00.646
-And that relates to how are
-you going to be a good teacher
-
-566
+543
 00:27:00.896 --> 00:27:02.226
 of your controls to your player?
 
-567
+544
 00:27:03.006 --> 00:27:06.486
 What you see on screen
 here, a visual overlay
 
-568
+545
 00:27:06.896 --> 00:27:10.296
 that is a reference for players
 to know what game inputs do what
 
-569
+546
 00:27:10.296 --> 00:27:12.616
 in your game, is a
 great starting point.
 
-570
+547
 00:27:14.516 --> 00:27:17.706
 But, we want to be
 not just a teacher,
 
-571
+548
 00:27:17.706 --> 00:27:19.666
 but we want to be
 a good teacher.
 
-572
+549
 00:27:20.716 --> 00:27:22.396
 So let's look at what
 Leo's Fortune does.
 
-573
+550
 00:27:23.096 --> 00:27:24.296
 This is the opening level.
 
-574
+551
 00:27:24.296 --> 00:27:25.636
 I've dropped into game play.
 
-575
+552
 00:27:26.056 --> 00:27:29.256
 And the first thing I see is a
 little floating icon over top
 
-576
+553
 00:27:29.446 --> 00:27:32.046
 that suggests I press left
 and right on the D-pad.
 
-577
+554
 00:27:32.656 --> 00:27:34.236
 This is great for a
 number of reasons.
 
-578
+555
 00:27:34.436 --> 00:27:36.036
 It keeps me in the experience.
 
-579
+556
 00:27:36.206 --> 00:27:37.746
 The game has not paused.
 
-580
+557
 00:27:37.746 --> 00:27:38.976
 I don't have any overlays.
 
-581
+558
 00:27:39.666 --> 00:27:41.556
 And I can move the
 character back
 
-582
+559
 00:27:41.556 --> 00:27:43.846
 and forth while this is
 onscreen the entire time.
 
-583
+560
 00:27:44.676 --> 00:27:46.846
 It's iconic and it
 allows the player
 
-584
+561
 00:27:46.846 --> 00:27:48.216
 to progress at their own pace.
 
-585
+562
 00:27:48.846 --> 00:27:49.936
 And it's out of the way.
 
-586
+563
 00:27:50.236 --> 00:27:52.556
 It's down in the terrain where
 it's not blocking my view.
 
-587
+564
 00:27:54.096 --> 00:27:55.936
 After playing with
 that for a little bit,
 
-588
+565
 00:27:55.936 --> 00:27:58.756
 I come to the first portion of
 the level where I need to jump.
 
-589
+566
 00:27:58.856 --> 00:28:03.086
 And again, in a similar fashion,
 they kindly and gently suggest
 
-590
-00:27:58.856 --> 00:28:03.086
-And again, in a similar fashion,
-they kindly and gently suggest
-
-591
+567
 00:28:03.126 --> 00:28:04.336
 that I press the A button.
 
-592
+568
 00:28:04.856 --> 00:28:09.386
 Now important to note here also,
 is they're not overwhelming me
 
-593
+569
 00:28:09.386 --> 00:28:12.146
 at the start with all the
 controls for the entire game.
 
-594
+570
 00:28:12.606 --> 00:28:14.656
 They're introducing it
 in piecemeal fashion
 
-595
+571
 00:28:14.656 --> 00:28:17.706
 so that I can understand
 it, practice it
 
-596
+572
 00:28:17.906 --> 00:28:21.626
 and then learn the next step.
 
-597
+573
 00:28:21.756 --> 00:28:22.076
 All right.
 
-598
+574
 00:28:22.076 --> 00:28:23.036
 Where are we in the talk?
 
-599
+575
 00:28:23.256 --> 00:28:25.356
 I've given you an overview
 of game controllers.
 
-600
+576
 00:28:26.296 --> 00:28:28.576
 We know which controllers
 are connected to our system.
 
-601
+577
 00:28:28.576 --> 00:28:30.406
 We know how to read
 the controller inputs.
 
-602
+578
 00:28:30.856 --> 00:28:33.706
 So now it's time to talk
 about what's new in iOS 8.
 
-603
+579
 00:28:34.916 --> 00:28:36.036
 And I'm happy to tell you
 
-604
+580
 00:28:36.036 --> 00:28:39.096
 about a brand new feature
 called Controller Forwarding.
 
-605
+581
 00:28:39.696 --> 00:28:43.046
 This allows your game controller
 with the snapped-in iPhone
 
-606
+582
 00:28:43.196 --> 00:28:44.966
 to be used as a wireless
 controller
 
-607
+583
 00:28:45.146 --> 00:28:49.336
 to control another device
 like an iPad or a MacBook Air.
 
-608
+584
 00:28:49.836 --> 00:28:52.276
 This works over Bluetooth
 and Wi-Fi.
 
-609
+585
 00:28:52.316 --> 00:28:54.876
 And Bluetooth devices
 -- or sorry --
 
-610
+586
 00:28:54.876 --> 00:28:56.836
 the two devices need
 to be signed
 
-611
+587
 00:28:56.836 --> 00:28:58.086
 into the same iCloud account.
 
-612
+588
 00:28:58.966 --> 00:29:01.166
 Since this is a new
 feature, let me walk you
 
-613
-00:28:58.966 --> 00:29:01.166
-Since this is a new
-feature, let me walk you
-
-614
+589
 00:29:01.226 --> 00:29:02.876
 through the flow
 of what happens.
 
-615
+590
 00:29:05.736 --> 00:29:08.706
 So we've installed
 the game on the iPad.
 
-616
+591
 00:29:08.706 --> 00:29:11.226
 It is not installed on our
 phone in the controller.
 
-617
+592
 00:29:11.836 --> 00:29:14.326
 We start playing it.
 
-618
+593
 00:29:14.326 --> 00:29:16.476
 And then through the
 magic of continuity,
 
-619
+594
 00:29:16.746 --> 00:29:19.936
 a little gamepad
 icon is displayed
 
-620
+595
 00:29:19.936 --> 00:29:21.676
 in the lower corner
 of the lock screen.
 
-621
+596
 00:29:22.506 --> 00:29:23.966
 The player swipes up on that
 
-622
+597
 00:29:23.966 --> 00:29:26.886
 and a wireless connection
 is established.
 
-623
+598
 00:29:28.206 --> 00:29:32.616
 And all the controller events
 are forwarded wirelessly
 
-624
+599
 00:29:32.616 --> 00:29:37.796
 and automatically to the gamepad
 -- or to the iPad, sorry.
 
-625
+600
 00:29:37.966 --> 00:29:41.956
 Now, which of this do you
 have to take responsibility
 
-626
+601
 00:29:42.026 --> 00:29:43.226
 for and program yourself?
 
-627
+602
 00:29:44.936 --> 00:29:45.936
 Absolutely nothing.
 
-628
+603
 00:29:46.636 --> 00:29:49.566
 As long you're calling
 startWirelessController
 
-629
+604
 00:29:49.566 --> 00:29:52.856
 DiscoveryWith CompletionHandler,
 all this happens for free.
 
-630
+605
 00:29:53.556 --> 00:29:56.816
 And the beauty is that
 the controller appears
 
-631
+606
 00:29:56.816 --> 00:29:58.606
 as any other in the framework.
 
-632
+607
 00:29:59.076 --> 00:30:00.876
 You can read the button
 presses off of it.
 
-633
-00:29:59.076 --> 00:30:00.876
-You can read the button
-presses off of it.
-
-634
+608
 00:30:02.016 --> 00:30:02.936
 You can find out when
 
-635
+609
 00:30:02.936 --> 00:30:04.706
 that controller connects
 and disconnects.
 
-636
+610
 00:30:05.286 --> 00:30:08.246
 You can query whether it's
 an extended controller
 
-637
+611
 00:30:08.246 --> 00:30:09.366
 or a standard controller.
 
-638
+612
 00:30:10.366 --> 00:30:11.076
 It just works.
 
-639
+613
 00:30:13.136 --> 00:30:17.506
 Now we figured since phones have
 accelerometers and gyroscopes,
 
-640
+614
 00:30:18.686 --> 00:30:21.246
 why don't we go ahead and send
 that information along, too.
 
-641
+615
 00:30:22.316 --> 00:30:26.316
 So this way, if your game
 supports motion control
 
-642
+616
 00:30:26.316 --> 00:30:30.936
 and game controllers, you don't
 need to capture that information
 
-643
+617
 00:30:30.936 --> 00:30:34.106
 and set up a side communication
 channel and serialize
 
-644
+618
 00:30:34.106 --> 00:30:35.536
 and de-serialize the data
 
-645
+619
 00:30:35.536 --> 00:30:37.456
 and then synchronize
 it on the other end.
 
-646
+620
 00:30:37.796 --> 00:30:39.106
 You don't have to worry
 about any of that.
 
-647
+621
 00:30:39.106 --> 00:30:40.106
 We take care of that for you.
 
-648
+622
 00:30:40.426 --> 00:30:44.506
 And all this is found in a new
 profile we're calling Motion.
 
-649
+623
 00:30:45.616 --> 00:30:48.696
 Motion is of the
 class type GCMotion.
 
-650
+624
 00:30:48.896 --> 00:30:50.806
 So let's look at
 what that gives us.
 
-651
+625
 00:30:53.226 --> 00:30:58.096
 Here we have four properties,
 gravity, user acceleration,
 
-652
+626
 00:30:58.526 --> 00:31:00.836
 attitude and rotation rate.
 
-653
-00:30:58.526 --> 00:31:00.836
-attitude and rotation rate.
-
-654
+627
 00:31:02.006 --> 00:31:04.356
 Now these are probably very
 familiar to those of you
 
-655
+628
 00:31:04.356 --> 00:31:05.646
 who have used Core
 Motion before.
 
-656
+629
 00:31:06.716 --> 00:31:09.786
 Let's look at each of these
 in a little more detail.
 
-657
+630
 00:31:10.196 --> 00:31:11.136
 First: gravity.
 
-658
+631
 00:31:13.276 --> 00:31:15.756
 Gravity is type GCAcceleration.
 
-659
+632
 00:31:16.146 --> 00:31:20.036
 And it returns a vector
 oriented in the direction
 
-660
+633
 00:31:20.036 --> 00:31:22.026
 in which gravity is
 pulling the device.
 
-661
+634
 00:31:23.106 --> 00:31:24.476
 The units are in G's.
 
-662
+635
 00:31:25.596 --> 00:31:29.016
 And so if the device is
 lying flat on a table
 
-663
+636
 00:31:29.476 --> 00:31:33.476
 with the screen facing up, this
 vector will return you a value
 
-664
+637
 00:31:33.476 --> 00:31:37.196
 of 0, 0, negative 1
 because gravity is pointing
 
-665
+638
 00:31:37.196 --> 00:31:41.726
 in the exact same direction
 as the negative zAxis.
 
-666
+639
 00:31:41.846 --> 00:31:43.376
 Next we have userAcceleration.
 
-667
+640
 00:31:44.066 --> 00:31:48.596
 This is used to find out
 inertial acceleration
 
-668
+641
 00:31:48.596 --> 00:31:50.136
 when the player is
 shaking the controller.
 
-669
+642
 00:31:51.626 --> 00:31:52.896
 It excludes gravity.
 
-670
+643
 00:31:52.896 --> 00:31:55.906
 And the units are also in G's.
 
-671
+644
 00:31:56.356 --> 00:31:59.396
 So in the same scenario, when
 the phone is at rest on a table,
 
-672
+645
 00:31:59.396 --> 00:32:01.806
 the acceleration
 will be 0, 0, 0.
 
-673
-00:31:59.396 --> 00:32:01.806
-the acceleration
-will be 0, 0, 0.
-
-674
+646
 00:32:02.406 --> 00:32:05.536
 We also have attitude.
 
-675
+647
 00:32:06.336 --> 00:32:10.106
 This allows you to know the
 3D orientation of the device.
 
-676
+648
 00:32:10.556 --> 00:32:14.626
 And from that, you can determine
 the yaw, the pitch and the roll
 
-677
+649
 00:32:14.626 --> 00:32:17.116
 of the device, if that's
 important for your game.
 
-678
+650
 00:32:17.996 --> 00:32:19.556
 Lastly we have rotation rate.
 
-679
+651
 00:32:20.136 --> 00:32:24.376
 This tells you how the phone is
 being spun and on which axis.
 
-680
+652
 00:32:25.346 --> 00:32:27.516
 And the units here are
 in radians per second.
 
-681
+653
 00:32:27.866 --> 00:32:32.016
 Now, at a high level,
 you're going to want
 
-682
+654
 00:32:32.016 --> 00:32:33.516
 to organize your code like this.
 
-683
+655
 00:32:34.476 --> 00:32:37.786
 First you check the
 motionProfile on the controller
 
-684
+656
 00:32:37.986 --> 00:32:39.306
 and whether or not it's nil.
 
-685
+657
 00:32:39.866 --> 00:32:43.076
 If it's non-nil, that means
 our controller supports motion.
 
-686
+658
 00:32:43.806 --> 00:32:45.926
 And we go ahead and use that.
 
-687
+659
 00:32:46.796 --> 00:32:49.286
 Otherwise, we use
 motion from the device.
 
-688
+660
 00:32:49.826 --> 00:32:52.456
 Now, I'd like to
 draw your attention
 
-689
+661
 00:32:52.456 --> 00:32:55.066
 to the overall structure
 of this if-else statement.
 
-690
+662
 00:32:55.146 --> 00:33:00.466
 In our example, our iPad
 was running the game.
 
-691
-00:32:55.146 --> 00:33:00.466
-In our example, our iPad
-was running the game.
-
-692
+663
 00:33:01.246 --> 00:33:04.256
 And the iPad has
 motion capabilities.
 
-693
+664
 00:33:04.876 --> 00:33:07.566
 But we don't want to use
 those motion capabilities
 
-694
+665
 00:33:07.566 --> 00:33:09.926
 because that device
 is just sitting there
 
-695
+666
 00:33:09.926 --> 00:33:12.756
 on the table while we
 play with our phone.
 
-696
+667
 00:33:12.896 --> 00:33:15.246
 We want to use the phone's
 motion capabilities.
 
-697
+668
 00:33:15.726 --> 00:33:22.216
 Hence, we prioritize
 that if it exists.
 
-698
+669
 00:33:22.336 --> 00:33:23.676
 A few notes as well.
 
-699
+670
 00:33:24.356 --> 00:33:27.826
 These axes you see drawn on
 the screen with the iPhone,
 
-700
+671
 00:33:28.086 --> 00:33:30.706
 they move with the
 phone as it moves.
 
-701
+672
 00:33:31.266 --> 00:33:37.896
 So, what in this orientation has
 the positive Y vector pointing
 
-702
+673
 00:33:37.896 --> 00:33:42.356
 straight up towards the sky,
 when this phone is snapped
 
-703
+674
 00:33:42.356 --> 00:33:44.946
 into a controller and held
 in landscape orientation,
 
-704
+675
 00:33:46.026 --> 00:33:48.176
 positive Y is now
 pointing to the left.
 
-705
+676
 00:33:48.616 --> 00:33:49.846
 So this is just something
 to be aware
 
-706
+677
 00:33:49.846 --> 00:33:50.886
 of as you're coding your game.
 
-707
+678
 00:33:51.886 --> 00:33:53.746
 Also, Motion data
 will be jittery.
 
-708
+679
 00:33:54.346 --> 00:33:57.136
 You're going to want to apply
 some sort of a filter to this,
 
-709
+680
 00:33:57.486 --> 00:34:02.336
 maybe a running average of
 the last x number of frames.
 
-710
-00:33:57.486 --> 00:34:02.336
-maybe a running average of
-the last x number of frames.
-
-711
+681
 00:34:02.676 --> 00:34:05.816
 Also new for iOS 8 is
 Idle Timer behavior.
 
-712
+682
 00:34:06.596 --> 00:34:08.196
 The idle timer is
 what governs whether
 
-713
+683
 00:34:08.196 --> 00:34:10.606
 or not the screen turns
 off to save battery power.
 
-714
+684
 00:34:10.686 --> 00:34:14.176
 And in iOS 8, this is
 handled automatically for you.
 
-715
+685
 00:34:14.815 --> 00:34:18.406
 Playing a game with the gamepad
 will keep your screen alive.
 
-716
+686
 00:34:19.565 --> 00:34:23.056
 In iOS 7, you're going to
 want to handle this yourself.
 
-717
+687
 00:34:23.545 --> 00:34:25.786
 And if you want to do
 that, this is what you use.
 
-718
+688
 00:34:25.916 --> 00:34:29.636
 You set the IdleTimerDisabled
 on the UIApplication instance.
 
-719
+689
 00:34:30.706 --> 00:34:31.726
 Now be careful here.
 
-720
+690
 00:34:32.036 --> 00:34:36.116
 You also need to know when
 to re-enable the idle timer.
 
-721
+691
 00:34:36.116 --> 00:34:38.096
 And that's out of the
 scope of this talk,
 
-722
+692
 00:34:38.096 --> 00:34:39.876
 so please read the
 documentation on that.
 
-723
+693
 00:34:41.076 --> 00:34:44.976
 Also of note is that motion
 apps need to do this as well.
 
-724
+694
 00:34:45.806 --> 00:34:48.106
 Moving the phone does not
 keep the screen alive.
 
-725
+695
 00:34:48.255 --> 00:34:52.676
 And so regardless of which OS
 you're on, you have to do this
 
-726
+696
 00:34:52.676 --> 00:34:57.726
 if you're using motion
 in your game.
 
-727
+697
 00:34:57.946 --> 00:34:58.606
 All right.
 
-728
+698
 00:34:58.606 --> 00:35:01.886
 Let me talk about a
 little bit more guidance.
 
-729
-00:34:58.606 --> 00:35:01.886
-Let me talk about a
-little bit more guidance.
-
-730
+699
 00:35:02.966 --> 00:35:04.686
 All controllers have
 a pause button.
 
-731
+700
 00:35:05.476 --> 00:35:08.186
 So if your game supports
 game controllers,
 
-732
+701
 00:35:08.766 --> 00:35:10.866
 you have to implement
 a pause button handler.
 
-733
+702
 00:35:11.636 --> 00:35:14.186
 This is found on
 controller instances.
 
-734
+703
 00:35:14.316 --> 00:35:15.916
 It's called
 controllerPausedHandler.
 
-735
+704
 00:35:16.086 --> 00:35:19.786
 And whenever this is called you
 want to treat it as a toggle.
 
-736
+705
 00:35:19.786 --> 00:35:20.536
 So if you're in the middle
 
-737
+706
 00:35:20.536 --> 00:35:22.476
 of active game play,
 pause the game.
 
-738
+707
 00:35:23.296 --> 00:35:26.476
 If you're not -- or sorry,
 if your game is paused
 
-739
+708
 00:35:26.476 --> 00:35:28.026
 and this is called,
 then un-pause.
 
-740
+709
 00:35:28.986 --> 00:35:31.376
 If you're in a context where
 pausing doesn't make sense,
 
-741
+710
 00:35:31.376 --> 00:35:34.456
 like a main menu, it's entirely
 appropriate to do nothing.
 
-742
+711
 00:35:36.196 --> 00:35:37.976
 Also: Player Indicator LEDs.
 
-743
+712
 00:35:38.816 --> 00:35:42.896
 Always set the -- sorry,
 always set the playerIndex
 
-744
+713
 00:35:43.076 --> 00:35:45.796
 on the controller whenever
 you find a controller
 
-745
+714
 00:35:45.796 --> 00:35:46.766
 and are about to use it.
 
-746
+715
 00:35:47.356 --> 00:35:50.126
 This gives players feedback that
 the controller is recognized
 
-747
+716
 00:35:50.126 --> 00:35:51.476
 by the game and being used.
 
-748
+717
 00:35:52.106 --> 00:35:54.016
 So in a single player
 game, it's as easy
 
-749
+718
 00:35:54.016 --> 00:35:55.336
 as checking the player index.
 
-750
+719
 00:35:56.086 --> 00:35:58.476
 If it's unset, as denoted
 
-751
+720
 00:35:58.476 --> 00:36:02.596
 by this handy flag called
 GCControllerPlayerIndexUnset,
 
-752
-00:35:58.476 --> 00:36:02.596
-by this handy flag called
-GCControllerPlayerIndexUnset,
-
-753
+721
 00:36:02.896 --> 00:36:05.006
 then go ahead and set
 the playerIndex to 0.
 
-754
+722
 00:36:05.886 --> 00:36:07.496
 This is a zero-based index.
 
-755
+723
 00:36:07.646 --> 00:36:10.096
 So this will light up the
 first LED on the control pad.
 
-756
+724
 00:36:10.226 --> 00:36:14.766
 Now let's talk about
 multiple-controller games.
 
-757
+725
 00:36:17.126 --> 00:36:20.916
 In all of my examples, I'm
 calling self.myController.
 
-758
+726
 00:36:21.496 --> 00:36:24.666
 Well, when you have a
 multi-player split-screen game,
 
-759
+727
 00:36:25.346 --> 00:36:28.646
 or a game where players
 are sharing the same view,
 
-760
+728
 00:36:28.646 --> 00:36:30.896
 you're going to have multiple
 controllers, so keep track
 
-761
+729
 00:36:30.896 --> 00:36:33.046
 of them with an array --
 myController is plural.
 
-762
+730
 00:36:33.606 --> 00:36:36.716
 And you want to make sure
 to set the playerIndex
 
-763
+731
 00:36:36.716 --> 00:36:37.856
 for all the controllers.
 
-764
+732
 00:36:38.356 --> 00:36:39.856
 And I'll show you how
 to do that momentarily.
 
-765
+733
 00:36:41.326 --> 00:36:45.686
 Also, consider which controllers
 you allow to navigate menus.
 
-766
+734
 00:36:45.946 --> 00:36:48.786
 It can be very confusing if you
 have multiple players all trying
 
-767
+735
 00:36:48.786 --> 00:36:51.286
 to navigate a menu at the same
 time competing with each other.
 
-768
+736
 00:36:51.656 --> 00:36:53.176
 In that case it may
 be appropriate
 
-769
+737
 00:36:53.416 --> 00:36:55.626
 to let only Player
 1 control the menus.
 
-770
+738
 00:36:57.156 --> 00:36:59.956
 Also, think about what
 a disconnection means
 
-771
+739
 00:36:59.956 --> 00:37:01.856
 in the context of a
 multi-player game.
 
-772
-00:36:59.956 --> 00:37:01.856
-in the context of a
-multi-player game.
-
-773
+740
 00:37:02.556 --> 00:37:04.876
 In some games like a
 one-on-one tennis match,
 
-774
+741
 00:37:05.426 --> 00:37:08.356
 game play cannot proceed
 without the second player.
 
-775
+742
 00:37:08.406 --> 00:37:11.106
 And so in that case,
 we pause the game.
 
-776
+743
 00:37:12.396 --> 00:37:15.876
 Other types of games with live
 drop-in/drop-out game play,
 
-777
+744
 00:37:16.626 --> 00:37:21.356
 can proceed with game play as
 players connect and disconnect.
 
-778
+745
 00:37:21.566 --> 00:37:23.446
 So in that case, you
 don't necessarily need
 
-779
+746
 00:37:23.446 --> 00:37:24.416
 to pause the game play.
 
-780
+747
 00:37:24.696 --> 00:37:25.356
 It can proceed.
 
-781
+748
 00:37:25.996 --> 00:37:28.026
 So take whatever action is
 appropriate for your game.
 
-782
+749
 00:37:28.726 --> 00:37:30.466
 Now let's look at a code sample.
 
-783
+750
 00:37:30.466 --> 00:37:33.086
 Here we are back in our
 friend setupControllers.
 
-784
+751
 00:37:34.266 --> 00:37:36.876
 And we're looping over every
 controller in our array.
 
-785
+752
 00:37:37.396 --> 00:37:40.346
 And for each one of those we're
 checking if the index is unset.
 
-786
+753
 00:37:41.066 --> 00:37:43.856
 If we find even one
 controllerIndex that's unset,
 
-787
+754
 00:37:43.926 --> 00:37:45.796
 we display a player
 picker to the UI.
 
-788
+755
 00:37:46.566 --> 00:37:49.136
 This allows them to choose which
 character they are in the game
 
-789
+756
 00:37:49.446 --> 00:37:51.066
 or to know which
 quadrant they're in.
 
-790
+757
 00:37:51.886 --> 00:37:54.676
 And within there, we're
 going to set the playerIndex
 
-791
+758
 00:37:54.846 --> 00:37:57.046
 so that the players know
 what they're controlling
 
-792
+759
 00:37:57.126 --> 00:37:59.386
 on the screen.
 
-793
+760
 00:37:59.446 --> 00:38:01.206
 Now another piece
 of design guidance
 
-794
-00:37:59.446 --> 00:38:01.206
-Now another piece
-of design guidance
-
-795
+761
 00:38:01.206 --> 00:38:02.006
 that I'd like to give you...
 
-796
+762
 00:38:02.196 --> 00:38:06.086
 Very important: respond to
 game controller inputs early.
 
-797
+763
 00:38:06.656 --> 00:38:10.016
 When a player snaps in
 a controller and taps
 
-798
+764
 00:38:10.016 --> 00:38:11.886
 and launches your game
 from a home screen,
 
-799
+765
 00:38:12.646 --> 00:38:13.796
 what is the first thing they do?
 
-800
+766
 00:38:14.396 --> 00:38:15.876
 They start mashing
 the buttons, right?
 
-801
+767
 00:38:15.876 --> 00:38:17.756
 They start pressing
 the A button.
 
-802
+768
 00:38:17.756 --> 00:38:19.106
 They start moving the D-pad.
 
-803
+769
 00:38:19.366 --> 00:38:21.596
 They want to see if your game
 supports game controllers.
 
-804
+770
 00:38:22.156 --> 00:38:24.456
 And every response you make
 
-805
+771
 00:38:24.996 --> 00:38:28.946
 or response your game doesn't
 make communicates something
 
-806
+772
 00:38:28.946 --> 00:38:29.576
 to the players.
 
-807
+773
 00:38:30.116 --> 00:38:33.456
 And responding early
 tells players, yes,
 
-808
+774
 00:38:33.636 --> 00:38:35.286
 this game supports
 game controllers.
 
-809
+775
 00:38:36.146 --> 00:38:40.566
 Now splash screens, introductory
 cinematics and the main menu
 
-810
+776
 00:38:40.566 --> 00:38:45.006
 at the latest are great
 opportunities to respond
 
-811
+777
 00:38:45.006 --> 00:38:46.306
 to controller inputs early.
 
-812
+778
 00:38:46.936 --> 00:38:51.806
 The longer you wait and the
 deeper a player has to get
 
-813
+779
 00:38:51.806 --> 00:38:54.866
 into your game to discover the
 game controller integration,
 
-814
+780
 00:38:55.336 --> 00:38:57.956
 the more likely they
 are to miss-assume
 
-815
+781
 00:38:58.146 --> 00:39:00.086
 that this game doesn't even
 support game controllers
 
-816
-00:38:58.146 --> 00:39:00.086
-that this game doesn't even
-support game controllers
-
-817
+782
 00:39:00.436 --> 00:39:02.946
 and unplug their controller
 and just use native inputs,
 
-818
+783
 00:39:03.086 --> 00:39:04.946
 missing all the hard work
 you put into your game play.
 
-819
+784
 00:39:05.236 --> 00:39:08.776
 Let's look at what
 Leo's Fortune does.
 
-820
+785
 00:39:09.416 --> 00:39:10.506
 So the game launches.
 
-821
+786
 00:39:10.606 --> 00:39:12.226
 It starts off with
 the splash screen
 
-822
+787
 00:39:12.226 --> 00:39:13.426
 and introductory cinematic.
 
-823
+788
 00:39:13.426 --> 00:39:18.536
 And pressing the A button
 allows you to skip the rest
 
-824
+789
 00:39:18.536 --> 00:39:21.606
 of that cinematic and jump
 straight to the main menu.
 
-825
+790
 00:39:22.406 --> 00:39:25.216
 So right there, within a few
 seconds of launching the app,
 
-826
+791
 00:39:26.166 --> 00:39:27.596
 the game has told
 the player, yes,
 
-827
+792
 00:39:27.676 --> 00:39:29.176
 this game supports
 game controllers.
 
-828
+793
 00:39:30.776 --> 00:39:33.396
 Now, at the main menu,
 and this is really slick,
 
-829
+794
 00:39:33.396 --> 00:39:37.296
 only when a game controller's
 attached do the green portions
 
-830
+795
 00:39:37.296 --> 00:39:41.736
 of the buttons glow,
 telling you which button
 
-831
+796
 00:39:41.736 --> 00:39:43.166
 on the screen is active.
 
-832
+797
 00:39:44.186 --> 00:39:46.496
 By using the D-pad
 and navigating over,
 
-833
+798
 00:39:47.276 --> 00:39:49.476
 another button begins
 glowing instead telling you
 
-834
+799
 00:39:49.476 --> 00:39:50.716
 that that's the active button.
 
-835
+800
 00:39:51.236 --> 00:39:54.266
 So once again, the game
 is confirming now, yes,
 
-836
+801
 00:39:54.456 --> 00:39:55.926
 this game supports
 game controllers.
 
-837
+802
 00:39:56.806 --> 00:39:59.986
 And the player is highly
 likely to enter game play
 
-838
+803
 00:39:59.986 --> 00:40:01.686
 and enjoy the experience
 with the controller.
 
-839
-00:39:59.986 --> 00:40:01.686
-and enjoy the experience
-with the controller.
-
-840
+804
 00:40:02.926 --> 00:40:07.956
 Now, another reason, if that's
 not enough, to mechanize your UI
 
-841
+805
 00:40:07.956 --> 00:40:10.906
 for game controller support is
 
-842
+806
 00:40:10.906 --> 00:40:12.726
 because we have standard
 controllers,
 
-843
+807
 00:40:13.256 --> 00:40:14.526
 which are standalone --
 
-844
+808
 00:40:14.646 --> 00:40:16.626
 or sorry, extended
 standalone controllers.
 
-845
+809
 00:40:17.476 --> 00:40:19.276
 These controllers, as
 I mentioned previously,
 
-846
+810
 00:40:19.906 --> 00:40:23.136
 don't have the touchscreen
 easily accessible.
 
-847
+811
 00:40:24.116 --> 00:40:26.946
 And so all the inputs are coming
 exclusively from the controller.
 
-848
+812
 00:40:27.836 --> 00:40:31.846
 So support mechanizing your
 UI so that game controllers
 
-849
+813
 00:40:31.846 --> 00:40:34.046
 which are standalone
 are supported.
 
-850
+814
 00:40:34.046 --> 00:40:36.976
 So what did we learn today?
 
-851
+815
 00:40:37.436 --> 00:40:41.026
 I gave you an overview of
 what the game controllers are
 
-852
+816
 00:40:41.026 --> 00:40:41.526
 from Apple.
 
-853
+817
 00:40:41.726 --> 00:40:45.666
 Basically it's a two-part
 -- it comes in two parts.
 
-854
+818
 00:40:45.666 --> 00:40:48.016
 The first part being
 the MFi specification,
 
-855
+819
 00:40:48.326 --> 00:40:51.426
 and the second part being
 the GameController framework.
 
-856
+820
 00:40:51.826 --> 00:40:53.876
 We talked about how
 we find controllers,
 
-857
+821
 00:40:54.576 --> 00:40:56.676
 how we read inputs off
 of those controllers.
 
-858
+822
 00:40:57.566 --> 00:41:01.456
 I talked about what's new,
 forwarding, motion forwarding
 
-859
-00:40:57.566 --> 00:41:01.456
-I talked about what's new,
-forwarding, motion forwarding
-
-860
+823
 00:41:01.926 --> 00:41:03.146
 and the idle timer behavior.
 
-861
+824
 00:41:03.976 --> 00:41:06.526
 And throughout we talked
 about design guidance:
 
-862
+825
 00:41:06.786 --> 00:41:09.306
 things that you can do
 to make the experience
 
-863
+826
 00:41:09.306 --> 00:41:11.816
 of game controllers
 really intuitive
 
-864
+827
 00:41:12.076 --> 00:41:14.086
 and integrated really
 nicely with your game
 
-865
+828
 00:41:14.086 --> 00:41:17.076
 so the player can just
 enjoy your underlying game.
 
-866
+829
 00:41:20.076 --> 00:41:22.316
 For more information
 on game controllers,
 
-867
+830
 00:41:22.506 --> 00:41:25.046
 please contact Allan or Filip.
 
-868
+831
 00:41:27.956 --> 00:41:31.096
 For related sessions, if
 you want to make a 2D game,
 
-869
+832
 00:41:31.096 --> 00:41:32.956
 check out the SpriteKit
 sessions:
 
-870
+833
 00:41:33.416 --> 00:41:35.956
 "What's New in SpriteKit"
 and "Best Practices
 
-871
+834
 00:41:35.956 --> 00:41:37.386
 for Building Spritekit Games."
 
-872
+835
 00:41:37.916 --> 00:41:40.906
 If you're interested
 in 3D games,
 
-873
+836
 00:41:41.026 --> 00:41:43.846
 check out the SceneKit
 presentations:
 
-874
+837
 00:41:44.146 --> 00:41:47.846
 "What's New in SceneKit" and
 "Building a Game with SceneKit."
 
-875
+838
 00:41:48.956 --> 00:41:49.896
 Thank you so much.
 
-876
+839
 00:41:49.896 --> 00:41:51.936
 I'm really excited to see what
 you're going to do with this.
 
-877
+840
 00:41:52.016 --> 00:41:54.000
 [ Applause ]

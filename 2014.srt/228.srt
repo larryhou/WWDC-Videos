@@ -65,4956 +65,4752 @@ However, if you wanted to build
 a totally custom view controller
 
 15
-00:00:56.086 --> 00:01:00.156
-However, if you wanted to build
-a totally custom view controller
-
-16
 00:01:00.206 --> 00:01:03.536
 presentation, it involved
 burdening that animator object
 
-17
+16
 00:01:03.886 --> 00:01:05.486
 with far too much
 responsibility.
 
-18
+17
 00:01:06.936 --> 00:01:08.476
 >> So that's why in iOS 8,
 
-19
+18
 00:01:08.646 --> 00:01:11.156
 we're introducing
 UIPresentationController.
 
-20
+19
 00:01:11.956 --> 00:01:15.456
 This class is designed to work
 in concert with animator objects
 
-21
+20
 00:01:15.906 --> 00:01:19.206
 to make the job of presenting
 view controller content easy
 
-22
+21
 00:01:19.426 --> 00:01:21.176
 and simple to manage
 and execute.
 
-23
+22
 00:01:21.826 --> 00:01:26.096
 So today, we're going to talk
 about just a couple of topics,
 
-24
+23
 00:01:26.456 --> 00:01:29.116
 the first being some
 presentation basics.
 
-25
+24
 00:01:29.756 --> 00:01:32.146
 What do we mean by presenting
 view controller content?
 
-26
+25
 00:01:32.256 --> 00:01:36.256
 What's the difference between
 chrome and content itself?
 
-27
+26
 00:01:37.156 --> 00:01:39.726
 And what do we expect
 UIPresentationController
 
-28
+27
 00:01:39.726 --> 00:01:40.896
 to be responsible for?
 
-29
+28
 00:01:42.816 --> 00:01:46.006
 Next, we'll go over how UIKit
 used UIPresentationController
 
-30
+29
 00:01:46.156 --> 00:01:47.476
 to expand our own API.
 
-31
+30
 00:01:47.716 --> 00:01:51.126
 And finally, we'll
 wind up with a demo
 
-32
+31
 00:01:51.206 --> 00:01:52.736
 that brings all these
 concepts together,
 
-33
+32
 00:01:52.736 --> 00:01:55.756
 so that you guys can see how you
 can use UIPresentationController
 
-34
+33
 00:01:55.916 --> 00:01:57.196
 in your apps.
 
+34
+00:01:57.936 --> 00:02:00.756
+>> First, let's start with
+some presentation basics.
+
 35
-00:01:57.936 --> 00:02:00.756
->> First, let's start with
-some presentation basics.
-
-36
-00:01:57.936 --> 00:02:00.756
->> First, let's start with
-some presentation basics.
-
-37
 00:02:01.656 --> 00:02:04.486
 Here I am, on the Settings app
 on iPad, and I'm going to tap
 
-38
+36
 00:02:04.486 --> 00:02:06.996
 that Create New Apple
 ID table cell.
 
-39
+37
 00:02:07.666 --> 00:02:10.096
 The New Account sheet slides
 up, and we're ready to go.
 
-40
+38
 00:02:11.166 --> 00:02:13.556
 In UIViewController
 terminology, we would call
 
-41
+39
 00:02:13.556 --> 00:02:16.406
 that New Account Sheet the
 presented view controller.
 
-42
+40
 00:02:16.956 --> 00:02:18.556
 And the Settings
 split view behind it,
 
-43
+41
 00:02:18.866 --> 00:02:20.696
 the presenting view controller.
 
-44
+42
 00:02:20.696 --> 00:02:23.346
 When we talk about
 the responsibilities
 
-45
+43
 00:02:23.476 --> 00:02:25.906
 of UIPresentationController,
 we would say
 
-46
+44
 00:02:25.906 --> 00:02:29.716
 that that New Account Sheet is
 the content of the presentation.
 
-47
+45
 00:02:30.216 --> 00:02:31.296
 It's the foreground stuff
 
-48
+46
 00:02:31.346 --> 00:02:32.756
 that your user is
 meant to interact with.
 
-49
+47
 00:02:33.636 --> 00:02:36.276
 We would then say that the
 background content that's dimmed
 
-50
+48
 00:02:36.736 --> 00:02:37.406
 is the chrome.
 
-51
+49
 00:02:38.036 --> 00:02:40.126
 It's dimmed to help
 accentuate the content
 
-52
+50
 00:02:40.186 --> 00:02:41.066
 of your presentation.
 
-53
+51
 00:02:42.406 --> 00:02:44.736
 To help manage the
 content and chrome,
 
-54
+52
 00:02:44.736 --> 00:02:46.136
 in your view controller
 presentation,
 
-55
+53
 00:02:46.736 --> 00:02:49.006
 we're going to use
 UIPresentationController.
 
-56
+54
 00:02:50.276 --> 00:02:50.936
 At its heart,
 
-57
+55
 00:02:51.246 --> 00:02:55.306
 UIPresentationController is the
 presentation management class
 
-58
+56
 00:02:55.306 --> 00:02:57.096
 that you'll use in
 your application.
 
-59
+57
 00:02:58.006 --> 00:03:00.396
 All UI view controller
 presentations
 
-60
-00:02:58.006 --> 00:03:00.396
-All UI view controller
-presentations
-
-61
+58
 00:03:00.396 --> 00:03:03.716
 in iOS 8 are backed by
 UIPresentationController.
 
-62
+59
 00:03:05.196 --> 00:03:08.116
 Because UIPresentationController
 can provide chrome,
 
-63
+60
 00:03:08.776 --> 00:03:12.956
 it can also provide its own
 animations for that chrome or --
 
-64
+61
 00:03:12.956 --> 00:03:14.276
 and this is really cool --
 
-65
+62
 00:03:14.896 --> 00:03:18.916
 UIPresentationController can
 animate its chrome alongside
 
-66
+63
 00:03:18.916 --> 00:03:22.366
 your existing animator
 objects' custom animations.
 
-67
+64
 00:03:22.636 --> 00:03:25.456
 And we'll take a look
 at a demo of that.
 
-68
+65
 00:03:25.456 --> 00:03:28.076
 Additionally, throughout
 the conference, you've heard
 
-69
+66
 00:03:28.076 --> 00:03:31.116
 about our push to make your
 applications more adaptive.
 
-70
+67
 00:03:31.246 --> 00:03:34.516
 And UIPresentationController
 is built from the get-go
 
-71
+68
 00:03:34.796 --> 00:03:37.026
 to handle trait and
 size class changes.
 
-72
+69
 00:03:37.776 --> 00:03:38.396
 Additionally,
 
-73
+70
 00:03:38.756 --> 00:03:41.576
 UIPresentationController will
 respond to these changes,
 
-74
+71
 00:03:42.086 --> 00:03:44.296
 even while your view
 controller's presentation
 
-75
+72
 00:03:44.596 --> 00:03:45.276
 is on-screen.
 
-76
+73
 00:03:45.696 --> 00:03:47.206
 So you can adapt seamlessly
 
-77
+74
 00:03:47.206 --> 00:03:48.416
 between the changing
 environment.
 
-78
+75
 00:03:48.416 --> 00:03:52.716
 And finally, because
 UIPresentationController is a
 
-79
+76
 00:03:52.716 --> 00:03:55.496
 great Cocoa Touch
 citizen, it's reusable.
 
-80
+77
 00:03:56.166 --> 00:03:58.986
 UIPresentationController
 objects are not coupled
 
-81
+78
 00:03:59.366 --> 00:04:01.926
 to animator objects or
 transitioning delegates.
 
-82
-00:03:59.366 --> 00:04:01.926
-to animator objects or
-transitioning delegates.
-
-83
+79
 00:04:02.336 --> 00:04:04.386
 You can use the same
 Presentation Controller
 
-84
+80
 00:04:04.606 --> 00:04:05.976
 with different view controllers,
 
-85
+81
 00:04:06.326 --> 00:04:08.566
 or switch out the
 Presentation Controller
 
-86
+82
 00:04:08.816 --> 00:04:12.346
 for the same view controller
 to create a truly custom look.
 
-87
+83
 00:04:14.496 --> 00:04:18.476
 >> Prior to iOS 8, the animator
 object, as Peter mentioned,
 
-88
+84
 00:04:18.555 --> 00:04:20.636
 was kind of overburdened
 with some tasks
 
-89
+85
 00:04:20.636 --> 00:04:23.196
 when presenting a view
 controller's content on-screen.
 
-90
+86
 00:04:23.506 --> 00:04:26.646
 Its primary task was
 obviously animating
 
-91
+87
 00:04:26.646 --> 00:04:28.876
 that controller's content,
 and that includes any kind
 
-92
+88
 00:04:28.876 --> 00:04:29.996
 of subview animations --
 
-93
+89
 00:04:29.996 --> 00:04:32.296
 things like content
 offsets or insets, as well.
 
-94
+90
 00:04:33.416 --> 00:04:36.566
 But it also needed to figure out
 its own positioning on-screen.
 
-95
+91
 00:04:37.006 --> 00:04:39.246
 If you were doing any kind
 of custom presentation,
 
-96
+92
 00:04:39.616 --> 00:04:43.406
 we would give you reasonably
 good information for where
 
-97
+93
 00:04:43.406 --> 00:04:44.466
 to start and where to end,
 
-98
+94
 00:04:44.836 --> 00:04:46.666
 but it's probably
 not what you wanted
 
-99
+95
 00:04:46.666 --> 00:04:47.846
 for your custom presentation.
 
-100
+96
 00:04:48.196 --> 00:04:50.146
 And so the animator
 object had to know more
 
-101
+97
 00:04:50.146 --> 00:04:52.256
 about the presentation than
 it probably should have.
 
-102
+98
 00:04:52.656 --> 00:04:54.776
 And that goes along with
 the chrome, as well.
 
-103
+99
 00:04:55.356 --> 00:04:59.466
 That animator object also needed
 to know, the entire layout --
 
-104
+100
 00:04:59.496 --> 00:05:02.586
 what the presentation
 was going to encompass.
 
-105
-00:04:59.496 --> 00:05:02.586
-what the presentation
-was going to encompass.
-
-106
+101
 00:05:03.316 --> 00:05:06.206
 But now, with Presentation
 Controller, this responsibility
 
-107
+102
 00:05:06.206 --> 00:05:07.866
 for positioning that
 view controller
 
-108
+103
 00:05:08.116 --> 00:05:10.616
 and for handling the chrome
 and other views that go along
 
-109
+104
 00:05:10.616 --> 00:05:12.266
 with the presentation
 are handled
 
-110
+105
 00:05:12.266 --> 00:05:13.986
 in a much more logical object.
 
-111
+106
 00:05:14.766 --> 00:05:17.446
 The Presentation Controller --
 and since it's long-lived --
 
-112
+107
 00:05:17.746 --> 00:05:19.396
 knows more about
 the presentation,
 
-113
+108
 00:05:19.396 --> 00:05:21.016
 because it has a
 better vantage point
 
-114
+109
 00:05:21.056 --> 00:05:23.046
 for what's actually
 going to occur on-screen.
 
-115
+110
 00:05:23.846 --> 00:05:26.376
 And as we have mentioned before,
 
-116
+111
 00:05:26.476 --> 00:05:29.856
 Presentation Controller
 is what drives adaptation
 
-117
+112
 00:05:29.856 --> 00:05:30.676
 in your application.
 
-118
+113
 00:05:31.456 --> 00:05:33.696
 This object is going
 to be responsible
 
-119
+114
 00:05:33.696 --> 00:05:36.296
 for helping you switch
 out view controllers
 
-120
+115
 00:05:36.296 --> 00:05:38.586
 and wholesale switching out
 of Presentation Controllers,
 
-121
+116
 00:05:38.586 --> 00:05:40.016
 which we will look
 at in just a moment.
 
-122
+117
 00:05:40.016 --> 00:05:43.266
 So now that we know about --
 
-123
+118
 00:05:43.266 --> 00:05:45.846
 a little bit about what
 Presentation Controller actually
 
-124
+119
 00:05:45.846 --> 00:05:49.286
 is, let's show you how
 we in UIKit used it
 
-125
+120
 00:05:49.286 --> 00:05:53.326
 to improve popovers, alerts,
 action sheets and search.
 
-126
+121
 00:05:53.376 --> 00:05:55.306
 And we'll have Peter start
 you off with popovers.
 
-127
+122
 00:05:56.016 --> 00:05:56.546
 >> Sure thing.
 
-128
+123
 00:05:57.386 --> 00:05:58.966
 As you saw in our
 talk yesterday,
 
-129
+124
 00:05:59.246 --> 00:06:02.246
 we're introducing a new
 UIPresentationController class
 
-130
-00:05:59.246 --> 00:06:02.246
-we're introducing a new
-UIPresentationController class
-
-131
+125
 00:06:02.636 --> 00:06:05.356
 to help manage popover
 presentations in your app.
 
-132
+126
 00:06:05.796 --> 00:06:08.186
 It's called
 UIPopoverPresentationController.
 
-133
+127
 00:06:09.166 --> 00:06:11.856
 It's intended to replace
 UIPopoverController
 
-134
+128
 00:06:11.856 --> 00:06:15.166
 in your application, but it
 is functionally equivalent
 
-135
+129
 00:06:15.576 --> 00:06:18.416
 in the customization that it
 provides for the presentation.
 
-136
+130
 00:06:19.456 --> 00:06:20.976
 But it has some additional
 features.
 
-137
+131
 00:06:21.646 --> 00:06:23.266
 It has built-in adaptivity
 
-138
+132
 00:06:23.336 --> 00:06:26.376
 to help facilitate your
 view controller adapting
 
-139
+133
 00:06:26.376 --> 00:06:27.366
 in a changing environment.
 
-140
+134
 00:06:27.856 --> 00:06:30.876
 UIPopoverPresentationController
 will seamlessly handle
 
-141
+135
 00:06:30.876 --> 00:06:34.146
 transitions between regular
 and compact-width environments.
 
-142
+136
 00:06:34.366 --> 00:06:39.146
 Let's look at how you used to
 show a popover, prior to iOS 8.
 
-143
+137
 00:06:39.696 --> 00:06:43.036
 With the old API, you'd create
 your content view controller,
 
-144
+138
 00:06:43.706 --> 00:06:45.316
 set it on your Popover
 Controller
 
-145
+139
 00:06:45.946 --> 00:06:47.136
 and present that popover.
 
-146
+140
 00:06:48.006 --> 00:06:50.406
 But this isn't really
 the whole story.
 
-147
+141
 00:06:51.316 --> 00:06:52.976
 If you had a universal
 application --
 
-148
+142
 00:06:53.126 --> 00:06:54.236
 and many of you do --
 
-149
+143
 00:06:54.566 --> 00:06:56.866
 you actually had to
 have two code paths.
 
-150
+144
 00:06:57.556 --> 00:07:00.566
 We check for it on an iPad
 and make a popover controller.
 
-151
-00:06:57.556 --> 00:07:00.566
-We check for it on an iPad
-and make a popover controller.
-
-152
+145
 00:07:01.056 --> 00:07:03.856
 Otherwise, we'd do a
 presentViewController
 
-153
+146
 00:07:03.856 --> 00:07:04.396
 traditionally.
 
-154
+147
 00:07:04.506 --> 00:07:07.646
 And you had to litter this
 bifurcation throughout your app.
 
-155
+148
 00:07:07.976 --> 00:07:09.956
 With
 UIPopoverPresentationController,
 
-156
+149
 00:07:10.276 --> 00:07:12.346
 you'll just have one code path.
 
-157
+150
 00:07:12.346 --> 00:07:13.156
 Here's how to use it.
 
-158
+151
 00:07:14.156 --> 00:07:16.146
 First, you'll set
 the view controller's
 
-159
+152
 00:07:16.206 --> 00:07:18.536
 modalPresentationStyle
 to popover.
 
-160
+153
 00:07:18.906 --> 00:07:20.776
 This is a new value in iOS 8.
 
-161
+154
 00:07:21.576 --> 00:07:23.536
 UIKit will look to
 your view controller's
 
-162
+155
 00:07:23.536 --> 00:07:26.096
 modalPresentationStyle
 to determine how
 
-163
+156
 00:07:26.096 --> 00:07:27.176
 to show your view controller.
 
-164
+157
 00:07:28.316 --> 00:07:30.906
 Then you'll get its
 popoverPresentationController.
 
-165
+158
 00:07:31.696 --> 00:07:33.096
 When presenting a
 view controller,
 
-166
+159
 00:07:33.306 --> 00:07:35.466
 you do not create a
 Presentation Controller.
 
-167
+160
 00:07:35.796 --> 00:07:37.076
 Instead, you ask for one.
 
-168
+161
 00:07:38.106 --> 00:07:40.976
 Then you set up any source
 information, like barButtomItems
 
-169
+162
 00:07:41.226 --> 00:07:42.406
 or permittedArrowDirections.
 
-170
+163
 00:07:43.106 --> 00:07:44.996
 And because it's a view
 controller presentation,
 
-171
+164
 00:07:45.176 --> 00:07:47.106
 you just call
 presentViewController.
 
-172
+165
 00:07:47.966 --> 00:07:50.316
 Now, notice how there's no
 idiom check on the screen.
 
-173
+166
 00:07:51.126 --> 00:07:52.786
 That's because, when we're
 running an environment
 
-174
+167
 00:07:52.786 --> 00:07:55.316
 that does not support
 popovers, like on the iPhone,
 
-175
+168
 00:07:55.916 --> 00:07:59.096
 UIPopoverPresentationController
 provides the opportunity
 
-176
+169
 00:07:59.196 --> 00:08:00.936
 for your presentation to adapt.
 
-177
-00:07:59.196 --> 00:08:00.936
-for your presentation to adapt.
-
-178
+170
 00:08:01.366 --> 00:08:03.346
 Jim, can we take a look
 at adaptive popovers?
 
-179
+171
 00:08:03.556 --> 00:08:03.806
 >> Sure.
 
-180
+172
 00:08:05.646 --> 00:08:06.056
 All right.
 
-181
+173
 00:08:06.266 --> 00:08:08.916
 So I have a fairly simple
 and basic application here.
 
-182
+174
 00:08:09.336 --> 00:08:11.046
 It is a -- just a
 view controller
 
-183
+175
 00:08:11.046 --> 00:08:15.526
 that shows important people and
 -- the super important people --
 
-184
+176
 00:08:15.526 --> 00:08:17.486
 and you click on this little
 button here, you get a popover.
 
-185
+177
 00:08:18.096 --> 00:08:20.836
 And it's a popover of
 super important people.
 
-186
+178
 00:08:21.446 --> 00:08:23.996
 And so what we want to do
 is show that this popover,
 
-187
+179
 00:08:23.996 --> 00:08:27.206
 when it goes on -- in a
 compact-width environment,
 
-188
+180
 00:08:27.206 --> 00:08:29.986
 like on the iPhone, even though
 you present as a popover,
 
-189
+181
 00:08:30.036 --> 00:08:33.086
 you will get an adaptation to
 an over-fullscreen presentation.
 
-190
+182
 00:08:33.535 --> 00:08:36.326
 So we'll change the
 width to 320,
 
-191
+183
 00:08:36.326 --> 00:08:39.476
 and we'll change the size class
 to compact, and we'll apply it.
 
-192
+184
 00:08:40.196 --> 00:08:42.666
 And then, now you see
 that we actually have --
 
-193
+185
 00:08:43.275 --> 00:08:46.026
 the same table view has been
 re-presented, but now it's
 
-194
+186
 00:08:46.026 --> 00:08:49.156
 in a view controller that is
 a full-screen presentation.
 
-195
+187
 00:08:49.876 --> 00:08:51.856
 And we can actually
 even dismiss this,
 
-196
+188
 00:08:52.286 --> 00:08:54.996
 and we can re-present it again.
 
-197
+189
 00:08:54.996 --> 00:08:56.116
 And even though we're
 re-presenting
 
-198
+190
 00:08:56.116 --> 00:08:59.686
 as an over-fullscreen
 presentation, we are --
 
-199
+191
 00:08:59.806 --> 00:09:00.906
 the code has never changed.
 
-200
-00:08:59.806 --> 00:09:00.906
-the code has never changed.
-
-201
+192
 00:09:00.996 --> 00:09:03.096
 We still actually are
 presenting a popover here.
 
-202
+193
 00:09:03.456 --> 00:09:07.246
 And to show that that's
 actually still working,
 
-203
+194
 00:09:07.246 --> 00:09:11.416
 we'll go back to
 our regular width.
 
-204
+195
 00:09:11.976 --> 00:09:14.766
 And then the popover
 shows back up again.
 
-205
+196
 00:09:15.416 --> 00:09:20.806
 So to do adaptivity with
 popovers is fairly simple.
 
-206
+197
 00:09:23.516 --> 00:09:27.576
 Going back to Peter's code
 that we left off with is
 
-207
+198
 00:09:27.576 --> 00:09:29.796
 that this code doesn't
 actually change.
 
-208
+199
 00:09:29.796 --> 00:09:31.166
 All through that,
 this was the code
 
-209
+200
 00:09:31.166 --> 00:09:32.346
 that presented that popover.
 
-210
+201
 00:09:32.826 --> 00:09:35.736
 But to influence how the
 popover actually works,
 
-211
+202
 00:09:35.736 --> 00:09:38.576
 we need to set a delegate on the
 popover Presentation Controller.
 
-212
+203
 00:09:39.056 --> 00:09:40.966
 And we need to implement
 just two methods.
 
-213
+204
 00:09:41.796 --> 00:09:44.346
 The first is
 adaptivePresentationStyle
 
-214
+205
 00:09:44.346 --> 00:09:45.646
 ForPresentationController.
 
-215
+206
 00:09:46.386 --> 00:09:47.866
 And from this method,
 you can return one
 
-216
+207
 00:09:47.866 --> 00:09:51.286
 of three different methods --
 FullScreen, OverFullScreen,
 
-217
+208
 00:09:51.346 --> 00:09:54.396
 or none -- the latter meaning
 that you don't want any kind
 
-218
+209
 00:09:54.396 --> 00:09:55.746
 of adaptivity, but for here,
 
-219
+210
 00:09:56.066 --> 00:09:57.826
 we want to do a FullScreen
 adaptation.
 
-220
+211
 00:09:59.306 --> 00:10:00.476
 The second method that we want
 
-221
-00:09:59.306 --> 00:10:00.476
-The second method that we want
-
-222
+212
 00:10:00.476 --> 00:10:02.826
 to implement is
 presentationController
 
-223
+213
 00:10:03.146 --> 00:10:05.426
 viewControllerFor
 AdaptivePresentationStyle.
 
-224
+214
 00:10:06.986 --> 00:10:08.666
 You don't have to
 implement this method.
 
-225
+215
 00:10:08.666 --> 00:10:10.536
 And if we hadn't
 implemented this method,
 
-226
+216
 00:10:10.636 --> 00:10:13.346
 the table view controller
 would have been re-presented
 
-227
+217
 00:10:13.346 --> 00:10:14.756
 as a full-screen presentation.
 
-228
+218
 00:10:15.416 --> 00:10:17.456
 But the table view by
 itself doesn't allow you
 
-229
+219
 00:10:17.456 --> 00:10:20.776
 to dismiss anything or show the
 name that we were selecting.
 
-230
+220
 00:10:21.396 --> 00:10:23.626
 So what we want to do is
 wrap that view controller
 
-231
+221
 00:10:23.626 --> 00:10:26.306
 in something that
 allows our presentation
 
-232
+222
 00:10:26.306 --> 00:10:28.776
 to actually continue to look
 like how we wanted it to look.
 
-233
+223
 00:10:29.446 --> 00:10:31.426
 And so we wrapped that in
 a NavigationController,
 
-234
+224
 00:10:31.736 --> 00:10:33.406
 and we just set it as
 root view controller,
 
-235
+225
 00:10:33.576 --> 00:10:34.976
 the presentedViewController,
 
-236
+226
 00:10:35.036 --> 00:10:36.456
 which was our table
 view controller.
 
-237
+227
 00:10:36.866 --> 00:10:37.716
 And that's it.
 
-238
+228
 00:10:37.776 --> 00:10:41.046
 And that is how you get from
 a popover in regular width
 
-239
+229
 00:10:41.126 --> 00:10:43.786
 to an over-fullscreen or
 full-screen presentation,
 
-240
+230
 00:10:43.866 --> 00:10:45.296
 when you're in a
 compact-width environment.
 
-241
+231
 00:10:46.476 --> 00:10:48.086
 >> So now that we've looked
 
-242
+232
 00:10:48.086 --> 00:10:50.816
 at how UIKit used
 Presentation Controllers
 
-243
+233
 00:10:51.156 --> 00:10:53.336
 to improve the API
 surrounding popovers,
 
-244
+234
 00:10:53.856 --> 00:10:55.966
 let's talk about something
 near and dear to my heart:
 
-245
+235
 00:10:56.406 --> 00:10:57.486
 alerts and action sheets.
 
-246
+236
 00:10:58.666 --> 00:11:02.016
 Prior to iOS 8, alerts and
 action sheets were exposed
 
-247
-00:10:58.666 --> 00:11:02.016
-Prior to iOS 8, alerts and
-action sheets were exposed
-
-248
+237
 00:11:02.016 --> 00:11:05.816
 to your application through
 plain UI view subclasses:
 
-249
+238
 00:11:06.246 --> 00:11:08.426
 UIAlertView and UIActionSheet.
 
-250
+239
 00:11:09.416 --> 00:11:11.526
 But because they were
 UI view subclasses,
 
-251
+240
 00:11:12.116 --> 00:11:13.946
 they had to re-implement
 some of the logic
 
-252
+241
 00:11:13.946 --> 00:11:15.706
 that we already had
 on view controller.
 
-253
+242
 00:11:16.176 --> 00:11:19.016
 For example, to appear
 in your application,
 
-254
+243
 00:11:19.246 --> 00:11:23.526
 they created a new window,
 strategically positioned
 
-255
+244
 00:11:23.526 --> 00:11:24.976
 above your application's content
 
-256
+245
 00:11:24.976 --> 00:11:26.906
 so that they'd show
 up above everything.
 
-257
+246
 00:11:27.936 --> 00:11:30.766
 Additionally, they'd pre-date
 modern language features,
 
-258
+247
 00:11:30.916 --> 00:11:34.696
 so they had to rely on delegate
 API for button callbacks.
 
-259
+248
 00:11:34.846 --> 00:11:38.096
 Let's look at how an action
 sheet presentation worked prior
 
-260
+249
 00:11:38.096 --> 00:11:38.756
 to iOS 8.
 
-261
+250
 00:11:39.536 --> 00:11:41.756
 So, I'm in an iOS 7
 app, in landscape.
 
-262
+251
 00:11:42.336 --> 00:11:43.676
 And I go to show
 an action sheet.
 
-263
+252
 00:11:44.606 --> 00:11:46.876
 Behind the scenes, the
 framework creates a window
 
-264
+253
 00:11:46.876 --> 00:11:50.626
 on your app's behalf, but this
 predates iOS 8 window rotation
 
-265
+254
 00:11:50.626 --> 00:11:53.596
 behavior, so this window is
 technically still in portrait.
 
-266
+255
 00:11:54.626 --> 00:11:56.566
 We then add the action
 sheet to that window
 
-267
+256
 00:11:56.566 --> 00:12:00.186
 and mimic the transform
 hierarchy of the presenting view
 
-268
-00:11:56.566 --> 00:12:00.186
-and mimic the transform
-hierarchy of the presenting view
-
-269
+257
 00:12:00.186 --> 00:12:01.616
 to get into the right
 orientation.
 
-270
+258
 00:12:02.816 --> 00:12:05.806
 When looking at the requirements
 applications would have to meet
 
-271
+259
 00:12:06.316 --> 00:12:10.496
 when implementing adaptivity and
 the customization power offered
 
-272
+260
 00:12:10.496 --> 00:12:12.486
 to us by
 UIPresentationController,
 
-273
+261
 00:12:13.076 --> 00:12:16.336
 it was a natural choice to
 rebase modern alerts API.
 
-274
+262
 00:12:17.546 --> 00:12:21.136
 In iOS 8, we're introducing a
 new View Controller subclass
 
-275
+263
 00:12:21.136 --> 00:12:24.086
 to replace Alert View and
 Action Sheet UIAlertController.
 
-276
+264
 00:12:25.006 --> 00:12:27.436
 It's used for both
 Alerts and Action Sheets,
 
-277
+265
 00:12:27.566 --> 00:12:29.676
 and you can switch
 via a preferred style.
 
-278
+266
 00:12:30.576 --> 00:12:32.646
 Additionally, because
 it's got a modern runtime,
 
-279
+267
 00:12:33.066 --> 00:12:34.146
 it's block-based.
 
-280
+268
 00:12:34.426 --> 00:12:35.456
 So it works perfect.
 
-281
+269
 00:12:36.516 --> 00:12:39.116
 [ Applause ]
 
-282
+270
 00:12:39.616 --> 00:12:42.916
 It works perfect with blocks in
 Objective-C and closures in SWF.
 
-283
+271
 00:12:44.236 --> 00:12:46.366
 Additionally, because
 it's a view controller,
 
-284
+272
 00:12:46.706 --> 00:12:48.636
 it presents in your window,
 
-285
+273
 00:12:49.026 --> 00:12:50.946
 which means that
 there's no more ambiguity
 
-286
+274
 00:12:51.016 --> 00:12:53.736
 about what framework-provided
 presentations are going
 
-287
+275
 00:12:53.736 --> 00:12:54.676
 on in your application.
 
-288
+276
 00:12:55.976 --> 00:12:59.456
 And using the adaptive API
 that Jim showed you earlier,
 
-289
+277
 00:12:59.836 --> 00:13:02.446
 action sheets will
 seamlessly adapt to popovers,
 
-290
-00:12:59.836 --> 00:13:02.446
-action sheets will
-seamlessly adapt to popovers,
-
-291
+278
 00:13:02.616 --> 00:13:04.456
 using
 popoverPresentationController.
 
-292
+279
 00:13:05.206 --> 00:13:06.926
 Let's go through
 how you can create
 
-293
+280
 00:13:07.186 --> 00:13:09.946
 and show an alert controller
 in your application.
 
-294
+281
 00:13:12.546 --> 00:13:15.066
 First, you'll ask for
 one via the class method.
 
-295
+282
 00:13:16.266 --> 00:13:19.216
 Then you'll add actions to
 it with a block handler,
 
-296
+283
 00:13:19.286 --> 00:13:21.096
 to handle when that
 action is tapped.
 
-297
+284
 00:13:21.636 --> 00:13:24.066
 And then, because it's a
 view controller presentation,
 
-298
+285
 00:13:24.356 --> 00:13:26.596
 you'll just call
 presentViewController.
 
-299
+286
 00:13:28.126 --> 00:13:30.976
 Now, that we've seen how UIKit
 used Presentation Controller
 
-300
+287
 00:13:31.236 --> 00:13:33.596
 to improve alerts
 and action sheets,
 
-301
+288
 00:13:34.066 --> 00:13:35.976
 let's see how we did the
 same thing for search.
 
-302
+289
 00:13:39.016 --> 00:13:39.626
 >> Search on iOS 8 consists
 primarily of two parts:
 
-303
+290
 00:13:39.626 --> 00:13:44.286
 UI search bar and
 UISearchDisplayController.
 
-304
+291
 00:13:45.256 --> 00:13:49.926
 Both have been around in the SDK
 since some of the earliest days.
 
-305
+292
 00:13:50.496 --> 00:13:53.976
 And their creation was formed at
 a time that was far more simple.
 
-306
+293
 00:13:54.756 --> 00:13:56.626
 View controllers were
 more of a suggestion
 
-307
+294
 00:13:56.626 --> 00:13:58.296
 than the requirement
 that they are now.
 
-308
+295
 00:13:58.926 --> 00:14:00.646
 There was far less
 translucency --
 
-309
-00:13:58.926 --> 00:14:00.646
-There was far less
-translucency --
-
-310
+296
 00:14:00.646 --> 00:14:02.386
 things didn't flow
 underneath other things,
 
-311
+297
 00:14:02.386 --> 00:14:04.626
 and there certainly wasn't
 things like blur to deal with.
 
-312
+298
 00:14:05.356 --> 00:14:08.076
 And so when you presented
 search, it was very easy
 
-313
+299
 00:14:08.186 --> 00:14:10.806
 for the framework to reason
 about how search was going
 
-314
+300
 00:14:10.806 --> 00:14:12.506
 to be displayed in
 your application.
 
-315
+301
 00:14:12.986 --> 00:14:15.636
 But when we were looking
 at SearchDisplayController
 
-316
+302
 00:14:15.636 --> 00:14:17.876
 and how it would react to
 an adaptive environment,
 
-317
+303
 00:14:18.346 --> 00:14:20.956
 we realize it had some
 deficiencies that were going
 
-318
+304
 00:14:20.956 --> 00:14:22.256
 to be very difficult
 to overcome.
 
-319
+305
 00:14:22.816 --> 00:14:26.836
 The first is that it provides
 very limited configurability
 
-320
+306
 00:14:27.006 --> 00:14:27.626
 for you guys.
 
-321
+307
 00:14:28.026 --> 00:14:31.166
 It's great that you can
 show your search results
 
-322
+308
 00:14:31.166 --> 00:14:33.756
 in a table view, but a lot
 of other things have happened
 
-323
+309
 00:14:33.756 --> 00:14:36.516
 since iOS 3, that you can
 show search results in --
 
-324
+310
 00:14:36.516 --> 00:14:38.386
 things like collection
 views and map views.
 
-325
+311
 00:14:38.866 --> 00:14:41.066
 And SearchDisplayController
 just simply can't handle this.
 
-326
+312
 00:14:42.996 --> 00:14:45.676
 Second, SearchDisplayController
 is not a view controller,
 
-327
+313
 00:14:45.676 --> 00:14:48.416
 although it tries to act
 like one really hard.
 
-328
+314
 00:14:48.776 --> 00:14:51.266
 And as the view controller
 system became more intelligent
 
-329
+315
 00:14:51.266 --> 00:14:53.346
 and more robust,
 as the SDK matured,
 
-330
+316
 00:14:53.756 --> 00:14:56.716
 the SearchDisplayController
 had a harder time trying
 
-331
+317
 00:14:56.716 --> 00:14:59.136
 to understand your
 intent when displaying.
 
-332
+318
 00:14:59.706 --> 00:15:01.686
 And this left it to
 have to actually guess,
 
-333
-00:14:59.706 --> 00:15:01.686
-And this left it to
-have to actually guess,
-
-334
+319
 00:15:01.686 --> 00:15:05.226
 in some situations, and it
 didn't always get it right.
 
-335
+320
 00:15:05.406 --> 00:15:07.606
 And finally -- because again,
 it's not a view controller --
 
-336
+321
 00:15:07.676 --> 00:15:09.756
 its presentation was
 done via addSubview.
 
-337
+322
 00:15:10.676 --> 00:15:12.596
 And to show you how
 horrible this actually was --
 
-338
+323
 00:15:12.896 --> 00:15:15.376
 if, in your application
 this was your search bar,
 
-339
+324
 00:15:15.376 --> 00:15:17.466
 with your content being on
 the blue, and you tapped
 
-340
+325
 00:15:17.526 --> 00:15:18.206
 that search bar,
 
-341
+326
 00:15:19.296 --> 00:15:21.386
 SearchDisplayController
 behind the scenes goes
 
-342
+327
 00:15:21.386 --> 00:15:24.996
 and creates a content view,
 adds a dimming view to it,
 
-343
+328
 00:15:25.516 --> 00:15:28.966
 adds the table view to
 that and then adds subview
 
-344
+329
 00:15:28.966 --> 00:15:32.356
 to the SearchDisplayController's
 container -- or content view --
 
-345
+330
 00:15:32.356 --> 00:15:33.786
 or content controller's view.
 
-346
+331
 00:15:34.866 --> 00:15:37.256
 At this point in time,
 your application has a view
 
-347
+332
 00:15:37.256 --> 00:15:39.056
 that it didn't expect
 in its hierarchy,
 
-348
+333
 00:15:39.356 --> 00:15:41.436
 and the framework is
 trying to manage the fact
 
-349
+334
 00:15:41.436 --> 00:15:43.676
 that that view was
 probably a scroll view,
 
-350
+335
 00:15:43.676 --> 00:15:46.386
 and things could move around
 when we don't want it to.
 
-351
+336
 00:15:47.516 --> 00:15:50.436
 So it's clear that, in
 adaptivity, this wasn't going
 
-352
+337
 00:15:50.436 --> 00:15:51.646
 to really function
 all that well.
 
-353
+338
 00:15:52.456 --> 00:15:53.896
 But, while also looking at this,
 
-354
+339
 00:15:54.336 --> 00:15:56.786
 SearchDisplayController's really
 just doing a presentation.
 
-355
+340
 00:15:56.916 --> 00:15:58.656
 I mean, it already
 had its own container.
 
-356
+341
 00:15:58.966 --> 00:16:01.586
 So it kind of made sense
 to rebase this all on top
 
-357
-00:15:58.966 --> 00:16:01.586
-So it kind of made sense
-to rebase this all on top
-
-358
+342
 00:16:01.586 --> 00:16:03.276
 of UIPresentationController.
 
-359
+343
 00:16:03.276 --> 00:16:04.086
 And that's what we've done.
 
-360
+344
 00:16:04.706 --> 00:16:07.966
 So in iOS 8, we're
 introducing UISearchController,
 
-361
+345
 00:16:07.966 --> 00:16:10.106
 which is a view controller-based
 replacement
 
-362
+346
 00:16:10.106 --> 00:16:12.676
 for the now deprecated
 UISearchDisplayController.
 
-363
+347
 00:16:12.716 --> 00:16:17.196
 And it has a number of
 features, the first of which is
 
-364
+348
 00:16:17.196 --> 00:16:19.576
 that it can present on any view
 controller in your hierarchy,
 
-365
+349
 00:16:19.806 --> 00:16:21.326
 not just ones that
 are full-screen.
 
-366
+350
 00:16:21.836 --> 00:16:26.206
 Second is that the
 SearchController no longer tries
 
-367
+351
 00:16:26.206 --> 00:16:29.826
 to get in between presenting the
 thing that's showing the results
 
-368
+352
 00:16:29.826 --> 00:16:32.086
 and the thing that's driving
 the filtering of the results.
 
-369
+353
 00:16:32.996 --> 00:16:35.886
 This means that any object in
 your application that's capable
 
-370
+354
 00:16:35.886 --> 00:16:39.566
 of filtering search results can
 directly drive the UI that's
 
-371
+355
 00:16:39.566 --> 00:16:42.536
 actually showing up on-screen.
 
-372
+356
 00:16:43.456 --> 00:16:45.296
 You can influence the
 search bar animation
 
-373
+357
 00:16:45.296 --> 00:16:47.126
 through a custom
 animator object.
 
-374
+358
 00:16:48.296 --> 00:16:49.256
 And because, of course,
 
-375
+359
 00:16:49.256 --> 00:16:50.756
 it's built on Presentation
 Controller,
 
-376
+360
 00:16:51.076 --> 00:16:53.596
 SearchController has the
 capacity to become adaptive.
 
-377
+361
 00:16:53.696 --> 00:16:56.826
 And what this means to
 you guys, in the end,
 
-378
+362
 00:16:56.826 --> 00:16:59.066
 is its far more control
 in how search is display
 
-379
+363
 00:16:59.066 --> 00:17:01.896
 in your applications and
 far fewer assumptions made
 
-380
-00:16:59.066 --> 00:17:01.896
-in your applications and
-far fewer assumptions made
-
-381
+364
 00:17:01.896 --> 00:17:03.326
 by the framework
 when you're doing so.
 
-382
+365
 00:17:04.165 --> 00:17:07.955
 So taking a look at how we
 used to do this before iOS 8,
 
-383
+366
 00:17:08.616 --> 00:17:10.945
 we would create a search bar,
 and we'd give that search bar
 
-384
+367
 00:17:10.945 --> 00:17:13.496
 to SearchDisplayController,
 but then we'd have
 
-385
+368
 00:17:13.496 --> 00:17:15.425
 to tell the SearchController
 who the data source
 
-386
+369
 00:17:15.425 --> 00:17:17.415
 and the delegate were
 for the table view
 
-387
+370
 00:17:17.415 --> 00:17:18.546
 that was going to
 show the results.
 
-388
+371
 00:17:19.236 --> 00:17:21.656
 And then finally, we
 would make the search bar,
 
-389
+372
 00:17:22.026 --> 00:17:26.955
 the table header view of a table
 view that was already on-screen.
 
-390
+373
 00:17:27.136 --> 00:17:29.396
 Now under iOS 8, with
 SearchController,
 
-391
+374
 00:17:30.076 --> 00:17:30.996
 the first thing you'll want
 
-392
+375
 00:17:30.996 --> 00:17:32.776
 to do is create a
 results controller.
 
-393
+376
 00:17:33.286 --> 00:17:35.336
 And as I mentioned, this could
 be absolutely anything --
 
-394
+377
 00:17:35.586 --> 00:17:38.176
 a collection view or
 maybe a view that's custom
 
-395
+378
 00:17:38.176 --> 00:17:39.356
 to just your application.
 
-396
+379
 00:17:39.916 --> 00:17:42.626
 You give this results controller
 
-397
+380
 00:17:42.826 --> 00:17:44.046
 to the Search Results
 Controller,
 
-398
+381
 00:17:44.756 --> 00:17:46.436
 and then you tell the
 SearchController who's going
 
-399
+382
 00:17:46.436 --> 00:17:48.856
 to be responsible for
 updating the results.
 
-400
+383
 00:17:49.726 --> 00:17:51.666
 In a lot of cases, this
 will actually just be the
 
-401
+384
 00:17:51.666 --> 00:17:52.566
 results controller.
 
-402
+385
 00:17:52.746 --> 00:17:55.386
 But it could be literally any
 object in your application.
 
-403
+386
 00:17:55.856 --> 00:17:59.366
 Next, this is the
 one common code lying
 
-404
+387
 00:17:59.366 --> 00:18:00.486
 between the old world, is
 
-405
-00:17:59.366 --> 00:18:00.486
-between the old world, is
-
-406
+388
 00:18:00.486 --> 00:18:02.396
 that when you take the
 SearchController search bar,
 
-407
+389
 00:18:02.996 --> 00:18:05.646
 and we add it to the table -- or
 set it as the table header view
 
-408
+390
 00:18:05.826 --> 00:18:07.506
 of an existing table
 view that's on-screen.
 
-409
+391
 00:18:07.856 --> 00:18:11.856
 Now if you notice, we don't
 actually present this view
 
-410
+392
 00:18:11.856 --> 00:18:13.116
 controller at any point in time.
 
-411
+393
 00:18:13.116 --> 00:18:16.356
 And that's because search
 is usually event-driven.
 
-412
+394
 00:18:16.876 --> 00:18:19.196
 The user is tapping on the
 search bar, or they're tapping
 
-413
+395
 00:18:19.196 --> 00:18:21.726
 on a search glyph
 in your interface.
 
-414
+396
 00:18:22.496 --> 00:18:25.156
 And so in those cases,
 SearchController is going
 
-415
+397
 00:18:25.156 --> 00:18:27.506
 to perform an automatic
 presentation for you,
 
-416
+398
 00:18:27.506 --> 00:18:31.046
 based off of where the search
 bar is located at on-screen.
 
-417
+399
 00:18:32.156 --> 00:18:33.676
 Of course, there's a delegate
 method that allows you
 
-418
+400
 00:18:33.676 --> 00:18:34.816
 to drive this, if you'd like.
 
-419
+401
 00:18:34.816 --> 00:18:35.626
 But for the most part,
 
-420
+402
 00:18:35.936 --> 00:18:38.596
 the default animations
 are usually pretty close
 
-421
+403
 00:18:38.596 --> 00:18:41.936
 to what you guys
 are going to expect.
 
-422
+404
 00:18:41.936 --> 00:18:44.876
 Finally is one piece of API
 that's been on UIViewController
 
-423
+405
 00:18:44.876 --> 00:18:47.456
 for some time, and its
 definesPresentationContext.
 
-424
+406
 00:18:48.356 --> 00:18:51.116
 When using UISearchController,
 you're probably going to need
 
-425
+407
 00:18:51.116 --> 00:18:53.196
 to define this on
 the view controller
 
-426
+408
 00:18:53.516 --> 00:18:55.346
 in which you want
 search to be presented.
 
-427
+409
 00:18:56.676 --> 00:18:58.806
 Because SearchController
 is trying really hard
 
-428
+410
 00:18:58.806 --> 00:19:02.346
 to play nicely with your
 layout, it needs to know exactly
 
-429
-00:18:58.806 --> 00:19:02.346
-to play nicely with your
-layout, it needs to know exactly
-
-430
+411
 00:19:02.346 --> 00:19:04.076
 where it is going
 to be displayed at.
 
-431
+412
 00:19:04.076 --> 00:19:07.156
 And definesPresentationContext
 allows it to know
 
-432
+413
 00:19:07.356 --> 00:19:08.296
 where you want it to go.
 
-433
+414
 00:19:09.516 --> 00:19:12.136
 I'll show you in a real quick
 example of what I mean here.
 
-434
+415
 00:19:12.706 --> 00:19:17.316
 Take this example as a fairly
 common case application.
 
-435
+416
 00:19:17.716 --> 00:19:20.826
 As the application's root
 View Controller is a tab bar
 
-436
+417
 00:19:20.826 --> 00:19:24.356
 controller, and as that tab
 bar's controller is selected
 
-437
+418
 00:19:24.356 --> 00:19:26.736
 to tab, it is displaying
 a navigation controller.
 
-438
+419
 00:19:26.876 --> 00:19:29.966
 And the navigation controller's
 root view controller is our
 
-439
+420
 00:19:29.966 --> 00:19:30.896
 table view controller.
 
-440
+421
 00:19:31.856 --> 00:19:33.576
 And as we've seen before
 in the previous examples,
 
-441
+422
 00:19:33.576 --> 00:19:36.736
 this search bar is that table
 view controller's table view's
 
-442
+423
 00:19:36.736 --> 00:19:37.566
 table header view.
 
-443
+424
 00:19:40.256 --> 00:19:42.236
 And so, you probably want
 it to have the same behavior
 
-444
+425
 00:19:42.236 --> 00:19:44.456
 that you've seen before
 iOS 8, is that when you tap
 
-445
+426
 00:19:44.456 --> 00:19:47.056
 on the search bar, the
 navigation bar disappears
 
-446
+427
 00:19:47.056 --> 00:19:48.416
 and the search bar
 takes its place.
 
-447
+428
 00:19:48.936 --> 00:19:51.116
 And the search results take
 the place of the table view.
 
-448
+429
 00:19:52.636 --> 00:19:54.396
 In this example, the table
 view controller needs
 
-449
+430
 00:19:54.396 --> 00:19:56.126
 to define the presentation
 context
 
-450
+431
 00:19:56.126 --> 00:19:57.106
 for the SearchController.
 
-451
+432
 00:19:58.016 --> 00:19:59.396
 If you were to omit this,
 
-452
+433
 00:19:59.806 --> 00:20:02.816
 View Controller Presentation
 behavior says that we will walk
 
-453
-00:19:59.806 --> 00:20:02.816
-View Controller Presentation
-behavior says that we will walk
-
-454
+434
 00:20:02.816 --> 00:20:04.416
 up the chain until
 we find somebody else
 
-455
+435
 00:20:04.416 --> 00:20:06.086
 who defines a Presentation
 Context,
 
-456
+436
 00:20:06.086 --> 00:20:07.896
 or we use the root
 view controller.
 
-457
+437
 00:20:07.896 --> 00:20:10.286
 And in this case, that would
 be the tab bar controller.
 
-458
+438
 00:20:10.756 --> 00:20:13.606
 And so this may actually be what
 you want, but it's something
 
-459
+439
 00:20:13.606 --> 00:20:14.766
 that you need to be aware
 
-460
+440
 00:20:14.766 --> 00:20:16.456
 of when using the
 new SearchController,
 
-461
+441
 00:20:16.456 --> 00:20:18.786
 is that you need to tell
 us where you want it at,
 
-462
+442
 00:20:18.786 --> 00:20:19.946
 or we're just going
 to go present it
 
-463
+443
 00:20:19.946 --> 00:20:21.256
 on the root view controller.
 
-464
+444
 00:20:21.866 --> 00:20:25.406
 So now that we've shown you
 how UIKit is leveraged --
 
-465
+445
 00:20:25.486 --> 00:20:28.626
 UIPresentationController -- what
 are the benefits to you guys
 
-466
+446
 00:20:28.626 --> 00:20:29.886
 for us having done this work?
 
-467
+447
 00:20:31.856 --> 00:20:32.836
 Well, first off,
 
-468
+448
 00:20:32.946 --> 00:20:35.086
 it's controllers now,
 all over the place.
 
-469
+449
 00:20:35.086 --> 00:20:36.626
 Everything's a controller
 no matter where you look.
 
-470
+450
 00:20:36.896 --> 00:20:38.206
 And this is good for you guys.
 
-471
+451
 00:20:38.586 --> 00:20:41.466
 We are no longer trying to shove
 their views into your hierarchy,
 
-472
+452
 00:20:41.716 --> 00:20:42.546
 or we're no longer trying
 
-473
+453
 00:20:42.546 --> 00:20:44.236
 to transform windows
 above everything.
 
-474
+454
 00:20:44.596 --> 00:20:45.776
 It's controllers.
 
-475
+455
 00:20:45.776 --> 00:20:46.906
 It's a view controller system,
 
-476
+456
 00:20:46.906 --> 00:20:49.406
 and it allows you very
 unprecedented control
 
-477
+457
 00:20:49.406 --> 00:20:50.936
 in how these control --
 
-478
+458
 00:20:50.936 --> 00:20:52.916
 how these view controllers are
 displayed in your application.
 
-479
+459
 00:20:54.096 --> 00:20:56.776
 >> Additionally, because
 UIPresentationController
 
-480
+460
 00:20:56.976 --> 00:20:59.996
 provides an excellent
 abstraction between the content
 
-481
+461
 00:21:00.156 --> 00:21:02.776
 of your presentation and
 the chrome around it,
 
-482
+462
 00:21:03.756 --> 00:21:06.616
 UIPresentationController
 provides a natural home
 
-483
+463
 00:21:06.616 --> 00:21:07.506
 for these things to live.
 
-484
+464
 00:21:08.056 --> 00:21:11.186
 No longer do system-provided
 view controllers contain their
 
-485
+465
 00:21:11.186 --> 00:21:12.486
 chrome in the view controller.
 
-486
+466
 00:21:16.426 --> 00:21:18.566
 >> And finally, adaptivity.
 
-487
+467
 00:21:19.086 --> 00:21:20.836
 We keep saying this over and
 over again, but we needed
 
-488
+468
 00:21:20.836 --> 00:21:24.186
 to make our own controllers
 adaptive for your guys --
 
-489
+469
 00:21:24.186 --> 00:21:25.316
 for your guys' applications.
 
-490
+470
 00:21:25.926 --> 00:21:30.096
 So now alerts and search can
 adapt with your applications
 
-491
+471
 00:21:30.096 --> 00:21:32.356
 and all the other
 adaptations that you want to do
 
-492
+472
 00:21:32.676 --> 00:21:35.766
 to make your applications work
 in this new size class world
 
-493
+473
 00:21:35.766 --> 00:21:36.596
 that we're going into.
 
-494
+474
 00:21:37.556 --> 00:21:41.316
 So now that we've gone through
 how UIKit has used these things
 
-495
+475
 00:21:41.316 --> 00:21:43.236
 -- or used Presentation
 Controller, let's show a demo
 
-496
+476
 00:21:43.236 --> 00:21:45.956
 that kind of pulls all
 these concepts together,
 
-497
+477
 00:21:46.046 --> 00:21:48.906
 uses a custom Presentation
 Controller and a custom animator
 
-498
+478
 00:21:48.906 --> 00:21:50.456
 to make a really cool interface.
 
-499
+479
 00:21:50.836 --> 00:21:51.046
 Peter?
 
-500
+480
 00:21:51.366 --> 00:21:52.666
 >> Let's do it.
 
-501
+481
 00:21:53.556 --> 00:21:56.736
 I've been working on this
 awesome new photo management
 
-502
+482
 00:21:56.736 --> 00:21:57.816
 and editing application.
 
-503
+483
 00:21:59.216 --> 00:22:00.766
 Here we have a collection view.
 
-504
-00:21:59.216 --> 00:22:00.766
-Here we have a collection view.
-
-505
+484
 00:22:00.936 --> 00:22:03.086
 And when I tap a photo,
 
-506
+485
 00:22:03.086 --> 00:22:05.206
 we're going to do a View
 Controller Presentation,
 
-507
+486
 00:22:05.706 --> 00:22:06.506
 but it looks different
 
-508
+487
 00:22:06.506 --> 00:22:08.326
 than a default view
 controller presentation.
 
-509
+488
 00:22:09.146 --> 00:22:11.736
 You'll notice that the
 presented view controller slides
 
-510
+489
 00:22:11.736 --> 00:22:14.836
 in from the right, while we
 dim the rest of the screen.
 
-511
+490
 00:22:15.826 --> 00:22:17.036
 And when we tap the dimming view
 
-512
+491
 00:22:17.096 --> 00:22:18.856
 or hit the Save button,
 we'll dismiss.
 
-513
+492
 00:22:18.856 --> 00:22:21.086
 I'm going to edit
 this photograph.
 
-514
+493
 00:22:22.596 --> 00:22:23.046
 Looks great.
 
-515
+494
 00:22:24.116 --> 00:22:27.446
 So I'll hit Save, and we
 dismiss that view controller.
 
-516
+495
 00:22:29.056 --> 00:22:32.746
 We should go through how this
 presentation uses a custom
 
-517
+496
 00:22:32.866 --> 00:22:35.426
 Presentation Controller
 and animator object
 
-518
+497
 00:22:35.876 --> 00:22:37.636
 to control placement
 and animations.
 
-519
+498
 00:22:38.306 --> 00:22:41.056
 Let's go through how you can
 build a custom presentation
 
-520
+499
 00:22:41.056 --> 00:22:42.646
 like this in your application.
 
-521
+500
 00:22:43.646 --> 00:22:46.976
 We're going to start in the
 root view controller of our app.
 
-522
+501
 00:22:53.236 --> 00:22:55.626
 You'll notice this
 P in the corner.
 
-523
+502
 00:22:56.436 --> 00:22:59.056
 We've added colors
 and text as a legend,
 
-524
+503
 00:22:59.056 --> 00:23:02.216
 so that you know what controller
 or object we're talking about.
 
-525
-00:22:59.056 --> 00:23:02.216
-so that you know what controller
-or object we're talking about.
-
-526
+504
 00:23:03.336 --> 00:23:04.456
 In the root view controller,
 
-527
+505
 00:23:04.736 --> 00:23:07.856
 we're going to create a new
 overlay view controller.
 
-528
+506
 00:23:08.396 --> 00:23:10.796
 This is what you saw,
 presented as a side bar
 
-529
+507
 00:23:10.796 --> 00:23:12.386
 in the demo we just saw.
 
-530
+508
 00:23:13.766 --> 00:23:15.666
 Then, because it's
 a view controller,
 
-531
+509
 00:23:16.106 --> 00:23:18.496
 we'll just call
 presentViewController.
 
-532
+510
 00:23:19.746 --> 00:23:21.426
 Now if we had stopped here
 
-533
+511
 00:23:21.676 --> 00:23:24.706
 and not implemented anything
 custom, what would we get?
 
-534
+512
 00:23:24.706 --> 00:23:28.796
 Well, we'd have our
 root view controller,
 
-535
+513
 00:23:28.796 --> 00:23:32.276
 and we go to present, and
 we get the UIKit default:
 
-536
+514
 00:23:32.276 --> 00:23:34.846
 a slide-up from the bottom,
 full-screen presentation.
 
-537
+515
 00:23:35.926 --> 00:23:39.136
 That looks cool, but what
 we really want is a custom
 
-538
+516
 00:23:39.136 --> 00:23:41.396
 presentation, so that when
 we present the side bar,
 
-539
+517
 00:23:41.806 --> 00:23:43.116
 it slides in from the right,
 
-540
+518
 00:23:43.116 --> 00:23:46.206
 while we dim the presenting
 view controller's content.
 
-541
+519
 00:23:47.216 --> 00:23:49.696
 Let's talk about the objects
 that are going to be responsible
 
-542
+520
 00:23:49.696 --> 00:23:51.206
 for this custom presentation.
 
-543
+521
 00:23:52.466 --> 00:23:54.836
 We already know that we
 have a root view controller
 
-544
+522
 00:23:55.736 --> 00:23:57.886
 and our presented
 overlay view controller.
 
-545
+523
 00:23:58.946 --> 00:24:01.536
 In iOS 7, we introduced
 the concept
 
-546
-00:23:58.946 --> 00:24:01.536
-In iOS 7, we introduced
-the concept
-
-547
+524
 00:24:01.676 --> 00:24:03.026
 of a transitioning delegate.
 
-548
+525
 00:24:03.976 --> 00:24:04.976
 In this presentation,
 
-549
+526
 00:24:05.306 --> 00:24:07.256
 this transitioning
 delegate will be responsible
 
-550
+527
 00:24:07.256 --> 00:24:09.226
 for providing the
 animator object,
 
-551
+528
 00:24:09.756 --> 00:24:12.196
 which animates our
 controller contents on-screen.
 
-552
+529
 00:24:12.956 --> 00:24:15.716
 This is the same API that
 we introduced in iOS 7.
 
-553
+530
 00:24:16.996 --> 00:24:18.316
 But new in iOS 8,
 
-554
+531
 00:24:18.546 --> 00:24:20.896
 this transition delegate
 will also provide the
 
-555
+532
 00:24:20.896 --> 00:24:22.056
 Presentation Controller.
 
-556
+533
 00:24:23.136 --> 00:24:25.096
 This is the object that
 will drive the management
 
-557
+534
 00:24:25.096 --> 00:24:27.806
 of the content and chrome
 in this presentation.
 
-558
+535
 00:24:28.506 --> 00:24:31.416
 Let's start with getting that
 dimming view on- and off-screen.
 
-559
+536
 00:24:32.336 --> 00:24:35.306
 First, back in our
 root view controller,
 
-560
+537
 00:24:36.006 --> 00:24:38.706
 we'll create a new
 transitioning delegate to use
 
-561
+538
 00:24:38.706 --> 00:24:39.606
 for this presentation.
 
-562
+539
 00:24:40.146 --> 00:24:43.136
 This is the object that
 provides the animator object
 
-563
+540
 00:24:43.136 --> 00:24:44.306
 and Presentation Controller.
 
-564
+541
 00:24:44.996 --> 00:24:46.596
 And we'll set that
 transitioning delegate
 
-565
+542
 00:24:46.906 --> 00:24:49.146
 on our presented
 overlay view controller.
 
-566
+543
 00:24:50.326 --> 00:24:52.456
 Now, in our overlay
 view controller,
 
-567
+544
 00:24:53.236 --> 00:24:54.896
 we'll set our
 ModalPresentationStyle
 
-568
+545
 00:24:55.106 --> 00:24:56.256
 to Custom.
 
-569
+546
 00:24:56.756 --> 00:25:00.106
 This indicates to UIKit
 that we should consult your
 
-570
-00:24:56.756 --> 00:25:00.106
-This indicates to UIKit
-that we should consult your
-
-571
+547
 00:25:00.106 --> 00:25:02.946
 transitioning delegate for a
 custom Presentation Controller
 
-572
+548
 00:25:03.086 --> 00:25:04.576
 to use for the presentation.
 
-573
+549
 00:25:05.166 --> 00:25:08.886
 Inside of our transitioning
 delegate, we'll need to provide
 
-574
+550
 00:25:08.886 --> 00:25:10.066
 that Presentation Controller
 
-575
+551
 00:25:10.596 --> 00:25:12.936
 by implementing
 PresentationController
 
-576
+552
 00:25:12.936 --> 00:25:14.476
 for presentedViewController,
 
-577
+553
 00:25:14.706 --> 00:25:17.066
 presentingViewController
 source ViewController.
 
-578
+554
 00:25:18.396 --> 00:25:20.866
 Here, we'll return to the
 Presentation Controller
 
-579
+555
 00:25:20.866 --> 00:25:23.056
 that will be responsible
 for the lifetime
 
-580
+556
 00:25:23.146 --> 00:25:24.586
 of this view controller's
 transition.
 
-581
+557
 00:25:25.536 --> 00:25:28.116
 Let's implement some methods
 in the Presentation Controller
 
-582
+558
 00:25:28.456 --> 00:25:29.476
 to manage this dimming view.
 
-583
+559
 00:25:29.546 --> 00:25:31.736
 We're going to implement
 two methods
 
-584
+560
 00:25:32.146 --> 00:25:33.766
 to coordinate the dimming view.
 
-585
+561
 00:25:34.486 --> 00:25:37.556
 The first is
 presentationTransitionWillBegin.
 
-586
+562
 00:25:38.636 --> 00:25:39.566
 This is called when we're
 
-587
+563
 00:25:39.566 --> 00:25:41.346
 about to do the presentation
 transition.
 
-588
+564
 00:25:42.696 --> 00:25:44.216
 Here, we've already
 set up a dimming view
 
-589
+565
 00:25:44.346 --> 00:25:46.076
 in an int [phonetic],
 and we'll just set
 
-590
+566
 00:25:46.076 --> 00:25:48.896
 that dimming view's frame to
 the container view's bounds.
 
-591
+567
 00:25:49.486 --> 00:25:52.266
 This way, the dimming view
 is always full-screen.
 
-592
+568
 00:25:53.416 --> 00:25:56.036
 We'll also set the alpha
 of the dimmingView to 0,
 
-593
+569
 00:25:56.036 --> 00:25:57.926
 so that it appears
 fully transparent
 
-594
+570
 00:25:58.006 --> 00:25:59.506
 at the beginning
 of the animation.
 
-595
+571
 00:26:00.626 --> 00:26:02.776
 We'll make sure we
 insert the dimmingView
 
-596
+572
 00:26:02.776 --> 00:26:05.036
 above all the other
 content in the presentation.
 
-597
+573
 00:26:05.866 --> 00:26:07.946
 And then, this is really cool.
 
-598
+574
 00:26:09.066 --> 00:26:12.656
 UIPresentationController can
 provide its own animations
 
-599
+575
 00:26:12.866 --> 00:26:14.786
 for its chrome -- in this
 case, the dimming view --
 
-600
+576
 00:26:15.716 --> 00:26:19.166
 or it can animate alongside
 the existing animations
 
-601
+577
 00:26:19.366 --> 00:26:20.326
 in the animator object.
 
-602
+578
 00:26:20.916 --> 00:26:22.276
 And that's exactly what we want.
 
-603
+579
 00:26:23.216 --> 00:26:24.926
 We call the
 presentedViewController's
 
-604
+580
 00:26:25.226 --> 00:26:28.376
 transitionCoordinator
 to animate alongside the
 
-605
+581
 00:26:28.376 --> 00:26:29.196
 current transition.
 
-606
+582
 00:26:30.686 --> 00:26:33.926
 Inside of this block, we'll set
 the dimming view's alpha to 1.
 
-607
+583
 00:26:35.096 --> 00:26:37.886
 This way, the animations
 both begin at the same time
 
-608
+584
 00:26:37.886 --> 00:26:40.726
 and finish at the same
 time, and it looks great.
 
-609
+585
 00:26:41.806 --> 00:26:43.736
 Now, let's implement
 the second method
 
-610
+586
 00:26:43.956 --> 00:26:46.566
 in our Presentation Controller
 for managing the dimming view:
 
-611
+587
 00:26:47.456 --> 00:26:49.396
 dismissalTransitionWillBegin.
 
-612
+588
 00:26:50.086 --> 00:26:51.986
 Here, we're going
 to undo what we did,
 
-613
+589
 00:26:51.986 --> 00:26:54.196
 and presentation
 transition will begin.
 
-614
+590
 00:26:54.966 --> 00:26:58.096
 In this case, we'll use the
 same transitionCoordinator API
 
-615
+591
 00:26:58.806 --> 00:27:01.646
 to animate fading the
 dimming view to a 0 alpha.
 
-616
-00:26:58.806 --> 00:27:01.646
-to animate fading the
-dimming view to a 0 alpha.
-
-617
+592
 00:27:02.376 --> 00:27:03.266
 Let's see how this looks.
 
-618
+593
 00:27:04.196 --> 00:27:05.076
 We go to present.
 
-619
+594
 00:27:05.306 --> 00:27:07.626
 The dimming view fades
 in, and it fades away.
 
-620
+595
 00:27:08.426 --> 00:27:10.956
 Looks great, but we
 should probably get our
 
-621
+596
 00:27:10.956 --> 00:27:12.726
 presentedViewController
 on-screen next.
 
-622
+597
 00:27:13.856 --> 00:27:16.736
 First, we'll need to go back
 to our transitioning delegate
 
-623
+598
 00:27:17.066 --> 00:27:18.966
 and return a custom
 animator object.
 
-624
+599
 00:27:19.616 --> 00:27:22.666
 We'll do this by
 implementing animationController
 
-625
+600
 00:27:22.866 --> 00:27:24.016
 ForPresentedController,
 
-626
+601
 00:27:24.256 --> 00:27:26.286
 presentingController,
 sourceController.
 
-627
+602
 00:27:27.236 --> 00:27:29.616
 This is the API that
 you used in iOS 7.
 
-628
+603
 00:27:30.376 --> 00:27:32.856
 Here, we'll return
 our custom class,
 
-629
+604
 00:27:33.636 --> 00:27:35.156
 which is in charge
 of this animation.
 
-630
+605
 00:27:36.136 --> 00:27:41.166
 We'll also implement the inverse
 of this method -- dismissal --
 
-631
+606
 00:27:41.166 --> 00:27:43.426
 or, I'm sorry
 -animationController
 
-632
+607
 00:27:43.526 --> 00:27:44.506
 ForDismissedController.
 
-633
+608
 00:27:45.336 --> 00:27:47.746
 UIKit gives you the
 power and flexibility
 
-634
+609
 00:27:47.846 --> 00:27:50.986
 of using a different animator
 object for the presentation
 
-635
+610
 00:27:51.366 --> 00:27:54.416
 and dismissal, but here
 we'll just use the same one.
 
-636
+611
 00:27:55.896 --> 00:27:57.616
 Now, as you saw in the demo,
 
-637
+612
 00:27:57.676 --> 00:28:01.416
 that overlay side bar was a
 third the size of the display.
 
-638
-00:27:57.676 --> 00:28:01.416
-that overlay side bar was a
-third the size of the display.
-
-639
+613
 00:28:02.546 --> 00:28:03.646
 To size it appropriately,
 
-640
+614
 00:28:03.966 --> 00:28:05.646
 we'll need to implement
 several methods
 
-641
+615
 00:28:05.646 --> 00:28:06.886
 in our Presentation Controller.
 
-642
+616
 00:28:07.806 --> 00:28:10.746
 The first is
 sizeForChildContentContainer
 
-643
+617
 00:28:11.186 --> 00:28:12.296
 withParentContainerSize.
 
-644
+618
 00:28:13.116 --> 00:28:14.786
 And this method's really simple.
 
-645
+619
 00:28:15.536 --> 00:28:18.056
 We'll just return a third
 of our parent's width
 
-646
+620
 00:28:18.056 --> 00:28:19.646
 and our full parent's height,
 
-647
+621
 00:28:19.646 --> 00:28:21.796
 so that we're always a
 third of the display.
 
-648
+622
 00:28:23.456 --> 00:28:26.366
 Next, we'll implement
 frameOfPresentedView
 
-649
+623
 00:28:26.606 --> 00:28:27.376
 InContainerView.
 
-650
+624
 00:28:28.706 --> 00:28:29.816
 This is where we return
 
-651
+625
 00:28:30.016 --> 00:28:32.896
 to the view controller
 transitioning system what frame
 
-652
+626
 00:28:32.896 --> 00:28:35.016
 we'd like the presented
 view to have.
 
-653
+627
 00:28:35.496 --> 00:28:39.446
 We'll use the same size that we
 returned fromSizeForChildContent
 
-654
+628
 00:28:39.446 --> 00:28:43.496
 ContainerwithParentContainerSize
 and set the origin
 
-655
+629
 00:28:43.646 --> 00:28:45.356
 of the presented view's frame
 
-656
+630
 00:28:45.906 --> 00:28:47.376
 to be right-aligned
 in the container.
 
-657
+631
 00:28:51.876 --> 00:28:54.936
 Let's see how that looks.
 
-658
+632
 00:28:55.176 --> 00:28:56.976
 Perfect. The overlay is a third
 
-659
+633
 00:28:56.976 --> 00:28:58.646
 of the display and
 right-aligned.
 
-660
+634
 00:28:58.646 --> 00:29:02.446
 But what we also want is when
 we rotate into landscape,
 
-661
-00:28:58.646 --> 00:29:02.446
-But what we also want is when
-we rotate into landscape,
-
-662
+635
 00:29:03.086 --> 00:29:04.956
 that side bar should
 always appear
 
-663
+636
 00:29:05.006 --> 00:29:05.896
 as a third of the display.
 
-664
+637
 00:29:06.696 --> 00:29:07.486
 No problem.
 
-665
+638
 00:29:07.686 --> 00:29:08.696
 Implementing rotation
 
-666
+639
 00:29:08.836 --> 00:29:11.106
 in Presentation Controller
 is really simple.
 
-667
+640
 00:29:11.966 --> 00:29:13.996
 We just need to implement
 one method:
 
-668
+641
 00:29:14.686 --> 00:29:16.606
 containerViewWillLayoutSubviews.
 
-669
+642
 00:29:17.856 --> 00:29:19.816
 First, we'll set the
 dimming views frame
 
-670
+643
 00:29:19.996 --> 00:29:22.186
 so that it's always the
 full size of the container,
 
-671
+644
 00:29:22.546 --> 00:29:24.236
 even when the container's
 changing bounds.
 
-672
+645
 00:29:25.876 --> 00:29:28.076
 Then we'll set the frame
 of the presented view
 
-673
+646
 00:29:28.156 --> 00:29:29.826
 to the same value we returned,
 
-674
+647
 00:29:30.176 --> 00:29:32.886
 from frameOfPresented
 ViewInContainerView.
 
-675
+648
 00:29:33.426 --> 00:29:34.466
 And we're done.
 
-676
+649
 00:29:34.466 --> 00:29:35.376
 We've handled rotation.
 
-677
+650
 00:29:36.746 --> 00:29:39.126
 Now that we've seen how view
 controller's sizing works
 
-678
+651
 00:29:39.236 --> 00:29:41.696
 in Presentation Controllers,
 it's important
 
-679
+652
 00:29:41.696 --> 00:29:43.796
 to understand the
 messaging that happens
 
-680
+653
 00:29:44.116 --> 00:29:45.866
 between Presentation Controllers
 
-681
+654
 00:29:45.866 --> 00:29:47.506
 and their managed
 view controllers.
 
-682
+655
 00:29:50.186 --> 00:29:53.586
 >> New in iOS 8 is a new
 protocol, UIContentContainer,
 
-683
+656
 00:29:53.746 --> 00:29:55.706
 and it's implemented by
 both UIViewController
 
-684
+657
 00:29:56.076 --> 00:29:57.476
 and UIPresentationController.
 
-685
+658
 00:29:57.546 --> 00:29:59.416
 And it's a collection of methods
 
-686
+659
 00:29:59.746 --> 00:30:01.786
 that describe how
 the view controller
 
-687
-00:29:59.746 --> 00:30:01.786
-that describe how
-the view controller
-
-688
+660
 00:30:01.786 --> 00:30:04.136
 and Presentation Controllers
 communicate changes
 
-689
+661
 00:30:04.136 --> 00:30:05.496
 in the environment
 to one another.
 
-690
+662
 00:30:05.826 --> 00:30:09.006
 And it's important that we talk
 about these methods in regards
 
-691
+663
 00:30:09.006 --> 00:30:11.616
 to how they flow between
 each of the objects --
 
-692
+664
 00:30:11.616 --> 00:30:12.626
 or between the controllers,
 
-693
+665
 00:30:13.116 --> 00:30:15.676
 because the forwarding is
 done automatically for you,
 
-694
+666
 00:30:15.676 --> 00:30:17.406
 unless you interfere with it.
 
-695
+667
 00:30:17.776 --> 00:30:19.426
 And I'll show you why
 you'd want to do that.
 
-696
+668
 00:30:19.426 --> 00:30:23.146
 There's a couple of different
 ideas here, so we'll start off
 
-697
+669
 00:30:23.216 --> 00:30:25.496
 with transitioning
 to a specific size.
 
-698
+670
 00:30:26.286 --> 00:30:27.736
 There's two methods
 specifically here:
 
-699
+671
 00:30:28.196 --> 00:30:32.036
 viewWillTransitionToSize
 withTransitionCoordinator and,
 
-700
+672
 00:30:32.036 --> 00:30:32.986
 as Peter just showed you,
 
-701
+673
 00:30:32.986 --> 00:30:36.186
 sizeForChildContent Container
 withParentContainerSize.
 
-702
+674
 00:30:37.416 --> 00:30:40.006
 These indicate to
 the view controller
 
-703
+675
 00:30:40.006 --> 00:30:43.646
 or the Presentation Controller
 that the physical size
 
-704
+676
 00:30:43.646 --> 00:30:45.176
 of the view has actually
 changed.
 
-705
+677
 00:30:46.026 --> 00:30:48.696
 And this is best kind of
 shown through a diagram
 
-706
+678
 00:30:49.156 --> 00:30:51.256
 that shows how the
 messaging flows through.
 
-707
+679
 00:30:51.766 --> 00:30:54.066
 So let's give ourselves a root
 view controller with a couple
 
-708
+680
 00:30:54.066 --> 00:30:55.256
 of child view controllers,
 
-709
+681
 00:30:55.906 --> 00:30:57.786
 and let's have it
 present a view controller.
 
-710
+682
 00:30:57.786 --> 00:30:59.336
 It doesn't really matter
 what it actually is.
 
-711
+683
 00:31:00.146 --> 00:31:02.996
 And as Peter has mentioned
 previously, all presentations
 
-712
+684
 00:31:02.996 --> 00:31:05.766
 of view controllers are managed
 by a Presentation Controller,
 
-713
+685
 00:31:05.766 --> 00:31:07.856
 so we've got to have
 one of those guys, too.
 
-714
+686
 00:31:08.776 --> 00:31:10.316
 So now that we have this set up,
 
-715
+687
 00:31:10.316 --> 00:31:12.456
 let's give ourselves a
 viewWillTransitionToSize call.
 
-716
+688
 00:31:13.076 --> 00:31:16.176
 Maybe the device rotated, and
 we're getting a different size
 
-717
+689
 00:31:16.276 --> 00:31:17.616
 or different bounds
 for that view.
 
-718
+690
 00:31:19.516 --> 00:31:22.146
 These messages always start
 with the root view controller.
 
-719
+691
 00:31:22.896 --> 00:31:26.196
 And from there, that controller
 will message any child view
 
-720
+692
 00:31:26.196 --> 00:31:27.396
 controllers that it may have.
 
-721
+693
 00:31:28.456 --> 00:31:29.696
 But the size that we pass
 
-722
+694
 00:31:29.696 --> 00:31:31.966
 to the root view controller
 is probably not the same size
 
-723
+695
 00:31:31.966 --> 00:31:33.256
 that you want to
 pass onto the child.
 
-724
+696
 00:31:33.256 --> 00:31:35.066
 It's probably a smaller size.
 
-725
+697
 00:31:35.326 --> 00:31:36.026
 So this is
 
-726
+698
 00:31:36.026 --> 00:31:37.866
 where
 sizeForChildContentContainer
 
-727
+699
 00:31:37.866 --> 00:31:39.446
 withParentContainerSize
 comes in.
 
-728
+700
 00:31:39.706 --> 00:31:42.436
 We will ask the root
 controller to size Child 1,
 
-729
+701
 00:31:42.926 --> 00:31:45.386
 and that method returns
 a size that we will pass
 
-730
+702
 00:31:45.386 --> 00:31:48.166
 on to Child 1's
 viewWillTransitionToSize.
 
-731
+703
 00:31:49.416 --> 00:31:51.756
 We continue along if there are
 any other child view controllers
 
-732
+704
 00:31:51.756 --> 00:31:52.396
 of this controller.
 
-733
+705
 00:31:52.966 --> 00:31:54.506
 And then any controllers
 
-734
+706
 00:31:54.506 --> 00:31:56.196
 that are presenting
 view controllers --
 
-735
+707
 00:31:56.196 --> 00:31:57.636
 that means that they have
 another view controller
 
-736
+708
 00:31:57.636 --> 00:31:58.806
 presented on top of them --
 
-737
+709
 00:31:59.346 --> 00:32:01.786
 will have their Presentation
 Controller called next.
 
-738
-00:31:59.346 --> 00:32:01.786
-will have their Presentation
-Controller called next.
-
-739
+710
 00:32:02.696 --> 00:32:04.186
 In this case, the root
 view controllers --
 
-740
+711
 00:32:04.186 --> 00:32:05.556
 the child view controllers,
 excuse me --
 
-741
+712
 00:32:05.556 --> 00:32:06.856
 aren't presenting anybody,
 
-742
+713
 00:32:07.166 --> 00:32:09.386
 but the root view
 controller actually is.
 
-743
+714
 00:32:10.356 --> 00:32:12.636
 The root view controller
 is not a container
 
-744
+715
 00:32:12.636 --> 00:32:15.396
 for the Presentation Controller,
 so the size that gets passed
 
-745
+716
 00:32:15.396 --> 00:32:18.066
 to it is the same size that we
 gave to the root controller.
 
-746
+717
 00:32:19.006 --> 00:32:21.546
 But the Presentation
 Controller is the container
 
-747
+718
 00:32:21.546 --> 00:32:22.886
 for the presented controller.
 
-748
+719
 00:32:23.456 --> 00:32:25.446
 So we need to ask the
 Presentation Controller,
 
-749
+720
 00:32:25.446 --> 00:32:27.286
 a sizeForChildContentContainer,
 
-750
+721
 00:32:27.606 --> 00:32:29.466
 passing on to
 presentedViewController.
 
-751
+722
 00:32:30.036 --> 00:32:32.236
 The messaging flow is --
 
-752
+723
 00:32:32.236 --> 00:32:33.586
 basically has a depth
 for search.
 
-753
+724
 00:32:34.206 --> 00:32:35.636
 You start with the
 root view controller.
 
-754
+725
 00:32:36.276 --> 00:32:39.236
 Any child controllers that
 are present will get called,
 
-755
+726
 00:32:39.596 --> 00:32:41.486
 but any controller
 that is presenting a --
 
-756
+727
 00:32:41.556 --> 00:32:44.466
 presenting another controller
 will have its Presentation
 
-757
+728
 00:32:44.466 --> 00:32:47.396
 Controller messaged and then
 its presented controller
 
-758
+729
 00:32:47.396 --> 00:32:47.996
 is messaged.
 
-759
+730
 00:32:48.336 --> 00:32:50.006
 And then, the process
 repeats again.
 
-760
+731
 00:32:50.936 --> 00:32:53.826
 If for any reason that you
 implement one of these methods,
 
-761
+732
 00:32:54.026 --> 00:32:54.986
 and you call super,
 
-762
+733
 00:32:54.986 --> 00:32:57.376
 this messaging still
 is performed for you.
 
-763
+734
 00:32:57.376 --> 00:33:00.386
 But if you implement these
 methods and don't call super,
 
-764
-00:32:57.376 --> 00:33:00.386
-But if you implement these
-methods and don't call super,
-
-765
+735
 00:33:00.856 --> 00:33:03.746
 the object or the class that
 does not pass the message on --
 
-766
+736
 00:33:03.746 --> 00:33:05.536
 any of its child
 controllers or any
 
-767
+737
 00:33:05.536 --> 00:33:07.936
 of its presented Presentation
 Controllers will no longer get
 
-768
+738
 00:33:07.936 --> 00:33:08.526
 that message.
 
-769
+739
 00:33:08.956 --> 00:33:10.376
 It's something to be aware of.
 
-770
+740
 00:33:11.646 --> 00:33:12.696
 Oops, there was one more.
 
-771
+741
 00:33:13.696 --> 00:33:15.296
 Next up is preferred
 content size,
 
-772
+742
 00:33:15.296 --> 00:33:18.726
 and there are two items
 here: preferredContentSize
 
-773
+743
 00:33:19.096 --> 00:33:24.046
 and preferredContentSizeDid
 ChangeForChildContentContainer.
 
-774
+744
 00:33:24.576 --> 00:33:27.526
 And this is methodologies
 
-775
+745
 00:33:27.526 --> 00:33:29.426
 for allowing a presented
 view controller --
 
-776
+746
 00:33:29.426 --> 00:33:32.546
 or child view controller to
 say, "I need more or less size"
 
-777
+747
 00:33:32.866 --> 00:33:34.066
 to its container controller.
 
-778
+748
 00:33:34.766 --> 00:33:37.306
 A really good example of this is
 the Notification Center widgets
 
-779
+749
 00:33:38.256 --> 00:33:38.866
 will do this.
 
-780
+750
 00:33:38.866 --> 00:33:41.506
 Your notification -- your
 widget will actually set its own
 
-781
+751
 00:33:41.506 --> 00:33:44.306
 preferred content size, which
 will message its container
 
-782
+752
 00:33:44.386 --> 00:33:45.776
 to allow the size to change.
 
-783
+753
 00:33:46.716 --> 00:33:48.396
 Let's show what this
 looks like in our example.
 
-784
+754
 00:33:49.606 --> 00:33:52.606
 Say the presented controller
 wants to grow by 100 points.
 
-785
+755
 00:33:53.356 --> 00:33:55.346
 So it sets its
 PreferredContentSize
 
-786
+756
 00:33:55.346 --> 00:33:56.246
 to what it would like.
 
-787
+757
 00:33:56.956 --> 00:33:59.476
 And because the Presentation
 Controller is the container
 
-788
+758
 00:33:59.476 --> 00:34:03.206
 controller of the presented
 controller, it gets the message,
 
-789
-00:33:59.476 --> 00:34:03.206
-controller of the presented
-controller, it gets the message,
-
-790
+759
 00:34:03.376 --> 00:34:06.616
 PreferredContentSizeDid
 ChangeForChildContentContainer.
 
-791
+760
 00:34:07.786 --> 00:34:09.065
 Now, if one of the Child 1
 
-792
+761
 00:34:09.065 --> 00:34:12.126
 or Child 2 view controllers
 had requested more size,
 
-793
+762
 00:34:12.126 --> 00:34:14.396
 then the root view controller
 would have gotten this message.
 
-794
+763
 00:34:14.396 --> 00:34:17.266
 So it's just messaging up
 to the container controller.
 
-795
+764
 00:34:17.926 --> 00:34:19.505
 At this point in time,
 
-796
+765
 00:34:19.505 --> 00:34:20.866
 the container has
 a decision to make.
 
-797
+766
 00:34:21.286 --> 00:34:22.936
 Does it want to honor
 the size request?
 
-798
+767
 00:34:22.936 --> 00:34:25.266
 And if so, how much of
 it does it want to honor?
 
-799
+768
 00:34:25.576 --> 00:34:27.966
 It can simply ignore it, if
 there's not any space to give.
 
-800
+769
 00:34:28.386 --> 00:34:30.846
 Or it can say, "Well,
 you asked for 100 points,
 
-801
+770
 00:34:30.846 --> 00:34:31.856
 and I can give you 50."
 
-802
+771
 00:34:32.835 --> 00:34:35.505
 If you were going to resize
 the view, it's important
 
-803
+772
 00:34:35.505 --> 00:34:37.525
 that you call back
 viewWillTransitionToSize:
 
-804
+773
 00:34:37.525 --> 00:34:39.545
 withTransitionCoordinator
 back on the view
 
-805
+774
 00:34:39.545 --> 00:34:40.386
 that made the request.
 
-806
+775
 00:34:41.295 --> 00:34:42.786
 And this -- it's kind
 of like a receipt
 
-807
+776
 00:34:42.786 --> 00:34:45.485
 for that view controller, to let
 it know that it requested size,
 
-808
+777
 00:34:45.786 --> 00:34:49.466
 it's gotten a size, or however
 much size the container gave it.
 
-809
+778
 00:34:49.976 --> 00:34:51.676
 And it's allowed them
 to forward that message
 
-810
+779
 00:34:51.676 --> 00:34:53.626
 on to any child containers
 it may have.
 
-811
+780
 00:34:54.815 --> 00:34:57.005
 And key, right -- and
 the key point here is
 
-812
+781
 00:34:57.005 --> 00:34:59.656
 that after you've sent this
 message, the container needs
 
-813
+782
 00:34:59.656 --> 00:35:03.246
 to resize the child container,
 the child view controller.
 
-814
-00:34:59.656 --> 00:35:03.246
-to resize the child container,
-the child view controller.
-
-815
+783
 00:35:04.606 --> 00:35:07.226
 Sending the message
 ViewWillTransitionToSize does
 
-816
+784
 00:35:07.226 --> 00:35:09.166
 not actually perform
 the resize itself.
 
-817
+785
 00:35:09.466 --> 00:35:11.616
 That's something that the
 container needs to do.
 
-818
+786
 00:35:13.736 --> 00:35:15.906
 Finally, our trait collections,
 and there's one method here,
 
-819
+787
 00:35:16.636 --> 00:35:18.626
 and that is
 willTransitionToTraitCollection
 
-820
+788
 00:35:18.686 --> 00:35:19.746
 withTransitionCoordinator.
 
-821
+789
 00:35:21.026 --> 00:35:23.546
 And this has the same kind
 of messaging semantics
 
-822
+790
 00:35:23.576 --> 00:35:25.616
 as the ViewWillTransitionToSize.
 
-823
+791
 00:35:25.616 --> 00:35:28.616
 It flows in the same order, and
 if you don't call through super,
 
-824
+792
 00:35:28.616 --> 00:35:30.626
 the message chain ends there.
 
-825
+793
 00:35:30.836 --> 00:35:33.776
 If you hadn't seen
 the talk yesterday
 
-826
+794
 00:35:34.076 --> 00:35:36.776
 on building adaptive
 applications with UIKit,
 
-827
+795
 00:35:37.236 --> 00:35:39.886
 I highly recommend checking
 that out, because it goes
 
-828
+796
 00:35:39.886 --> 00:35:42.126
 into trait collections in
 depth and how they interact
 
-829
+797
 00:35:42.126 --> 00:35:43.076
 with the rest of the system.
 
-830
+798
 00:35:43.446 --> 00:35:45.376
 But as a really quick
 overview of what they are,
 
-831
+799
 00:35:45.376 --> 00:35:47.216
 in case you haven't
 read the documentation,
 
-832
+800
 00:35:48.196 --> 00:35:52.316
 trait collections are simply a
 collection of key value pairs
 
-833
+801
 00:35:52.316 --> 00:35:55.296
 that describe an environment
 to a view controller or a view
 
-834
+802
 00:35:55.296 --> 00:35:58.296
 or a screen, and there
 are four properties:
 
-835
+803
 00:35:58.296 --> 00:36:01.076
 a horizontalSizeClass,
 which describes width;
 
-836
-00:35:58.296 --> 00:36:01.076
-a horizontalSizeClass,
-which describes width;
-
-837
+804
 00:36:01.786 --> 00:36:02.926
 a vertical size -- excuse me --
 
-838
+805
 00:36:02.926 --> 00:36:04.716
 a verticalSizeClass
 that describes height;
 
-839
+806
 00:36:05.526 --> 00:36:07.776
 the UserInterfaceIdiom that
 describes the type of device
 
-840
+807
 00:36:07.816 --> 00:36:09.906
 that you're on; and
 then the scale
 
-841
+808
 00:36:09.906 --> 00:36:12.636
 that decides the
 scale of the device.
 
-842
+809
 00:36:12.636 --> 00:36:15.846
 So for an iPhone, in portrait,
 
-843
+810
 00:36:15.846 --> 00:36:18.786
 the horizontalSizeClass
 is compact.
 
-844
+811
 00:36:19.196 --> 00:36:20.886
 Its verticalSizeClass
 is regular.
 
-845
+812
 00:36:21.376 --> 00:36:23.166
 It's a phone, so it's
 userInterface of phone,
 
-846
+813
 00:36:23.166 --> 00:36:25.626
 and it has a scale of 2.0.
 
-847
+814
 00:36:25.966 --> 00:36:28.876
 Now, all these methods
 are trying to allow you
 
-848
+815
 00:36:28.876 --> 00:36:31.356
 to have your application
 respond to changes.
 
-849
+816
 00:36:32.246 --> 00:36:33.646
 But some of you may be --
 
-850
+817
 00:36:33.676 --> 00:36:36.226
 the ones that have been paying
 attention most will probably
 
-851
+818
 00:36:36.226 --> 00:36:37.606
 notice that we have two methods
 
-852
+819
 00:36:37.606 --> 00:36:40.606
 that actually send somewhat
 the same information.
 
-853
+820
 00:36:41.686 --> 00:36:44.896
 willTransitionToTraitCollection
 has the notion of size classes,
 
-854
+821
 00:36:45.006 --> 00:36:47.606
 but we also have this method,
 viewWillTransitionToSize,
 
-855
+822
 00:36:47.606 --> 00:36:48.856
 that's sending along the size.
 
-856
+823
 00:36:49.456 --> 00:36:51.106
 So why do we have
 both of these methods?
 
-857
+824
 00:36:51.666 --> 00:36:53.956
 That's a great question.
 
-858
+825
 00:36:54.916 --> 00:36:56.046
 Before I actually tell you why,
 
-859
+826
 00:36:56.396 --> 00:36:58.026
 I need to add two
 more methods to this.
 
-860
+827
 00:36:59.096 --> 00:37:02.026
 UIPresentationController's
 containerViewWillLayoutSubviews
 
-861
-00:36:59.096 --> 00:37:02.026
-UIPresentationController's
-containerViewWillLayoutSubviews
-
-862
+828
 00:37:02.516 --> 00:37:04.566
 and UI View Controller's
 viewWillLayoutSubviews.
 
-863
+829
 00:37:06.836 --> 00:37:09.526
 Starting with
 willTransitionToTraitCollection.
 
-864
+830
 00:37:11.816 --> 00:37:15.066
 This is intended to be a
 very coarse-grained control
 
-865
+831
 00:37:15.066 --> 00:37:16.836
 over the layout of
 your application.
 
-866
+832
 00:37:17.396 --> 00:37:19.396
 When you receive trait
 collection changes,
 
-867
+833
 00:37:19.446 --> 00:37:21.536
 it's an indication
 that the structure --
 
-868
+834
 00:37:21.536 --> 00:37:24.116
 the overall structure of your
 application is probably going
 
-869
+835
 00:37:24.116 --> 00:37:25.656
 to change or needs
 to be updated.
 
-870
+836
 00:37:26.126 --> 00:37:28.396
 A great example of this
 is, of course, adaptivity.
 
-871
+837
 00:37:29.396 --> 00:37:32.286
 In that example demo I gave you
 before, where the popover went
 
-872
+838
 00:37:32.286 --> 00:37:35.216
 to full-screen, it's not just
 a view being swapped out --
 
-873
+839
 00:37:35.216 --> 00:37:36.176
 that is view controllers
 
-874
+840
 00:37:36.176 --> 00:37:38.716
 and Presentation Controllers
 being exchanged wholesale.
 
-875
+841
 00:37:39.096 --> 00:37:41.046
 That's a significant
 amount of change
 
-876
+842
 00:37:41.046 --> 00:37:42.606
 to your application's
 user interface.
 
-877
+843
 00:37:43.286 --> 00:37:45.656
 But it's not just all
 about size classes.
 
-878
+844
 00:37:46.776 --> 00:37:48.256
 Screens could have
 different scales.
 
-879
+845
 00:37:48.916 --> 00:37:51.886
 Your view controller can be
 on the main device screen,
 
-880
+846
 00:37:51.886 --> 00:37:53.246
 which has a scale of 2x,
 
-881
+847
 00:37:53.246 --> 00:37:56.496
 but then an external
 monitor can have a 1x scale.
 
-882
+848
 00:37:56.936 --> 00:37:59.516
 And moving that view controller
 from the primary screen
 
-883
+849
 00:37:59.516 --> 00:38:02.696
 to that secondary screen could
 completely change how your UI
 
-884
-00:37:59.516 --> 00:38:02.696
-to that secondary screen could
-completely change how your UI
-
-885
+850
 00:38:02.696 --> 00:38:03.456
 needs to be laid out.
 
-886
+851
 00:38:03.956 --> 00:38:06.836
 And they're not --
 it's not always
 
-887
+852
 00:38:06.836 --> 00:38:09.316
 about entire UI changing
 effects.
 
-888
+853
 00:38:10.046 --> 00:38:12.136
 An example of this would be --
 
-889
+854
 00:38:12.626 --> 00:38:16.456
 now in iOS 8, when we go
 from an iPhone-like device,
 
-890
+855
 00:38:16.456 --> 00:38:19.926
 and we go from a compact-width
 regular height, and we rotate
 
-891
+856
 00:38:19.926 --> 00:38:22.436
 into a compact-width,
 compact-height environment,
 
-892
+857
 00:38:22.876 --> 00:38:24.756
 we're going to auto-hide
 the status bar for you.
 
-893
+858
 00:38:25.936 --> 00:38:28.526
 And we do that not
 because there's less space;
 
-894
+859
 00:38:28.526 --> 00:38:30.846
 there's not less physical
 space of that view controller.
 
-895
+860
 00:38:31.186 --> 00:38:34.256
 It's that it makes more
 sense in that situation
 
-896
+861
 00:38:34.396 --> 00:38:38.186
 to remove a status bar, so
 that your content has more area
 
-897
+862
 00:38:38.186 --> 00:38:39.056
 to display itself.
 
-898
+863
 00:38:41.566 --> 00:38:44.316
 Next up is
 viewWillTransitionToSize,
 
-899
+864
 00:38:44.316 --> 00:38:46.936
 and this is the medium-grain
 control approach
 
-900
+865
 00:38:46.966 --> 00:38:48.526
 for responding to changes.
 
-901
+866
 00:38:49.886 --> 00:38:52.796
 And as I mentioned before,
 this is an indication
 
-902
+867
 00:38:52.796 --> 00:38:55.906
 that your view actually has
 more or less size to deal with
 
-903
+868
 00:38:55.986 --> 00:38:58.436
 and that you should
 actually add more content
 
-904
+869
 00:38:58.436 --> 00:39:01.166
 or remove content depending
 on how the size changed.
 
-905
-00:38:58.436 --> 00:39:01.166
-or remove content depending
-on how the size changed.
-
-906
+870
 00:39:02.596 --> 00:39:06.286
 A great example of this was
 the child controller requesting
 
-907
+871
 00:39:06.286 --> 00:39:06.896
 more size.
 
-908
+872
 00:39:07.496 --> 00:39:09.066
 In this case, it's
 not an indication
 
-909
+873
 00:39:09.066 --> 00:39:11.426
 for that view controller
 to actually lay itself out.
 
-910
+874
 00:39:11.686 --> 00:39:14.256
 It's an indication that it needs
 to actually add more content.
 
-911
+875
 00:39:16.026 --> 00:39:17.666
 You also get this
 call on rotation.
 
-912
+876
 00:39:18.466 --> 00:39:21.616
 With rotation under iOS 8,
 it's simply a bounds change.
 
-913
+877
 00:39:21.616 --> 00:39:23.356
 So when you -- when
 the device rotates,
 
-914
+878
 00:39:23.676 --> 00:39:25.996
 your view controller will get
 told that its size will change,
 
-915
+879
 00:39:25.996 --> 00:39:27.046
 and you'll probably
 see that the width
 
-916
+880
 00:39:27.136 --> 00:39:28.086
 and the height have swapped.
 
-917
+881
 00:39:28.536 --> 00:39:31.016
 And finally, you'll
 also see these guys,
 
-918
+882
 00:39:31.176 --> 00:39:34.356
 these messages called when the
 resizable simulator changes
 
-919
+883
 00:39:34.356 --> 00:39:34.876
 its size.
 
-920
+884
 00:39:35.766 --> 00:39:37.176
 So when you're playing
 around with the simulator,
 
-921
+885
 00:39:37.176 --> 00:39:37.866
 you'll see that, as well.
 
-922
+886
 00:39:39.416 --> 00:39:42.126
 Finally, is
 containerViewWillLayoutSubviews
 
-923
+887
 00:39:42.126 --> 00:39:43.616
 and viewWillLayoutSubviews,
 
-924
+888
 00:39:44.016 --> 00:39:45.616
 and these are the
 fine-grain controls
 
-925
+889
 00:39:45.616 --> 00:39:49.196
 on UIPresentationController and
 UIViewController, respectively.
 
-926
+890
 00:39:50.046 --> 00:39:53.436
 It works just like UIView's
 layout subviews, and it's meant
 
-927
+891
 00:39:53.486 --> 00:39:57.826
 to do fine adjustments to the
 subviews of your hierarchy.
 
-928
+892
 00:39:58.836 --> 00:40:02.046
 And that includes child
 content views, as well.
 
-929
-00:39:58.836 --> 00:40:02.046
-And that includes child
-content views, as well.
-
-930
+893
 00:40:02.366 --> 00:40:04.556
 So when your Presentation
 Controller got that message
 
-931
+894
 00:40:04.966 --> 00:40:07.696
 that the presentedViewController
 needs to have a different size,
 
-932
+895
 00:40:08.606 --> 00:40:11.116
 you would change that
 presentedViewController's size
 
-933
+896
 00:40:11.116 --> 00:40:12.816
 in
 containerViewWillLayoutSubviews.
 
-934
+897
 00:40:14.006 --> 00:40:16.266
 So now that we understand
 how all the messaging flows
 
-935
+898
 00:40:16.266 --> 00:40:18.306
 through the controller
 hierarchy, let's take a look
 
-936
+899
 00:40:18.306 --> 00:40:23.516
 at the demo that shows how we
 do adaptivity to our demo app,
 
-937
+900
 00:40:23.516 --> 00:40:24.646
 and then it also shows how
 
-938
+901
 00:40:24.646 --> 00:40:27.076
 to use multiple Presentation
 Controllers to show --
 
-939
+902
 00:40:27.676 --> 00:40:29.646
 to display the same
 view controller content.
 
-940
+903
 00:40:30.186 --> 00:40:33.946
 >> So we're going to go back
 
-941
+904
 00:40:33.946 --> 00:40:36.716
 to the same demo application
 we were looking at earlier --
 
-942
+905
 00:40:38.546 --> 00:40:40.006
 my photo management application.
 
-943
+906
 00:40:43.246 --> 00:40:45.426
 Using the same API
 that Jim talked
 
-944
+907
 00:40:45.426 --> 00:40:48.296
 about for UI popover
 Presentation Controller
 
-945
+908
 00:40:48.296 --> 00:40:52.016
 adapting, we can adapt our
 custom view controller too.
 
-946
+909
 00:40:53.636 --> 00:40:55.416
 As you remember, we
 have this side bar.
 
-947
+910
 00:40:55.416 --> 00:40:58.676
 But when we transition to a
 compact-width environment,
 
-948
+911
 00:40:58.676 --> 00:41:03.776
 what we'd really like to have is
 just a full-screen presentation.
 
-949
-00:40:58.676 --> 00:41:03.776
-what we'd really like to have is
-just a full-screen presentation.
-
-950
+912
 00:41:08.396 --> 00:41:11.536
 Here, we'll change
 the width to 320
 
-951
+913
 00:41:11.536 --> 00:41:14.306
 and the size class to compact.
 
-952
+914
 00:41:15.356 --> 00:41:18.446
 And check it out: we get a
 full-screen presentation.
 
-953
+915
 00:41:19.616 --> 00:41:22.936
 This is using that same
 adaptive presentation style
 
-954
+916
 00:41:23.016 --> 00:41:25.636
 at adaptivity API on
 Presentation Controller
 
-955
+917
 00:41:25.636 --> 00:41:28.636
 that we showed you in popover
 Presentation Controller.
 
-956
+918
 00:41:29.626 --> 00:41:30.996
 But what's really cool is
 
-957
+919
 00:41:30.996 --> 00:41:33.666
 that we can still use our
 custom animator object.
 
-958
+920
 00:41:34.376 --> 00:41:37.226
 So you'll notice that when we
 dismiss the view controller
 
-959
+921
 00:41:37.356 --> 00:41:40.766
 by tapping the Save button,
 we slide off from the right.
 
-960
+922
 00:41:40.766 --> 00:41:44.256
 And when we present again,
 we slide in from the right.
 
-961
+923
 00:41:44.936 --> 00:41:46.256
 This is exactly what we want.
 
-962
+924
 00:41:46.966 --> 00:41:48.626
 And to show that it
 goes the other way,
 
-963
+925
 00:41:48.876 --> 00:41:52.856
 I'll change the size class
 back to regular, with the width
 
-964
+926
 00:41:52.856 --> 00:41:58.826
 of 768 points, and boom:
 it transitions perfectly
 
-965
+927
 00:41:58.976 --> 00:42:00.096
 and gets placed correctly.
 
-966
-00:41:58.976 --> 00:42:00.096
-and gets placed correctly.
-
-967
+928
 00:42:00.666 --> 00:42:04.956
 Next, I'd like to show
 you something really cool.
 
-968
+929
 00:42:06.496 --> 00:42:09.506
 Because Presentation
 Controllers are not coupled
 
-969
+930
 00:42:09.936 --> 00:42:11.386
 to their
 presentedViewControllers,
 
-970
+931
 00:42:12.146 --> 00:42:15.636
 we can switch out a Presentation
 Controller that's used
 
-971
+932
 00:42:15.636 --> 00:42:18.306
 for a view controller
 with zero changes
 
-972
+933
 00:42:18.486 --> 00:42:19.676
 to the presentedViewController.
 
-973
+934
 00:42:19.806 --> 00:42:23.006
 I'm going to tap this
 little switch in the corner,
 
-974
+935
 00:42:23.696 --> 00:42:25.146
 which turns on Cool mode.
 
-975
+936
 00:42:26.336 --> 00:42:28.906
 This flips some internal
 state in my view controller
 
-976
+937
 00:42:29.236 --> 00:42:31.106
 to use a different
 transitioning delegate,
 
-977
+938
 00:42:31.106 --> 00:42:34.226
 which will provide a
 totally custom animator
 
-978
+939
 00:42:34.686 --> 00:42:36.046
 and totally custom chrome
 
-979
+940
 00:42:36.386 --> 00:42:37.646
 through its Presentation
 Controller.
 
-980
+941
 00:42:39.296 --> 00:42:41.016
 So when I tap a photo, instead
 
-981
+942
 00:42:41.016 --> 00:42:42.976
 of that overlay side
 bar presentation,
 
-982
+943
 00:42:44.286 --> 00:42:46.046
 the view controller
 slides in from the middle,
 
-983
+944
 00:42:46.306 --> 00:42:48.946
 a beautiful leopard print
 appears from the side,
 
-984
+945
 00:42:49.126 --> 00:42:50.796
 and we get some totally
 custom chrome.
 
-985
+946
 00:42:52.256 --> 00:42:54.516
 You'll notice some things
 about this custom presentation.
 
-986
+947
 00:42:55.936 --> 00:42:58.926
 When we do the presentation,
 while the unicorn
 
-987
+948
 00:42:58.926 --> 00:43:02.676
 and the flower appear alongside
 the view controller animating
 
-988
-00:42:58.926 --> 00:43:02.676
-and the flower appear alongside
-the view controller animating
-
-989
+949
 00:43:02.676 --> 00:43:05.906
 in, the leopard print
 animates by itself.
 
-990
+950
 00:43:06.896 --> 00:43:09.666
 This is because
 UIPresentationController can
 
-991
+951
 00:43:09.666 --> 00:43:12.596
 animate its chrome in a
 different animation block
 
-992
+952
 00:43:13.046 --> 00:43:15.756
 than that which is used for the
 view controller presentation.
 
-993
+953
 00:43:16.246 --> 00:43:20.386
 So we can make that chrome
 respond just how we want.
 
-994
+954
 00:43:21.626 --> 00:43:24.326
 By the way, this sample
 code, including Cool mode,
 
-995
+955
 00:43:24.616 --> 00:43:28.056
 is available on the Worldwide
 Developer's Conference website.
 
-996
+956
 00:43:28.536 --> 00:43:29.916
 Just look for Look Inside.
 
-997
+957
 00:43:31.236 --> 00:43:34.606
 Let's see how we implemented
 this totally custom Presentation
 
-998
+958
 00:43:34.606 --> 00:43:38.416
 Controller and switch the
 Presentation Controller we used
 
-999
+959
 00:43:38.866 --> 00:43:40.196
 for our overlay view controller.
 
-1000
+960
 00:43:41.316 --> 00:43:45.706
 Back in our root view
 controller, I showed you setting
 
-1001
+961
 00:43:45.706 --> 00:43:48.296
 up our transitioning
 delegate like this.
 
-1002
+962
 00:43:48.366 --> 00:43:51.196
 We're going to need to
 augment this logic a little bit
 
-1003
+963
 00:43:51.476 --> 00:43:53.546
 to provide our other
 Presentation Controller.
 
-1004
+964
 00:43:55.076 --> 00:43:57.586
 First, we'll check a
 new internal method
 
-1005
+965
 00:43:57.656 --> 00:44:00.516
 that we've called
 presentationShouldBeAwesome.
 
-1006
-00:43:57.656 --> 00:44:00.516
-that we've called
-presentationShouldBeAwesome.
-
-1007
+966
 00:44:00.516 --> 00:44:04.256
 And if this is true,
 will use a totally new
 
-1008
+967
 00:44:04.256 --> 00:44:05.196
 transitioning delegate.
 
-1009
+968
 00:44:06.146 --> 00:44:09.866
 This transitioning delegate will
 provide a custom animator object
 
-1010
+969
 00:44:10.206 --> 00:44:11.926
 to manage that scaling
 animation,
 
-1011
+970
 00:44:12.486 --> 00:44:14.256
 and a custom Presentation
 Controller
 
-1012
+971
 00:44:14.546 --> 00:44:16.396
 to manage the chrome
 that you saw earlier.
 
-1013
+972
 00:44:17.246 --> 00:44:20.476
 Otherwise if that value
 is not set to YES,
 
-1014
+973
 00:44:20.976 --> 00:44:23.196
 we'll just use the other
 transition delegate
 
-1015
+974
 00:44:23.276 --> 00:44:24.596
 that you saw earlier.
 
-1016
+975
 00:44:25.196 --> 00:44:28.216
 And then, setting this on the
 view controller will cause all
 
-1017
+976
 00:44:28.216 --> 00:44:31.606
 of that machinery to be put in
 place when we go to present.
 
-1018
+977
 00:44:33.176 --> 00:44:35.456
 >> So to summarize what we
 talked about here today,
 
-1019
+978
 00:44:35.456 --> 00:44:36.906
 there's only two points
 that we really need
 
-1020
+979
 00:44:36.906 --> 00:44:37.686
 to take home with you.
 
-1021
+980
 00:44:38.076 --> 00:44:40.776
 First off, the
 UIPresentationController,
 
-1022
+981
 00:44:40.926 --> 00:44:43.646
 UIKit ourselves are
 eating our own dog food
 
-1023
+982
 00:44:43.646 --> 00:44:46.666
 and have really improved
 our own API for alerts,
 
-1024
+983
 00:44:46.876 --> 00:44:48.606
 and for popovers,
 and for search.
 
-1025
+984
 00:44:49.236 --> 00:44:51.966
 No longer do you need to put
 their views into your hierarchy,
 
-1026
+985
 00:44:52.366 --> 00:44:55.086
 if they could be best
 served by a presentation.
 
-1027
+986
 00:44:56.836 --> 00:44:57.486
 >> Additionally,
 
-1028
+987
 00:44:57.816 --> 00:45:01.196
 with Presentation Controller
 representing the last piece
 
-1029
-00:44:57.816 --> 00:45:01.196
-with Presentation Controller
-representing the last piece
-
-1030
+988
 00:45:01.196 --> 00:45:03.846
 in the puzzle for totally
 custom presentations,
 
-1031
+989
 00:45:04.376 --> 00:45:07.276
 you can now build things
 that you never could before
 
-1032
+990
 00:45:07.676 --> 00:45:10.386
 with custom chrome
 and custom animations.
 
-1033
+991
 00:45:10.386 --> 00:45:12.996
 And we encourage you to go
 make your own Cool mode.
 
-1034
+992
 00:45:13.426 --> 00:45:15.266
 We can't wait to see what types
 
-1035
+993
 00:45:15.266 --> 00:45:17.696
 of totally custom
 presentations you're going
 
-1036
+994
 00:45:17.696 --> 00:45:19.296
 to add to your application.
 
-1037
+995
 00:45:20.666 --> 00:45:23.346
 >> So if you have more
 information or questions,
 
-1038
+996
 00:45:23.346 --> 00:45:25.226
 Jake Behrens, the guy
 in plaid down here,
 
-1039
+997
 00:45:25.226 --> 00:45:26.976
 is our App Frameworks
 Evangelist.
 
-1040
+998
 00:45:27.066 --> 00:45:28.296
 He loves hearing from you guys.
 
-1041
+999
 00:45:28.376 --> 00:45:29.916
 Of course, there's
 documentations
 
-1042
+1000
 00:45:29.916 --> 00:45:31.236
 in the Apple Developer Forums.
 
-1043
+1001
 00:45:32.096 --> 00:45:34.106
 More importantly, though,
 there are related sessions.
 
-1044
+1002
 00:45:34.106 --> 00:45:36.146
 This is the last talk
 on UIViewController,
 
-1045
+1003
 00:45:36.146 --> 00:45:37.996
 What's New in View
 Controllers in iOS 8.
 
-1046
+1004
 00:45:37.996 --> 00:45:39.506
 So all the sessions were
 earlier in the week.
 
-1047
+1005
 00:45:39.656 --> 00:45:41.736
 I highly recommend that you
 check them out on the videos.
 
-1048
+1006
 00:45:41.736 --> 00:45:42.726
 And that's it.
 
-1049
+1007
 00:45:42.836 --> 00:45:43.696
 Enjoy the rest of
 your conference,
 
-1050
+1008
 00:45:43.696 --> 00:45:44.696
 and lets have a great
 [inaudible], guys.
 
-1051
+1009
 00:45:45.516 --> 00:45:48.500
 [ Applause ]

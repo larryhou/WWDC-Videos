@@ -185,4668 +185,4466 @@ Once you've done that,
 the next best thing
 
 40
-00:01:59.746 --> 00:02:02.416
-Once you've done that,
-the next best thing
-
-41
 00:02:02.416 --> 00:02:04.466
 that you can do is go into--
 
-42
+41
 00:02:05.426 --> 00:02:07.526
 and take a look at all the
 documentation we have here.
 
-43
+42
 00:02:08.036 --> 00:02:12.306
 We got lot of getting started
 guidelines, so if you just want
 
-44
+43
 00:02:12.306 --> 00:02:15.366
 to get in, try to figure out a
 broad overview what's going on,
 
-45
+44
 00:02:15.366 --> 00:02:16.496
 this is exactly where
 you can go.
 
-46
+45
 00:02:16.496 --> 00:02:19.526
 We also have our entire
 development library here,
 
-47
+46
 00:02:20.066 --> 00:02:21.986
 so if you want to
 figure out how some API
 
-48
+47
 00:02:22.296 --> 00:02:27.486
 or certain classes work, this
 is also where you should go.
 
-49
+48
 00:02:27.736 --> 00:02:30.486
 Lastly, you can also download
 all of the sample code
 
-50
+49
 00:02:30.486 --> 00:02:34.616
 and projects that we
 provide for any or many
 
-51
+50
 00:02:34.616 --> 00:02:36.996
 of the APIs that we have.
 
-52
+51
 00:02:36.996 --> 00:02:39.166
 There are many new APIs
 that came out this week,
 
-53
+52
 00:02:39.166 --> 00:02:41.106
 and if you want to
 understand how they work,
 
-54
+53
 00:02:41.106 --> 00:02:42.646
 it's a great place to
 download and check it
 
-55
+54
 00:02:42.646 --> 00:02:43.506
 out and run it yourself.
 
-56
+55
 00:02:44.186 --> 00:02:47.416
 So let's get in the
 class reference.
 
-57
+56
 00:02:48.046 --> 00:02:50.256
 So, I'm sure many of you
 are familiar with this,
 
-58
+57
 00:02:50.846 --> 00:02:52.316
 this is where you can
 get the entire reference
 
-59
+58
 00:02:52.316 --> 00:02:54.746
 for your entire API,
 you can get--
 
-60
+59
 00:02:55.066 --> 00:02:57.626
 take a look to see what
 are the arguments I need
 
-61
+60
 00:02:57.626 --> 00:02:59.936
 in your method names,
 all that good stuff,
 
+61
+00:02:59.936 --> 00:03:01.776
+you can also see example code,
+
 62
-00:02:59.936 --> 00:03:01.776
-you can also see example code,
-
-63
-00:02:59.936 --> 00:03:01.776
-you can also see example code,
-
-64
 00:03:01.776 --> 00:03:03.766
 so you can see exactly
 what you need to do
 
-65
+63
 00:03:03.766 --> 00:03:07.036
 to actually use these
 great new features in APIs.
 
-66
+64
 00:03:08.186 --> 00:03:10.986
 And lastly, you can also
 checkout some common issues
 
-67
+65
 00:03:11.036 --> 00:03:12.536
 and frequently asked
 questions that we have
 
-68
+66
 00:03:13.086 --> 00:03:15.066
 or that you may have
 about the APIs.
 
-69
+67
 00:03:15.066 --> 00:03:17.336
 There's usually, if
 you have a question,
 
-70
+68
 00:03:17.336 --> 00:03:18.886
 and you not really
 understand what's going on,
 
-71
+69
 00:03:19.236 --> 00:03:22.166
 there's usually a very
 good chance that's covered
 
-72
+70
 00:03:22.166 --> 00:03:25.526
 in the common issues and
 frequently asked questions.
 
-73
+71
 00:03:26.906 --> 00:03:29.666
 One thing I should want to call
 out our full programming guides.
 
-74
+72
 00:03:30.136 --> 00:03:32.756
 These are entire books
 worth of content here,
 
-75
+73
 00:03:33.176 --> 00:03:36.176
 whether it starting off with
 Objective-C and you want
 
-76
+74
 00:03:36.176 --> 00:03:38.876
 to know how that works, you got
 there, or say you want again
 
-77
+75
 00:03:38.876 --> 00:03:42.026
 in to OpenGL, we actually have
 the entire documentation on that
 
-78
+76
 00:03:42.026 --> 00:03:46.316
 as well, or in this case we
 have brand new text editing APIs
 
-79
+77
 00:03:46.316 --> 00:03:50.406
 and iOS for iOS 7,
 really great stuff here.
 
-80
+78
 00:03:51.066 --> 00:03:55.466
 But I know what you're thinking,
 you don't want to go onto--
 
-81
+79
 00:03:55.466 --> 00:03:58.476
 have a Safari window open
 and have that next to you.
 
-82
+80
 00:03:58.476 --> 00:04:00.856
 If you're anything like me,
 when you're coding away,
 
-83
-00:03:58.476 --> 00:04:00.856
-If you're anything like me,
-when you're coding away,
-
-84
+81
 00:04:00.856 --> 00:04:03.896
 you want to be able to access
 stuff nice and quickly.
 
-85
+82
 00:04:04.006 --> 00:04:06.686
 And the cool thing is, you
 can access all the stuff right
 
-86
+83
 00:04:06.686 --> 00:04:08.776
 from Xcode and the Help menu.
 
-87
+84
 00:04:09.406 --> 00:04:11.386
 Go there and you get
 the documentation API
 
-88
+85
 00:04:11.386 --> 00:04:12.096
 Reference guide.
 
-89
+86
 00:04:12.166 --> 00:04:16.026
 And the nice thing is in Xcode
 5, we've actually revamp this
 
-90
+87
 00:04:16.026 --> 00:04:19.426
 to make it really, really
 nice and easy to go through
 
-91
+88
 00:04:19.426 --> 00:04:20.375
 and check these things out.
 
-92
+89
 00:04:20.375 --> 00:04:24.796
 And not only that, there are
 a lot of other cool things
 
-93
+90
 00:04:24.796 --> 00:04:25.996
 that you can do in
 Xcode as well.
 
-94
+91
 00:04:25.996 --> 00:04:31.226
 For example, the
 Option-click on any symbol,
 
-95
+92
 00:04:31.636 --> 00:04:34.426
 you can get a nice quick
 description of what's going on
 
-96
+93
 00:04:34.786 --> 00:04:36.796
 and also access the header
 files if you want to go in
 
-97
+94
 00:04:36.796 --> 00:04:38.106
 and get maybe a bit
 more information.
 
-98
+95
 00:04:38.866 --> 00:04:42.146
 The nice thing is you can also
 get a one click access directly
 
-99
+96
 00:04:42.146 --> 00:04:43.156
 to the Reference guide there.
 
-100
+97
 00:04:43.156 --> 00:04:44.806
 So you don't actually
 have to like go and search
 
-101
+98
 00:04:44.806 --> 00:04:49.306
 for that online, you got
 it right through Xcode.
 
-102
+99
 00:04:49.426 --> 00:04:51.966
 We also have a bit more
 information in the sidebar
 
-103
+100
 00:04:52.026 --> 00:04:53.096
 when you click on the symbol.
 
-104
+101
 00:04:53.366 --> 00:04:57.066
 You get the same access to the
 headers and the API reference,
 
-105
+102
 00:04:57.426 --> 00:05:00.876
 but you also get our links
 to any programming guides
 
-106
-00:04:57.426 --> 00:05:00.876
-but you also get our links
-to any programming guides
-
-107
+103
 00:05:01.476 --> 00:05:04.416
 that might be helpful with
 that particular symbol
 
-108
+104
 00:05:04.416 --> 00:05:05.806
 that you'll looking at.
 
-109
+105
 00:05:05.806 --> 00:05:08.586
 Another nice thing is that
 you can get one-click access
 
-110
+106
 00:05:08.806 --> 00:05:11.466
 to some sample code as well,
 it's really, really nice.
 
-111
+107
 00:05:12.076 --> 00:05:16.386
 One thing I want to call
 out though is at the bottom
 
-112
+108
 00:05:16.386 --> 00:05:21.256
 of all our documentation
 pages is a feedback area.
 
-113
+109
 00:05:21.596 --> 00:05:23.856
 So over here this is where you
 can go and report any typos,
 
-114
+110
 00:05:23.856 --> 00:05:25.636
 missing information
 that you see,
 
-115
+111
 00:05:26.576 --> 00:05:28.116
 maybe if something
 it's confusing or even
 
-116
+112
 00:05:28.116 --> 00:05:30.066
 if something was helpful,
 this is really great
 
-117
+113
 00:05:30.066 --> 00:05:32.796
 where you can tell us how we can
 make things better even for you.
 
-118
+114
 00:05:33.306 --> 00:05:35.066
 So, if you go in
 and you find, wow,
 
-119
+115
 00:05:35.066 --> 00:05:37.826
 this are really nice document
 I was reading and I'd really
 
-120
+116
 00:05:37.826 --> 00:05:40.116
 like it some more stuff
 is like that, let us know.
 
-121
+117
 00:05:41.096 --> 00:05:44.076
 If you think, that was like
 90 percent that way there,
 
-122
+118
 00:05:44.076 --> 00:05:46.266
 but there is something else
 that could make this even great,
 
-123
+119
 00:05:46.266 --> 00:05:49.666
 let us know that or something
 wasn't helpful at all,
 
-124
+120
 00:05:50.146 --> 00:05:50.806
 that's where you can go.
 
-125
+121
 00:05:51.106 --> 00:05:55.416
 So once you've actually
 gone through documentation
 
-126
+122
 00:05:55.416 --> 00:05:57.976
 that you're working on,
 still not sure what to do,
 
-127
+123
 00:05:58.116 --> 00:06:01.176
 the next best place you can
 go is the Developer Forums.
 
-128
-00:05:58.116 --> 00:06:01.176
-the next best place you can
-go is the Developer Forums.
-
-129
+124
 00:06:01.816 --> 00:06:08.056
 So devforums.apple.com and
 we have areas for iOS, OS X.
 
-130
+125
 00:06:08.056 --> 00:06:13.306
 And we also have areas for
 our tools and also deployment
 
-131
+126
 00:06:13.306 --> 00:06:16.786
 and other types of things
 that we provide as well.
 
-132
+127
 00:06:17.406 --> 00:06:21.786
 So the nice thing about
 the developer forums is
 
-133
+128
 00:06:21.786 --> 00:06:22.706
 that you have peer support.
 
-134
+129
 00:06:22.706 --> 00:06:24.806
 So you're actually there
 working with the rest
 
-135
+130
 00:06:24.806 --> 00:06:26.276
 of the Apple developer
 community.
 
-136
+131
 00:06:27.226 --> 00:06:29.896
 So when you have an issue and
 you're not sure what's going on,
 
-137
+132
 00:06:30.686 --> 00:06:32.546
 the nice thing about the dev
 forums, it's a really nice place
 
-138
+133
 00:06:32.546 --> 00:06:34.986
 where you can go
 and get some help
 
-139
+134
 00:06:34.986 --> 00:06:36.316
 and maybe triage your problem.
 
-140
+135
 00:06:36.596 --> 00:06:38.226
 So, see and try to
 actually drill
 
-141
+136
 00:06:38.226 --> 00:06:42.016
 down to see what exactly is
 going on, is it may be an issue
 
-142
+137
 00:06:42.016 --> 00:06:44.706
 in a certain API was working, is
 it maybe issue in your own code,
 
-143
+138
 00:06:44.706 --> 00:06:46.076
 maybe it's an issue
 with some virus stuffs,
 
-144
+139
 00:06:46.726 --> 00:06:47.806
 it's where you can do that.
 
-145
+140
 00:06:48.386 --> 00:06:49.996
 The nice thing is,
 you can also search
 
-146
+141
 00:06:50.686 --> 00:06:54.986
 if someone else has a question,
 maybe it'll be helpful to you
 
-147
+142
 00:06:55.256 --> 00:06:56.866
 or if they get that answered.
 
-148
+143
 00:06:57.796 --> 00:07:02.106
 And also, you also have Apple
 employees there as well.
 
-149
-00:06:57.796 --> 00:07:02.106
-And also, you also have Apple
-employees there as well.
-
-150
+144
 00:07:02.996 --> 00:07:07.666
 So over here, if you see an
 Apple avatar right there Dr.
 
-151
+145
 00:07:07.666 --> 00:07:10.126
 Ernie, he's actually
 one of our moderators
 
-152
+146
 00:07:10.126 --> 00:07:12.366
 that you can see always
 around helping people out.
 
-153
+147
 00:07:12.366 --> 00:07:15.516
 And there are also
 engineers on here as well.
 
-154
+148
 00:07:15.926 --> 00:07:17.066
 So if you have a question,
 
-155
+149
 00:07:17.436 --> 00:07:19.566
 engineers are visiting
 these as well.
 
-156
+150
 00:07:19.566 --> 00:07:23.286
 One thing I want to
 call out though is
 
-157
+151
 00:07:23.286 --> 00:07:25.606
 that the forums are
 kind of public,
 
-158
+152
 00:07:26.096 --> 00:07:28.336
 so if you have a question that
 might be a bit confidential
 
-159
+153
 00:07:28.336 --> 00:07:29.406
 for your own application,
 
-160
+154
 00:07:30.256 --> 00:07:31.786
 everyone can see
 what you post here.
 
-161
+155
 00:07:32.416 --> 00:07:34.216
 So if you don't want
 to go through that
 
-162
+156
 00:07:34.216 --> 00:07:37.166
 and don't want everyone to
 see what your secret stuff is,
 
-163
+157
 00:07:37.276 --> 00:07:41.866
 I suggest you check out DTS,
 and we'll go into that in a bit.
 
-164
+158
 00:07:43.656 --> 00:07:46.216
 So let's go over an example
 post, don't need to go
 
-165
+159
 00:07:46.216 --> 00:07:48.176
 into too much, just some
 things I want to call out here.
 
-166
+160
 00:07:48.176 --> 00:07:49.926
 So over here we have
 someone who's has--
 
-167
+161
 00:07:50.306 --> 00:07:54.036
 is reading some of our example
 code and the guy got confused
 
-168
+162
 00:07:54.036 --> 00:07:55.036
 on something, what's
 going on here,
 
-169
+163
 00:07:55.036 --> 00:07:56.656
 it doesn't really
 following some guideline.
 
-170
+164
 00:07:57.906 --> 00:08:04.346
 And actually, Rincewind is
 actually an Apple engineer.
 
-171
-00:07:57.906 --> 00:08:04.346
-And actually, Rincewind is
-actually an Apple engineer.
-
-172
+165
 00:08:04.376 --> 00:08:06.006
 So if you ever see an avatar
 
-173
+166
 00:08:06.006 --> 00:08:07.506
 with the little Apple
 logo right next to it,
 
-174
+167
 00:08:08.246 --> 00:08:09.856
 know that's an engineer
 helping you out here.
 
-175
+168
 00:08:10.226 --> 00:08:11.766
 Also we have little area there
 
-176
+169
 00:08:11.766 --> 00:08:13.736
 where you can say a post
 was actually helpful
 
-177
+170
 00:08:13.736 --> 00:08:14.756
 or not very helpful to you.
 
-178
+171
 00:08:15.376 --> 00:08:17.896
 And the nice thing is other
 developers can see this as well.
 
-179
+172
 00:08:17.896 --> 00:08:23.706
 So someone answers your question
 and it really helped you out,
 
-180
+173
 00:08:23.976 --> 00:08:26.096
 let other developers
 know so that they'll know
 
-181
+174
 00:08:26.096 --> 00:08:27.396
 that this is exactly
 what they need to--
 
-182
+175
 00:08:28.106 --> 00:08:29.926
 that's an exactly
 answer that they want.
 
-183
+176
 00:08:31.066 --> 00:08:32.226
 You'd also report a post.
 
-184
+177
 00:08:32.226 --> 00:08:34.635
 So that doesn't necessarily
 mean that something is bad here,
 
-185
+178
 00:08:34.716 --> 00:08:36.206
 it could be as really
 great question
 
-186
+179
 00:08:36.206 --> 00:08:37.326
 but maybe it's in
 the wrong area.
 
-187
+180
 00:08:37.996 --> 00:08:40.765
 So if you click there, a
 moderator can go take a look
 
-188
+181
 00:08:40.765 --> 00:08:42.366
 on what's going on,
 actually moving around.
 
-189
+182
 00:08:45.096 --> 00:08:47.386
 Next, once you've gone
 through all these things,
 
-190
+183
 00:08:47.456 --> 00:08:50.876
 let's go in the areas
 about helping with Apple.
 
-191
+184
 00:08:51.006 --> 00:08:52.756
 So you work with
 some documentation,
 
-192
+185
 00:08:52.756 --> 00:08:57.016
 you got your app ready to go
 and you need some help from us.
 
-193
+186
 00:08:57.216 --> 00:09:00.676
 So, one of the first main areas
 about this is bug reporting
 
-194
-00:08:57.216 --> 00:09:00.676
-So, one of the first main areas
-about this is bug reporting
-
-195
+187
 00:09:00.676 --> 00:09:04.676
 and for that I'm going
 to hand off to Tanya.
 
-196
+188
 00:09:05.516 --> 00:09:09.556
 [ Applause ]
 
-197
+189
 00:09:10.056 --> 00:09:10.796
 >> Thank you, Nahir.
 
-198
+190
 00:09:11.166 --> 00:09:11.826
 Good morning, everyone.
 
-199
+191
 00:09:11.826 --> 00:09:14.196
 Thanks for joining us
 here, I know it's Friday
 
-200
+192
 00:09:14.196 --> 00:09:15.856
 and it's almost lunch.
 
-201
+193
 00:09:15.976 --> 00:09:18.496
 So I'll try to make it
 as quick as possible.
 
-202
+194
 00:09:18.976 --> 00:09:22.526
 My Name is Tanya and I'm
 an iOS Software Engineer
 
-203
+195
 00:09:22.556 --> 00:09:23.436
 on the MAPS team.
 
-204
+196
 00:09:23.436 --> 00:09:26.066
 And today, we're going
 to talk about a topic
 
-205
+197
 00:09:26.066 --> 00:09:27.926
 that is very near
 and dear to me.
 
-206
+198
 00:09:27.926 --> 00:09:29.666
 In fact, it's near
 and dear to a lot
 
-207
+199
 00:09:29.666 --> 00:09:31.546
 of Apple engineers,
 bug reporting.
 
-208
+200
 00:09:31.616 --> 00:09:35.256
 And we're going to talk about
 how you can utilize bug reports
 
-209
+201
 00:09:35.256 --> 00:09:38.306
 to communicate with Apple
 regarding the issues you've been
 
-210
+202
 00:09:38.306 --> 00:09:38.916
 running into.
 
-211
+203
 00:09:39.196 --> 00:09:43.646
 So let's start with the
 very fundamental question
 
-212
+204
 00:09:44.146 --> 00:09:45.856
 on why should you
 file bug reports?
 
-213
+205
 00:09:45.926 --> 00:09:52.216
 You should file bug reports
 because it provides a way for us
 
-214
+206
 00:09:52.216 --> 00:09:55.106
 as Apple engineers to
 help you out directly.
 
-215
+207
 00:09:55.106 --> 00:10:00.316
 You see we worked really hard
 to make an amazing platform,
 
-216
-00:09:55.106 --> 00:10:00.316
-You see we worked really hard
-to make an amazing platform,
-
-217
+208
 00:10:00.316 --> 00:10:04.146
 make amazing tools that help
 you make wonderful applications
 
-218
+209
 00:10:04.146 --> 00:10:05.456
 that delight our customers.
 
-219
+210
 00:10:06.086 --> 00:10:09.636
 But sometimes, there might be
 issues, there might be problems
 
-220
+211
 00:10:09.726 --> 00:10:12.996
 that we did not anticipate,
 and when you run into these,
 
-221
+212
 00:10:12.996 --> 00:10:14.396
 we would like you
 to let us know.
 
-222
+213
 00:10:14.396 --> 00:10:16.256
 We would like you to let us know
 
-223
+214
 00:10:16.256 --> 00:10:18.826
 so that we can take
 the appropriate action
 
-224
+215
 00:10:19.006 --> 00:10:20.246
 to address those quickly.
 
-225
+216
 00:10:20.806 --> 00:10:24.396
 When you file a bug
 report it goes directly
 
-226
+217
 00:10:24.396 --> 00:10:27.576
 to an Apple engineer, I
 read these bug reports.
 
-227
+218
 00:10:27.976 --> 00:10:30.606
 All the engineers, you might
 have met during the labs
 
-228
+219
 00:10:30.606 --> 00:10:32.896
 and sessions, they
 read your bug reports,
 
-229
+220
 00:10:32.896 --> 00:10:35.316
 they're surely not eaten by
 the trolls in our dungeons,
 
-230
+221
 00:10:35.576 --> 00:10:37.186
 this feedback is important,
 
-231
+222
 00:10:37.346 --> 00:10:38.796
 these back reports
 are important.
 
-232
+223
 00:10:39.356 --> 00:10:42.946
 So, if you want a direct
 communication channel
 
-233
+224
 00:10:43.156 --> 00:10:46.026
 to an Apple engineer to
 tell us some of the--
 
-234
+225
 00:10:46.026 --> 00:10:49.116
 to tell about the issues
 that he would be encountering
 
-235
+226
 00:10:49.446 --> 00:10:52.796
 in our software, bug
 reports are the way to go.
 
-236
+227
 00:10:53.636 --> 00:10:56.846
 Sometimes, when I tell
 people to file bugs,
 
-237
+228
 00:10:57.146 --> 00:10:58.256
 they have a few questions.
 
-238
+229
 00:10:59.086 --> 00:11:02.976
 Sometimes they say, well,
 Tanya, I saw this problem,
 
-239
-00:10:59.086 --> 00:11:02.976
-Sometimes they say, well,
-Tanya, I saw this problem,
-
-240
+230
 00:11:02.976 --> 00:11:05.746
 but it was an extremely
 trivial issue,
 
-241
+231
 00:11:05.746 --> 00:11:09.846
 you see perhaps it was a typo
 or the color was a little off,
 
-242
+232
 00:11:10.266 --> 00:11:11.596
 should I still file
 a bug report?
 
-243
+233
 00:11:11.896 --> 00:11:13.416
 Yes, absolutely.
 
-244
+234
 00:11:13.736 --> 00:11:14.776
 File a bug report.
 
-245
+235
 00:11:15.516 --> 00:11:18.086
 You see, a problem
 that might seem trivial
 
-246
+236
 00:11:18.086 --> 00:11:20.856
 to you might have some
 really bad consequences.
 
-247
+237
 00:11:21.546 --> 00:11:25.456
 Also it might manifest
 itself in worse ways.
 
-248
+238
 00:11:25.926 --> 00:11:26.946
 So file a bug report.
 
-249
+239
 00:11:28.256 --> 00:11:32.696
 Sometimes we say, well, you
 know, this problem happened once
 
-250
+240
 00:11:32.966 --> 00:11:36.166
 and it never happened again,
 I never ever saw this again.
 
-251
+241
 00:11:36.536 --> 00:11:37.836
 Should I still file
 a bug report?
 
-252
+242
 00:11:38.496 --> 00:11:40.576
 Yes, you should file
 a bug report.
 
-253
+243
 00:11:41.506 --> 00:11:44.746
 You see, even though, the
 problem only happened once,
 
-254
+244
 00:11:45.776 --> 00:11:48.326
 it might still have been a
 really bad user experience.
 
-255
+245
 00:11:48.756 --> 00:11:52.336
 Others might hit it too and
 other might hit it more number
 
-256
+246
 00:11:52.336 --> 00:11:54.746
 of times, so file a bug report.
 
-257
+247
 00:11:55.296 --> 00:11:59.196
 Sometimes they say, well,
 it's a really obvious problem,
 
-258
+248
 00:11:59.196 --> 00:12:01.936
 I'm sure you have 12
 copies of the bug.
 
-259
-00:11:59.196 --> 00:12:01.936
-I'm sure you have 12
-copies of the bug.
-
-260
+249
 00:12:02.456 --> 00:12:04.796
 I am sure someone else
 has already filed it,
 
-261
+250
 00:12:05.376 --> 00:12:06.776
 should I still file
 a bug report?
 
-262
+251
 00:12:07.196 --> 00:12:10.036
 Yes. You should still
 file a bug report.
 
-263
+252
 00:12:10.836 --> 00:12:15.166
 You see, it's better to
 have five copies of the bug
 
-264
+253
 00:12:15.706 --> 00:12:16.756
 than to have none at all,
 
-265
+254
 00:12:17.286 --> 00:12:18.696
 there's a good reason
 I say that.
 
-266
+255
 00:12:19.236 --> 00:12:25.296
 At Apple, if an issue is not
 tracked using a bug report,
 
-267
+256
 00:12:25.916 --> 00:12:28.686
 it essentially does
 not exist for us.
 
-268
+257
 00:12:30.256 --> 00:12:32.906
 Bug reports are like
 to-do items,
 
-269
+258
 00:12:33.836 --> 00:12:37.516
 we track everything using bug
 reports, bugs [inaudible],
 
-270
+259
 00:12:37.866 --> 00:12:42.836
 even big features that go
 into a particular release.
 
-271
+260
 00:12:43.986 --> 00:12:46.146
 And some other things
 that might not seem
 
-272
+261
 00:12:46.146 --> 00:12:48.096
 so obvious to start off of it.
 
-273
+262
 00:12:48.626 --> 00:12:54.706
 When I come into work
 every morning, in fact,
 
-274
+263
 00:12:54.706 --> 00:12:58.206
 when all Apple engineers
 come into work every morning,
 
-275
+264
 00:12:59.016 --> 00:13:02.546
 the first thing we do is to
 go through our list of bugs
 
-276
-00:12:59.016 --> 00:13:02.546
-the first thing we do is to
-go through our list of bugs
-
-277
+265
 00:13:02.686 --> 00:13:06.976
 to figure out what is it
 that we need to do that day.
 
-278
+266
 00:13:07.156 --> 00:13:10.476
 To figure out, if you're on
 track for a particular release,
 
-279
+267
 00:13:10.876 --> 00:13:16.016
 I know that's a good
 one, it's an actual bug.
 
-280
+268
 00:13:16.146 --> 00:13:18.716
 To figure out, if
 you're on track
 
-281
+269
 00:13:18.716 --> 00:13:22.176
 for a particular release our
 program office, our management,
 
-282
+270
 00:13:22.176 --> 00:13:25.366
 they go through a list of bugs
 to figure out if you're focusing
 
-283
+271
 00:13:25.366 --> 00:13:27.096
 on the right things
 at the right time.
 
-284
+272
 00:13:27.696 --> 00:13:30.256
 So we track everything using
 these bug reports, bugs,
 
-285
+273
 00:13:30.986 --> 00:13:33.316
 features, coffee
 problems, elevator problems,
 
-286
+274
 00:13:33.446 --> 00:13:35.866
 all of that, these
 are important.
 
-287
+275
 00:13:37.196 --> 00:13:41.176
 So now that we know why these
 bug reports are important,
 
-288
+276
 00:13:41.336 --> 00:13:43.966
 where do you actually
 go to file these?
 
-289
+277
 00:13:45.276 --> 00:13:50.396
 The one stop shop for filing bug
 reports is bugreport.apple.com,
 
-290
+278
 00:13:50.396 --> 00:13:53.206
 this is the only official
 way of filing bug reports.
 
-291
+279
 00:13:53.326 --> 00:13:56.326
 When you file a bug report, you
 are provided with a problem ID
 
-292
+280
 00:13:56.326 --> 00:14:01.146
 and you can use this ID to
 track the status of your bug.
 
-293
-00:13:56.326 --> 00:14:01.146
-and you can use this ID to
-track the status of your bug.
-
-294
+281
 00:14:02.076 --> 00:14:05.236
 Also, even after the bug
 is filed, you have a way
 
-295
+282
 00:14:05.236 --> 00:14:06.796
 to provide additional
 information.
 
-296
+283
 00:14:07.236 --> 00:14:08.286
 On the other hand,
 
-297
+284
 00:14:08.416 --> 00:14:11.986
 if the engineers have any
 clarifying questions for you,
 
-298
+285
 00:14:12.496 --> 00:14:14.926
 they have a means to get back
 to you with these questions.
 
-299
+286
 00:14:14.926 --> 00:14:18.806
 And one thing to keep
 in mind when you're file
 
-300
+287
 00:14:18.806 --> 00:14:21.916
 in this bug reports is
 to keep things specific.
 
-301
+288
 00:14:22.766 --> 00:14:25.576
 Follow the golden
 rule of bug filing,
 
-302
+289
 00:14:26.236 --> 00:14:29.286
 just to use one report
 for one issue.
 
-303
+290
 00:14:30.076 --> 00:14:33.516
 Things that might seem
 related to you, and might seem
 
-304
+291
 00:14:33.516 --> 00:14:35.696
 like they can be
 grouped together
 
-305
+292
 00:14:36.136 --> 00:14:39.816
 into one bug report might
 actually very different things
 
-306
+293
 00:14:39.816 --> 00:14:43.086
 and there might be different
 engineers working on it.
 
-307
+294
 00:14:43.786 --> 00:14:48.376
 So help us track things better
 by keeping things specific,
 
-308
+295
 00:14:49.026 --> 00:14:51.246
 so file one report
 for one issue.
 
-309
+296
 00:14:52.716 --> 00:14:55.576
 So what do you file
 these bug reports for?
 
-310
+297
 00:14:55.576 --> 00:14:57.316
 Well, when it comes to software,
 
-311
+298
 00:14:57.646 --> 00:15:01.636
 there are few things you can
 use these bug reports for.
 
-312
-00:14:57.646 --> 00:15:01.636
-there are few things you can
-use these bug reports for.
-
-313
+299
 00:15:02.276 --> 00:15:06.776
 Bugs, if you notice something
 does not work as expected,
 
-314
+300
 00:15:07.346 --> 00:15:10.106
 that's a software defect, that's
 a bug, so file a bug report.
 
-315
+301
 00:15:10.576 --> 00:15:14.986
 If you notice an application
 quits unexpectedly or crashes
 
-316
+302
 00:15:15.666 --> 00:15:20.226
 or if it's hanging and
 unresponsive, file a bug report.
 
-317
+303
 00:15:21.346 --> 00:15:25.556
 If you notice your
 application slow or hanging
 
-318
+304
 00:15:25.556 --> 00:15:28.066
 or perhaps leaking memory
 and you think it's a problem
 
-319
+305
 00:15:28.066 --> 00:15:30.086
 in our API, file a bug report.
 
-320
+306
 00:15:30.546 --> 00:15:36.246
 If you have a suggestion for a
 new feature or an improvement
 
-321
+307
 00:15:36.246 --> 00:15:39.056
 of an existing feature,
 file a bug report.
 
-322
+308
 00:15:39.486 --> 00:15:42.616
 One thing to keep in mind
 
-323
+309
 00:15:42.766 --> 00:15:44.836
 when you're filing
 these bug reports is
 
-324
+310
 00:15:44.896 --> 00:15:47.076
 to file them as early
 as possible.
 
-325
+311
 00:15:47.846 --> 00:15:50.506
 Do not wait till the last
 seed to report an issue
 
-326
+312
 00:15:50.506 --> 00:15:53.066
 that might be blocking
 essential functionality
 
-327
+313
 00:15:53.066 --> 00:15:54.026
 of your application.
 
-328
+314
 00:15:54.806 --> 00:15:56.996
 There's a good reason why
 I say that and it relates
 
-329
+315
 00:15:56.996 --> 00:15:58.266
 to how we schedule things.
 
-330
+316
 00:15:58.266 --> 00:16:01.556
 So let's look at the
 graphical representation
 
-331
-00:15:58.266 --> 00:16:01.556
-So let's look at the
-graphical representation
-
-332
+317
 00:16:01.746 --> 00:16:02.926
 of the problem at hand.
 
-333
+318
 00:16:03.636 --> 00:16:07.586
 So the horizontal axis
 represents the various
 
-334
+319
 00:16:07.586 --> 00:16:09.256
 milestones in our release.
 
-335
+320
 00:16:09.806 --> 00:16:13.156
 The vertical axis
 represents the probability
 
-336
+321
 00:16:13.626 --> 00:16:18.546
 that the bug will get addressed
 in that particular release.
 
-337
+322
 00:16:18.546 --> 00:16:20.506
 If you notice the blue line
 
-338
+323
 00:16:20.506 --> 00:16:23.466
 that relates little
 parameters curves downwards.
 
-339
+324
 00:16:23.886 --> 00:16:26.026
 So if the green arrow
 had to present
 
-340
+325
 00:16:26.436 --> 00:16:31.056
 when we receive the bug
 report, you can tell easily
 
-341
+326
 00:16:31.056 --> 00:16:34.196
 that the sooner you file,
 the higher the chances
 
-342
+327
 00:16:34.626 --> 00:16:36.986
 that your bug report,
 bug will get addressed
 
-343
+328
 00:16:37.346 --> 00:16:38.406
 in that particular release.
 
-344
+329
 00:16:38.846 --> 00:16:41.996
 On the other hand, if you
 wait till the last minute,
 
-345
+330
 00:16:42.286 --> 00:16:43.346
 we run out of time.
 
-346
+331
 00:16:43.926 --> 00:16:45.886
 Also the fix that is needed
 
-347
+332
 00:16:46.256 --> 00:16:47.916
 to resolve the problem
 you had reported,
 
-348
+333
 00:16:47.916 --> 00:16:52.326
 it might be very risky, so we
 might not be able to incorporate
 
-349
+334
 00:16:52.326 --> 00:16:54.076
 that into a particular release.
 
-350
+335
 00:16:54.506 --> 00:16:57.606
 But does that mean,
 it just expires,
 
-351
+336
 00:16:57.606 --> 00:16:58.666
 we don't look at it ever?
 
-352
+337
 00:16:58.666 --> 00:16:59.506
 Absolutely no.
 
-353
+338
 00:17:00.486 --> 00:17:03.306
 We will address that
 in the next release.
 
-354
+339
 00:17:03.846 --> 00:17:07.156
 Now there are few
 other things you can do
 
-355
+340
 00:17:07.566 --> 00:17:11.006
 to improve the chances of your
 bug getting fixed in time.
 
-356
+341
 00:17:11.006 --> 00:17:12.226
 But before we talk about that,
 
-357
+342
 00:17:13.205 --> 00:17:17.205
 let's look at what actually
 happens after you file your bug.
 
-358
+343
 00:17:17.856 --> 00:17:19.715
 So as we had established
 earlier,
 
-359
+344
 00:17:20.656 --> 00:17:23.546
 it goes directly to
 an Apple engineer.
 
-360
+345
 00:17:24.506 --> 00:17:27.546
 The engineer might forward
 it to other engineers
 
-361
+346
 00:17:27.906 --> 00:17:30.176
 if the underlying cause
 of the issue is not
 
-362
+347
 00:17:30.326 --> 00:17:31.596
 in their area of expertise.
 
-363
+348
 00:17:32.526 --> 00:17:35.036
 But for the sake of
 simplicity, let's just assume,
 
-364
+349
 00:17:35.336 --> 00:17:36.746
 it stays with that one engineer.
 
-365
+350
 00:17:37.836 --> 00:17:39.236
 Now in the perfect scenario,
 
-366
+351
 00:17:40.226 --> 00:17:43.846
 the engineer will understand the
 problem, will investigate it,
 
-367
+352
 00:17:44.076 --> 00:17:46.936
 come up with the fix, and
 integrate that into a build.
 
-368
+353
 00:17:47.796 --> 00:17:51.006
 Once the fix becomes
 available in a release build,
 
-369
+354
 00:17:51.206 --> 00:17:53.126
 we send the bug back to you.
 
-370
+355
 00:17:54.066 --> 00:17:57.506
 Now we recommend that when
 you get back the bug report,
 
-371
+356
 00:17:58.026 --> 00:18:00.956
 you verify that the problem
 was fixed and we also recommend
 
-372
-00:17:58.026 --> 00:18:00.956
-you verify that the problem
-was fixed and we also recommend
-
-373
+357
 00:18:00.956 --> 00:18:03.296
 that you do this as
 soon as possible.
 
-374
+358
 00:18:03.826 --> 00:18:07.556
 You see sometimes, the issue
 might not have actually been
 
-375
+359
 00:18:07.666 --> 00:18:11.226
 fixed and you have the option
 of sending the bug back to us
 
-376
+360
 00:18:11.866 --> 00:18:13.756
 and by responding
 quickly, you make sure
 
-377
+361
 00:18:13.756 --> 00:18:17.626
 that there still enough time
 for us to reinvestigate it
 
-378
+362
 00:18:17.626 --> 00:18:20.266
 and still fix it in
 that particular release.
 
-379
+363
 00:18:22.276 --> 00:18:25.406
 Sometimes, the bug
 may come back to you
 
-380
+364
 00:18:25.406 --> 00:18:27.806
 as a duplicate, what
 does this mean?
 
-381
+365
 00:18:28.626 --> 00:18:31.996
 This means that there is an
 existing bug report that we have
 
-382
+366
 00:18:32.386 --> 00:18:35.676
 that is tracking the same
 issue as you had reported.
 
-383
+367
 00:18:36.176 --> 00:18:38.836
 Now does this mean this is
 just a waste of your time?
 
-384
+368
 00:18:38.836 --> 00:18:39.546
 Absolutely not.
 
-385
+369
 00:18:39.926 --> 00:18:41.556
 Duplicates are important.
 
-386
+370
 00:18:42.516 --> 00:18:45.566
 You see, your bug report
 might have better information,
 
-387
+371
 00:18:45.566 --> 00:18:47.626
 it might have more
 actionable data
 
-388
+372
 00:18:48.236 --> 00:18:50.126
 than the original
 bug that was filed.
 
-389
+373
 00:18:51.026 --> 00:18:55.236
 Also many times, we use a number
 of duplicates as an indicator
 
-390
+374
 00:18:55.236 --> 00:18:57.736
 of how widespread the problem is
 
-391
+375
 00:18:57.826 --> 00:19:00.366
 so that we can prioritize
 it correctly.
 
-392
-00:18:57.826 --> 00:19:00.366
-so that we can prioritize
-it correctly.
-
-393
+376
 00:19:01.536 --> 00:19:06.466
 Even if your issue was tagged as
 a duplicate, you have the option
 
-394
+377
 00:19:06.566 --> 00:19:10.116
 of requesting status of the
 original bug, just put a comment
 
-395
+378
 00:19:10.116 --> 00:19:13.106
 in your bug report and we will
 provide the relevant information
 
-396
+379
 00:19:13.106 --> 00:19:14.046
 to you.
 
-397
+380
 00:19:16.476 --> 00:19:21.756
 Sometimes, when you file a bug,
 we might send it back to you
 
-398
+381
 00:19:21.796 --> 00:19:23.456
 as insufficient information.
 
-399
+382
 00:19:24.306 --> 00:19:25.166
 What does this mean?
 
-400
+383
 00:19:26.006 --> 00:19:30.256
 This means that the bug report
 does not have enough information
 
-401
+384
 00:19:30.256 --> 00:19:32.006
 for us to diagnose the problem.
 
-402
+385
 00:19:32.986 --> 00:19:35.476
 Now if possible you
 want to avoid running
 
-403
+386
 00:19:35.476 --> 00:19:39.246
 into this scenario, and there
 is a good reason why I say that.
 
-404
+387
 00:19:39.716 --> 00:19:43.106
 Let's bring back our older time
 
-405
+388
 00:19:43.106 --> 00:19:44.266
 versus [phonetic]
 probability graph
 
-406
+389
 00:19:44.466 --> 00:19:45.536
 and see what it looks like.
 
-407
+390
 00:19:46.026 --> 00:19:49.146
 If you read-- you did the
 right thing by filing early,
 
-408
+391
 00:19:49.146 --> 00:19:50.716
 so you started out strong.
 
-409
+392
 00:19:51.036 --> 00:19:53.936
 But unfortunately, the bug
 report did not contain enough
 
-410
+393
 00:19:53.936 --> 00:19:56.726
 information, so we
 sent it back to you
 
-411
+394
 00:19:56.726 --> 00:19:58.036
 with clarifying questions.
 
-412
+395
 00:19:58.786 --> 00:20:00.266
 You collected the information
 
-413
-00:19:58.786 --> 00:20:00.266
-You collected the information
-
-414
+396
 00:20:00.266 --> 00:20:02.266
 and sent it back to
 us which is great.
 
-415
+397
 00:20:03.186 --> 00:20:06.626
 But unfortunately in all
 this valuable time was lost.
 
-416
+398
 00:20:07.306 --> 00:20:10.336
 So even though you had
 started out strong,
 
-417
+399
 00:20:10.666 --> 00:20:13.956
 you end up on the lower
 part of the curve.
 
-418
+400
 00:20:14.146 --> 00:20:16.686
 To avoid this back and
 forth formal information,
 
-419
+401
 00:20:17.256 --> 00:20:21.936
 start out with a well
 written actionable bug report
 
-420
+402
 00:20:22.026 --> 00:20:24.856
 in the first place.
 
-421
+403
 00:20:24.856 --> 00:20:28.506
 To make your bug report
 actionable it should be clear,
 
-422
+404
 00:20:29.296 --> 00:20:33.586
 concise, informative,
 constructive and specific.
 
-423
+405
 00:20:34.896 --> 00:20:37.806
 To ensure that your bug report
 has all these qualities,
 
-424
+406
 00:20:37.806 --> 00:20:41.796
 let's go to the different
 components of a bug report
 
-425
+407
 00:20:41.796 --> 00:20:44.856
 and talk about some of the
 things you should keep in mind
 
-426
+408
 00:20:45.486 --> 00:20:46.576
 when you're filing a bug report.
 
-427
+409
 00:20:46.576 --> 00:20:51.606
 So here are the different
 components of a bug report,
 
-428
+410
 00:20:52.316 --> 00:20:56.046
 the problem report title,
 the problem detail section,
 
-429
+411
 00:20:56.686 --> 00:20:57.866
 additional enclosures,
 
-430
+412
 00:20:58.416 --> 00:21:01.116
 configuration information
 and reproducibility.
 
-431
-00:20:58.416 --> 00:21:01.116
-configuration information
-and reproducibility.
-
-432
+413
 00:21:01.596 --> 00:21:05.296
 Let's start by looking
 at the title.
 
-433
+414
 00:21:05.296 --> 00:21:11.756
 Think of the title as an
 advertisement for your issue.
 
-434
+415
 00:21:12.926 --> 00:21:16.176
 You want it so that when the
 engineer reads the title they
 
-435
+416
 00:21:16.176 --> 00:21:18.186
 want to open it and
 investigate it.
 
-436
+417
 00:21:18.186 --> 00:21:21.036
 A good title is clear
 and succinct.
 
-437
+418
 00:21:21.576 --> 00:21:24.796
 Think of it like a tweet, you
 see, you have limited space,
 
-438
+419
 00:21:25.326 --> 00:21:29.076
 but yet you want it to convey
 as much information as possible.
 
-439
+420
 00:21:29.896 --> 00:21:32.906
 So make every word
 count, avoid filler words.
 
-440
+421
 00:21:33.106 --> 00:21:36.606
 Drop off any articles of
 preposition or pronouns
 
-441
+422
 00:21:36.796 --> 00:21:37.826
 that are not needed there.
 
-442
+423
 00:21:38.406 --> 00:21:42.016
 So a good title should
 stand on its own.
 
-443
+424
 00:21:43.056 --> 00:21:47.656
 You see a title is often seen
 a list of tens or thousands
 
-444
+425
 00:21:47.656 --> 00:21:50.446
 of bugs and could be
 totally out of context,
 
-445
+426
 00:21:51.316 --> 00:21:56.276
 also above title is often use
 as a search for you issue.
 
-446
+427
 00:21:57.136 --> 00:21:59.196
 So, when you're coming up
 with the bug title think
 
-447
+428
 00:21:59.196 --> 00:22:02.166
 about how is it that you
 would search for the issue
 
-448
-00:21:59.196 --> 00:22:02.166
-about how is it that you
-would search for the issue
-
-449
+429
 00:22:03.136 --> 00:22:04.936
 and hopefully that will
 give you some hints
 
-450
+430
 00:22:05.056 --> 00:22:06.926
 on how to structure it.
 
-451
+431
 00:22:07.896 --> 00:22:10.506
 So let's look at an example.
 
-452
+432
 00:22:10.506 --> 00:22:13.246
 Here we have one, copy
 and paste is broken.
 
-453
+433
 00:22:14.396 --> 00:22:17.486
 Now, it's surely succinct
 its only five words.
 
-454
+434
 00:22:17.486 --> 00:22:20.416
 It's probably descriptive
 though,
 
-455
+435
 00:22:20.416 --> 00:22:23.456
 it doesn't really tell us how
 is it if we perform the copy
 
-456
+436
 00:22:23.456 --> 00:22:26.196
 and paste and surely we don't
 know what we mean by broken.
 
-457
+437
 00:22:26.196 --> 00:22:27.676
 So let's improve this further.
 
-458
+438
 00:22:27.676 --> 00:22:32.276
 Here we are at information
 about how is it's that we--
 
-459
+439
 00:22:32.276 --> 00:22:33.966
 that perform the copy operation.
 
-460
+440
 00:22:34.206 --> 00:22:35.036
 This is fine.
 
-461
+441
 00:22:36.076 --> 00:22:38.496
 But there's still the
 word broken in there,
 
-462
+442
 00:22:38.786 --> 00:22:40.726
 which is not descriptive.
 
-463
+443
 00:22:41.516 --> 00:22:44.586
 So we add information about
 what is it that we saw.
 
-464
+444
 00:22:44.586 --> 00:22:49.116
 Now this is pretty good,
 but we can get bonus points
 
-465
+445
 00:22:49.486 --> 00:22:52.326
 by prefixing it with
 the software version
 
-466
+446
 00:22:52.456 --> 00:22:53.366
 where we saw the problem.
 
-467
+447
 00:22:53.366 --> 00:22:56.496
 Now this is especially
 relevant for seed build,
 
-468
+448
 00:22:57.106 --> 00:22:59.876
 'cause when we see the title
 we can clearly and easily tell
 
-469
+449
 00:23:00.346 --> 00:23:01.896
 that this problem
 was encountered
 
-470
+450
 00:23:01.896 --> 00:23:04.236
 in a seed build versus
 a GM Build.
 
-471
+451
 00:23:04.236 --> 00:23:10.006
 Next up, is the problem
 details component.
 
-472
+452
 00:23:10.006 --> 00:23:14.276
 When we talk about problem
 details we mean be descriptive.
 
-473
+453
 00:23:15.156 --> 00:23:19.006
 Remember, the engineer who's
 reading your bug report was not
 
-474
+454
 00:23:19.006 --> 00:23:20.986
 present with you when
 the problem had happened.
 
-475
+455
 00:23:21.496 --> 00:23:23.616
 They had not seen
 what you had observed.
 
-476
+456
 00:23:23.616 --> 00:23:28.226
 So tell them about it, and
 this is the place to do that.
 
-477
+457
 00:23:29.536 --> 00:23:33.266
 The problem details component
 has five different subsections.
 
-478
+458
 00:23:33.686 --> 00:23:36.716
 Let's talk about each
 of them one at a time.
 
-479
+459
 00:23:36.976 --> 00:23:41.276
 Start with summary, the problem
 summary section is probably
 
-480
+460
 00:23:41.276 --> 00:23:45.146
 recapping the title and
 include some more descriptive
 
-481
+461
 00:23:45.186 --> 00:23:46.316
 summary information.
 
-482
+462
 00:23:47.216 --> 00:23:48.266
 What was going to?
 
-483
+463
 00:23:48.556 --> 00:23:49.406
 What happened?
 
-484
+464
 00:23:49.876 --> 00:23:51.826
 And why is it a problem?
 
-485
+465
 00:23:52.946 --> 00:23:56.546
 If you encountered an error
 message, this is a great place
 
-486
+466
 00:23:56.806 --> 00:23:59.686
 to put the exact text
 of the error message.
 
-487
+467
 00:24:00.686 --> 00:24:04.066
 And so remember be specific.
 
-488
+468
 00:24:04.066 --> 00:24:07.596
 Saying Safari is slow is
 generally not good enough.
 
-489
+469
 00:24:08.106 --> 00:24:11.026
 Is Safari slow compared
 to other browsers?
 
-490
+470
 00:24:11.296 --> 00:24:15.026
 Is Safari slow compared to
 Safari on other machines?
 
-491
+471
 00:24:15.026 --> 00:24:18.406
 Is Safari slow compared to
 Safari's earlier versions?
 
-492
+472
 00:24:19.016 --> 00:24:19.656
 Be specific.
 
-493
+473
 00:24:20.046 --> 00:24:21.956
 Also use the correct
 terminology?
 
-494
+474
 00:24:22.696 --> 00:24:25.696
 If you're not sure what a
 particular control is called,
 
-495
+475
 00:24:26.116 --> 00:24:26.966
 use a screenshot.
 
-496
+476
 00:24:27.636 --> 00:24:29.706
 Because that will tell
 us exactly what it is.
 
-497
+477
 00:24:31.086 --> 00:24:34.146
 So be precise and
 avoid weird language,
 
-498
+478
 00:24:35.066 --> 00:24:38.216
 saying nothing happens
 does not communicate much.
 
-499
+479
 00:24:38.806 --> 00:24:41.426
 Instead tell us what is
 it that you did expect
 
-500
+480
 00:24:41.566 --> 00:24:43.786
 to happen and did not happen.
 
-501
+481
 00:24:44.796 --> 00:24:48.106
 So instead of saying nothing
 happens when I try to print
 
-502
+482
 00:24:48.106 --> 00:24:50.866
 from Safari, try
 saying this instead,
 
-503
+483
 00:24:51.616 --> 00:24:54.196
 the printer progress
 dialog does not appear
 
-504
+484
 00:24:54.196 --> 00:24:55.626
 after I select the print button.
 
-505
+485
 00:24:56.326 --> 00:24:56.966
 That is much better.
 
-506
+486
 00:24:56.966 --> 00:25:00.956
 So let's look at
 an example summary
 
-507
-00:24:56.966 --> 00:25:00.956
-So let's look at
-an example summary
-
-508
+487
 00:25:01.896 --> 00:25:03.146
 for the copy and paste problem.
 
-509
+488
 00:25:03.466 --> 00:25:06.946
 We start out by recapping
 the title which is great,
 
-510
+489
 00:25:07.336 --> 00:25:10.576
 and then we add some other
 observations that we had made
 
-511
+490
 00:25:11.346 --> 00:25:12.356
 when the problem had occurred.
 
-512
+491
 00:25:13.666 --> 00:25:14.276
 This is pretty good.
 
-513
+492
 00:25:14.676 --> 00:25:17.906
 Next up is steps to reproduce.
 
-514
+493
 00:25:18.496 --> 00:25:21.906
 The problem with steps
 to reproduce is to think
 
-515
+494
 00:25:21.906 --> 00:25:24.906
 of what it would take
 to reproduce the issue
 
-516
+495
 00:25:24.986 --> 00:25:27.436
 on a freshly set of
 device of machine.
 
-517
+496
 00:25:28.546 --> 00:25:31.536
 Pretend you're telling your mom
 on how to reproduce the issue.
 
-518
+497
 00:25:32.836 --> 00:25:35.896
 Put yourself in the shoes
 of the engineer and think
 
-519
+498
 00:25:35.896 --> 00:25:39.516
 about what is it that
 they might need to know
 
-520
+499
 00:25:39.796 --> 00:25:41.566
 to diagnose the problem
 correctly.
 
-521
+500
 00:25:41.566 --> 00:25:42.906
 So anticipate the sort
 
-522
+501
 00:25:42.906 --> 00:25:44.626
 of questions they
 might have for you.
 
-523
+502
 00:25:45.616 --> 00:25:49.206
 Also remember do not make
 assumptions about them knowing
 
-524
+503
 00:25:49.206 --> 00:25:50.586
 about your application.
 
-525
+504
 00:25:51.746 --> 00:25:52.616
 So be specific.
 
-526
+505
 00:25:53.116 --> 00:25:56.536
 Instead of saying open the
 file, tell us how is it
 
-527
+506
 00:25:56.536 --> 00:25:57.456
 that you open the file.
 
-528
+507
 00:25:57.786 --> 00:25:59.616
 Did you open the
 file using finder?
 
-529
+508
 00:25:59.616 --> 00:26:01.546
 Did you open the
 file using terminal?
 
-530
-00:25:59.616 --> 00:26:01.546
-Did you open the
-file using terminal?
-
-531
+509
 00:26:01.716 --> 00:26:03.726
 That might be a relevant
 piece of information.
 
-532
+510
 00:26:04.196 --> 00:26:05.236
 Always remember it's better
 
-533
+511
 00:26:05.236 --> 00:26:06.936
 to include more information
 than less.
 
-534
+512
 00:26:07.866 --> 00:26:10.306
 So with that, let's
 look at an example.
 
-535
+513
 00:26:10.896 --> 00:26:13.306
 The same copy and paste
 problem we've been working with.
 
-536
+514
 00:26:13.306 --> 00:26:17.666
 So we start out fresh, we do not
 make any assumptions of the code
 
-537
+515
 00:26:17.736 --> 00:26:19.056
 that might have happened
 before this.
 
-538
+516
 00:26:19.546 --> 00:26:23.096
 We provide information
 about how is it
 
-539
+517
 00:26:23.546 --> 00:26:25.266
 that we perform the
 copy operation.
 
-540
+518
 00:26:25.656 --> 00:26:29.746
 Next up, we move onto how is it
 we perform the paste operation.
 
-541
+519
 00:26:29.746 --> 00:26:32.806
 We launch the Mail app,
 select the compose button
 
-542
+520
 00:26:33.776 --> 00:26:37.846
 and then select the paste button
 that appears in the callout.
 
-543
+521
 00:26:38.306 --> 00:26:42.836
 This is pretty good.
 
-544
+522
 00:26:43.056 --> 00:26:45.696
 Next up, are the two
 results sections,
 
-545
+523
 00:26:45.756 --> 00:26:47.926
 expected results
 and actual results.
 
-546
+524
 00:26:49.006 --> 00:26:50.606
 Use these sections to specify,
 
-547
+525
 00:26:50.606 --> 00:26:53.156
 what is it that you'd
 expected to see?
 
-548
+526
 00:26:53.416 --> 00:26:55.846
 And how was it different
 from what you actually saw?
 
-549
+527
 00:26:55.846 --> 00:26:59.586
 Now this piece of information
 has actually very important,
 
-550
+528
 00:26:59.586 --> 00:27:04.026
 because sometimes what you
 expect might not be consistent
 
-551
-00:26:59.586 --> 00:27:04.026
-because sometimes what you
-expect might not be consistent
-
-552
+529
 00:27:04.336 --> 00:27:05.936
 with what the engineer expects.
 
-553
+530
 00:27:06.606 --> 00:27:10.226
 So by specifying this we can
 clearly tell why you thought it
 
-554
+531
 00:27:10.226 --> 00:27:12.086
 was a problem what had happened.
 
-555
+532
 00:27:12.086 --> 00:27:16.116
 Let's look at an example.
 
-556
+533
 00:27:16.756 --> 00:27:21.686
 Start out by specifying, what is
 it that we did expect to happen?
 
-557
+534
 00:27:22.316 --> 00:27:24.116
 Which was us being
 able to paste image.
 
-558
+535
 00:27:25.386 --> 00:27:28.076
 Then we specify what is
 it that actually happened,
 
-559
+536
 00:27:28.236 --> 00:27:30.366
 which was us ending
 with an image,
 
-560
+537
 00:27:30.736 --> 00:27:32.626
 containing a blue box
 containing question mark.
 
-561
+538
 00:27:33.646 --> 00:27:36.426
 Now it might not be clear
 what is it that we mean
 
-562
+539
 00:27:36.426 --> 00:27:39.806
 by this blue box
 containing a question mark.
 
-563
+540
 00:27:41.076 --> 00:27:45.356
 So in all these cases attaching
 a screenshot is a great idea,
 
-564
+541
 00:27:45.966 --> 00:27:48.666
 it will tell us exactly
 what you saw.
 
-565
+542
 00:27:49.166 --> 00:27:54.246
 With that let's talk about
 the regression section.
 
-566
+543
 00:27:54.766 --> 00:28:00.536
 Use a section to specify
 when does the problem occur,
 
-567
-00:27:54.766 --> 00:28:00.536
-Use a section to specify
-when does the problem occur,
-
-568
+544
 00:28:00.536 --> 00:28:02.556
 when does is it not occur?
 
-569
+545
 00:28:03.276 --> 00:28:06.316
 So did the problem happen
 in the first seed of iOS 7,
 
-570
+546
 00:28:06.576 --> 00:28:09.846
 but did not happen
 in iOS 6 and earlier.
 
-571
+547
 00:28:11.006 --> 00:28:14.486
 Also does the problem go away
 if the application is relaunched
 
-572
+548
 00:28:14.746 --> 00:28:16.136
 or if the machine is rebooted?
 
-573
+549
 00:28:17.016 --> 00:28:20.246
 All that is relevant information
 for the regression section.
 
-574
+550
 00:28:20.526 --> 00:28:22.816
 Let's look at an example.
 
-575
+551
 00:28:23.596 --> 00:28:25.506
 We start out by specifying,
 
-576
+552
 00:28:25.996 --> 00:28:27.856
 when is it that we
 did see that problem?
 
-577
+553
 00:28:28.216 --> 00:28:30.636
 Which is the iOS 6 seed.
 
-578
+554
 00:28:31.506 --> 00:28:34.556
 Then move on to specifying
 the software configuration
 
-579
+555
 00:28:34.836 --> 00:28:36.566
 where we did not
 see the problem,
 
-580
+556
 00:28:36.566 --> 00:28:38.706
 which is iOS 5 and earlier.
 
-581
+557
 00:28:39.756 --> 00:28:43.846
 We also provide some other base
 we had not seen the problem
 
-582
+558
 00:28:43.846 --> 00:28:45.896
 which was using an
 alternative way
 
-583
+559
 00:28:46.166 --> 00:28:48.006
 of performing the
 copy operation.
 
-584
+560
 00:28:48.546 --> 00:28:53.536
 Let's talk about
 the next component
 
-585
+561
 00:28:53.606 --> 00:28:55.146
 which is the additional
 enclosures.
 
-586
+562
 00:28:55.146 --> 00:29:00.526
 Now when you're filing a bug
 report there might be extra
 
-587
-00:28:55.146 --> 00:29:00.526
-Now when you're filing a bug
-report there might be extra
-
-588
+563
 00:29:00.526 --> 00:29:03.986
 information that you
 can attach to your bug
 
-589
+564
 00:29:04.086 --> 00:29:09.046
 that will greatly help us
 understand the problem a
 
-590
+565
 00:29:09.046 --> 00:29:09.496
 lot quicker.
 
-591
+566
 00:29:09.496 --> 00:29:15.716
 Now an example of that
 is a sample project.
 
-592
+567
 00:29:15.716 --> 00:29:18.106
 You see, when I find a
 sample project attached
 
-593
+568
 00:29:18.166 --> 00:29:20.936
 to a bug report it pretty
 much feels like finding gold,
 
-594
+569
 00:29:21.236 --> 00:29:22.076
 because these are awesome.
 
-595
+570
 00:29:22.076 --> 00:29:24.296
 They are great for two reasons.
 
-596
+571
 00:29:25.266 --> 00:29:29.266
 First, it helps you isolate
 the problem to figure
 
-597
+572
 00:29:29.266 --> 00:29:33.166
 out if it's an issue with
 your code or with our API.
 
-598
+573
 00:29:34.276 --> 00:29:38.766
 Second, it helps us understand
 the problem a lot quicker,
 
-599
+574
 00:29:39.356 --> 00:29:42.546
 because we have a focus
 example to work with.
 
-600
+575
 00:29:42.596 --> 00:29:44.656
 So sample projects are great.
 
-601
+576
 00:29:45.196 --> 00:29:51.236
 In addition, there might be some
 other logs that you can attach
 
-602
+577
 00:29:51.656 --> 00:29:55.976
 that will greatly help us
 diagnose the problem quicker.
 
-603
+578
 00:29:56.056 --> 00:29:59.436
 Our online webpage has some
 excellent documentation
 
-604
+579
 00:29:59.706 --> 00:30:01.926
 on what sorts of
 logs you can attach
 
-605
-00:29:59.706 --> 00:30:01.926
-on what sorts of
-logs you can attach
-
-606
+580
 00:30:02.156 --> 00:30:03.326
 to what sorts of problems.
 
-607
+581
 00:30:03.356 --> 00:30:05.286
 And it also has detailed steps
 
-608
+582
 00:30:05.896 --> 00:30:07.966
 on how you can go
 about retrieving it.
 
-609
+583
 00:30:08.536 --> 00:30:09.836
 Let's go through of few of them
 
-610
+584
 00:30:10.536 --> 00:30:12.706
 that are common in
 a lot of cases.
 
-611
+585
 00:30:12.826 --> 00:30:15.286
 First up are crash logs.
 
-612
+586
 00:30:16.256 --> 00:30:19.446
 So if you run into
 a crash you may want
 
-613
+587
 00:30:19.446 --> 00:30:20.986
 to attach the crash log.
 
-614
+588
 00:30:21.436 --> 00:30:25.246
 To retrieve the crush log
 for an iOS device start
 
-615
+589
 00:30:25.246 --> 00:30:27.616
 by connecting the device
 to your host machine.
 
-616
+590
 00:30:27.756 --> 00:30:29.956
 And then sync it with iTunes.
 
-617
+591
 00:30:30.866 --> 00:30:32.546
 This will transfer the log file
 
-618
+592
 00:30:32.866 --> 00:30:35.696
 from your device to
 your host machine.
 
-619
+593
 00:30:35.906 --> 00:30:40.366
 So the next step is
 to locate the log file
 
-620
+594
 00:30:40.636 --> 00:30:41.666
 on your host machine.
 
-621
+595
 00:30:42.296 --> 00:30:45.666
 Now, if you're using a MAC,
 look under this location
 
-622
+596
 00:30:45.666 --> 00:30:49.586
 which is the User Directory,
 Library, Logs, CrashReporter,
 
-623
+597
 00:30:49.586 --> 00:30:53.876
 MobileDevice, and then a folder
 name corresponding to the device
 
-624
+598
 00:30:53.876 --> 00:30:55.146
 where the issue had occurred.
 
-625
+599
 00:30:55.996 --> 00:30:59.106
 You'll see files of this
 format, there will be prefix
 
-626
+600
 00:30:59.106 --> 00:31:02.486
 for the name of the application
 of the process that had crashed.
 
-627
-00:30:59.106 --> 00:31:02.486
-for the name of the application
-of the process that had crashed.
-
-628
+601
 00:31:03.016 --> 00:31:04.876
 And will also contain
 a timestamp
 
-629
+602
 00:31:05.186 --> 00:31:07.226
 from when the issue
 had occurred.
 
-630
+603
 00:31:07.226 --> 00:31:09.836
 So hopefully this will provide
 you with enough information
 
-631
+604
 00:31:10.416 --> 00:31:13.586
 on figuring out which is
 the file you need to attach.
 
-632
+605
 00:31:14.156 --> 00:31:18.596
 If you had connected your
 device to a Windows machine,
 
-633
+606
 00:31:18.596 --> 00:31:21.306
 it's the same steps, but
 you just need to look
 
-634
+607
 00:31:21.446 --> 00:31:22.636
 under a different location.
 
-635
+608
 00:31:23.196 --> 00:31:30.646
 If you'd encountered the
 crash on in OS X machine,
 
-636
+609
 00:31:32.056 --> 00:31:36.116
 look under this location which
 is the User directory, Library,
 
-637
+610
 00:31:36.116 --> 00:31:40.686
 Logs, DiagnosticReports,
 you should see the files
 
-638
+611
 00:31:40.686 --> 00:31:41.866
 for the same sort of format.
 
-639
+612
 00:31:42.276 --> 00:31:45.586
 They'll be prefix for the
 crashing application process
 
-640
+613
 00:31:45.586 --> 00:31:47.836
 name and will contain
 the timestamp
 
-641
+614
 00:31:47.866 --> 00:31:51.836
 from when the problem
 had occurred.
 
-642
+615
 00:31:52.026 --> 00:31:54.016
 Next up are console logs.
 
-643
+616
 00:31:54.416 --> 00:31:57.726
 Now these logs are great
 because they capture some really
 
-644
+617
 00:31:57.726 --> 00:32:00.946
 important application and
 system state information.
 
-645
-00:31:57.726 --> 00:32:00.946
-important application and
-system state information.
-
-646
+618
 00:32:01.466 --> 00:32:03.966
 They might contain
 some error information
 
-647
+619
 00:32:03.966 --> 00:32:06.646
 that will help us understand
 the problem quickly.
 
-648
+620
 00:32:07.676 --> 00:32:10.166
 So to capture these
 for iOS devices,
 
-649
+621
 00:32:10.746 --> 00:32:15.186
 launch your Xcode organizer
 window, select the console tab
 
-650
+622
 00:32:15.186 --> 00:32:16.526
 from the left inside panel.
 
-651
+623
 00:32:16.886 --> 00:32:18.576
 Reproduce the issue if you can,
 
-652
+624
 00:32:19.316 --> 00:32:23.216
 and then save it using the Save
 log as button at the bottom.
 
-653
+625
 00:32:23.776 --> 00:32:27.596
 On OS X it's a bit different,
 
-654
+626
 00:32:27.596 --> 00:32:31.346
 we use a different application
 called console, it's located
 
-655
+627
 00:32:31.346 --> 00:32:34.286
 under the Utilities folder of
 your Applications Directory.
 
-656
+628
 00:32:35.116 --> 00:32:39.896
 So once you launch it, you get
 a window that looks like this.
 
-657
+629
 00:32:40.196 --> 00:32:43.146
 Select the All Messages tab
 from the left inside panel,
 
-658
+630
 00:32:43.146 --> 00:32:46.386
 reproduce the issue if you can.
 
-659
+631
 00:32:46.386 --> 00:32:49.596
 And then save it
 using the Save a Copy
 
-660
+632
 00:32:49.596 --> 00:32:51.266
 As option from the File menu.
 
-661
+633
 00:32:54.076 --> 00:32:59.196
 Screenshots, now a picture
 is worth a thousand words.
 
-662
+634
 00:32:59.406 --> 00:33:03.816
 And this is especially relevant
 when it comes to bug reports.
 
-663
-00:32:59.406 --> 00:33:03.816
-And this is especially relevant
-when it comes to bug reports.
-
-664
+635
 00:33:03.816 --> 00:33:07.366
 You see, you might have
 run into a display issue
 
-665
+636
 00:33:07.366 --> 00:33:09.956
 or a screen rendering
 issue that is very hard
 
-666
+637
 00:33:09.986 --> 00:33:11.136
 to describe using words.
 
-667
+638
 00:33:11.556 --> 00:33:14.076
 Or as we had mentioned earlier,
 you might have use the control
 
-668
+639
 00:33:14.076 --> 00:33:15.976
 and you don't know
 what it is called.
 
-669
+640
 00:33:15.976 --> 00:33:18.386
 So use a screenshot in
 all these scenarios.
 
-670
+641
 00:33:19.256 --> 00:33:21.716
 To capture a screenshot
 on an iOS device,
 
-671
+642
 00:33:22.746 --> 00:33:25.816
 press and release the Power
 and Home button together.
 
-672
+643
 00:33:25.966 --> 00:33:28.356
 And that should save
 the screenshot
 
-673
+644
 00:33:28.356 --> 00:33:29.976
 as a photo in your photos app.
 
-674
+645
 00:33:30.116 --> 00:33:33.636
 So you can go about retrieving
 it using the usual ways
 
-675
+646
 00:33:33.636 --> 00:33:35.906
 of either emailing it or
 syncing it with iTunes.
 
-676
+647
 00:33:35.906 --> 00:33:40.396
 There's an alternate
 way you can use which is
 
-677
+648
 00:33:40.466 --> 00:33:41.976
 to use the Xcode Organizer.
 
-678
+649
 00:33:42.856 --> 00:33:46.116
 So select the screenshots tab
 from the left inside panel
 
-679
+650
 00:33:46.896 --> 00:33:49.466
 and then use the new
 screenshot button at the bottom.
 
-680
+651
 00:33:50.016 --> 00:33:54.886
 If you want to capture
 a screenshot on OS X,
 
-681
+652
 00:33:54.926 --> 00:33:57.296
 there are few different
 commands depending
 
-682
+653
 00:33:57.296 --> 00:33:58.796
 on what is it that
 you want to do.
 
-683
+654
 00:33:59.106 --> 00:34:02.666
 To capture the full screen,
 use Command+Shift and 3.
 
-684
-00:33:59.106 --> 00:34:02.666
-To capture the full screen,
-use Command+Shift and 3.
-
-685
+655
 00:34:02.666 --> 00:34:07.106
 To capture a part of the
 screen use Command+Shift and 4,
 
-686
+656
 00:34:07.806 --> 00:34:10.176
 and just specific window,
 this is actually handy,
 
-687
+657
 00:34:10.525 --> 00:34:12.746
 Command+Shift+4, and
 then press the spacebar.
 
-688
+658
 00:34:12.746 --> 00:34:16.686
 All these shortcuts save
 an image on your desktop
 
-689
+659
 00:34:17.166 --> 00:34:19.766
 that you can very easily
 attach to your bug report.
 
-690
+660
 00:34:20.216 --> 00:34:25.106
 You know sometimes
 screenshots are not good enough.
 
-691
+661
 00:34:25.786 --> 00:34:28.676
 Perhaps you're trying to
 describe a sequence of events
 
-692
+662
 00:34:29.235 --> 00:34:31.656
 or a bad animation or
 something being slow.
 
-693
+663
 00:34:32.806 --> 00:34:35.255
 In all these cases screen
 recordings are great.
 
-694
+664
 00:34:35.846 --> 00:34:40.706
 To capture a screen recording on
 OS X, launch QuickTime Player,
 
-695
+665
 00:34:40.976 --> 00:34:44.596
 select the New Screen Recording
 option from the File menu,
 
-696
+666
 00:34:45.346 --> 00:34:48.226
 select the start recording
 button, reproduce the issue,
 
-697
+667
 00:34:48.666 --> 00:34:52.146
 stop the recording you should
 have a movie file you can very
 
-698
+668
 00:34:52.146 --> 00:34:53.485
 easily attach to
 your bug report.
 
-699
+669
 00:34:53.896 --> 00:34:54.556
 This will be great.
 
-700
+670
 00:34:55.126 --> 00:34:58.746
 Next up are snapshots.
 
-701
+671
 00:34:59.686 --> 00:35:02.996
 You know, snapshots are
 essentially a state snapshot
 
-702
-00:34:59.686 --> 00:35:02.996
-You know, snapshots are
-essentially a state snapshot
-
-703
+672
 00:35:03.526 --> 00:35:05.656
 of all the processes
 that we're running
 
-704
+673
 00:35:05.886 --> 00:35:07.906
 at the time the snapshot
 was captured.
 
-705
+674
 00:35:08.866 --> 00:35:12.696
 So if you run into a performance
 issue on an iOS device.
 
-706
+675
 00:35:12.856 --> 00:35:14.626
 If something is slow
 
-707
+676
 00:35:14.626 --> 00:35:17.236
 or something is just
 stacked doing some task,
 
-708
+677
 00:35:18.256 --> 00:35:19.176
 capture a snapshot.
 
-709
+678
 00:35:19.176 --> 00:35:22.536
 In fact capture multiple
 snapshots because since each
 
-710
+679
 00:35:22.536 --> 00:35:26.036
 of these is a snapshot, we
 might need multiple to figure
 
-711
+680
 00:35:26.036 --> 00:35:28.456
 out what is exactly
 causing the slowness.
 
-712
+681
 00:35:28.456 --> 00:35:33.816
 So to capture a snapshot
 on an iOS device,
 
-713
+682
 00:35:34.906 --> 00:35:37.626
 press and release one
 of the volume buttons
 
-714
+683
 00:35:37.916 --> 00:35:39.186
 and the home button together.
 
-715
+684
 00:35:40.346 --> 00:35:42.406
 This should create a
 log file on your device
 
-716
+685
 00:35:42.406 --> 00:35:46.706
 and use the same ways of
 retrieval as a crash log.
 
-717
+686
 00:35:47.096 --> 00:35:49.656
 So connect to your device,
 to your host machine,
 
-718
+687
 00:35:49.656 --> 00:35:53.516
 sync it with iTunes and
 look under the same location
 
-719
+688
 00:35:53.516 --> 00:35:55.426
 as you would for a crash log.
 
-720
+689
 00:35:56.256 --> 00:35:58.836
 The log file will be
 prefixed with the word stacks
 
-721
+690
 00:35:59.596 --> 00:36:01.316
 and will contain the timestamp
 
-722
-00:35:59.596 --> 00:36:01.316
-and will contain the timestamp
-
-723
+691
 00:36:01.316 --> 00:36:03.296
 from when the problem
 had happened.
 
-724
+692
 00:36:03.836 --> 00:36:07.836
 If you run into performance
 issues
 
-725
+693
 00:36:08.576 --> 00:36:11.816
 on OS X capture sample logs.
 
-726
+694
 00:36:11.966 --> 00:36:13.416
 So if you notice
 something is slow
 
-727
+695
 00:36:13.416 --> 00:36:17.116
 or something is just stack doing
 something, capture sample logs.
 
-728
+696
 00:36:17.486 --> 00:36:21.496
 So launch your terminal window
 and run sample with the name
 
-729
+697
 00:36:21.496 --> 00:36:24.756
 of the application or process
 that is behaving poorly.
 
-730
+698
 00:36:25.546 --> 00:36:26.886
 Now that should all put a file
 
-731
+699
 00:36:27.276 --> 00:36:29.596
 that you can very easily
 attach to your bug report.
 
-732
+700
 00:36:29.966 --> 00:36:33.676
 Another great tool
 that is available
 
-733
+701
 00:36:33.676 --> 00:36:35.026
 on OS X is sysdiagnose.
 
-734
+702
 00:36:35.596 --> 00:36:39.066
 So, if you run into a
 system performance issue
 
-735
+703
 00:36:39.276 --> 00:36:41.766
 on OS X this will capture a lot
 
-736
+704
 00:36:41.766 --> 00:36:43.646
 of very useful state
 information.
 
-737
+705
 00:36:43.646 --> 00:36:46.656
 So launch your terminal
 window, type in sysdiagnose,
 
-738
+706
 00:36:47.306 --> 00:36:48.586
 take a few minutes to run.
 
-739
+707
 00:36:49.216 --> 00:36:53.086
 But by the end of it, you'll
 have a collection of rich logs
 
-740
+708
 00:36:53.336 --> 00:36:55.216
 that you can attach
 to your bug report.
 
-741
+709
 00:36:55.686 --> 00:37:01.896
 I have to admit, this is a lot
 of work and it's probably going
 
-742
-00:36:55.686 --> 00:37:01.896
-I have to admit, this is a lot
-of work and it's probably going
-
-743
+710
 00:37:01.896 --> 00:37:02.746
 to take a lot of time.
 
-744
+711
 00:37:03.836 --> 00:37:07.056
 But even though collecting
 this information,
 
-745
+712
 00:37:07.326 --> 00:37:09.376
 sort of making the
 sample project
 
-746
+713
 00:37:09.376 --> 00:37:13.846
 or attaching these logs they
 might be optional in some ways,
 
-747
+714
 00:37:14.726 --> 00:37:17.666
 you might still want to spend
 the time collecting this.
 
-748
+715
 00:37:17.966 --> 00:37:22.406
 And let me convince you by
 bringing back the good old time
 
-749
+716
 00:37:22.406 --> 00:37:23.696
 versus probability graph.
 
-750
+717
 00:37:24.396 --> 00:37:27.666
 You see when you attached
 this additional information,
 
-751
+718
 00:37:27.816 --> 00:37:29.806
 [inaudible] sort of moves up.
 
-752
+719
 00:37:31.936 --> 00:37:34.286
 The chance is that
 the bug will get fixed
 
-753
+720
 00:37:34.346 --> 00:37:35.546
 for that particular release.
 
-754
+721
 00:37:35.666 --> 00:37:38.376
 It goes up because
 it's much easier for us
 
-755
+722
 00:37:38.476 --> 00:37:40.806
 to understand the
 seriousness of the issue.
 
-756
+723
 00:37:41.196 --> 00:37:43.756
 Understand the issue
 itself as well.
 
-757
+724
 00:37:43.756 --> 00:37:47.866
 So the next time you're filing
 a bug report, think about it,
 
-758
+725
 00:37:47.866 --> 00:37:51.776
 whether to spend that extra
 time collecting this information
 
-759
+726
 00:37:52.726 --> 00:37:54.276
 in order to improve the chances.
 
-760
+727
 00:37:54.766 --> 00:38:00.586
 With that, let's talk about
 the configuration information
 
-761
-00:37:54.766 --> 00:38:00.586
-With that, let's talk about
-the configuration information
-
-762
+728
 00:38:00.616 --> 00:38:02.106
 component of a bug report.
 
-763
+729
 00:38:03.146 --> 00:38:06.186
 Use this section to
 specify the software
 
-764
+730
 00:38:06.186 --> 00:38:09.486
 and the hardware configuration
 of the device or the machine
 
-765
+731
 00:38:09.776 --> 00:38:10.886
 where you saw this problem.
 
-766
+732
 00:38:12.176 --> 00:38:15.846
 So in iOS, this would be the
 hardware model and version,
 
-767
+733
 00:38:16.686 --> 00:38:18.506
 the exact software version.
 
-768
+734
 00:38:18.506 --> 00:38:22.096
 Now, remember, sync iOS 6
 is generally not good enough
 
-769
+735
 00:38:22.166 --> 00:38:24.236
 because we shift
 many different builds
 
-770
+736
 00:38:24.316 --> 00:38:26.206
 of iOS 6 in the last year.
 
-771
+737
 00:38:26.826 --> 00:38:29.256
 So, to find out the
 exact version,
 
-772
+738
 00:38:29.646 --> 00:38:33.266
 launch the settings app,
 navigate to General-About
 
-773
+739
 00:38:33.866 --> 00:38:35.286
 and look under the
 version field.
 
-774
+740
 00:38:35.286 --> 00:38:38.846
 You should find the exact string
 corresponding to the build.
 
-775
+741
 00:38:38.846 --> 00:38:43.446
 Also if there was any
 other hardware involved
 
-776
+742
 00:38:43.666 --> 00:38:46.856
 in this problem that you
 saw specify information
 
-777
+743
 00:38:46.856 --> 00:38:47.636
 about that as well.
 
-778
+744
 00:38:47.906 --> 00:38:53.876
 On OS X the best way to capture
 configuration information is
 
-779
+745
 00:38:53.876 --> 00:38:55.946
 to use the system
 information report.
 
-780
+746
 00:38:56.256 --> 00:38:59.396
 And our online documentation
 has some excellent steps
 
-781
+747
 00:38:59.396 --> 00:39:01.776
 on how you can go about
 collecting this information.
 
-782
-00:38:59.396 --> 00:39:01.776
-on how you can go about
-collecting this information.
-
-783
+748
 00:39:02.276 --> 00:39:05.516
 Last component, we're
 going to talk
 
-784
+749
 00:39:05.516 --> 00:39:07.456
 about is the reproducibility
 section.
 
-785
+750
 00:39:07.456 --> 00:39:11.516
 Use this section to
 specify how often is it
 
-786
+751
 00:39:11.586 --> 00:39:12.576
 that you see the problem.
 
-787
+752
 00:39:12.776 --> 00:39:13.916
 Do you see it always?
 
-788
+753
 00:39:14.226 --> 00:39:16.756
 Did it only happen once
 and you never were able
 
-789
+754
 00:39:16.756 --> 00:39:17.926
 to reproduce it again?
 
-790
+755
 00:39:18.246 --> 00:39:21.346
 Even if you did not try
 to reproduce the issue,
 
-791
+756
 00:39:21.846 --> 00:39:25.136
 still tell us about that because
 that is still a relevant piece
 
-792
+757
 00:39:25.136 --> 00:39:25.966
 of information.
 
-793
+758
 00:39:27.026 --> 00:39:28.996
 With that, we have
 reached the end
 
-794
+759
 00:39:28.996 --> 00:39:30.776
 of the bug reporting section.
 
-795
+760
 00:39:31.156 --> 00:39:32.376
 But let's recap what we learned.
 
-796
+761
 00:39:33.416 --> 00:39:35.576
 We talked about why bug
 reports are important.
 
-797
+762
 00:39:36.236 --> 00:39:39.656
 They are a direct communication
 channel between you
 
-798
+763
 00:39:39.656 --> 00:39:42.136
 and an Apple engineer
 so that you can tell us
 
-799
+764
 00:39:42.136 --> 00:39:44.516
 about the issues you've been
 running into with our software
 
-800
+765
 00:39:44.926 --> 00:39:47.386
 and we can address
 those appropriately.
 
-801
+766
 00:39:47.886 --> 00:39:49.766
 These bug reports are read
 
-802
+767
 00:39:49.846 --> 00:39:53.316
 and very diligently
 tracked by Apple engineers.
 
-803
+768
 00:39:54.056 --> 00:39:56.986
 The timing is important in
 filing these bug reports.
 
-804
+769
 00:39:57.346 --> 00:39:59.266
 So file as early as possible.
 
-805
+770
 00:40:00.096 --> 00:40:04.476
 Also start off with well
 written actionable bug reports
 
-806
+771
 00:40:04.736 --> 00:40:08.226
 that are clear, concise,
 succinct,
 
-807
+772
 00:40:08.226 --> 00:40:10.116
 informative and constructive.
 
-808
+773
 00:40:10.826 --> 00:40:13.156
 We also talked about a few
 things you should keep in mind
 
-809
+774
 00:40:13.596 --> 00:40:15.986
 to improve the chances
 of your bug getting fixed
 
-810
+775
 00:40:16.176 --> 00:40:17.086
 in a particular release.
 
-811
+776
 00:40:17.756 --> 00:40:20.696
 With that, I like to hand it
 over to Ted who's going to talk
 
-812
+777
 00:40:20.696 --> 00:40:22.716
 to us about Developer
 Technical Support.
 
-813
+778
 00:40:22.716 --> 00:40:23.236
 Thank you.
 
-814
+779
 00:40:24.516 --> 00:40:26.826
 [ Applause ]
 
-815
+780
 00:40:27.326 --> 00:40:28.046
 >> Thank you Tanya.
 
-816
+781
 00:40:30.116 --> 00:40:31.486
 So, I'm Ted Jucevic.
 
-817
+782
 00:40:31.486 --> 00:40:32.766
 And I'm here to talk to you
 
-818
+783
 00:40:32.766 --> 00:40:38.956
 about Developer Technical
 Support.
 
-819
+784
 00:40:39.406 --> 00:40:46.986
 So, Developer Technical
 Support or DTS is a organization
 
-820
+785
 00:40:46.986 --> 00:40:52.466
 of engineers that provide one
 to one support of public APIs
 
-821
+786
 00:40:53.296 --> 00:40:57.906
 through email with a guaranteed
 response for developers
 
-822
+787
 00:40:57.906 --> 00:41:03.466
 of our iOS, OS X and
 MFi developer programs.
 
-823
-00:40:57.906 --> 00:41:03.466
-of our iOS, OS X and
-MFi developer programs.
-
-824
+788
 00:41:03.466 --> 00:41:04.926
 So, if you have question
 about how
 
-825
+789
 00:41:04.926 --> 00:41:08.466
 to integrate an Apple
 technology or you have a bug
 
-826
+790
 00:41:08.466 --> 00:41:12.526
 in your app you can't resolve,
 or a code level question related
 
-827
+791
 00:41:12.526 --> 00:41:16.256
 to the development of your iOS
 app, Mac app or MFi accessory,
 
-828
+792
 00:41:16.886 --> 00:41:20.376
 we can help by providing
 best practice guidance on how
 
-829
+793
 00:41:20.376 --> 00:41:22.616
 to use our APIs and
 troubleshoot.
 
-830
+794
 00:41:23.546 --> 00:41:26.176
 So, when should you contact DTS?
 
-831
+795
 00:41:26.836 --> 00:41:28.076
 Before you contact DTS,
 
-832
+796
 00:41:28.526 --> 00:41:31.506
 make sure you've read the
 relevant documentation.
 
-833
+797
 00:41:32.056 --> 00:41:33.676
 You've checked on
 the forums to see
 
-834
+798
 00:41:33.676 --> 00:41:37.146
 if your question has already
 been answered by somebody else.
 
-835
+799
 00:41:37.546 --> 00:41:39.976
 Write some test code.
 
-836
+800
 00:41:40.436 --> 00:41:43.496
 And if appropriate,
 do post your question
 
-837
+801
 00:41:43.496 --> 00:41:44.706
 to the developer forums.
 
-838
+802
 00:41:45.596 --> 00:41:50.276
 But if you still need help
 after you've exhausted all
 
-839
+803
 00:41:50.276 --> 00:41:52.976
 of the resources, contact DTS.
 
-840
+804
 00:41:54.066 --> 00:41:58.556
 So, you've decided that
 you're going to contact DTS.
 
-841
+805
 00:41:58.556 --> 00:42:01.766
 To do that, what
 you need to do is go
 
-842
-00:41:58.556 --> 00:42:01.766
-To do that, what
-you need to do is go
-
-843
+806
 00:42:01.766 --> 00:42:05.576
 to
 developer.apple.com/membercenter
 
-844
+807
 00:42:06.186 --> 00:42:07.766
 and click on the technical link
 
-845
+808
 00:42:08.456 --> 00:42:10.476
 in the developer
 support section.
 
-846
+809
 00:42:11.296 --> 00:42:13.646
 This will take you to a page
 where you can request help.
 
-847
+810
 00:42:14.336 --> 00:42:17.906
 Fill out and submit the
 technical support web form.
 
-848
+811
 00:42:18.676 --> 00:42:21.616
 And all follow up
 correspondences
 
-849
+812
 00:42:21.616 --> 00:42:23.286
 with DTS will be through email.
 
-850
+813
 00:42:24.056 --> 00:42:28.066
 So, we need a lot of the same
 information that is required
 
-851
+814
 00:42:28.306 --> 00:42:29.966
 when filing a bug report.
 
-852
+815
 00:42:31.106 --> 00:42:32.596
 An Xcode sample project,
 
-853
+816
 00:42:34.126 --> 00:42:37.256
 Symbolicated Crash
 Logs are all important.
 
-854
+817
 00:42:37.606 --> 00:42:43.436
 Now, Symbolicated Crash Logs are
 crash logs that have the symbols
 
-855
+818
 00:42:44.036 --> 00:42:45.656
 so the memory addresses,
 
-856
+819
 00:42:46.056 --> 00:42:49.276
 translated into human
 readable function names
 
-857
+820
 00:42:49.276 --> 00:42:50.346
 and my [phonetic] numbers.
 
-858
+821
 00:42:51.736 --> 00:42:54.836
 Many times after somebody had
 some Symbolicated Crash Log,
 
-859
+822
 00:42:55.826 --> 00:42:58.016
 they look at it and they
 can actually figure out how
 
-860
+823
 00:42:58.016 --> 00:42:59.286
 to solve the problem themselves.
 
-861
+824
 00:43:00.106 --> 00:43:02.836
 If not, when you
 submit the support
 
-862
+825
 00:43:02.836 --> 00:43:05.916
 for request make sure you
 include the Symbolicated Crash
 
-863
+826
 00:43:05.916 --> 00:43:11.126
 Log because if you have a
 crash, we're going to need one.
 
-864
+827
 00:43:11.286 --> 00:43:15.276
 So, I've told you about what
 DTS does, how to contact DTS
 
-865
+828
 00:43:15.576 --> 00:43:16.526
 and how to work with us.
 
-866
+829
 00:43:17.116 --> 00:43:23.826
 Let me start off or end this
 part by giving you some answers
 
-867
+830
 00:43:23.906 --> 00:43:26.656
 to some common questions
 that we get in DTS.
 
-868
+831
 00:43:26.656 --> 00:43:28.866
 So, all these answers
 are actually
 
-869
+832
 00:43:28.866 --> 00:43:31.236
 in technical note
 documents that we've written.
 
-870
+833
 00:43:31.676 --> 00:43:35.976
 For example, the ones that
 are list on this slide are
 
-871
+834
 00:43:35.976 --> 00:43:41.246
 on the iOS Reference Library
 for you to-- you can find 24/7.
 
-872
+835
 00:43:42.186 --> 00:43:46.686
 The first one, iOS Debugging
 Magic has a relative information
 
-873
+836
 00:43:46.816 --> 00:43:49.336
 for both new and
 expert developers
 
-874
+837
 00:43:49.336 --> 00:43:51.396
 who are debugging
 iOS applications.
 
-875
+838
 00:43:51.846 --> 00:43:54.266
 And it's one that I would
 highly recommend reading
 
-876
+839
 00:43:54.266 --> 00:43:59.576
 if you have started debugging
 your app, or your about to.
 
-877
+840
 00:44:00.116 --> 00:44:01.956
 The second one, understanding
 
-878
+841
 00:44:01.956 --> 00:44:04.476
 and analyzing iOS
 application crash reports.
 
-879
+842
 00:44:04.976 --> 00:44:08.276
 It's important because
 it explains to you how
 
-880
+843
 00:44:08.276 --> 00:44:12.896
 to symbolicate your crash logs
 and also gives information
 
-881
+844
 00:44:12.896 --> 00:44:15.756
 about common exceptions
 or other information
 
-882
+845
 00:44:16.266 --> 00:44:18.786
 about what may be
 causing your crash.
 
-883
+846
 00:44:19.626 --> 00:44:22.016
 The rest of these are also
 important, I'm not going to go
 
-884
+847
 00:44:22.016 --> 00:44:25.536
 into them for time, but
 make sure, you know,
 
-885
+848
 00:44:26.056 --> 00:44:27.396
 they're worth your
 time to read them.
 
-886
+849
 00:44:27.896 --> 00:44:31.216
 On the OS X side, we have
 some similar documents set
 
-887
+850
 00:44:31.216 --> 00:44:33.266
 that I also recommend
 you take a look at,
 
-888
+851
 00:44:33.266 --> 00:44:35.886
 if you're working on
 an app on the Mac.
 
-889
+852
 00:44:37.096 --> 00:44:40.516
 The Mac OS X Debugging Magic
 is like the iOS version
 
-890
+853
 00:44:41.016 --> 00:44:44.236
 where it has a treasure trove
 of information for both novice
 
-891
+854
 00:44:44.236 --> 00:44:47.916
 and expert developers, and
 then of course the second one,
 
-892
+855
 00:44:47.916 --> 00:44:50.536
 how to reproduce bugs report
 against a Mac App Store.
 
-893
+856
 00:44:51.276 --> 00:44:53.876
 Well, the title kind of explains
 it completely for itself.
 
-894
+857
 00:44:54.496 --> 00:44:56.876
 So, thank you very much.
 
-895
+858
 00:44:57.246 --> 00:45:00.296
 With that let me hand
 you back to Nahir.
 
-896
-00:44:57.246 --> 00:45:00.296
-With that let me hand
-you back to Nahir.
-
-897
+859
 00:45:03.906 --> 00:45:07.036
 >> So now, you've made your
 app, got all the help you need
 
-898
+860
 00:45:07.106 --> 00:45:09.256
 and you want to get to
 it to your customers.
 
-899
+861
 00:45:09.256 --> 00:45:13.666
 And you put it on the Mac App
 Store or the iOS App Store.
 
-900
+862
 00:45:14.326 --> 00:45:17.456
 So for that let's go on that.
 
-901
+863
 00:45:18.086 --> 00:45:20.426
 First one is the section
 that we're going to talk
 
-902
+864
 00:45:20.426 --> 00:45:21.376
 about is the App Store.
 
-903
+865
 00:45:21.446 --> 00:45:24.596
 So, we have a whole page for
 developers at developer.com--
 
-904
+866
 00:45:24.596 --> 00:45:27.046
 developer.apple.com/appstore.
 
-905
+867
 00:45:27.746 --> 00:45:30.046
 And this is where you can learn
 about our approval process
 
-906
+868
 00:45:31.296 --> 00:45:33.626
 and exactly what we go about
 when we're actually trying
 
-907
+869
 00:45:33.626 --> 00:45:35.356
 to approve your app
 to get on the Store.
 
-908
+870
 00:45:36.456 --> 00:45:37.716
 There's also where
 you can and figure
 
-909
+871
 00:45:37.716 --> 00:45:38.936
 out what the guidelines are
 
-910
+872
 00:45:38.936 --> 00:45:40.766
 on what's actually
 allowed in the Store.
 
-911
+873
 00:45:41.626 --> 00:45:44.086
 I recommend you check that out.
 
-912
+874
 00:45:44.686 --> 00:45:46.476
 We all have some other
 cool stuff here as well.
 
-913
+875
 00:45:46.476 --> 00:45:48.726
 So, if you've ever been on a
 website and you've seen those
 
-914
+876
 00:45:48.726 --> 00:45:51.376
 on the iOS or on
 the App Store links,
 
-915
+877
 00:45:51.646 --> 00:45:54.416
 or you've seen this really
 nice product images for our--
 
-916
+878
 00:45:54.416 --> 00:45:56.416
 some of our products, you
 can actually download all
 
-917
+879
 00:45:56.416 --> 00:45:57.446
 that on this website.
 
-918
+880
 00:45:57.916 --> 00:46:00.236
 You can get full
 pictures of our products,
 
-919
-00:45:57.916 --> 00:46:00.236
-You can get full
-pictures of our products,
-
-920
+881
 00:46:00.236 --> 00:46:01.316
 you can get to those links.
 
-921
+882
 00:46:01.756 --> 00:46:03.986
 And we also have some guidelines
 on how these things are going
 
-922
+883
 00:46:03.986 --> 00:46:06.606
 to be used, so check that out.
 
-923
+884
 00:46:07.336 --> 00:46:09.356
 There's also a really
 nice contact form here,
 
-924
+885
 00:46:09.356 --> 00:46:11.016
 if you have any questions
 for the App Store.
 
-925
+886
 00:46:11.486 --> 00:46:12.676
 So, I [inaudible] with
 all these other ways,
 
-926
+887
 00:46:12.676 --> 00:46:14.676
 there's one single
 place you can go
 
-927
+888
 00:46:14.676 --> 00:46:17.836
 for all your communication
 with the App Store.
 
-928
+889
 00:46:18.056 --> 00:46:20.536
 So, on this page, you can
 get the status of your app.
 
-929
+890
 00:46:20.596 --> 00:46:22.086
 So, if you've put it
 in and you're trying
 
-930
+891
 00:46:22.086 --> 00:46:23.826
 to see what's going
 on, what's going
 
-931
+892
 00:46:23.826 --> 00:46:25.406
 to review process,
 this is where you go.
 
-932
+893
 00:46:25.546 --> 00:46:28.516
 This is also where we
 can get some-- get--
 
-933
+894
 00:46:28.516 --> 00:46:31.616
 give us some clarification on
 an app if it's got rejected.
 
-934
+895
 00:46:31.686 --> 00:46:32.786
 Maybe someone miss something.
 
-935
+896
 00:46:33.166 --> 00:46:35.936
 The app reviewers are people
 and sometimes we make mistakes.
 
-936
+897
 00:46:35.936 --> 00:46:37.986
 So this is where we can
 also know what happened.
 
-937
+898
 00:46:38.426 --> 00:46:41.506
 If your app has been rejected,
 there's also where you can go
 
-938
+899
 00:46:41.506 --> 00:46:43.946
 to start off with the
 appeal process, because just
 
-939
+900
 00:46:43.946 --> 00:46:46.986
 because your app has been
 rejected doesn't mean they'll
 
-940
+901
 00:46:46.986 --> 00:46:48.196
 never be allowed
 in the App Store.
 
-941
+902
 00:46:48.656 --> 00:46:51.076
 We can work together to get
 back in there or get in there.
 
-942
+903
 00:46:52.596 --> 00:46:56.096
 This is also where you go to
 get an expedited app review.
 
-943
+904
 00:46:56.766 --> 00:46:59.766
 So, if you have an app in
 the App Store right now
 
-944
+905
 00:47:00.026 --> 00:47:03.716
 and you notice there's a very
 horrible crash and you needed
 
-945
+906
 00:47:03.716 --> 00:47:06.446
 to get it out there, that's
 where you can go to start that.
 
-946
+907
 00:47:06.586 --> 00:47:10.306
 Now, just as warning, you can
 do that for every single one
 
-947
+908
 00:47:10.306 --> 00:47:13.466
 of your submissions to the App
 Store because we kind of catch
 
-948
+909
 00:47:13.466 --> 00:47:15.066
 on to that and we're
 going to allow that.
 
-949
+910
 00:47:15.366 --> 00:47:18.156
 This is also where you can go to
 provide requested information.
 
-950
+911
 00:47:18.506 --> 00:47:22.396
 So, say we want to host
 your app or feature it,
 
-951
+912
 00:47:22.396 --> 00:47:24.626
 this is where you can add some
 information for there as well.
 
-952
+913
 00:47:25.056 --> 00:47:28.156
 Next we're going
 to iTunes Connect.
 
-953
+914
 00:47:29.126 --> 00:47:31.576
 And I'm sure many of
 you are very familiar
 
-954
+915
 00:47:31.576 --> 00:47:32.426
 with iTunes Connect.
 
-955
+916
 00:47:33.386 --> 00:47:36.066
 This is where you go
 to handle everything
 
-956
+917
 00:47:36.066 --> 00:47:39.376
 about managing your app and
 the business of your app.
 
-957
+918
 00:47:39.706 --> 00:47:41.686
 This is where you can go
 on to see your sales trends
 
-958
+919
 00:47:41.686 --> 00:47:42.736
 to see what's going on there.
 
-959
+920
 00:47:42.736 --> 00:47:46.046
 This is also where you can go to
 setup all your contracts and all
 
-960
+921
 00:47:46.046 --> 00:47:47.586
 of your little tax information
 
-961
+922
 00:47:47.586 --> 00:47:48.906
 and all the other
 stuff that you can do.
 
-962
+923
 00:47:48.906 --> 00:47:52.616
 This is also where can go to
 setup iAd and all those stuff
 
-963
+924
 00:47:52.886 --> 00:47:55.736
 that you need to get
 ready to have ads in
 
-964
+925
 00:47:55.976 --> 00:47:57.096
 and deal with the ad process.
 
-965
+926
 00:47:58.096 --> 00:48:02.316
 And also you can go in to
 get In-App purchases and how
 
-966
-00:47:58.096 --> 00:48:02.316
-And also you can go in to
-get In-App purchases and how
-
-967
+927
 00:48:02.316 --> 00:48:03.706
 to set those things up as well.
 
-968
+928
 00:48:04.206 --> 00:48:07.396
 Now, iTunes Mac is huge
 
-969
+929
 00:48:07.716 --> 00:48:09.996
 and there's some questions
 that you might have.
 
-970
+930
 00:48:10.656 --> 00:48:12.656
 So, there is a frequently
 asked questions phase there
 
-971
+931
 00:48:12.726 --> 00:48:14.136
 and I highly recommend
 you check it out.
 
-972
+932
 00:48:14.136 --> 00:48:15.906
 There are a lot of
 good information here
 
-973
+933
 00:48:15.906 --> 00:48:17.926
 and you have a question there's
 a very good chance that's
 
-974
+934
 00:48:17.926 --> 00:48:18.716
 answered right there.
 
-975
+935
 00:48:18.716 --> 00:48:23.976
 But if you don't want to go
 through, you can also check
 
-976
+936
 00:48:23.976 --> 00:48:25.216
 out the Contact Us Page.
 
-977
+937
 00:48:25.446 --> 00:48:27.806
 And it's kind of nice because
 got to hold drill down menu.
 
-978
+938
 00:48:28.596 --> 00:48:32.406
 So, in this case, I'm Canadian
 actually, so I'm trying
 
-979
+939
 00:48:32.406 --> 00:48:35.306
 to figure out what's going on
 to get my, like Canadian deals
 
-980
+940
 00:48:35.306 --> 00:48:38.336
 and tax information and all
 that, I can actually go in there
 
-981
+941
 00:48:38.336 --> 00:48:40.026
 and say, oh, I will
 have something
 
-982
+942
 00:48:40.026 --> 00:48:43.666
 with the tax information and
 I'm for-- kind the tax forms.
 
-983
+943
 00:48:43.666 --> 00:48:45.726
 And it tells me exactly
 what I am to do
 
-984
+944
 00:48:45.826 --> 00:48:47.236
 and where I can get
 more information.
 
-985
+945
 00:48:47.916 --> 00:48:50.316
 It also gives me some related
 frequently asked questions
 
-986
+946
 00:48:50.316 --> 00:48:51.926
 pages, so you can
 check that out as well.
 
-987
+947
 00:48:52.486 --> 00:49:00.006
 Now, iTunes Connect as I
 mentioned is a very large area,
 
-988
-00:48:52.486 --> 00:49:00.006
-Now, iTunes Connect as I
-mentioned is a very large area,
-
-989
+948
 00:49:00.006 --> 00:49:03.736
 so we actually have gigantic
 guidelines here, both for iOS
 
-990
+949
 00:49:03.786 --> 00:49:09.046
 and Mac developers and I highly
 recommend you check these out.
 
-991
+950
 00:49:09.396 --> 00:49:10.896
 They go step by step on how
 
-992
+951
 00:49:11.506 --> 00:49:15.706
 to do multiple different
 things in iTunes Connect.
 
-993
+952
 00:49:17.376 --> 00:49:22.316
 So with that, coming to the end
 of our presentation, so today,
 
-994
+953
 00:49:22.846 --> 00:49:25.086
 hopefully we got a
 bit of understanding
 
-995
+954
 00:49:25.086 --> 00:49:26.966
 of all the different developer
 resources that are available
 
-996
+955
 00:49:26.966 --> 00:49:30.186
 to you and when you
 should actually use them.
 
-997
+956
 00:49:30.186 --> 00:49:34.976
 So we went over, saw the ones
 that are great for helping--
 
-998
+957
 00:49:34.976 --> 00:49:38.796
 getting help yourself,
 also a bunch of resources
 
-999
+958
 00:49:39.006 --> 00:49:39.916
 when you're working with Apple
 
-1000
+959
 00:49:40.726 --> 00:49:43.446
 and also all the
 resources available to you
 
-1001
+960
 00:49:43.506 --> 00:49:47.146
 for when you are
 deploying your app.
 
-1002
+961
 00:49:47.406 --> 00:49:51.126
 We also went in-depth into
 the importance of bug reports.
 
-1003
+962
 00:49:51.706 --> 00:49:53.256
 We gave you a little
 behind scenes of what goes
 
-1004
+963
 00:49:53.256 --> 00:49:55.636
 on with Apple engineers
 when we're looking at them
 
-1005
+964
 00:49:55.636 --> 00:49:58.336
 and we gave you some
 really good tips on how
 
-1006
+965
 00:49:58.336 --> 00:49:59.586
 to file some really great ones.
 
-1007
+966
 00:50:00.196 --> 00:50:04.436
 We got some links here about
 some of the places or some
 
-1008
+967
 00:50:04.436 --> 00:50:05.686
 of the things that we discuss.
 
-1009
+968
 00:50:05.886 --> 00:50:07.626
 So your dev forums, app review,
 
-1010
+969
 00:50:08.466 --> 00:50:14.206
 etc. And here's some
 excellent links
 
-1011
+970
 00:50:14.256 --> 00:50:20.036
 to some technical tech notes
 that Jed had mentioned, Ted.
 
-1012
+971
 00:50:20.456 --> 00:50:24.036
 And here's some for
 the OS X as well.
 
-1013
+972
 00:50:24.196 --> 00:50:26.706
 I hope you've had
 a wonderful WWDC.
 
-1014
+973
 00:50:26.706 --> 00:50:28.906
 I hope to see you
 guys again soon.
 
-1015
+974
 00:50:29.516 --> 00:50:32.500
 [ Applause ]

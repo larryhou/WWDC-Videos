@@ -16,6 +16,7 @@ done
 
 echo "Converting ${vtt} ..." 1>&2
 
+stamp=""
 let index=0
 let found=0
 while read line
@@ -25,8 +26,15 @@ do
 		match=$(echo ${line} | grep '^[0-9]\{2\}:[0-9]\{2\}:[0-9]\{2\}.[0-9]\{3\}')
 		if [ ! "${match}" = "" ]
 		then
+			if [ "${stamp}" = "${line}" ]
+			then
+				let found=0
+				continue
+			fi
+			
 			let found=1
 			let index=index+1
+			stamp=${line}
 			
 			echo 
 			echo ${index}

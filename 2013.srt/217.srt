@@ -101,6784 +101,6510 @@ And we're going to do that
 again this year and we'll get
 
 23
-00:00:59.356 --> 00:01:01.176
-And we're going to do that
-again this year and we'll get
-
-24
 00:01:01.176 --> 00:01:02.146
 to that in just a minute.
 
-25
+24
 00:01:02.716 --> 00:01:03.856
 But before we do, I want
 
-26
+25
 00:01:03.856 --> 00:01:06.526
 to do something a little bit
 different this year and kind
 
-27
+26
 00:01:06.526 --> 00:01:10.096
 of take a step back and look
 through iOS 7's new interfaces
 
-28
+27
 00:01:10.506 --> 00:01:13.576
 and see how we're using
 UIScrollViews in some new ways
 
-29
+28
 00:01:13.906 --> 00:01:16.556
 that you might not necessarily
 have expected we'd be using
 
-30
+29
 00:01:16.556 --> 00:01:19.536
 UIScrollViews for so you
 can get some different ideas
 
-31
+30
 00:01:19.536 --> 00:01:22.336
 about how you can use this
 kind of stuff in your own apps
 
-32
+31
 00:01:22.696 --> 00:01:25.056
 to create some interesting
 different effects.
 
-33
+32
 00:01:25.616 --> 00:01:26.666
 So let's get started.
 
-34
+33
 00:01:27.746 --> 00:01:30.476
 The first thing that you see
 anytime you start on your phone,
 
-35
+34
 00:01:30.476 --> 00:01:31.846
 of course, is the Lock Screen.
 
-36
+35
 00:01:32.646 --> 00:01:35.866
 And starting in iOS 7, the
 first time that you turn
 
-37
+36
 00:01:35.866 --> 00:01:39.976
 on your phone, every time, the
 first that you'll do is interact
 
-38
+37
 00:01:39.976 --> 00:01:41.006
 with the UIScrollView.
 
-39
+38
 00:01:41.546 --> 00:01:44.826
 So, kind of big deal.
 
-40
+39
 00:01:45.486 --> 00:01:48.726
 The Lock Screen is actually now
 Slide to Unlock is implemented
 
-41
+40
 00:01:48.726 --> 00:01:50.676
 as a two-paged paging
 ScrollView.
 
-42
+41
 00:01:51.196 --> 00:01:53.446
 So when we swipe over here
 to the Passcode screen,
 
-43
+42
 00:01:53.616 --> 00:01:55.416
 we're just paging
 between two pages.
 
-44
+43
 00:01:55.896 --> 00:01:57.716
 It's easy to imagine
 how that's put together.
 
+44
+00:01:57.966 --> 00:02:00.216
+Over here on the right hand
+side, we've got the first page
+
 45
-00:01:57.966 --> 00:02:00.216
-Over here on the right hand
-side, we've got the first page
-
-46
-00:01:57.966 --> 00:02:00.216
-Over here on the right hand
-side, we've got the first page
-
-47
 00:02:00.546 --> 00:02:02.326
 and we're just swiping back
 and forth between them.
 
-48
+46
 00:02:03.616 --> 00:02:07.216
 Now, even before we get into
 unlocking, there's more uses
 
-49
+47
 00:02:07.216 --> 00:02:09.485
 of UIScrollView defined right
 here on the Lock Screen.
 
-50
+48
 00:02:10.466 --> 00:02:12.426
 So of course, if I get
 a notification saying
 
-51
+49
 00:02:12.426 --> 00:02:15.946
 that I have a WWDC presentation
 right now in Presidio,
 
-52
+50
 00:02:16.576 --> 00:02:19.896
 that is itself in a
 vertical scrolling list
 
-53
+51
 00:02:19.976 --> 00:02:22.426
 because you might have multiple
 notifications to scroll through.
 
-54
+52
 00:02:22.986 --> 00:02:25.746
 Then that's embedded within
 that outer paging ScrollView.
 
-55
+53
 00:02:25.966 --> 00:02:27.516
 It's an embedded
 vertical ScrollView.
 
-56
+54
 00:02:28.326 --> 00:02:30.756
 Now there's actually even
 more because each one
 
-57
+55
 00:02:30.756 --> 00:02:34.596
 of those notifications is
 itself embedded inside another
 
-58
+56
 00:02:34.596 --> 00:02:36.096
 horizontal paging ScrollView.
 
-59
+57
 00:02:36.986 --> 00:02:40.166
 So you might wonder why that is
 and it's actually pretty easy
 
-60
+58
 00:02:40.166 --> 00:02:41.776
 to see once we start
 interacting with it.
 
-61
+59
 00:02:42.156 --> 00:02:44.416
 When you swipe on an
 individual notification,
 
-62
+60
 00:02:44.946 --> 00:02:47.166
 that will take you
 directly to the application
 
-63
+61
 00:02:47.166 --> 00:02:48.696
 that generated that
 notification.
 
-64
+62
 00:02:49.176 --> 00:02:50.806
 So if we start interacting
 with this one,
 
-65
+63
 00:02:51.096 --> 00:02:53.536
 you'll find that we can drag
 it a little bit on its own,
 
-66
+64
 00:02:53.856 --> 00:02:55.806
 but eventually it'll
 catch the outer ScrollView
 
-67
+65
 00:02:55.806 --> 00:02:57.216
 and start pulling
 it along with it.
 
-68
+66
 00:02:57.216 --> 00:02:59.226
 And then if we let
 go, it just comes back
 
-69
+67
 00:02:59.226 --> 00:03:00.136
 to rest at the beginning.
 
-70
-00:02:59.226 --> 00:03:00.136
-to rest at the beginning.
-
-71
+68
 00:03:00.776 --> 00:03:02.276
 If we were to finish
 that gesture,
 
-72
+69
 00:03:02.486 --> 00:03:04.046
 we would be scrolling
 the inner ScrollView
 
-73
+70
 00:03:04.046 --> 00:03:07.516
 for a bit then we would catch
 the outer one and pull both
 
-74
+71
 00:03:07.516 --> 00:03:09.276
 of them over on to
 the Passcode screen.
 
-75
+72
 00:03:10.406 --> 00:03:13.446
 So this is a pretty interesting
 effect being generated
 
-76
+73
 00:03:13.446 --> 00:03:15.396
 by multiple Nested ScrollViews.
 
-77
+74
 00:03:15.596 --> 00:03:17.776
 And this is actually the first
 technique that we're going
 
-78
+75
 00:03:17.776 --> 00:03:20.146
 to look at today and
 go into a lot of depth
 
-79
+76
 00:03:20.146 --> 00:03:22.376
 on how exactly that
 was implemented.
 
-80
+77
 00:03:22.716 --> 00:03:25.016
 So, we'll show you the
 construction of the views
 
-81
+78
 00:03:25.316 --> 00:03:27.396
 and see how we make those
 ScrollViews interact to get
 
-82
+79
 00:03:27.396 --> 00:03:29.336
 that behavior where
 one pulls the other.
 
-83
+80
 00:03:29.946 --> 00:03:31.746
 But before we get to
 that, we're going to look
 
-84
+81
 00:03:31.806 --> 00:03:34.656
 through a few more examples in
 iOS 7 of this kind of thing.
 
-85
+82
 00:03:35.146 --> 00:03:36.756
 So let's unlock the
 phone and take a look
 
-86
+83
 00:03:36.756 --> 00:03:39.196
 at some more examples
 of Nesting ScrollViews.
 
-87
+84
 00:03:39.926 --> 00:03:42.366
 So right here on the home
 screen, I'm sure as you remember
 
-88
+85
 00:03:42.366 --> 00:03:45.036
 in the past, we used
 to have spotlight
 
-89
+86
 00:03:45.566 --> 00:03:48.116
 over on the left hand page
 of our paging ScrollView.
 
-90
+87
 00:03:48.626 --> 00:03:51.386
 In iOS 7, it's moved up to
 the top and that's implemented
 
-91
+88
 00:03:51.386 --> 00:03:54.366
 as a Nested ScrollView inside
 the outer paging ScrollView.
 
-92
+89
 00:03:55.846 --> 00:03:59.546
 Moving into the multitasking
 user interface, we can now find
 
-93
+90
 00:03:59.546 --> 00:04:03.666
 that the way that we kill
 applications in iOS 7-- oops.
 
-94
-00:03:59.546 --> 00:04:03.666
-that the way that we kill
-applications in iOS 7-- oops.
-
-95
+91
 00:04:04.836 --> 00:04:08.466
 The way that we kill running
 applications in iOS7 is
 
-96
+92
 00:04:08.466 --> 00:04:11.786
 by taking this interface and
 scrolling it and flicking it
 
-97
+93
 00:04:11.786 --> 00:04:12.966
 up off the top of the screen.
 
-98
+94
 00:04:13.596 --> 00:04:16.166
 That is also now a
 Nested UIScrollView.
 
-99
+95
 00:04:16.776 --> 00:04:19.466
 Now, the interesting thing about
 these Nested ScrollViews is
 
-100
+96
 00:04:19.466 --> 00:04:22.005
 that we get a really
 consistent experience throughout
 
-101
+97
 00:04:22.005 --> 00:04:22.916
 the interface.
 
-102
+98
 00:04:23.246 --> 00:04:24.966
 Every different place
 that we see this kind
 
-103
+99
 00:04:24.966 --> 00:04:27.866
 of interaction feels the same
 way, has the same bounce,
 
-104
+100
 00:04:28.146 --> 00:04:29.486
 has the same deceleration.
 
-105
+101
 00:04:29.996 --> 00:04:33.436
 It really just makes everything
 feel natural and consistent
 
-106
+102
 00:04:33.436 --> 00:04:35.196
 across the entire
 operating system.
 
-107
+103
 00:04:35.706 --> 00:04:37.696
 So if you're looking at
 doing any of these kinds
 
-108
+104
 00:04:37.696 --> 00:04:39.426
 of interactions, I
 would encourage you
 
-109
+105
 00:04:39.426 --> 00:04:41.406
 to consider using a
 UIScrollView to build it
 
-110
+106
 00:04:41.716 --> 00:04:43.436
 because you'll get the
 same feel that you have
 
-111
+107
 00:04:43.436 --> 00:04:45.756
 across all the other
 parts of iOS 7.
 
-112
+108
 00:04:47.156 --> 00:04:49.296
 So Nesting ScrollViews,
 that's a pretty common one.
 
-113
+109
 00:04:49.636 --> 00:04:52.616
 Another thing that we found
 has cropped up in a number
 
-114
+110
 00:04:52.616 --> 00:04:56.496
 of different apps on iOS 7 is
 multiple ScrollViews that scroll
 
-115
+111
 00:04:56.496 --> 00:04:58.426
 through the same content
 at different rates.
 
-116
+112
 00:04:59.086 --> 00:05:00.626
 So again here in
 the multitasking UI,
 
-117
-00:04:59.086 --> 00:05:00.626
-So again here in
-the multitasking UI,
-
-118
+113
 00:05:01.216 --> 00:05:03.346
 you can see that there are
 actually two independent
 
-119
+114
 00:05:03.456 --> 00:05:04.526
 sections of content.
 
-120
+115
 00:05:04.786 --> 00:05:07.806
 Up at the top, we've got
 the individual snapshot
 
-121
+116
 00:05:07.806 --> 00:05:10.246
 of the applications and we
 can scroll through those.
 
-122
+117
 00:05:10.526 --> 00:05:12.266
 And down at the bottom,
 we have their icons.
 
-123
+118
 00:05:12.696 --> 00:05:14.376
 Now, as we scroll
 through the top part,
 
-124
+119
 00:05:14.626 --> 00:05:16.706
 we'll move fairly slowly
 because we're moving
 
-125
+120
 00:05:16.766 --> 00:05:18.496
 through those images.
 
-126
+121
 00:05:18.786 --> 00:05:20.886
 But you'll notice that at the
 bottom, the icons kind of group
 
-127
+122
 00:05:20.886 --> 00:05:23.166
 up and now we see
 more of them at once.
 
-128
+123
 00:05:23.546 --> 00:05:25.536
 What that allows us to do
 is scroll at the bottom
 
-129
+124
 00:05:25.536 --> 00:05:27.986
 at a faster rate to get
 through things more quickly.
 
-130
+125
 00:05:28.606 --> 00:05:30.756
 So, two different
 ScrollViews scrolling
 
-131
+126
 00:05:30.756 --> 00:05:32.826
 through the same content
 at different rates.
 
-132
+127
 00:05:33.586 --> 00:05:35.116
 Another place where
 we find that kind
 
-133
+128
 00:05:35.116 --> 00:05:37.646
 of thing implemented is here
 in the Calendar application.
 
-134
+129
 00:05:38.186 --> 00:05:40.686
 So we can page through the
 paging ScrollView at the bottom
 
-135
+130
 00:05:40.686 --> 00:05:42.476
 which represents that
 days of the week.
 
-136
+131
 00:05:42.796 --> 00:05:44.916
 And as we do that, we
 go one day at a time.
 
-137
+132
 00:05:45.226 --> 00:05:47.436
 We can see all the days
 and go nice and slow.
 
-138
+133
 00:05:47.996 --> 00:05:50.406
 If we want to go faster,
 we can scroll up at the top
 
-139
+134
 00:05:50.656 --> 00:05:52.606
 where those numbers are,
 and that would let us,
 
-140
+135
 00:05:52.606 --> 00:05:55.226
 with one gesture, move
 an entire week back
 
-141
+136
 00:05:55.456 --> 00:05:58.006
 with what otherwise had taken
 us seven swipes to get through.
 
-142
+137
 00:05:59.246 --> 00:06:01.696
 So this idea of multiple
 ScrollViews scrolling
 
-143
-00:05:59.246 --> 00:06:01.696
-So this idea of multiple
-ScrollViews scrolling
-
-144
+138
 00:06:01.696 --> 00:06:04.106
 through the same content at
 different rates is showing
 
-145
+139
 00:06:04.106 --> 00:06:05.346
 up in a number of
 different places.
 
-146
+140
 00:06:05.586 --> 00:06:07.476
 It might be something that you
 might want to consider putting
 
-147
+141
 00:06:07.476 --> 00:06:08.526
 into your own applications
 
-148
+142
 00:06:08.876 --> 00:06:10.266
 if there's appropriate
 places for that.
 
-149
+143
 00:06:11.336 --> 00:06:12.426
 Another thing I want
 to take a look
 
-150
+144
 00:06:12.426 --> 00:06:15.626
 at here is some custom
 content transforms
 
-151
+145
 00:06:15.866 --> 00:06:17.416
 that are being applied
 to different pieces
 
-152
+146
 00:06:17.416 --> 00:06:19.456
 of content inside UIScrollViews.
 
-153
+147
 00:06:20.146 --> 00:06:22.046
 So, the first one that I'd
 like to take a look at is here
 
-154
+148
 00:06:22.046 --> 00:06:23.106
 in the Clock application.
 
-155
+149
 00:06:24.596 --> 00:06:30.636
 What you'll find is that there's
 the 3D Transform being applied
 
-156
+150
 00:06:30.636 --> 00:06:32.116
 to the numbers as we scroll
 
-157
+151
 00:06:32.116 --> 00:06:35.286
 through on the right
 hand side there.
 
-158
+152
 00:06:35.506 --> 00:06:37.746
 This has always looked
 vaguely 3D.
 
-159
+153
 00:06:37.966 --> 00:06:41.776
 But in iOS 7, this is actually a
 3D wheel being constructed using
 
-160
+154
 00:06:41.776 --> 00:06:44.006
 3D Transforms on
 [inaudible] layers.
 
-161
+155
 00:06:44.726 --> 00:06:47.426
 Now, this is still the exact
 same scrolling behaviors
 
-162
+156
 00:06:47.426 --> 00:06:50.686
 that you expect across the
 operating system, the same feel
 
-163
+157
 00:06:50.686 --> 00:06:52.156
 of movement, same deceleration,
 
-164
+158
 00:06:52.416 --> 00:06:54.126
 it's just that there's
 some transforms applied
 
-165
+159
 00:06:54.126 --> 00:06:56.616
 to the content to give an
 interesting visual effect
 
-166
+160
 00:06:56.946 --> 00:06:59.186
 that makes it unique in
 this particular location.
 
-167
+161
 00:06:59.996 --> 00:07:02.706
 Another example of this kind of
 thing can be found in Safari.
 
-168
-00:06:59.996 --> 00:07:02.706
-Another example of this kind of
-thing can be found in Safari.
-
-169
+162
 00:07:03.236 --> 00:07:06.176
 If we go into the new Tab
 Switcher interface in Safari,
 
-170
+163
 00:07:06.526 --> 00:07:08.446
 you'll find that as you
 scroll, some of the tabs
 
-171
+164
 00:07:08.446 --> 00:07:11.026
 at the top start to pull out
 of the screen towards you.
 
-172
+165
 00:07:11.586 --> 00:07:13.456
 Now again, this is
 just a UIScrollView
 
-173
+166
 00:07:13.676 --> 00:07:16.356
 but we're applying Transforms
 on the content while we scroll
 
-174
+167
 00:07:16.356 --> 00:07:19.186
 to give this other interesting
 visual effect that's unique
 
-175
+168
 00:07:19.186 --> 00:07:20.106
 to this application.
 
-176
+169
 00:07:20.726 --> 00:07:24.366
 One last place where we see this
 kind of technique being used is
 
-177
+170
 00:07:24.366 --> 00:07:25.686
 in the Passbook application.
 
-178
+171
 00:07:26.106 --> 00:07:27.416
 As we scroll within passes,
 
-179
+172
 00:07:27.416 --> 00:07:28.826
 they're bunching
 up near the top.
 
-180
+173
 00:07:28.826 --> 00:07:31.336
 And then as we pull down and
 it rubber bands, they stretch
 
-181
+174
 00:07:31.336 --> 00:07:33.016
 out from one another
 a little bit.
 
-182
+175
 00:07:33.376 --> 00:07:36.106
 Again, just a UIScrollView,
 we have the exact same feel
 
-183
+176
 00:07:36.106 --> 00:07:39.626
 of the bouncing, but we get an
 interesting visual effect unique
 
-184
+177
 00:07:39.626 --> 00:07:40.496
 to the Passbook app.
 
-185
+178
 00:07:41.236 --> 00:07:43.636
 So, all of these techniques
 are fairly easy to implement
 
-186
+179
 00:07:43.636 --> 00:07:45.296
 by just applying
 different Transforms
 
-187
+180
 00:07:45.326 --> 00:07:48.156
 to the content while you're
 scrolling in your UIScrollView.
 
-188
+181
 00:07:48.746 --> 00:07:51.616
 Now the last thing I want to
 take a look at before we get
 
-189
+182
 00:07:51.616 --> 00:07:53.616
 into the specific examples
 of implementing some
 
-190
+183
 00:07:53.616 --> 00:07:55.866
 of this stuff is the
 Messages application.
 
-191
+184
 00:07:56.596 --> 00:07:58.766
 I'm sure you've noticed as
 you'd been using Messages
 
-192
+185
 00:07:58.986 --> 00:08:01.876
 that when you go into a
 conversation and you scroll
 
-193
-00:07:58.986 --> 00:08:01.876
-that when you go into a
-conversation and you scroll
-
-194
+186
 00:08:01.876 --> 00:08:03.756
 around it, the Chat
 Bubbles have a little bit
 
-195
+187
 00:08:03.756 --> 00:08:04.676
 of a bounce to them.
 
-196
+188
 00:08:04.966 --> 00:08:07.236
 It gives it this really lively
 feel as you're scrolling
 
-197
+189
 00:08:07.236 --> 00:08:09.776
 around in this application and
 it's really unique compared
 
-198
+190
 00:08:09.776 --> 00:08:11.586
 to what you see in
 other apps on iOS 7.
 
-199
+191
 00:08:12.236 --> 00:08:14.196
 Now this is actually the second
 thing that we're going to talk
 
-200
+192
 00:08:14.196 --> 00:08:16.326
 about today and see
 exactly how this kind
 
-201
+193
 00:08:16.326 --> 00:08:17.356
 of thing can be implemented.
 
-202
+194
 00:08:17.756 --> 00:08:20.316
 It's actually become
 really easy to do in iOS 7
 
-203
+195
 00:08:20.316 --> 00:08:22.656
 with the introduction of
 the new UIKit Dynamics API.
 
-204
+196
 00:08:23.336 --> 00:08:25.816
 So, we're going to get into
 that just after we talk
 
-205
+197
 00:08:25.856 --> 00:08:27.336
 through the first
 Lock Screen example.
 
-206
+198
 00:08:27.946 --> 00:08:30.306
 So, let's get into building
 some of these things.
 
-207
+199
 00:08:30.806 --> 00:08:33.785
 And as I mentioned, the
 first thing we want to talk
 
-208
+200
 00:08:33.785 --> 00:08:37.106
 about is the Lock Screen,
 those Nested UIScrollViews.
 
-209
+201
 00:08:37.756 --> 00:08:40.606
 So let's take a look at that
 again just for a quick reminder
 
-210
+202
 00:08:40.606 --> 00:08:42.076
 of how this is going
 to be put together.
 
-211
+203
 00:08:42.916 --> 00:08:44.346
 So we've got here
 our Lock Screen.
 
-212
+204
 00:08:45.066 --> 00:08:48.386
 On the left side, we've
 got another page of content
 
-213
+205
 00:08:48.386 --> 00:08:49.796
 which is the Passcode lock.
 
-214
+206
 00:08:50.736 --> 00:08:53.456
 And of course, this is a paging
 ScrollView with two pages
 
-215
+207
 00:08:53.666 --> 00:08:55.906
 and our content size
 is represented
 
-216
+208
 00:08:56.596 --> 00:09:00.466
 by the width of those two pages.
 
-217
-00:08:56.596 --> 00:09:00.466
-by the width of those two pages.
-
-218
+209
 00:09:00.616 --> 00:09:04.026
 Now, that ScrollView is actually
 a full screen UIScrollView
 
-219
+210
 00:09:04.026 --> 00:09:05.506
 because it's going
 to be scrolling all
 
-220
+211
 00:09:05.506 --> 00:09:07.186
 of the content that's
 visible on the screen.
 
-221
+212
 00:09:08.636 --> 00:09:10.876
 Nested within that, we
 have the notifications.
 
-222
+213
 00:09:11.266 --> 00:09:13.006
 And that's a much
 smaller UIScrollView
 
-223
+214
 00:09:13.006 --> 00:09:15.706
 and it scrolls only vertically,
 but it's here as a child
 
-224
+215
 00:09:15.706 --> 00:09:17.106
 of that outer paging ScrollView.
 
-225
+216
 00:09:17.106 --> 00:09:18.626
 And then as I mentioned,
 
-226
+217
 00:09:18.626 --> 00:09:21.826
 each one of these is also its
 own nested horizontal ScrollView
 
-227
+218
 00:09:22.356 --> 00:09:23.326
 and they're a little bit smaller
 
-228
+219
 00:09:23.326 --> 00:09:25.016
 because they're just
 scrolling the individual
 
-229
+220
 00:09:25.016 --> 00:09:26.066
 notification itself.
 
-230
+221
 00:09:26.456 --> 00:09:27.786
 So we've got one
 here for the top
 
-231
+222
 00:09:27.786 --> 00:09:28.906
 and then another for the bottom.
 
-232
+223
 00:09:28.906 --> 00:09:32.836
 Now as the user starts to
 move their finger on this,
 
-233
+224
 00:09:33.156 --> 00:09:35.136
 the content in that will
 get pulled over to the point
 
-234
+225
 00:09:35.136 --> 00:09:37.266
 where it's going to catch
 that outer ScrollView.
 
-235
+226
 00:09:37.976 --> 00:09:40.446
 As they finish their
 gesture and finish scrolling
 
-236
+227
 00:09:40.446 --> 00:09:43.106
 that inner page, it pulls
 the outer one along with it
 
-237
+228
 00:09:43.106 --> 00:09:44.876
 and gets us over
 onto the Lock Screen.
 
-238
+229
 00:09:45.406 --> 00:09:47.756
 Now, if you've used UIScrollView
 before in your apps,
 
-239
+230
 00:09:47.856 --> 00:09:49.176
 I'm sure you're familiar
 with the fact
 
-240
+231
 00:09:49.176 --> 00:09:51.806
 that ScrollViews will not
 automatically start dragging
 
-241
+232
 00:09:51.806 --> 00:09:53.356
 their outer containing
 ScrollView
 
-242
+233
 00:09:53.586 --> 00:09:55.226
 if you just nest
 one inside another.
 
-243
+234
 00:09:55.676 --> 00:09:57.206
 So something must've
 been done in order
 
-244
+235
 00:09:57.206 --> 00:09:58.616
 to make this behavior happen.
 
-245
+236
 00:09:59.346 --> 00:10:01.046
 So let's look at how
 we would do that.
 
-246
-00:09:59.346 --> 00:10:01.046
-So let's look at how
-we would do that.
-
-247
+237
 00:10:02.236 --> 00:10:04.606
 Well, where might we want to
 implement this kind of thing?
 
-248
+238
 00:10:05.526 --> 00:10:08.016
 If you've watched previous
 sessions and seen some
 
-249
+239
 00:10:08.016 --> 00:10:10.496
 of the techniques we've used for
 implementing custom interactions
 
-250
+240
 00:10:10.496 --> 00:10:12.776
 in ScrollViews, you
 probably already have an idea
 
-251
+241
 00:10:12.776 --> 00:10:15.376
 of what I'm going to say.
 
-252
+242
 00:10:15.596 --> 00:10:18.016
 And that, of course, is that
 there's the delegate method,
 
-253
+243
 00:10:18.016 --> 00:10:21.116
 scrollViewDidScroll,
 which allows us to find
 
-254
+244
 00:10:21.116 --> 00:10:23.656
 out every time a ScrollView's
 contentOffset changes
 
-255
+245
 00:10:23.846 --> 00:10:25.256
 and do something
 in response to it.
 
-256
+246
 00:10:26.386 --> 00:10:27.796
 So in this case, the
 thing that we want to do
 
-257
+247
 00:10:27.796 --> 00:10:30.366
 in response is have the
 inner ScrollView tell us
 
-258
+248
 00:10:30.366 --> 00:10:33.126
 when it scrolls and then move
 the outer one along with it.
 
-259
+249
 00:10:34.276 --> 00:10:35.976
 So what's that going
 to look like?
 
-260
+250
 00:10:36.436 --> 00:10:38.246
 Well, we're going to implement
 our scrollViewDidScroll
 
-261
+251
 00:10:38.246 --> 00:10:38.846
 delegate method.
 
-262
+252
 00:10:40.226 --> 00:10:43.166
 We're going to find out how far
 the inner one has scrolled pass
 
-263
+253
 00:10:43.446 --> 00:10:45.686
 the point where we wanted
 it to catch the outer one.
 
-264
+254
 00:10:46.166 --> 00:10:48.536
 We want to give some free
 scrolling before it grabs the
 
-265
+255
 00:10:48.536 --> 00:10:51.046
 outer one, so there's
 some initial movement
 
-266
+256
 00:10:51.046 --> 00:10:51.706
 that's required.
 
-267
+257
 00:10:52.086 --> 00:10:54.056
 So let's find out how
 far we got beyond that.
 
-268
+258
 00:10:54.756 --> 00:10:57.206
 Once we have that value,
 we're just going to apply it
 
-269
+259
 00:10:57.206 --> 00:10:59.336
 as a new offset onto
 the outer ScrollView.
 
-270
+260
 00:10:59.736 --> 00:11:01.206
 So we'll take that
 outer ScrollView
 
-271
-00:10:59.736 --> 00:11:01.206
-So we'll take that
-outer ScrollView
-
-272
+261
 00:11:01.406 --> 00:11:04.376
 and shift its contentOffset by
 the delta we just calculated.
 
-273
+262
 00:11:04.976 --> 00:11:06.596
 So, actually pretty
 straightforward.
 
-274
+263
 00:11:06.596 --> 00:11:09.066
 And to show us exactly how
 we can put that together,
 
-275
+264
 00:11:09.316 --> 00:11:11.686
 Eliza is going to come up and
 start doing a demo for us.
 
-276
+265
 00:11:12.516 --> 00:11:18.586
 [ Applause ]
 
-277
+266
 00:11:19.086 --> 00:11:20.736
 >> Hi, I'm Eliza
 and I'm an engineer
 
-278
+267
 00:11:20.736 --> 00:11:21.756
 on the Springboard team.
 
-279
+268
 00:11:21.756 --> 00:11:24.256
 So what I've got here
 is an application
 
-280
+269
 00:11:24.256 --> 00:11:25.856
 that I built entirely--
 
-281
+270
 00:11:25.886 --> 00:11:27.826
 well almost entirely
 using Interface Builder.
 
-282
+271
 00:11:27.826 --> 00:11:31.826
 It doesn't do very much yet,
 but it illustrates the hierarchy
 
-283
+272
 00:11:31.826 --> 00:11:33.676
 of ScrollViews that
 Josh already described.
 
-284
+273
 00:11:33.676 --> 00:11:37.036
 So we have an outer paging
 ScrollView that scrolls
 
-285
+274
 00:11:37.476 --> 00:11:40.226
 between this list of
 colors and the building.
 
-286
+275
 00:11:40.446 --> 00:11:42.176
 I'm reusing the building
 views that I wrote
 
-287
+276
 00:11:42.176 --> 00:11:43.536
 for our session two years ago.
 
-288
+277
 00:11:44.006 --> 00:11:47.866
 So, we can scroll back and
 forth between those pages.
 
-289
+278
 00:11:48.206 --> 00:11:52.046
 Now, the first page of this
 two-paged paging ScrollView
 
-290
+279
 00:11:52.306 --> 00:11:55.196
 contains a vertically
 scrolling collection view.
 
-291
+280
 00:11:55.696 --> 00:11:58.286
 And then each individual cell
 
-292
+281
 00:11:58.626 --> 00:12:01.566
 in the collection view contains
 a horizontally scrolling
 
-293
-00:11:58.626 --> 00:12:01.566
-in the collection view contains
-a horizontally scrolling
-
-294
+282
 00:12:01.826 --> 00:12:04.286
 ScrollView that scrolls
 the color for that cell
 
-295
+283
 00:12:04.686 --> 00:12:05.506
 on and off the screen.
 
-296
+284
 00:12:05.966 --> 00:12:09.146
 So, this is set up with
 remarkably little code.
 
-297
+285
 00:12:09.876 --> 00:12:12.126
 And what I want to do
 now is to jump straight
 
-298
+286
 00:12:12.126 --> 00:12:15.056
 to showing you how we can add
 the behavior that we're getting
 
-299
+287
 00:12:15.056 --> 00:12:17.946
 in the Lock Screen where
 as you start scrolling one
 
-300
+288
 00:12:17.946 --> 00:12:20.806
 of these cells, it scrolls a
 little of the way over, catches,
 
-301
+289
 00:12:20.806 --> 00:12:23.116
 and then pulls the outer
 paging ScrollView with it.
 
-302
+290
 00:12:24.056 --> 00:12:26.666
 So, of course, this isn't
 happening by itself.
 
-303
+291
 00:12:26.726 --> 00:12:29.856
 And in order to do this,
 we're going to need
 
-304
+292
 00:12:29.966 --> 00:12:33.766
 to make a mechanism that the
 inner ScrollViews can use
 
-305
+293
 00:12:34.036 --> 00:12:37.256
 to communicate with the View
 Controller that's managing the
 
-306
+294
 00:12:37.326 --> 00:12:38.406
 outer paging ScrollView.
 
-307
+295
 00:12:38.676 --> 00:12:41.666
 And the way that I'm going to
 do that is a delegate protocol.
 
-308
+296
 00:12:42.206 --> 00:12:45.286
 So here in my scrolling
 cell, which is a subclass
 
-309
+297
 00:12:45.286 --> 00:12:46.626
 of UICollectionView cell,
 
-310
+298
 00:12:47.046 --> 00:12:51.626
 I'm going to add a scrolling
 cell delegate protocol
 
-311
+299
 00:12:51.856 --> 00:12:54.646
 that our View Controller
 is going to conform to so
 
-312
+300
 00:12:54.646 --> 00:12:58.896
 that it can find out when
 the inner cell has started
 
-313
+301
 00:12:58.896 --> 00:12:59.396
 to scroll.
 
-314
+302
 00:13:00.356 --> 00:13:02.836
 So, we're going to need a
 couple of methods in here.
 
-315
+303
 00:13:03.256 --> 00:13:04.866
 We're going to need
 a ScrollView--
 
-316
+304
 00:13:04.866 --> 00:13:07.696
 scrolling cell did begin
 pulling, so that's going
 
-317
+305
 00:13:07.696 --> 00:13:10.196
 to get called when you
 get your finger passed
 
-318
+306
 00:13:10.446 --> 00:13:13.306
 to that catch point and start
 pulling the outer guy with you.
 
-319
+307
 00:13:13.306 --> 00:13:17.486
 We need to find out
 at every frame
 
-320
+308
 00:13:17.486 --> 00:13:20.356
 of scrolling how much
 the pull offset changed.
 
-321
+309
 00:13:20.786 --> 00:13:22.696
 So every time that the
 pull offset changes,
 
-322
+310
 00:13:23.006 --> 00:13:25.566
 the second method
 will get invoked.
 
-323
+311
 00:13:25.966 --> 00:13:28.726
 And finally, we need to be
 able to tell our delegate
 
-324
+312
 00:13:29.246 --> 00:13:31.186
 when the scrolling
 cell stops pulling
 
-325
+313
 00:13:31.236 --> 00:13:32.986
 so that the delegate
 can clean up any state
 
-326
+314
 00:13:32.986 --> 00:13:34.406
 that it might have put
 
-327
+315
 00:13:34.456 --> 00:13:37.036
 into effect once the
 scrolling started.
 
-328
+316
 00:13:37.816 --> 00:13:40.556
 OK, so we've got this
 delegate protocol.
 
-329
+317
 00:13:40.816 --> 00:13:44.066
 We need to make it possible
 for a delegate to be set
 
-330
+318
 00:13:44.196 --> 00:13:47.646
 on our scrolling cell and then
 in order to make Xcode happy,
 
-331
+319
 00:13:48.066 --> 00:13:50.046
 we need to pre-declare
 our scrolling cell
 
-332
+320
 00:13:50.046 --> 00:13:50.816
 delegate protocol.
 
-333
+321
 00:13:52.036 --> 00:13:55.556
 OK, so now that we've-- I've
 described what we're going
 
-334
+322
 00:13:55.556 --> 00:13:58.176
 to build, before I
 go and show you how
 
-335
+323
 00:13:58.176 --> 00:14:00.466
 to implement this scrolling
 cell side of things,
 
-336
-00:13:58.176 --> 00:14:00.466
-to implement this scrolling
-cell side of things,
-
-337
+324
 00:14:00.466 --> 00:14:02.626
 I'm going to head over
 to the View Controller
 
-338
+325
 00:14:02.926 --> 00:14:05.476
 that is managing the
 outer paging ScrollView
 
-339
+326
 00:14:05.806 --> 00:14:09.936
 and show how we can actually
 adopt this delegate protocol
 
-340
+327
 00:14:10.816 --> 00:14:13.176
 because that's actually going to
 turn out to be very little code.
 
-341
+328
 00:14:13.506 --> 00:14:15.366
 So this is my View
 Controller class.
 
-342
+329
 00:14:16.066 --> 00:14:16.826
 Pretty much, all it does
 
-343
+330
 00:14:16.876 --> 00:14:19.956
 so far is be a UICollectionView
 data source
 
-344
+331
 00:14:19.956 --> 00:14:22.106
 and return these
 scrolling cells.
 
-345
+332
 00:14:23.056 --> 00:14:27.866
 So, we need to make this
 View Controller conform
 
-346
+333
 00:14:27.866 --> 00:14:29.696
 to the scrolling cell
 delegate protocol.
 
-347
+334
 00:14:30.126 --> 00:14:33.946
 When we make a scrolling cell,
 
-348
+335
 00:14:33.946 --> 00:14:36.576
 we need to set its
 delegate to our self.
 
-349
+336
 00:14:37.606 --> 00:14:40.516
 I'm going to just adjust the
 number of cells here to make it
 
-350
+337
 00:14:40.516 --> 00:14:41.816
 so we've got more
 to scroll through.
 
-351
+338
 00:14:42.256 --> 00:14:44.206
 All right, now we
 need to go ahead
 
-352
+339
 00:14:44.206 --> 00:14:48.436
 and implement these
 three delegate methods.
 
-353
+340
 00:14:49.066 --> 00:14:53.486
 What we're going to do is
 when we find out that one
 
-354
+341
 00:14:53.486 --> 00:14:56.066
 of our little scrolling
 cells started pulling,
 
-355
+342
 00:14:56.656 --> 00:14:59.286
 we're going to programmatically
 adjust the contentOffset
 
-356
+343
 00:14:59.616 --> 00:15:01.156
 of the outer paging ScrollView.
 
-357
-00:14:59.616 --> 00:15:01.156
-of the outer paging ScrollView.
-
-358
+344
 00:15:01.566 --> 00:15:03.276
 And because we're going to--
 
-359
+345
 00:15:03.276 --> 00:15:06.806
 we're basically giving the
 inner ScrollView control
 
-360
+346
 00:15:06.806 --> 00:15:08.746
 over the outer ScrollView's
 contentOffset,
 
-361
+347
 00:15:09.096 --> 00:15:12.106
 it turns out to be sort of
 awkward if we also continue
 
-362
+348
 00:15:12.106 --> 00:15:13.866
 to allow the user to interact
 
-363
+349
 00:15:13.866 --> 00:15:15.596
 with the paging ScrollView
 while that's happening.
 
-364
+350
 00:15:16.066 --> 00:15:19.036
 So when the scrolling cell
 begins pulling, what I'm going
 
-365
+351
 00:15:19.036 --> 00:15:22.126
 to do is I'm going to tell
 the outer ScrollView not
 
-366
+352
 00:15:22.126 --> 00:15:23.646
 to allow user scrolling.
 
-367
+353
 00:15:24.356 --> 00:15:26.796
 And then when the
 scrolling cell stops pulling,
 
-368
+354
 00:15:26.996 --> 00:15:28.556
 I'm going to re-enable
 user scrolling
 
-369
+355
 00:15:28.556 --> 00:15:29.366
 on the outer ScrollView.
 
-370
+356
 00:15:30.676 --> 00:15:33.476
 When the scrolling cell
 changes its pull offset then,
 
-371
+357
 00:15:33.676 --> 00:15:34.406
 I'm simply going
 
-372
+358
 00:15:34.406 --> 00:15:36.556
 to programmatically
 set the contentOffset
 
-373
+359
 00:15:36.616 --> 00:15:39.216
 of my outer ScrollView
 to the correct--
 
-374
+360
 00:15:39.216 --> 00:15:42.636
 well, to the offset
 that was reported to me.
 
-375
+361
 00:15:42.636 --> 00:15:44.986
 And then just to make it
 just a little bit more fun,
 
-376
+362
 00:15:45.296 --> 00:15:47.256
 when we start pulling
 one of the colors over,
 
-377
+363
 00:15:47.496 --> 00:15:49.816
 let's have the building
 change its color.
 
-378
+364
 00:15:49.816 --> 00:15:51.896
 So we'll draw a new building
 with the color of the cell.
 
-379
+365
 00:15:51.896 --> 00:15:53.566
 All right.
 
-380
+366
 00:15:54.126 --> 00:15:56.536
 So that's pretty much
 all we need here.
 
-381
+367
 00:15:56.746 --> 00:15:57.846
 So I'm going to switch back
 
-382
+368
 00:15:58.256 --> 00:16:00.266
 to the scrolling
 cell implementation
 
-383
-00:15:58.256 --> 00:16:00.266
-to the scrolling
-cell implementation
-
-384
+369
 00:16:00.666 --> 00:16:04.866
 and we can see how to go
 about calling these methods
 
-385
+370
 00:16:04.916 --> 00:16:06.376
 to cause the scrolling
 to take place.
 
-386
+371
 00:16:07.256 --> 00:16:11.476
 So the first thing we need to
 decide is how far are you going
 
-387
+372
 00:16:11.476 --> 00:16:13.226
 to get in your scrolling of one
 
-388
+373
 00:16:13.226 --> 00:16:16.216
 of these inner ScrollViews
 before you start pulling the
 
-389
+374
 00:16:16.216 --> 00:16:17.686
 outer ScrollView with you.
 
-390
+375
 00:16:18.696 --> 00:16:21.376
 And I'm going to do that
 by simply defining a
 
-391
+376
 00:16:21.376 --> 00:16:22.086
 pull threshold.
 
-392
+377
 00:16:22.366 --> 00:16:24.216
 I've chosen 60, but
 obviously any number
 
-393
+378
 00:16:24.526 --> 00:16:25.606
 within reason would work.
 
-394
+379
 00:16:26.826 --> 00:16:29.466
 We're also going to need to
 keep track of some state,
 
-395
+380
 00:16:29.646 --> 00:16:31.676
 are we currently pulling
 the outer ScrollView
 
-396
+381
 00:16:31.676 --> 00:16:33.656
 because we're going to-- we
 need to tell the delegate
 
-397
+382
 00:16:33.656 --> 00:16:36.256
 when this starts and stops.
 
-398
+383
 00:16:36.386 --> 00:16:39.586
 So with that in place,
 we can then go ahead
 
-399
+384
 00:16:39.966 --> 00:16:43.646
 and implement the
 UIScrollView delegate protocol.
 
-400
+385
 00:16:43.646 --> 00:16:44.906
 And in particular, we're going
 
-401
+386
 00:16:45.126 --> 00:16:47.776
 to use the scrollViewDidScroll
 method to find out every time
 
-402
+387
 00:16:47.776 --> 00:16:50.086
 that our inner ScrollView's
 contentOffset changes.
 
-403
+388
 00:16:51.036 --> 00:16:53.966
 So, we can get the current
 contentOffset which is,
 
-404
+389
 00:16:54.046 --> 00:16:56.266
 since we only care about the
 horizontal direction here,
 
-405
+390
 00:16:56.476 --> 00:17:01.176
 it's just the ScrollView's
 contentOffset.x. Now let's
 
-406
-00:16:56.476 --> 00:17:01.176
-it's just the ScrollView's
-contentOffset.x. Now let's
-
-407
+391
 00:17:01.176 --> 00:17:04.986
 figure out whether this offset
 represents the beginning
 
-408
+392
 00:17:05.066 --> 00:17:05.756
 of pulling.
 
-409
+393
 00:17:05.955 --> 00:17:07.736
 So did we just start pulling?
 
-410
+394
 00:17:08.076 --> 00:17:10.726
 We just started pulling
 if the offset got bigger
 
-411
+395
 00:17:10.726 --> 00:17:13.596
 than the pull threshold and
 we weren't already pulling.
 
-412
+396
 00:17:13.886 --> 00:17:16.986
 And if that's the case, then
 we can tell our delegate
 
-413
+397
 00:17:16.986 --> 00:17:19.195
 that the ScrollView-- the
 scrolling cell began pulling
 
-414
+398
 00:17:19.346 --> 00:17:22.786
 and we can set our flag to Yes.
 
-415
+399
 00:17:22.786 --> 00:17:23.705
 All right.
 
-416
+400
 00:17:24.296 --> 00:17:25.756
 So if we are pulling,
 
-417
+401
 00:17:26.185 --> 00:17:28.606
 we now need to tell the
 delegate an additional thing.
 
-418
+402
 00:17:28.606 --> 00:17:31.866
 We need to tell the delegate how
 much we changed the pull offset.
 
-419
+403
 00:17:33.276 --> 00:17:36.866
 So, we'll calculate what
 the new pull offset is
 
-420
+404
 00:17:37.126 --> 00:17:38.866
 by subtracting the
 pull threshold
 
-421
+405
 00:17:39.146 --> 00:17:40.976
 from our current
 internal offset.
 
-422
+406
 00:17:42.166 --> 00:17:44.316
 And what I've written here
 is actually not quite right.
 
-423
+407
 00:17:44.686 --> 00:17:46.196
 So imagine the following
 scenario.
 
-424
+408
 00:17:46.536 --> 00:17:49.446
 I start scrolling in this
 inner cell, I get passed
 
-425
+409
 00:17:49.686 --> 00:17:51.556
 to the pull threshold
 so I'd start pulling,
 
-426
+410
 00:17:51.786 --> 00:17:53.916
 and then I move my finger
 back and forth a little bit,
 
-427
+411
 00:17:54.036 --> 00:17:55.586
 and I get under and
 then over and then
 
-428
+412
 00:17:55.586 --> 00:17:57.036
 under the pull threshold.
 
-429
+413
 00:17:57.346 --> 00:17:59.276
 We don't want to
 report a negative number
 
-430
+414
 00:17:59.496 --> 00:18:01.406
 to our outer paging ScrollView.
 
-431
-00:17:59.496 --> 00:18:01.406
-to our outer paging ScrollView.
-
-432
+415
 00:18:01.436 --> 00:18:03.356
 That would have some
 weird effect.
 
-433
+416
 00:18:03.566 --> 00:18:06.076
 So what we want to do
 instead is make sure
 
-434
+417
 00:18:06.376 --> 00:18:08.376
 that we always report
 a minimum of zero.
 
-435
+418
 00:18:08.376 --> 00:18:11.406
 So, we're going to take the
 maximum of zero and the offset
 
-436
+419
 00:18:11.406 --> 00:18:15.016
 that we just calculated.
 
-437
+420
 00:18:15.016 --> 00:18:17.516
 And then we can tell
 the delegate
 
-438
+421
 00:18:17.806 --> 00:18:20.026
 that the scrolling cell changed
 the pull offset to that amount.
 
-439
+422
 00:18:20.466 --> 00:18:24.566
 The last thing that we
 need to do is to figure
 
-440
+423
 00:18:24.566 --> 00:18:26.276
 out when the pulling stops.
 
-441
+424
 00:18:26.706 --> 00:18:29.456
 And what I've decided to
 do here is just decide is
 
-442
+425
 00:18:29.456 --> 00:18:31.926
 that the pulling is going to
 stop when the scrolling stops.
 
-443
+426
 00:18:32.416 --> 00:18:35.176
 So, we need to figure out
 when the scrolling ends.
 
-444
+427
 00:18:35.176 --> 00:18:39.076
 And if it-- when it ends,
 we can tell our delegate
 
-445
+428
 00:18:39.076 --> 00:18:41.596
 that the scrolling
 cell stopped pulling
 
-446
+429
 00:18:41.596 --> 00:18:44.926
 and we can set our
 flag back to No.
 
-447
+430
 00:18:44.926 --> 00:18:45.956
 All right, how are
 we going to figure
 
-448
+431
 00:18:45.956 --> 00:18:47.196
 out that the scrolling ended?
 
-449
+432
 00:18:47.466 --> 00:18:48.636
 If you've seen any
 of our sessions,
 
-450
+433
 00:18:48.636 --> 00:18:50.256
 I feel like I write
 this code every year.
 
-451
+434
 00:18:50.546 --> 00:18:53.216
 There's two different ways that
 scrolling can come to stop.
 
-452
+435
 00:18:53.476 --> 00:18:56.226
 One is that you're
 scrolling, you have no momentum
 
-453
+436
 00:18:56.226 --> 00:18:57.066
 and you lift your finger,
 
-454
+437
 00:18:57.066 --> 00:18:59.006
 and then the scrolling
 ends right then and there.
 
-455
+438
 00:18:59.376 --> 00:19:02.046
 Alternatively, you
 may have some momentum
 
-456
-00:18:59.376 --> 00:19:02.046
-Alternatively, you
-may have some momentum
-
-457
+439
 00:19:02.156 --> 00:19:03.466
 when you lift your
 finger, at which point,
 
-458
+440
 00:19:03.466 --> 00:19:05.276
 there's a deceleration
 period first.
 
-459
+441
 00:19:05.586 --> 00:19:08.056
 So we need to catch both of
 those cases and we can do
 
-460
+442
 00:19:08.056 --> 00:19:11.856
 that with two further
 delegate methods,
 
-461
+443
 00:19:12.136 --> 00:19:14.546
 scrolling cell
 scrollViewDidEndDragging
 
-462
+444
 00:19:14.546 --> 00:19:15.286
 :willDecelerate.
 
-463
+445
 00:19:15.546 --> 00:19:16.946
 And if we're not decelerating,
 
-464
+446
 00:19:17.146 --> 00:19:18.616
 then that means the
 scrolling ended.
 
-465
+447
 00:19:18.826 --> 00:19:21.116
 Otherwise, we're going to
 catch the scrolling ended
 
-466
+448
 00:19:21.116 --> 00:19:22.906
 when the deceleration ends.
 
-467
+449
 00:19:23.726 --> 00:19:25.256
 All right, so with
 all of that in place,
 
-468
+450
 00:19:25.446 --> 00:19:27.606
 I'm going to go head
 and run this.
 
-469
+451
 00:19:29.196 --> 00:19:30.996
 We have more cells,
 which is nice,
 
-470
+452
 00:19:30.996 --> 00:19:32.066
 which we can scroll through.
 
-471
+453
 00:19:32.716 --> 00:19:38.306
 OK, so now if I grab one,
 it scrolls, it catches,
 
-472
+454
 00:19:38.306 --> 00:19:42.116
 and it starts pulling the
 outer ScrollView with us
 
-473
+455
 00:19:42.256 --> 00:19:43.376
 which is exactly what we wanted
 
-474
+456
 00:19:43.746 --> 00:19:46.356
 and we can get over
 to the building.
 
-475
+457
 00:19:46.686 --> 00:19:49.246
 So now, there's a couple
 of bugs here that I want
 
-476
+458
 00:19:49.246 --> 00:19:49.996
 to draw your attention
 
-477
+459
 00:19:49.996 --> 00:19:53.326
 to if your attention has not
 already been drawn to them.
 
-478
+460
 00:19:53.326 --> 00:19:56.016
 One is that we obviously
 didn't get far enough over,
 
-479
+461
 00:19:56.016 --> 00:19:58.546
 so we're sort of stuck on
 a weird page that's like in
 
-480
+462
 00:19:58.546 --> 00:20:02.246
 between page boundaries with our
 building view not all the way
 
-481
-00:19:58.546 --> 00:20:02.246
-between page boundaries with our
-building view not all the way
-
-482
+463
 00:20:02.306 --> 00:20:02.926
 in the picture.
 
-483
+464
 00:20:03.226 --> 00:20:07.086
 Another problem is that
 our cell is missing,
 
-484
+465
 00:20:07.246 --> 00:20:09.076
 the one that we just
 scrolled over is gone.
 
-485
+466
 00:20:09.416 --> 00:20:12.946
 And then another problem which
 is a little bit less obvious,
 
-486
+467
 00:20:12.946 --> 00:20:14.696
 although maybe it was obvious.
 
-487
+468
 00:20:14.796 --> 00:20:16.586
 Here, my finger is
 where the arrow is
 
-488
+469
 00:20:16.756 --> 00:20:18.996
 and I start dragging
 and I catch.
 
-489
+470
 00:20:19.366 --> 00:20:22.526
 And now, I would expect that
 green cell to stay pinned
 
-490
+471
 00:20:22.526 --> 00:20:24.986
 under my finger as it
 drags the stuff with,
 
-491
+472
 00:20:25.206 --> 00:20:26.316
 but that's not what happens.
 
-492
+473
 00:20:26.316 --> 00:20:30.926
 Instead, it zooms out from under
 my finger and then disappears.
 
-493
+474
 00:20:31.416 --> 00:20:34.106
 So I'm going to, in a minute,
 turn things back over to Josh
 
-494
+475
 00:20:34.106 --> 00:20:35.976
 to explain two of
 these problems.
 
-495
+476
 00:20:36.356 --> 00:20:39.086
 But the problem where
 the cells are just gone,
 
-496
+477
 00:20:39.266 --> 00:20:41.606
 that's actually really
 easy to fix, so I'm going
 
-497
+478
 00:20:41.606 --> 00:20:42.736
 to just fix that right now.
 
-498
+479
 00:20:43.036 --> 00:20:44.946
 That's happening because
 we're scrolling the content
 
-499
+480
 00:20:44.946 --> 00:20:46.686
 of those cells off the screen
 
-500
+481
 00:20:47.436 --> 00:20:50.156
 when we pull the
 outer ScrollView over.
 
-501
+482
 00:20:50.416 --> 00:20:52.986
 So we can fix that
 by simply, you know,
 
-502
+483
 00:20:52.986 --> 00:20:57.246
 our scrolling ended method here
 just setting the contentOffset
 
-503
+484
 00:20:57.246 --> 00:20:58.476
 of our ScrollView back to zero.
 
-504
+485
 00:20:58.806 --> 00:21:00.986
 But now for the other two
 bugs, the zooming out from
 
-505
-00:20:58.806 --> 00:21:00.986
-But now for the other two
-bugs, the zooming out from
-
-506
+486
 00:21:00.986 --> 00:21:02.346
 under your finger
 bug and the fact
 
-507
+487
 00:21:02.386 --> 00:21:04.596
 that we're not getting all the
 way over to the building page,
 
-508
+488
 00:21:04.816 --> 00:21:06.376
 I'm going to send it
 back over to Josh.
 
-509
+489
 00:21:07.516 --> 00:21:12.786
 [ Applause ]
 
-510
+490
 00:21:13.286 --> 00:21:14.276
 >> All right, thanks Eliza.
 
-511
+491
 00:21:14.786 --> 00:21:15.976
 So, we're getting pretty close.
 
-512
+492
 00:21:16.126 --> 00:21:17.206
 It's almost there.
 
-513
+493
 00:21:17.306 --> 00:21:18.746
 Just a couple of
 bugs to take care of,
 
-514
+494
 00:21:18.916 --> 00:21:19.736
 nothing we can't handle.
 
-515
+495
 00:21:20.526 --> 00:21:25.006
 So, let's take a look at how
 we ended up with only part
 
-516
+496
 00:21:25.006 --> 00:21:26.616
 of that page visible first.
 
-517
+497
 00:21:27.346 --> 00:21:29.326
 Now, we have two pages
 worth of content.
 
-518
+498
 00:21:29.466 --> 00:21:32.296
 So that gives us a content
 size represented here
 
-519
+499
 00:21:32.296 --> 00:21:35.936
 by this yellow square,
 it's about two pages.
 
-520
+500
 00:21:36.246 --> 00:21:38.346
 And we've defined the size
 
-521
+501
 00:21:38.346 --> 00:21:41.316
 of our inner ScrollView's
 content to be equal to that.
 
-522
+502
 00:21:41.676 --> 00:21:43.946
 So we've got that nested
 inner paging ScrollView
 
-523
+503
 00:21:44.166 --> 00:21:45.956
 and it's also got
 two pages of content.
 
-524
+504
 00:21:46.196 --> 00:21:48.256
 That's how we're going to
 cause it to get pulled.
 
-525
+505
 00:21:48.786 --> 00:21:51.886
 So let's see what's going wrong
 as our user starts to drag here.
 
-526
+506
 00:21:52.586 --> 00:21:55.526
 We start pulling that inner
 ScrollView a little bit
 
-527
+507
 00:21:55.526 --> 00:21:56.816
 and it moves over to the right.
 
-528
+508
 00:21:57.376 --> 00:21:59.986
 But now you'll notice that
 the sizes of our content
 
-529
+509
 00:21:59.986 --> 00:22:02.756
 which started out aligned on
 the left have now pulled away
 
-530
-00:21:59.986 --> 00:22:02.756
-which started out aligned on
-the left have now pulled away
-
-531
+510
 00:22:02.756 --> 00:22:05.216
 from each other 'cause the
 inner one has moved a bit
 
-532
+511
 00:22:05.256 --> 00:22:06.806
 but the outer one
 hasn't started yet.
 
-533
+512
 00:22:07.886 --> 00:22:10.066
 So now, if we let the
 user finish the gesture
 
-534
+513
 00:22:10.066 --> 00:22:12.916
 on that inner ScrollView, it's
 going to finish paging over
 
-535
+514
 00:22:12.916 --> 00:22:16.946
 and come to rest, and it will
 hit its end before the full
 
-536
+515
 00:22:16.946 --> 00:22:19.016
 content size of the outer
 ScrollView has been pulled
 
-537
+516
 00:22:19.016 --> 00:22:19.566
 into view.
 
-538
+517
 00:22:20.126 --> 00:22:22.916
 So it's really the case that
 that inner ScrollView needs
 
-539
+518
 00:22:23.256 --> 00:22:26.716
 to scroll farther than the outer
 ScrollView because it's going
 
-540
+519
 00:22:26.716 --> 00:22:29.096
 to move a little bit by
 itself before it catches
 
-541
+520
 00:22:29.096 --> 00:22:30.796
 and starts pulling
 the outer one with it.
 
-542
+521
 00:22:31.476 --> 00:22:33.986
 So how do we make the inner
 ScrollView scroll more?
 
-543
+522
 00:22:34.626 --> 00:22:35.806
 Well, as you know, the way
 
-544
+523
 00:22:35.806 --> 00:22:38.886
 that a UIScrollView's
 content size is defined is
 
-545
+524
 00:22:39.096 --> 00:22:42.636
 by its bounce-- I'm
 sorry, of the paging
 
-546
+525
 00:22:42.636 --> 00:22:44.006
 with is defined by its bounce.
 
-547
+526
 00:22:44.286 --> 00:22:45.936
 And in this case,
 we need two pages
 
-548
+527
 00:22:45.936 --> 00:22:48.286
 of content 'cause we have a
 two-paged paging ScrollView.
 
-549
+528
 00:22:48.736 --> 00:22:52.536
 So we need a larger bounce in
 order to get a larger page size
 
-550
+529
 00:22:52.826 --> 00:22:54.446
 so we have more content
 to scroll.
 
-551
+530
 00:22:55.306 --> 00:22:57.366
 So, if we look at the bounce
 of our ScrollView right,
 
-552
+531
 00:22:57.926 --> 00:23:00.136
 it's the exact same width
 as it its containers.
 
-553
-00:22:57.926 --> 00:23:00.136
-it's the exact same width
-as it its containers.
-
-554
+532
 00:23:00.176 --> 00:23:01.646
 So that gives it
 the same page size.
 
-555
+533
 00:23:02.176 --> 00:23:04.466
 To get a bigger page size,
 we have to make it wider.
 
-556
+534
 00:23:04.946 --> 00:23:05.846
 Now, let's find here.
 
-557
+535
 00:23:05.846 --> 00:23:07.856
 We can let it hang off the
 right side of the screen
 
-558
+536
 00:23:08.056 --> 00:23:10.116
 because it's not drawing
 anything over there.
 
-559
+537
 00:23:10.336 --> 00:23:12.816
 We're just making it bigger so
 that it can scroll more content.
 
-560
+538
 00:23:13.236 --> 00:23:15.656
 And then you'll notice that
 we are still using two pages,
 
-561
+539
 00:23:15.656 --> 00:23:18.066
 so we've doubled our content
 size and that causes it
 
-562
+540
 00:23:18.066 --> 00:23:19.396
 to hang off on the left as well.
 
-563
+541
 00:23:20.436 --> 00:23:22.236
 So let's see what happens
 if we start scrolling
 
-564
+542
 00:23:22.236 --> 00:23:23.256
 with that configuration.
 
-565
+543
 00:23:23.906 --> 00:23:26.826
 Now, we start pulling that
 inner one in a little bit.
 
-566
+544
 00:23:26.826 --> 00:23:29.526
 And at the point where it's
 going to catch, the left sides
 
-567
+545
 00:23:29.526 --> 00:23:32.196
 of our content size of both
 ScrollViews are now aligned.
 
-568
+546
 00:23:32.576 --> 00:23:33.626
 Now, that seems a lot better
 
-569
+547
 00:23:33.876 --> 00:23:35.936
 because if we let our
 ScrollView finish pulling,
 
-570
+548
 00:23:36.126 --> 00:23:37.496
 it's going to pull
 that outer one with it,
 
-571
+549
 00:23:37.496 --> 00:23:39.966
 and they'll both come to
 rest when they have all
 
-572
+550
 00:23:39.966 --> 00:23:41.236
 of their content fully visible.
 
-573
+551
 00:23:41.666 --> 00:23:43.776
 So just making that
 ScrollView a little wider
 
-574
+552
 00:23:43.866 --> 00:23:47.376
 to give us a wider page
 and more room to move
 
-575
+553
 00:23:47.376 --> 00:23:49.906
 on the inner ScrollView,
 fixes that first problem.
 
-576
+554
 00:23:50.706 --> 00:23:52.736
 But now something else is
 still wrong because we had
 
-577
+555
 00:23:52.736 --> 00:23:56.036
 that second problem that Eliza
 showed you where we ended
 
-578
+556
 00:23:56.036 --> 00:23:58.896
 up having the content shooting
 out from under her finger
 
-579
+557
 00:23:59.086 --> 00:24:00.776
 as she was scrolling
 the inner ScrollView.
 
-580
-00:23:59.086 --> 00:24:00.776
-as she was scrolling
-the inner ScrollView.
-
-581
+558
 00:24:01.666 --> 00:24:02.956
 So, why was that happening?
 
-582
+559
 00:24:03.766 --> 00:24:05.596
 Well, to understand
 what was going there,
 
-583
+560
 00:24:05.596 --> 00:24:08.136
 it helps a little bit more
 to look again at the frame
 
-584
+561
 00:24:08.136 --> 00:24:09.676
 and bounce of the
 inner ScrollView.
 
-585
+562
 00:24:10.066 --> 00:24:11.436
 So here, we have
 it visible right
 
-586
+563
 00:24:11.436 --> 00:24:12.396
 in the middle of our screen.
 
-587
+564
 00:24:13.596 --> 00:24:15.826
 Let's take a look step by
 step at what's going on again.
 
-588
+565
 00:24:16.396 --> 00:24:18.566
 We start pulling a little
 bit with our finger.
 
-589
+566
 00:24:19.526 --> 00:24:21.126
 We get to the point where
 we're going to catch.
 
-590
+567
 00:24:21.626 --> 00:24:24.306
 Now if we hadn't anything else,
 if we weren't doing the bit
 
-591
+568
 00:24:24.306 --> 00:24:25.796
 where we're pulling
 the outer ScrollView,
 
-592
+569
 00:24:26.126 --> 00:24:27.956
 what would've just
 happened is we'd keep moving
 
-593
+570
 00:24:27.956 --> 00:24:29.476
 that inner ScrollView's
 content along.
 
-594
+571
 00:24:30.106 --> 00:24:32.846
 But of course, what we are doing
 then is calling setContentOffset
 
-595
+572
 00:24:32.846 --> 00:24:34.736
 on the outer one to
 cause to move with it.
 
-596
+573
 00:24:35.226 --> 00:24:37.656
 So what we think that should be
 doing is pulling the ScrollView
 
-597
+574
 00:24:37.656 --> 00:24:38.046
 with it.
 
-598
+575
 00:24:38.796 --> 00:24:41.046
 Unfortunately, what we
 forgot about here is
 
-599
+576
 00:24:41.046 --> 00:24:43.486
 that that inner ScrollView
 is actually a subview
 
-600
+577
 00:24:43.486 --> 00:24:44.606
 of the outer ScrollView.
 
-601
+578
 00:24:45.056 --> 00:24:47.126
 So not only does the
 outer ScrollView move,
 
-602
+579
 00:24:47.426 --> 00:24:49.626
 but it also ends up
 pulling the inner one along
 
-603
+580
 00:24:49.966 --> 00:24:51.046
 because it's a child of it.
 
-604
+581
 00:24:51.126 --> 00:24:53.376
 So, we're-- the inner
 ScrollView is getting scrolled
 
-605
+582
 00:24:53.376 --> 00:24:56.416
 by its own gesture recognizer
 and then as a result of that,
 
-606
+583
 00:24:56.416 --> 00:24:57.546
 it's telling the
 outer ScrollView
 
-607
+584
 00:24:57.546 --> 00:24:58.896
 to move which moves it again.
 
-608
+585
 00:24:59.546 --> 00:25:01.546
 And the really bad part here is
 
-609
-00:24:59.546 --> 00:25:01.546
-And the really bad part here is
-
-610
+586
 00:25:01.546 --> 00:25:04.496
 that the red area representing
 our frame is now moving
 
-611
+587
 00:25:04.496 --> 00:25:05.156
 off screen.
 
-612
+588
 00:25:05.456 --> 00:25:07.776
 So, the ScrollView
 is actually moving
 
-613
+589
 00:25:07.776 --> 00:25:08.786
 out from under our finger.
 
-614
+590
 00:25:08.786 --> 00:25:11.966
 And this is causing the
 double scrolling Eliza saw
 
-615
+591
 00:25:12.256 --> 00:25:13.986
 which is pulling all
 the content too fast.
 
-616
+592
 00:25:14.536 --> 00:25:16.586
 So we really want to
 pull that ScrollView back
 
-617
+593
 00:25:16.776 --> 00:25:19.026
 so the left sides of the
 content remain aligned
 
-618
+594
 00:25:19.296 --> 00:25:20.696
 and the ScrollView,
 the inner one,
 
-619
+595
 00:25:20.696 --> 00:25:22.366
 remains centered on the screen.
 
-620
+596
 00:25:23.026 --> 00:25:25.036
 Now this is actually very
 similar to a technique
 
-621
+597
 00:25:25.036 --> 00:25:29.276
 that we should a couple of years
 ago in 2011 for pinning views
 
-622
+598
 00:25:29.276 --> 00:25:31.736
 in place while you're
 scrolling a ScrollView.
 
-623
+599
 00:25:32.056 --> 00:25:33.816
 This is the same kind
 of technique that's used
 
-624
+600
 00:25:33.816 --> 00:25:36.166
 in UITableView, when
 you scroll vertically,
 
-625
+601
 00:25:36.166 --> 00:25:39.086
 you get a table header and it
 pins to the top of the screen
 
-626
+602
 00:25:39.216 --> 00:25:40.476
 as content scrolls under it.
 
-627
+603
 00:25:40.836 --> 00:25:42.576
 We want to do the same
 kind of thing here.
 
-628
+604
 00:25:42.826 --> 00:25:45.026
 We want to pin that inner
 ScrollView to the left side
 
-629
+605
 00:25:45.026 --> 00:25:46.496
 of the screen so it stays
 
-630
+606
 00:25:46.496 --> 00:25:48.666
 in place even though its
 parent is moving under it.
 
-631
+607
 00:25:49.146 --> 00:25:51.836
 That way, when the user moves
 their finger more and lifts,
 
-632
+608
 00:25:52.476 --> 00:25:55.036
 this outer ScrollView will
 come to restfully on screen
 
-633
+609
 00:25:55.036 --> 00:25:57.906
 and the inner one which is the
 child of it will still remain
 
-634
+610
 00:25:57.906 --> 00:26:00.236
 in place on screen and
 everything will work right.
 
-635
-00:25:57.906 --> 00:26:00.236
-in place on screen and
-everything will work right.
-
-636
+611
 00:26:00.286 --> 00:26:02.736
 So what's that going to
 look like in our code
 
-637
+612
 00:26:02.736 --> 00:26:03.486
 that we already wrote?
 
-638
+613
 00:26:04.076 --> 00:26:06.096
 Well, it's actually just
 a really small change
 
-639
+614
 00:26:06.096 --> 00:26:08.576
 to what we've already got, just
 one little thing that we have
 
-640
+615
 00:26:08.576 --> 00:26:09.516
 to add at the end here.
 
-641
+616
 00:26:10.086 --> 00:26:12.486
 And that's that we need
 to translate the child
 
-642
+617
 00:26:12.746 --> 00:26:14.806
 by the same amount that
 we're pulling the parent.
 
-643
+618
 00:26:15.216 --> 00:26:17.666
 So we want to undo that
 movement that we're adding.
 
-644
+619
 00:26:17.856 --> 00:26:19.296
 We're going to pull
 the parent some amount
 
-645
+620
 00:26:19.296 --> 00:26:21.336
 and then translate the child
 back by the same amount
 
-646
+621
 00:26:21.336 --> 00:26:22.526
 so it doesn't double pull.
 
-647
+622
 00:26:22.526 --> 00:26:24.866
 So Eliza's going to come
 back now and fix our demo
 
-648
+623
 00:26:24.936 --> 00:26:25.996
 so that this all works.
 
-649
+624
 00:26:27.516 --> 00:26:33.146
 [ Applause ]
 
-650
+625
 00:26:33.646 --> 00:26:36.366
 >> OK. So, we have
 two problems to fix.
 
-651
+626
 00:26:36.366 --> 00:26:37.536
 The first one, if you recall,
 
-652
+627
 00:26:37.536 --> 00:26:39.936
 was that our page wasn't getting
 all the way scrolled over,
 
-653
+628
 00:26:39.936 --> 00:26:41.536
 so I'm going to address
 that one first.
 
-654
+629
 00:26:41.916 --> 00:26:44.756
 We need to go down to the bottom
 of this file here in a part
 
-655
+630
 00:26:44.756 --> 00:26:47.176
 that I didn't show before
 which is where we're laying
 
-656
+631
 00:26:47.176 --> 00:26:52.326
 out the subviews of our inner--
 internal to the cell ScrollView.
 
-657
+632
 00:26:52.896 --> 00:26:56.076
 So you'll see that I had
 calculated a page width
 
-658
+633
 00:26:56.406 --> 00:26:59.306
 to be the size of
 my cell's bounce
 
-659
+634
 00:26:59.636 --> 00:27:02.046
 that was causing the problem,
 wasn't wide enough given
 
-660
-00:26:59.636 --> 00:27:02.046
-that was causing the problem,
-wasn't wide enough given
-
-661
+635
 00:27:02.046 --> 00:27:03.996
 that we have this pull
 threshold to contend with.
 
-662
+636
 00:27:04.476 --> 00:27:09.046
 So, what I'm going to simply
 do is add the pull threshold
 
-663
+637
 00:27:09.806 --> 00:27:11.366
 to the page width.
 
-664
+638
 00:27:11.366 --> 00:27:15.506
 And then because I've
 actually determined the frame
 
-665
+639
 00:27:15.586 --> 00:27:17.956
 and the content size of
 the ScrollView in terms
 
-666
+640
 00:27:17.956 --> 00:27:20.506
 of the page width, everything
 should then just work
 
-667
+641
 00:27:20.506 --> 00:27:23.196
 from that point.
 
-668
+642
 00:27:23.356 --> 00:27:26.916
 So now to address the issue
 of the shooting out from
 
-669
+643
 00:27:26.916 --> 00:27:30.756
 under your finger problem
 and just scroll back up here
 
-670
+644
 00:27:31.116 --> 00:27:33.696
 to my scrollViewDidscroll
 method.
 
-671
+645
 00:27:33.936 --> 00:27:37.166
 When we tell the delegate
 that our pull offset changed,
 
-672
+646
 00:27:37.166 --> 00:27:38.566
 the delegate is going
 to turn around
 
-673
+647
 00:27:38.566 --> 00:27:40.116
 and change the contentOffset
 
-674
+648
 00:27:40.116 --> 00:27:42.476
 of the outer ScrollView
 which contains us.
 
-675
+649
 00:27:43.216 --> 00:27:48.076
 And so, that's causing us to get
 pulled along with it resulting
 
-676
+650
 00:27:48.076 --> 00:27:49.696
 in the double scrolling.
 
-677
+651
 00:27:50.036 --> 00:27:52.666
 So what we'll do to
 counteract that is
 
-678
+652
 00:27:52.796 --> 00:27:56.056
 to simply set a Transform on
 the ScrollView which is one
 
-679
+653
 00:27:56.056 --> 00:28:01.446
 of our subviews and we'll set
 a Transform which simply uses
 
-680
-00:27:56.056 --> 00:28:01.446
-of our subviews and we'll set
-a Transform which simply uses
-
-681
+654
 00:28:01.446 --> 00:28:02.626
 that very same pull offset
 
-682
+655
 00:28:02.956 --> 00:28:06.176
 so that the ScrollView scrolls
 along with the outer ScrollView
 
-683
+656
 00:28:06.416 --> 00:28:10.606
 and as a result, sort of
 surprisingly, it actually seems
 
-684
+657
 00:28:10.606 --> 00:28:12.296
 to remain in the same
 place on the screen.
 
-685
+658
 00:28:12.536 --> 00:28:14.226
 This is a technique that
 we, as just Josh mentioned,
 
-686
+659
 00:28:14.226 --> 00:28:17.926
 talked about in 2011 with
 getting a moon to stay fixed
 
-687
+660
 00:28:17.926 --> 00:28:19.706
 on the screen when
 you're scrolling a bunch
 
-688
+661
 00:28:19.706 --> 00:28:22.446
 of buildings out from under it.
 
-689
+662
 00:28:23.486 --> 00:28:27.406
 So, when we finished
 scrolling here
 
-690
+663
 00:28:27.406 --> 00:28:29.536
 and set our contentOffset
 back to zero,
 
-691
+664
 00:28:29.746 --> 00:28:31.756
 let's also set the
 Transform back to Identity
 
-692
+665
 00:28:31.756 --> 00:28:34.946
 so that we don't end up in a
 weird transformed state while
 
-693
+666
 00:28:34.946 --> 00:28:36.116
 we're not doing any scrolling.
 
-694
+667
 00:28:36.906 --> 00:28:42.036
 OK. So with that in place,
 I'm going to build again.
 
-695
+668
 00:28:42.036 --> 00:28:45.296
 And I can grab one of
 these cells, it catches
 
-696
+669
 00:28:46.216 --> 00:28:48.216
 and it stays fixed
 as we want it.
 
-697
+670
 00:28:48.526 --> 00:28:51.596
 And it gets all the way over
 to the building this time.
 
-698
+671
 00:28:51.596 --> 00:28:53.426
 So this looks like it's
 working pretty well.
 
-699
+672
 00:28:53.426 --> 00:28:55.366
 It's doing pretty
 much what we want.
 
-700
+673
 00:28:56.226 --> 00:28:58.666
 And notice that the buildings
 change color as planned.
 
-701
+674
 00:28:59.036 --> 00:29:04.736
 So, there's one bug here that
 may not be immediately obvious
 
-702
-00:28:59.036 --> 00:29:04.736
-So, there's one bug here that
-may not be immediately obvious
-
-703
+675
 00:29:04.736 --> 00:29:05.626
 and I'm going to do something
 
-704
+676
 00:29:05.626 --> 00:29:07.466
 to make it a little
 bit more obvious.
 
-705
+677
 00:29:07.526 --> 00:29:09.576
 I'm going to change
 the pull threshold
 
-706
+678
 00:29:09.576 --> 00:29:14.476
 to a larger number
 and run it again.
 
-707
+679
 00:29:14.666 --> 00:29:16.956
 So if I scroll this cell over,
 
-708
+680
 00:29:16.996 --> 00:29:18.886
 now I can get it a little
 further before it catches
 
-709
+681
 00:29:18.886 --> 00:29:20.326
 and then I let go.
 
-710
+682
 00:29:20.716 --> 00:29:22.946
 Watch really carefully, when
 I let go so that this going
 
-711
+683
 00:29:22.946 --> 00:29:25.206
 to return back to
 the zero position,
 
-712
+684
 00:29:26.706 --> 00:29:28.806
 you'll see that the outer
 paging ScrollView kind
 
-713
+685
 00:29:28.806 --> 00:29:30.006
 of slams into place.
 
-714
+686
 00:29:30.506 --> 00:29:33.246
 The inner ScrollView comes
 to a nice decelerated rest
 
-715
+687
 00:29:34.246 --> 00:29:35.546
 as you'd expect from
 a ScrollView.
 
-716
+688
 00:29:35.546 --> 00:29:39.456
 But the outer ScrollView,
 it's pretty abrupt that way
 
-717
+689
 00:29:39.456 --> 00:29:40.676
 that it hits the
 edge of the screen.
 
-718
+690
 00:29:41.046 --> 00:29:45.106
 So, this is actually
 kind of what you'd expect
 
-719
+691
 00:29:45.106 --> 00:29:46.736
 to happen given the way
 that this is implemented.
 
-720
+692
 00:29:47.126 --> 00:29:50.826
 When I move this back and forth,
 you can see that the inner
 
-721
+693
 00:29:50.826 --> 00:29:53.426
 and the outer ScrollViews are
 moving at exactly the same rate.
 
-722
+694
 00:29:53.496 --> 00:29:57.166
 They're sort of pinned together
 with 120 points difference.
 
-723
+695
 00:29:57.686 --> 00:30:00.686
 So when this starts
 moving back, of course,
 
-724
-00:29:57.686 --> 00:30:00.686
-So when this starts
-moving back, of course,
-
-725
+696
 00:30:01.086 --> 00:30:03.036
 while the inner ScrollView
 is still decelerating,
 
-726
+697
 00:30:03.166 --> 00:30:05.266
 the outer ScrollView
 is going to hit zero
 
-727
+698
 00:30:05.646 --> 00:30:07.456
 and then the inner
 ScrollView continues.
 
-728
+699
 00:30:07.916 --> 00:30:12.136
 What would be nice would be
 is if we're in this condition
 
-729
+700
 00:30:12.136 --> 00:30:13.726
 where we're scrolling
 back to zero,
 
-730
+701
 00:30:13.946 --> 00:30:15.676
 if we could change
 the rate of scrolling
 
-731
+702
 00:30:15.676 --> 00:30:18.386
 of the outer ScrollView so that
 both ScrollViews would come
 
-732
+703
 00:30:18.386 --> 00:30:20.336
 to rest at the same time.
 
-733
+704
 00:30:21.046 --> 00:30:22.116
 And I'm going to show
 you how to do that.
 
-734
+705
 00:30:22.476 --> 00:30:24.666
 It's a technique similar to
 the techniques that we're using
 
-735
+706
 00:30:24.666 --> 00:30:26.036
 in other places in iOS 7
 
-736
+707
 00:30:26.306 --> 00:30:28.626
 to get these two ScrollViews
 moving at different rates.
 
-737
+708
 00:30:30.226 --> 00:30:33.996
 So the first thing that we need
 to do to accomplish this is
 
-738
+709
 00:30:34.106 --> 00:30:37.596
 to keep track of whether we're
 in this decelerating back
 
-739
+710
 00:30:37.716 --> 00:30:39.366
 to zero condition,
 'cause we're going
 
-740
+711
 00:30:39.366 --> 00:30:41.526
 to do something special
 in that case.
 
-741
+712
 00:30:41.746 --> 00:30:44.346
 What we're going to do in
 that case is move the outer
 
-742
+713
 00:30:44.346 --> 00:30:45.866
 ScrollView at-- with--
 
-743
+714
 00:30:45.866 --> 00:30:48.586
 at a fraction of the speed
 of the inner ScrollView.
 
-744
+715
 00:30:48.866 --> 00:30:51.176
 So we need to figure out
 what that fraction should be.
 
-745
+716
 00:30:51.516 --> 00:30:54.086
 And I'm going to do that by
 storing off a deceleration
 
-746
+717
 00:30:54.086 --> 00:30:54.986
 distance ratio.
 
-747
+718
 00:30:55.296 --> 00:30:58.706
 We want the ratio of how
 far the outer ScrollView has
 
-748
+719
 00:30:58.706 --> 00:31:01.536
 to move compared to how far the
 inner ScrollView has to move,
 
-749
-00:30:58.706 --> 00:31:01.536
-to move compared to how far the
-inner ScrollView has to move,
-
-750
+720
 00:31:01.726 --> 00:31:03.486
 and then we're going to
 slow down the scrolling
 
-751
+721
 00:31:03.486 --> 00:31:05.666
 of the outer ScrollView
 by that proportion.
 
-752
+722
 00:31:06.846 --> 00:31:09.676
 OK, so how can we detect that
 we're decelerating back to zero?
 
-753
+723
 00:31:09.886 --> 00:31:14.796
 We can do this by implementing
 an additional ScrollView
 
-754
+724
 00:31:14.796 --> 00:31:17.726
 delegate method,
 scrollView WillEndDragging:
 
-755
+725
 00:31:17.926 --> 00:31:19.746
 withVelocity:target
 ContentOffset.
 
-756
+726
 00:31:20.486 --> 00:31:23.256
 So, you may have seen
 this method in the past.
 
-757
+727
 00:31:23.256 --> 00:31:27.216
 It's often used to change the
 landing position of a ScrollView
 
-758
+728
 00:31:27.216 --> 00:31:28.336
 when it starts decelerating.
 
-759
+729
 00:31:28.676 --> 00:31:31.286
 We're going to use it not for
 that purpose but simply to find
 
-760
+730
 00:31:31.286 --> 00:31:32.776
 out what the landing
 position is.
 
-761
+731
 00:31:33.126 --> 00:31:35.476
 Because if the landing
 position is zero,
 
-762
+732
 00:31:35.476 --> 00:31:37.156
 so if the target
 contentOffset is zero
 
-763
+733
 00:31:37.366 --> 00:31:40.436
 and our current contentOffset
 isn't already zero,
 
-764
+734
 00:31:40.656 --> 00:31:43.146
 it means that we're about to
 start decelerating back to zero
 
-765
+735
 00:31:43.146 --> 00:31:45.226
 which is what we
 wanted to find out.
 
-766
+736
 00:31:45.986 --> 00:31:47.756
 So, we'll grab our
 current offset.
 
-767
+737
 00:31:47.756 --> 00:31:53.526
 And then if the target
 contentOffset.x is zero
 
-768
+738
 00:31:53.746 --> 00:31:55.526
 but my current offset
 is greater than zero,
 
-769
+739
 00:31:55.526 --> 00:31:58.906
 that means that I am indeed
 now decelerating back to zero.
 
-770
+740
 00:31:58.906 --> 00:32:03.406
 And then, of course,
 when the scrolling ends,
 
-771
-00:31:58.906 --> 00:32:03.406
-And then, of course,
-when the scrolling ends,
-
-772
+741
 00:32:03.406 --> 00:32:05.176
 I just need to remember
 to clear that flag.
 
-773
+742
 00:32:05.176 --> 00:32:06.366
 We're not decelerating back
 
-774
+743
 00:32:06.366 --> 00:32:07.786
 to zero once we've
 stopped scrolling.
 
-775
+744
 00:32:08.376 --> 00:32:11.826
 OK, so now, if we are
 decelerating back to zero,
 
-776
+745
 00:32:11.826 --> 00:32:14.786
 we need to figure out the
 ratio of the distances
 
-777
+746
 00:32:14.786 --> 00:32:17.006
 that are going to
 be scrolled here.
 
-778
+747
 00:32:17.386 --> 00:32:19.496
 So we already have
 our own offset.
 
-779
+748
 00:32:20.466 --> 00:32:24.096
 We can calculate the outer
 offset which is the pull offset,
 
-780
+749
 00:32:24.096 --> 00:32:25.366
 the same way that
 we did it above.
 
-781
+750
 00:32:26.506 --> 00:32:29.966
 And then our deceleration
 distance ratio is simply the
 
-782
+751
 00:32:29.966 --> 00:32:33.176
 pull offset divided by the
 inner ScrollView's offset.
 
-783
+752
 00:32:34.506 --> 00:32:40.316
 So now we can use that
 up here in this code here
 
-784
+753
 00:32:40.316 --> 00:32:42.846
 where we were calculating what
 to report to the delegate.
 
-785
+754
 00:32:43.266 --> 00:32:46.676
 So we were reporting that the
 delegate's pull offset should
 
-786
+755
 00:32:46.676 --> 00:32:49.306
 always be basically
 moving together with ours.
 
-787
+756
 00:32:49.906 --> 00:32:53.516
 But instead, we're going to do
 something different in the case
 
-788
+757
 00:32:53.566 --> 00:32:55.096
 where we're decelerating
 back to zero.
 
-789
+758
 00:32:55.436 --> 00:32:59.896
 So first of all, if we are
 not decelerating back to zero,
 
-790
+759
 00:32:59.896 --> 00:33:03.036
 we're going to do the
 same thing we did before.
 
-791
-00:32:59.896 --> 00:33:03.036
-we're going to do the
-same thing we did before.
-
-792
+760
 00:33:03.206 --> 00:33:07.066
 But if we are decelerating back
 to zero, we're instead going
 
-793
+761
 00:33:07.066 --> 00:33:10.376
 to choose a pull offset
 which is our own offset times
 
-794
+762
 00:33:10.376 --> 00:33:11.666
 that ratio that we calculated.
 
-795
+763
 00:33:11.666 --> 00:33:14.026
 And that's going to cause
 the outer paging ScrollView
 
-796
+764
 00:33:14.236 --> 00:33:16.916
 to move more slowly when we're
 
-797
+765
 00:33:16.916 --> 00:33:18.776
 in this decelerating
 back to zero condition.
 
-798
+766
 00:33:19.146 --> 00:33:22.806
 So I'm going to go
 ahead and run it again.
 
-799
+767
 00:33:22.976 --> 00:33:27.856
 And you can now see that if I
 let go of this and let it return
 
-800
+768
 00:33:27.856 --> 00:33:31.996
 to zero, they come in
 for landing together.
 
-801
+769
 00:33:31.996 --> 00:33:34.546
 So that's another technique
 that's maybe useful.
 
-802
+770
 00:33:34.706 --> 00:33:36.076
 And I'm going to turn
 it back over to Josh
 
-803
+771
 00:33:36.076 --> 00:33:37.086
 to talk about another topic.
 
-804
+772
 00:33:38.516 --> 00:33:44.076
 [ Applause ]
 
-805
+773
 00:33:44.576 --> 00:33:46.416
 >> OK, so that's
 topic number one.
 
-806
+774
 00:33:47.026 --> 00:33:49.456
 Now, as I mentioned, we
 also want to take a look
 
-807
+775
 00:33:49.456 --> 00:33:52.146
 at how we built the
 Messages Interface
 
-808
+776
 00:33:52.656 --> 00:33:55.016
 with those really
 interesting bouncy bubbles
 
-809
+777
 00:33:55.016 --> 00:33:56.856
 as you're scrolling
 through conversations.
 
-810
+778
 00:33:57.606 --> 00:34:00.276
 Now, this is actually a
 really, really cool stuff.
 
-811
-00:33:57.606 --> 00:34:00.276
-Now, this is actually a
-really, really cool stuff.
-
-812
+779
 00:34:00.276 --> 00:34:01.666
 And if you didn't have a chance
 
-813
+780
 00:34:01.666 --> 00:34:04.996
 to watch the earlier UIKit
 Dynamics talk this week,
 
-814
+781
 00:34:05.346 --> 00:34:07.236
 I would strongly encourage
 you to go check that out.
 
-815
+782
 00:34:07.236 --> 00:34:08.565
 There's some very
 cool stuff there.
 
-816
+783
 00:34:08.815 --> 00:34:13.106
 This is not actually a UI
 Dynamics session, so we're going
 
-817
+784
 00:34:13.106 --> 00:34:15.136
 to go over a bit of stuff
 here and give you an idea
 
-818
+785
 00:34:15.136 --> 00:34:17.016
 of how you can use it
 in this configuration,
 
-819
+786
 00:34:17.016 --> 00:34:19.485
 but we're not going to go
 into a huge amount of depth
 
-820
+787
 00:34:19.485 --> 00:34:20.866
 on that particular API.
 
-821
+788
 00:34:22.536 --> 00:34:24.565
 Similarly, we're going
 to use a UICollectionView
 
-822
+789
 00:34:24.565 --> 00:34:25.386
 in this demo here.
 
-823
+790
 00:34:25.766 --> 00:34:27.886
 And if you haven't used
 UICollectionView before,
 
-824
+791
 00:34:28.286 --> 00:34:30.596
 there was a great
 talk last year in 2012
 
-825
+792
 00:34:30.596 --> 00:34:32.896
 about how UICollectionView
 can be used,
 
-826
+793
 00:34:33.226 --> 00:34:34.636
 and I'd encourage
 you to go watch that.
 
-827
+794
 00:34:35.085 --> 00:34:36.886
 We're going to talk about
 some of the high level details
 
-828
+795
 00:34:36.886 --> 00:34:39.005
 of how you use it here,
 but we're not going to go
 
-829
+796
 00:34:39.005 --> 00:34:40.005
 into a lot of depth again.
 
-830
+797
 00:34:40.406 --> 00:34:42.436
 So the really interesting
 thing that we're going
 
-831
+798
 00:34:42.436 --> 00:34:45.335
 to show is the interesting
 marriage of those two APIs,
 
-832
+799
 00:34:45.335 --> 00:34:47.416
 CollectionView and UIDynamics,
 
-833
+800
 00:34:47.706 --> 00:34:50.016
 and we'll see how they fit
 together to make this kind
 
-834
+801
 00:34:50.016 --> 00:34:51.856
 of interface really,
 really easy to build.
 
-835
+802
 00:34:52.916 --> 00:34:55.096
 So, let's take a look at what
 it is that we want to build.
 
-836
+803
 00:34:56.505 --> 00:34:57.796
 Some beautiful great squares.
 
-837
+804
 00:34:58.156 --> 00:34:59.606
 But the interesting
 thing about them is
 
-838
+805
 00:34:59.606 --> 00:35:00.866
 that when our user scrolls them,
 
-839
-00:34:59.606 --> 00:35:00.866
-that when our user scrolls them,
-
-840
+806
 00:35:01.146 --> 00:35:03.136
 we're going to have them
 get this really nice
 
-841
+807
 00:35:03.246 --> 00:35:03.986
 bouncing effect.
 
-842
+808
 00:35:04.366 --> 00:35:07.106
 I've exaggerated it here so
 it's more visible than it is
 
-843
+809
 00:35:07.106 --> 00:35:08.266
 in the Messages application.
 
-844
+810
 00:35:08.266 --> 00:35:10.486
 You might want to tone it down
 a little bit so that you don't,
 
-845
+811
 00:35:10.486 --> 00:35:12.496
 you know, cause your
 users to go too crazy.
 
-846
+812
 00:35:12.966 --> 00:35:16.736
 But we want to build something
 that looks just like that.
 
-847
+813
 00:35:16.946 --> 00:35:19.056
 Now, if we didn't do anything,
 of course, what would happen
 
-848
+814
 00:35:19.286 --> 00:35:20.756
 as we scroll this
 kind of content is
 
-849
+815
 00:35:20.756 --> 00:35:22.786
 that everything would
 just move, stuck together,
 
-850
+816
 00:35:23.066 --> 00:35:24.306
 and it feel pretty static.
 
-851
+817
 00:35:24.306 --> 00:35:26.636
 It's, you know, it's the kind
 of scrolling you expect to see.
 
-852
+818
 00:35:27.186 --> 00:35:28.526
 But it's not quite
 as interesting
 
-853
+819
 00:35:28.526 --> 00:35:29.366
 as what we're going for.
 
-854
+820
 00:35:30.246 --> 00:35:33.136
 So what do we have to change
 in order to make it go
 
-855
+821
 00:35:33.136 --> 00:35:35.126
 from that to the bounciness?
 
-856
+822
 00:35:35.936 --> 00:35:38.056
 We have to have kind
 of a conceptual shift
 
-857
+823
 00:35:38.056 --> 00:35:39.066
 in what we're trying to do.
 
-858
+824
 00:35:39.526 --> 00:35:43.656
 So by default, UIScrollViews
 scroll its content area and all
 
-859
+825
 00:35:43.656 --> 00:35:46.156
 of its children just move
 along with it directly pinned
 
-860
+826
 00:35:46.156 --> 00:35:48.406
 under the finger, moving
 with the ScrollView.
 
-861
+827
 00:35:49.156 --> 00:35:52.306
 Instead, we want to
 behave as if each
 
-862
+828
 00:35:52.306 --> 00:35:55.886
 of these individual cells
 is pinned to the super view,
 
-863
+829
 00:35:55.886 --> 00:35:58.196
 pinned to that ScrollView
 at their center point.
 
-864
+830
 00:35:59.266 --> 00:36:01.476
 And when we scroll,
 we actually want
 
-865
-00:35:59.266 --> 00:36:01.476
-And when we scroll,
-we actually want
-
-866
+831
 00:36:01.476 --> 00:36:04.486
 to move the attachment points
 instead of the views themselves.
 
-867
+832
 00:36:05.026 --> 00:36:07.826
 We want the individual child
 elements to remain in place
 
-868
+833
 00:36:07.826 --> 00:36:11.296
 and resist scrolling and just
 move their attachment points.
 
-869
+834
 00:36:11.846 --> 00:36:14.026
 Then we can attach
 the individual cells
 
-870
+835
 00:36:14.076 --> 00:36:16.326
 to their attachment
 points with springs
 
-871
+836
 00:36:16.816 --> 00:36:19.006
 and let the dynamic
 system pull them along
 
-872
+837
 00:36:19.006 --> 00:36:20.186
 and bounce into place.
 
-873
+838
 00:36:20.646 --> 00:36:23.316
 So how are we going to do that?
 
-874
+839
 00:36:24.036 --> 00:36:25.806
 Well, you know, you
 just heard me say,
 
-875
+840
 00:36:25.886 --> 00:36:28.846
 the scrollViewDidScroll delegate
 method for the last sample,
 
-876
+841
 00:36:29.166 --> 00:36:31.376
 we talked about that
 a lot in recent years,
 
-877
+842
 00:36:31.616 --> 00:36:35.406
 so you wouldn't be too surprised
 if I were to say that now.
 
-878
+843
 00:36:35.856 --> 00:36:36.816
 But in this case, we're going
 
-879
+844
 00:36:36.816 --> 00:36:37.796
 to do something a
 little bit different.
 
-880
+845
 00:36:38.976 --> 00:36:41.986
 We're going to go ahead and use
 a UICollectionViewFlowLayout.
 
-881
+846
 00:36:42.816 --> 00:36:46.316
 A UICollectionViewFlowLayout
 is the object that you use
 
-882
+847
 00:36:46.356 --> 00:36:49.476
 to represent locations
 of things on the screen
 
-883
+848
 00:36:49.476 --> 00:36:50.766
 within a UICollectionView.
 
-884
+849
 00:36:51.266 --> 00:36:53.326
 So this is the point where
 if you're not really familiar
 
-885
+850
 00:36:53.326 --> 00:36:55.566
 with UICollectionView,
 I strongly encourage you
 
-886
+851
 00:36:55.566 --> 00:36:56.726
 to read a little
 bit more about it.
 
-887
+852
 00:36:57.066 --> 00:36:58.646
 We're going to talk about
 the details that you need
 
-888
+853
 00:36:58.646 --> 00:37:00.786
 to understand in order
 to build this UI,
 
-889
-00:36:58.646 --> 00:37:00.786
-to understand in order
-to build this UI,
-
-890
+854
 00:37:00.786 --> 00:37:02.536
 but there's a lot
 more depth here
 
-891
+855
 00:37:02.536 --> 00:37:04.586
 that lets you do even
 more powerful things
 
-892
+856
 00:37:04.586 --> 00:37:07.146
 if you go a little bit further.
 
-893
+857
 00:37:07.306 --> 00:37:09.656
 So once we've got our
 UICollectionViewFlowLayout
 
-894
+858
 00:37:09.696 --> 00:37:11.846
 subclass, we're going
 to do a few things in it
 
-895
+859
 00:37:11.846 --> 00:37:14.096
 to tie it together with
 the UIDynamic systems.
 
-896
+860
 00:37:14.906 --> 00:37:17.036
 So we're going to create
 a UIDynamicAnimator
 
-897
+861
 00:37:17.266 --> 00:37:19.626
 which is the main entry
 point to UIKit Dynamics.
 
-898
+862
 00:37:19.906 --> 00:37:22.146
 This is the thing that
 represents the physics world
 
-899
+863
 00:37:22.406 --> 00:37:24.016
 and lets us build
 up the interface
 
-900
+864
 00:37:24.426 --> 00:37:26.546
 to actually get those
 bouncing effects.
 
-901
+865
 00:37:27.356 --> 00:37:28.896
 Now, to create the attachments,
 
-902
+866
 00:37:28.986 --> 00:37:30.286
 the springs that
 we talked about,
 
-903
+867
 00:37:30.516 --> 00:37:34.376
 we're going to create UIDynamic
 behaviors, one for each item
 
-904
+868
 00:37:34.376 --> 00:37:35.326
 in our collection view.
 
-905
+869
 00:37:35.936 --> 00:37:37.236
 Now a UIDynamic--
 
-906
+870
 00:37:37.726 --> 00:37:40.646
 UIAttachmentBehavior is a
 particular type of behavior
 
-907
+871
 00:37:40.646 --> 00:37:42.776
 that represents a spring,
 and it's going to give us
 
-908
+872
 00:37:42.776 --> 00:37:44.336
 that bouncing effect
 that we're looking for.
 
-909
+873
 00:37:45.026 --> 00:37:47.226
 So then, the only other thing
 left to do in order to complete
 
-910
+874
 00:37:47.226 --> 00:37:50.166
 that interface will be to
 actually stretch those springs
 
-911
+875
 00:37:50.166 --> 00:37:51.706
 out as the user scrolls.
 
-912
+876
 00:37:52.366 --> 00:37:55.936
 And we'll do that by
 stretching them out, obviously.
 
-913
+877
 00:37:56.336 --> 00:37:58.066
 Now, as I mentioned, we're going
 
-914
+878
 00:37:58.206 --> 00:38:00.536
 to create this
 CollectionViewLayout subclass,
 
-915
-00:37:58.206 --> 00:38:00.536
-to create this
-CollectionViewLayout subclass,
-
-916
+879
 00:38:00.566 --> 00:38:02.096
 so let's see what
 that looks like.
 
-917
+880
 00:38:03.296 --> 00:38:05.156
 And now there's three methods
 that we have to implement.
 
-918
+881
 00:38:05.976 --> 00:38:08.166
 We've got the prepareLayout
 method,
 
-919
+882
 00:38:08.516 --> 00:38:11.016
 and prepareLayout is called
 by the collection view
 
-920
+883
 00:38:11.276 --> 00:38:13.766
 to get your CollectionViewLayout
 subclass ready
 
-921
+884
 00:38:13.766 --> 00:38:15.196
 to display things on screen.
 
-922
+885
 00:38:15.876 --> 00:38:18.986
 So in order to figure
 out what to display
 
-923
+886
 00:38:18.986 --> 00:38:20.246
 at particular locations,
 
-924
+887
 00:38:20.246 --> 00:38:23.326
 you create these objects
 called UICollectionView
 
-925
+888
 00:38:23.326 --> 00:38:24.336
 LayoutAttributes.
 
-926
+889
 00:38:24.846 --> 00:38:27.186
 A UICollectionView
 LayoutAttributes object
 
-927
+890
 00:38:27.186 --> 00:38:28.996
 represents the position
 of an item
 
-928
+891
 00:38:28.996 --> 00:38:30.666
 in the collection
 view on the screen.
 
-929
+892
 00:38:31.656 --> 00:38:33.266
 Now we're going to take
 advantage of the fact
 
-930
+893
 00:38:33.266 --> 00:38:35.666
 that we're a subclass of
 UICollectionViewFlowLayout
 
-931
+894
 00:38:35.886 --> 00:38:37.426
 to create these objects for us.
 
-932
+895
 00:38:37.616 --> 00:38:39.906
 Our super class to, the flow
 layout, already knows how
 
-933
+896
 00:38:39.906 --> 00:38:41.156
 to do layout of the thing--
 
-934
+897
 00:38:41.156 --> 00:38:43.206
 of things in a particular
 grid-like structure,
 
-935
+898
 00:38:43.626 --> 00:38:45.366
 so we can just call
 through the super class
 
-936
+899
 00:38:45.366 --> 00:38:47.886
 to get the initial positions
 so we don't have to do any
 
-937
+900
 00:38:47.886 --> 00:38:50.126
 of the math to do the
 initial layout calculations.
 
-938
+901
 00:38:50.506 --> 00:38:52.486
 That's really the benefit
 of being a subclass
 
-939
+902
 00:38:52.486 --> 00:38:53.466
 of the flow layout here.
 
-940
+903
 00:38:53.696 --> 00:38:55.106
 It's going to save
 us a lot of code
 
-941
+904
 00:38:55.106 --> 00:38:56.746
 for doing the initial
 location setup.
 
-942
+905
 00:38:58.146 --> 00:38:59.026
 Then once we've got that,
 
-943
+906
 00:38:59.256 --> 00:39:01.806
 we're going to create a
 UIDynamicAnimator which is going
 
-944
-00:38:59.256 --> 00:39:01.806
-we're going to create a
-UIDynamicAnimator which is going
-
-945
+907
 00:39:01.806 --> 00:39:03.596
 to represent that physics world
 
-946
+908
 00:39:03.936 --> 00:39:05.966
 and create all the
 UIAttachmentBehaviors.
 
-947
+909
 00:39:06.486 --> 00:39:08.486
 We're going to create
 one UIAttachmentBehavior
 
-948
+910
 00:39:08.666 --> 00:39:11.026
 for each UICollectionView
 LayoutAttributes object
 
-949
+911
 00:39:11.026 --> 00:39:14.116
 that we have because the layout
 attributes object represents the
 
-950
+912
 00:39:14.116 --> 00:39:15.966
 element on screen, its position,
 
-951
+913
 00:39:16.516 --> 00:39:19.476
 and the attachment behavior
 represents the spring attaching
 
-952
+914
 00:39:19.476 --> 00:39:21.386
 it to its attachment
 point in the ScrollView.
 
-953
+915
 00:39:21.896 --> 00:39:24.246
 So we want one for
 each paired together.
 
-954
+916
 00:39:25.286 --> 00:39:27.286
 Now these other two methods
 that we have here are going
 
-955
+917
 00:39:27.286 --> 00:39:28.766
 to be really, really easy.
 
-956
+918
 00:39:29.096 --> 00:39:31.536
 And so easy that I'm going to
 write the code on the slide here
 
-957
+919
 00:39:31.826 --> 00:39:33.226
 because it's just that simple.
 
-958
+920
 00:39:33.836 --> 00:39:35.076
 A UIDynamicAnimator
 
-959
+921
 00:39:35.076 --> 00:39:36.996
 and UICollectionViewFlowLayout
 are designed
 
-960
+922
 00:39:36.996 --> 00:39:38.206
 to work really well together.
 
-961
+923
 00:39:38.686 --> 00:39:41.226
 So in this case, we've got
 items for Rect as a method
 
-962
+924
 00:39:41.226 --> 00:39:44.106
 on UIDynamicAnimator which
 is exactly what we need
 
-963
+925
 00:39:44.106 --> 00:39:45.606
 to answer the collection
 view question,
 
-964
+926
 00:39:45.876 --> 00:39:47.416
 layoutAttributes
 ForElementInRect,
 
-965
+927
 00:39:47.766 --> 00:39:49.476
 so we can just pass the
 result directly back.
 
-966
+928
 00:39:50.946 --> 00:39:53.956
 Additionally, we've got
 this layoutAttributes
 
-967
+929
 00:39:53.956 --> 00:39:57.716
 ForCellAtIndexPath, and
 we can return the result
 
-968
+930
 00:39:57.716 --> 00:39:59.816
 of that directly for this
 other CollectionViewLayout
 
-969
+931
 00:39:59.866 --> 00:40:00.626
 subclass method.
 
-970
-00:39:59.866 --> 00:40:00.626
-subclass method.
-
-971
+932
 00:40:01.216 --> 00:40:02.586
 So with those two
 things implemented,
 
-972
+933
 00:40:02.876 --> 00:40:04.586
 that will give us
 everything we need in order
 
-973
+934
 00:40:04.586 --> 00:40:06.796
 to represent our
 CollectionViewLayout
 
-974
+935
 00:40:07.856 --> 00:40:09.126
 with the bouncing effects.
 
-975
+936
 00:40:09.186 --> 00:40:10.786
 So then the last
 bit to represent all
 
-976
+937
 00:40:10.786 --> 00:40:12.846
 of this is stretching
 the springs.
 
-977
+938
 00:40:13.276 --> 00:40:14.466
 So how do we do that?
 
-978
+939
 00:40:15.206 --> 00:40:18.296
 Well, as I mentioned, we've got
 the scrollViewDidScroll delegate
 
-979
+940
 00:40:18.296 --> 00:40:20.256
 method that we usually
 use for this kind of thing
 
-980
+941
 00:40:20.256 --> 00:40:22.226
 but we're not going to
 do that this time around.
 
-981
+942
 00:40:22.996 --> 00:40:24.826
 And to understand why, it helps
 
-982
+943
 00:40:24.826 --> 00:40:27.726
 to remember a particular
 property of UIScrollViews
 
-983
+944
 00:40:28.226 --> 00:40:30.996
 and that is that the
 ScrollView's contentOffset is
 
-984
+945
 00:40:30.996 --> 00:40:32.496
 equal to its bounds.origin.
 
-985
+946
 00:40:32.896 --> 00:40:34.206
 Those two are the same thing.
 
-986
+947
 00:40:35.366 --> 00:40:36.826
 Now the reason that
 that is important
 
-987
+948
 00:40:36.826 --> 00:40:38.606
 in this particular example is
 
-988
+949
 00:40:38.606 --> 00:40:41.226
 because there's actually a
 method on UICollectionViewLayout
 
-989
+950
 00:40:41.256 --> 00:40:42.296
 that we can take advantage
 
-990
+951
 00:40:42.296 --> 00:40:44.946
 of to get the information
 we're looking
 
-991
+952
 00:40:44.946 --> 00:40:47.356
 for in the CollectionViewLayout
 subclass itself.
 
-992
+953
 00:40:47.356 --> 00:40:49.446
 And the reason we want
 to do that instead
 
-993
+954
 00:40:49.446 --> 00:40:51.186
 of using the delegate method is
 
-994
+955
 00:40:51.186 --> 00:40:53.996
 because we're writing all
 these codes in a subclass
 
-995
+956
 00:40:53.996 --> 00:40:55.546
 of UICollectionViewFlowLayout,
 
-996
+957
 00:40:56.096 --> 00:40:59.756
 but the flow layout is this
 layout object that exists
 
-997
+958
 00:40:59.966 --> 00:41:03.086
 to help a collection view
 display content on screen.
 
-998
-00:40:59.966 --> 00:41:03.086
-to help a collection view
-display content on screen.
-
-999
+959
 00:41:03.946 --> 00:41:06.166
 scrollViewDidScroll is a
 scrollView delegate method.
 
-1000
+960
 00:41:06.486 --> 00:41:08.586
 The CollectionViewLayout
 is almost certainly not the
 
-1001
+961
 00:41:08.586 --> 00:41:09.436
 ScrollView delegate.
 
-1002
+962
 00:41:09.806 --> 00:41:11.466
 So if we were to try
 and use that method,
 
-1003
+963
 00:41:11.466 --> 00:41:13.036
 we'd have to create
 a tight coupling
 
-1004
+964
 00:41:13.256 --> 00:41:15.826
 between the collection view
 and the CollectionViewLayout
 
-1005
+965
 00:41:16.166 --> 00:41:18.876
 by passing that information
 about scrolling through
 
-1006
+966
 00:41:19.266 --> 00:41:21.596
 and it would create
 just too much structure
 
-1007
+967
 00:41:21.946 --> 00:41:23.936
 when we really want to
 keep those thing separated.
 
-1008
+968
 00:41:25.086 --> 00:41:26.846
 So instead, we can
 advantage of this method.
 
-1009
+969
 00:41:27.116 --> 00:41:29.706
 It's called shouldInvalidate
 LayoutForBoundsChange.
 
-1010
+970
 00:41:30.346 --> 00:41:32.986
 Now, the nice thing here is that
 we're passed in the new bounds
 
-1011
+971
 00:41:32.986 --> 00:41:33.996
 that we're changing too
 
-1012
+972
 00:41:34.336 --> 00:41:36.646
 and since the bounds.origin
 is the contentOffset,
 
-1013
+973
 00:41:36.976 --> 00:41:38.896
 we've got our new
 contentOffset right there.
 
-1014
+974
 00:41:38.896 --> 00:41:40.756
 And at the time that
 this is called,
 
-1015
+975
 00:41:41.026 --> 00:41:42.786
 the bounds has yet
 to be changed.
 
-1016
+976
 00:41:43.056 --> 00:41:45.796
 So if we asked this ScrollView
 for its current bounds,
 
-1017
+977
 00:41:45.976 --> 00:41:47.706
 we'll find out the
 previous contentOffset.
 
-1018
+978
 00:41:48.016 --> 00:41:50.656
 So that let us find out
 how much has been scrolled
 
-1019
+979
 00:41:50.916 --> 00:41:52.846
 since the last time
 this was called.
 
-1020
+980
 00:41:54.236 --> 00:41:56.736
 So we can do that by just
 subtracting the y-coordinate
 
-1021
+981
 00:41:56.736 --> 00:41:57.976
 of those two values.
 
-1022
+982
 00:41:58.616 --> 00:42:00.896
 We're only carrying about
 vertical scrolling in this case,
 
-1023
-00:41:58.616 --> 00:42:00.896
-We're only carrying about
-vertical scrolling in this case,
-
-1024
+983
 00:42:01.136 --> 00:42:02.326
 so that's really easy to do,
 
-1025
+984
 00:42:02.646 --> 00:42:04.206
 we just get a CGFloat
 for the delta.
 
-1026
+985
 00:42:05.066 --> 00:42:08.116
 And once we've got that,
 we can stretch our springs
 
-1027
+986
 00:42:08.426 --> 00:42:10.506
 by shifting the positions
 of each
 
-1028
+987
 00:42:10.506 --> 00:42:12.156
 of those layout attributes
 objects.
 
-1029
+988
 00:42:12.546 --> 00:42:15.866
 The layout attributes represent
 the current position on screen
 
-1030
+989
 00:42:16.066 --> 00:42:18.756
 of the elements and we want
 them to resist scrolling.
 
-1031
+990
 00:42:19.036 --> 00:42:20.996
 So as we scroll up, we
 want to shift them back
 
-1032
+991
 00:42:21.066 --> 00:42:22.776
 down by the delta
 that we scrolled
 
-1033
+992
 00:42:23.116 --> 00:42:25.586
 and let the dynamic
 system pull them into place
 
-1034
+993
 00:42:25.586 --> 00:42:26.976
 and bounce as it goes there.
 
-1035
+994
 00:42:28.416 --> 00:42:31.256
 Then the last bit that we
 have to remember to do is
 
-1036
+995
 00:42:31.256 --> 00:42:34.046
 to tell the UIDynamic system
 that we've made that change.
 
-1037
+996
 00:42:34.436 --> 00:42:37.426
 Now, this is a bit of
 implementation detail--
 
-1038
+997
 00:42:37.426 --> 00:42:38.436
 not implementation detail.
 
-1039
+998
 00:42:38.436 --> 00:42:42.756
 It's an interesting behavior
 of dynamics that you have
 
-1040
+999
 00:42:42.756 --> 00:42:45.536
 to understand to really be
 able to do this which is
 
-1041
+1000
 00:42:45.536 --> 00:42:48.316
 that when you create
 attachment behaviors
 
-1042
+1001
 00:42:48.316 --> 00:42:50.766
 or really any behaviors
 in that dynamic system,
 
-1043
+1002
 00:42:51.386 --> 00:42:54.096
 UIKit Dynamics pull off the
 values out of your models
 
-1044
+1003
 00:42:54.326 --> 00:42:56.756
 into the dynamics
 physics world at the time
 
-1045
+1004
 00:42:56.756 --> 00:42:58.476
 that you create the
 attachment behavior.
 
-1046
+1005
 00:42:59.696 --> 00:43:02.286
 But we're going to go and update
 that value by changing it,
 
-1047
-00:42:59.696 --> 00:43:02.286
-But we're going to go and update
-that value by changing it,
-
-1048
+1006
 00:43:02.286 --> 00:43:03.586
 we just saw on the
 previous line,
 
-1049
+1007
 00:43:03.916 --> 00:43:05.826
 by shifting the layout
 attributes position.
 
-1050
+1008
 00:43:06.336 --> 00:43:08.546
 If we didn't tell the dynamics
 system we had done that,
 
-1051
+1009
 00:43:08.776 --> 00:43:10.466
 it wouldn't get pulled
 into the physics world,
 
-1052
+1010
 00:43:10.766 --> 00:43:13.346
 and so the physics system
 wouldn't have any pulled spring
 
-1053
+1011
 00:43:13.346 --> 00:43:13.976
 to simulate.
 
-1054
+1012
 00:43:14.396 --> 00:43:16.506
 So we have to let this
 dynamics system know
 
-1055
+1013
 00:43:16.506 --> 00:43:17.686
 that we've made this change.
 
-1056
+1014
 00:43:18.246 --> 00:43:20.486
 Now, this is actually going
 to be done with a method
 
-1057
+1015
 00:43:20.486 --> 00:43:22.146
 that Eliza is going to
 show you in a minute
 
-1058
+1016
 00:43:22.146 --> 00:43:25.726
 that will be available in SID
 [phonetic] 2, so you'll be able
 
-1059
+1017
 00:43:25.726 --> 00:43:27.976
 to do this real soon now.
 
-1060
+1018
 00:43:28.116 --> 00:43:32.026
 To get us started on
 building this, Eliza is going
 
-1061
+1019
 00:43:32.026 --> 00:43:33.056
 to come back and do our demo.
 
-1062
+1020
 00:43:34.516 --> 00:43:39.296
 [ Applause ]
 
-1063
+1021
 00:43:39.796 --> 00:43:42.546
 >> OK, so let's add this
 springy behavior to the cells
 
-1064
+1022
 00:43:42.546 --> 00:43:44.536
 that I've already got in
 my color collection view.
 
-1065
+1023
 00:43:44.536 --> 00:43:47.766
 In order to do that, we
 need to write a subclass
 
-1066
+1024
 00:43:47.766 --> 00:43:50.416
 of UICollectionViewFlowLayout,
 so I'm going
 
-1067
+1025
 00:43:50.416 --> 00:43:56.726
 to add that now, I think.
 
-1068
+1026
 00:43:57.216 --> 00:43:59.096
 There we go.
 
-1069
+1027
 00:43:59.286 --> 00:44:02.016
 So we will make a new class,
 
-1070
-00:43:59.286 --> 00:44:02.016
-So we will make a new class,
-
-1071
+1028
 00:44:02.016 --> 00:44:07.706
 we'll call it "Springy Flow
 Layout" and it's a subclass
 
-1072
+1029
 00:44:07.706 --> 00:44:11.496
 of UICollectionViewFlowLayout,
 add it to my target.
 
-1073
+1030
 00:44:13.176 --> 00:44:15.446
 All right, now in my View
 Controller's [inaudible] file
 
-1074
+1031
 00:44:15.446 --> 00:44:18.906
 here, I'm going to zoom in a
 little bit so that you can see.
 
-1075
+1032
 00:44:19.296 --> 00:44:25.366
 I've got this ScrollView which
 contains the building view
 
-1076
+1033
 00:44:25.366 --> 00:44:27.076
 and the collection
 view and then it also--
 
-1077
+1034
 00:44:27.136 --> 00:44:30.296
 and the collection view contains
 a collection view flow layout.
 
-1078
+1035
 00:44:30.386 --> 00:44:33.206
 So to adopt this new subclass
 that I'm about to write,
 
-1079
+1036
 00:44:33.426 --> 00:44:35.396
 it's going to be simply a
 matter of changing the class
 
-1080
+1037
 00:44:36.156 --> 00:44:39.316
 of my CollectionViewFlowLayout
 to be Springy Flow Layout.
 
-1081
+1038
 00:44:39.476 --> 00:44:40.996
 It's pretty easy.
 
-1082
+1039
 00:44:41.686 --> 00:44:44.616
 All right, so let's go ahead and
 implement Springy Flow Layout.
 
-1083
+1040
 00:44:45.176 --> 00:44:51.816
 First thing we're going to
 need in this flow layout is a--
 
-1084
+1041
 00:44:51.866 --> 00:44:53.476
 let's close this, yup.
 
-1085
+1042
 00:44:53.806 --> 00:44:56.596
 We're going to need
 a dynamic animator.
 
-1086
+1043
 00:44:56.596 --> 00:44:59.566
 And we're going to want to
 create the dynamic animator
 
-1087
+1044
 00:44:59.936 --> 00:45:01.886
 and fill it with springs.
 
-1088
-00:44:59.936 --> 00:45:01.886
-and fill it with springs.
-
-1089
+1045
 00:45:02.206 --> 00:45:06.516
 And we're going to do that by
 overwriting the prepareLayout
 
-1090
+1046
 00:45:06.636 --> 00:45:10.756
 method of our super class which
 is UICollectionViewFlowLayout.
 
-1091
+1047
 00:45:11.026 --> 00:45:13.646
 And we're taking advantages of
 the fact that in prepareLayout,
 
-1092
+1048
 00:45:13.646 --> 00:45:16.036
 our supper class is doing
 all the math for us.
 
-1093
+1049
 00:45:16.036 --> 00:45:18.986
 It's figuring out where all of
 the different cells should go.
 
-1094
+1050
 00:45:19.366 --> 00:45:20.706
 And it's doing that here
 
-1095
+1051
 00:45:20.706 --> 00:45:22.726
 in the super implementation
 of prepareLayout.
 
-1096
+1052
 00:45:23.036 --> 00:45:27.056
 So now that that's been
 called, we can go ahead
 
-1097
+1053
 00:45:27.056 --> 00:45:29.516
 and create our dynamic
 animator, if we haven't already.
 
-1098
+1054
 00:45:29.866 --> 00:45:33.976
 And then we can ask
 the super class for all
 
-1099
+1055
 00:45:33.976 --> 00:45:36.076
 of the layout attributes
 that it just computed.
 
-1100
+1056
 00:45:36.936 --> 00:45:39.416
 And we'll do that by
 getting our content size,
 
-1101
+1057
 00:45:39.686 --> 00:45:41.596
 that's the collection
 view content size.
 
-1102
+1058
 00:45:41.916 --> 00:45:45.356
 And then we'll simply ask the
 super class to give us an array
 
-1103
+1059
 00:45:45.636 --> 00:45:48.406
 of all of the elements-- the
 layout attributes for all
 
-1104
+1060
 00:45:48.406 --> 00:45:51.026
 of the elements in the Rect
 that is our entire content.
 
-1105
+1061
 00:45:51.446 --> 00:45:54.986
 Now, this is a convenient
 method that I'm using here.
 
-1106
+1062
 00:45:54.986 --> 00:45:58.496
 I've got 80 cells and not
 that big a collection.
 
-1107
+1063
 00:45:58.496 --> 00:46:01.276
 If you had a collection of
 hundreds of thousands of things
 
-1108
-00:45:58.496 --> 00:46:01.276
-If you had a collection of
-hundreds of thousands of things
-
-1109
+1064
 00:46:01.276 --> 00:46:03.466
 or even maybe thousands of
 things, you might not want
 
-1110
+1065
 00:46:03.466 --> 00:46:04.816
 to load them all into
 memory at a time.
 
-1111
+1066
 00:46:04.856 --> 00:46:08.286
 So note that I am cheating
 a little bit in this demo.
 
-1112
+1067
 00:46:08.416 --> 00:46:10.516
 At that point, you might want
 to tile and I'll show you
 
-1113
+1068
 00:46:10.516 --> 00:46:12.656
 in a second where
 you would do that.
 
-1114
+1069
 00:46:13.246 --> 00:46:15.416
 But-- all right, so for now
 we've got all of our items
 
-1115
+1070
 00:46:15.766 --> 00:46:17.946
 and we're going to
 iterate through them
 
-1116
+1071
 00:46:18.396 --> 00:46:20.636
 and make springs for each one.
 
-1117
+1072
 00:46:21.376 --> 00:46:24.566
 So a spring is
 UIAttachmentBehavior.
 
-1118
+1073
 00:46:24.856 --> 00:46:28.256
 We initialize it with the item
 which is our layout attributes
 
-1119
+1074
 00:46:28.256 --> 00:46:32.666
 for that particular cell and we
 attach it to the anchor point
 
-1120
+1075
 00:46:32.666 --> 00:46:34.406
 which is the item center.
 
-1121
+1076
 00:46:34.476 --> 00:46:36.366
 And that center was
 calculated for us
 
-1122
+1077
 00:46:36.466 --> 00:46:39.496
 by the super implementation
 of the flow layout.
 
-1123
+1078
 00:46:39.496 --> 00:46:41.286
 It figured out where that
 item was supposed to go.
 
-1124
+1079
 00:46:42.476 --> 00:46:45.216
 So now that we've got a spring,
 we need to set its length.
 
-1125
+1080
 00:46:45.576 --> 00:46:47.146
 Now this is the--
 this is important.
 
-1126
+1081
 00:46:47.396 --> 00:46:51.026
 The spring's length has to
 be zero because if you think
 
-1127
+1082
 00:46:51.026 --> 00:46:53.666
 about it, as we scroll, the
 springs are going to stretch out
 
-1128
+1083
 00:46:53.666 --> 00:46:56.306
 and then the content is
 going to bounce around.
 
-1129
+1084
 00:46:56.636 --> 00:46:58.716
 If the spring's length
 was greater than zero,
 
-1130
+1085
 00:46:58.916 --> 00:47:00.426
 then it wouldn't be
 guaranteed to come
 
-1131
-00:46:58.916 --> 00:47:00.426
-then it wouldn't be
-guaranteed to come
-
-1132
+1086
 00:47:00.426 --> 00:47:02.476
 to rest right at
 its anchor point.
 
-1133
+1087
 00:47:02.556 --> 00:47:03.806
 It could potentially
 come to rest
 
-1134
+1088
 00:47:03.806 --> 00:47:06.656
 at an arbitrary location
 somewhere near its anchor point.
 
-1135
+1089
 00:47:06.876 --> 00:47:07.986
 That would give you
 a collection view
 
-1136
+1090
 00:47:07.986 --> 00:47:09.376
 with some really weird behavior.
 
-1137
+1091
 00:47:09.376 --> 00:47:11.966
 When it came to rest, the cells
 would be kind of overlapping
 
-1138
+1092
 00:47:11.966 --> 00:47:13.406
 and kind of off center.
 
-1139
+1093
 00:47:13.686 --> 00:47:15.426
 So we want our spring
 to be length zero.
 
-1140
+1094
 00:47:16.386 --> 00:47:19.316
 We also need to set the dumping
 and frequency of the spring
 
-1141
+1095
 00:47:19.316 --> 00:47:21.626
 which I've done by
 trial and error.
 
-1142
+1096
 00:47:22.016 --> 00:47:23.636
 These values turned
 out to be nice.
 
-1143
+1097
 00:47:24.196 --> 00:47:26.886
 And then we need to tell
 our dynamic animator
 
-1144
+1098
 00:47:27.096 --> 00:47:28.246
 about this spring.
 
-1145
+1099
 00:47:28.916 --> 00:47:31.126
 So we add the spring
 as a behavior
 
-1146
+1100
 00:47:31.126 --> 00:47:32.276
 to the dynamic animator.
 
-1147
+1101
 00:47:32.856 --> 00:47:34.946
 All right, so now we
 have done this once
 
-1148
+1102
 00:47:35.216 --> 00:47:37.506
 when the prepareLayout
 method is first called
 
-1149
+1103
 00:47:37.916 --> 00:47:41.476
 and that will be good enough.
 
-1150
+1104
 00:47:41.556 --> 00:47:44.376
 We need to-- in addition,
 
-1151
+1105
 00:47:44.636 --> 00:47:47.606
 we need to implement
 these two other methods,
 
-1152
+1106
 00:47:47.886 --> 00:47:48.986
 overwrite them, rather.
 
-1153
+1107
 00:47:49.226 --> 00:47:51.246
 So there's layoutAttributes
 ForElementInRect.
 
-1154
+1108
 00:47:51.716 --> 00:47:53.336
 We have to overwrite that method
 
-1155
+1109
 00:47:53.536 --> 00:47:58.246
 to tell our collection view
 what items are currently visible
 
-1156
+1110
 00:47:58.246 --> 00:47:59.096
 in a particular Rect.
 
-1157
+1111
 00:47:59.416 --> 00:48:01.676
 And notice that the
 super implementation
 
-1158
-00:47:59.416 --> 00:48:01.676
-And notice that the
-super implementation
-
-1159
+1112
 00:48:01.676 --> 00:48:04.336
 of this wouldn't work
 because we're moving the items
 
-1160
+1113
 00:48:04.336 --> 00:48:06.116
 around using this
 dynamic system.
 
-1161
+1114
 00:48:06.396 --> 00:48:09.366
 So we have to ask the dynamic
 animator which is keeping track
 
-1162
+1115
 00:48:09.366 --> 00:48:13.646
 of where they really are what's
 currently available in the Rect
 
-1163
+1116
 00:48:14.216 --> 00:48:18.916
 and UIDynamics provides this
 nice call through for that
 
-1164
+1117
 00:48:18.916 --> 00:48:20.836
 and the same exact logic goes
 
-1165
+1118
 00:48:20.836 --> 00:48:23.586
 for this layoutAttributes
 ForItemAtIndexPath method.
 
-1166
+1119
 00:48:24.806 --> 00:48:27.966
 All right, so finally, we
 just need to write the code
 
-1167
+1120
 00:48:27.966 --> 00:48:30.496
 to stretch the springs
 when scrolling takes place.
 
-1168
+1121
 00:48:30.796 --> 00:48:32.256
 And as Josh explained,
 we're going to do
 
-1169
+1122
 00:48:32.256 --> 00:48:35.356
 that in shouldInvalidate
 LayoutForBoundsChange.
 
-1170
+1123
 00:48:36.256 --> 00:48:39.506
 Let me just get this to be
 higher up on the screen.
 
-1171
+1124
 00:48:39.826 --> 00:48:44.026
 OK. So in shouldInvalidate
 LayoutForBoundsChange,
 
-1172
+1125
 00:48:44.276 --> 00:48:47.516
 what we're going to do is
 grab the ScrollView out,
 
-1173
+1126
 00:48:47.736 --> 00:48:48.926
 which is just our
 collection view,
 
-1174
+1127
 00:48:49.236 --> 00:48:53.956
 and find out what its current--
 well, how much we just scrolled
 
-1175
+1128
 00:48:53.956 --> 00:48:56.316
 because remember that
 this, because the bounds
 
-1176
+1129
 00:48:56.316 --> 00:48:59.156
 of the ScrollView
 change every time
 
-1177
+1130
 00:48:59.156 --> 00:49:00.566
 that its contentOffset changes,
 
-1178
-00:48:59.156 --> 00:49:00.566
-that its contentOffset changes,
-
-1179
+1131
 00:49:00.796 --> 00:49:02.586
 we're going to find this
 method getting called
 
-1180
+1132
 00:49:02.586 --> 00:49:03.986
 at every frame of scrolling.
 
-1181
+1133
 00:49:03.986 --> 00:49:07.086
 So we want to know, what is
 the delta that we scrolled
 
-1182
+1134
 00:49:07.086 --> 00:49:08.346
 since the last time
 this was called?
 
-1183
+1135
 00:49:08.346 --> 00:49:11.636
 And then we're going to go
 through all of the springs
 
-1184
+1136
 00:49:11.826 --> 00:49:14.836
 that we made above and
 we're going to stretch them
 
-1185
+1137
 00:49:14.836 --> 00:49:20.796
 by moving the item that that
 spring owns by the amount
 
-1186
+1138
 00:49:20.796 --> 00:49:21.786
 that we just scrolled.
 
-1187
+1139
 00:49:23.056 --> 00:49:26.306
 So, we grab the item
 back out from the spring
 
-1188
+1140
 00:49:26.306 --> 00:49:32.406
 which has an array of items
 and then we get the center
 
-1189
+1141
 00:49:32.406 --> 00:49:38.106
 of the item, adjust it by the
 scroll delta, set it again,
 
-1190
+1142
 00:49:38.486 --> 00:49:40.646
 and finally call
 our SUD 2 method,
 
-1191
+1143
 00:49:40.946 --> 00:49:44.566
 Dynamic Animator Update Item
 For Current State coming soon.
 
-1192
+1144
 00:49:44.896 --> 00:49:48.016
 And that will cause the
 new center to be pulled
 
-1193
+1145
 00:49:48.016 --> 00:49:50.766
 into the dynamic
 system and it will cause
 
-1194
+1146
 00:49:50.766 --> 00:49:52.416
 that bouncy effect
 to start happening.
 
-1195
+1147
 00:49:53.436 --> 00:49:55.546
 Now, the last thing we need
 
-1196
+1148
 00:49:55.546 --> 00:49:57.696
 to do is tell this method
 whether indeed it should
 
-1197
+1149
 00:49:57.696 --> 00:49:58.756
 invalidate its layout.
 
-1198
+1150
 00:49:58.756 --> 00:50:03.366
 We're going to say No because
 the dynamic animator is going
 
-1199
-00:49:58.756 --> 00:50:03.366
-We're going to say No because
-the dynamic animator is going
-
-1200
+1151
 00:50:03.366 --> 00:50:04.646
 to be moving the items around
 
-1201
+1152
 00:50:04.646 --> 00:50:07.396
 and that itself will invalidate
 the layout, so we don't need
 
-1202
+1153
 00:50:07.396 --> 00:50:08.436
 to double invalidate it.
 
-1203
+1154
 00:50:08.436 --> 00:50:10.446
 We can say, "No, it doesn't
 have to invalidate 'cause
 
-1204
+1155
 00:50:10.446 --> 00:50:11.266
 of the bounce change."
 
-1205
+1156
 00:50:11.496 --> 00:50:13.626
 Instead, it will be
 invalidated in a second
 
-1206
+1157
 00:50:13.856 --> 00:50:16.806
 because of the moving
 of the item.
 
-1207
+1158
 00:50:17.456 --> 00:50:19.196
 All right, so let's see
 what that looks like.
 
-1208
+1159
 00:50:19.196 --> 00:50:24.846
 All right, so I'm going to grab
 this cell, purple cell here,
 
-1209
+1160
 00:50:24.846 --> 00:50:26.766
 and I'm going to
 start scrolling.
 
-1210
+1161
 00:50:27.516 --> 00:50:30.536
 Now, you'll notice we
 have a bouncy effect.
 
-1211
+1162
 00:50:30.536 --> 00:50:32.236
 It's not really the
 bouncy effect we wanted.
 
-1212
+1163
 00:50:32.886 --> 00:50:35.726
 First of all, my
 finger, as presented
 
-1213
+1164
 00:50:35.726 --> 00:50:37.166
 by this giant mouse pointer,
 
-1214
+1165
 00:50:37.486 --> 00:50:39.636
 is coming off the
 cell that I grabbed.
 
-1215
+1166
 00:50:39.636 --> 00:50:41.816
 See how it gets away ahead
 and then when the thing comes
 
-1216
+1167
 00:50:41.816 --> 00:50:43.416
 to rest, it's back
 under the finger again?
 
-1217
+1168
 00:50:43.806 --> 00:50:45.816
 This is really not the
 behavior that we wanted.
 
-1218
+1169
 00:50:45.816 --> 00:50:46.586
 There's two problems.
 
-1219
+1170
 00:50:46.586 --> 00:50:47.796
 First of all, the cell right
 
-1220
+1171
 00:50:47.796 --> 00:50:49.486
 under my finger should
 track my finger.
 
-1221
+1172
 00:50:49.486 --> 00:50:50.726
 Otherwise, you have
 this weird effect
 
-1222
+1173
 00:50:50.936 --> 00:50:53.956
 where you're not directly
 manipulating the content.
 
-1223
+1174
 00:50:54.316 --> 00:50:57.996
 And second of all, all of the
 cells are bouncing together.
 
-1224
+1175
 00:50:57.996 --> 00:50:59.636
 They're not coming
 apart as we wanted.
 
-1225
+1176
 00:51:00.036 --> 00:51:03.016
 So if you look back at the code,
 this is actually not surprising.
 
-1226
+1177
 00:51:03.236 --> 00:51:05.396
 We're adjusting the
 center of every single item
 
-1227
+1178
 00:51:05.396 --> 00:51:07.906
 in our collection view by the
 same amount at every frame.
 
-1228
+1179
 00:51:08.166 --> 00:51:09.106
 So of course, they
 don't come apart.
 
-1229
+1180
 00:51:09.396 --> 00:51:12.656
 And that's also why
 that content is coming
 
-1230
+1181
 00:51:12.656 --> 00:51:13.616
 out from under my finger.
 
-1231
+1182
 00:51:13.906 --> 00:51:17.136
 All of the cells are resisting
 scrolling by the same amount.
 
-1232
+1183
 00:51:17.136 --> 00:51:19.706
 So I'm going to turn it back
 over to Josh one more time
 
-1233
+1184
 00:51:20.096 --> 00:51:23.086
 to explain the technique
 for actually fixing this
 
-1234
+1185
 00:51:23.086 --> 00:51:24.826
 and getting the behavior
 that we want.
 
-1235
+1186
 00:51:25.516 --> 00:51:30.906
 [ Applause ]
 
-1236
+1187
 00:51:31.406 --> 00:51:33.976
 >> OK, so we left off on
 last time that we're looking
 
-1237
+1188
 00:51:33.976 --> 00:51:37.716
 at our video of this stuff
 with this exact look here,
 
-1238
+1189
 00:51:38.226 --> 00:51:39.926
 but we didn't actually play it.
 
-1239
+1190
 00:51:39.926 --> 00:51:42.856
 If we had let go at this point
 and allowed the dynamic system
 
-1240
+1191
 00:51:42.856 --> 00:51:44.916
 to take over and run
 that spring simulation,
 
-1241
+1192
 00:51:45.136 --> 00:51:46.986
 we would've seen
 exactly what Eliza saw
 
-1242
+1193
 00:51:47.276 --> 00:51:48.606
 of everything bouncing together.
 
-1243
+1194
 00:51:49.376 --> 00:51:51.626
 Now, of course, if we did
 that a little bit more,
 
-1244
+1195
 00:51:51.626 --> 00:51:53.056
 you'd see we stretched
 the springs
 
-1245
+1196
 00:51:53.056 --> 00:51:54.406
 and they all move
 the same amount
 
-1246
+1197
 00:51:54.406 --> 00:51:55.466
 and everything bounces together.
 
-1247
+1198
 00:51:55.466 --> 00:51:58.236
 It's exactly what we saw
 happen in Eliza's demo
 
-1248
+1199
 00:51:58.476 --> 00:52:00.096
 and clearly not what we
 were trying to build.
 
-1249
-00:51:58.476 --> 00:52:00.096
-and clearly not what we
-were trying to build.
-
-1250
+1200
 00:52:00.816 --> 00:52:03.676
 So what change do we have to
 make in order to fix this?
 
-1251
+1201
 00:52:04.756 --> 00:52:06.316
 Well, we still want to move all
 
-1252
+1202
 00:52:06.316 --> 00:52:08.646
 of the individual attachment
 points together the same way
 
-1253
+1203
 00:52:08.646 --> 00:52:09.556
 that we thought we were doing.
 
-1254
+1204
 00:52:10.296 --> 00:52:12.376
 The thing that we want to do
 differently is that we want
 
-1255
+1205
 00:52:12.376 --> 00:52:14.256
 to stretch the springs
 at different amount.
 
-1256
+1206
 00:52:14.786 --> 00:52:17.226
 And we want to stretch them
 by an amount that varies based
 
-1257
+1207
 00:52:17.226 --> 00:52:19.826
 on how far they are from the
 user's finger on the screen.
 
-1258
+1208
 00:52:20.436 --> 00:52:22.646
 The ones that are directly
 under the finger should stay
 
-1259
+1209
 00:52:22.646 --> 00:52:24.126
 under the finger
 and track directly.
 
-1260
+1210
 00:52:24.386 --> 00:52:26.496
 So we don't want to stretch
 those springs really at all
 
-1261
+1211
 00:52:26.496 --> 00:52:28.976
 because we don't want that to be
 springy, we want it to follow.
 
-1262
+1212
 00:52:29.526 --> 00:52:31.516
 And the farther away the
 cell gets from the finger,
 
-1263
+1213
 00:52:31.796 --> 00:52:33.706
 the more we want to
 stretch out those springs.
 
-1264
+1214
 00:52:33.706 --> 00:52:35.876
 So that's going to look
 something more like this.
 
-1265
+1215
 00:52:36.216 --> 00:52:38.056
 The user puts their
 finger down on the screen
 
-1266
+1216
 00:52:38.056 --> 00:52:40.436
 and starts scrolling,
 the cell directly
 
-1267
+1217
 00:52:40.436 --> 00:52:43.476
 under it has stayed directly
 under it, they've bunched
 
-1268
+1218
 00:52:43.476 --> 00:52:45.666
 up in the direction that
 we're scrolling towards,
 
-1269
+1219
 00:52:46.376 --> 00:52:48.596
 and spread out in the direction
 that we've scrolled away from.
 
-1270
+1220
 00:52:48.596 --> 00:52:52.336
 And if you look at our green
 lines here representing the
 
-1271
+1221
 00:52:52.336 --> 00:52:54.316
 spring lengths, you
 can tell that the ones
 
-1272
+1222
 00:52:54.316 --> 00:52:56.676
 that are farther away from the
 finger had been stretched more
 
-1273
+1223
 00:52:56.676 --> 00:52:57.866
 than the ones that
 are right underneath.
 
-1274
+1224
 00:52:58.396 --> 00:53:03.116
 If we let that go, then
 they're individually going
 
-1275
-00:52:58.396 --> 00:53:03.116
-If we let that go, then
-they're individually going
-
-1276
+1225
 00:53:03.116 --> 00:53:04.706
 to bounce at different speeds.
 
-1277
+1226
 00:53:05.016 --> 00:53:06.786
 Each one's going to have
 a slightly different feel
 
-1278
+1227
 00:53:07.076 --> 00:53:08.286
 and it'll get that
 kind of behavior
 
-1279
+1228
 00:53:08.286 --> 00:53:09.186
 that we were looking for.
 
-1280
+1229
 00:53:09.186 --> 00:53:11.926
 So if we do that, we
 see different amounts
 
-1281
+1230
 00:53:11.926 --> 00:53:14.496
 of stretching varying by how
 far it is from the finger,
 
-1282
+1231
 00:53:14.776 --> 00:53:17.046
 and we get that really nice
 bouncing feel we were after.
 
-1283
+1232
 00:53:17.456 --> 00:53:19.866
 So Eliza is going to modify our
 demo now to get that effect.
 
-1284
+1233
 00:53:20.516 --> 00:53:24.146
 [ Applause ]
 
-1285
+1234
 00:53:24.646 --> 00:53:27.396
 >> All right, so we have a
 ScrollView and that turns
 
-1286
+1235
 00:53:27.396 --> 00:53:28.396
 out to be really convenient.
 
-1287
+1236
 00:53:28.396 --> 00:53:30.626
 We want to figure out where
 did the user put their finger
 
-1288
+1237
 00:53:30.626 --> 00:53:33.716
 down so that we can stretch
 the springs that are farther
 
-1289
+1238
 00:53:33.926 --> 00:53:36.016
 from the finger more
 than the springs
 
-1290
+1239
 00:53:36.016 --> 00:53:36.996
 that are right under the finger.
 
-1291
+1240
 00:53:37.806 --> 00:53:39.016
 So, we'll use the fact
 
-1292
+1241
 00:53:39.236 --> 00:53:42.546
 that ScrollViews expose
 their pan gesture recognizer
 
-1293
+1242
 00:53:42.836 --> 00:53:47.456
 and pan gesture recognizers
 expose the location of the touch
 
-1294
+1243
 00:53:47.696 --> 00:53:49.026
 in whatever view you want.
 
-1295
+1244
 00:53:49.446 --> 00:53:53.446
 So we'll simply say the touch
 location is the ScrollView's pan
 
-1296
+1245
 00:53:53.446 --> 00:53:56.256
 gesture recognizer's
 location in the ScrollView.
 
-1297
+1246
 00:53:56.786 --> 00:53:59.366
 So now we know where the
 user has the touchdown
 
-1298
+1247
 00:53:59.656 --> 00:54:03.666
 and we can take advantage of
 that to figure out how far
 
-1299
-00:53:59.656 --> 00:54:03.666
-and we can take advantage of
-that to figure out how far
-
-1300
+1248
 00:54:03.666 --> 00:54:06.816
 that touch location is from
 each individual spring.
 
-1301
+1249
 00:54:07.156 --> 00:54:10.646
 So, we'll grab the anchor point
 of the spring that represents
 
-1302
+1250
 00:54:11.176 --> 00:54:14.676
 that particular cell's
 resting position.
 
-1303
+1251
 00:54:15.896 --> 00:54:19.016
 And the distance from the
 touch is just the difference
 
-1304
+1252
 00:54:19.086 --> 00:54:20.396
 between the y-coordinate
 
-1305
+1253
 00:54:20.396 --> 00:54:23.726
 of the touch location
 and the anchor point.
 
-1306
+1254
 00:54:23.926 --> 00:54:28.486
 Now we want to scale the amount
 
-1307
+1255
 00:54:28.846 --> 00:54:32.526
 that we resist the
 scrolling by that distance.
 
-1308
+1256
 00:54:32.906 --> 00:54:36.666
 So I'm going to make a variable
 here, scroll resistance,
 
-1309
+1257
 00:54:37.106 --> 00:54:38.696
 and it's just going
 to be a fraction
 
-1310
+1258
 00:54:38.696 --> 00:54:39.846
 of the distance from the touch.
 
-1311
+1259
 00:54:40.026 --> 00:54:41.536
 Now this is something
 you can play around with.
 
-1312
+1260
 00:54:41.756 --> 00:54:44.156
 Basically, the more scroll
 resistance, the bouncier.
 
-1313
+1261
 00:54:44.456 --> 00:54:47.666
 So if I have a lot of scroll
 resistance on a particular cell,
 
-1314
+1262
 00:54:47.876 --> 00:54:49.656
 then it's going to-- the
 spring is going to stretch more
 
-1315
+1263
 00:54:49.656 --> 00:54:51.036
 and it's going to bounce more.
 
-1316
+1264
 00:54:51.336 --> 00:54:54.106
 And so you can play with
 different denominators here.
 
-1317
+1265
 00:54:54.106 --> 00:54:56.336
 This one gets us a fair
 amount of bounciness.
 
-1318
+1266
 00:54:57.776 --> 00:55:02.956
 So now, when we adjust
 the center of the item,
 
-1319
-00:54:57.776 --> 00:55:02.956
-So now, when we adjust
-the center of the item,
-
-1320
+1267
 00:55:02.956 --> 00:55:05.176
 instead of just adding the
 scroll delta, what we want
 
-1321
+1268
 00:55:05.176 --> 00:55:07.856
 to do is add the
 scroll delta times
 
-1322
+1269
 00:55:07.856 --> 00:55:10.546
 that scroll resistance
 fraction that we calculated.
 
-1323
+1270
 00:55:10.746 --> 00:55:13.916
 So when we're at a cell that's
 right under the user's finger,
 
-1324
+1271
 00:55:14.096 --> 00:55:16.036
 the distance from the touch
 is going to be pretty close
 
-1325
+1272
 00:55:16.036 --> 00:55:17.866
 to zero, so the scroll
 resistance--
 
-1326
+1273
 00:55:18.236 --> 00:55:20.976
 rather, the amount that we're
 changing the center will be
 
-1327
+1274
 00:55:20.976 --> 00:55:21.856
 very small.
 
-1328
+1275
 00:55:22.106 --> 00:55:24.786
 And when the touch is
 very far from the finger,
 
-1329
+1276
 00:55:24.786 --> 00:55:27.196
 we'll be changing
 the center by more.
 
-1330
+1277
 00:55:27.516 --> 00:55:29.316
 So now there's one sort of--
 
-1331
+1278
 00:55:29.736 --> 00:55:33.086
 this isn't quite right as I've
 written it because we never want
 
-1332
+1279
 00:55:33.086 --> 00:55:36.426
 to change the center
 of this item by more
 
-1333
+1280
 00:55:36.426 --> 00:55:37.266
 than the scroll delta.
 
-1334
+1281
 00:55:37.266 --> 00:55:41.226
 We always want to be basically
 adjusting it by something
 
-1335
+1282
 00:55:41.226 --> 00:55:44.506
 in between zero and the scroll
 delta because if we changed it
 
-1336
+1283
 00:55:44.506 --> 00:55:46.266
 by more than the scroll
 delta, then instead
 
-1337
+1284
 00:55:46.266 --> 00:55:48.846
 of just resisting scrolling,
 it would actually be moving
 
-1338
+1285
 00:55:48.846 --> 00:55:50.756
 in the opposite direction
 from scrolling,
 
-1339
+1286
 00:55:50.756 --> 00:55:52.186
 and that would be very strange.
 
-1340
+1287
 00:55:52.536 --> 00:55:57.016
 So I'm going to, in
 fact, have this at one.
 
-1341
+1288
 00:55:57.806 --> 00:56:00.356
 So we want the minimum
 of the scroll delta
 
-1342
-00:55:57.806 --> 00:56:00.356
-So we want the minimum
-of the scroll delta
-
-1343
+1289
 00:56:00.356 --> 00:56:04.516
 and then the adjusted scroll
 delta by the scroll resistance.
 
-1344
+1290
 00:56:05.046 --> 00:56:06.546
 All right, so with
 that in place,
 
-1345
+1291
 00:56:06.696 --> 00:56:08.146
 we can go ahead and build this.
 
-1346
+1292
 00:56:09.236 --> 00:56:12.446
 Now, if I grab this
 cell here and I scroll,
 
-1347
+1293
 00:56:13.166 --> 00:56:15.606
 it stays under my
 finger, which is good.
 
-1348
+1294
 00:56:16.266 --> 00:56:17.076
 And-- oops.
 
-1349
+1295
 00:56:17.546 --> 00:56:21.346
 And the content bounces
 around exactly as we hoped.
 
-1350
+1296
 00:56:22.126 --> 00:56:24.556
 The stuff in the direction of
 scrolling gets closer together
 
-1351
+1297
 00:56:24.786 --> 00:56:29.556
 and the stuff farther from the
 scrolling gets farther apart.
 
-1352
+1298
 00:56:30.016 --> 00:56:31.986
 So that was the effect
 that we wanted.
 
-1353
+1299
 00:56:32.326 --> 00:56:33.706
 Before I turn it
 back over to Josh,
 
-1354
+1300
 00:56:33.706 --> 00:56:36.716
 because we have another minute
 or so, let me just show you
 
-1355
+1301
 00:56:36.716 --> 00:56:40.486
 where you would do this
 tiling that I mentioned.
 
-1356
+1302
 00:56:40.486 --> 00:56:42.676
 You don't want to load all
 of these springs into memory
 
-1357
+1303
 00:56:42.676 --> 00:56:45.946
 at the same time, most
 likely, in real use case.
 
-1358
+1304
 00:56:46.276 --> 00:56:49.096
 So here where I'm adding
 behaviors to the spring,
 
-1359
+1305
 00:56:49.306 --> 00:56:53.046
 what you could basically do is
 add only the behaviors that are
 
-1360
+1306
 00:56:53.046 --> 00:56:56.126
 in near what's visible on
 the screen at a given time.
 
-1361
+1307
 00:56:56.126 --> 00:56:57.396
 And if you want to look at--
 
-1362
+1308
 00:56:57.456 --> 00:56:58.896
 look back at some of
 our previous sessions,
 
-1363
+1309
 00:56:58.896 --> 00:57:00.106
 we talked a lot about tiling.
 
-1364
-00:56:58.896 --> 00:57:00.106
-we talked a lot about tiling.
-
-1365
+1310
 00:57:00.106 --> 00:57:02.626
 So this is a slightly weird
 use of tiling where instead
 
-1366
+1311
 00:57:02.626 --> 00:57:05.936
 of tiling views, you're
 tiling springs, just this--
 
-1367
+1312
 00:57:05.936 --> 00:57:08.806
 you're only making the
 springs that you need in order
 
-1368
+1313
 00:57:08.806 --> 00:57:10.776
 to control the content
 that's pretty close
 
-1369
+1314
 00:57:10.776 --> 00:57:11.596
 to what's on screen.
 
-1370
+1315
 00:57:11.756 --> 00:57:13.036
 And you can do that by--
 
-1371
+1316
 00:57:13.536 --> 00:57:16.196
 over here in the
 UIDynamicAnimator header,
 
-1372
+1317
 00:57:16.196 --> 00:57:19.006
 you can see that you can
 both add and remove behaviors
 
-1373
+1318
 00:57:19.116 --> 00:57:20.986
 from the dynamic animator.
 
-1374
+1319
 00:57:20.986 --> 00:57:22.366
 So if you wanted to do this
 
-1375
+1320
 00:57:22.366 --> 00:57:24.056
 in a slightly more
 memory-conscious way,
 
-1376
+1321
 00:57:24.306 --> 00:57:26.496
 that would be the place to look.
 
-1377
+1322
 00:57:26.496 --> 00:57:28.886
 All right, so back over to Josh.
 
-1378
+1323
 00:57:29.516 --> 00:57:34.716
 [ Applause ]
 
-1379
+1324
 00:57:35.216 --> 00:57:38.506
 >> So not to point out bugs,
 but some of you probably noticed
 
-1380
+1325
 00:57:38.506 --> 00:57:39.686
 that when scrolling down,
 
-1381
+1326
 00:57:39.686 --> 00:57:41.316
 there wasn't quite
 the same bouncy effect
 
-1382
+1327
 00:57:41.316 --> 00:57:42.316
 that we were hoping for there.
 
-1383
+1328
 00:57:42.776 --> 00:57:45.886
 That is a result of us changing
 the demo late last night,
 
-1384
+1329
 00:57:46.036 --> 00:57:48.986
 and apparently not verifying
 that we had done it correctly.
 
-1385
+1330
 00:57:49.386 --> 00:57:52.226
 There's actually-- I have made
 that exact same mistake myself
 
-1386
+1331
 00:57:52.226 --> 00:57:54.826
 at my desk when looking
 at this demo in the past.
 
-1387
+1332
 00:57:55.076 --> 00:57:57.086
 There's actually an issue
 where if you do the max
 
-1388
+1333
 00:57:57.086 --> 00:57:58.086
 in that particular way,
 
-1389
+1334
 00:57:58.686 --> 00:58:01.706
 you actually pick the value
 that's always greater than zero
 
-1390
-00:57:58.686 --> 00:58:01.706
-you actually pick the value
-that's always greater than zero
-
-1391
+1335
 00:58:01.706 --> 00:58:03.286
 and sometimes we
 want to go negative.
 
-1392
+1336
 00:58:03.736 --> 00:58:05.296
 So max isn't always
 what we want.
 
-1393
+1337
 00:58:05.336 --> 00:58:06.736
 Sometimes we actually
 want to go min.
 
-1394
+1338
 00:58:07.076 --> 00:58:10.386
 We could go back and fix that,
 but maybe live debugging it
 
-1395
+1339
 00:58:10.386 --> 00:58:12.006
 on stage isn't the
 best plan right now.
 
-1396
+1340
 00:58:12.186 --> 00:58:15.296
 [Inaudible Remark] You can
 go and find our bug later.
 
-1397
+1341
 00:58:15.796 --> 00:58:17.606
 >> It would've helped
 if I built in run.
 
-1398
+1342
 00:58:17.696 --> 00:58:22.016
 >> So over the past few
 years, we've had quite a few
 
-1399
+1343
 00:58:22.016 --> 00:58:23.446
 of these sessions, as
 I mentioned earlier.
 
-1400
+1344
 00:58:23.706 --> 00:58:26.086
 Since 2009, there's been
 a UIScrollView session
 
-1401
+1345
 00:58:26.086 --> 00:58:27.806
 and I wanted to give you
 a real quick reference
 
-1402
+1346
 00:58:27.806 --> 00:58:30.306
 of the different kinds of topics
 we'd covered in that time.
 
-1403
+1347
 00:58:31.686 --> 00:58:33.136
 So, I don't expect
 that you're going
 
-1404
+1348
 00:58:33.136 --> 00:58:34.326
 to read all these
 right here right now,
 
-1405
+1349
 00:58:34.746 --> 00:58:36.476
 but we've covered
 a lot of stuff.
 
-1406
+1350
 00:58:36.476 --> 00:58:39.726
 We've got photo browsing,
 tiling, infinite scrolling.
 
-1407
+1351
 00:58:40.276 --> 00:58:41.536
 We did a really interesting
 thing
 
-1408
+1352
 00:58:41.536 --> 00:58:44.316
 with OpenGL scrolling last year
 so that you could figure out how
 
-1409
+1353
 00:58:44.316 --> 00:58:47.926
 to use UIScrollViews within your
 OpenGL games and applications.
 
-1410
+1354
 00:58:48.336 --> 00:58:50.606
 I'd strongly encourage you,
 if you're doing anything
 
-1411
+1355
 00:58:50.606 --> 00:58:52.916
 with UIScrollView, to come
 back and look through this list
 
-1412
+1356
 00:58:53.306 --> 00:58:55.086
 and see if there's anything
 that applies to the things
 
-1413
+1357
 00:58:55.086 --> 00:58:57.556
 that you're trying to do and
 go and, you know, go back
 
-1414
+1358
 00:58:57.556 --> 00:59:00.696
 and watch some of these sessions
 in the WWDC app that Jake has,
 
-1415
-00:58:57.556 --> 00:59:00.696
-and watch some of these sessions
-in the WWDC app that Jake has,
-
-1416
+1359
 00:59:00.696 --> 00:59:02.906
 you know, kindly given
 us access to this year.
 
-1417
+1360
 00:59:03.806 --> 00:59:05.566
 If you have more
 questions about this stuff,
 
-1418
+1361
 00:59:05.876 --> 00:59:08.136
 Jake Behrens is the UI
 Frameworks Evangelist--
 
-1419
+1362
 00:59:08.496 --> 00:59:10.966
 or sorry, the App
 Frameworks Evangelist now.
 
-1420
+1363
 00:59:11.156 --> 00:59:12.176
 Documentation, of course,
 
-1421
+1364
 00:59:12.176 --> 00:59:14.006
 we've got the UIScrollView
 Programming Guide
 
-1422
+1365
 00:59:14.156 --> 00:59:16.176
 and the Apple Developer
 Forums are a great place
 
-1423
+1366
 00:59:16.176 --> 00:59:17.366
 to find out about this stuff.
 
-1424
+1367
 00:59:17.586 --> 00:59:18.836
 You know, I'm on
 there a lot and a lot
 
-1425
+1368
 00:59:18.836 --> 00:59:19.986
 of other folks are as well.
 
-1426
+1369
 00:59:19.986 --> 00:59:22.246
 There are some related sessions.
 
-1427
+1370
 00:59:22.416 --> 00:59:24.726
 If you missed it, there's
 the Building User Interfaces
 
-1428
+1371
 00:59:24.726 --> 00:59:27.846
 with iOS 7 one that was on
 Tuesday, and Getting Started
 
-1429
+1372
 00:59:27.846 --> 00:59:29.486
 with Dynamics was
 also on Tuesday.
 
-1430
+1373
 00:59:29.896 --> 00:59:31.776
 Later today, there's
 an Advanced Techniques
 
-1431
+1374
 00:59:31.776 --> 00:59:35.406
 with UIKit Dynamics
 actually right here at 3:15.
 
-1432
+1375
 00:59:36.206 --> 00:59:37.706
 So thanks very much for coming
 
-1433
+1376
 00:59:37.706 --> 00:59:39.396
 and please enjoy
 the rest of WWDC.
 
-1434
+1377
 00:59:40.016 --> 00:59:41.016
 [Applause]
 
-1435
+1378
 00:59:41.016 --> 00:59:51.226
 [ Silence ]

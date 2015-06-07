@@ -93,4986 +93,4772 @@ so I'd like to introduce
 to you Lister.
 
 21
-00:00:58.876 --> 00:01:00.976
-so I'd like to introduce
-to you Lister.
-
-22
 00:01:01.426 --> 00:01:03.686
 Lister is built with
 Storyboards, Auto Layout,
 
-23
+22
 00:01:03.686 --> 00:01:05.756
 and NSDocument, and
 we're going to go
 
-24
+23
 00:01:05.756 --> 00:01:07.076
 over all these features today.
 
-25
+24
 00:01:07.446 --> 00:01:10.696
 Lister is a cross platform app,
 it runs on both OS X and iOS,
 
-26
+25
 00:01:11.296 --> 00:01:13.806
 and it's available in both
 Objective-C and Swift.
 
-27
+26
 00:01:14.406 --> 00:01:16.566
 So Lister is sample code that
 we're making available to you,
 
-28
+27
 00:01:16.806 --> 00:01:18.646
 and there's links at
 the end of this talk
 
-29
+28
 00:01:19.076 --> 00:01:21.676
 to download all four versions
 of it, so I really recommend
 
-30
+29
 00:01:21.676 --> 00:01:23.626
 that after this talk
 you check-out the sample
 
-31
+30
 00:01:24.006 --> 00:01:27.266
 and see some of what we think
 makes a great modern Cocoa app.
 
-32
+31
 00:01:27.746 --> 00:01:29.306
 Let's do a quick tour.
 
-33
+32
 00:01:30.416 --> 00:01:32.996
 So Lister is a To
 Do application,
 
-34
+33
 00:01:33.846 --> 00:01:38.686
 so as you can see here I can
 mark items as finished or maybe
 
-35
+34
 00:01:38.686 --> 00:01:40.656
 if I'm not done with my
 slides yet I can uncheck that,
 
-36
+35
 00:01:40.656 --> 00:01:41.826
 I hope I'm done by this point.
 
-37
+36
 00:01:42.316 --> 00:01:43.926
 Then you can also move items
 
-38
+37
 00:01:43.926 --> 00:01:48.866
 around inside the
 list, as you see here.
 
-39
+38
 00:01:49.086 --> 00:01:51.896
 Lister is a Document-Based
 app, that means I can have more
 
-40
+39
 00:01:51.896 --> 00:01:56.716
 than one document
 open at a time,
 
+40
+00:01:56.936 --> 00:02:00.946
+and to edit the list Lister
+has this popover you see,
+
 41
-00:01:56.936 --> 00:02:00.946
-and to edit the list Lister
-has this popover you see,
-
-42
-00:01:56.936 --> 00:02:00.946
-and to edit the list Lister
-has this popover you see,
-
-43
 00:02:00.946 --> 00:02:04.146
 I can click on the plus
 button, type the item
 
-44
+42
 00:02:04.246 --> 00:02:08.045
 that I'm interested in adding,
 and it's inserted into the list.
 
-45
+43
 00:02:09.386 --> 00:02:12.716
 So here you can see just how
 easy it is to use the app,
 
-46
+44
 00:02:12.716 --> 00:02:13.726
 and that's important, as well.
 
-47
+45
 00:02:13.726 --> 00:02:16.726
 Now as a Document-Based app you
 get a lot of features for free,
 
-48
+46
 00:02:16.726 --> 00:02:20.216
 including auto saving and this
 title bar renaming feature
 
-49
+47
 00:02:20.386 --> 00:02:24.296
 and tagging, and also Lister
 has this feature of allowing you
 
-50
+48
 00:02:24.296 --> 00:02:29.616
 to choose a color for the
 document, as you can see there.
 
-51
+49
 00:02:29.826 --> 00:02:31.896
 Now, of course, as an OS X
 app it's important to think
 
-52
+50
 00:02:31.896 --> 00:02:34.596
 about how it behaves when
 the window is resized,
 
-53
+51
 00:02:35.036 --> 00:02:36.946
 and here you can see
 I'm resizing the window
 
-54
+52
 00:02:36.946 --> 00:02:40.006
 and it even enforces a minimum
 size and also makes sure
 
-55
+53
 00:02:40.056 --> 00:02:44.006
 that all of the controls are
 available for the user to see.
 
-56
+54
 00:02:46.296 --> 00:02:48.546
 So maybe you've already started
 writing your modern Cocoa app,
 
-57
+55
 00:02:49.126 --> 00:02:51.376
 you went into Xcode,
 chose file a new project.
 
-58
+56
 00:02:51.886 --> 00:02:54.756
 You were presented with
 this fantastic sheet,
 
-59
+57
 00:02:55.016 --> 00:02:56.336
 pick Cocoa application,
 of course,
 
-60
+58
 00:02:56.756 --> 00:03:00.376
 gave your app a great name, and
 when you Build and Run you end
 
-61
-00:02:56.756 --> 00:03:00.376
-gave your app a great name, and
-when you Build and Run you end
-
-62
+59
 00:03:00.376 --> 00:03:02.596
 up with this fantastic
 empty window.
 
-63
+60
 00:03:03.726 --> 00:03:06.066
 And it may seem like there's
 a long ways to go to get
 
-64
+61
 00:03:06.066 --> 00:03:07.516
 from a template, like this,
 
-65
+62
 00:03:07.836 --> 00:03:10.316
 to a fully featured
 modern app, like Lister.
 
-66
+63
 00:03:10.926 --> 00:03:12.976
 Well, no worries, that's what
 we're going to talk about today.
 
-67
+64
 00:03:13.496 --> 00:03:15.596
 So, first, we're going to go
 over getting started and talk
 
-68
+65
 00:03:15.596 --> 00:03:17.656
 about some of the core features
 of the Cocoa Frameworks.
 
-69
+66
 00:03:18.216 --> 00:03:20.446
 After that, we're going to add
 some more interesting features.
 
-70
+67
 00:03:21.216 --> 00:03:26.666
 And, finally, we are going to
 talk about where to go next.
 
-71
+68
 00:03:27.976 --> 00:03:30.346
 So first up, getting started.
 
-72
+69
 00:03:30.846 --> 00:03:34.306
 Now before we go any
 further it's important
 
-73
+70
 00:03:34.306 --> 00:03:36.076
 to review this very
 common design pattern,
 
-74
+71
 00:03:36.076 --> 00:03:37.806
 called Model View
 Controller, or MVC.
 
-75
+72
 00:03:38.366 --> 00:03:40.896
 In MVC you architect your
 application into three parts.
 
-76
+73
 00:03:41.356 --> 00:03:45.216
 The first part is the model,
 the model is storing the data
 
-77
+74
 00:03:45.216 --> 00:03:47.116
 that your application
 is interested in.
 
-78
+75
 00:03:48.076 --> 00:03:50.976
 After that you have views,
 views are the way your user sees
 
-79
+76
 00:03:50.976 --> 00:03:52.066
 and interacts with that data.
 
-80
+77
 00:03:52.166 --> 00:03:54.016
 And, finally, we
 have controllers,
 
-81
+78
 00:03:54.016 --> 00:03:56.006
 controllers connect
 views and models.
 
-82
+79
 00:03:56.006 --> 00:03:59.146
 Now there's no better
 example of MVC in action
 
-83
+80
 00:03:59.146 --> 00:04:01.356
 in Cocoa than Storyboards.
 
-84
-00:03:59.146 --> 00:04:01.356
-in Cocoa than Storyboards.
-
-85
+81
 00:04:01.756 --> 00:04:05.326
 Storyboards are new in Yosemite,
 they've become back to the Mac
 
-86
+82
 00:04:05.326 --> 00:04:08.476
 from iOS, and Storyboards
 perform a great starting point
 
-87
+83
 00:04:08.476 --> 00:04:09.776
 for creating views
 in controllers,
 
-88
+84
 00:04:10.036 --> 00:04:11.786
 but they're not just a
 starting point, they're going
 
-89
+85
 00:04:11.786 --> 00:04:13.206
 to form the base
 of your application
 
-90
+86
 00:04:13.206 --> 00:04:14.446
 as you add new features.
 
-91
+87
 00:04:16.456 --> 00:04:18.116
 Storyboards consist
 of two parts.
 
-92
+88
 00:04:18.866 --> 00:04:22.926
 The first is a scene, which is
 part of your user interface,
 
-93
+89
 00:04:22.926 --> 00:04:26.346
 and the second part is a segway,
 which lets you transition
 
-94
+90
 00:04:26.346 --> 00:04:28.346
 from one scene to the next.
 
-95
+91
 00:04:30.016 --> 00:04:31.536
 So here's an example
 of a Storyboard.
 
-96
+92
 00:04:31.966 --> 00:04:33.646
 This is the template
 we just looked at.
 
-97
+93
 00:04:33.646 --> 00:04:35.696
 You can see I've got
 not only a window,
 
-98
+94
 00:04:35.696 --> 00:04:38.766
 but also a window controller
 and a view and a label
 
-99
+95
 00:04:38.766 --> 00:04:40.256
 that says your document
 content is here
 
-100
+96
 00:04:40.616 --> 00:04:42.036
 and a view controller
 for that, as well.
 
-101
+97
 00:04:42.036 --> 00:04:44.706
 Now, of course, Storyboards
 can become much more complex.
 
-102
+98
 00:04:45.246 --> 00:04:48.166
 Here's a Tab View controller,
 a new feature in Yosemite,
 
-103
+99
 00:04:48.456 --> 00:04:52.466
 and here you can see I'm able
 to easily visualize how all
 
-104
+100
 00:04:52.466 --> 00:04:53.676
 of the tabs look together.
 
-105
+101
 00:04:54.356 --> 00:04:56.476
 And this means it's a great
 way to get an overview
 
-106
+102
 00:04:56.476 --> 00:04:58.876
 of how your application
 behaves and edit things
 
-107
+103
 00:04:58.876 --> 00:05:00.116
 in coordination with each other.
 
-108
-00:04:58.876 --> 00:05:00.116
-in coordination with each other.
-
-109
+104
 00:05:00.746 --> 00:05:03.836
 Now it's important to
 understand when you're working
 
-110
+105
 00:05:03.836 --> 00:05:05.706
 with Storyboards that
 the thing you're looking
 
-111
+106
 00:05:05.706 --> 00:05:08.986
 at there is not a façade or just
 a front end to generated code,
 
-112
+107
 00:05:09.346 --> 00:05:12.566
 those are real live
 controller and view objects
 
-113
+108
 00:05:12.566 --> 00:05:13.566
 that are in that file.
 
-114
+109
 00:05:14.046 --> 00:05:15.586
 However, Xcode makes
 it very easy
 
-115
+110
 00:05:15.586 --> 00:05:18.726
 to connect those to
 your source code.
 
-116
+111
 00:05:19.046 --> 00:05:21.796
 So here I've done a control
 drag in the Assistant Editor
 
-117
+112
 00:05:22.036 --> 00:05:24.706
 to my source code from
 that password field,
 
-118
+113
 00:05:25.026 --> 00:05:26.456
 and there I can insert
 either an outlet
 
-119
+114
 00:05:26.516 --> 00:05:28.996
 to reference the text
 field or an action to take
 
-120
+115
 00:05:28.996 --> 00:05:31.056
 when the user types
 in it or hits return.
 
-121
+116
 00:05:31.476 --> 00:05:36.286
 The Storyboards, you're going to
 find that Storyboards are great
 
-122
+117
 00:05:36.286 --> 00:05:39.336
 for rapid prototyping and
 you can easily edit them,
 
-123
+118
 00:05:39.336 --> 00:05:42.176
 add new features, try it out in
 the Assistant Editor, or Build
 
-124
+119
 00:05:42.176 --> 00:05:44.166
 and Run, and you get a lot
 of functionality for free.
 
-125
+120
 00:05:44.806 --> 00:05:48.196
 And also you're going
 to compose Storyboards
 
-126
+121
 00:05:48.196 --> 00:05:49.806
 to form more complicated
 interfaces,
 
-127
+122
 00:05:49.806 --> 00:05:52.456
 so your entire application
 isn't in just one Storyboard,
 
-128
+123
 00:05:52.786 --> 00:05:54.946
 you could have a piece that you
 reuse across different places
 
-129
+124
 00:05:55.276 --> 00:05:57.106
 or Storyboards that
 are only loaded
 
-130
+125
 00:05:57.106 --> 00:05:59.346
 when the user chooses certain
 actions, like preferences.
 
-131
+126
 00:05:59.906 --> 00:06:03.896
 Now Storyboards is a very
 large topic, of course,
 
-132
-00:05:59.906 --> 00:06:03.896
-Now Storyboards is a very
-large topic, of course,
-
-133
+127
 00:06:03.896 --> 00:06:06.686
 so here's the first of many
 references I'm going to give you
 
-134
+128
 00:06:06.686 --> 00:06:09.236
 in this talk to other sessions
 where I think you can find
 
-135
+129
 00:06:09.236 --> 00:06:10.296
 out a lot more information.
 
-136
+130
 00:06:10.666 --> 00:06:13.336
 This one is Storyboards
 and Controllers for OS X.
 
-137
+131
 00:06:13.336 --> 00:06:15.446
 If you missed it earlier this
 week then check it out on video.
 
-138
+132
 00:06:15.946 --> 00:06:21.446
 Next up let's talk
 about Auto Layout.
 
-139
+133
 00:06:22.426 --> 00:06:25.636
 So Auto Layout is how views are
 placed in your user interface,
 
-140
+134
 00:06:26.896 --> 00:06:29.756
 and the auto part is that it
 automatically changes the size
 
-141
+135
 00:06:29.756 --> 00:06:33.196
 and placement of views as
 content changes or the container
 
-142
+136
 00:06:33.196 --> 00:06:34.366
 for that content changes.
 
-143
+137
 00:06:34.916 --> 00:06:39.116
 The way Auto Layout works is
 by specifying relationships
 
-144
+138
 00:06:39.116 --> 00:06:41.526
 between views using what
 we call constraints,
 
-145
+139
 00:06:41.526 --> 00:06:43.506
 so let me give you an example.
 
-146
+140
 00:06:43.826 --> 00:06:45.726
 Here is an application
 called Directions,
 
-147
+141
 00:06:46.216 --> 00:06:48.596
 and you can see it looks
 great just sitting there,
 
-148
+142
 00:06:48.596 --> 00:06:51.096
 statically on a slide,
 but it's important again
 
-149
+143
 00:06:51.096 --> 00:06:53.646
 to consider how it behaves when
 the user resizes the window.
 
-150
+144
 00:06:53.646 --> 00:06:55.376
 So in this case my
 designer came to me
 
-151
+145
 00:06:55.376 --> 00:06:56.626
 and gave me a bunch of rules.
 
-152
+146
 00:06:56.976 --> 00:06:58.946
 She said this start
 route, or excuse me,
 
-153
+147
 00:06:58.946 --> 00:07:01.986
 the start route button must
 remain a fixed width unless
 
-154
-00:06:58.946 --> 00:07:01.986
-the start route button must
-remain a fixed width unless
-
-155
+148
 00:07:01.986 --> 00:07:03.756
 you're in a different
 language and in
 
-156
+149
 00:07:03.756 --> 00:07:04.736
 that case it's a
 different width.
 
-157
+150
 00:07:05.476 --> 00:07:07.936
 The map view must remain
 fixed to all of the edges,
 
-158
+151
 00:07:08.236 --> 00:07:09.716
 except it needs to leave
 space on the bottom
 
-159
+152
 00:07:09.716 --> 00:07:10.906
 for the rest of the controls.
 
-160
+153
 00:07:11.716 --> 00:07:14.086
 The start and end labels
 are also fixed width,
 
-161
+154
 00:07:15.036 --> 00:07:18.836
 but the beginning and finishing
 address text fields are variable
 
-162
+155
 00:07:18.836 --> 00:07:21.756
 width, however, they must always
 remain the same width and,
 
-163
+156
 00:07:21.756 --> 00:07:24.916
 furthermore, the start and
 beginning and finishing address
 
-164
+157
 00:07:24.916 --> 00:07:28.176
 and start route controls must
 all take up the full width
 
-165
+158
 00:07:28.176 --> 00:07:29.846
 of the window as it resizes.
 
-166
+159
 00:07:31.336 --> 00:07:35.076
 And, finally, the used bike
 route check box must remain left
 
-167
+160
 00:07:35.076 --> 00:07:37.206
 aligned with the beginning
 address text field.
 
-168
+161
 00:07:38.666 --> 00:07:40.246
 So what I've just
 described to you in English,
 
-169
+162
 00:07:40.606 --> 00:07:43.626
 you can actually express very
 easily entirely within Xcode
 
-170
+163
 00:07:43.626 --> 00:07:46.276
 and Interface Builder to
 set up your constraints.
 
-171
+164
 00:07:46.906 --> 00:07:49.036
 So what happens when
 you resize the window?
 
-172
+165
 00:07:49.096 --> 00:07:51.266
 Well, get out your popcorn,
 this is going to be fantastic.
 
-173
+166
 00:07:52.646 --> 00:07:55.626
 You can see that the controls
 stay in the same place
 
-174
+167
 00:07:55.626 --> 00:07:57.646
 or the right place as
 the window resizes.
 
-175
+168
 00:07:58.246 --> 00:08:03.926
 So Auto Layout provides
 flexibility as design changes,
 
-176
-00:07:58.246 --> 00:08:03.926
-So Auto Layout provides
-flexibility as design changes,
-
-177
+169
 00:08:04.266 --> 00:08:07.226
 and by design I mean not just
 the design of your application,
 
-178
+170
 00:08:07.556 --> 00:08:09.606
 but also the design of
 the operating system.
 
-179
+171
 00:08:09.976 --> 00:08:12.526
 As you've seen with Yosemite,
 we introduced a new system font,
 
-180
+172
 00:08:12.936 --> 00:08:16.666
 and apps that use Auto Layout
 will immediately feel modern
 
-181
+173
 00:08:16.666 --> 00:08:18.816
 and at home because their
 controls can be automatically
 
-182
+174
 00:08:18.816 --> 00:08:21.036
 resized for potentially
 different lengths
 
-183
+175
 00:08:21.036 --> 00:08:22.436
 of text with the new font.
 
-184
+176
 00:08:22.436 --> 00:08:26.516
 Auto Layout also greatly
 simplifies localization.
 
-185
+177
 00:08:26.516 --> 00:08:27.336
 This is a feature we're going
 
-186
+178
 00:08:27.336 --> 00:08:28.586
 to talk a little bit
 more about later.
 
-187
+179
 00:08:28.586 --> 00:08:31.916
 And, again, Xcode is going
 to be your primary interface
 
-188
+180
 00:08:31.916 --> 00:08:33.076
 for working with Auto Layout.
 
-189
+181
 00:08:33.476 --> 00:08:34.616
 You can add new constraints,
 
-190
+182
 00:08:34.616 --> 00:08:36.905
 it'll help you understand
 how constraints interact
 
-191
+183
 00:08:36.905 --> 00:08:37.456
 with each other.
 
-192
+184
 00:08:38.006 --> 00:08:40.056
 You can preview the results
 in the Assistant Editor,
 
-193
+185
 00:08:40.546 --> 00:08:43.765
 and also Xcode provides a
 fantastic way to debug issues.
 
-194
+186
 00:08:43.816 --> 00:08:46.906
 For example, if you have
 two constraints that result
 
-195
+187
 00:08:46.906 --> 00:08:49.906
 in a conflicting rule then
 Xcode will tell you about that
 
-196
+188
 00:08:49.906 --> 00:08:51.686
 and offer you a solution
 to fix it.
 
-197
+189
 00:08:52.616 --> 00:08:55.246
 So, again, here's another
 related session, Taking Control
 
-198
+190
 00:08:55.246 --> 00:08:56.796
 of Auto Layout in Xcode 5.
 
-199
+191
 00:08:57.076 --> 00:08:59.456
 It's from last year, but
 I definitely recommend
 
-200
+192
 00:08:59.456 --> 00:09:00.706
 that you go check that talk out.
 
-201
-00:08:59.456 --> 00:09:00.706
-that you go check that talk out.
-
-202
+193
 00:09:01.086 --> 00:09:03.936
 There the Interface Builder
 Team showed a lot of ways
 
-203
+194
 00:09:03.936 --> 00:09:05.706
 in which you can use Xcode
 
-204
+195
 00:09:05.706 --> 00:09:07.396
 to efficiently handle
 those constraints.
 
-205
+196
 00:09:07.456 --> 00:09:09.356
 And we're also going
 to show you Auto Layout
 
-206
+197
 00:09:09.356 --> 00:09:13.756
 in a demo in a few minutes.
 
-207
+198
 00:09:13.756 --> 00:09:16.556
 Next, let's talk about
 documents and data.
 
-208
+199
 00:09:17.056 --> 00:09:20.546
 So for many applications this
 is the reason to use your app.
 
-209
+200
 00:09:20.756 --> 00:09:23.706
 So it's really important to
 decide early on how you're going
 
-210
+201
 00:09:23.706 --> 00:09:25.286
 to store that data
 because it's going
 
-211
+202
 00:09:25.316 --> 00:09:27.166
 to drive the design
 of your application.
 
-212
+203
 00:09:27.696 --> 00:09:29.876
 That's not just the
 architecture of your app,
 
-213
+204
 00:09:30.196 --> 00:09:32.926
 but also how users use your app.
 
-214
+205
 00:09:33.616 --> 00:09:37.666
 In Cocoa we generally divide
 data driven applications
 
-215
+206
 00:09:37.666 --> 00:09:38.796
 into two major categories.
 
-216
+207
 00:09:39.116 --> 00:09:41.206
 The first are Shoebox apps
 
-217
+208
 00:09:41.296 --> 00:09:43.376
 and the second is a
 Document-Based app.
 
-218
+209
 00:09:43.376 --> 00:09:44.866
 Let's talk about
 Shoebox apps first.
 
-219
+210
 00:09:45.086 --> 00:09:48.966
 Now a great example of
 a Shoebox app is iTunes.
 
-220
+211
 00:09:49.226 --> 00:09:52.026
 Also, you might think
 about iBooks or Photos.
 
-221
+212
 00:09:52.936 --> 00:09:56.146
 So in a Shoebox app we typically
 store the data in a library
 
-222
+213
 00:09:56.146 --> 00:09:58.716
 or a container, and
 usually that library
 
-223
+214
 00:09:58.716 --> 00:10:00.306
 or container is hidden
 from the user.
 
-224
-00:09:58.716 --> 00:10:00.306
-or container is hidden
-from the user.
-
-225
+215
 00:10:00.796 --> 00:10:04.556
 For example, with Photos app
 the library will contain all
 
-226
+216
 00:10:04.596 --> 00:10:07.156
 of the photos, but it appears to
 the user as just a single file.
 
-227
+217
 00:10:08.286 --> 00:10:11.626
 Shoebox apps typically present
 their data in a single window,
 
-228
+218
 00:10:11.626 --> 00:10:12.956
 now that's not a restriction,
 
-229
+219
 00:10:13.076 --> 00:10:14.836
 but it is the most
 common workflow.
 
-230
+220
 00:10:15.086 --> 00:10:19.326
 Shoebox apps are also great
 for mix and match of data.
 
-231
+221
 00:10:19.676 --> 00:10:21.376
 Again, using iTunes
 as an example,
 
-232
+222
 00:10:21.646 --> 00:10:23.946
 you want to create a playlist
 from several different songs
 
-233
+223
 00:10:23.946 --> 00:10:26.466
 from different albums,
 that's a great --
 
-234
+224
 00:10:26.556 --> 00:10:30.206
 that's a typical
 workflow in a Shoebox app.
 
-235
+225
 00:10:32.216 --> 00:10:34.996
 Now to support Shoebox apps
 Cocoa provides a framework
 
-236
+226
 00:10:34.996 --> 00:10:35.986
 called Core Data.
 
-237
+227
 00:10:36.866 --> 00:10:40.306
 Core Data is a generalized
 object,
 
-238
+228
 00:10:40.306 --> 00:10:41.406
 graph and persistence framework.
 
-239
+229
 00:10:41.756 --> 00:10:44.366
 So it may seem like a mouthful,
 but really all it means is,
 
-240
+230
 00:10:44.366 --> 00:10:45.956
 of course, in a Shoebox
 app you're going
 
-241
+231
 00:10:45.956 --> 00:10:47.756
 to have some representation
 of the user's data
 
-242
+232
 00:10:47.756 --> 00:10:49.086
 in memory, that model data.
 
-243
+233
 00:10:49.536 --> 00:10:52.736
 Core Data lets you manage
 that graph and provides a way
 
-244
+234
 00:10:52.736 --> 00:10:55.216
 to help you persist it to
 disk, although Core Data,
 
-245
+235
 00:10:55.216 --> 00:10:56.386
 itself, is not a database.
 
-246
+236
 00:10:56.806 --> 00:10:58.526
 Core Data provides
 many features, though,
 
-247
+237
 00:10:58.686 --> 00:11:02.126
 including efficient performance,
 support for chains tracking
 
-248
-00:10:58.686 --> 00:11:02.126
-including efficient performance,
-support for chains tracking
-
-249
+238
 00:11:02.236 --> 00:11:05.346
 and undo, it helps you
 maintain the relationship
 
-250
+239
 00:11:05.346 --> 00:11:06.916
 between those objects,
 for example,
 
-251
+240
 00:11:06.916 --> 00:11:08.706
 when one object is
 deleted what happens
 
-252
+241
 00:11:08.736 --> 00:11:10.096
 to the other related objects.
 
-253
+242
 00:11:11.936 --> 00:11:14.216
 Also, as your application
 evolves you're, of course,
 
-254
+243
 00:11:14.216 --> 00:11:16.986
 going to add new features,
 those probably require new data.
 
-255
+244
 00:11:17.406 --> 00:11:18.956
 Core Data will help
 you migrate that data
 
-256
+245
 00:11:18.956 --> 00:11:21.906
 from one version to the next.
 
-257
+246
 00:11:21.906 --> 00:11:25.886
 And support for sophisticated
 queries, again, using iTunes,
 
-258
+247
 00:11:26.286 --> 00:11:28.346
 for example, searching
 for a particular artist,
 
-259
+248
 00:11:28.346 --> 00:11:30.196
 searching for a particular
 song, and so forth.
 
-260
+249
 00:11:30.786 --> 00:11:33.786
 Now Core Data is, again,
 another large topic.
 
-261
+250
 00:11:34.076 --> 00:11:36.116
 One place to get started
 is this year's What's New
 
-262
+251
 00:11:36.116 --> 00:11:38.256
 in Core Data Session, also,
 
-263
+252
 00:11:38.256 --> 00:11:39.716
 plenty of documentation
 available
 
-264
+253
 00:11:39.716 --> 00:11:40.886
 on the Developer website.
 
-265
+254
 00:11:41.366 --> 00:11:45.806
 Next let's talk about
 Document-Based apps.
 
-266
+255
 00:11:46.146 --> 00:11:48.616
 A good example of a
 Document-Based app is pages
 
-267
+256
 00:11:48.776 --> 00:11:50.236
 or keynote or numbers.
 
-268
+257
 00:11:50.866 --> 00:11:53.576
 So in a Document-Based
 app we store user data
 
-269
+258
 00:11:53.576 --> 00:11:55.216
 in a named file container.
 
-270
+259
 00:11:55.686 --> 00:11:57.116
 Now notice I didn't
 just say file,
 
-271
+260
 00:11:57.436 --> 00:11:58.876
 that's because Cocoa
 provides support
 
-272
+261
 00:11:58.876 --> 00:12:00.476
 for what we call file wrappers.
 
-273
-00:11:58.876 --> 00:12:00.476
-for what we call file wrappers.
-
-274
+262
 00:12:00.836 --> 00:12:03.396
 A file wrapper allows you
 to store large attachments,
 
-275
+263
 00:12:03.396 --> 00:12:06.756
 for example movies, in a file
 container and still appears
 
-276
+264
 00:12:06.756 --> 00:12:09.666
 to the user as one file
 that they can easily manage,
 
-277
+265
 00:12:09.936 --> 00:12:12.306
 but it's a much more
 efficient way of storing it.
 
-278
+266
 00:12:13.356 --> 00:12:16.076
 Now with Document-Based apps
 the documents may be local
 
-279
+267
 00:12:16.076 --> 00:12:22.966
 or in iCloud, and the documents
 are not generally related
 
-280
+268
 00:12:22.966 --> 00:12:25.776
 to each other, in
 contrast to a Shoebox app.
 
-281
+269
 00:12:25.776 --> 00:12:30.736
 However, a user may be
 interested in a few at a time.
 
-282
+270
 00:12:30.886 --> 00:12:33.616
 Now to provide support for this
 Cocoa provides what we call the
 
-283
+271
 00:12:33.616 --> 00:12:34.986
 document architecture.
 
-284
+272
 00:12:36.316 --> 00:12:40.266
 The document architecture
 provides core features
 
-285
+273
 00:12:40.346 --> 00:12:41.966
 with little or no
 additional code,
 
-286
+274
 00:12:42.026 --> 00:12:45.636
 and this is a fantastic
 example of how building on top
 
-287
+275
 00:12:45.636 --> 00:12:47.506
 of the Cocoa Frameworks
 provides a way
 
-288
+276
 00:12:47.506 --> 00:12:48.666
 for your app to feel modern.
 
-289
+277
 00:12:48.666 --> 00:12:51.456
 For example, Auto Save and
 Versions, a feature we added
 
-290
+278
 00:12:51.456 --> 00:12:55.286
 in 10.7, is able to be
 enabled in Document-Based apps
 
-291
+279
 00:12:55.536 --> 00:12:57.336
 with very little effort,
 and again we're going to see
 
-292
+280
 00:12:57.336 --> 00:12:58.116
 that in a few minutes.
 
-293
+281
 00:12:58.756 --> 00:13:01.636
 Also, support for iCloud,
 support for asynchronous reading
 
-294
-00:12:58.756 --> 00:13:01.636
-Also, support for iCloud,
-support for asynchronous reading
-
-295
+282
 00:13:01.636 --> 00:13:04.906
 and writing, and support
 for undo, among many others.
 
-296
+283
 00:13:05.406 --> 00:13:07.646
 Another interesting thing
 
-297
+284
 00:13:07.646 --> 00:13:10.816
 about the document architecture
 is that, like much of Cocoa,
 
-298
+285
 00:13:10.816 --> 00:13:12.586
 it's customizable
 to your app's needs.
 
-299
+286
 00:13:13.116 --> 00:13:14.226
 That means that you can choose
 
-300
+287
 00:13:14.226 --> 00:13:17.696
 where in the document stack
 you choose to interact
 
-301
+288
 00:13:17.966 --> 00:13:19.376
 with the code, with
 the framework
 
-302
+289
 00:13:19.906 --> 00:13:22.886
 and picking a higher level lets
 you get more features for free,
 
-303
+290
 00:13:23.426 --> 00:13:26.146
 picking a lower level lets
 it be more customizable
 
-304
+291
 00:13:26.146 --> 00:13:26.996
 to your app's needs.
 
-305
+292
 00:13:27.746 --> 00:13:28.726
 So, again, that's up to you,
 
-306
+293
 00:13:28.996 --> 00:13:30.966
 but it's a very common pattern
 you'll see across Cocoa.
 
-307
+294
 00:13:31.606 --> 00:13:35.086
 Now with the document
 architecture you start
 
-308
+295
 00:13:35.086 --> 00:13:38.566
 by subclassing in NS document,
 and the job of that subclass is
 
-309
+296
 00:13:38.566 --> 00:13:41.506
 to create, present and
 store the document data.
 
-310
+297
 00:13:41.506 --> 00:13:43.266
 Let's look at some sample code.
 
-311
+298
 00:13:44.956 --> 00:13:48.076
 So here is the core
 of the list document,
 
-312
+299
 00:13:48.126 --> 00:13:50.106
 the class for the Lister sample,
 
-313
+300
 00:13:50.106 --> 00:13:51.556
 and we're going to
 write it in Swift.
 
-314
+301
 00:13:52.236 --> 00:13:54.576
 So here I have subclassed
 NSDocument,
 
-315
+302
 00:13:54.786 --> 00:13:56.496
 and my class is called
 list document.
 
-316
+303
 00:13:57.176 --> 00:13:58.896
 Now we need a place to
 store that model data,
 
-317
+304
 00:13:59.036 --> 00:14:00.916
 so here's a property I've
 introduced called list,
 
-318
-00:13:59.036 --> 00:14:00.916
-so here's a property I've
-introduced called list,
-
-319
+305
 00:14:00.916 --> 00:14:05.236
 that's with a lower case l, I
 initialize it to an instance
 
-320
+306
 00:14:05.236 --> 00:14:07.536
 of the List class,
 with a capital L,
 
-321
+307
 00:14:07.536 --> 00:14:08.856
 and we're passing new arguments
 
-322
+308
 00:14:08.856 --> 00:14:11.296
 because that creates
 a default empty list.
 
-323
+309
 00:14:12.566 --> 00:14:15.276
 Now to enable Auto Save,
 iCloud and Versions,
 
-324
+310
 00:14:15.716 --> 00:14:19.086
 plus other features, like
 title bar renaming and more,
 
-325
+311
 00:14:19.216 --> 00:14:21.666
 all we need to do is
 write three lines of code.
 
-326
+312
 00:14:22.106 --> 00:14:24.606
 And here they are, for
 overwriting a class method,
 
-327
+313
 00:14:24.606 --> 00:14:27.376
 called Auto Saves In
 Place, it returns a Boolean,
 
-328
+314
 00:14:27.496 --> 00:14:29.666
 as you can see from the
 signature, and all I need
 
-329
+315
 00:14:29.666 --> 00:14:31.636
 to do is opt in by
 returning true.
 
-330
+316
 00:14:32.326 --> 00:14:35.336
 So, again, if you had used
 NSDocument before 10.7,
 
-331
+317
 00:14:35.666 --> 00:14:37.936
 when 10.7 was released
 with support for Auto Save
 
-332
+318
 00:14:37.936 --> 00:14:40.896
 and Versions all it would
 require was just a few changes
 
-333
+319
 00:14:41.116 --> 00:14:45.386
 to continue to feel modern
 and fit in with the system.
 
-334
+320
 00:14:45.496 --> 00:14:47.076
 Now I mentioned documents
 have to be able
 
-335
+321
 00:14:47.156 --> 00:14:49.486
 to handle the user's data,
 as well, and we're going
 
-336
+322
 00:14:49.486 --> 00:14:50.506
 to do that in two methods.
 
-337
+323
 00:14:50.826 --> 00:14:52.146
 The first is called
 Data of Type.
 
-338
+324
 00:14:52.726 --> 00:14:53.636
 There's two arguments.
 
-339
+325
 00:14:53.716 --> 00:14:56.916
 The first is a typed name, so
 documents can provide support
 
-340
+326
 00:14:56.916 --> 00:14:59.816
 for many kinds of documents, and
 it's identified by that string,
 
-341
+327
 00:15:00.206 --> 00:15:02.326
 and a second is an
 Out Error parameter,
 
-342
+328
 00:15:02.326 --> 00:15:04.366
 so if something goes
 wrong we can set that
 
-343
+329
 00:15:04.366 --> 00:15:06.346
 and NSDocument will
 take care of presenting
 
-344
+330
 00:15:06.346 --> 00:15:07.556
 that correctly to the user.
 
-345
+331
 00:15:08.536 --> 00:15:11.166
 Now the result of
 this method is a data,
 
-346
+332
 00:15:11.166 --> 00:15:14.956
 something if it succeeded or
 nil if something went wrong.
 
-347
+333
 00:15:14.956 --> 00:15:17.916
 So here's how we do it, this
 is a pattern you're going
 
-348
+334
 00:15:17.916 --> 00:15:20.806
 to see a lot in Swift,
 the if-let pattern.
 
-349
+335
 00:15:21.226 --> 00:15:23.436
 So here we're going
 to use a great example
 
-350
+336
 00:15:23.436 --> 00:15:27.116
 of the composability of Cocoa
 classes by handing off most
 
-351
+337
 00:15:27.116 --> 00:15:29.326
 of the work to a class
 called Keyed Archiver.
 
-352
+338
 00:15:29.756 --> 00:15:32.476
 Keyed Archiver's job is to take
 a graph of objects in memory
 
-353
+339
 00:15:32.746 --> 00:15:36.426
 and convert them into data
 that you can then pass back
 
-354
+340
 00:15:36.426 --> 00:15:38.166
 to document to serialize
 to disk.
 
-355
+341
 00:15:38.606 --> 00:15:40.746
 The method is called Archived
 to Data with Root Object.
 
-356
+342
 00:15:40.836 --> 00:15:43.666
 You can see we're passing in
 our property, the list property,
 
-357
+343
 00:15:44.276 --> 00:15:47.886
 and if that works we return a
 data object and we assign it
 
-358
+344
 00:15:47.926 --> 00:15:49.686
 to that data object
 and then return it.
 
-359
+345
 00:15:50.316 --> 00:15:53.046
 If not, we set the
 error and return nil.
 
-360
+346
 00:15:53.346 --> 00:15:55.266
 And for the full example
 of how you set that out,
 
-361
+347
 00:15:55.266 --> 00:15:56.916
 error parameter, I
 want you to go check
 
-362
+348
 00:15:56.916 --> 00:15:58.126
 out the Lister sample code,
 
-363
+349
 00:15:58.126 --> 00:16:01.506
 so there's a little
 bit of an incentive.
 
-364
-00:15:58.126 --> 00:16:01.506
-so there's a little
-bit of an incentive.
-
-365
+350
 00:16:01.506 --> 00:16:03.586
 Now we also have to be
 able to create the document
 
-366
+351
 00:16:03.586 --> 00:16:06.506
 from data that's received from
 the user, so again NSDocument
 
-367
+352
 00:16:06.506 --> 00:16:09.506
 and app kit will take care of
 presenting open panels for you
 
-368
+353
 00:16:09.506 --> 00:16:10.946
 and letting the user
 pick their documents,
 
-369
+354
 00:16:11.206 --> 00:16:13.596
 all we need to do is convert
 that data into our property.
 
-370
+355
 00:16:13.886 --> 00:16:15.856
 And we do it in this
 method, read from data,
 
-371
+356
 00:16:15.916 --> 00:16:18.016
 and you can see we
 have a data argument.
 
-372
+357
 00:16:18.366 --> 00:16:20.816
 Of type, again, multiple
 types is supported,
 
-373
+358
 00:16:21.096 --> 00:16:22.726
 and another out error parameter.
 
-374
+359
 00:16:23.566 --> 00:16:25.556
 And we return a Boolean
 indicating success.
 
-375
+360
 00:16:26.146 --> 00:16:29.976
 So here, again, the
 companion to Keyed Archiver,
 
-376
+361
 00:16:30.046 --> 00:16:32.146
 unsurprisingly called
 Keyed Unarchiver,
 
-377
+362
 00:16:32.636 --> 00:16:35.356
 we pass in the data using
 unarchived object with data,
 
-378
+363
 00:16:35.706 --> 00:16:39.996
 and we assign that result to
 the de-serialized list variable,
 
-379
+364
 00:16:40.166 --> 00:16:42.906
 if there's a success, and
 we cast it to a list type.
 
-380
+365
 00:16:42.906 --> 00:16:45.416
 And once that's done we can
 assign it to our property,
 
-381
+366
 00:16:45.766 --> 00:16:48.466
 remember with the lower case
 l, list, and return true,
 
-382
+367
 00:16:48.836 --> 00:16:50.266
 and if something
 goes wrong, again,
 
-383
+368
 00:16:50.346 --> 00:16:52.716
 I refer you to the sample
 code to see the full method
 
-384
+369
 00:16:52.716 --> 00:16:55.446
 of setting out error parameter,
 and then we return false.
 
-385
+370
 00:16:56.026 --> 00:17:01.126
 Now, the NSDocument architecture
 has a lot more interesting
 
-386
-00:16:56.026 --> 00:17:01.126
-Now, the NSDocument architecture
-has a lot more interesting
-
-387
+371
 00:17:01.126 --> 00:17:03.156
 features that I want you
 to learn about and to do
 
-388
+372
 00:17:03.156 --> 00:17:06.746
 that you should check out
 this session from WWDC 2011,
 
-389
+373
 00:17:07.086 --> 00:17:09.096
 Auto Save and Versions
 in Mac OS X Lion.
 
-390
+374
 00:17:09.455 --> 00:17:12.336
 That may seem like a long time
 ago, but again we keep building
 
-391
+375
 00:17:12.336 --> 00:17:14.326
 on top of these features,
 so by understanding
 
-392
+376
 00:17:14.326 --> 00:17:16.636
 that session you'll
 definitely be well prepared
 
-393
+377
 00:17:16.636 --> 00:17:18.356
 for the future of
 using NSDocument.
 
-394
+378
 00:17:18.356 --> 00:17:22.366
 Now in the course of writing
 your modern Cocoa app you're
 
-395
+379
 00:17:22.366 --> 00:17:24.356
 going to encounter
 plenty of other user data.
 
-396
+380
 00:17:24.816 --> 00:17:27.396
 Some examples, preferences,
 this is handled
 
-397
+381
 00:17:27.396 --> 00:17:30.746
 in Cocoa via a class
 called NS user defaults.
 
-398
+382
 00:17:31.286 --> 00:17:32.296
 These can come in many forms,
 
-399
+383
 00:17:32.296 --> 00:17:34.736
 but the two most common are
 application preferences.
 
-400
+384
 00:17:35.086 --> 00:17:37.376
 For example, in my
 directions app I had a use bike
 
-401
+385
 00:17:37.376 --> 00:17:38.236
 route checkbox.
 
-402
+386
 00:17:38.546 --> 00:17:40.326
 If I want to preserve
 that between launches
 
-403
+387
 00:17:40.326 --> 00:17:42.216
 of the application then
 that might be something
 
-404
+388
 00:17:42.216 --> 00:17:44.766
 that I can store there and
 then retrieve at a later time.
 
-405
+389
 00:17:45.776 --> 00:17:47.026
 And also system preferences,
 
-406
+390
 00:17:47.246 --> 00:17:49.086
 this includes the
 user's preferred language
 
-407
+391
 00:17:49.366 --> 00:17:50.536
 and their preferred locale.
 
-408
+392
 00:17:51.106 --> 00:17:53.746
 Locale controls things like
 how dates, times, numbers
 
-409
+393
 00:17:53.746 --> 00:17:57.376
 and currencies are formatted,
 and again in another example
 
-410
+394
 00:17:57.376 --> 00:17:58.196
 of the composability
 
-411
+395
 00:17:58.196 --> 00:18:00.786
 of the Cocoa classes we
 provide great support
 
-412
-00:17:58.196 --> 00:18:00.786
-of the Cocoa classes we
-provide great support
-
-413
+396
 00:18:00.786 --> 00:18:03.636
 for these via a set of
 classes called formatters.
 
-414
+397
 00:18:04.216 --> 00:18:07.716
 If you interact with the
 network, of course, you're going
 
-415
+398
 00:18:07.716 --> 00:18:10.366
 to use NS URL session
 and a suite
 
-416
+399
 00:18:10.366 --> 00:18:11.476
 of classes related to that.
 
-417
+400
 00:18:13.116 --> 00:18:15.026
 There's also the
 iCloud key value store.
 
-418
+401
 00:18:15.346 --> 00:18:17.636
 This is handled via NS
 ubiquitous key value store.
 
-419
+402
 00:18:18.146 --> 00:18:21.176
 Now in contrast to
 the local preferences,
 
-420
+403
 00:18:21.176 --> 00:18:23.856
 these ones are available
 on all iCloud devices,
 
-421
+404
 00:18:24.066 --> 00:18:25.836
 and it's appropriate for
 small amounts of data.
 
-422
+405
 00:18:26.256 --> 00:18:28.796
 So when you're deciding where
 to store that preference think
 
-423
+406
 00:18:28.796 --> 00:18:30.336
 about where you want
 it to be available
 
-424
+407
 00:18:30.476 --> 00:18:32.416
 and that's how you can
 decide between those two.
 
-425
+408
 00:18:32.966 --> 00:18:37.116
 And, of course, new in
 Yosemite and iOS8 is Cloud Kit,
 
-426
+409
 00:18:37.276 --> 00:18:38.676
 another large topic
 that we've had lots
 
-427
+410
 00:18:38.676 --> 00:18:42.296
 of good sessions
 about this week.
 
-428
+411
 00:18:42.516 --> 00:18:45.826
 So now we've seen a lot
 of the basic functionality
 
-429
+412
 00:18:45.826 --> 00:18:47.086
 of the Cocoa Frameworks.
 
-430
+413
 00:18:47.416 --> 00:18:48.916
 I'd like to invite
 my colleague, Alex,
 
-431
+414
 00:18:48.916 --> 00:18:51.226
 up on stage to show us
 how we can get started
 
-432
+415
 00:18:51.226 --> 00:18:52.996
 with these in our Lister sample.
 
-433
+416
 00:18:53.396 --> 00:18:53.766
 Alex?
 
-434
+417
 00:18:59.796 --> 00:19:00.266
 >> Good morning.
 
-435
-00:18:59.796 --> 00:19:00.266
->> Good morning.
-
-436
+418
 00:19:01.356 --> 00:19:04.526
 Developing Cocoa apps is easier
 than ever with our modern tools
 
-437
+419
 00:19:04.526 --> 00:19:06.346
 and great APIs, so what I'd
 
-438
+420
 00:19:06.346 --> 00:19:09.046
 like to do now is implement
 a few features of Lister
 
-439
+421
 00:19:09.046 --> 00:19:11.806
 to show you how you
 can leverage tools,
 
-440
+422
 00:19:11.806 --> 00:19:13.746
 like Interface Builder,
 in your own apps.
 
-441
+423
 00:19:15.036 --> 00:19:17.726
 So I already have Lister
 open, and I've opened it
 
-442
+424
 00:19:17.726 --> 00:19:19.156
 up right to the Storyboard.
 
-443
+425
 00:19:19.496 --> 00:19:21.936
 And you can see two main
 controllers in the scene.
 
-444
+426
 00:19:22.436 --> 00:19:25.686
 The first is this window
 controller on the left,
 
-445
+427
 00:19:26.536 --> 00:19:29.326
 and you can also see
 this view controller
 
-446
+428
 00:19:29.436 --> 00:19:30.466
 at the bottom right, here.
 
-447
+429
 00:19:31.176 --> 00:19:33.186
 Now the view controller
 on the right is going
 
-448
+430
 00:19:33.186 --> 00:19:35.026
 to manage both the list's color,
 
-449
+431
 00:19:35.026 --> 00:19:37.606
 as well as the items
 within the list.
 
-450
+432
 00:19:38.216 --> 00:19:40.506
 So let's take a look
 and see what this looks
 
-451
+433
 00:19:40.506 --> 00:19:41.976
 like when we run the app.
 
-452
+434
 00:19:43.986 --> 00:19:50.416
 So you can see the same sample
 that Tony showed you earlier.
 
-453
+435
 00:19:50.766 --> 00:19:52.516
 We have this plus
 button at the top left,
 
-454
+436
 00:19:52.516 --> 00:19:54.336
 but we haven't implemented
 that yet,
 
-455
+437
 00:19:54.376 --> 00:19:56.546
 and we'll get back
 to that in a minute.
 
-456
+438
 00:19:56.926 --> 00:19:58.316
 You can also see the list here.
 
-457
+439
 00:19:59.906 --> 00:20:01.606
 We also give the
 user the ability
 
-458
-00:19:59.906 --> 00:20:01.606
-We also give the
-user the ability
-
-459
+440
 00:20:01.606 --> 00:20:04.036
 to select a color for the list.
 
-460
+441
 00:20:04.036 --> 00:20:06.426
 Now it's really nice
 now, but what happens
 
-461
+442
 00:20:06.426 --> 00:20:08.946
 when we scale the window?
 
-462
+443
 00:20:08.946 --> 00:20:13.296
 You'll notice that the
 buttons aren't sitting flush
 
-463
+444
 00:20:13.296 --> 00:20:14.446
 on the right side of the window.
 
-464
+445
 00:20:15.376 --> 00:20:18.056
 Don't worry, we're going to
 fix that with Auto Layout,
 
-465
+446
 00:20:18.266 --> 00:20:20.066
 so let's see how we can do that.
 
-466
+447
 00:20:21.296 --> 00:20:25.716
 So we'll quit Lister,
 we'll go back into Xcode.
 
-467
+448
 00:20:26.816 --> 00:20:29.846
 Now the first thing that I want
 to do is set-up a constraint
 
-468
+449
 00:20:30.146 --> 00:20:33.246
 between this far left button
 and the custom view on the left.
 
-469
+450
 00:20:33.906 --> 00:20:36.176
 Now, to do that I'm
 going to click the button
 
-470
+451
 00:20:36.176 --> 00:20:39.566
 and then control drag from
 the button to the view.
 
-471
+452
 00:20:39.956 --> 00:20:43.216
 And you'll see Xcode gives
 me a few different options
 
-472
+453
 00:20:43.216 --> 00:20:45.006
 of different constraints
 that I can set.
 
-473
+454
 00:20:45.136 --> 00:20:47.226
 So the first constraint
 that I want
 
-474
+455
 00:20:47.226 --> 00:20:50.626
 to set is a horizontal spacing
 constraint, that makes sure
 
-475
+456
 00:20:50.626 --> 00:20:54.516
 that the distance between
 these two views are consistent.
 
-476
+457
 00:20:55.986 --> 00:20:58.516
 Now I want to do the same
 thing for the other views
 
-477
+458
 00:20:58.516 --> 00:21:01.026
 on the right, but I'm going to
 take a short cut, so I'm going
 
-478
-00:20:58.516 --> 00:21:01.026
-on the right, but I'm going to
-take a short cut, so I'm going
-
-479
+459
 00:21:01.026 --> 00:21:05.976
 to click all of these buttons,
 and then I'm going to go
 
-480
+460
 00:21:05.976 --> 00:21:07.116
 down to the bottom right,
 
-481
+461
 00:21:07.116 --> 00:21:10.116
 and we'll click this
 button down there.
 
-482
+462
 00:21:10.726 --> 00:21:13.386
 And you'll notice that
 I can pin the width
 
-483
+463
 00:21:13.636 --> 00:21:17.506
 between these different
 views all together
 
-484
+464
 00:21:17.506 --> 00:21:21.566
 at the same time based on
 the neighbor for these views.
 
-485
+465
 00:21:21.966 --> 00:21:24.576
 So I want to pin the
 distance between each view
 
-486
+466
 00:21:24.576 --> 00:21:26.636
 and its closest neighbor
 to the left.
 
-487
+467
 00:21:27.886 --> 00:21:31.496
 Now all I have to do is click
 the Add Five constraints button
 
-488
+468
 00:21:31.496 --> 00:21:36.286
 at the bottom, and all of
 these constraints are set.
 
-489
+469
 00:21:36.796 --> 00:21:38.746
 Now another constraint
 that I want to set is
 
-490
+470
 00:21:38.746 --> 00:21:41.156
 between the right button
 here and its super view.
 
-491
+471
 00:21:41.306 --> 00:21:43.746
 I want to make sure that the
 space here is consistent.
 
-492
+472
 00:21:43.746 --> 00:21:48.876
 Now sometimes it's
 actually easier
 
-493
+473
 00:21:48.876 --> 00:21:51.766
 to use the document
 editor here, so what I want
 
-494
+474
 00:21:51.766 --> 00:21:55.716
 to do is select this right
 button and then control drag
 
-495
+475
 00:21:55.716 --> 00:21:57.506
 from the button to
 its super view,
 
-496
+476
 00:21:57.846 --> 00:22:00.356
 which you could see is the
 color palette view here.
 
-497
-00:21:57.846 --> 00:22:00.356
-which you could see is the
-color palette view here.
-
-498
+477
 00:22:01.046 --> 00:22:02.736
 And the constraint that I want
 
-499
+478
 00:22:02.736 --> 00:22:05.246
 to set here is the
 trailing space to make sure
 
-500
+479
 00:22:05.246 --> 00:22:08.566
 that the space after the
 right edge of the view
 
-501
+480
 00:22:08.946 --> 00:22:10.606
 to its super view is consistent.
 
-502
+481
 00:22:13.436 --> 00:22:15.916
 The final constraint
 that I want to set on all
 
-503
+482
 00:22:15.916 --> 00:22:18.996
 of these views is a vertical
 alignment constraint.
 
-504
+483
 00:22:18.996 --> 00:22:20.156
 I want to make sure that all
 
-505
+484
 00:22:20.156 --> 00:22:22.616
 of these buttons are vertically
 aligned within its container.
 
-506
+485
 00:22:23.616 --> 00:22:26.526
 Now to do that all I
 have to do is click all
 
-507
+486
 00:22:26.526 --> 00:22:34.106
 of these buttons again, and
 then go to the editor menu item,
 
-508
+487
 00:22:34.836 --> 00:22:38.866
 I'll click align, and then
 vertical center and container.
 
-509
+488
 00:22:39.116 --> 00:22:41.996
 So it's that easy to
 center all those buttons
 
-510
+489
 00:22:42.116 --> 00:22:44.716
 within its super view.
 
-511
+490
 00:22:45.536 --> 00:22:47.096
 Now the final constraint
 that I want
 
-512
+491
 00:22:47.096 --> 00:22:48.876
 to set here is on
 the custom view.
 
-513
+492
 00:22:49.716 --> 00:22:52.356
 Now I want to make sure
 that the custom view takes
 
-514
+493
 00:22:52.356 --> 00:22:54.906
 up the full amount of
 space on the left side.
 
-515
+494
 00:22:55.396 --> 00:22:57.666
 Now, to do that I'm going
 to set up three constraints.
 
-516
+495
 00:22:58.206 --> 00:23:04.316
 The first constraint is the top
 space between, in its container,
 
-517
-00:22:58.206 --> 00:23:04.316
-The first constraint is the top
-space between, in its container,
-
-518
+496
 00:23:04.796 --> 00:23:07.296
 the bottom space and
 the leading space.
 
-519
+497
 00:23:08.046 --> 00:23:10.846
 Now to do that I'm going to
 control drag from the view
 
-520
+498
 00:23:11.616 --> 00:23:15.516
 to its superview, which is
 the color palette view again,
 
-521
+499
 00:23:15.516 --> 00:23:16.416
 you see here.
 
-522
+500
 00:23:17.166 --> 00:23:21.436
 Now Xcode lets me easily
 select more than one constraint
 
-523
+501
 00:23:21.666 --> 00:23:24.236
 by just holding shift when
 I click these constraints,
 
-524
+502
 00:23:24.696 --> 00:23:26.516
 so I'm going to set
 the leading space,
 
-525
+503
 00:23:26.866 --> 00:23:29.926
 the top space, and
 the bottom space.
 
-526
+504
 00:23:30.556 --> 00:23:34.116
 And when I click away all of
 these constraints will be set.
 
-527
+505
 00:23:35.246 --> 00:23:36.786
 So now that we've set
 up our constraints,
 
-528
+506
 00:23:36.856 --> 00:23:43.886
 let's run the app
 and see what we have.
 
-529
+507
 00:23:44.076 --> 00:23:47.026
 So you'll notice now that when
 I resized the window we have
 
-530
+508
 00:23:47.026 --> 00:23:48.126
 exactly what we want.
 
-531
+509
 00:23:48.186 --> 00:23:51.366
 The buttons at the top right
 are pinned to the right side
 
-532
+510
 00:23:51.366 --> 00:23:54.856
 of the window, but what happens
 when we make the window narrow?
 
-533
+511
 00:23:56.116 --> 00:23:58.426
 You'll notice two interesting
 things going on here.
 
-534
+512
 00:23:58.956 --> 00:24:01.096
 The first is that
 the window is taking
 
-535
-00:23:58.956 --> 00:24:01.096
-The first is that
-the window is taking
-
-536
+513
 00:24:01.096 --> 00:24:03.936
 on the minimum window size
 based on the constraints
 
-537
+514
 00:24:03.936 --> 00:24:05.596
 that we've set in the view.
 
-538
+515
 00:24:06.176 --> 00:24:08.446
 Because we've set each
 button to be a fixed width,
 
-539
+516
 00:24:08.446 --> 00:24:11.076
 and we've set each
 distance between the button
 
-540
+517
 00:24:11.076 --> 00:24:15.996
 to be a fixed width, the minimum
 size of the window is the sum
 
-541
+518
 00:24:15.996 --> 00:24:16.976
 of all of those widths.
 
-542
+519
 00:24:18.146 --> 00:24:20.716
 But we actually want
 the color of the list
 
-543
+520
 00:24:20.756 --> 00:24:21.816
 to always be displayed.
 
-544
+521
 00:24:21.816 --> 00:24:25.506
 Now to do that we want to set
 up a new type of constraint,
 
-545
+522
 00:24:25.946 --> 00:24:28.066
 so let's go back into
 Interface Builder
 
-546
+523
 00:24:28.326 --> 00:24:29.806
 and see how to implement that.
 
-547
+524
 00:24:29.806 --> 00:24:35.526
 So I'm going to close
 Lister, open Xcode back up.
 
-548
+525
 00:24:36.496 --> 00:24:38.376
 Now I want to set
 another constraint
 
-549
+526
 00:24:38.376 --> 00:24:39.916
 on this custom view here.
 
-550
+527
 00:24:40.996 --> 00:24:42.196
 The first thing that I'm going
 
-551
+528
 00:24:42.196 --> 00:24:46.026
 to do is create a
 pinned width constraint.
 
-552
+529
 00:24:46.026 --> 00:24:50.336
 So I'm going to go to editor,
 pin, and then select width,
 
-553
+530
 00:24:50.816 --> 00:24:56.156
 and you'll see now the width
 constraint is right here
 
-554
+531
 00:24:56.156 --> 00:24:57.116
 in the document editor.
 
-555
+532
 00:24:58.006 --> 00:25:01.646
 Well, we don't want the width
 to be fixed for the color
 
-556
-00:24:58.006 --> 00:25:01.646
-Well, we don't want the width
-to be fixed for the color
-
-557
+533
 00:25:01.646 --> 00:25:03.916
 of the list, we want it
 to be, we want it to grow
 
-558
+534
 00:25:03.916 --> 00:25:05.936
 as you resize the window.
 
-559
+535
 00:25:06.616 --> 00:25:09.256
 And to do that let's modify
 some of the attributes
 
-560
+536
 00:25:09.476 --> 00:25:12.256
 of this constraint
 in the utility area.
 
-561
+537
 00:25:15.916 --> 00:25:18.956
 So you'll see that we
 have the item that we want
 
-562
+538
 00:25:18.956 --> 00:25:21.806
 to have the constraint on and we
 also have this relation option.
 
-563
+539
 00:25:22.226 --> 00:25:25.096
 Now we want to make the relation
 greater than or equal to,
 
-564
+540
 00:25:25.096 --> 00:25:29.286
 to make sure that the width
 of that view is greater than
 
-565
+541
 00:25:29.286 --> 00:25:33.786
 or equal to a certain number of
 points, which is the constant.
 
-566
+542
 00:25:33.976 --> 00:25:36.636
 And I already know that
 the constant that I want
 
-567
+543
 00:25:36.636 --> 00:25:40.346
 for this app is around
 125 points.
 
-568
+544
 00:25:40.926 --> 00:25:50.756
 So now when we run the app and
 we shrink the window you'll see
 
-569
+545
 00:25:50.756 --> 00:25:53.286
 that you can still
 see the list color
 
-570
+546
 00:25:53.676 --> 00:25:57.946
 and the window still takes
 the size of the window based
 
-571
+547
 00:25:57.946 --> 00:25:59.756
 on the constraints that
 are set within the view,
 
-572
+548
 00:26:00.266 --> 00:26:03.726
 so it's that easy to
 set up these constraints
 
-573
+549
 00:26:03.846 --> 00:26:05.956
 in Interface Builder,
 to make sure
 
-574
+550
 00:26:05.956 --> 00:26:08.696
 that your views respond
 accordingly
 
-575
+551
 00:26:08.696 --> 00:26:10.166
 when the window size changes.
 
-576
+552
 00:26:10.936 --> 00:26:13.406
 Now let's take a look at another
 feature of Interface Builder,
 
-577
+553
 00:26:13.856 --> 00:26:16.756
 called Storyboards, to
 implement that plus button
 
-578
+554
 00:26:16.756 --> 00:26:17.786
 that we talked about earlier.
 
-579
+555
 00:26:18.586 --> 00:26:23.006
 So I'm going to close Lister,
 and go back right into Xcode.
 
-580
+556
 00:26:23.616 --> 00:26:25.576
 Now the first thing that I want
 
-581
+557
 00:26:25.576 --> 00:26:28.206
 to do here is create a view
 controller that's going
 
-582
+558
 00:26:28.206 --> 00:26:30.566
 to be presented when I
 click the plus button.
 
-583
+559
 00:26:31.046 --> 00:26:33.876
 Now to do that I'm going to
 go into the object library
 
-584
+560
 00:26:34.436 --> 00:26:36.976
 and you'll notice the
 view controller here.
 
-585
+561
 00:26:37.226 --> 00:26:40.326
 And all I have to do is
 drag the view controller
 
-586
+562
 00:26:40.366 --> 00:26:41.526
 out into the scene.
 
-587
+563
 00:26:43.226 --> 00:26:46.346
 Now I know that -- I already
 know the size of the view
 
-588
+564
 00:26:46.346 --> 00:26:48.146
 that I want to present,
 so I'm going to go back
 
-589
+565
 00:26:48.146 --> 00:26:50.916
 into the document
 editor, select the view,
 
-590
+566
 00:26:51.256 --> 00:26:55.416
 and then modify its
 width and height.
 
-591
+567
 00:26:55.486 --> 00:27:01.516
 And I know I want it to be 275
 points wide by 75 points tall.
 
-592
-00:26:55.486 --> 00:27:01.516
-And I know I want it to be 275
-points wide by 75 points tall.
-
-593
+568
 00:27:02.436 --> 00:27:05.116
 Now we need to have some
 content in this view,
 
-594
+569
 00:27:05.506 --> 00:27:08.936
 so let's add a text field to let
 the user enter in what they want
 
-595
+570
 00:27:08.936 --> 00:27:10.176
 to include for this item.
 
-596
+571
 00:27:10.176 --> 00:27:14.396
 So I'm going to go back
 into the object library
 
-597
+572
 00:27:15.126 --> 00:27:22.156
 and drag a text field into the
 view controller, into the view.
 
-598
+573
 00:27:22.356 --> 00:27:26.356
 Now I want this text field
 to be the size of the view.
 
-599
+574
 00:27:26.936 --> 00:27:30.456
 And, finally, I'll
 add a label, as well,
 
-600
+575
 00:27:30.456 --> 00:27:34.856
 to tell the user what kind of
 information they're entering.
 
-601
+576
 00:27:35.426 --> 00:27:39.236
 So we want to make sure
 that this label is centered,
 
-602
+577
 00:27:39.826 --> 00:27:44.106
 and we'll give it a title
 of create list item,
 
-603
+578
 00:27:45.226 --> 00:27:51.826
 and we'll also add a
 placeholder to the text field,
 
-604
+579
 00:27:52.076 --> 00:27:55.936
 which is pizza for Joe.
 
-605
+580
 00:27:55.936 --> 00:28:00.836
 All right, so I've already
 implemented a subclass
 
-606
-00:27:55.936 --> 00:28:00.836
-All right, so I've already
-implemented a subclass
-
-607
+581
 00:28:00.836 --> 00:28:05.306
 of NS view controller
 that handles the event
 
-608
+582
 00:28:05.306 --> 00:28:06.666
 when the text field changes
 
-609
+583
 00:28:06.666 --> 00:28:09.756
 and it's only implementing
 one method, but what I want
 
-610
+584
 00:28:09.756 --> 00:28:11.846
 to do is make sure
 that we set the class
 
-611
+585
 00:28:11.846 --> 00:28:13.576
 for this view controller
 that we just created.
 
-612
+586
 00:28:13.576 --> 00:28:16.486
 And to do that I'm going to
 go back into the utility area
 
-613
+587
 00:28:17.416 --> 00:28:19.966
 and set the class for
 this view controller,
 
-614
+588
 00:28:20.306 --> 00:28:23.296
 and it's an add item
 view controller.
 
-615
+589
 00:28:24.826 --> 00:28:27.766
 Now we want to make sure the
 text field sends the right event
 
-616
+590
 00:28:28.166 --> 00:28:31.026
 to the view controller,
 so to do that I'm going
 
-617
+591
 00:28:31.026 --> 00:28:35.226
 to click the text field and then
 control drag from the text field
 
-618
+592
 00:28:35.636 --> 00:28:36.546
 to the view controller.
 
-619
+593
 00:28:37.156 --> 00:28:41.896
 And you'll notice that there's
 a received actions list here,
 
-620
+594
 00:28:42.236 --> 00:28:44.236
 so the method that I've
 implemented is called
 
-621
+595
 00:28:44.236 --> 00:28:45.016
 text changed.
 
-622
+596
 00:28:45.716 --> 00:28:49.116
 This is going to fire when the
 user finishes entering text
 
-623
+597
 00:28:49.496 --> 00:28:52.466
 within the text field, and so
 that's the action that I want.
 
-624
+598
 00:28:52.466 --> 00:29:00.056
 So now that we've hooked up this
 view controller and the content
 
-625
-00:28:52.466 --> 00:29:00.056
-So now that we've hooked up this
-view controller and the content
-
-626
+599
 00:29:00.056 --> 00:29:01.126
 within this view controller,
 
-627
+600
 00:29:01.396 --> 00:29:03.936
 we want to actually
 present this view controller
 
-628
+601
 00:29:03.936 --> 00:29:06.766
 when we click the plus button,
 so to do that we're going
 
-629
+602
 00:29:06.766 --> 00:29:09.286
 to use Storyboards and a segway.
 
-630
+603
 00:29:10.456 --> 00:29:12.766
 So what I want to do
 is go into the toolbar
 
-631
+604
 00:29:13.606 --> 00:29:15.946
 and find the add item,
 which is the plus button,
 
-632
+605
 00:29:17.246 --> 00:29:21.576
 which you'll see here, and
 I want to drag from the --
 
-633
+606
 00:29:21.576 --> 00:29:23.356
 control drag from
 the plus button
 
-634
+607
 00:29:23.936 --> 00:29:26.126
 to this view controller
 that we just created.
 
-635
+608
 00:29:26.126 --> 00:29:29.816
 And you'll notice that we
 get a few different options
 
-636
+609
 00:29:29.816 --> 00:29:31.806
 for the types of segways
 that we want to perform,
 
-637
+610
 00:29:31.806 --> 00:29:34.926
 and in this case we want to
 perform a popover segway.
 
-638
+611
 00:29:35.576 --> 00:29:40.016
 And you'll see that when you
 create the popover segway Xcode
 
-639
+612
 00:29:40.016 --> 00:29:42.296
 lets you know that
 it's a popover
 
-640
+613
 00:29:42.356 --> 00:29:42.976
 with this nice icon here.
 
-641
+614
 00:29:43.076 --> 00:29:47.566
 So now that we've
 set up the segway,
 
-642
+615
 00:29:47.566 --> 00:29:49.636
 we've set up the view
 controller, let's run the app
 
-643
+616
 00:29:49.716 --> 00:29:50.936
 and see how this works.
 
-644
+617
 00:29:56.576 --> 00:29:58.976
 So I already know the
 type of list I want,
 
-645
+618
 00:29:58.976 --> 00:30:00.936
 I'm going to have a
 party later and I want
 
-646
-00:29:58.976 --> 00:30:00.936
-I'm going to have a
-party later and I want
-
-647
+619
 00:30:00.936 --> 00:30:01.846
 to invite some people.
 
-648
+620
 00:30:01.976 --> 00:30:04.846
 So the first person that
 I'm going to invite is Tony,
 
-649
+621
 00:30:05.526 --> 00:30:10.106
 so the popover showed
 which is great.
 
-650
+622
 00:30:10.296 --> 00:30:13.936
 And I think Craig is going to
 be a little bit more relaxed now
 
-651
+623
 00:30:13.936 --> 00:30:15.986
 after the keynote, so
 I'll also invite Craig.
 
-652
+624
 00:30:16.786 --> 00:30:23.786
 And Tim is finished, as well,
 so we'll invite Tim, too.
 
-653
+625
 00:30:24.896 --> 00:30:26.596
 So now that we've seen
 how Storyboards work
 
-654
+626
 00:30:27.626 --> 00:30:30.426
 and Auto Layout, I want to
 hand it back to Tony to talk
 
-655
+627
 00:30:30.426 --> 00:30:32.766
 about some more advanced
 features of Cocoa.
 
-656
+628
 00:30:36.736 --> 00:30:37.216
 >> Thanks, Alex.
 
-657
+629
 00:30:37.436 --> 00:30:42.466
 Okay, let's talk about some
 more features of Cocoa,
 
-658
+630
 00:30:42.666 --> 00:30:44.296
 and we're going to put
 a particular emphasis
 
-659
+631
 00:30:44.296 --> 00:30:47.276
 on how they can, how adopting
 these can make your app feel
 
-660
+632
 00:30:47.276 --> 00:30:47.866
 more modern.
 
-661
+633
 00:30:48.876 --> 00:30:50.946
 So first up is Auto
 Localization.
 
-662
+634
 00:30:51.306 --> 00:30:54.196
 Now if the auto part sounds
 familiar that's because,
 
-663
+635
 00:30:54.196 --> 00:30:56.686
 of course, it is built
 on top of Auto Layout.
 
-664
+636
 00:30:57.346 --> 00:31:00.956
 Auto Localization lets you share
 the same UI design of your app,
 
-665
-00:30:57.346 --> 00:31:00.956
-Auto Localization lets you share
-the same UI design of your app,
-
-666
+637
 00:31:01.366 --> 00:31:05.066
 but simply replace the strings
 when the content changes due
 
-667
+638
 00:31:05.066 --> 00:31:06.276
 to having a new language.
 
-668
+639
 00:31:07.686 --> 00:31:09.386
 And the job of Auto
 Localization is
 
-669
+640
 00:31:09.386 --> 00:31:11.506
 to resize the views
 appropriately
 
-670
+641
 00:31:11.816 --> 00:31:13.516
 when words are of
 different lengths.
 
-671
+642
 00:31:14.426 --> 00:31:16.966
 And another great feature
 about Auto Localization is
 
-672
+643
 00:31:16.966 --> 00:31:18.536
 that it supports
 both left to right
 
-673
+644
 00:31:18.886 --> 00:31:20.406
 and right to left languages.
 
-674
+645
 00:31:21.446 --> 00:31:23.816
 So here, again, is our
 directions application,
 
-675
+646
 00:31:24.146 --> 00:31:26.066
 and let's imagine that
 you're responsible for this,
 
-676
+647
 00:31:26.066 --> 00:31:28.676
 and you're sitting in your
 office one day just minding your
 
-677
+648
 00:31:28.676 --> 00:31:31.546
 own business when your Marketing
 person just runs in and says,
 
-678
+649
 00:31:31.866 --> 00:31:34.186
 hey, we absolutely need
 to support a new language,
 
-679
+650
 00:31:34.186 --> 00:31:36.536
 it's the next hot thing,
 and it's Pig Latin.
 
-680
+651
 00:31:36.646 --> 00:31:40.536
 And, of course, in Pig Latin
 all of the words get longer,
 
-681
+652
 00:31:40.666 --> 00:31:43.636
 so you may think that you
 have to go into your UI
 
-682
+653
 00:31:43.636 --> 00:31:45.406
 and resize all of
 these controls manually
 
-683
+654
 00:31:45.406 --> 00:31:48.286
 to accommodate the new
 lengths and also the rules
 
-684
+655
 00:31:48.286 --> 00:31:49.486
 that we were provided earlier.
 
-685
+656
 00:31:49.986 --> 00:31:51.706
 But with Auto Localization
 all we need
 
-686
+657
 00:31:51.706 --> 00:31:53.186
 to do is provide
 the new strings,
 
-687
+658
 00:31:53.706 --> 00:31:55.556
 and Auto Localization takes care
 
-688
+659
 00:31:55.556 --> 00:32:00.156
 of resizing the controls
 as you would expect.
 
-689
-00:31:55.556 --> 00:32:00.156
-of resizing the controls
-as you would expect.
-
-690
+660
 00:32:00.156 --> 00:32:03.056
 Now after you pat yourself
 on the back for accomplishing
 
-691
+661
 00:32:03.086 --> 00:32:06.356
 that pretty easily, that person
 runs back into your office
 
-692
+662
 00:32:06.356 --> 00:32:08.836
 and says the next big language
 
-693
+663
 00:32:08.836 --> 00:32:10.886
 after Pig Latin is
 right to left Pig Latin.
 
-694
+664
 00:32:10.886 --> 00:32:15.436
 Now that one seems even more
 complicated because, of course,
 
-695
+665
 00:32:15.436 --> 00:32:18.346
 in right to left the actual
 location of those controls
 
-696
+666
 00:32:18.346 --> 00:32:20.176
 in the window is
 going to change.
 
-697
+667
 00:32:20.516 --> 00:32:22.926
 But, again, Auto Localization
 can handle that for you,
 
-698
+668
 00:32:23.146 --> 00:32:25.626
 so you insert the new
 strings and here you go,
 
-699
+669
 00:32:25.846 --> 00:32:26.976
 right to left Pig Latin.
 
-700
+670
 00:32:27.546 --> 00:32:29.096
 Now you'll notice that
 even system controls,
 
-701
+671
 00:32:29.096 --> 00:32:32.556
 like the map view there,
 knew to reverse the direction
 
-702
+672
 00:32:32.556 --> 00:32:36.136
 or the location of controls,
 like the 3D button and the plus
 
-703
+673
 00:32:36.136 --> 00:32:38.126
 and minus, and also
 we've taken care
 
-704
+674
 00:32:38.126 --> 00:32:42.206
 of putting the use bike route
 checkbox on the same control,
 
-705
+675
 00:32:42.206 --> 00:32:44.256
 but now it's on the other side.
 
-706
+676
 00:32:45.166 --> 00:32:47.446
 So Auto Localization can
 save you a lot of time
 
-707
+677
 00:32:47.746 --> 00:32:49.396
 when localizing your
 application.
 
-708
+678
 00:32:49.976 --> 00:32:52.446
 Now to understand how it
 works let's take a look
 
-709
+679
 00:32:52.446 --> 00:32:54.406
 at what an application
 bundle layout looks like.
 
-710
+680
 00:32:55.226 --> 00:32:58.286
 So here is Lister.app, inside
 there you'll find contents
 
-711
+681
 00:32:58.286 --> 00:33:01.956
 and resources, and there a
 set of directors called lprojs
 
-712
-00:32:58.286 --> 00:33:01.956
-and resources, and there a
-set of directors called lprojs
-
-713
+682
 00:33:01.956 --> 00:33:03.296
 or localized project content.
 
-714
+683
 00:33:04.056 --> 00:33:07.706
 One of them is called
 base.lproj, this is the UI
 
-715
+684
 00:33:08.206 --> 00:33:10.446
 and the development
 language of your application,
 
-716
+685
 00:33:10.446 --> 00:33:13.526
 so Lister is developed
 in English, so this file,
 
-717
+686
 00:33:13.526 --> 00:33:15.996
 main.Storyboardc is
 the compiled Storyboard
 
-718
+687
 00:33:15.996 --> 00:33:17.436
 that contains not only the views
 
-719
+688
 00:33:17.436 --> 00:33:18.896
 and controllers we've
 already talked about,
 
-720
+689
 00:33:18.896 --> 00:33:20.116
 but the English strings.
 
-721
+690
 00:33:21.426 --> 00:33:23.636
 Now if we localize
 Lister into, for example,
 
-722
+691
 00:33:23.636 --> 00:33:28.356
 Spanish then we provide
 another lproj, called es.lproj
 
-723
+692
 00:33:28.666 --> 00:33:30.336
 and a main.strings file
 
-724
+693
 00:33:30.606 --> 00:33:33.016
 that just contains a
 mapping to Spanish strings.
 
-725
+694
 00:33:33.406 --> 00:33:35.846
 Now Xcode takes care of actually
 creating these lproj directories
 
-726
+695
 00:33:35.846 --> 00:33:38.156
 for you when you build your
 project, so really we just need
 
-727
+696
 00:33:38.156 --> 00:33:39.526
 to focus on the strings file.
 
-728
+697
 00:33:40.206 --> 00:33:41.766
 The content of these
 files is really simple,
 
-729
+698
 00:33:42.156 --> 00:33:43.816
 it's a simple key value pairing.
 
-730
+699
 00:33:44.286 --> 00:33:48.616
 So in the case of the directions
 app you can see here we're
 
-731
+700
 00:33:48.616 --> 00:33:51.396
 pairing an identifier
 with the new label,
 
-732
+701
 00:33:51.396 --> 00:33:54.836
 and the identifier comes from
 Xcode, so you can find it here
 
-733
+702
 00:33:55.316 --> 00:33:59.786
 in the Interface Builder user
 interface, and the identifier
 
-734
+703
 00:33:59.846 --> 00:34:02.806
 and the title is what we're
 specifically referring to,
 
-735
-00:33:59.846 --> 00:34:02.806
-and the title is what we're
-specifically referring to,
-
-736
+704
 00:34:03.256 --> 00:34:06.426
 and then we provide the
 localized string and then repeat
 
-737
+705
 00:34:06.426 --> 00:34:08.795
 that for the other strings
 that are in your application.
 
-738
+706
 00:34:09.266 --> 00:34:14.505
 Let's move on to a new
 topic, and that is Handoff.
 
-739
+707
 00:34:14.696 --> 00:34:17.846
 So this is, of course, another
 new feature in Yosemite in iOS 8
 
-740
+708
 00:34:17.846 --> 00:34:20.146
 that allows a user to
 start working on one device
 
-741
+709
 00:34:20.146 --> 00:34:21.696
 and continue it on another.
 
-742
+710
 00:34:21.786 --> 00:34:24.235
 And the reason I'm talking
 about it today is, again,
 
-743
+711
 00:34:24.235 --> 00:34:26.636
 because it's another great
 example of how building on top
 
-744
+712
 00:34:26.636 --> 00:34:30.666
 of Cocoa features allows you to
 easily adopt the new features
 
-745
+713
 00:34:30.666 --> 00:34:31.876
 that come along in the OS.
 
-746
+714
 00:34:32.446 --> 00:34:34.766
 For Handoff, if you've built
 your application on top
 
-747
+715
 00:34:34.766 --> 00:34:38.536
 of NSDocument then it requires
 very little work on your part
 
-748
+716
 00:34:38.536 --> 00:34:39.716
 to enable the feature.
 
-749
+717
 00:34:39.746 --> 00:34:41.436
 In fact, it's really
 only a small amount
 
-750
+718
 00:34:41.436 --> 00:34:42.406
 of code in those cases.
 
-751
+719
 00:34:43.136 --> 00:34:46.936
 And, in fact, for NSDocument all
 it really requires is editing a
 
-752
+720
 00:34:46.936 --> 00:34:48.146
 file called InfoPlist.
 
-753
+721
 00:34:48.146 --> 00:34:50.826
 If you're not familiar with
 it, the InfoPlist is a file
 
-754
+722
 00:34:50.826 --> 00:34:52.755
 in the contents of
 your application
 
-755
+723
 00:34:53.016 --> 00:34:55.416
 that tells the system a lot
 of the critical information
 
-756
+724
 00:34:55.416 --> 00:34:57.406
 about your app, like
 your app's name
 
-757
+725
 00:34:57.406 --> 00:34:58.696
 and its version number
 and so forth.
 
-758
+726
 00:34:59.056 --> 00:35:01.536
 It also contains an
 array of document types.
 
-759
-00:34:59.056 --> 00:35:01.536
-It also contains an
-array of document types.
-
-760
+727
 00:35:01.686 --> 00:35:04.396
 I mentioned earlier the
 Document-Based apps can support
 
-761
+728
 00:35:04.396 --> 00:35:05.566
 multiple kinds of documents.
 
-762
+729
 00:35:06.346 --> 00:35:08.496
 This array of dictionaries
 is where you specify that,
 
-763
+730
 00:35:08.496 --> 00:35:12.136
 and inside there there's a new
 key called NSUbiquitousDocument
 
-764
+731
 00:35:12.136 --> 00:35:16.096
 UserActivityType, it's a
 string, and that identifier
 
-765
+732
 00:35:16.096 --> 00:35:20.056
 on the right is how Handoff
 uniquely identifies this
 
-766
+733
 00:35:20.056 --> 00:35:22.576
 document type in coordination
 with your application.
 
-767
+734
 00:35:23.456 --> 00:35:26.986
 So if a user has a
 document in iCloud
 
-768
+735
 00:35:27.216 --> 00:35:29.476
 and you've entered this
 key in the InfoPlist
 
-769
+736
 00:35:29.476 --> 00:35:32.056
 and your document-based Handoff
 support is already enabled
 
-770
+737
 00:35:32.056 --> 00:35:33.076
 for you.
 
-771
+738
 00:35:34.276 --> 00:35:36.426
 Now, again, like
 NSDocument, itself,
 
-772
+739
 00:35:36.656 --> 00:35:39.246
 Handoff provides a lower
 level API, so you can choose
 
-773
+740
 00:35:39.246 --> 00:35:42.026
 where to customize the
 behavior of the Cocoa Frameworks
 
-774
+741
 00:35:42.026 --> 00:35:43.486
 when you build your Cocoa app.
 
-775
+742
 00:35:44.026 --> 00:35:46.926
 That lower level API is
 called NSUserActivity,
 
-776
+743
 00:35:47.156 --> 00:35:49.666
 and it allows you to do things,
 like Handoff from a native app
 
-777
+744
 00:35:49.666 --> 00:35:51.506
 to a web app or vice-versa,
 
-778
+745
 00:35:51.646 --> 00:35:54.296
 you can provide additional
 state beyond just the content
 
-779
+746
 00:35:54.336 --> 00:35:57.006
 of the document, for
 example, maybe the location
 
-780
+747
 00:35:57.006 --> 00:35:58.636
 that the user was looking
 at in that document,
 
-781
+748
 00:35:58.816 --> 00:36:00.476
 although if you do that
 you should be aware
 
-782
-00:35:58.816 --> 00:36:00.476
-although if you do that
-you should be aware
-
-783
+749
 00:36:00.476 --> 00:36:03.936
 that on different devices the
 document may be differently
 
-784
+750
 00:36:03.936 --> 00:36:05.306
 sized on screen, so
 you want to think
 
-785
+751
 00:36:05.306 --> 00:36:06.436
 about the logical location,
 
-786
+752
 00:36:06.436 --> 00:36:09.026
 not like a scroll
 position in points.
 
-787
+753
 00:36:09.886 --> 00:36:11.386
 And you can also
 even do something
 
-788
+754
 00:36:11.386 --> 00:36:13.486
 like send custom
 data using streams.
 
-789
+755
 00:36:13.486 --> 00:36:15.506
 So there's a lot more
 information about Handoff,
 
-790
+756
 00:36:15.506 --> 00:36:20.866
 and it was in a session earlier
 this week, Adopting Handoff
 
-791
+757
 00:36:20.866 --> 00:36:23.266
 on iOS and OS X, and if
 you missed that, again,
 
-792
+758
 00:36:23.536 --> 00:36:24.496
 check that out on video.
 
-793
+759
 00:36:25.726 --> 00:36:30.046
 Now let's move on to another
 topic, and that's Sharing.
 
-794
+760
 00:36:30.496 --> 00:36:33.186
 So Sharing provides a way to
 share with social networks,
 
-795
+761
 00:36:33.186 --> 00:36:35.006
 for example Twitter, Facebook,
 
-796
+762
 00:36:35.206 --> 00:36:37.036
 and more that maybe
 you don't know about
 
-797
+763
 00:36:37.036 --> 00:36:38.096
 or are coming in the future.
 
-798
+764
 00:36:38.296 --> 00:36:40.536
 And one of the greatest
 things about this feature is
 
-799
+765
 00:36:40.536 --> 00:36:42.376
 that it provides single
 sign-on support for you,
 
-800
+766
 00:36:42.496 --> 00:36:43.896
 so you don't have to worry
 about authentication,
 
-801
+767
 00:36:44.216 --> 00:36:48.966
 storing user password securely,
 changing APIs of services or,
 
-802
+768
 00:36:48.966 --> 00:36:50.966
 again, new ones that
 come along or old ones
 
-803
+769
 00:36:50.966 --> 00:36:51.826
 that fall out of favor.
 
-804
+770
 00:36:52.116 --> 00:36:53.396
 We can handle all that for you.
 
-805
+771
 00:36:53.396 --> 00:36:56.186
 And, again, I'm going to sound
 like a broken record here,
 
-806
+772
 00:36:56.446 --> 00:36:58.426
 but the reason I'm
 talking about it today is
 
-807
+773
 00:36:58.426 --> 00:37:00.856
 that by adopting these
 features then you're prepared
 
-808
-00:36:58.426 --> 00:37:00.856
-that by adopting these
-features then you're prepared
-
-809
+774
 00:37:00.856 --> 00:37:04.416
 for new features that come along
 like integration in Yosemite,
 
-810
+775
 00:37:04.416 --> 00:37:06.986
 integration with extensions
 from other applications.
 
-811
+776
 00:37:08.086 --> 00:37:11.196
 So, for example, in Lister you
 may have noticed we have this
 
-812
+777
 00:37:11.236 --> 00:37:13.596
 button in the upper right
 corner, that's the share button,
 
-813
+778
 00:37:14.176 --> 00:37:16.806
 and let's say I want to share
 this document with someone,
 
-814
+779
 00:37:16.806 --> 00:37:19.256
 I can just click on that
 document, take an item
 
-815
+780
 00:37:19.256 --> 00:37:23.196
 from the list, and the system
 takes care of presenting all
 
-816
+781
 00:37:23.196 --> 00:37:28.056
 of the UI for that, integrating
 with mail servers or Twitter
 
-817
+782
 00:37:28.056 --> 00:37:29.876
 or whatever, you don't have
 to do any of that stuff,
 
-818
+783
 00:37:29.956 --> 00:37:31.916
 all you have to do is
 provide a few simple things.
 
-819
+784
 00:37:32.916 --> 00:37:34.486
 So that class that you interact
 
-820
+785
 00:37:34.486 --> 00:37:36.456
 with is called
 NSSharingServicePicker,
 
-821
+786
 00:37:36.456 --> 00:37:41.066
 it allows you to share
 images, URLs, strings
 
-822
+787
 00:37:41.066 --> 00:37:42.186
 and attributed strings.
 
-823
+788
 00:37:42.486 --> 00:37:44.096
 And there are just
 two steps to sharing.
 
-824
+789
 00:37:44.646 --> 00:37:46.476
 The first is that you need to
 put a share button in your app,
 
-825
+790
 00:37:47.096 --> 00:37:48.896
 obviously, and Lister,
 we chose to put it
 
-826
+791
 00:37:48.896 --> 00:37:51.706
 in the upper right corner,
 and once the user clicks
 
-827
+792
 00:37:51.706 --> 00:37:54.746
 that button we need to present
 the picker and specify the data
 
-828
+793
 00:37:54.746 --> 00:37:55.576
 that we want to share.
 
-829
+794
 00:37:56.506 --> 00:37:59.506
 So let's look at some more
 code, this time in Objective-C.
 
-830
+795
 00:37:59.856 --> 00:38:02.516
 You can see here I've got an IB
 action, so this is what happens
 
-831
-00:37:59.856 --> 00:38:02.516
-You can see here I've got an IB
-action, so this is what happens
-
-832
+796
 00:38:02.516 --> 00:38:03.986
 when the user clicks
 on the share button,
 
-833
+797
 00:38:04.416 --> 00:38:05.406
 and you can see the sender
 
-834
+798
 00:38:05.406 --> 00:38:07.116
 of this action is
 the button, itself.
 
-835
+799
 00:38:07.866 --> 00:38:11.446
 So we first gather the
 content that we want to share.
 
-836
+800
 00:38:11.816 --> 00:38:13.066
 Here I've just used
 a constant string.
 
-837
+801
 00:38:13.366 --> 00:38:17.196
 In the Lister sample app you can
 see how we gathered the actual
 
-838
+802
 00:38:17.196 --> 00:38:19.456
 contents of the To Do list,
 as you saw on my little video,
 
-839
+803
 00:38:19.876 --> 00:38:21.526
 and it's actually pretty
 straightforward, as well,
 
-840
+804
 00:38:21.526 --> 00:38:24.626
 so another pitch to go check out
 the sample app after this talk.
 
-841
+805
 00:38:25.646 --> 00:38:28.576
 Once we have our content we
 create the Sharing Service
 
-842
+806
 00:38:28.576 --> 00:38:30.466
 Picker using alloc
 initWithItems.
 
-843
+807
 00:38:30.826 --> 00:38:32.446
 The argument is an
 array of items,
 
-844
+808
 00:38:32.666 --> 00:38:35.286
 and in this case we only have
 one and it's our greeting.
 
-845
+809
 00:38:35.566 --> 00:38:38.336
 And then, finally,
 we ask the Picker
 
-846
+810
 00:38:38.336 --> 00:38:41.076
 to show itself using
 ShowRelativetoRect,
 
-847
+811
 00:38:41.116 --> 00:38:42.426
 ofView, PreferredEdge.
 
-848
+812
 00:38:42.626 --> 00:38:45.476
 So the idea here is that, of
 course, the Sharing Picker,
 
-849
+813
 00:38:45.476 --> 00:38:48.846
 as you saw, looks like a
 menu, so we want to show it
 
-850
+814
 00:38:48.846 --> 00:38:51.016
 like a menu relative to the
 button that was clicked,
 
-851
+815
 00:38:51.016 --> 00:38:53.046
 and we have that very
 handily in the sender,
 
-852
+816
 00:38:53.406 --> 00:38:54.646
 and by choosing inYEdge,
 
-853
+817
 00:38:54.916 --> 00:38:56.656
 we put the sharing Picker
 underneath the button.
 
-854
+818
 00:38:57.206 --> 00:39:01.896
 Now there's a lot more
 to learn about Sharing,
 
-855
-00:38:57.206 --> 00:39:01.896
-Now there's a lot more
-to learn about Sharing,
-
-856
+819
 00:39:02.286 --> 00:39:03.906
 including new features
 in Yosemite,
 
-857
+820
 00:39:04.276 --> 00:39:07.416
 your app can provide
 extensions for actions,
 
-858
+821
 00:39:07.676 --> 00:39:10.186
 finder sync extensions,
 sharing extensions,
 
-859
+822
 00:39:10.186 --> 00:39:12.726
 so if you want your app or
 your social network to appear
 
-860
+823
 00:39:12.726 --> 00:39:15.346
 in the Sharing menu in other
 applications you can do
 
-861
+824
 00:39:15.346 --> 00:39:18.226
 that now, and also
 today extensions,
 
-862
+825
 00:39:18.516 --> 00:39:20.786
 which is another thing that the
 Lister sample will show you how
 
-863
+826
 00:39:20.786 --> 00:39:21.136
 to do.
 
-864
+827
 00:39:21.556 --> 00:39:27.046
 The Lister sample can put
 a To Do app or To Do list
 
-865
+828
 00:39:27.046 --> 00:39:29.636
 in the today view, so
 definitely check out the sample
 
-866
+829
 00:39:29.636 --> 00:39:30.536
 for more information on that.
 
-867
+830
 00:39:32.026 --> 00:39:33.446
 We have a lot of
 related sessions here --
 
-868
+831
 00:39:33.916 --> 00:39:36.996
 Creating Extensions for iOS
 and OS X, Parts One and Two,
 
-869
+832
 00:39:37.026 --> 00:39:38.146
 which you can check
 out on video,
 
-870
+833
 00:39:38.666 --> 00:39:41.176
 and also again an older session,
 Integrating with Facebook,
 
-871
+834
 00:39:41.176 --> 00:39:42.226
 Twitter, and Sina Weibo.
 
-872
+835
 00:39:42.226 --> 00:39:45.446
 So, again, this Sharing Service
 Picker was introduced a few
 
-873
+836
 00:39:45.446 --> 00:39:46.676
 releases ago, so apps
 
-874
+837
 00:39:46.676 --> 00:39:49.796
 that already adopted this API
 will continue to feel modern
 
-875
+838
 00:39:50.126 --> 00:39:50.976
 when we added new
 features to it.
 
-876
+839
 00:39:51.966 --> 00:39:55.386
 Now one more time I'd
 like to bring up Alex
 
-877
+840
 00:39:55.386 --> 00:39:58.046
 to show us how we will hook-up
 Sharing in the Lister sample.
 
-878
+841
 00:39:58.876 --> 00:40:03.236
 >> Thanks, Tony.
 
-879
-00:39:58.876 --> 00:40:03.236
->> Thanks, Tony.
-
-880
+842
 00:40:03.536 --> 00:40:05.766
 Now that we've implemented
 a few features of Lister,
 
-881
+843
 00:40:05.866 --> 00:40:10.116
 let's implement Sharing, which
 is our remaining feature.
 
-882
+844
 00:40:10.966 --> 00:40:12.896
 I'm going to open
 up Xcode again.
 
-883
+845
 00:40:14.006 --> 00:40:15.366
 Now the first thing that I want
 
-884
+846
 00:40:15.366 --> 00:40:17.866
 to do is show you
 the current list item
 
-885
+847
 00:40:17.866 --> 00:40:21.206
 or the current toolbar items
 in the toolbar, and all I have
 
-886
+848
 00:40:21.206 --> 00:40:24.526
 to do is double click the
 toolbar in the Storyboard.
 
-887
+849
 00:40:24.526 --> 00:40:29.196
 Now I want to add a new button,
 which is the share button
 
-888
+850
 00:40:29.196 --> 00:40:32.146
 on the right side here, so what
 I'm going to do is I'm going
 
-889
+851
 00:40:32.146 --> 00:40:37.126
 to grab a new button, a bevel
 button, and just drag it
 
-890
+852
 00:40:37.126 --> 00:40:39.186
 into the allowed
 toolbar items area.
 
-891
+853
 00:40:39.896 --> 00:40:43.406
 And I'll add this item to the
 actual toolbar by dragging
 
-892
+854
 00:40:43.406 --> 00:40:44.846
 into the default toolbar items.
 
-893
+855
 00:40:45.566 --> 00:40:50.066
 Now it's a little big right
 now, so let's modify some
 
-894
+856
 00:40:50.066 --> 00:40:52.786
 of the attributes of
 this button to make sure
 
-895
+857
 00:40:52.786 --> 00:40:53.946
 that it's the size that we want.
 
-896
+858
 00:40:54.626 --> 00:41:00.096
 So the first thing that I want
 to do is provide an image name
 
-897
-00:40:54.626 --> 00:41:00.096
-So the first thing that I want
-to do is provide an image name
-
-898
+859
 00:41:00.096 --> 00:41:01.076
 for this toolbar item.
 
-899
+860
 00:41:01.126 --> 00:41:03.996
 Now Cocoa provides a lot of
 image names based on the types
 
-900
+861
 00:41:03.996 --> 00:41:07.106
 of actions that you're going
 to perform, so for this I want
 
-901
+862
 00:41:07.106 --> 00:41:10.096
 to add an NS share action
 or NS share template,
 
-902
+863
 00:41:10.956 --> 00:41:13.546
 and you can see the
 nice icon right here.
 
-903
+864
 00:41:14.996 --> 00:41:18.756
 This allows you to have
 the right icon regardless
 
-904
+865
 00:41:18.756 --> 00:41:25.926
 of what the current
 icon is in the OS.
 
-905
+866
 00:41:26.176 --> 00:41:29.826
 Now we also have these labels
 here, these labels show
 
-906
+867
 00:41:29.826 --> 00:41:33.106
 up if the user wants to show
 the label for their toolbar.
 
-907
+868
 00:41:33.596 --> 00:41:36.186
 In this case we want
 to change the label
 
-908
+869
 00:41:36.246 --> 00:41:37.926
 to share for both of these.
 
-909
+870
 00:41:38.486 --> 00:41:42.706
 Now that we've done
 that we can set the size
 
-910
+871
 00:41:42.706 --> 00:41:44.056
 for these toolbar items.
 
-911
+872
 00:41:44.106 --> 00:41:47.666
 Now we're going to have
 to do this in two places.
 
-912
+873
 00:41:47.806 --> 00:41:51.356
 Once we've set it on the
 toolbar item we'll go and set it
 
-913
+874
 00:41:51.356 --> 00:41:53.656
 on the button, itself,
 and we can do
 
-914
+875
 00:41:53.656 --> 00:41:55.716
 that by selecting the button
 in the document editor.
 
-915
+876
 00:41:56.496 --> 00:41:59.156
 Now we'll go back
 to the utility area
 
-916
+877
 00:41:59.966 --> 00:42:02.876
 and just change the width
 again to be 28 points
 
-917
-00:41:59.966 --> 00:42:02.876
-and just change the width
-again to be 28 points
-
-918
+878
 00:42:02.876 --> 00:42:04.526
 and the height to be 28 points.
 
-919
+879
 00:42:05.056 --> 00:42:08.646
 And you'll see we
 have this nice icon,
 
-920
+880
 00:42:08.686 --> 00:42:09.946
 the right size, right here.
 
-921
+881
 00:42:11.216 --> 00:42:14.436
 Now the final thing that we want
 to do is hook up this button
 
-922
+882
 00:42:14.436 --> 00:42:15.466
 to the window controller.
 
-923
+883
 00:42:15.886 --> 00:42:19.256
 Now we've already implemented
 a method that does the sharing
 
-924
+884
 00:42:19.256 --> 00:42:22.796
 that you saw earlier with
 those few lines of code,
 
-925
+885
 00:42:22.796 --> 00:42:26.166
 so to do that I'm going
 to go down to the button,
 
-926
+886
 00:42:26.216 --> 00:42:29.526
 and I'm going to control
 drag from the button
 
-927
+887
 00:42:29.646 --> 00:42:30.666
 to the window controller,
 
-928
+888
 00:42:30.786 --> 00:42:34.426
 which is where we've implemented
 this method, and the action
 
-929
+889
 00:42:34.426 --> 00:42:36.526
 that we've implemented
 is called Share Document.
 
-930
+890
 00:42:36.656 --> 00:42:38.946
 So all I have to do
 is click this action,
 
-931
+891
 00:42:39.626 --> 00:42:42.276
 and we should be good to go.
 
-932
+892
 00:42:42.526 --> 00:42:47.106
 So now let's run the app
 and see what we have.
 
-933
+893
 00:42:47.106 --> 00:42:50.986
 All right, so we've already made
 this party list, now actually
 
-934
+894
 00:42:50.986 --> 00:42:53.466
 if I wanted to send this
 to Craig all I would have
 
-935
+895
 00:42:53.466 --> 00:42:58.286
 to do is click the share
 action and I get this nice list
 
-936
+896
 00:42:58.286 --> 00:43:00.216
 of the different
 actions that I can do.
 
-937
-00:42:58.286 --> 00:43:00.216
-of the different
-actions that I can do.
-
-938
+897
 00:43:01.056 --> 00:43:03.926
 And here we can send
 a message and we have
 
-939
+898
 00:43:03.926 --> 00:43:07.796
 in this list we've
 implemented the ability
 
-940
+899
 00:43:07.796 --> 00:43:10.986
 to just append all the
 items into a message,
 
-941
+900
 00:43:11.256 --> 00:43:12.396
 pretty straightforward.
 
-942
+901
 00:43:12.506 --> 00:43:15.876
 And so if we wanted to send this
 message now it would be really
 
-943
+902
 00:43:15.876 --> 00:43:18.876
 easy all within the app because
 we've implemented sharing.
 
-944
+903
 00:43:19.896 --> 00:43:22.436
 So now I'd like to hand
 it back to Tony to talk
 
-945
+904
 00:43:22.436 --> 00:43:24.316
 about some more features
 of Cocoa.
 
-946
+905
 00:43:28.926 --> 00:43:30.476
 >> Okay, thanks, Alex.
 
-947
+906
 00:43:32.706 --> 00:43:36.086
 So there's a lot more
 that you can do next,
 
-948
+907
 00:43:36.316 --> 00:43:39.736
 once you've learned how to
 adopt the basic features
 
-949
+908
 00:43:39.736 --> 00:43:41.206
 of the Cocoa Frameworks.
 
-950
+909
 00:43:42.176 --> 00:43:43.396
 Let's talk about a few of them.
 
-951
+910
 00:43:44.126 --> 00:43:48.236
 First is Undo, Cocoa
 provides support
 
-952
+911
 00:43:48.236 --> 00:43:50.406
 for this via the
 NSUndoManager class.
 
-953
+912
 00:43:50.986 --> 00:43:54.616
 This is, of course, also support
 for this is provided to you
 
-954
+913
 00:43:54.616 --> 00:43:57.306
 by Document and Core Data,
 but you're going to want
 
-955
+914
 00:43:57.306 --> 00:43:59.796
 to add further support for
 it in your model objects.
 
-956
+915
 00:44:00.356 --> 00:44:02.606
 We also have Drag & Drop
 
-957
+916
 00:44:02.606 --> 00:44:04.886
 and Copy & Paste via
 the NSPasteboard class.
 
-958
+917
 00:44:05.336 --> 00:44:08.866
 Again, the Lister sample
 allows a user to drag some text
 
-959
+918
 00:44:08.866 --> 00:44:11.896
 from someplace on the system
 into a Lister document,
 
-960
+919
 00:44:11.896 --> 00:44:13.816
 and it will create To
 Do items out of it.
 
-961
+920
 00:44:14.146 --> 00:44:15.806
 So you can see, again,
 there examples on how
 
-962
+921
 00:44:15.806 --> 00:44:18.566
 to implement this, and it also
 lets you copy and paste items
 
-963
+922
 00:44:18.566 --> 00:44:22.526
 within the To Do list, so
 a great resource for that.
 
-964
+923
 00:44:23.876 --> 00:44:26.916
 You might also want to consider
 adding support for printing.
 
-965
+924
 00:44:27.466 --> 00:44:30.296
 And here I'd like to
 take an aside to talk
 
-966
+925
 00:44:30.296 --> 00:44:32.966
 about another feature,
 called Energy Efficiency.
 
-967
+926
 00:44:33.306 --> 00:44:36.946
 Now this is not something
 that users will see in the UI
 
-968
+927
 00:44:36.946 --> 00:44:39.576
 of your app, but it is
 definitely something
 
-969
+928
 00:44:39.576 --> 00:44:40.736
 that users will notice.
 
-970
+929
 00:44:41.166 --> 00:44:42.446
 In Mavericks we spent a lot
 
-971
+930
 00:44:42.446 --> 00:44:45.196
 of time optimizing the energy
 efficiency of the system
 
-972
+931
 00:44:45.436 --> 00:44:48.596
 in order to provide better
 battery life for our customers,
 
-973
+932
 00:44:49.126 --> 00:44:51.546
 and we also added features
 to allow users to find
 
-974
+933
 00:44:51.546 --> 00:44:53.976
 out if applications
 are using more
 
-975
+934
 00:44:53.976 --> 00:44:55.216
 than their fair share of energy.
 
-976
+935
 00:44:55.746 --> 00:44:57.786
 There's two ways, the first
 is in the battery menu,
 
-977
+936
 00:44:57.986 --> 00:45:00.026
 on a laptop if you click
 on that you'll see a list
 
-978
-00:44:57.986 --> 00:45:00.026
-on a laptop if you click
-on that you'll see a list
-
-979
+937
 00:45:00.026 --> 00:45:02.006
 of applications using
 significant energy,
 
-980
+938
 00:45:02.006 --> 00:45:05.346
 and the second is an activity
 monitor, which displays a score
 
-981
+939
 00:45:05.346 --> 00:45:08.426
 for applications running in the
 past or running now in terms
 
-982
+940
 00:45:08.426 --> 00:45:09.876
 of how energy efficient
 they've been.
 
-983
+941
 00:45:10.616 --> 00:45:13.076
 So it's really important to
 think about energy efficiency
 
-984
+942
 00:45:13.076 --> 00:45:15.556
 and performance as you
 develop your application.
 
-985
+943
 00:45:16.636 --> 00:45:18.016
 So there are three
 things I want you to think
 
-986
+944
 00:45:18.016 --> 00:45:19.626
 about when you're doing this.
 
-987
+945
 00:45:19.986 --> 00:45:22.366
 The first is to stay
 idle as long as possible,
 
-988
+946
 00:45:23.146 --> 00:45:25.386
 that's because the
 Intel processors used
 
-989
+947
 00:45:25.386 --> 00:45:28.306
 in our Mac books
 are most efficient
 
-990
+948
 00:45:28.566 --> 00:45:30.266
 when they're doing
 absolutely nothing,
 
-991
+949
 00:45:30.676 --> 00:45:31.966
 so if there's even a
 small amount of work
 
-992
+950
 00:45:31.966 --> 00:45:34.416
 to do there's a large amount
 of overhead associated
 
-993
+951
 00:45:34.416 --> 00:45:37.736
 with spinning up the processor
 to get ready to do that work,
 
-994
+952
 00:45:37.736 --> 00:45:40.476
 and if it's really only a small
 amount of work that can add
 
-995
+953
 00:45:40.476 --> 00:45:41.796
 up over a long period of time.
 
-996
+954
 00:45:41.906 --> 00:45:44.686
 So you want to stay at
 that lowest power energy,
 
-997
+955
 00:45:44.856 --> 00:45:46.926
 lowest power state
 as long as possible.
 
-998
+956
 00:45:47.546 --> 00:45:50.336
 Now it's also important to
 think about doing only the work
 
-999
+957
 00:45:50.336 --> 00:45:53.426
 that the user asks you
 to do because, of course,
 
-1000
+958
 00:45:53.566 --> 00:45:57.136
 that helps reduce the
 overhead of doing that work.
 
-1001
+959
 00:45:57.746 --> 00:45:59.996
 And when you do work, which
 is okay from time to time,
 
-1002
+960
 00:46:00.236 --> 00:46:02.916
 if the user has requested it,
 then it's important to do it
 
-1003
+961
 00:46:02.916 --> 00:46:06.936
 as fast as you can and then
 return to idle to return us
 
-1004
+962
 00:46:06.936 --> 00:46:10.076
 to that lowest energy state and
 provide a longer battery life.
 
-1005
+963
 00:46:11.086 --> 00:46:13.706
 There's a whole another
 session about this,
 
-1006
+964
 00:46:14.076 --> 00:46:16.956
 it's Writing Energy Efficient
 Code, Part One from this year,
 
-1007
+965
 00:46:17.366 --> 00:46:19.836
 and also last year's WWDC
 we had several sessions
 
-1008
+966
 00:46:19.896 --> 00:46:22.946
 on Energy Efficiency and App
 Nap, which I encourage you
 
-1009
+967
 00:46:22.946 --> 00:46:26.226
 to check out, as well.
 
-1010
+968
 00:46:26.366 --> 00:46:29.996
 And now even more features,
 for example, Full Screen,
 
-1011
+969
 00:46:30.496 --> 00:46:33.106
 this is another feature
 that was added in 10.7
 
-1012
+970
 00:46:33.106 --> 00:46:34.426
 that users have come to expect.
 
-1013
+971
 00:46:34.426 --> 00:46:36.056
 You can find support
 for that on NSWindow.
 
-1014
+972
 00:46:37.586 --> 00:46:40.656
 Resume, again, NSWindow
 Restoration is the protocol
 
-1015
+973
 00:46:40.656 --> 00:46:41.456
 that you're looking at.
 
-1016
+974
 00:46:42.626 --> 00:46:43.856
 Support for progress reporting,
 
-1017
+975
 00:46:44.076 --> 00:46:47.246
 so if your application performs
 long operations and you want
 
-1018
+976
 00:46:47.246 --> 00:46:49.396
 to provide a way to not
 only show the progress
 
-1019
+977
 00:46:49.396 --> 00:46:52.316
 for that operation, but
 allow the user to cancel it,
 
-1020
+978
 00:46:52.596 --> 00:46:55.316
 we have support for that via
 a class called NSProgress.
 
-1021
+979
 00:46:55.916 --> 00:47:00.086
 New in Yosemite is
 NSGestureRecognizer
 
-1022
-00:46:55.916 --> 00:47:00.086
-New in Yosemite is
-NSGestureRecognizer
-
-1023
+980
 00:47:00.286 --> 00:47:03.326
 to provide support for all
 kinds of different gestures,
 
-1024
+981
 00:47:04.016 --> 00:47:05.666
 and we talked about that
 again in the Storyboards
 
-1025
+982
 00:47:05.666 --> 00:47:07.496
 and view controller talk
 from earlier this week.
 
-1026
+983
 00:47:08.706 --> 00:47:10.356
 And, finally, Accessibility.
 
-1027
+984
 00:47:10.836 --> 00:47:13.356
 Accessibility not only
 expands the audience available
 
-1028
+985
 00:47:13.356 --> 00:47:17.186
 to buy your app, but it also
 makes it easier for you to use
 
-1029
+986
 00:47:17.186 --> 00:47:21.276
 as a developer, that's because
 accessible apps are able
 
-1030
+987
 00:47:21.276 --> 00:47:25.506
 to be automated and automated
 apps are more easily tested.
 
-1031
+988
 00:47:25.986 --> 00:47:28.136
 So you should definitely look
 into supporting accessibility
 
-1032
+989
 00:47:28.356 --> 00:47:29.716
 as you develop your application.
 
-1033
+990
 00:47:30.286 --> 00:47:35.096
 So, in summary, when
 you get started
 
-1034
+991
 00:47:35.096 --> 00:47:37.656
 with a great foundation
 using the Cocoa Frameworks,
 
-1035
+992
 00:47:37.976 --> 00:47:39.856
 and you take advantage
 of the core features
 
-1036
+993
 00:47:39.856 --> 00:47:43.146
 that the Frameworks provide,
 like Storyboards, Auto Layout,
 
-1037
+994
 00:47:43.206 --> 00:47:45.346
 NSDocument, Auto
 Localization and so forth,
 
-1038
+995
 00:47:46.076 --> 00:47:48.896
 then your application will be
 in great shape for the future,
 
-1039
+996
 00:47:49.286 --> 00:47:51.246
 both the future of your
 application as you evolve
 
-1040
+997
 00:47:51.246 --> 00:47:53.756
 over time and also the
 future of the platform
 
-1041
+998
 00:47:53.756 --> 00:47:54.896
 as we add new features.
 
-1042
+999
 00:47:55.466 --> 00:47:59.566
 So for more information you have
 our Frameworks Evangelist, Jake,
 
-1043
+1000
 00:47:59.876 --> 00:48:03.126
 or check out the great
 Developer documentation.
 
-1044
-00:47:59.876 --> 00:48:03.126
-or check out the great
-Developer documentation.
-
-1045
+1001
 00:48:03.426 --> 00:48:05.446
 And here, as I promised,
 are the four links
 
-1046
+1002
 00:48:05.536 --> 00:48:07.956
 to the Lister sample
 code, that I encourage you
 
-1047
+1003
 00:48:07.956 --> 00:48:11.196
 to definitely go check out and,
 of course the Developer Forums.
 
-1048
+1004
 00:48:12.006 --> 00:48:14.206
 A few more related
 sessions, Accessibility
 
-1049
+1005
 00:48:14.206 --> 00:48:16.756
 in OS X describes the brand-new
 accessibility API we have
 
-1050
+1006
 00:48:16.756 --> 00:48:20.476
 in Yosemite, and some sessions
 from past years, Full Screen
 
-1051
+1007
 00:48:20.566 --> 00:48:22.196
 and Resume and Automatic
 Termination.
 
-1052
+1008
 00:48:23.016 --> 00:48:24.366
 So thank you for your
 time, and I look forward
 
-1053
+1009
 00:48:24.366 --> 00:48:24.976
 to seeing what you can do.
 
-1054
+1010
 00:48:25.516 --> 00:48:31.500
 [ Applause ]
