@@ -16,12 +16,12 @@ done
 
 base=https://developer.apple.com/videos/wwdc/2015/
 curl -s ${base} | grep 'href=\"?id=[0-9]*\"'     \
-	| awk -F'href' '{print $2}' | awk -F\" '{print $2}' | while read id
+| awk -F'href' '{print $2}' | awk -F\" '{print $2}' | while read id
 do
 	echo "${base}${id}"
 	curl -s ${base}${id} | sed 's/\(http:\/\/[^\"]*\)/<<\1>>/g' | sed $'s/<</\\\n/g' \
-		| grep 'http://devstreaming.apple.com' | awk -F'>>' '{print $1}'             \
-		| grep '_hd_' | while read url
+	| grep 'http://devstreaming.apple.com' | awk -F'>>' '{print $1}'                 \
+	| grep '_hd_' | while read url
 	do
 		name=$(echo ${url} | awk -F/ '{print $NF}' | awk -F? '{print $1}')
 		if [ -f "${dir}/${name}.f" ]
