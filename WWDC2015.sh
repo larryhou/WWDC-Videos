@@ -14,9 +14,14 @@ do
 	esac
 done
 
+if [ ! -d "${dir}" ]
+then
+	mkdir -pv ${dir}
+fi
+
 base=https://developer.apple.com/videos/wwdc/2015/
 curl -s ${base} | grep 'href=\"?id=[0-9]*\"'     \
-| awk -F'href' '{print $2}' | awk -F\" '{print $2}' | while read id
+| awk -F'href' '{print $2}' | awk -F\" '{print $2}' | sort | uniq | while read id
 do
 	echo "${base}${id}"
 	curl -s ${base}${id} | sed 's/\(http:\/\/[^\"]*\)/<<\1>>/g' | sed $'s/<</\\\n/g' \
@@ -29,7 +34,8 @@ do
 			continue
 		fi
 		
-		axel -a ${url} -o ${dir}/${name}
+		axel -a -o ${dir}/${name} ${url}
+		# wget -O ${dir}/${name} ${url}
 		if [ $? -eq 0 ]
 		then
 			touch ${dir}/${name}.f
