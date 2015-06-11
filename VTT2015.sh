@@ -1,11 +1,11 @@
 #!/bin/bash
 
-dir=./Videos
+dir=./2015
 while getopts :d:h OPTION
 do
 	case ${OPTION} in
 		d) dir=${OPTARG};;
-		h) echo "Usage: $(basename $0) -d [VIDEO_OUTPUT_DIR] -h [HELP]"
+		h) echo "Usage: $(basename $0) -d [VTT_OUTPUT_DIR] -h [HELP]"
 		   exit;;
 		:) echo "ERR: -${OPTARG} 缺少参数, 详情参考: $(basename $0) -h" 1>&2
 		   exit 1;;
@@ -24,7 +24,7 @@ function getvtt()
 	url=${1}
 	path=$(echo ${url} | sed 's/\/[^\/]*$//')
 	
-	vtt=./2015/${2}.webvtt
+	vtt=${dir}/${2}.webvtt
 	rm -f ${vtt}
 	
 	curl -s ${url} | grep -i '\.vtt$' | while read name
@@ -63,5 +63,4 @@ do
 		
 		getvtt ${path}/${name} $(echo ${id} | awk -F= '{print $2}')
 	done
-	break
 done
