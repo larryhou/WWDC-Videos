@@ -29,16 +29,11 @@ do
 	| grep '_hd_' | while read url
 	do
 		name=$(echo ${url} | awk -F/ '{print $NF}' | awk -F? '{print $1}')
-		if [ -f "${dir}/${name}.f" ]
+		if [ -f "${dir}/${name}" ] && [ ! -f "${dir}/${name}.st" ]
 		then
 			continue
 		fi
 		
 		axel -a -o ${dir}/${name} ${url}
-		# wget -O ${dir}/${name} ${url}
-		if [ $? -eq 0 ]
-		then
-			touch ${dir}/${name}.f
-		fi
 	done
 done
