@@ -51,7 +51,9 @@ function getvtt()
 		fi
 	done
 	printf '\n'
-	mv ${vtt} $(echo ${vtt} | sed 's/\.vtt$/\.webvtt/')
+	mv ${vtt} ${dir}/${2}.webvtt
+	./vtt2srt.sh -s ${dir}/${2}.webvtt
+	./decode.sh ${dir}/${2}.srt
 }
 
 base=https://developer.apple.com/videos/wwdc/2015/
