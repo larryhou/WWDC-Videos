@@ -24,10 +24,17 @@ function getvtt()
 	url=${1}
 	path=$(echo ${url} | sed 's/\/[^\/]*$//')
 	
-	vtt=${dir}/${2}.webvtt
+	echo ${url}
+	if [ -f "${dir}/${2}.webvtt" ]
+	then
+		echo "--> ${dir}/${2}.webvtt"
+		return
+	fi
+	
+	vtt=${dir}/${2}.vtt
 	rm -f ${vtt}
 	
-	curl -s ${url} | grep -i '\.vtt$' | while read name
+	curl -s ${url} | grep -i 'vtt$' | while read name
 	do
 		let num=num+1
 		curl -s ${path}/${name} >> ${vtt}
@@ -43,6 +50,8 @@ function getvtt()
 			printf "\b\b\b"
 		fi
 	done
+	printf '\n'
+	mv ${vtt} $(echo ${vtt} | sed 's/\.vtt$/\.webvtt/')
 }
 
 base=https://developer.apple.com/videos/wwdc/2015/
@@ -58,9 +67,11 @@ do
 		name=$(curl -s ${url} | grep 'TYPE=SUBTITLES' | awk -F'URI' '{print $2}' | awk -F\" '{print $2}')
 		if [ "${name}" = "" ]
 		then
+			echo "NOT FOUND SUBTITLE" 2>&1
+			echo
 			continue
 		fi
-		
 		getvtt ${path}/${name} $(echo ${id} | awk -F= '{print $2}')
+		echo
 	done
 done
