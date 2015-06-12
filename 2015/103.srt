@@ -1,7 +1,7 @@
 
 1
 00:00:16.056 --> 00:00:21.186
-&gt;&gt; Ladies and gentlemen, welcome
+>> Ladies and gentlemen, welcome
 to the 2015 Apple Design Awards
 
 2
@@ -15,7 +15,7 @@ this evening, John Geleynse.
 
 4
 00:00:35.096 --> 00:00:35.696
-&gt;&gt; JOHN GELEYNSE:
+>> JOHN GELEYNSE:
 Well, good evening.
 
 5
@@ -516,7 +516,7 @@ tonight's winners.
 
 109
 00:07:35.516 --> 00:07:35.976
-&gt;&gt; SHAAN PRUDEN: Hello.
+>> SHAAN PRUDEN: Hello.
 
 110
 00:07:36.746 --> 00:07:39.656
@@ -535,7 +535,7 @@ our scholarship winners.
 
 113
 00:07:46.556 --> 00:07:49.816
-&gt;&gt; JOHN GELEYNSE: Now,
+>> JOHN GELEYNSE: Now,
 the students we are
 
 114
@@ -584,7 +584,7 @@ the App Store.
 
 123
 00:08:11.686 --> 00:08:14.666
-&gt;&gt; SHAAN PRUDEN: And our first
+>> SHAAN PRUDEN: And our first
 student winner is Elementary
 
 124
@@ -593,7 +593,7 @@ Minute by Klemens Strasser.
 
 125
 00:08:16.316 --> 00:08:24.066
-&gt;&gt; The idea for the
+>> The idea for the
 app came to Klemens
 
 126
@@ -622,7 +622,7 @@ it for the iPhone.
 
 131
 00:08:50.116 --> 00:08:50.896
-&gt;&gt; SHAAN PRUDEN:
+>> SHAAN PRUDEN:
 Congratulations.
 
 132
@@ -674,7 +674,7 @@ in Graz, Austria.
 
 142
 00:09:17.156 --> 00:09:17.696
-&gt;&gt; JOHN GELEYNSE:
+>> JOHN GELEYNSE:
 Austria, right.
 
 143
@@ -741,7 +741,7 @@ so congratulations.
 
 156
 00:09:53.616 --> 00:09:54.736
-&gt;&gt; SHAAN PRUDEN: And
+>> SHAAN PRUDEN: And
 that's Elementary Minute.
 
 157
@@ -759,7 +759,7 @@ to jump-O by ByteBrushers.
 
 160
 00:10:12.046 --> 00:10:15.696
-&gt;&gt; Founded in 2013, ByteBrushers
+>> Founded in 2013, ByteBrushers
 is a two-person game development
 
 161
@@ -796,7 +796,7 @@ that reflected their experience.
 
 168
 00:10:40.166 --> 00:10:40.666
-&gt;&gt; SHAAN PRUDEN:
+>> SHAAN PRUDEN:
 Congratulations.
 
 169
@@ -825,7 +825,7 @@ hand-drawn puzzles.
 
 174
 00:10:58.126 --> 00:10:59.066
-&gt;&gt; JOHN GELEYNSE: You
+>> JOHN GELEYNSE: You
 know what's really fun
 
 175
@@ -908,7 +908,7 @@ great work, guys.
 
 191
 00:11:50.106 --> 00:11:51.746
-&gt;&gt; SHAAN PRUDEN: And these
+>> SHAAN PRUDEN: And these
 are our two student winners.
 
 192
@@ -928,7 +928,7 @@ Triada Studio Games.
 
 195
 00:12:15.026 --> 00:12:18.206
-&gt;&gt; Triada Studio was
+>> Triada Studio was
 established in Armenia in 1993
 
 196
@@ -966,7 +966,7 @@ on Shadowmatic in March 2012.
 
 203
 00:12:38.876 --> 00:12:40.666
-&gt;&gt; SHAAN PRUDEN:
+>> SHAAN PRUDEN:
 Shadowmatic is a unique twist
 
 204
@@ -995,7 +995,7 @@ surrounding environment.
 
 209
 00:12:56.056 --> 00:12:56.616
-&gt;&gt; JOHN GELEYNSE: All right.
+>> JOHN GELEYNSE: All right.
 
 210
 00:12:56.616 --> 00:12:58.556
@@ -1233,7 +1233,7 @@ So congratulations.
 
 259
 00:15:15.056 --> 00:15:20.506
-&gt;&gt; SHAAN PRUDEN: Available
+>> SHAAN PRUDEN: Available
 for both iPad and iPhone.
 
 260
@@ -1252,7 +1252,7 @@ by Vectorpark.
 
 263
 00:15:32.056 --> 00:15:34.646
-&gt;&gt; Vectorpark is the one-person
+>> Vectorpark is the one-person
 interactive development studio
 
 264
@@ -1290,7 +1290,7 @@ App Store in February 2015.
 
 271
 00:16:07.276 --> 00:16:08.706
-&gt;&gt; SHAAN PRUDEN:
+>> SHAAN PRUDEN:
 Metamorphabet is a playful,
 
 272
@@ -1314,7 +1314,7 @@ transformed into words.
 
 276
 00:16:18.096 --> 00:16:23.696
-&gt;&gt; We picked Metamorphabet for
+>> We picked Metamorphabet for
 its outstanding creativity,
 
 277
@@ -1512,7 +1512,7 @@ Congratulations.
 
 318
 00:18:27.266 --> 00:18:30.136
-&gt;&gt; SHAAN PRUDEN: Available
+>> SHAAN PRUDEN: Available
 on the Mac, iPad, and iPhone.
 
 319
@@ -1531,7 +1531,7 @@ by Robinhood Markets.
 
 322
 00:18:46.046 --> 00:18:47.876
-&gt;&gt; Robinhood's story
+>> Robinhood's story
 began almost a decade ago
 
 323
@@ -1578,7 +1578,7 @@ first-time investors.
 
 332
 00:19:17.926 --> 00:19:19.556
-&gt;&gt; SHAAN PRUDEN: Say good-bye
+>> SHAAN PRUDEN: Say good-bye
 to commissions and hello
 
 333
@@ -1610,7 +1610,7 @@ with smart notifications.
 
 339
 00:19:33.336 --> 00:19:33.896
-&gt;&gt; JOHN GELEYNSE: All right.
+>> JOHN GELEYNSE: All right.
 
 340
 00:19:33.896 --> 00:19:34.506
@@ -1892,7 +1892,7 @@ Congratulations.
 
 399
 00:22:21.136 --> 00:22:23.686
-&gt;&gt; SHAAN PRUDEN: Available on
+>> SHAAN PRUDEN: Available on
 both iPhone and Apple Watch.
 
 400
@@ -1919,7 +1919,7 @@ Designer by Serif Labs.
 
 405
 00:22:41.086 --> 00:22:44.446
-&gt;&gt; Founded in 2009 with a vision
+>> Founded in 2009 with a vision
 to develop the next generation
 
 406
@@ -1957,7 +1957,7 @@ for the last five years.
 
 413
 00:23:02.906 --> 00:23:04.866
-&gt;&gt; SHAAN PRUDEN: Affinity
+>> SHAAN PRUDEN: Affinity
 Designer is fast, smooth,
 
 414
@@ -1981,7 +1981,7 @@ creatives shine.
 
 418
 00:23:14.656 --> 00:23:20.686
-&gt;&gt; JOHN GELEYNSE: This app is
+>> JOHN GELEYNSE: This app is
 a seriously fast vector drawing
 
 419
@@ -2262,7 +2262,7 @@ Congratulations.
 
 477
 00:26:10.576 --> 00:26:22.596
-&gt;&gt; SHAAN PRUDEN: That's Affinity
+>> SHAAN PRUDEN: That's Affinity
 Designer available for the Mac.
 
 478
@@ -2281,7 +2281,7 @@ Road by Hipster Whale.
 
 481
 00:26:32.346 --> 00:26:34.596
-&gt;&gt; Based in Australia,
+>> Based in Australia,
 Hipster Whale was founded
 
 482
@@ -2314,7 +2314,7 @@ work on Crossy Road.
 
 488
 00:27:04.216 --> 00:27:06.486
-&gt;&gt; SHAAN PRUDEN: Crossy Road is
+>> SHAAN PRUDEN: Crossy Road is
 an endless arcade hopper game.
 
 489
@@ -2343,7 +2343,7 @@ hysterical, as you will see.
 
 494
 00:27:22.906 --> 00:27:23.176
-&gt;&gt; JOHN GELEYNSE: Great.
+>> JOHN GELEYNSE: Great.
 
 495
 00:27:23.176 --> 00:27:27.406
@@ -2576,7 +2576,7 @@ So congratulations.
 
 544
 00:29:45.046 --> 00:29:46.676
-&gt;&gt; SHAAN PRUDEN: Crossy Road
+>> SHAAN PRUDEN: Crossy Road
 available on iPhone and iPad.
 
 545
@@ -2595,7 +2595,7 @@ Fantastical 2.
 
 548
 00:30:03.086 --> 00:30:06.296
-&gt;&gt; Flexibits creates enjoyable
+>> Flexibits creates enjoyable
 and flexible productivity apps
 
 549
@@ -2632,7 +2632,7 @@ in March of this year.
 
 556
 00:30:27.776 --> 00:30:29.196
-&gt;&gt; SHAAN PRUDEN:
+>> SHAAN PRUDEN:
 Fantastical is a calendar app
 
 557
@@ -2652,7 +2652,7 @@ and ultra smart event lists.
 
 560
 00:30:41.356 --> 00:30:41.616
-&gt;&gt; JOHN GELEYNSE: Great.
+>> JOHN GELEYNSE: Great.
 
 561
 00:30:41.616 --> 00:30:45.026
@@ -3087,7 +3087,7 @@ So congratulations.
 
 651
 00:34:56.045 --> 00:34:57.926
-&gt;&gt; SHAAN PRUDEN: Fantastical is
+>> SHAAN PRUDEN: Fantastical is
 available not only on the Mac
 
 652
@@ -3111,7 +3111,7 @@ by DeskConnect.
 
 656
 00:35:17.246 --> 00:35:20.286
-&gt;&gt; WWDC scholarship
+>> WWDC scholarship
 winners in 2014,
 
 657
@@ -3135,7 +3135,7 @@ attending last year's WWDC.
 
 661
 00:35:43.696 --> 00:35:45.236
-&gt;&gt; SHAAN PRUDEN: Workflow
+>> SHAAN PRUDEN: Workflow
 allows you to connect apps
 
 662
@@ -3158,7 +3158,7 @@ to create powerful workflows.
 
 666
 00:35:53.876 --> 00:35:55.266
-&gt;&gt; JOHN GELEYNSE:
+>> JOHN GELEYNSE:
 Workflow was selected
 
 667
@@ -3234,7 +3234,7 @@ Ryan and Dean on stage.
 
 682
 00:36:48.046 --> 00:36:48.396
-&gt;&gt; DEAN HUDSON: All right.
+>> DEAN HUDSON: All right.
 
 683
 00:36:49.176 --> 00:36:52.936
@@ -3356,7 +3356,7 @@ to show you touch to explore.
 
 708
 00:38:16.236 --> 00:38:17.566
-&gt;&gt; Game Center.
+>> Game Center.
 
 709
 00:38:18.396 --> 00:38:19.326
@@ -3364,7 +3364,7 @@ Double-tap to open.
 
 710
 00:38:20.386 --> 00:38:22.246
-&gt;&gt; DEAN HUDSON: The second
+>> DEAN HUDSON: The second
 gesture we have is swipe
 
 711
@@ -3388,7 +3388,7 @@ Ryan?
 
 715
 00:38:35.666 --> 00:38:36.126
-&gt;&gt; iBooks.
+>> iBooks.
 
 716
 00:38:36.976 --> 00:38:40.226
@@ -3401,7 +3401,7 @@ Double-tap to open.
 
 718
 00:38:42.746 --> 00:38:44.896
-&gt;&gt; DEAN HUDSON: Now, the third
+>> DEAN HUDSON: Now, the third
 gesture we have is double-tap.
 
 719
@@ -3452,7 +3452,7 @@ And Ryan?
 
 729
 00:39:12.786 --> 00:39:14.516
-&gt;&gt; Workflow edit dimmed button.
+>> Workflow edit dimmed button.
 
 730
 00:39:15.556 --> 00:39:17.076
@@ -3460,7 +3460,7 @@ Turns on Workflow editing mode.
 
 731
 00:39:19.016 --> 00:39:21.266
-&gt;&gt; DEAN HUDSON: So that's
+>> DEAN HUDSON: So that's
 VoiceOver, it's awesome, great,
 
 732
@@ -3504,7 +3504,7 @@ using VoiceOver.
 
 740
 00:39:44.056 --> 00:39:46.056
-&gt;&gt; RYAN DOUR: So as Dean
+>> RYAN DOUR: So as Dean
 said, my name is Ryan Dour,
 
 741
@@ -3538,7 +3538,7 @@ right and see what it is.
 
 747
 00:39:58.476 --> 00:40:01.546
-&gt;&gt; Select Gallery button
+>> Select Gallery button
 to create Workflow button.
 
 748
@@ -3547,7 +3547,7 @@ Creates a new Workflow.
 
 749
 00:40:03.736 --> 00:40:04.686
-&gt;&gt; RYAN DOUR: I am
+>> RYAN DOUR: I am
 going to go ahead
 
 750
@@ -3556,7 +3556,7 @@ and double-tap to activate that.
 
 751
 00:40:06.676 --> 00:40:07.866
-&gt;&gt; Create Workflow.
+>> Create Workflow.
 
 752
 00:40:08.596 --> 00:40:09.606
@@ -3568,7 +3568,7 @@ Actions. Back button.
 
 754
 00:40:11.846 --> 00:40:13.536
-&gt;&gt; RYAN DOUR: I think what
+>> RYAN DOUR: I think what
 I want to do here, actually,
 
 755
@@ -3611,7 +3611,7 @@ this sidebar.
 
 763
 00:40:32.066 --> 00:40:33.566
-&gt;&gt; Contact action.
+>> Contact action.
 
 764
 00:40:34.506 --> 00:40:35.026
@@ -3619,7 +3619,7 @@ Draggable.
 
 765
 00:40:35.026 --> 00:40:35.996
-&gt;&gt; RYAN DOUR: I am going
+>> RYAN DOUR: I am going
 to pause the speech.
 
 766
@@ -3633,11 +3633,11 @@ that I would like.
 
 768
 00:40:39.936 --> 00:40:42.916
-&gt;&gt; Get current location action.
+>> Get current location action.
 
 769
 00:40:44.016 --> 00:40:47.306
-&gt;&gt; That's what I am
+>> That's what I am
 looking for, so I am going
 
 770
@@ -3646,7 +3646,7 @@ to go ahead and drag that over.
 
 771
 00:40:49.856 --> 00:40:50.236
-&gt;&gt; Dragging.
+>> Dragging.
 
 772
 00:40:50.236 --> 00:40:51.856
@@ -3659,7 +3659,7 @@ Search local businesses action.
 
 774
 00:40:54.956 --> 00:40:56.266
-&gt;&gt; RYAN DOUR: So I have
+>> RYAN DOUR: So I have
 added that first piece.
 
 775
@@ -3669,7 +3669,7 @@ and go get that URL.
 
 776
 00:41:00.906 --> 00:41:01.516
-&gt;&gt; Draggable.
+>> Draggable.
 
 777
 00:41:01.956 --> 00:41:02.906
@@ -3700,7 +3700,7 @@ then double-tap to activate.
 
 783
 00:41:12.726 --> 00:41:13.726
-&gt;&gt; RYAN DOUR: By the
+>> RYAN DOUR: By the
 way, isn't it wonderful
 
 784
@@ -3740,7 +3740,7 @@ and drag it over to the right.
 
 792
 00:41:30.306 --> 00:41:31.336
-&gt;&gt; Dragging.
+>> Dragging.
 
 793
 00:41:31.336 --> 00:41:34.156
@@ -3753,7 +3753,7 @@ Get current location.
 
 795
 00:41:35.196 --> 00:41:36.276
-&gt;&gt; RYAN DOUR: I know
+>> RYAN DOUR: I know
 it's in the right place.
 
 796
@@ -3772,11 +3772,11 @@ right over here.
 
 799
 00:41:44.996 --> 00:41:46.616
-&gt;&gt; Copy to Clipboard action.
+>> Copy to Clipboard action.
 
 800
 00:41:46.716 --> 00:41:47.276
-&gt;&gt; RYAN DOUR: There it is.
+>> RYAN DOUR: There it is.
 
 801
 00:41:47.376 --> 00:41:48.606
@@ -3784,7 +3784,7 @@ I am going to add that.
 
 802
 00:41:48.606 --> 00:41:49.536
-&gt;&gt; Double-tap and hold.
+>> Double-tap and hold.
 
 803
 00:41:49.736 --> 00:41:50.696
@@ -3797,7 +3797,7 @@ to clipboard --
 
 805
 00:41:56.856 --> 00:41:58.006
-&gt;&gt; RYAN DOUR: Look, I
+>> RYAN DOUR: Look, I
 even know the position.
 
 806
@@ -3831,7 +3831,7 @@ That's Workflow with VoiceOver.
 
 813
 00:42:20.126 --> 00:42:21.186
-&gt;&gt; DEAN HUDSON: They
+>> DEAN HUDSON: They
 did an excellent job.
 
 814
@@ -3916,7 +3916,7 @@ Thanks.
 
 831
 00:43:12.306 --> 00:43:15.056
-&gt;&gt; SHAAN PRUDEN: And that's
+>> SHAAN PRUDEN: And that's
 Workflow, available on Mac,
 
 832
@@ -3939,7 +3939,7 @@ by Mediocre.
 
 836
 00:43:29.076 --> 00:43:31.276
-&gt;&gt; This Swedish company
+>> This Swedish company
 was founded in 2011
 
 837
@@ -3982,7 +3982,7 @@ with various contractors.
 
 845
 00:43:56.706 --> 00:44:00.296
-&gt;&gt; SHAAN PRUDEN: Does Not
+>> SHAAN PRUDEN: Does Not
 Commute is a strategic top-down
 
 846
@@ -4011,7 +4011,7 @@ and you drive them all.
 
 851
 00:44:11.096 --> 00:44:11.846
-&gt;&gt; JOHN GELEYNSE: All right.
+>> JOHN GELEYNSE: All right.
 
 852
 00:44:13.096 --> 00:44:15.746
@@ -4408,7 +4408,7 @@ That's Does Not Commute.
 
 938
 00:47:54.046 --> 00:47:54.886
-&gt;&gt; SHAAN PRUDEN:
+>> SHAAN PRUDEN:
 That's Does Not Commute,
 
 939
@@ -4437,7 +4437,7 @@ Super Evil Megacorp.
 
 944
 00:48:11.056 --> 00:48:12.396
-&gt;&gt; Headquartered in
+>> Headquartered in
 San Mateo, California,
 
 945
@@ -4466,7 +4466,7 @@ on the App Store in late 2013.
 
 950
 00:48:35.346 --> 00:48:38.586
-&gt;&gt; SHAAN PRUDEN: Vainglory is a
+>> SHAAN PRUDEN: Vainglory is a
 multiplayer online battle arena
 
 951
@@ -4486,7 +4486,7 @@ crystal and claim glory.
 
 954
 00:48:48.806 --> 00:48:52.476
-&gt;&gt; JOHN GELEYNSE: This is a
+>> JOHN GELEYNSE: This is a
 massive online battle arena
 
 955
@@ -4631,7 +4631,7 @@ Congratulations.
 
 984
 00:50:39.046 --> 00:50:39.576
-&gt;&gt; SHAAN PRUDEN: And now we come
+>> SHAAN PRUDEN: And now we come
 
 985
 00:50:39.576 --> 00:50:41.286
@@ -4663,7 +4663,7 @@ by Pacemaker Music.
 
 991
 00:50:54.136 --> 00:50:56.166
-&gt;&gt; Pacemaker Music is an
+>> Pacemaker Music is an
 eight-person company based
 
 992
@@ -4702,7 +4702,7 @@ launched in December 2014.
 
 999
 00:51:22.366 --> 00:51:23.936
-&gt;&gt; SHAAN PRUDEN: Pacemaker
+>> SHAAN PRUDEN: Pacemaker
 provides a full range
 
 1000
@@ -4721,7 +4721,7 @@ with Pacemaker for iPad.
 
 1003
 00:51:34.876 --> 00:51:36.166
-&gt;&gt; JOHN GELEYNSE:
+>> JOHN GELEYNSE:
 Let's take a look.
 
 1004
@@ -5017,7 +5017,7 @@ Congratulations.
 
 1068
 00:55:09.436 --> 00:55:11.906
-&gt;&gt; SHAAN PRUDEN: Pacemaker
+>> SHAAN PRUDEN: Pacemaker
 also available on iPad,
 
 1069
@@ -5093,7 +5093,7 @@ as a prize package.
 
 1084
 00:56:36.656 --> 00:56:38.786
-&gt;&gt; JOHN GELEYNSE: And we just
+>> JOHN GELEYNSE: And we just
 want to thank you for joining us
 
 1085
@@ -5140,7 +5140,7 @@ Have a great week.
 
 1094
 00:57:00.866 --> 00:57:01.506
-&gt;&gt; SHAAN PRUDEN:
+>> SHAAN PRUDEN:
 Have a great week.
 
 1095

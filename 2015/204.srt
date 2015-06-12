@@ -5,7 +5,7 @@
 
 2
 00:00:26.956 --> 00:00:30.866
-&gt;&gt; Hi. My name is Qasid Sadiq,
+>> Hi. My name is Qasid Sadiq,
 
 3
 00:00:32.305 --> 00:00:36.796
@@ -474,7 +474,7 @@ to turn VoiceOver on..
 
 101
 00:05:58.566 --> 00:05:59.766
-&gt;&gt; VOICEOVER: VoiceOver on.
+>> VOICEOVER: VoiceOver on.
 
 102
 00:06:00.016 --> 00:06:00.416
@@ -482,7 +482,7 @@ Weather.
 
 103
 00:06:01.656 --> 00:06:04.056
-&gt;&gt; QASID SADIQ: To
+>> QASID SADIQ: To
 demonstrate how VoiceOver works,
 
 104
@@ -522,7 +522,7 @@ ahead and do that.
 
 111
 00:06:22.486 --> 00:06:23.356
-&gt;&gt; VOICEOVER: Calendar.
+>> VOICEOVER: Calendar.
 
 112
 00:06:24.106 --> 00:06:25.876
@@ -534,7 +534,7 @@ Alarm.
 
 114
 00:06:29.206 --> 00:06:31.016
-&gt;&gt; QASID SADIQ: So now
+>> QASID SADIQ: So now
 I actually have a sense
 
 115
@@ -582,7 +582,7 @@ on the World Clock app icon.
 
 124
 00:06:53.406 --> 00:06:55.706
-&gt;&gt; VOICEOVER: World clock.
+>> VOICEOVER: World clock.
 
 125
 00:06:55.846 --> 00:06:56.866
@@ -594,7 +594,7 @@ Stop -- world Clock.
 
 127
 00:06:59.806 --> 00:07:01.806
-&gt;&gt; QASID SADIQ: Now
+>> QASID SADIQ: Now
 VoiceOver spoke "World Clock."
 
 128
@@ -622,7 +622,7 @@ So let's wait for this to load.
 
 133
 00:07:18.326 --> 00:07:19.726
-&gt;&gt; VOICEOVER: World Clock.
+>> VOICEOVER: World Clock.
 
 134
 00:07:21.656 --> 00:07:23.766
@@ -638,7 +638,7 @@ Back. Cupertino.
 
 137
 00:07:28.576 --> 00:07:31.086
-&gt;&gt; QASID SADIQ: Now, I want
+>> QASID SADIQ: Now, I want
 to find out what time it is
 
 138
@@ -678,7 +678,7 @@ that until I get to the bottom.
 
 145
 00:07:49.166 --> 00:07:50.186
-&gt;&gt; VOICEOVER: Rows 4 to 7.
+>> VOICEOVER: Rows 4 to 7.
 
 146
 00:07:50.426 --> 00:07:52.346
@@ -694,7 +694,7 @@ Plus 3 hours.
 
 149
 00:08:00.136 --> 00:08:01.746
-&gt;&gt; QASID SADIQ: Now I know
+>> QASID SADIQ: Now I know
 what time it is in New York.
 
 150
@@ -722,11 +722,11 @@ by triple-tapping the Crown.
 
 155
 00:08:12.566 --> 00:08:14.156
-&gt;&gt; VOICEOVER: VoiceOver off.
+>> VOICEOVER: VoiceOver off.
 
 156
 00:08:14.566 --> 00:08:16.066
-&gt;&gt; QASID SADIQ: And all the
+>> QASID SADIQ: And all the
 Accessibility settings are
 
 157
@@ -1582,7 +1582,7 @@ our Accessibility shortcut.
 
 337
 00:16:51.746 --> 00:16:53.006
-&gt;&gt; VOICEOVER: VoiceOver on.
+>> VOICEOVER: VoiceOver on.
 
 338
 00:16:53.256 --> 00:16:54.196
@@ -1594,7 +1594,7 @@ Button.
 
 340
 00:16:55.706 --> 00:16:56.006
-&gt;&gt; QASID SADIQ: Okay.
+>> QASID SADIQ: Okay.
 
 341
 00:16:56.836 --> 00:16:58.306
@@ -1626,7 +1626,7 @@ to our VoiceOver users.
 
 347
 00:17:11.455 --> 00:17:12.306
-&gt;&gt; VOICEOVER: Make sandwich.
+>> VOICEOVER: Make sandwich.
 
 348
 00:17:12.455 --> 00:17:13.856
@@ -1638,7 +1638,7 @@ I button.
 
 350
 00:17:16.606 --> 00:17:18.496
-&gt;&gt; QASID SADIQ: Now,
+>> QASID SADIQ: Now,
 although it's obvious to us
 
 351
@@ -1700,7 +1700,7 @@ Let's go ahead and see.
 
 363
 00:17:47.066 --> 00:17:48.006
-&gt;&gt; VOICEOVER: Make sandwich.
+>> VOICEOVER: Make sandwich.
 
 364
 00:17:49.046 --> 00:17:49.716
@@ -1725,7 +1725,7 @@ Button.
 
 369
 00:18:00.086 --> 00:18:05.076
-&gt;&gt; QASID SADIQ: The first issue
+>> QASID SADIQ: The first issue
 is VoiceOver is speaking 210 c,
 
 370
@@ -2320,7 +2320,7 @@ application in action.
 
 493
 00:24:54.546 --> 00:24:54.716
-&gt;&gt; VOICEOVER: Eats.
+>> VOICEOVER: Eats.
 
 494
 00:24:54.876 --> 00:24:56.696
@@ -2340,7 +2340,7 @@ Button.
 
 498
 00:25:07.246 --> 00:25:07.796
-&gt;&gt; QASID SADIQ: Right away,
+>> QASID SADIQ: Right away,
 
 499
 00:25:07.796 --> 00:25:10.556
@@ -2349,12 +2349,12 @@ button is already larger.
 
 500
 00:25:10.556 --> 00:25:11.916
-&gt;&gt; VOICEOVER: Information
+>> VOICEOVER: Information
 button.
 
 501
 00:25:11.916 --> 00:25:14.046
-&gt;&gt; QASID SADIQ: And the label
+>> QASID SADIQ: And the label
 is being spoken correctly.
 
 502
@@ -2364,7 +2364,7 @@ make our sandwich.
 
 503
 00:25:18.926 --> 00:25:20.976
-&gt;&gt; VOICEOVER: Make sandwich.
+>> VOICEOVER: Make sandwich.
 
 504
 00:25:20.976 --> 00:25:23.386
@@ -2398,7 +2398,7 @@ Button.
 
 511
 00:25:39.776 --> 00:25:40.116
-&gt;&gt; QASID SADIQ: Okay.
+>> QASID SADIQ: Okay.
 
 512
 00:25:40.556 --> 00:25:43.296
@@ -2432,7 +2432,7 @@ how accessible that is.
 
 518
 00:25:55.206 --> 00:25:57.326
-&gt;&gt; VOICEOVER: Make sandwich.
+>> VOICEOVER: Make sandwich.
 
 519
 00:25:57.326 --> 00:25:57.946
@@ -2448,7 +2448,7 @@ Image.
 
 522
 00:26:02.296 --> 00:26:02.666
-&gt;&gt; QASID SADIQ: Now,
+>> QASID SADIQ: Now,
 
 523
 00:26:02.766 --> 00:26:05.636
@@ -2461,7 +2461,7 @@ So there you go.
 
 525
 00:26:13.316 --> 00:26:18.076
-&gt;&gt; VOICEOVER: Home.
+>> VOICEOVER: Home.
 
 526
 00:26:21.956 --> 00:26:22.136
@@ -2469,7 +2469,7 @@ So there you go.
 
 527
 00:26:22.266 --> 00:26:26.056
-&gt;&gt; QASID SADIQ: Now, as you
+>> QASID SADIQ: Now, as you
 guys know, you, as developers,
 
 528
@@ -2630,11 +2630,11 @@ VoiceOver user will hear this.
 
 561
 00:28:23.876 --> 00:28:25.696
-&gt;&gt; VOICEOVER: Get sandwich now.
+>> VOICEOVER: Get sandwich now.
 
 562
 00:28:25.946 --> 00:28:27.246
-&gt;&gt; QASID SADIQ: So
+>> QASID SADIQ: So
 if you couldn't hear,
 
 563

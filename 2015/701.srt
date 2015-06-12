@@ -1,7 +1,7 @@
 
 1
 00:00:06.726 --> 00:00:16.015
-&gt;&gt; DANVIN RUANGCHAN: All
+>> DANVIN RUANGCHAN: All
 right, good morning, everyone,
 
 2
@@ -2903,7 +2903,7 @@ Here's one from 2012,
 616
 00:30:10.796 --> 00:30:14.266
 it's called "Introducing
-Passbook Part 1 &amp; 2" that's
+Passbook Part 1 & 2" that's
 
 617
 00:30:14.266 --> 00:30:16.176

@@ -1,7 +1,7 @@
 
 1
 00:00:06.716 --> 00:00:09.086
-&gt;&gt; JORDAN ROSE: Good
+>> JORDAN ROSE: Good
 afternoon, everyone.
 
 2
@@ -14,7 +14,7 @@ My name is Jordan Rose.
 
 4
 00:00:22.676 --> 00:00:22.756
-&gt;&gt; JORDAN ROSE: Wow.
+>> JORDAN ROSE: Wow.
 
 5
 00:00:23.716 --> 00:00:25.186
@@ -810,7 +810,7 @@ that you couldn't before.
 
 172
 00:08:04.116 --> 00:08:11.296
-&gt;&gt; JORDAN ROSE: So
+>> JORDAN ROSE: So
 those are just two
 
 173
@@ -1460,7 +1460,7 @@ it over to Doug.
 
 308
 00:14:27.756 --> 00:14:33.336
-&gt;&gt; DOUG GREGOR: Thank you.
+>> DOUG GREGOR: Thank you.
 
 309
 00:14:34.246 --> 00:14:34.936
@@ -2856,7 +2856,7 @@ existing operating systems.
 
 601
 00:27:55.546 --> 00:28:04.836
-&gt;&gt; DOUG GREGOR: And if it wasn't
+>> DOUG GREGOR: And if it wasn't
 obvious from that description,
 
 602

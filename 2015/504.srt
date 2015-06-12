@@ -1,7 +1,7 @@
 
 1
 00:00:06.716 --> 00:00:10.806
-&gt;&gt; RICKY MONDELLO: Good
+>> RICKY MONDELLO: Good
 afternoon everyone.
 
 2
@@ -115,7 +115,7 @@ miniature web browsers.
 
 26
 00:01:29.806 --> 00:01:31.336
-&gt;&gt; RICKY MONDELLO: I'm going
+>> RICKY MONDELLO: I'm going
 
 27
 00:01:31.336 --> 00:01:33.726
@@ -339,7 +339,7 @@ securely loadFileURLs now.
 
 73
 00:03:49.726 --> 00:03:52.306
-&gt;&gt; RICKY MONDELLO:
+>> RICKY MONDELLO:
 You can also loadData,
 
 74
@@ -544,7 +544,7 @@ than iOS 8 was.
 
 116
 00:06:08.036 --> 00:06:10.796
-&gt;&gt; RICKY MONDELLO: And
+>> RICKY MONDELLO: And
 delegating the responsibility
 
 117
@@ -964,7 +964,7 @@ Blocking -- go ahead!
 
 204
 00:10:31.966 --> 00:10:33.786
-&gt;&gt; RICKY MONDELLO: So the big
+>> RICKY MONDELLO: So the big
 idea behind Content Blocking,
 
 205
@@ -1038,7 +1038,7 @@ The content disappears.
 
 220
 00:11:16.596 --> 00:11:17.356
-&gt;&gt; RICKY MONDELLO:
+>> RICKY MONDELLO:
 But that's not all
 
 221
@@ -1398,7 +1398,7 @@ Yongjun.
 
 296
 00:14:56.136 --> 00:14:58.256
-&gt;&gt; YONGJUN ZHANG:
+>> YONGJUN ZHANG:
 Thank you, Ricky.
 
 297
@@ -1831,7 +1831,7 @@ and I don't have my password.
 
 389
 00:19:49.616 --> 00:19:54.176
-&gt;&gt; YONGJUN ZHANG: So, what
+>> YONGJUN ZHANG: So, what
 I really need is some simple
 
 390
@@ -2009,12 +2009,12 @@ Thank you.
 
 427
 00:22:03.426 --> 00:22:07.176
-&gt;&gt; YONGJUN ZHANG:
+>> YONGJUN ZHANG:
 Back to you, Ricky.
 
 428
 00:22:09.556 --> 00:22:10.576
-&gt;&gt; RICKY MONDELLO:
+>> RICKY MONDELLO:
 Thank you, Yongjun.
 
 429

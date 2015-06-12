@@ -1,7 +1,7 @@
 
 1
 00:00:06.686 --> 00:00:07.646
-&gt;&gt; NICK PORCINO:
+>> NICK PORCINO:
 Hello, everybody.
 
 2
@@ -2046,7 +2046,7 @@ and voxels.
 
 430
 00:23:18.216 --> 00:23:18.946
-&gt;&gt; CLAUDIA ROBERTS:
+>> CLAUDIA ROBERTS:
 Hello, everyone,
 
 431
@@ -2669,7 +2669,7 @@ in action with a quick demo.
 
 559
 00:29:38.906 --> 00:29:55.856
-&gt;&gt; CLAUDIA ROBERTS: So
+>> CLAUDIA ROBERTS: So
 here we have this demo.
 
 560
@@ -2774,7 +2774,7 @@ lighting and Xcode support.
 
 581
 00:31:08.716 --> 00:31:11.936
-&gt;&gt; REMI PALANDRI: Hey,
+>> REMI PALANDRI: Hey,
 everyone, and thanks, Claudia.
 
 582

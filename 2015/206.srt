@@ -1,7 +1,7 @@
 
 1
 00:00:06.716 --> 00:00:10.806
-&gt;&gt; SUMIT LONKAR: Good
+>> SUMIT LONKAR: Good
 afternoon, everyone.
 
 2
@@ -1958,7 +1958,7 @@ like to call upon Elisabeth.
 
 414
 00:19:57.126 --> 00:19:57.406
-&gt;&gt; ELISABETH LINDKVIST: Okay.
+>> ELISABETH LINDKVIST: Okay.
 
 415
 00:19:57.406 --> 00:19:58.966
@@ -2803,7 +2803,7 @@ And look at that, now we do.
 
 591
 00:29:07.226 --> 00:29:07.766
-&gt;&gt; ELISABETH LINDKVIST:
+>> ELISABETH LINDKVIST:
 And yeah,
 
 592

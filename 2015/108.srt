@@ -5,7 +5,7 @@
 
 2
 00:00:07.106 --> 00:00:10.806
-&gt;&gt; NEIL DESAI: Hi, everyone.
+>> NEIL DESAI: Hi, everyone.
 
 3
 00:00:23.296 --> 00:00:34.966
