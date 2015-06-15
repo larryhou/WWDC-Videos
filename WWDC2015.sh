@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir=./Videos
+dir=~/Documents/Developer/WWDC/2015
 while getopts :d:h OPTION
 do
 	case ${OPTION} in
