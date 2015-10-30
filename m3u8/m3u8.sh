@@ -29,8 +29,14 @@ curl -s https://developer.apple.com/videos/wwdc${YEAR}/ | grep 'Session [0-9]\{3
 do
 	url="https://developer.apple.com/videos/play/wwdc${YEAR}-${id}"
 	curl -s ${url} -o data.txt 
-	ref=$(cat data.txt | grep 'ref.mov' | awk -F'"' '{print $2}')
-	m3u8=$(echo ${ref} | sed 's/ref.mov/sl2.m3u8/')
+	ref=$(cat data.txt | grep '/ref.*.mov' | awk -F'"' '{print $2}')
+	if [ ${id} -gt 2012 ]
+	then
+		m3u8=$(echo ${ref} | sed 's/[^\/]*$/sl2.m3u8/')
+	else
+		m3u8=$(echo ${ref} | sed 's/[^\/]*$/sl.m3u8/')
+	fi
+	
 	name=$(cat data.txt | grep '</h3>' | awk -F'>' '{print $2}' | awk -F'<' '{print $1}')
 	file=${OUTPUT_DIR}/${id}.m3u8
 	curl -s ${m3u8} -o ${file}
