@@ -26,4 +26,4 @@
 4500/4500.m3u8
 #EXT-X-I-FRAME-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2535409,CODECS="avc1.640029,mp4a.40.2",URI="4500/4500_I-Frame.m3u8"
 
-#M3U8-SRC:http://devstreaming.apple.com/videos/wwdc/2014/712xx1pl2u942g2/712/sl2.m3u8
+#VIDEO-INFO:M3U8=http://devstreaming.apple.com/videos/wwdc/2014/712xx1pl2u942g2/712/sl2.m3u8,NAME="Writing Energy Efficient Code, Part 2"
