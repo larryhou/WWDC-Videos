@@ -3,6 +3,20 @@
 M3U8=2014/716.m3u8
 KEYWORD=1152
 OUTPUT_DIR=~/Downloads/2014
+while getopts :m:k:o:y:h OPTION
+do
+	case ${OPTION} in
+		m) M3U8=${OPTARG};;
+		k) KEYWORD=${OPTARG};;
+		o) OUTPUT_DIR=${OPTARG};;
+		h) echo "Usage: $(basename $0) -o [OUTPUT_DIR] -k [KEYWORD] -m [M3U8_FILE] -h [HELP]"
+		   exit;;
+		:) echo "ERR: -${OPTARG} 缺少参数, 详情参考: $(basename $0) -h" 1>&2
+		   exit 1;;
+		?) echo "ERR: 输入参数-${OPTARG}不支持, 详情参考: $(basename $0) -h" 1>&2
+		   exit 1;;
+	esac
+done
 
 id=$(echo ${M3U8} | awk -F'/' '{print $NF}' | sed 's/\.m3u8//')
 OUTPUT_DIR=${OUTPUT_DIR}/${id}
