@@ -36,9 +36,27 @@ fmt=$(sed "${num}!d" ${M3U8})
 curl -s ${base}${fmt} | sed '/^#/d' | while read seg
 do
 	url=${base}$(echo ${fmt} | sed 's/[^\/]*$//')${seg}
-	echo ${url}
+	file=${OUTPUT_DIR}/$(echo ${seg} | awk -F'/' '{print $NF}')
+	if [[ ! -f "${file}" ]] || [[ -f "${file}.st" ]]
+	then
+		axel -o "${file}" ${url}
+	else
+		echo "[DONE] ${url}"
+	fi
 done
 
+find ${OUTPUT_DIR} -iname 'fileSequence*.*' | while read file
+do
+	id=$(echo ${file} | awk -F'/' '{print $NF}' | awk -F'.' '{print $1}' | sed 's/fileSequence//')
+	echo "${id} ${file}"
+done | sort -k 1 -n | awk '{print $2}' | while read file
+do
+	echo "file '${file}'"
+done > ${OUTPUT_DIR}/concat.txt
+
+ffmpeg -f concat -i ${OUTPUT_DIR}/concat.txt -c copy ${OUTPUT_DIR}/${id}.ts -y
+
+# exit
 # subtitle
 sub=$(cat ${M3U8} | grep 'TYPE=SUBTITLES' | awk -F'URI=\"' '{print $2}' | awk -F'\"' '{print $1}' | tail -n 1)
 if [ "${sub}" = "" ];then exit 2;fi;
